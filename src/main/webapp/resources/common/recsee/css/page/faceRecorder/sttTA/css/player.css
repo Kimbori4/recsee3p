@@ -1,0 +1,298 @@
+#recInfoObj {
+    width: 100%;
+    height:50%;
+    float:left;
+}
+#recInfoHeader {
+    width: 100px;
+    height: auto;
+    margin:20px 10px 0;
+    font-size:10pt;
+    font-weight:bold;
+}
+#recInfoTable {
+    width: calc(100% - 18px);
+    height: auto;
+    border:1px solid lightgray;
+    border-top:2px solid #329ADF;
+    margin:10px;
+    font-size:10pt;
+    border-collapse: collapse;
+}
+.recInfoRow {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+}
+.recInfoTitle {
+    width: 30%;
+    border:1px solid lightgray;
+    font-weight:bold;
+    padding: 5px 10px; 
+    background-color: #eeeeee;
+}
+.recInfoValue {
+    width: 70%;
+    border:1px solid lightgray;
+    padding: 5px 10px; 
+}
+
+#playerObj.new-player {
+    width: 410px !important;
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+.new-player .rplayer {
+    padding: 18px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+}
+.new-player .rplayer .play_control_wrap {
+    background-color: #1760F0;
+    padding: 0;
+    width: 100%;
+}
+.new-player .procTime {
+    padding-top:30px;
+    padding-left: 16px;
+    font-size: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, 'Noto Sans KR', Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    letter-spacing: 0;
+}
+
+.new-player .rplayer .player_wave {
+    height: 75px;
+}
+.new-player .rplayer .waveObj {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    height: 27px;
+    margin-top: 17px;
+    margin-right: 26px;
+    float: right;
+}
+.new-player .rplayer .waveObj .obj_key {
+    width: 4px;
+    margin: 0;
+    margin-right: 2px;
+}
+.new-player .rplayer .waveObj .obj_key:last-child {
+    margin-right: 0;
+}
+.new-player .rplayer .obj_key_value {
+    background: linear-gradient(180deg, #0BF0FF 0%, #45A6FF 100%);
+}
+.rplayer .center_control {
+    bottom: 11px;
+}
+.new-player .rplayer .player_control {
+    float: right;
+    width: 240px;
+    height: 2px;
+    background-color: #7AACFE;
+    margin-left: 0;
+    margin-right: 26px;
+}
+.new-player .rplayer .player_control .play_bar {
+    background-color: #7AACFE;
+    height: 2px;
+}
+.new-player .rplayer .player_control .play_value {
+    background-color: #fff;   
+    height: 2px;
+}
+.new-player .rplayer .player_control .play_location {
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: none;
+}
+.new-player .rplayer .play_time .play_now_time {
+    left: 0px;
+    margin-left: 143px;
+    background: transparent;
+    padding: 0;
+}
+.new-player .rplayer .play_time .play_now_time p,
+.new-player .rplayer .play_time .play_total_time p{
+    color: #fff;
+    font-size: 10px;
+    font-weight: 300;
+}
+.new-player .rplayer .play_time .play_total_time {
+    background: transparent;
+    padding: 0;
+    margin-right: 26px;
+}
+
+.new-player .rplayer .player_controller {
+    padding: 8px 16px 0 16px;
+    box-sizing: border-box;
+    width: 100%;
+    background: white;
+}
+.new-player .rplayer .player_controller .btn_group {
+    display: inline-flex;
+    align-items: center;
+}
+.new-player .rplayer .player_controller .btn_group .btn_style {
+    width: 16px;
+    height: 16px;
+}
+.new-player .rplayer .player_controller .btn_group .btn_style + .btn_style {
+    margin-left: 15px;
+}
+.new-player .rplayer .player_controller .btn_group .btn_prev {background: url(../img/player_btn_prev.svg) center/cover no-repeat;}
+.new-player .rplayer .player_controller .btn_group .btn_next {background: url(../img/player_btn_next.svg) center/cover no-repeat;}
+.new-player .rplayer .player_controller .btn_group .btn_start {background: url(../img/player_btn_start.svg) center/cover no-repeat;}
+.new-player .rplayer .player_controller .btn_group .btn_stop {background: url(../img/player_btn_stop.svg) center/cover no-repeat;}
+.new-player .rplayer .player_controller .btn_group .speed_plus {background: url(../img/player_btn_plus.svg) center/cover no-repeat;}
+.new-player .rplayer .player_controller .btn_group .speed_minus {background: url(../img/player_btn_minus.svg) center/cover no-repeat;}
+.new-player .rplayer .player_controller .btn_group .speed_init {background: url(../img/player_btn_init.svg) center/cover no-repeat;}
+.new-player .rplayer .player_controller .icon_volume {
+    width: 16px;
+    height: 16px;
+    background: url(../img/player_btn_volume.svg) center/cover no-repeat;
+}
+
+.new-player .rplayer .player_controller .btn_group .btn_speed {
+    display: inline-flex;
+    width: auto;
+}
+.new-player .rplayer .player_controller .btn_group .btn_speed input {
+    border: 0;
+    margin-top: 0;
+    text-indent: 0;
+    height: 16px;
+    line-height: 16px;
+    background: transparent;
+    width: 36px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, 'Noto Sans KR', Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+}
+.new-player .rplayer .player_controller .btn_group .btn_speed .speed_btn_wrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+.new-player .rplayer .player_controller .btn_group .btn_speed button {
+    box-shadow: none;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    text-indent: -9999px;
+    margin: 0;
+}
+.new-player .rplayer .player_controller .audio_volume {
+    margin-right: 0;
+    top: 19px;
+    left: -51px;
+    margin-top: 0;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.15);
+    border: 1px solid #eeeeee;
+    background-color: white;
+    border-radius: 4px;
+    padding: 11px 8px 0 8px;
+}
+.new-player .rplayer .player_controller .audio_volume .volume_bar {
+    background-color: #eee;
+}
+.new-player .rplayer .player_controller .audio_volume .volume_value,
+.new-player .rplayer .player_controller .audio_volume .volume_location {
+    background-color: #1760F0;
+}
+
+
+
+/* 상품설명 - 청취 : 플레이어 윈도우팝업 */
+.new-playerList {
+    border: 1px solid #E1ECFF;
+    box-sizing: border-box;
+}
+.new-playerList #playerObj.new-player {
+    margin: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    width: 100% !important;
+}
+.new-playerList .new-player .rplayer {
+    padding: 0;
+    float: none;
+}
+.new-playerList .new-player .rplayer .player_controller .audio_volume {
+    left: initial;
+    right: 0;
+}
+.new-playerList .file-name {
+    padding: 15px;
+    color: #8A93A4;
+    border-bottom: 1px solid #DEE1E7;
+}
+.new-playerList h2 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #111418;
+    padding: 20px 16px 14px;
+}
+.new-playerList .playList .list {
+    max-height: 200px;
+    overflow: auto;
+    border-bottom: 1px solid #DEE1E7;
+    border-top: 1px solid #DEE1E7;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+.new-playerList .playList a {
+    display: block;
+    padding: 0 16px;
+    line-height: 36px;
+    font-size: 12px;
+    color: #8A93A4;
+}
+.new-playerList .playList a.ac {
+    color: #111418;
+    background-color: #E1ECFF;
+}
+.new-playerList .playList a:hover {
+    color: #111418;
+}
+.new-playerList .recHistory .con {
+    padding: 10px 16px;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+.new-playerList .recHistory dl {
+    display: flex;
+    font-size: 12px;
+    line-height: 16px;
+}
+.new-playerList .recHistory dl + dl {
+    margin-top: 5px;
+}
+.new-playerList .recHistory dt {
+    width: 110px;
+    color: #8A93A4;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.new-playerList .recHistory dd {
+    width: calc(100% - 110px);
+    color: #111418;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

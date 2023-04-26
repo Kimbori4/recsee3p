@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>모니터링(monitoring) 화면용 메세지 정의</comment>
+
+	<entry key="monitoring.display.selectedSystem">Selected System</entry>
+	<entry key="monitoring.display.system">System</entry>
+	<entry key="monitoring.display.group">Group</entry>
+	<entry key="monitoring.display.searchAll">Search All</entry>
+	<entry key="monitoring.display.search">Search</entry>
+	<entry key="monitoring.display.monitoringOption">Monitoring Option</entry>
+	<entry key="monitoring.display.timerOption">Timer Option</entry>
+	<entry key="monitoring.display.listenAlways">constant listen</entry>
+	<entry key="monitoring.display.officeView">Office View</entry>
+	<entry key="monitoring.display.cardView">Card View</entry>
+	<entry key="monitoring.display.gridView">Grid View</entry>
+	<entry key="monitoring.display.systemHardware">System Hardware</entry>
+	<entry key="monitoring.display.CPU">CPU</entry>
+	<entry key="monitoring.display.MEMORY">MEMORY</entry>
+	<entry key="monitoring.display.HDD">HDD</entry>
+	<entry key="monitoring.display.statusViewOptions">Status view options</entry>
+	<entry key="monitoring.display.displayOptions">Display options</entry>
+    <entry key="monitoring.display.cookieSaveOptions">Save</entry>
+	<entry key="monitoring.display.icon">Icon</entry>
+	<entry key="monitoring.display.agentId">Agent ID</entry>
+	<entry key="monitoring.display.number">Number</entry>
+	<entry key="monitoring.display.callTime">Call Time</entry>
+	<entry key="monitoring.display.realtimeListen">REALTIME LISTEN</entry>
+	<entry key="monitoring.display.setCount">the number of people</entry>
+
+    <entry key="monitoring.state.save">Save State</entry>
+	<entry key="monitoring.state.login">Login</entry>
+	<entry key="monitoring.state.ready">Ready</entry>
+	<entry key="monitoring.state.calling">Calling</entry>
+	<entry key="monitoring.state.ACW">ACW</entry>
+	<entry key="monitoring.state.logout">Logout</entry>
+	<entry key="monitoring.state.away">State away</entry>
+
+	<entry key="monitoring.display.viewby16">View by 16</entry>
+	<entry key="monitoring.display.viewby32">View by 32</entry>
+	<entry key="monitoring.display.viewby100">View by 100</entry>
+	<entry key="monitoring.display.officerealtimeinfo">constant listening extention</entry>
+	<entry key="monitoring.display.officerealtimeinfo2">Ongoing wiretapping</entry>
+	<entry key="monitoring.display.officeRealtimeExt">None.</entry>
+
+	<entry key="monitoring.grid.title.status">State</entry>
+
+	<entry key="monitoring.grid.title.listen">Listening</entry>
+	<entry key="monitoring.grid.title.staylisten">the maintenance of wiretapping</entry>
+	<entry key="monitoring.grid.title.setCount">Set personnel</entry>
+	<entry key="monitoring.display.filterByAgent">Filter by consultant name</entry>
+	<entry key="monitoring.display.filterByNum">Filter by ID</entry>
+	<entry key="monitoring.display.filterByExt">Filter by extension number</entry>
+
+	<entry key="monitoring.display.showNew">View in new window</entry>
+	<entry key="monitoring.display.officerealtime">constant listening</entry>
+	<entry key="monitoring.display.empListen">Continuous interception of extension number</entry>
+	<entry key="monitoring.display.custNumListen">constant listening by customer number</entry>
+	<entry key="monitoring.display.custNumOrEmp">Customer number or extension</entry>
+
+	<entry key="monitoring.display.editTarget">Edit location</entry>
+	<entry key="monitoring.display.recServer">Recording Server</entry>
+	<entry key="monitoring.display.recService">Recording service</entry>
+	<entry key="monitoring.display.use">Utilization</entry>
+
+	<!-- 18-09-05 -pilip monitoring en lang add -->
+	<entry key="monitoring.menu.continueTapping">constant listening</entry>
+	<entry key="monitoring.menu.numberContinueTapping">Continuous interception of extension number</entry>
+	<entry key="monitoring.menu.custNumberContinueTapping">constant listening by customer number</entry>
+	<entry key="monitoring.menu.custNumberOrNumber">Customer number or extension</entry>
+	<entry key="monitoring.menu.memo">Memo</entry>
+	<entry key="monitoring.menu.save">Save</entry>
+	<entry key="monitoring.grid.headerSetting">extension, counselor ID, name, status, call time, phone number, listening, call center, branch,실,listening,the maintenance of wiretapping,rtpCode,stime</entry>
+	<entry key="monitoring.alert.msg1">inquiry</entry>
+	<entry key="monitoring.alert.msg2">Enter search criteria.</entry>
+	<entry key="monitoring.alert.msg3">No value checked.</entry>
+	<entry key="monitoring.alert.msg4">Select target group</entry>
+	<entry key="monitoring.alert.msg5">Please enter the name of the counselor.</entry>
+	<entry key="monitoring.alert.msg6">Please enter employee number.</entry>
+	<entry key="monitoring.alert.msg7">Please enter extension number.</entry>
+	<entry key="monitoring.alert.msg8">Login</entry>
+	<entry key="monitoring.alert.msg9">log out</entry>
+	<entry key="monitoring.alert.msg10">On the phone</entry>
+	<entry key="monitoring.alert.msg11">post-processing</entry>
+	<entry key="monitoring.alert.msg12">preparation</entry>
+	<entry key="monitoring.alert.msg13">Connecting</entry>
+	<entry key="monitoring.alert.msg14">empty</entry>
+	<entry key="monitoring.alert.msg15">Current Counselor</entry>
+	<entry key="monitoring.alert.msg16">extension number</entry>
+	<entry key="monitoring.alert.msg17">It's under constant surveillance.</entry>
+	<entry key="monitoring.alert.msg18">Save Memo</entry>
+	<entry key="monitoring.alert.msg19">The note has been saved.</entry>
+	<entry key="monitoring.alert.msg20">No inquiry result.</entry>
+	<entry key="monitoring.alert.msg21">Please select the type to be audited continuously.</entry>
+	<entry key="monitoring.alert.msg22">Please enter the number.</entry>
+	<entry key="monitoring.alert.msg23">Please enter the ID of the counselor.</entry>
+	
+	<entry key="monitoring.alert.sameName">The name is already registered.</entry>
+	
+	<entry key="views.monitoring.bgName">Large Group</entry>
+	<entry key="views.monitoring.mgName">Middle Group</entry>
+	<entry key="views.monitoring.sgName">Small Group</entry>
+		
+	<entry key="monitoring.alert.noDrawing.selected">No drawing selected.</entry>
+	<entry key="monitoring.alert.noUser.selected">No user selected.</entry>
+	<entry key="monitoring.alert.Drawing.completed">Drawing modification has been completed.</entry>
+	<entry key="monitoring.alert.afterRegistering">Please use it after registering for extension of the counselor.</entry>
+	<entry key="monitoring.alert.Enter.drawingName">Enter drawing name.</entry>
+	<entry key="monitoring.alert.addDrawing.complete">Add drawing is complete.</entry>
+	<entry key="monitoring.alert.addDrawing.problem">There was a problem adding the drawing. \\n Please re-enter.</entry>
+	<entry key="monitoring.alert.counselor.notOnTheLine">Your counselor is not on the line.</entry>
+	<entry key="monitoring.alert.getInfo.problems">There are some problems getting the counselor information. \\n Please use it again in a few</entry>
+	<entry key="monitoring.alert.architect.notBusy">The selected architect is not busy.</entry>
+	<entry key="monitoring.alert.counselor.notOnTheLine">Your counselor is not on the line.</entry>
+</properties>

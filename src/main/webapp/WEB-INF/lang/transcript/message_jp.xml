@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>転写管理(transcript)画面用メッセージ定義</comment>
+
+	<entry key="views.search.title.TP">転写予定</entry>
+	<entry key="views.search.title.TF">転写完了</entry>
+	<entry key="views.search.title.LI">学習進行中</entry>
+	<entry key="views.search.title.LF">学習完了</entry>
+	
+	<entry key="views.search.title.transcriber">転写作成者</entry>
+	<entry key="views.search.title.transcript">転写</entry>
+	<entry key="views.search.title.all">全体</entry>
+	<entry key="views.search.title.rDivision">完了</entry>
+	
+	<entry key="views.search.alert.select.agent">録音ファイルを割り当てるユーザーを選択してください。</entry>
+	<entry key="views.transcript.alert.already.division">選択したファイルの中にすでに分配された録音ファイルがあります。 再分配しますか?</entry>
+	<entry key="views.search.alert.division.success">選択した録音ファイルがカウンセラーに正常に割り当てられました。</entry>
+	<entry key="views.search.alert.division.fail">分配リストに選択した録音ファイルの追加に失敗しました。</entry>
+	<entry key="views.search.alert.recfile.division.success">分配リストに選択した録音ファイルを追加しました。</entry>
+	<entry key="views.search.alert.recfile.division.fail">分配リストに選択した録音ファイルの追加に失敗しました。</entry>
+
+	<!-- 녹취 파일 분배 및 전사여부 -->
+	<entry key="views.transcript.alert.learning.success">学習要請に成功しました。</entry>
+	<entry key="views.transcript.alert.learning.fail">学習の要請に失敗しました。</entry>
+	<entry key="views.transcript.confirm.learning">選択したファイルを学習しますか?</entry>
+	<entry key="views.transcript.confirm.remove">選択したファイルをリストから削除しますか? 転写されたファイルの場合、転写内容が削除されます。</entry>
+	<entry key="views.transcript.alert.remove.success">ファイルが成功的に削除されました。</entry>
+	<entry key="views.transcript.alert.remove.fail">ファイル削除に失敗しました。</entry>
+		
+	<entry key="views.transcript.button.localFileUpload">ローカルファイルのアップロード</entry>
+	<entry key="views.transcript.button.remove">分配ファイル削除</entry>
+	<entry key="views.transcript.button.division">分配</entry>
+	<entry key="views.transcript.button.dataset">データセット作成</entry>
+	<entry key="views.transcript.button.transcript.save">転写貯蔵</entry>
+	<entry key="views.transcript.button.transcript.modify">転写受精</entry>
+	<entry key="views.transcript.button.transcript.del">転写削除</entry>
+	<entry key="views.transcript.button.close">閉じる</entry>
+		
+	<entry key="views.transcript.alert.noFile">ファイルがありません。</entry>
+	<entry key="views.transcript.alert.noTranscript">転写された内容がありません。</entry>
+	<entry key="views.transcript.alert.noTranscript.cust">全社された顧客の会話内容がありません。</entry>
+	<entry key="views.transcript.alert.noTranscript.agent">転写したカウンセラーの会話内容がありません。</entry>
+		
+	<entry key="views.transcript.alert.transcript.save.success">転写内容が保存されました。</entry>
+	<entry key="views.transcript.alert.transcript.save.fail">全社内容の保存に失敗しました。</entry>
+		
+	<entry key="views.transcript.alert.transcript.modify.success">転写内容が修正されました。</entry>
+	<entry key="views.transcript.alert.transcript.modify.fail">全社内容の修正に失敗しました。</entry>
+		
+	<entry key="views.transcript.alert.transcript.del.success">転写内容が削除されました。</entry>
+	<entry key="views.transcript.alert.transcript.del.fail">全社内容の削除に失敗しました。</entry>
+	<entry key="views.stt.alert.del.success">データセットが削除されました。</entry>
+	<entry key="views.stt.alert.del.fail">データセットの削除に失敗しました。</entry>
+		
+	<entry key="views.transcript.confirm.transcript.save">現在のファイルの転写内容を保存しますか?</entry>
+	<entry key="views.transcript.confirm.transcript.modify">現在のファイルの転写内容を修正しますか?</entry>
+	<entry key="views.transcript.confirm.transcript.del">現在のファイルの転写内容を削除しますか?</entry>
+		
+	<entry key="views.transcript.alert.noTranscriptFile">要請したファイルの中に、転写されていないファイルが存在します。</entry>
+		
+	<entry key="views.transcript.title.list">転写ファイルリスト</entry>
+	<entry key="views.transcript.label.modelStatus">進行状態</entry>
+	
+	<entry key="views.transcript.label.msg1">ローカルファイルのアップロード</entry>
+	<entry key="views.transcript.label.msg2">ファイルを選択してください。</entry>
+	<entry key="views.transcript.label.msg3">ファイル探し</entry>
+	<entry key="views.transcript.label.msg4">アップロード</entry>
+	<entry key="views.transcript.alert.msg1">ファイルが存在しません。</entry>
+	<entry key="views.transcript.alert.msg2">ファイル形式が正しくありません。\n（アップロード可能な形式:mp3/mp4/wav）</entry>
+	<entry key="views.transcript.alert.msg3">ファイル形式が正しくありません。\n(アップロード可能な形式:txt)</entry>	
+	
+	<entry key="views.transcript.search.rLearningModel">モデルジェネレータ</entry>
+		
+	<entry key="views.search.form.fieldset.fDataset">データセット</entry>
+	<entry key="views.search.form.fieldset.fModelName">モデル情報</entry>
+	<entry key="views.search.form.fieldset.fLDate">学習リクエストの日付</entry>
+	<entry key="views.search.form.fieldset.fLTime">学習リクエスト時間</entry>
+	<entry key="views.search.form.fieldset.fCDate">生成日付</entry>
+	<entry key="views.search.form.fieldset.fCTime">生成時間</entry>
+	<entry key="views.search.form.fieldset.fADate">適用日</entry>
+	<entry key="views.search.form.fieldset.fATime">適用時間</entry>
+	<entry key="views.search.form.fieldset.fSysInfo">システム情報</entry>
+	<entry key="views.search.form.fieldset.fModelInfo">モデル情報</entry>
+	<entry key="views.search.form.fieldset.fStatusInfo">ステータス情報</entry>
+	
+	<entry key="views.sttDataset.title.dataset">データセット作成</entry>
+	
+	<entry key="views.sttDataset.label.rDatasetName">データセット名</entry>
+	<entry key="views.sttDataset.label.rDatasetDate">生成日付</entry>
+	<entry key="views.sttDataset.label.rDatasetTime">生成時間</entry>
+	<entry key="views.sttDataset.label.rDatasetSize">データセットサイズ</entry>
+	
+	<entry key="views.sttDataset.button.learn">学習</entry>
+	<entry key="views.sttDataset.button.delete">削除</entry>
+	<entry key="views.sttDataset.button.dataset">生成</entry>
+	
+	<entry key="views.sttDataset.search.R_DATASET_NAME">データセット名</entry>
+	
+	<entry key="views.sttDataset.alert.msg1">データセット名を入力してください。</entry>
+	<entry key="views.sttDataset.alert.msg2">登録済みのデータ3名です。</entry>
+	<entry key="views.sttDataset.alert.msg3">データセットを作成しました。</entry>
+	<entry key="views.sttDataset.alert.msg4">データセット作成に失敗しました。</entry>
+	
+	<entry key="views.sttResult.label.all">全体</entry>
+	<entry key="views.sttModel.title.model">モデル作成</entry>
+		
+	<entry key="views.sttModel.label.rCteateDate">学習リクエストの日付</entry>
+	<entry key="views.sttModel.label.rCteateTime">学習リクエスト時間</entry>
+	<entry key="views.sttModel.label.rStartDate">学習開始日</entry>
+	<entry key="views.sttModel.label.rStartTime">学習開始時間</entry>
+	<entry key="views.sttModel.label.rEndDate">学習終了日</entry>
+	<entry key="views.sttModel.label.rEndTime">学習終了時間</entry>
+	<entry key="views.sttModel.label.rType">モデルタイプ</entry>
+	<entry key="views.sttModel.label.rModelName">モデル名</entry>
+	<entry key="views.sttModel.label.rBaseModel">ベースモデル</entry>
+	<entry key="views.sttModel.label.rDataTotalCount">データ個数</entry>
+	<entry key="views.sttModel.label.rDataTotalTime">総時間</entry>
+	<entry key="views.sttModel.label.rWorkStatus">学習状態</entry>
+	<entry key="views.sttModel.label.rWorkStatusMsg">学習状態メッセージ</entry>
+	<entry key="views.sttModel.label.rRecogRate">認識率</entry>
+	<entry key="views.sttModel.label.rRecogRateMsg">認識率メッセージ</entry>
+	<entry key="views.sttModel.label.rDatasetName">データセット名</entry>
+	<entry key="views.sttModel.label.all">全体</entry>
+	<entry key="views.sttModel.label.am">音響モデル</entry>
+	<entry key="views.sttModel.label.lm">言語モデル</entry>
+	<entry key="views.sttModel.label.recog">認識率テスト</entry>
+	<entry key="views.sttModel.label.f">学習完了</entry>
+	<entry key="views.sttModel.label.w">学習待機</entry>
+	<entry key="views.sttModel.label.r">学習中</entry>
+	<entry key="views.sttModel.label.e">学習失敗</entry>
+	<entry key="views.sttModel.label.rApply">適用</entry>
+	<entry key="views.sttModel.label.rApplyN">適用要請</entry>
+	<entry key="views.sttModel.label.rApplyY">モデル適用</entry>
+	<entry key="views.sttModel.label.server">サーバー</entry>
+	<entry key="views.sttModel.label.applyServer">適用サーバー</entry>
+	<entry key="views.sttModel.label.allServer">全サーバー</entry>
+	
+	<entry key="views.sttModel.search.R_MODEL_NAME">モデル名</entry>
+	<entry key="views.sttModel.search.R_TYPE">モデルタイプ</entry>
+	<entry key="views.sttModel.search.R_WORK_STATUS">学習状態</entry>
+		
+	<entry key="views.sttModel.alert.msg1">リクエスト日を次の形式に合わせて入力してください!\\n例)yyy-mm-dd</entry>
+	<entry key="views.sttModel.alert.msg2">選択されたモデルがありません。</entry>
+	<entry key="views.sttModel.alert.msg3">モデル名を入力してください。</entry>
+	<entry key="views.sttModel.alert.msg4">モデルタイプを選択してください。</entry>
+	<entry key="views.sttModel.alert.msg5">登録済みのモデル名です。</entry>
+	<entry key="views.sttModel.alert.msg6">学習要請に成功しました。</entry>
+	<entry key="views.sttModel.alert.msg7">学習の要請に失敗しました。</entry>
+	<entry key="views.sttModel.alert.msg8">モデル適用要請を完了しました。</entry>
+	<entry key="views.sttModel.alert.msg9">モデル適用の要請に失敗しました。</entry>
+	<entry key="views.sttModel.alert.msg10">適用解除の要請を完了しました。</entry>
+	<entry key="views.sttModel.alert.msg11">適用解除の要請に失敗しました。</entry>
+	<entry key="views.sttModel.alert.msg12">他のモデル名を使ってください。</entry>
+	<entry key="views.sttModel.alert.msg13">適用するモデルを選択してください。</entry>
+		
+	<entry key="views.sttModel.confirm.remove">選択したモデルを削除しますか?\\n 該当モデルを参照するモデルがすべて削除されます。</entry>
+	<entry key="views.sttModel.confirm.msg1">すでに適用されているモデルがある場合は、そのアプリケーション モデルが変更されます。</entry>
+	<entry key="views.sttModel.confirm.msg2">適用されたモデルを解除しますか?</entry>
+		
+	<entry key="views.sttModel.button.modelRemove">選択モデルの削除</entry>
+
+	<entry key="views.sttEnginState.label.rSysCode">システムコード</entry>
+	<entry key="views.sttEnginState.label.rSysName"></entry>
+	<entry key="views.sttEnginState.label.rSysIp">IP</entry>
+	<entry key="views.sttEnginState.label.rUpdateReqDate"></entry>
+	<entry key="views.sttEnginState.label.rUpdateReqTime"></entry>
+	<entry key="views.sttEnginState.label.rUpdateProcDate"></entry>
+	<entry key="views.sttEnginState.label.rUpdateProcTime"></entry>
+	<entry key="views.sttEnginState.label.rModelName">モデル名</entry>
+	<entry key="views.sttEnginState.label.rType">モデルタイプ</entry>
+	<entry key="views.sttEnginState.label.rWorkState">状態</entry>
+	<entry key="views.sttEnginState.label.r">適用中</entry>
+	<entry key="views.sttEnginState.label.u">アップデート中</entry>
+	<entry key="views.sttEnginState.label.e">適用失敗</entry>
+	<entry key="views.sttEnginState.label.am">音響モデル</entry>
+	<entry key="views.sttEnginState.label.lm">言語モデル</entry>
+	
+	<entry key="views.sttEnginState.search.R_SYS_CODE">システムコード</entry>
+	<entry key="views.sttEnginState.search.R_SYS_IP">IP</entry>
+	<entry key="views.sttEnginState.search.R_MODEL_NAME">モデル名</entry>
+	<entry key="views.sttEnginState.search.R_TYPE">モデルタイプ</entry>
+	<entry key="views.sttEnginState.search.R_WORK_STATUS">状態</entry>
+	
+</properties>

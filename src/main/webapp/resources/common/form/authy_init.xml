@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+		<column width="240" type="ro" align="center" sort="na" color="white"><![CDATA[<div style='text-align:center;line-height:50px;'>management.access.title.groupName</div>]]></column>
+		<column width="240" type="ro" align="center" sort="na"><![CDATA[<div style='text-align:center;line-height:50px;'>management.access.title.menuName</div>]]></column>
+		<column width="70" type="combo" align="center" sort="na" editable="false" source="contextPath/opt/combo_option.xml?comboType=grade"><![CDATA[<div style='text-align:center;'>management.access.title.access</div>]]></column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="0" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="60" type="ch" align="center" sort="na">#cspan</column>
+		<column width="0" type="ro" hidden="true">programeCode</column>
+		<afterInit>
+			<call command="attachHeader"><param><![CDATA[#rspan,#rspan,<div style='text-align:center;'>management.access.title.range</div>,<div style='text-align:center;'>management.access.title.read</div>,<div style='text-align:center;'>management.access.title.write</div>,<div style='text-align:center;'>management.access.title.modi</div>,<div style='text-align:center;'>management.access.title.delete</div>,<div style='text-align:center;'>management.access.title.listen</div>,<div style='text-align:center;'>management.access.title.download</div>,<div style='text-align:center;'>management.access.title.excel</div>,<div style='text-align:center;'>management.access.title.masking</div>,<div style='text-align:center;'>management.access.title.prerecipt</div>,<div style='text-align:center;'>management.access.title.recipt</div>,<div style='text-align:center;'>management.access.title.approve</div>,<div style='text-align:center;'>header.menu.label.downloadApproveInit</div>,<div style='text-align:center;'>management.access.title.encyn</div>,<div style='text-align:center;'>management.access.title.upload</div>,<div style='text-align:center;'>management.access.title.bestcall</div>,<div style='text-align:center;'>management.access.title.feedback.modify</div>,#rspan]]></param></call>
+		</afterInit>
+	</head>
+	<!-- 모든 대메뉴는 숨김 처리 되어야 한다. -->
+	<!-- 숨김 메뉴가 따로 있는 이유 : 권한 추가 시 하기 리스트를 기반으로 추가가 된다. -->
+	<!-- 나중에 생각 있으면 E1001 기준으로 쿼리 긁어다가 하는 방안으로..해보셈..ㅎㅎ;; insert into select ~~~ -->
+
+	
+
+	<!-- 조회 및 청취 소메뉴 -->
+	<row id="P10002"  range="1">
+		<cell class="firstColumn">header.menu.label.searchNListen</cell>
+		<cell>header.menu.label.searchNListen</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell programeCode="1">P10002</cell>
+	</row>
+
+	<!-- 조회 및 청취 메모 기능 사용 범위 및 작성권한 -->
+	<row id="P20001" range="1">
+		<cell>header.menu.label.searchNListen</cell>
+		<cell>header.menu.label.searchNListenMemo</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P20001</cell>
+	</row>
+
+	
+
+	<!-- 전체 콜 통계 -->
+	<row id="P10004" range="1">
+		<cell  class="firstColumn">header.menu.label.reportNDashboard</cell>
+		<cell>header.menu.label.callAll</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell style='color:red;'>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10004</cell>
+	</row>
+
+	<!-- 사용자별 콜 통계 -->
+	<!-- <row id="P10005" range="1">
+		<cell>header.menu.label.reportNDashboard</cell>
+		<cell>header.menu.label.callUser</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10005</cell>
+	</row> -->
+	
+	<!-- 모바일 콜 통계 -->
+	<!-- <row id="P10059" range="1">
+		<cell>header.menu.label.reportNDashboard</cell>
+		<cell>header.menu.label.callMobile</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10059</cell>
+	</row> -->
+
+	<!-- 사용자 대시보드 -->
+	<!-- <row id="P10006" range="1" >
+		<cell>header.menu.label.reportNDashboard</cell>
+		<cell>header.menu.label.callDayTimeUser</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10006</cell>
+	</row> -->
+
+	<!-- 대시보드 -->
+	<!-- <row id="P10007" >
+		<cell>header.menu.label.reportNDashboard</cell>
+		<cell>header.menu.label.dashboard</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell >0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10007</cell>
+	</row> -->
+
+	<!-- 카드뷰  모니터링 -->
+	<!-- <row id="P10009" range="1">
+		<cell class="firstColumn">header.menu.label.monitoring</cell>
+		<cell>header.menu.label.realtimeMonitoring</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10009</cell>
+	</row> -->
+
+	<!-- 그리드 뷰  모니터링 -->
+	<!-- <row id="P10038" range="1">
+		<cell>header.menu.label.monitoring</cell>
+		<cell>header.menu.label.realtimeMonitoringGrid</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10038</cell>
+	</row> -->
+
+	<!-- 오피스 뷰  모니터링 -->
+	<!-- <row id="P10039" range="1">
+		<cell>header.menu.label.monitoring</cell>
+		<cell>header.menu.label.realtimeMonitoringOffice</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10039</cell>
+	</row> -->
+	
+	<!-- 도면  모니터링 -->
+	<!-- <row id="P10060" range="1">
+		<cell>header.menu.label.monitoring</cell>
+		<cell>header.menu.label.BluePrintMonitoring</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10060</cell>
+	</row> -->
+	
+	<!-- 서버  모니터링 -->
+	<!-- <row id="P10080" range="1">
+		<cell>header.menu.label.monitoring</cell>
+		<cell>header.menu.label.serverMonitoring</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10080</cell>
+	</row> -->
+	
+	<!-- 시스템  모니터링 -->
+	<!-- <row id="P10075" range="1">
+		<cell>header.menu.label.monitoring</cell>
+		<cell>header.menu.label.systemRealtimeMonitoring</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10075</cell>
+	</row> -->
+	
+	
+	<!-- 청취 및 다운로드 요청 관리 -->
+	<!-- <row id="P10027" range="1">
+		<cell class="firstColumn" >header.menu.label.approveList</cell>
+		<cell>header.menu.label.approveList</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10027</cell>
+	</row> -->
+	
+	<!-- 마이폴더 -->
+	<!-- <row id="P10041" >
+		<cell class="firstColumn">header.menu.label.myFolderMenu</cell>
+		<cell>header.menu.label.myFolderMenu</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10041</cell>
+	</row> -->
+	
+	<!-- 우수콜 관리 -->
+	<!-- <row id="P10048" range="1" >
+		<cell class="firstColumn">header.menu.label.BestCall</cell>
+		<cell>header.menu.label.BestCallManage</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10048</cell>
+	</row> -->
+	
+	<!-- 우수콜 공유 -->
+	<!-- <row id="P10049" >
+		<cell>header.menu.label.BestCall</cell>
+		<cell>header.menu.label.BestCallShare</cell>
+		<cell class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10049</cell>
+	</row> -->
+
+	<!-- 개별 업로드 현황 -->
+	<!-- <row id="P10045" range="1" >
+		<cell class="firstColumn">header.menu.label.uploadStatus</cell>
+		<cell>header.menu.label.individualUploadstatus</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10045</cell>
+	</row> -->
+
+	<!-- 대면녹취 -->
+	<row id="P20005" >
+		<cell class="firstColumn">header.menu.label.faceRecording</cell>
+		<cell>header.menu.label.scriptRegistration</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P20005</cell>
+	</row>
+	<!-- 채널 관리 소메뉴-->
+	<!-- <row id="P10013">
+		<cell class="firstColumn">admin.menu.systemOption</cell>
+		<cell>admin.menu.li.systemOption.channel</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10013</cell>
+	</row> -->
+
+	<!-- 서버 관리 소메뉴 -->
+	<!-- <row id="P10014">
+		<cell>admin.menu.systemOption</cell>
+		<cell>admin.menu.li.systemOption.server</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10014</cell>
+	</row> -->
+
+	<!-- 채널별 모니터링 관리 -->
+	<!-- <row id="P10050" >
+		<cell>admin.menu.systemOption</cell>
+		<cell>admin.menu.li.systemOption.channelMonitoring</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10050</cell>
+	</row> -->
+
+	<!-- 교환기 연동정보 소메뉴 -->
+	<!-- <row id="P10015" >
+		<cell>admin.menu.systemOption</cell>
+		<cell >admin.menu.li.systemOption.switchboard</cell>
+		<cell class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10015</cell>
+	</row> -->
+	
+	<!-- 자번호 관리 -->
+	<!-- <row id="P10069" >
+		<cell>admin.menu.systemOption</cell>
+		<cell >admin.menu.li.systemOption.subNumber</cell>
+		<cell class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10069</cell>
+	</row> -->
+	
+	<!-- 전화번호 맵핑 -->
+	<!-- <row id="P10070" >
+		<cell>admin.menu.systemOption</cell>
+		<cell >admin.menu.li.systemOption.phoneMapping</cell>
+		<cell class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10070</cell>
+	</row> -->
+	
+	<!-- 내부망 관리 -->
+	<!-- <row id="P10076" >
+		<cell>admin.menu.systemOption</cell>
+		<cell >admin.menu.li.systemOption.publicIp</cell>
+		<cell class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10076</cell>
+	</row> -->
+	
+	<!-- STT 서버 관리 소메뉴 -->
+	<!-- <row id="P10082">
+		<cell>admin.menu.systemOption</cell>
+		<cell>admin.menu.li.systemOption.sttServer</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10082</cell>
+	</row> -->
+
+	<!-- 이력 관리 소메뉴 -->
+	<row id="P10018">
+		<cell  class="firstColumn">admin.menu.systemManage</cell>
+		<cell>admin.menu.li.systemManage.log</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10018</cell>
+	</row>
+
+	<!-- 상세 관리 소메뉴 -->
+	<!-- <row id="P10017" >
+		<cell>admin.menu.systemManage</cell>
+		<cell>admin.menu.li.systemManage.details</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10017</cell>
+	</row> -->
+	
+	<!-- 로그 뷰 소메뉴 -->
+	<!-- <row id="P10019" >
+		<cell>admin.menu.systemManage</cell>
+		<cell>admin.menu.li.systemManage.logView</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10019</cell>
+	</row> -->
+
+	<!-- 패킷 에러 로그 소메뉴 -->
+	<!-- <row id="P10085" >
+		<cell>admin.menu.systemManage</cell>
+		<cell>admin.menu.li.systemManage.packetLogManage</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10085</cell>
+	</row> -->
+	
+	<!-- 3차 백업 관리 소메뉴 -->
+	<!-- <row id="P10087" >
+		<cell>admin.menu.systemManage</cell>
+		<cell>admin.menu.li.systemManage.fileRecoverManage</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10087</cell>
+	</row> -->
+	
+	<!-- 큐 관리 소메뉴 -->
+	<!-- <row id="P10020" >
+		<cell>admin.menu.systemManage</cell>
+		<cell>admin.menu.li.systemManage.queue</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10020</cell>
+	</row> -->
+
+	<!-- 백업 관리 소메뉴 -->
+	<!-- <row id="P10021" >
+		<cell>admin.menu.systemManage</cell>
+		<cell>admin.menu.li.systemManage.backupSearch</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10021</cell>
+	</row> -->
+
+	<!-- 녹취 삭제 관리 소메뉴 -->
+	<!-- <row id="P10062" >
+		<cell>admin.menu.schedulerManage</cell>
+		<cell>admin.menu.li.schedulerManage.deleteRecfile</cell>		
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10062</cell>
+	</row> -->
+	
+	<!-- 녹취 백업 관리 소메뉴 -->
+	<!-- <row id="P10066" >
+		<cell>admin.menu.schedulerManage</cell>
+		<cell>admin.menu.li.schedulerManage.backupRecfile</cell>		
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10066</cell>
+	</row> -->
+	
+	<!-- DB 동기화 스케줄러 -->
+	<!-- <row id="P10072" >
+		<cell>admin.menu.schedulerManage</cell>
+		<cell>admin.menu.li.schedulerManage.dbManage</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10072</cell>
+	</row> -->
+	
+	<!-- 녹취 대상 사용자 관리 소메뉴 -->
+	<row id="P10043" range="1">
+		<cell class="firstColumn">admin.menu.userManage</cell>
+		<cell>admin.menu.li.userManage.userManageRec</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10043</cell>
+	</row>
+
+	<!-- 권한 관리 소메뉴 -->
+	<row id="P10024">
+		<cell>admin.menu.userManage</cell>
+		<cell>admin.menu.li.userManage.authyManage</cell>
+		<cell class="myCell" disabled="1"></cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10024</cell>
+	</row>
+	
+	<!-- 코드  관리 소메뉴 -->
+	<row id="P10037" >
+		<cell>admin.menu.userManage</cell>
+		<cell>admin.menu.li.userManage.comboList</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10037</cell>
+	</row>
+
+	<!-- 허용범위 관리 소메뉴 -->
+	<!-- <row id="P10061">
+		<cell>admin.menu.userManage</cell>
+		<cell>admin.menu.li.userManage.allowableRangeManage</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10061</cell>
+	</row> -->
+
+	<!-- 조회 및 청취 사용자 정의 소메뉴 -->
+<!-- 	<row id="P10026"> -->
+<!-- 		<cell>admin.menu.userManage</cell> -->
+<!-- 		<cell>admin.menu.li.userManage.userDefinition</cell> -->
+<!-- 		<cell  class="myCell" disabled="1"></cell> -->
+<!-- 		<cell>0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell>0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell disabled="1">0</cell> -->
+<!-- 		<cell programeCode="1">P10026</cell> -->
+<!-- 	</row> -->
+
+
+	<!--평가 항목.. -->
+	<!-- <row id="P10054"  >
+		<cell class="firstColumn">header.menu.label.evaluation</cell>
+		<cell>header.menu.label.itemManage</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10054</cell>
+	</row> -->
+
+	<!-- 평가지 -->
+	<!-- <row id="P10055" >
+		<cell>header.menu.label.evaluation</cell>
+		<cell>header.menu.label.sheetManage</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10055</cell>
+	</row> -->
+
+	<!--캠페인-->
+	<!-- <row id="P10056" >
+		<cell>header.menu.label.evaluation</cell>
+		<cell>header.menu.label.campaignManage</cell>
+		<cell  class="myCell" disabled="1" must="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10056</cell>
+	</row> -->
+
+	<!-- 평가통계-->
+	<!-- <row id="P10058" >
+		<cell>header.menu.label.evaluation</cell>
+		<cell>header.menu.label.evaluationStatistics</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10058</cell>
+	</row> -->
+
+	<!-- 평가 조회-->
+	<!-- <row id="P10053" range="1" >
+		<cell>header.menu.label.evaluation</cell>
+		<cell>header.menu.label.evaluationList</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell programeCode="1">P10053</cell>
+	</row> -->
+
+	<!-- 전사 관리 -->
+	<!-- <row id="P10064" range="1">
+		<cell class="firstColumn">header.menu.label.transcript</cell>
+		<cell>header.menu.label.transcript</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10064</cell>
+	</row> -->
+	
+	<!-- 학습 관리 -->
+	<!-- <row id="P10067" range="1">
+		<cell>header.menu.label.transcript</cell>
+		<cell>header.menu.label.learningTranscript</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10067</cell>
+	</row> -->
+	
+	<!-- sttModel 관리 -->
+	<!-- <row id="P10068" range="1">
+		<cell>header.menu.label.transcript</cell>
+		<cell>header.menu.label.sttModel</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10068</cell>
+	</row> -->
+	
+	<!-- sttModel 관리 -->
+	<!-- <row id="P10073" range="1">
+		<cell>header.menu.label.transcript</cell>
+		<cell>header.menu.label.sttEnginState</cell>
+		<cell></cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10073</cell>
+	</row> -->
+	
+	<!-- 플레이어 설정 -->
+	<row id="P10034" player="Y" >
+		<cell class="firstColumn" >header.menu.label.playerSetting</cell>
+		<cell>header.menu.label.playerUnderMenu</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell >0</cell>
+		<cell >0</cell>
+		<cell >0</cell>
+		<cell >0</cell>
+		<cell >0</cell>
+		<cell >0</cell>
+		<cell >0</cell>
+		<cell disabled="1">0</cell>
+		<cell >0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10034</cell>
+	</row>
+	
+	<!-- 플레이어 구간 메모 설정-->
+	<row id="P10035" range="1" >
+		<cell class="firstColumn">header.menu.label.playerSetting</cell>
+		<cell>header.menu.label.playersectionMenu</cell>
+		<cell> </cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P10035</cell>
+	</row>
+	
+	<!-- 플레이어 구간 메모 설정-->
+	<row id="P20002" calltype="Y">
+		<cell class="firstColumn">header.menu.label.searchNListenCallType</cell>
+		<cell>header.menu.label.searchNListenCallType</cell>
+		<cell class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell>0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P20002</cell>
+	</row>
+	
+	<!-- 조회 및 청취 콜 타입-->
+	<row id="P20003" >
+		<cell class="firstColumn">header.menu.label.searchNDate</cell>
+		<cell>header.menu.label.searchNDate</cell>
+		<cell  class="myCell" disabled="1"></cell>
+		<cell>0</cell>
+		<cell class="recDate"></cell>
+		<cell class="recDateBtn"></cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell disabled="1">0</cell>
+		<cell programeCode="1">P20003</cell>
+	</row>
+</rows>

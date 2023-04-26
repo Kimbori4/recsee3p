@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>업로드 상태(uploadstatus) 화면용 메세지 정의</comment>
+	
+	
+	<entry key="uploadstatus.label.indivUpStat">Individual Upload Status</entry>
+	<entry key="uploadstatus.label.date">Recording Date</entry>
+	<entry key="uploadstatus.label.sDate">Start Date</entry>
+	<entry key="uploadstatus.label.eDate">End Date</entry>
+	<entry key="uploadstatus.label.timeFrom">Time(From)</entry>
+	<entry key="uploadstatus.label.all">All</entry>
+	<entry key="uploadstatus.label.timeTo">Time(To)</entry>
+	<entry key="uploadstatus.label.recInfo">Recording Information</entry>
+	<entry key="uploadstatus.label.extNum">Extension Number</entry>
+	<entry key="uploadstatus.label.custPhone1">Customer Phone Number</entry>
+	<entry key="uploadstatus.label.status">Status</entry>
+	<entry key="uploadstatus.label.workType">Type of Work</entry>
+	<entry key="uploadstatus.label.batch">Batch</entry>
+	<entry key="uploadstatus.label.direct">Direct</entry>
+	<entry key="uploadstatus.label.uploadStatus">Upload status</entry>
+	<entry key="uploadstatus.label.transCompl">Transfer complete</entry>
+	<entry key="uploadstatus.label.noRec">No Recording Files</entry>
+	<entry key="uploadstatus.label.retry1">Retry (primary)</entry>
+	<entry key="uploadstatus.label.retry2">Retry (Secondary)</entry>
+	<entry key="uploadstatus.label.transFailInfo">Transfer fail(Information)</entry>
+	<entry key="uploadstatus.label.transFailFile">Transfer fail(File)</entry>
+	<entry key="uploadstatus.label.waitTrans">Waiting for transfer</entry>
+	<entry key="uploadstatus.label.notSend">Do not Send</entry>
+	<entry key="uploadstatus.label.search">Search</entry>
+	
+	
+	<entry key="uploadstatus.grid.num">Num</entry>
+	<entry key="uploadstatus.grid.recDate">Recording Date</entry>
+	<entry key="uploadstatus.grid.recTime">Recording Time</entry>
+	<entry key="uploadstatus.grid.extNum">Extension number</entry>
+	<entry key="uploadstatus.grid.workType">Type of Work</entry>
+	<entry key="uploadstatus.grid.result">Result</entry>
+	<entry key="uploadstatus.grid.firstTrySTime">First Try(Start Time)</entry>
+	<entry key="uploadstatus.grid.firstTryFTime">First Try(Finish Time)</entry>
+	<entry key="uploadstatus.grid.secondTrySTime">Second Try(Start Time)</entry>
+	<entry key="uploadstatus.grid.secondTryFTime">Second Try(Finish Time)</entry>
+	<entry key="uploadstatus.grid.thirdTrySTime">Third Try(Start Time)</entry>
+	<entry key="uploadstatus.grid.thirdTryFTime">Third Try(Finish Time))</entry>
+	<entry key="uploadstatus.grid.directTrans">Direct transfer</entry>
+	<entry key="uploadstatus.grid.direct">Direct</entry>
+	<entry key="uploadstatus.grid.batch">Batch</entry>
+	<entry key="uploadstatus.grid.transCompl">Transfer complete</entry>
+	<entry key="uploadstatus.grid.noRec">No Recording Files</entry>
+	<entry key="uploadstatus.grid.retry1">Retry (primary)</entry>
+	<entry key="uploadstatus.grid.retry2">Retry (Secondary)</entry>
+	<entry key="uploadstatus.grid.transFailInfo">Transfer fail(Information)</entry>
+	<entry key="uploadstatus.grid.transFailFile">Transfer fail(File)</entry>
+	<entry key="uploadstatus.grid.waitTrans">Waiting for transfer</entry>
+	<entry key="uploadstatus.grid.notSend">Do not Send</entry>
+	<entry key="uploadstatus.grid.transfer">Transfer</entry>
+	
+	
+	<entry key="uploadstatus.alert.someReqFail">Some request failed.</entry>
+	<entry key="uploadstatus.alert.reqTrans">requested immediately for transfer.</entry>
+	<entry key="uploadstatus.alert.transReqFail">Immediate transfer request failed.</entry>
+
+</properties>

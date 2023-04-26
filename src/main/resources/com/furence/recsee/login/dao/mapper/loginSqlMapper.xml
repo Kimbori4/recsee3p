@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.furence.recsee.login.dao.LoginDao">
+
+	<!-- 로그인 유저 정보를 저장할 맵 설정 (M_USER_INFO 테이블) -->
+	<resultMap id="LoginMap" type="com.furence.recsee.common.model.LoginVO">
+		<result property="userId" column="R_USER_ID" />
+		<result property="userName" column="R_USER_NAME" />
+		<result property="userPass" column="R_PASSWORD" />
+		<result property="bgCode" column="R_BG_CODE" />
+		<result property="mgCode" column="R_MG_CODE" />
+		<result property="sgCode" column="R_SG_CODE" />
+
+		<result property="bgCodeName" column="R_BG_NAME" />
+		<result property="mgCodeName" column="R_MG_NAME" />
+		<result property="sgCodeName" column="R_SG_NAME" />
+
+		<result property="userLevel" column="R_USER_LEVEL" />
+		<result property="skinCode" column="R_SKIN_CODE" />
+		<result property="regiDate" column="R_REGI_DATE" />
+		<result property="pwEditDate" column="R_PWEDIT_DATE" />
+		<result property="shortRange" column="R_SHORT_RANGE" />
+		<result property="middleRange" column="R_MIDDLE_RANGE" />
+		<result property="longRange" column="R_LONG_RANGE" />
+		<result property="userEmail" column="R_USER_EMAIL" />
+		<result property="extNo" column="R_EXT_NO" />
+		<result property="tryCount" column="R_TRY_COUNT"/>
+		<result property="lastLoginDate" column="R_LAST_LOGIN_DATE"/>
+		<result property="lockYn" column="R_LOCK_YN"/>
+
+		<result property="empId" column="EMP_ID"/>
+		<result property="userPhone" column="USER_PHONE"/>
+		<result property="ctiId" column="CTI_ID"/>
+		<result property="userSex" column="USER_SEX"/>
+        <result column="R_CLIENT_IP" jdbcType="VARCHAR" property="clientIp" />
+
+	</resultMap>
+
+    <!-- 접속 정보 조회 -->
+    <select id="selectUserInfo" databaseId="postgres"  parameterType="com.furence.recsee.common.model.LoginVO" resultMap="LoginMap">
+    	SELECT
+    			R_USER_ID
+    		,	R_CTI_ID
+    		,	R_USER_NAME
+    		,	A.R_BG_CODE
+    		,	B.R_BG_NAME
+    		,	A.R_MG_CODE
+    		,	C.R_MG_NAME
+    		,	A.R_SG_CODE
+    		,	D.R_SG_NAME
+    		,	R_EXT_NO
+    		,	R_EMP_ID
+    		,	R_REGI_DATE
+    		,	R_USER_LEVEL
+    		,	R_PASSWORD
+    		,	R_CLIENT_KIND
+    		,	R_USER_SEX
+    		,	R_PWEDIT_DATE
+    		,	R_SHORT_RANGE
+    		,	R_MIDDLE_RANGE
+    		,	R_LONG_RANGE
+    		,	R_USER_EMAIL
+    		,	R_USER_PHONE
+    		,	R_SKIN_CODE
+    		,	R_TRY_COUNT
+    		, 	R_LOCK_YN
+    		,	CASE WHEN R_LAST_LOGIN_DATE IS NULL OR R_LAST_LOGIN_DATE = '' THEN TO_CHAR(NOW(),'yyyyMMdd') ELSE R_LAST_LOGIN_DATE END as R_LAST_LOGIN_DATE
+            ,   R_CLIENT_IP
+    	FROM RS_RUSER_INFO a
+    	LEFT JOIN RS_BG_INFO B ON A.R_BG_CODE = B.R_BG_CODE
+		LEFT JOIN RS_MG_INFO C ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+		LEFT JOIN RS_SG_INFO D ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+    	<where>
+    			R_USER_ID = #{userId} and r_use_yn='Y'
+    		<if test = "userPass != null">
+    		AND R_PASSWORD = #{userPass}
+    		</if>
+    	</where>
+    </select>
+	<select id="selectUserInfo" databaseId="sqlserver"  parameterType="com.furence.recsee.common.model.LoginVO" resultMap="LoginMap">
+    	SELECT
+    			R_USER_ID
+    		,	R_CTI_ID
+    		,	R_USER_NAME
+    		,	A.R_BG_CODE
+    		,	B.R_BG_NAME
+    		,	A.R_MG_CODE
+    		,	C.R_MG_NAME
+    		,	A.R_SG_CODE
+    		,	D.R_SG_NAME
+    		,	R_EXT_NO
+    		,	R_EMP_ID
+    		,	R_REGI_DATE
+    		,	R_USER_LEVEL
+    		,	R_PASSWORD
+    		,	R_CLIENT_KIND
+    		,	R_USER_SEX
+    		,	R_PWEDIT_DATE
+    		,	R_SHORT_RANGE
+    		,	R_MIDDLE_RANGE
+    		,	R_LONG_RANGE
+    		,	R_USER_EMAIL
+    		,	R_USER_PHONE
+    		,	R_SKIN_CODE
+    		,	R_TRY_COUNT
+    		, 	R_LOCK_YN
+    		,	CASE WHEN R_LAST_LOGIN_DATE IS NULL OR R_LAST_LOGIN_DATE = '' THEN CONVERT(varchar(8),GETDATE(),112) ELSE R_LAST_LOGIN_DATE END as R_LAST_LOGIN_DATE
+             ,   R_CLIENT_IP
+    	FROM RS_RUSER_INFO a
+    	LEFT JOIN RS_BG_INFO B ON A.R_BG_CODE = B.R_BG_CODE
+		LEFT JOIN RS_MG_INFO C ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+		LEFT JOIN RS_SG_INFO D ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+    	<where>
+    			R_USER_ID = #{userId} and r_use_yn='Y'
+    		<if test = "userPass != null">
+    		AND convert(varchar(8000),isnull(r_password,'')) = #{userPass}
+    		</if>
+    	</where>
+    </select>
+	<select id="selectUserInfo" databaseId="oracle"  parameterType="com.furence.recsee.common.model.LoginVO" resultMap="LoginMap">
+    	SELECT
+    			R_USER_ID
+    		,	R_CTI_ID
+    		,	R_USER_NAME
+    		,	A.R_BG_CODE
+    		,	B.R_BG_NAME
+    		,	A.R_MG_CODE
+    		,	C.R_MG_NAME
+    		,	A.R_SG_CODE
+    		,	D.R_SG_NAME
+    		,	R_EXT_NO
+    		,	R_EMP_ID
+    		,	R_REGI_DATE
+    		,	R_USER_LEVEL
+    		,	R_PASSWORD
+    		,	R_CLIENT_KIND
+    		,	R_USER_SEX
+    		,	R_PWEDIT_DATE
+    		,	R_SHORT_RANGE
+    		,	R_MIDDLE_RANGE
+    		,	R_LONG_RANGE
+    		,	R_USER_EMAIL
+    		,	R_USER_PHONE
+    		,	R_SKIN_CODE
+    		,	R_TRY_COUNT
+    		, 	R_LOCK_YN
+    		,	CASE WHEN R_LAST_LOGIN_DATE IS NULL OR R_LAST_LOGIN_DATE = '' THEN TO_CHAR(CURRENT_TIMESTAMP,'yyyyMMdd') ELSE R_LAST_LOGIN_DATE END as R_LAST_LOGIN_DATE
+            ,   R_CLIENT_IP
+    	FROM RS_RUSER_INFO a
+    	LEFT JOIN RS_BG_INFO B ON A.R_BG_CODE = B.R_BG_CODE
+		LEFT JOIN RS_MG_INFO C ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+		LEFT JOIN RS_SG_INFO D ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+    	<where>
+    			R_USER_ID = #{userId} and r_use_yn='Y'
+    		<if test = "userPass != null">
+    		AND R_PASSWORD = #{userPass}
+    		</if>
+    	</where>
+    </select>
+	
+    <select id="selectAuserInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.LoginVO" resultMap="LoginMap">
+    	SELECT
+    			R_USER_ID
+    		,	R_CTI_ID
+    		,	R_USER_NAME
+    		,	A.R_BG_CODE
+    		,	B.R_BG_NAME
+    		,	A.R_MG_CODE
+    		,	C.R_MG_NAME
+    		,	A.R_SG_CODE
+    		,	D.R_SG_NAME
+    		,	R_EXT_NO
+    		,	R_EMP_ID
+    		,	R_REGI_DATE
+    		,	R_USER_LEVEL
+    		,	R_PASSWORD
+    		,	R_CLIENT_KIND
+    		,	R_USER_SEX
+    		,	R_PWEDIT_DATE
+    		,	R_SHORT_RANGE
+    		,	R_MIDDLE_RANGE
+    		,	R_LONG_RANGE
+    		,	R_USER_EMAIL
+    		,	R_USER_PHONE
+    		,	R_SKIN_CODE
+    		,	R_TRY_COUNT
+    		, 	R_LOCK_YN
+    		,	CASE WHEN R_LAST_LOGIN_DATE IS NULL OR R_LAST_LOGIN_DATE = '' THEN TO_CHAR(NOW(),'yyyyMMdd') ELSE R_LAST_LOGIN_DATE END
+            ,   R_CLIENT_IP
+    	FROM RS_AUSER_INFO a
+    	LEFT JOIN RS_BG_INFO B ON A.R_BG_CODE = B.R_BG_CODE
+		LEFT JOIN RS_MG_INFO C ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+		LEFT JOIN RS_SG_INFO D ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+    	<where>
+    		R_USER_ID = #{userId} and r_use_yn='Y'
+    		AND A.R_BG_CODE not in (
+    								SELECT R_CONFIG_VALUE
+									FROM RS_ETC_CONFIG
+									WHERE R_GROUP_KEY='CALLCENTER'
+										  AND R_CONFIG_KEY='CALLCENTER'
+								 )
+    		<if test = "userPass != null">
+    			AND R_PASSWORD = #{userPass}
+    		</if>
+    	</where>
+    </select>
+	<select id="selectAuserInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.LoginVO" resultMap="LoginMap">
+    	SELECT
+    			R_USER_ID
+    		,	R_CTI_ID
+    		,	R_USER_NAME
+    		,	A.R_BG_CODE
+    		,	B.R_BG_NAME
+    		,	A.R_MG_CODE
+    		,	C.R_MG_NAME
+    		,	A.R_SG_CODE
+    		,	D.R_SG_NAME
+    		,	R_EXT_NO
+    		,	R_EMP_ID
+    		,	R_REGI_DATE
+    		,	R_USER_LEVEL
+    		,	R_PASSWORD
+    		,	R_CLIENT_KIND
+    		,	R_USER_SEX
+    		,	R_PWEDIT_DATE
+    		,	R_SHORT_RANGE
+    		,	R_MIDDLE_RANGE
+    		,	R_LONG_RANGE
+    		,	R_USER_EMAIL
+    		,	R_USER_PHONE
+    		,	R_SKIN_CODE
+    		,	R_TRY_COUNT
+    		, 	R_LOCK_YN
+    		,	CASE WHEN R_LAST_LOGIN_DATE IS NULL OR R_LAST_LOGIN_DATE = '' THEN CONVERT(varchar(8),GETDATE(),112) ELSE R_LAST_LOGIN_DATE END
+            ,   R_CLIENT_IP
+    	FROM RS_AUSER_INFO a
+    	LEFT JOIN RS_BG_INFO B ON A.R_BG_CODE = B.R_BG_CODE
+		LEFT JOIN RS_MG_INFO C ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+		LEFT JOIN RS_SG_INFO D ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+    	<where>
+    		R_USER_ID = #{userId} and r_use_yn='Y'
+    		<!-- AND A.R_BG_CODE not in ( -->
+    		AND A.R_BG_CODE in (
+    								SELECT R_CONFIG_VALUE
+									FROM RS_ETC_CONFIG
+									WHERE R_GROUP_KEY='CALLCENTER'
+										  AND R_CONFIG_KEY='CALLCENTER'
+								 )
+    		<if test = "userPass != null">
+    			AND convert(varchar(8000),isnull(r_password,'')) = #{userPass}
+    		</if>
+    	</where>
+    </select>
+    <select id="selectAuserInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.LoginVO" resultMap="LoginMap">
+    	SELECT
+    			R_USER_ID
+    		,	R_CTI_ID
+    		,	R_USER_NAME
+    		,	A.R_BG_CODE
+    		,	B.R_BG_NAME
+    		,	A.R_MG_CODE
+    		,	C.R_MG_NAME
+    		,	A.R_SG_CODE
+    		,	D.R_SG_NAME
+    		,	R_EXT_NO
+    		,	R_EMP_ID
+    		,	R_REGI_DATE
+    		,	R_USER_LEVEL
+    		,	R_PASSWORD
+    		,	R_CLIENT_KIND
+    		,	R_USER_SEX
+    		,	R_PWEDIT_DATE
+    		,	R_SHORT_RANGE
+    		,	R_MIDDLE_RANGE
+    		,	R_LONG_RANGE
+    		,	R_USER_EMAIL
+    		,	R_USER_PHONE
+    		,	R_SKIN_CODE
+    		,	R_TRY_COUNT
+    		, 	R_LOCK_YN
+    		,	CASE WHEN R_LAST_LOGIN_DATE IS NULL OR R_LAST_LOGIN_DATE = '' THEN TO_CHAR(CURRENT_TIMESTAMP,'yyyyMMdd') ELSE R_LAST_LOGIN_DATE END
+            ,   R_CLIENT_IP
+    	FROM RS_AUSER_INFO a
+    	LEFT JOIN RS_BG_INFO B ON A.R_BG_CODE = B.R_BG_CODE
+		LEFT JOIN RS_MG_INFO C ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+		LEFT JOIN RS_SG_INFO D ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+    	<where>
+    		R_USER_ID = #{userId} and r_use_yn='Y'
+    		AND A.R_BG_CODE not in (
+    								SELECT R_CONFIG_VALUE
+									FROM RS_ETC_CONFIG
+									WHERE R_GROUP_KEY='CALLCENTER'
+										  AND R_CONFIG_KEY='CALLCENTER'
+								 )
+    		<if test = "userPass != null">
+    			AND R_PASSWORD = #{userPass}
+    		</if>
+    	</where>
+    </select>
+    <!-- 로그인 시도 횟수 업데이트 -->
+    <update id="updateTryCount" databaseId="postgres" parameterType="com.furence.recsee.common.model.LoginVO">
+    	UPDATE RS_RUSER_INFO
+    	SET R_TRY_COUNT = CASE WHEN R_TRY_COUNT IS NULL THEN 0 ELSE R_TRY_COUNT END +1
+    	WHERE R_USER_ID = #{userId};
+    	
+    	UPDATE RS_AUSER_INFO
+    	SET R_TRY_COUNT = CASE WHEN R_TRY_COUNT IS NULL THEN 0 ELSE R_TRY_COUNT END +1
+    	WHERE R_USER_ID = #{userId}
+    </update>
+    
+    <update id="updateTryCount" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.LoginVO">
+    	UPDATE RS_RUSER_INFO
+    	SET R_TRY_COUNT = CASE WHEN R_TRY_COUNT IS NULL THEN 0 ELSE R_TRY_COUNT END +1
+    	WHERE R_USER_ID = #{userId};
+    	
+    	UPDATE RS_AUSER_INFO
+    	SET R_TRY_COUNT = CASE WHEN R_TRY_COUNT IS NULL THEN 0 ELSE R_TRY_COUNT END +1
+    	WHERE R_USER_ID = #{userId}
+    </update>
+    
+     <update id="updateTryCount" databaseId="oracle" parameterType="com.furence.recsee.common.model.LoginVO">
+     <!-- { CALL -->
+     	DECLARE
+     	BEGIN
+     	
+    	UPDATE RS_RUSER_INFO
+    	SET R_TRY_COUNT = CASE WHEN R_TRY_COUNT IS NULL THEN 0 ELSE R_TRY_COUNT END +1
+    	WHERE R_USER_ID = #{userId}
+    	;
+    	UPDATE RS_AUSER_INFO
+    	SET R_TRY_COUNT = CASE WHEN R_TRY_COUNT IS NULL THEN 0 ELSE R_TRY_COUNT END +1
+    	WHERE R_USER_ID = #{userId};
+    	
+    	END;
+   <!--  } -->
+    </update>
+
+    <!-- 로그인 시 로그인날짜 및 시도횟수 초기화 -->
+    <update id="updateLastLoginDate" databaseId="postgres" parameterType="com.furence.recsee.common.model.LoginVO">
+    	UPDATE RS_RUSER_INFO
+    	SET
+    			R_TRY_COUNT = 0
+    		,	R_LAST_LOGIN_DATE =  TO_CHAR(now(),'yyyyMMdd')
+    	WHERE r_user_Id = #{userId};
+    	
+    	UPDATE RS_AUSER_INFO
+    	SET
+    			R_TRY_COUNT = 0
+    		,	R_LAST_LOGIN_DATE =  TO_CHAR(now(),'yyyyMMdd')
+    	WHERE r_user_Id = #{userId}
+    </update>
+     <update id="updateLastLoginDate" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.LoginVO">
+    	UPDATE RS_RUSER_INFO
+    	SET
+    			R_TRY_COUNT = 0
+    		,	R_LAST_LOGIN_DATE =  CONVERT(varchar(8),GETDATE(),112)
+    	WHERE r_user_Id = #{userId};
+    	
+    	UPDATE RS_AUSER_INFO
+    	SET
+    			R_TRY_COUNT = 0
+    		,	R_LAST_LOGIN_DATE =  CONVERT(varchar(8),GETDATE(),112)
+    	WHERE r_user_Id = #{userId}
+    </update>
+    <update id="updateLastLoginDate" databaseId="oracle" parameterType="com.furence.recsee.common.model.LoginVO">
+    	{CALL 
+		     DECLARE
+		     BEGIN
+		        UPDATE RS_RUSER_INFO
+    			SET
+    				R_TRY_COUNT = 0
+    			,	R_LAST_LOGIN_DATE =  TO_CHAR(CURRENT_TIMESTAMP,'yyyyMMdd')
+    			WHERE r_user_Id = #{userId};
+    			 
+		        UPDATE RS_AUSER_INFO
+    			SET
+    				R_TRY_COUNT = 0
+    			,	R_LAST_LOGIN_DATE =  TO_CHAR(CURRENT_TIMESTAMP,'yyyyMMdd')
+    			WHERE r_user_Id = #{userId}; 
+		     END 
+   		 } 
+    </update>
+    <update id="updateLastLoginDateAuser" databaseId="postgres" parameterType="com.furence.recsee.common.model.LoginVO">
+	   	UPDATE RS_RUSER_INFO
+	   	SET
+	   			R_TRY_COUNT = 0
+	   		,	R_LAST_LOGIN_DATE =  TO_CHAR(now(),'yyyyMMdd')
+	   	WHERE r_user_Id = #{userId};
+	   	
+	   UPDATE RS_AUSER_INFO
+	   	SET
+	   			R_TRY_COUNT = 0
+	   		,	R_LAST_LOGIN_DATE =  TO_CHAR(now(),'yyyyMMdd')
+	   	WHERE r_user_Id = #{userId}
+    </update>
+ 	<update id="updateLastLoginDateAuser" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.LoginVO">
+	   	UPDATE RS_RUSER_INFO
+	   	SET
+	   			R_TRY_COUNT = 0
+	   		,	R_LAST_LOGIN_DATE = CONVERT(varchar(8),GETDATE(),112)
+	   	WHERE r_user_Id = #{userId};
+	   	
+	   	UPDATE RS_RUSER_INFO
+	   	SET
+	   			R_TRY_COUNT = 0
+	   		,	R_LAST_LOGIN_DATE = CONVERT(varchar(8),GETDATE(),112)
+	   	WHERE r_user_Id = #{userId}
+    </update>
+    <update id="updateLastLoginDateAuser" databaseId="oracle" parameterType="com.furence.recsee.common.model.LoginVO">
+	   	{CALL 
+		     DECLARE
+		     BEGIN
+		        UPDATE RS_RUSER_INFO
+    			SET
+    				R_TRY_COUNT = 0
+    			,	R_LAST_LOGIN_DATE =  TO_CHAR(CURRENT_TIMESTAMP,'yyyyMMdd')
+    			WHERE r_user_Id = #{userId};
+    			 
+		        UPDATE RS_AUSER_INFO
+    			SET
+    				R_TRY_COUNT = 0
+    			,	R_LAST_LOGIN_DATE =  TO_CHAR(CURRENT_TIMESTAMP,'yyyyMMdd')
+    			WHERE r_user_Id = #{userId}; 
+		     END 
+   		 }
+    </update>
+
+    <!-- 로그인 잠김 수정 -->
+    <update id="updateUserLock" databaseId="postgres" parameterType="com.furence.recsee.common.model.LoginVO">
+    	UPDATE RS_RUSER_INFO
+    	SET R_LOCK_YN = #{lockYn}
+    	<where>
+    			R_USER_ID = #{userId}
+    		<if test = "shortRange != null">
+    		AND R_TRY_COUNT >= #{shortRange}::integer
+    		</if>
+    	</where>
+    	;
+    	UPDATE RS_AUSER_INFO
+    	SET R_LOCK_YN = #{lockYn}
+    	<where>
+    			R_USER_ID = #{userId}
+    		<if test = "shortRange != null">
+    		AND R_TRY_COUNT >= #{shortRange}::integer
+    		</if>
+    	</where>
+    </update>
+    <update id="updateUserLock" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.LoginVO">
+    	UPDATE RS_RUSER_INFO
+    	SET R_LOCK_YN = #{lockYn}
+    	<where>
+    			R_USER_ID = #{userId}
+    		<if test = "shortRange != null">
+    		AND R_TRY_COUNT >= convert(integer,#{shortRange})
+    		</if>
+    	</where>
+    	;
+    	UPDATE RS_AUSER_INFO
+    	SET R_LOCK_YN = #{lockYn}
+    	<where>
+    			R_USER_ID = #{userId}
+    		<if test = "shortRange != null">
+    		AND R_TRY_COUNT >= convert(integer,#{shortRange})
+    		</if>
+    	</where>
+    </update>
+    <update id="updateUserLock" databaseId="oracle" parameterType="com.furence.recsee.common.model.LoginVO">
+    <!-- {
+    	CALL -->
+    	DECLARE
+    	
+    	BEGIN
+    	
+    	UPDATE RS_RUSER_INFO
+    	SET R_LOCK_YN = #{lockYn}
+    	<where>
+    			R_USER_ID = #{userId}
+    		<if test = "shortRange != null">
+    		AND R_TRY_COUNT >= TO_NUMBER(#{shortRange})
+    		</if>
+    	</where>
+    	;
+    	UPDATE RS_AUSER_INFO
+    	SET R_LOCK_YN = #{lockYn}
+    	<where>
+    			R_USER_ID = #{userId}
+    		<if test = "shortRange != null">
+    		AND R_TRY_COUNT >= TO_NUMBER(#{shortRange})
+    		</if>
+    	</where>
+    	;
+    	END;
+    <!-- } -->
+    
+    </update>
+</mapper>

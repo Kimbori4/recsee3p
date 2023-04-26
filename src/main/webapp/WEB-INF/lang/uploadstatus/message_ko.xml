@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>업로드 상태(uploadstatus) 화면용 메세지 정의</comment>
+	
+	
+	<entry key="uploadstatus.label.indivUpStat">개별 업로드 현황</entry>
+	<entry key="uploadstatus.label.date">녹취일시</entry>
+	<entry key="uploadstatus.label.sDate">시작날짜</entry>
+	<entry key="uploadstatus.label.eDate">종료날짜</entry>
+	<entry key="uploadstatus.label.timeFrom">시간(부터)</entry>
+	<entry key="uploadstatus.label.all">>전체</entry>
+	<entry key="uploadstatus.label.timeTo">시간(까지)</entry>
+	<entry key="uploadstatus.label.recInfo">녹취정보</entry>
+	<entry key="uploadstatus.label.extNum">내선번호</entry>
+	<entry key="uploadstatus.label.custPhone1">고객 전화번호</entry>
+	<entry key="uploadstatus.label.status">상태</entry>
+	<entry key="uploadstatus.label.workType">작업 종류</entry>
+	<entry key="uploadstatus.label.batch">배치</entry>
+	<entry key="uploadstatus.label.direct">즉시</entry>
+	<entry key="uploadstatus.label.uploadStatus">업로드 상태</entry>
+	<entry key="uploadstatus.label.transCompl">전송완료</entry>
+	<entry key="uploadstatus.label.noRec">녹취파일 없음</entry>
+	<entry key="uploadstatus.label.retry1">재시도(1차)</entry>
+	<entry key="uploadstatus.label.retry2">재시도(2차)</entry>
+	<entry key="uploadstatus.label.transFailInfo">전송실패(녹취정보)</entry>
+	<entry key="uploadstatus.label.transFailFile">전송실패(녹취파일)</entry>
+	<entry key="uploadstatus.label.waitTrans">즉시전송대기</entry>
+	<entry key="uploadstatus.label.notSend">미전송</entry>
+	<entry key="uploadstatus.label.search">조회</entry>
+	
+	
+	<entry key="uploadstatus.grid.num">순번</entry>
+	<entry key="uploadstatus.grid.recDate">녹취일</entry>
+	<entry key="uploadstatus.grid.recTime">녹취시간</entry>
+	<entry key="uploadstatus.grid.extNum">내선번호</entry>
+	<entry key="uploadstatus.grid.workType">작업종류</entry>
+	<entry key="uploadstatus.grid.result">처리결과</entry>
+	<entry key="uploadstatus.grid.firstTrySTime">1차시도(시작일시)</entry>
+	<entry key="uploadstatus.grid.firstTryFTime">1차시도(종료일시)</entry>
+	<entry key="uploadstatus.grid.secondTrySTime">2차시도(시작일시)</entry>
+	<entry key="uploadstatus.grid.secondTryFTime">2차시도(종료일시)</entry>
+	<entry key="uploadstatus.grid.thirdTrySTime">3차시도(시작일시)</entry>
+	<entry key="uploadstatus.grid.thirdTryFTime">3차시도(종료일시)</entry>
+	<entry key="uploadstatus.grid.directTrans">즉시전송</entry>
+	<entry key="uploadstatus.grid.direct">즉시</entry>
+	<entry key="uploadstatus.grid.batch">배치</entry>
+	<entry key="uploadstatus.grid.transCompl">전송완료</entry>
+	<entry key="uploadstatus.grid.noRec">녹취파일 없음</entry>
+	<entry key="uploadstatus.grid.retry1">재시도(1차)</entry>
+	<entry key="uploadstatus.grid.retry2">재시도(2차)</entry>
+	<entry key="uploadstatus.grid.transFailInfo">전송실패(녹취정보)</entry>
+	<entry key="uploadstatus.grid.transFailFile">전송실패(녹취파일)</entry>
+	<entry key="uploadstatus.grid.waitTrans">즉시전송대기</entry>
+	<entry key="uploadstatus.grid.notSend">미전송</entry>
+	<entry key="uploadstatus.grid.transfer">전송</entry>
+	
+	
+	<entry key="uploadstatus.alert.someReqFail">일부 신청이 실패 하였습니다.</entry>
+	<entry key="uploadstatus.alert.reqTrans">즉시 전송 신청을 하였습니다.</entry>
+	<entry key="uploadstatus.alert.transReqFail">즉시 전송 신청에 실패 하였습니다.</entry>
+
+</properties>

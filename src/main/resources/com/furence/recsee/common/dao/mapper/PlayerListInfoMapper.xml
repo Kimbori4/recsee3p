@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.PlayListInfoDao">
+	<resultMap id="playYnResultMap" type="com.furence.recsee.common.model.PlayListInfo">
+		<result column="R_USER_ID" 		jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_USE_YN" 	jdbcType="VARCHAR" property="rUseYn" />
+	</resultMap>
+	<resultMap id="playListResultMap" type="com.furence.recsee.common.model.PlayListInfo">
+		<result column="R_USER_ID" 		jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_LIST_ORDER" 		jdbcType="VARCHAR" property="rListOrder" />
+		<result column="R_REC_DATE" 		jdbcType="VARCHAR" property="rRecDate" />
+		<result column="R_REC_TIME" 		jdbcType="VARCHAR" property="rRecTime" />
+		<result column="R_EXT_NUM" 		jdbcType="VARCHAR" property="rExtNum" />
+		<result column="R_CUST_PHONE1" 		jdbcType="VARCHAR" property="rCustPhone1" />
+		<result column="R_USER_NAME_CALL" 		jdbcType="VARCHAR" property="rUserNameCall" />
+		<result column="R_V_FILENAME" 		jdbcType="VARCHAR" property="rVFileName" />
+		<result column="R_MEMO_INFO" 		jdbcType="VARCHAR" property="rMemoInfo" />
+		<result column="REC_URL" 	jdbcType="VARCHAR" property="recUrl" />
+	</resultMap>
+
+	<select id="selectUsePlayList" parameterType="com.furence.recsee.common.model.PlayListInfo" resultMap="playYnResultMap">
+		SELECT *
+			FROM RS_PLAY_LIST_YN
+		WHERE
+			R_USER_ID = #{rUserId}
+	</select>
+
+	<insert id="insertUsePlayList" databaseId="postgres" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		INSERT INTO
+			RS_PLAY_LIST_YN
+		VALUES(
+					#{rUserId}
+				,	'Y'
+		)		
+	</insert>
+	<insert id="insertUsePlayList" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		INSERT INTO
+			RS_PLAY_LIST_YN
+		VALUES(
+			#{rUserId}
+			,	'Y'
+		)
+		;
+		INSERT INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		)
+	 	VALUES(
+	        CONVERT(VARCHAR(8), GETDATE(), 112)
+	      , CONVERT(VARCHAR(8), GETDATE(), 114)
+	 	  , 'C'
+	 	  , 'rs_play_list_yn'
+		  , #{rUserId}
+		  , 'Y'
+		 )
+		 ;
+	</insert>
+	
+	<insert id="insertUsePlayList" databaseId="oracle" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		INSERT ALL
+			INTO RS_PLAY_LIST_YN
+			(
+			    R_USER_ID
+			  , R_USE_YN
+			)
+			VALUES(
+				#{rUserId}
+				,	'Y'
+			)
+			
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			)
+		 	VALUES(
+		        TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	  , TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	  , 'C'
+		 	  , 'rs_play_list_yn'
+			  , #{rUserId}
+			  , 'Y'
+			 )
+		SELECT * FROM DUAL
+	</insert>
+
+	<update id="updateUsePlayList" databaseId="postgres" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		UPDATE
+			 RS_PLAY_LIST_YN
+		SET
+			R_USE_YN = #{rUseYn}
+		WHERE
+			R_USER_ID = #{rUserId}		
+	</update>
+
+	<update id="updateUsePlayList" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		UPDATE
+			 RS_PLAY_LIST_YN
+		SET
+			R_USE_YN = #{rUseYn}
+		WHERE
+			R_USER_ID = #{rUserId}
+		;
+		INSERT INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		)
+		 VALUES
+		 (
+		      CONVERT(VARCHAR(8), GETDATE(), 112)
+			, CONVERT(VARCHAR(8), GETDATE(), 114)
+		 	, 'U'
+		 	, 'rs_play_list_yn'
+			, #{rUserId}
+			, #{rUseYn}
+		 )
+		 ;
+	</update>
+	<update id="updateUsePlayList" databaseId="oracle" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE
+				 RS_PLAY_LIST_YN
+			SET
+				R_USE_YN = #{rUseYn}
+			WHERE
+				R_USER_ID = #{rUserId}
+			;
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			)
+			 VALUES
+			 (
+			      TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 		, TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	, 'U'
+			 	, 'rs_play_list_yn'
+				, #{rUserId}
+				, #{rUseYn}
+			 )
+			 ;
+		END; -->
+		UPDATE
+				 RS_PLAY_LIST_YN
+			SET
+				R_USE_YN = #{rUseYn}
+			WHERE
+				R_USER_ID = #{rUserId}
+	</update>
+
+	<select id="playListSelect" parameterType="com.furence.recsee.common.model.PlayListInfo" resultMap="playListResultMap">
+		SELECT *
+			FROM RS_PLAY_LIST
+		WHERE
+			R_USER_ID = #{rUserId}
+		ORDER BY
+			R_LIST_ORDER
+	</select>
+
+	<insert id="playListInsert" databaseId="postgres" parameterType="com.furence.recsee.common.model.PlayListInfo">
+	INSERT INTO RS_PLAY_LIST
+	(
+		<if test="rUserId != null">
+		  r_user_id,
+		 </if>
+		 <if test="rListOrder != null">
+		  r_list_order,
+		  </if>
+		  <if test="rRecDate != null">
+		  r_rec_date,
+		  </if>
+		  <if test="rRecTime != null">
+		  r_rec_time,
+		  </if>
+		  <if test="rExtNum != null">
+		  r_ext_num,
+		  </if>
+		  <if test="rCustPhone1 != null">
+		  r_cust_phone1,
+		  </if>
+		  <if test="rUserNameCall != null">
+		  r_user_name_call,
+		  </if>
+		  <if test="rVFileName != null">
+		  r_v_filename,
+		  </if>
+		  <if test="rMemoInfo != null">
+		  r_memo_info,
+		  </if>
+		  <if test="recUrl != null">
+		  rec_url
+		  </if>
+	)
+		VALUES
+		(
+			<if test="rUserId != null">
+				#{rUserId}
+			</if>
+			<if test="rListOrder != null">
+			, 	#{rListOrder}
+			</if>
+			<if test="rRecDate != null">
+			, 	#{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+			,	#{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+			,	#{rExtNum}
+			</if>
+			<if test="rCustPhone1 != null">
+			,	#{rCustPhone1}
+			</if>
+			<if test="rUserNameCall != null">
+			,	#{rUserNameCall}
+			</if>
+			<if test="rVFileName != null">
+			,	#{rVFileName}
+			</if>
+			<if test="rMemoInfo != null">
+			,	#{rMemoInfo}
+			</if>
+			<if test="recUrl != null">
+			,	#{recUrl}
+			</if>
+		)	
+	</insert>
+
+	<insert id="playListInsert" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PlayListInfo">
+	INSERT INTO RS_PLAY_LIST
+		VALUES
+		(
+				#{rUserId}
+			, 	#{rListOrder}
+			, 	#{rRecDate}
+			,	#{rRecTime}
+			,	#{rExtNum}
+			,	#{rCustPhone1}
+			,	#{rUserNameCall}
+			,	#{rVFileName}
+			,	#{rMemoInfo}
+			,	#{recUrl}
+		)
+
+	;
+	INSERT INTO RS_SYNC_DATA
+	(
+		R_SYNC_DATE
+	  , R_SYNC_TIME
+	  , R_SYNC_TYPE
+	  , R_SYNC_TABLENAME
+	  , R_SYNC_CULUMN1
+	  , R_SYNC_CULUMN2
+	  , R_SYNC_CULUMN3
+	  , R_SYNC_CULUMN4
+	  , R_SYNC_CULUMN5
+	  , R_SYNC_CULUMN6
+	  , R_SYNC_CULUMN7
+	  , R_SYNC_CULUMN8
+	  , R_SYNC_CULUMN9
+	  , R_SYNC_CULUMN10
+	)
+ 	VALUES
+	 (
+	      CONVERT(VARCHAR(8), GETDATE(), 112)
+		, CONVERT(VARCHAR(8), GETDATE(), 114)
+	 	, 'C'
+	 	, 'rs_play_list'
+		,	#{rUserId}
+		, 	#{rListOrder}
+		, 	#{rRecDate}
+		,	#{rRecTime}
+		,	#{rExtNum}
+		,	#{rCustPhone1}
+		,	#{rUserNameCall}
+		,	#{rVFileName}
+		,	#{rMemoInfo}
+		,	#{recUrl}
+	 )
+	;
+	</insert>
+	
+	<insert id="playListInsert" databaseId="oracle" parameterType="com.furence.recsee.common.model.PlayListInfo">
+	INSERT ALL
+		INTO RS_PLAY_LIST
+		(
+				R_USER_ID
+			,	R_LIST_ORDER
+			,	R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_CUST_PHONE1
+			,	R_USER_NAME_CALL
+			,	R_V_FILENAME
+			,	R_MEMO_INFO
+			,	REC_URL
+		)
+		VALUES
+		(
+				#{rUserId}
+			, 	#{rListOrder}
+			, 	#{rRecDate}
+			,	#{rRecTime}
+			,	#{rExtNum}
+			,	#{rCustPhone1}
+			,	#{rUserNameCall}
+			,	#{rVFileName}
+			,	#{rMemoInfo}
+			,	#{recUrl}
+		)
+
+	
+		 INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		)
+	 	VALUES
+		 (
+		 	  TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	, TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	, 'C'
+		 	, 'rs_play_list'
+			,	#{rUserId}
+			, 	#{rListOrder}
+			, 	#{rRecDate}
+			,	#{rRecTime}
+			,	#{rExtNum}
+			,	#{rCustPhone1}
+			,	#{rUserNameCall}
+			,	#{rVFileName}
+			,	#{rMemoInfo}
+			,	#{recUrl}
+		 )
+		SELECT * FROM DUAL
+	</insert>
+
+	<delete id="playListDelete" databaseId="postgres" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		DELETE FROM RS_PLAY_LIST
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				REC_URL = #{recUrl}		
+	</delete>
+	<delete id="playListDelete" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		DELETE FROM RS_PLAY_LIST
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				REC_URL = #{recUrl}
+		;
+				INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			)
+		 	VALUES
+			 (
+			        CONVERT(VARCHAR(8), GETDATE(), 112)
+				,   CONVERT(VARCHAR(8), GETDATE(), 114)
+			 	,	'D'
+			 	,	'rs_play_list'
+				,	#{rUserId}
+				, 	''
+				, 	''
+				,	''
+				,	''
+				,	''
+				,	''
+				,	''
+				,	''
+				,	#{recUrl}
+			 )
+			;
+	</delete>
+	<delete id="playListDelete" databaseId="oracle" parameterType="com.furence.recsee.common.model.PlayListInfo">
+	
+		<!-- DECLARE
+		
+		BEGIN
+		DELETE FROM RS_PLAY_LIST
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				REC_URL = #{recUrl}
+		;
+				INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			)
+		 	VALUES
+			 (
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'D'
+			 	,	'rs_play_list'
+				,	#{rUserId}
+				, 	''
+				, 	''
+				,	''
+				,	''
+				,	''
+				,	''
+				,	''
+				,	''
+				,	#{recUrl}
+			 )
+			;
+			END; -->
+			DELETE FROM RS_PLAY_LIST
+			WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				REC_URL = #{recUrl}
+	
+	</delete>
+	<update id="playListUpdateNum" databaseId="postgres" parameterType="com.furence.recsee.common.model.PlayListInfo">
+			UPDATE  RS_PLAY_LIST
+				SET
+					R_LIST_ORDER = #{rListOrder}
+				WHERE
+						R_USER_ID = #{rUserId}
+					AND
+						REC_URL = #{recUrl}
+	</update>
+	<update id="playListUpdateNum" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		UPDATE  RS_PLAY_LIST
+			SET
+				  R_LIST_ORDER = #{rListOrder}
+	      OUTPUT
+	            CONVERT(VARCHAR(8), GETDATE(), 112)
+		        , CONVERT(VARCHAR(8), GETDATE(), 114)
+    		 	,	'U'
+    		 	,	'rs_play_list'
+    			,	#{rUserId}
+    			, #{rListOrder}
+    			, INSERTED.R_REC_DATE
+    			,	INSERTED.R_REC_TIME
+    			,	INSERTED.R_EXT_NUM
+    			,	INSERTED.R_CUST_PHONE1
+    			,	INSERTED.R_USER_NAME_CALL
+    			,	INSERTED.R_V_FILENAME
+    			,	INSERTED.R_MEMO_INFO
+    			,	#{recUrl}
+		  INTO RS_SYNC_DATA
+			(
+  				  R_SYNC_DATE
+  			  , R_SYNC_TIME
+  			  , R_SYNC_TYPE
+  			  , R_SYNC_TABLENAME
+  			  , R_SYNC_CULUMN1
+  			  , R_SYNC_CULUMN2
+  			  , R_SYNC_CULUMN3
+  			  , R_SYNC_CULUMN4
+  			  , R_SYNC_CULUMN5
+  			  , R_SYNC_CULUMN6
+  			  , R_SYNC_CULUMN7
+  			  , R_SYNC_CULUMN8
+  			  , R_SYNC_CULUMN9
+  			  , R_SYNC_CULUMN10
+			)
+		WHERE
+				R_USER_ID = #{rUserId}
+		AND
+			  REC_URL = #{recUrl}
+
+	</update>
+	<update id="playListUpdateNum" databaseId="oracle" parameterType="com.furence.recsee.common.model.PlayListInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE  RS_PLAY_LIST
+				SET
+					R_LIST_ORDER = #{rListOrder}
+				WHERE
+						R_USER_ID = #{rUserId}
+					AND
+						REC_URL = #{recUrl}
+			RETURNING ROWID INTO row_id;
+		
+			INSERT INTO RS_SYNC_DATA
+				(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				  , R_SYNC_CULUMN6
+				  , R_SYNC_CULUMN7
+				  , R_SYNC_CULUMN8
+				  , R_SYNC_CULUMN9
+				  , R_SYNC_CULUMN10
+				)
+	
+			 	SELECT
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'U'
+			 	,	'rs_play_list'
+				,	#{rUserId}
+				, 	#{rListOrder}
+				, 	PL.R_REC_DATE
+				,	PL.R_REC_TIME
+				,	PL.R_EXT_NUM
+				,	PL.R_CUST_PHONE1
+				,	PL.R_USER_NAME_CALL
+				,	PL.R_V_FILENAME
+				,	PL.R_MEMO_INFO
+				,	#{recUrl}
+				FROM DUAL, RS_PLAY_LIST PL
+        		WHERE PL.ROWID = row_id;
+
+		END; -->
+		UPDATE  RS_PLAY_LIST
+				SET
+					R_LIST_ORDER = #{rListOrder}
+				WHERE
+						R_USER_ID = #{rUserId}
+					AND
+						REC_URL = #{recUrl}
+
+	</update>
+</mapper>

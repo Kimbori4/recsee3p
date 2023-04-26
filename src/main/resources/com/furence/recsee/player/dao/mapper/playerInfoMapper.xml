@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.player.dao.PlayerDao">
+	<resultMap id="PlayerInfoMap" type="com.furence.recsee.player.model.PlayerInfo">
+		<result column="R_REC_DATE" jdbcType="VARCHAR" property="rRecDate" />
+		<result column="R_REC_TIME" jdbcType="VARCHAR" property="rRecTime" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="rExtNum" />
+		<result column="R_TEXT_RX" jdbcType="VARCHAR" property="rTextRx" />
+		<result column="R_TEXT_TX" jdbcType="VARCHAR" property="rTextTx" />
+		<result column="R_LISTEN_URL" jdbcType="VARCHAR" property="rListenUrl" />
+		<result column="R_USER_NAME" jdbcType="VARCHAR" property="rUserName" />
+		<result column="R_CUST_PHONE1" jdbcType="VARCHAR" property="rCustPhone" />
+		<result column="COUNT" jdbcType="VARCHAR" property="count" />
+	</resultMap>
+
+	<select id="selectListenUrl" parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		SELECT 
+				A.R_REC_DATE
+			, 	A.R_REC_TIME
+			,	A.R_EXT_NUM
+			,	'http://'||A.R_V_REC_IP||':'||B.R_CONFIG_VALUE||'/listen?url='||A.R_V_REC_FULLPATH AS R_LISTEN_URL
+		FROM
+				RS_RECFILE AS A
+			,	RS_ETC_CONFIG AS B
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND A.R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND A.R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND A.R_EXT_NUM = #{rExtNum}
+			</if>
+				AND B.R_GROUP_KEY ='LISTEN'
+				AND B.R_CONFIG_KEY = 'PORT'
+		</where> 
+	</select>
+	
+	<select id="selectListenUrl" databaseId="oracle" parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		SELECT 
+				A.R_REC_DATE
+			, 	A.R_REC_TIME
+			,	A.R_EXT_NUM
+			,	'http://'||A.R_V_REC_IP||':'||B.R_CONFIG_VALUE||'/listen?url='||A.R_V_REC_FULLPATH AS R_LISTEN_URL
+		FROM
+				RS_RECFILE A
+			,	RS_ETC_CONFIG B
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND A.R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND A.R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND A.R_EXT_NUM = #{rExtNum}
+			</if>
+				AND B.R_GROUP_KEY ='LISTEN'
+				AND B.R_CONFIG_KEY = 'PORT'
+		</where> 
+	</select>
+	
+	<select id="selectListenUrl2" parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		SELECT 
+				R_REC_DATE
+			, 	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_LISTEN_URL
+		FROM
+				RS_RECFILE 
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND R_EXT_NUM = #{rExtNum}
+			</if>
+		</where> 
+	</select>
+	
+	<select id="selectListType1" parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		SELECT
+				R_TEXT_RX
+			,	R_TEXT_TX
+		FROM
+			RS_STT_LIST_TYPE1
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND R_EXT_NUM = #{rExtNum}
+			</if>
+		</where> 
+	</select>
+	
+	<select id="selectListType2" parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		SELECT
+				R_TEXT_RX
+			,	R_TEXT_TX
+		FROM
+			RS_STT_LIST_TYPE2
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND R_EXT_NUM = #{rExtNum}
+			</if>
+		</where> 
+	</select>
+	
+	<select id="selectListType3" parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		SELECT
+				R_TEXT_RX
+			,	R_TEXT_TX
+		FROM
+			RS_STT_LIST_TYPE3
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND R_EXT_NUM = #{rExtNum}
+			</if>
+	</where> 
+	</select>
+	
+	<select  id="selectFileInfo" parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		SELECT 
+				R_REC_DATE
+			, 	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_CUST_PHONE1
+			,	R_USER_NAME
+		FROM
+				RS_RECFILE
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND R_EXT_NUM = #{rExtNum}
+			</if>
+		</where> 
+	</select>
+	
+	<select id="selectSttList"  parameterType="com.furence.recsee.player.model.PlayerInfo" resultMap='PlayerInfoMap'>
+		 SELECT
+		 	COUNT(*) as COUNT
+		 FROM 
+		 	RS_STT_LIST
+		<where>
+			1=1
+			<if test="rRecDate != null">
+				AND R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+				AND R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+				AND R_EXT_NUM = #{rExtNum}
+			</if>
+			AND R_RESULT = 'S'
+		</where> 
+	</select>
+</mapper>

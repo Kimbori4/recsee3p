@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.wooribank.script.repository.dao.ScriptStepDao" >
+
+	<resultMap id="scriptStepMap" 
+			   type="com.furence.recsee.wooribank.script.repository.entity.ScriptStep">
+	
+		<result column="rs_script_step_pk" 				jdbcType="VARCHAR"		property="scriptStepPk" />
+		<result column="rs_script_step_fk" 				jdbcType="VARCHAR"		property="productPk" />		
+		<result column="rs_script_step_parnet" 			jdbcType="VARCHAR"		property="scriptStepParentPk" />
+		<result column="rs_script_step_name" 			jdbcType="VARCHAR"		property="scriptStepType" />
+		<result column="rs_script_step_order" 			jdbcType="VARCHAR"		property="scriptStepName" />
+		<result column="rs_script_step_type" 			jdbcType="VARCHAR"		property="scriptStepOrder" />	
+		<result column="rs_use_yn" 						jdbcType="VARCHAR"		property="useYn" />	
+		<result column="rs_script_version"				jdbcType="VARCHAR"		property="scriptVersion" />
+		
+	</resultMap>
+
+	<resultMap id="scriptStepTree" 
+			   type="com.furence.recsee.wooribank.script.repository.entity.ScriptStep">		
+		<result column="row_number" 					jdbcType="INTEGER"		property="rowNumber" />
+		<result column="rs_script_step_depth"			jdbcType="INTEGER"		property="depth" />	   
+		<result column="rs_script_step_fk" 				jdbcType="VARCHAR"		property="productPk" />
+		<result column="rs_script_step_pk" 				jdbcType="VARCHAR"		property="stepPk" />
+		<result column="rs_script_step_name" 			jdbcType="VARCHAR"		property="stepName" />
+		<result column="rs_script_step_type" 			jdbcType="VARCHAR"		property="stepType" />
+		<result column="rs_script_step_order" 			jdbcType="VARCHAR"		property="stepOrder" />
+		<result column="rs_script_step_parent" 			jdbcType="VARCHAR"		property="stepParentPk" />
+		<result column="rs_script_flat_order" 			jdbcType="VARCHAR"		property="flatOrder" />
+	</resultMap>
+	
+	<!-- 스크립트 스텝 목록 -->
+	<select id="selectScriptStepList" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Step" 
+			resultMap="scriptStepTree">
+			
+			with recursive  script_tree as (
+				with step_list as (
+					<choose>
+							<when test ="scriptEditId == null or scriptEditId == '' ">	
+								<!-- 스크립트 상세 보기에서 스텝조회시 -->				
+								select	rs_script_step_pk,
+										rs_script_step_fk,
+										rs_script_step_parent,
+										rs_script_step_name, 
+										rs_script_step_order,
+										rs_script_step_type						
+								from 	rs_script_step 					 	
+								where 	rs_script_step_fk = (
+											select 	rs_script_step_fk
+											from	vw_product_list
+											where	rs_product_list_pk = #{productPk}::integer
+										)
+										and rs_use_yn = 'Y'
+								order by rs_script_step_parent,rs_script_step_order		
+							</when>
+							<otherwise>
+							<!-- 스크립트 수정화면에서 스텝조회시 -->
+								select	rs_script_step_pk,
+										rs_script_step_fk,
+										rs_script_step_parent,
+										rs_script_step_name, 
+										rs_script_step_order,
+										rs_script_step_type		
+								from 	fn_select_script_step_tree_with_temp (#{scriptEditId})
+								order by rs_script_step_parent,rs_script_step_order
+								
+							</otherwise>
+					</choose>
+				)
+				
+				select	1 as rs_script_step_depth ,  
+						rs_script_step_pk,
+						rs_script_step_fk,
+						rs_script_step_parent,
+						rs_script_step_name, 
+						rs_script_step_order,
+						rs_script_step_type,	 
+						(rs_script_step_order + 100 )::varchar as rs_script_flat_order
+				from 	step_list 
+				where 	rs_script_step_parent = '0'
+				union all
+				select 	a.rs_script_step_depth + 1, 
+						b.rs_script_step_pk,
+						b.rs_script_step_fk,
+						b.rs_script_step_parent,
+						b.rs_script_step_name, 
+						b.rs_script_step_order,
+						b.rs_script_step_type,	 
+						a.rs_script_flat_order||','||(b.rs_script_step_order + 100 )::varchar
+				from 	script_tree a, 
+						step_list b
+				where 	a.rs_script_step_pk = b.rs_script_step_parent
+			)
+			select 	row_number()over(order by rs_script_flat_order) as row_number,
+					*
+			from	script_tree
+			order by rs_script_flat_order	
+	</select>
+	
+	
+	<!-- 스크립트 pk에 대한 상신건 확인(수정,삭제의 경우) -->
+	<select id="selectCountForAlreadyRegisteredScriptStep"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Step" 
+			resultType="Integer">
+	
+		select 	count(*) as count 
+		from	rs_script_step_edit_list 
+		where	rs_script_edit_id = #{transactionId}  
+				and rs_script_step_pk = #{scriptStepPk} 
+					
+	</select>
+	
+		
+	<!-- 스크립트 스텝  추가 -->
+	<insert id="insertScriptStepEditData" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Step" >
+		
+		insert into rs_script_step_edit_list
+		(
+			rs_script_edit_id,
+			rs_script_step_pk,
+			rs_script_step_temp_pk,			
+			rs_script_step_edit_type,
+			rs_script_step_parent,
+			rs_script_step_name,
+			rs_script_step_type
+			
+		)
+		values
+		(	
+			#{transactionId},		
+			#{scriptStepPk},
+			#{scriptStepTempPk},
+			#{editType.value},
+			#{scriptStepParentPk},
+			#{scriptStepName},
+			#{scriptStepType}
+		)
+	</insert>
+	
+	<!-- 디비에 임시 저장된 스크립트 스텝 수정건에 대한 수정 -->
+	<update id="updateScriptStepEditData" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Step" >
+		
+		update 	rs_script_step_edit_list
+		set		rs_script_step_edit_type = #{editType.value},
+				rs_script_step_type = #{scriptStepType},
+				rs_script_step_name = #{scriptStepName}
+		where	rs_script_edit_id = #{transactionId}  
+				and rs_script_step_temp_pk = #{scriptStepTempPk} 
+	</update>
+	
+	<delete id="deleteScriptStepEditData"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Step">
+		delete	from 
+				rs_script_step_edit_list
+		where	rs_script_edit_id = #{transactionId}  
+				and ( rs_script_step_temp_pk = #{scriptStepTempPk} or rs_script_step_parent = #{scriptStepTempPk}) 			
+	</delete>
+</mapper> 

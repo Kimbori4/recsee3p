@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.UserDBInterfaceDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.UserDBInterface">
+		<result column="SEQ" jdbcType="VARCHAR" property="seq" />
+		<result column="R_DB_IP" jdbcType="VARCHAR" property="rDbIp" />
+		<result column="R_DB_USER" jdbcType="VARCHAR" property="rDbUser" />
+		<result column="R_DB_PWD" jdbcType="VARCHAR" property="rDbPwd" />
+		<result column="R_DB_PORT" jdbcType="VARCHAR" property="rDbPort" />
+		<result column="R_DB_NAME" jdbcType="VARCHAR" property="rDbName" />
+		<result column="R_TEAM_CODE" jdbcType="VARCHAR" property="rTeamCode" />
+		<result column="R_TEAM_NAME" jdbcType="VARCHAR" property="rTeamName" />
+		<result column="R_HH" jdbcType="VARCHAR" property="rHh" />
+		<result column="R_FLAG" jdbcType="VARCHAR" property="rFlag" />
+		<result column="R_FLAG_DATE" jdbcType="VARCHAR" property="rFlagDate" />
+		<result column="R_COMPLETE_DATE" jdbcType="VARCHAR" property="rCompleteDate" />
+		<result column="R_COMPLETE_TIME" jdbcType="VARCHAR" property="rCompleteTime" />
+	</resultMap>
+
+	<select id="selectUserDBInterface" parameterType="com.furence.recsee.admin.model.UserDBInterface" resultMap="BaseResultMap">
+		SELECT 	* 
+		FROM 	SCHEDULER_USERDB_INTERFACE 
+		<where>
+			<if test="rTeamCode != null">
+				R_TEAM_CODE=#{rTeamCode}
+			</if>
+		</where>
+		ORDER BY SEQ
+	</select>
+	
+	<select id="selectOneUserDBInterface" parameterType="com.furence.recsee.admin.model.UserDBInterface" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT 	* 
+		FROM 	SCHEDULER_USERDB_INTERFACE 
+		WHERE 	SEQ=#{seq}::integer 
+		ORDER BY SEQ
+	</select>
+	
+	<select id="selectOneUserDBInterface" parameterType="com.furence.recsee.admin.model.UserDBInterface" databaseId="sqlserver" resultMap="BaseResultMap">
+		SELECT 	* 
+		FROM 	SCHEDULER_USERDB_INTERFACE 
+		WHERE 	SEQ=#{seq}
+		ORDER BY SEQ
+	</select>
+	
+	<insert id="insertUserDBInterface" databaseId="postgres" parameterType="com.furence.recsee.admin.model.UserDBInterface">
+			INSERT INTO SCHEDULER_USERDB_INTERFACE (
+				R_DB_IP,
+				R_DB_USER,
+				R_DB_PWD,
+				R_DB_PORT,
+				R_DB_NAME,
+				R_TEAM_CODE,
+				R_TEAM_NAME,
+				R_HH,
+				R_COMPLETE_DATE,
+				R_COMPLETE_TIME
+			) VALUES (
+				#{rDbIp},
+				#{rDbUser},
+				#{rDbPwd},
+				#{rDbPort},
+				#{rDbName},
+				#{rTeamCode},
+				#{rTeamName},
+				#{rHh},
+				TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD'),
+				TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			)
+	</insert>
+	
+	<insert id="insertUserDBInterface" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.UserDBInterface">
+			INSERT INTO SCHEDULER_USERDB_INTERFACE (
+				R_DB_IP,
+				R_DB_USER,
+				R_DB_PWD,
+				R_DB_PORT,
+				R_DB_NAME,
+				R_TEAM_CODE,
+				R_TEAM_NAME,
+				R_HH,
+				R_COMPLETE_DATE,
+				R_COMPLETE_TIME
+			) VALUES (
+				#{rDbIp},
+				#{rDbUser},
+				#{rDbPwd},
+				#{rDbPort},
+				#{rDbName},
+				#{rTeamCode},
+				#{rTeamName},
+				#{rHh},
+				Convert(varchar(10),Getdate(),112),
+				Replace(Convert(varchar(8),Getdate(),108),':','')
+			)
+	</insert>
+	
+	<update id="updateUserDBInterface" databaseId="postgres" parameterType="com.furence.recsee.admin.model.UserDBInterface">
+		UPDATE SCHEDULER_USERDB_INTERFACE SET
+		<trim suffixOverrides=",">
+			<if test="rDbIp != null">
+				R_DB_IP=#{rDbIp},
+			</if>
+			<if test="rDbUser != null">
+				R_DB_USER=#{rDbUser},
+			</if>
+			<if test="rDbPwd != null">
+				R_DB_PWD=#{rDbPwd},
+			</if>
+			<if test="rDbPort != null">
+				R_DB_PORT=#{rDbPort},
+			</if>
+			<if test="rDbName != null">
+				R_DB_NAME=#{rDbName},
+			</if>
+			<if test="rTeamCode != null">
+				R_TEAM_CODE=#{rTeamCode},
+			</if>
+			<if test="rTeamName != null">
+				R_TEAM_NAME=#{rTeamName},
+			</if>
+			<if test="rHh != null">
+				R_HH=#{rHh},
+			</if>
+			<if test="rFlag != null">
+				R_FLAG=#{rFlag},
+			</if>
+			<if test="rFlagDate != null">
+				R_FLAG_DATE=#{rFlagDate},
+			</if>
+			<if test="rCompleteDate != null">
+				R_COMPLETE_DATE=#{rCompleteDate},
+			</if>
+			<if test="rCompleteTime != null">
+				R_COMPLETE_TIME=#{rCompleteTime},
+			</if>
+		</trim>
+		WHERE
+			SEQ=#{seq}::integer
+	</update>
+	
+	<update id="updateUserDBInterface" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.UserDBInterface">
+		UPDATE SCHEDULER_USERDB_INTERFACE SET
+		<trim suffixOverrides=",">
+			<if test="rDbIp != null">
+				R_DB_IP=#{rDbIp},
+			</if>
+			<if test="rDbUser != null">
+				R_DB_USER=#{rDbUser},
+			</if>
+			<if test="rDbPwd != null">
+				R_DB_PWD=#{rDbPwd},
+			</if>
+			<if test="rDbPort != null">
+				R_DB_PORT=#{rDbPort},
+			</if>
+			<if test="rDbName != null">
+				R_DB_NAME=#{rDbName},
+			</if>
+			<if test="rTeamCode != null">
+				R_TEAM_CODE=#{rTeamCode},
+			</if>
+			<if test="rTeamName != null">
+				R_TEAM_NAME=#{rTeamName},
+			</if>
+			<if test="rHh != null">
+				R_HH=#{rHh},
+			</if>
+			<if test="rFlag != null">
+				R_FLAG=#{rFlag},
+			</if>
+			<if test="rFlagDate != null">
+				R_FLAG_DATE=#{rFlagDate},
+			</if>
+			<if test="rCompleteDate != null">
+				R_COMPLETE_DATE=#{rCompleteDate},
+			</if>
+			<if test="rCompleteTime != null">
+				R_COMPLETE_TIME=#{rCompleteTime},
+			</if>
+		</trim>
+		WHERE
+			SEQ=#{seq}
+	</update>
+	
+	<delete id="deleteUserDBInterface" databaseId="postgres" parameterType="com.furence.recsee.admin.model.UserDBInterface">
+		DELETE FROM SCHEDULER_USERDB_INTERFACE WHERE SEQ=#{seq}::integer
+	</delete>
+	
+	<delete id="deleteUserDBInterface" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.UserDBInterface">
+		DELETE FROM SCHEDULER_USERDB_INTERFACE WHERE SEQ=#{seq}
+	</delete>
+	
+</mapper>

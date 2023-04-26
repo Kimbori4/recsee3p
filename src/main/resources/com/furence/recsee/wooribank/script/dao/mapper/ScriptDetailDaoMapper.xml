@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.wooribank.script.repository.dao.ScriptDetailDao" >
+
+	<resultMap id="scriptDetailMap" type="com.furence.recsee.wooribank.script.repository.entity.ScriptDetail">
+	
+		<result column="rs_script_step_pk" 							jdbcType="VARCHAR"		property="stepPk" />
+		<result column="rs_script_step_fk" 							jdbcType="VARCHAR"		property="productPk" />		
+		<result column="rs_script_step_detail_pk" 					jdbcType="VARCHAR"		property="detailPk" />
+		<result column="rs_script_step_detail_type" 				jdbcType="VARCHAR"		property="detailType" />
+		<result column="rs_script_step_detail_common_kind" 			jdbcType="VARCHAR"		property="detailComYn" />
+		<result column="rs_script_step_detail_order" 				jdbcType="VARCHAR"		property="detailOrder" />	
+		<result column="rs_script_step_detail_text" 				jdbcType="VARCHAR"		property="detailText" />
+		<result column="rs_script_step_detail_if_case" 				jdbcType="VARCHAR"		property="useDetailOpionalYN" />
+		<result column="rs_script_step_detail_if_case_detail" 		jdbcType="VARCHAR"		property="detailOpionalValue" />	
+		<result column="rs_script_step_detail_realtime_tts" 		jdbcType="VARCHAR"		property="detailRealtimeTTSYN" />			
+		<result column="rs_script_step_detail_create_date" 			jdbcType="VARCHAR"		property="detailCreateDate" />	
+		<result column="rs_script_step_detail_create_user" 			jdbcType="VARCHAR"		property="detailCreateUser" />	
+		<result column="rs_script_step_detail_update_date" 			jdbcType="VARCHAR"		property="detailUpateDate" />	
+		<result column="rs_script_step_detail_update_user" 			jdbcType="VARCHAR"		property="detailUpdateUser" />			
+		<result column="rs_script_step_detail_confirm" 				jdbcType="VARCHAR"		property="detailConfirmYN" />	
+		<result column="rs_script_step_detail_confirm_date" 		jdbcType="VARCHAR"		property="detailConfirmDate" />	
+		<result column="rs_script_step_detail_confirm_user" 		jdbcType="VARCHAR"		property="detailConfirmUser" />			
+		<result column="rs_script_step_detail_common_fk" 			jdbcType="VARCHAR"		property="detailComFk" />	
+		<result column="rs_script_step_detail_reserv_date" 			jdbcType="VARCHAR"		property="detailReservDate" />			
+		<result column="rs_script_common_confirm" 					jdbcType="VARCHAR"		property="commonConfirmYn" />	
+		<result column="rs_script_common_type" 						jdbcType="VARCHAR"		property="commonType" />			
+		<result column="rs_script_common_type_name" 				jdbcType="VARCHAR"		property="commonTypeName" />
+		<result column="rs_script_common_pk" 						jdbcType="VARCHAR"		property="commonPk" />			
+		<result column="rs_script_common_desc"		 				jdbcType="VARCHAR"		property="commonDesc" />
+		<result column="rs_script_step_detail_if_case_code"			jdbcType="VARCHAR"		property="detailIfCaseCode" />
+		<result column="rs_script_step_detail_if_case_detail_code"	jdbcType="VARCHAR"		property="detailIfCaseDetailCode" />
+		<result column="rs_product_class"							jdbcType="VARCHAR"		property="productClass" />		
+		<result column="rs_use_yn" 									jdbcType="VARCHAR"		property="useYn" />	
+		<result column="rs_product_attributes"						jdbcType="ARRAY"		property="productAttributes"  
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.StringArrayTypeHandler"/>
+	</resultMap>
+	
+	
+	<!-- 스크립트 디테일 조회 -->
+	<select id="selectScriptStepDetailList" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Detail" 
+			resultMap="scriptDetailMap">
+		
+		select 	rstp.rs_script_step_pk,
+				rstp.rs_script_step_fk,
+				rssd.rs_script_step_detail_pk,
+				rssd.rs_script_step_detail_type,
+				rssd.rs_script_step_detail_common_kind,
+				rssd.rs_script_step_detail_common_fk,				
+				rssd.rs_script_step_detail_order,
+				rssd.rs_script_step_fk,		
+				fn_make_script_detail_text_with_variables(
+					rspd.rs_product_type,
+					rspd.rs_product_code,
+					rspd.rs_sysdis_type,
+					(case
+						when rssd.rs_script_step_detail_common_kind = 'Y' then rsc.rs_script_common_text
+						else rssd.rs_script_step_detail_text
+					end) , 
+					rssd.rs_product_attributes,
+					rssd.rs_script_step_detail_elt_case
+				) as rs_script_step_detail_text,						
+				rssd.rs_script_step_detail_if_case,
+				case when rssd.rs_script_step_detail_if_case = 'Y' then rssd.rs_script_step_detail_if_case_detail else null end rs_script_step_detail_if_case_detail, 
+				(case
+					when rssd.rs_script_step_detail_common_kind = 'Y' then rsc.rs_script_common_realtime_tts
+					else rssd.rs_script_step_detail_realtime_tts
+				end) as rs_script_step_detail_realtime_tts ,
+
+				rssd.rs_script_step_detail_create_date,		
+				rssd.rs_script_step_detail_create_user,
+				rssd.rs_script_step_detail_update_date,		
+				rssd.rs_script_step_detail_update_user,
+
+				rssd.rs_script_step_detail_confirm,		
+				rssd.rs_script_step_detail_confirm_date,		
+				rssd.rs_script_step_detail_confirm_user,
+				rssd.rs_script_step_detail_common_fk,
+				rssd.rs_script_step_detail_reserv_date,
+				
+				rsc.rs_script_common_confirm,
+				rsc.rs_script_common_type,
+				rsc.rs_script_common_pk,
+				(case when rssd.rs_script_step_detail_common_kind = 'Y' then rsc.rs_script_common_desc else '' end) as rs_script_common_desc,
+				
+				rssd.rs_script_step_detail_if_case_code,
+				rssd.rs_script_step_detail_if_case_detail_code,
+				rssd.rs_product_class,
+				rssd.rs_use_yn,
+				string_to_array(
+					fn_convert_product_attributes_description(
+						coalesce(rssd.rs_product_attributes, '{}'::jsonb)||coalesce(rssd.rs_product_attributes_ext, '{}'::jsonb)
+					) 
+					,',') as rs_product_attributes	 		
+		from 	rs_script_step_detail rssd
+				left outer join rs_script_step rstp on rssd.rs_script_step_fk = rstp.rs_script_step_pk
+				left outer join vw_product_list rspd on rspd.rs_script_step_fk = rstp.rs_script_step_fk
+				left outer join rs_script_common rsc on rs_script_step_detail_common_fk = rs_script_common_pk and rssd.rs_use_yn = rsc.rs_use_yn
+		where	rssd.rs_script_step_fk = #{scriptStepPk}::integer
+				and rspd.rs_product_list_pk =  #{productPk}::integer
+				and case when rspd.rs_product_attributes is not null then rssd.rs_product_attributes <![CDATA[<@]]> rspd.rs_product_attributes else true end
+				and rssd.rs_use_yn = #{useYn}
+		order by rs_script_step_detail_order, rssd.rs_script_step_detail_pk
+		
+	</select>
+	
+	
+	<!-- 스크립트 디테일 편집 임시데이터 조회 -->
+	<select id="selectScriptStepDetailPreviewList" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Detail" 
+			resultMap="scriptDetailMap">
+		
+		select 	rs_script_step_pk,
+				rs_script_step_fk,
+				rs_script_step_detail_pk,
+				rs_script_step_detail_type,
+				rs_script_step_detail_common_kind,
+				rs_script_step_detail_common_fk,				
+				rs_script_step_detail_order,
+				rs_script_step_fk,
+				rs_script_step_detail_text,			
+				rs_script_step_detail_if_case,
+				case when rs_script_step_detail_if_case = 'Y' then rs_script_step_detail_if_case_detail else null end as rs_script_step_detail_if_case_detail,
+				rs_script_step_detail_realtime_tts ,	
+				rs_script_common_type,
+				rs_script_common_desc,		
+				rs_script_step_detail_if_case_code,
+				rs_script_step_detail_if_case_detail_code,
+				string_to_array( rs_product_attributes , ',' ) as rs_product_attributes
+		from 	fn_preview_temprory_script( #{transactionId} )
+		where	rs_script_step_pk = #{scriptStepPk}
+				and rs_use_yn = #{useYn}
+		order by rs_script_step_detail_order, rs_script_step_detail_pk
+		
+	</select>
+	
+	<!-- 스크립트 디테일 업데이트 데이터 - 기존 등록 확인 -->
+	<select id="selectCountForAlreadyRegisteredScriptStepDetail" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Detail"
+			resultType="Integer">
+		
+		select 	count(*) as count
+		from	rs_script_step_detail_edit_list
+		where	rs_script_edit_id = #{transactionId}  
+				and rs_script_step_detail_pk = #{scriptStepDetailPk} 
+		
+	</select>	
+	
+	
+	
+	<!-- 스크립트 디테일 업데이트 데이터 - 신규 등록 -->
+	<insert id="insertScriptStepDetailEditData" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Detail" >
+		
+		insert into rs_script_step_detail_edit_list
+		(
+			rs_script_edit_id,
+			rs_script_step_pk,			
+			rs_script_step_detail_pk,
+			rs_script_step_detail_temp_pk,
+			rs_script_step_detail_edit_type,			
+			rs_script_step_detail_type,			
+			rs_script_step_detail_common_kind,
+			rs_script_step_detail_common_fk,					
+			rs_script_step_detail_text,
+		    rs_script_step_detail_if_case,
+			rs_script_step_detail_if_case_code,
+		    rs_script_step_detail_if_case_detail,	
+			rs_script_step_detail_if_case_detail_code,
+		    rs_script_step_detail_realtime_tts    	
+		)
+		values
+		(
+			#{transactionId},
+			#{scriptStepPk},
+			#{scriptStepDetailPk},
+			#{scriptStepDetailTempPk},
+			#{editType.value},			
+			#{scriptDetailType},			
+			#{commonScriptYN.value},
+			#{commonScriptPk},			
+			#{scriptDetailText},
+			#{varibaleWordYN.value},
+			#{variableWordType},
+			#{variableWord},
+			#{variableWordCode},
+			#{realtimeTtsYN.value}
+		)
+	</insert>
+	
+	
+	<!-- 스크립트 디테일 업데이트 데이터 - 기존 등록건 업데이트 -->
+	<update id="updateScriptStepDetailEditData" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Detail">	
+		
+		update 	rs_script_step_detail_edit_list
+		set		rs_script_step_detail_edit_type = #{editType.value},					
+				rs_script_step_detail_text= #{scriptDetailText},
+			    rs_script_step_detail_if_case= #{varibaleWordYN.value},
+				rs_script_step_detail_if_case_code = #{variableWordType},
+			    rs_script_step_detail_if_case_detail = #{variableWord},	
+				rs_script_step_detail_if_case_detail_code = #{variableWordCode}
+		where	rs_script_edit_id = #{transactionId}  
+				and rs_script_step_detail_temp_pk = #{scriptStepDetailTempPk} 
+		
+	</update>
+	
+	<delete id="deleteScriptStepDetailEditData"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Detail">
+		delete	from
+				rs_script_step_detail_edit_list
+		where	rs_script_edit_id = #{transactionId}  
+				and rs_script_step_detail_temp_pk = #{scriptStepDetailTempPk} 			
+	</delete>
+	
+	<!-- 상품 디테일 텍스트 가변값 치환 텍스트 조회 -->
+</mapper> 

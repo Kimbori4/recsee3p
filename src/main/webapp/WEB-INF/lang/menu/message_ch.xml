@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>메뉴 화면용 메세지 정의</comment>
+
+	<entry key="menu.top.search">查询</entry>
+	<entry key="menu.top.search_listen"><![CDATA[查询&听取]]></entry>
+
+	<entry key="menu.top.statistics">统计</entry>
+	<entry key="menu.top.statistics_dashboard">Dashboard</entry>
+	<entry key="menu.top.statistics_call">全体呼叫统计</entry>
+	<entry key="menu.top.statistics_group">群组呼叫统计</entry>
+	<entry key="menu.top.statistics_user">用户呼叫统计</entry>
+
+	<entry key="menu.top.monitoring">监控</entry>
+	<entry key="menu.top.monitoring_realtime">及时监控</entry>
+	<entry key="menu.top.monitoring_system">系统监控</entry>
+
+	<entry key="menu.top.evaluation">Evaluation</entry>
+	<entry key="menu.top.evaluation_user">Register Evaluation</entry>
+	<entry key="menu.top.evaluation_result">Evaluation results</entry>
+	<entry key="menu.top.evaluate">Evaluation</entry>
+	<entry key="menu.top.evaluation_campaign">Campaign Management</entry>
+
+	<entry key="menu.top.management">管理</entry>
+	<entry key="menu.top.management_setting">设置</entry>
+	<entry key="menu.top.management_setting_backup">备份管理</entry>
+	<entry key="menu.top.management_setting_channel">通道管理</entry>
+	<entry key="menu.top.management_setting_callReportCustomize">呼叫报表用户定义</entry>
+	<entry key="menu.top.management_setting_searchCustomize">搜索用户定义</entry>
+	<entry key="menu.top.management_setting_system">服务器设置</entry>
+	<entry key="menu.top.management_setting_pbx">PBX关联信息</entry>
+
+	<entry key="menu.top.management_user">用户管理</entry>
+	<entry key="menu.top.management_user_user">用户管理</entry>
+	<entry key="menu.top.management_user_group">群组管理</entry>
+	<entry key="menu.top.management_user_access">权限管理</entry>
+	<entry key="menu.top.management_user_category">范畴管理</entry>
+	<entry key="menu.top.management_user_screenUser">屏幕用戶管理</entry>
+
+	<entry key="menu.top.management_system">系统管理</entry>
+	<entry key="menu.top.management_system_license">许可管理</entry>
+	<entry key="menu.top.management_system_log">日志管理</entry>
+	<entry key="menu.top.management_system_etc">其他管理</entry>
+	<entry key="menu.top.management_system_queue">隊列管理</entry>
+
+	<entry key="menu.top.myinfo">我的讯息</entry>
+	<entry key="menu.top.myinfo_account">账号讯息</entry>
+	<entry key="menu.top.myinfo_changePassword">变更密码</entry>
+	<entry key="menu.top.myinfo_logout">退出</entry>
+
+
+</properties>

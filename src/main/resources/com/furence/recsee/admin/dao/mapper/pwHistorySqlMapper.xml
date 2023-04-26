@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.PwHistoryDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.PwHistory">
+		<result column="R_USER_ID" 				jdbcType="VARCHAR" 	property="rUserId" />
+		<result column="R_PASSWORD" 			jdbcType="VARCHAR" 	property="rPassword" />
+		<result column="R_HISTORY_DATE"			jdbcType="VARCHAR" 	property="rHistoryDate" />
+		<result column="R_PAST_PW_COUNT"		jdbcType="VARCHAR" 	property="rPastPwCount" />
+	</resultMap>
+
+	<select id="selectPwHistory" databaseId="postgres" parameterType="com.furence.recsee.admin.model.PwHistory" resultType="Integer">
+		SELECT COUNT(*) AS COUNT
+		FROM
+		<if test = "rPastPwUse == 'C'.toString()">
+		(
+			SELECT R_PASSWORD FROM
+		</if>
+			(
+				SELECT
+					R_PASSWORD
+				FROM
+					RS_PW_HISTORY
+				WHERE R_USER_ID = #{rUserId}
+				ORDER BY R_HISTORY_DATE DESC
+			)a
+
+		<if test = "rPastPwUse == 'C'.toString()">
+			LIMIT #{rPastPwCount}
+		)b
+		</if>
+
+		WHERE
+			R_PASSWORD = #{rPassword}
+
+	</select>
+	<select id="selectPwHistory" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.PwHistory" resultType="Integer">
+
+		<choose>
+				<when test="rPastPwUse == 'C'.toString()">
+				SELECT COUNT(*) AS COUNT
+				FROM
+				(
+					SELECT
+						R_PASSWORD
+					FROM
+						RS_PW_HISTORY
+					WHERE R_USER_ID = #{rUserId}
+				)a
+
+				WHERE R_PASSWORD = #{rPassword}
+				</when>
+				<otherwise>
+				WITH TEMPTABLE AS (
+					SELECT ROW_NUMBER() OVER(ORDER BY R_HISTORY_DATE) AS rownum, r_password
+					FROM
+					(
+						SELECT
+							R_PASSWORD, R_HISTORY_DATE
+						FROM
+							RS_PW_HISTORY
+						WHERE R_USER_ID = #{rUserId}
+					)a
+				)
+
+				SELECT COUNT(*) AS COUNT
+				FROM
+				(
+					select r_password
+					from TEMPTABLE
+					where rownum <![CDATA[<=]]> #{rPastPwCount}
+				)c
+				WHERE R_PASSWORD = #{rPassword}
+				</otherwise>
+		</choose>
+
+	</select>
+	<select id="selectPwHistory" databaseId="oracle" parameterType="com.furence.recsee.admin.model.PwHistory" resultType="Integer">
+			SELECT COUNT(*) AS COUNT
+			FROM
+			<if test = "rPastPwUse == 'C'.toString()">
+			(
+				SELECT R_PASSWORD FROM
+			</if>
+				(
+					SELECT
+						R_PASSWORD
+					FROM
+						RS_PW_HISTORY
+					WHERE R_USER_ID = #{rUserId}
+					ORDER BY R_HISTORY_DATE DESC
+				)a
+	
+			<if test = "rPastPwUse == 'C'.toString()">
+				LIMIT #{rPastPwCount}
+			)b
+			</if>
+	
+			WHERE
+				R_PASSWORD = #{rPassword}
+
+	</select>
+	
+	<insert id="insertPwHistory" databaseId="postgres"  parameterType="com.furence.recsee.admin.model.PwHistory">
+		INSERT INTO RS_PW_HISTORY
+		(		R_USER_ID
+			,	R_PASSWORD
+		)
+		VALUES
+		(
+				#{rUserId}
+			,	#{rPassword}
+		);
+		
+		update RS_RUSER_INFO set R_PWEDIT_DATE = to_char(now(),'yyyyMMdd') where r_user_id=#{rUserId};
+		update RS_AUSER_INFO set R_PWEDIT_DATE = to_char(now(),'yyyyMMdd') where r_user_id=#{rUserId};
+		
+	</insert>
+	
+	<insert id="insertPwHistory"  databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.PwHistory">
+		INSERT INTO RS_PW_HISTORY
+		(		R_USER_ID
+			,	R_PASSWORD
+		)
+		VALUES
+		(
+				#{rUserId}
+			,	#{rPassword}
+		);
+		
+		update RS_RUSER_INFO set R_PWEDIT_DATE = replace(CONVERT(varchar(10),getdate(), 121),'-','') where r_user_id=#{rUserId};
+		update RS_AUSER_INFO set R_PWEDIT_DATE = replace(CONVERT(varchar(10),getdate(), 121),'-','') where r_user_id=#{rUserId};
+		
+	</insert>
+	
+	<insert id="insertPwHistory" databaseId="oracle"  parameterType="com.furence.recsee.admin.model.PwHistory">
+	
+		DECLARE
+		BEGIN
+			INSERT INTO RS_PW_HISTORY
+			(		R_USER_ID
+				,	R_PASSWORD
+			)
+			VALUES
+			(
+					#{rUserId}
+				,	#{rPassword}
+			);
+			
+			update RS_RUSER_INFO set R_PWEDIT_DATE = to_char(CURRENT_TIMESTAMP,'yyyymmdd') where r_user_id=#{rUserId};
+			update RS_AUSER_INFO set R_PWEDIT_DATE = to_char(CURRENT_TIMESTAMP,'yyyymmdd') where r_user_id=#{rUserId};
+		END;
+	
+		
+	</insert>
+</mapper>

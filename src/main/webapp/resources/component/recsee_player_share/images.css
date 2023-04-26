@@ -1,0 +1,437 @@
+
+/* Input icon */
+.icon_input_cal{
+	background-repeat: no-repeat;
+    background-position: right center;
+    background-image: url(../images/project/icon/form_icon/icon_input_cal.png);
+}
+.icon_input_tit{
+	background-repeat: no-repeat;
+    background-position: 5px center;
+    background-image: url(../images/project/icon/form_icon/icon_input_tit.png);
+    text-indent: 33px;
+}
+.icon_input_info{
+	background-repeat: no-repeat;
+    background-position: 5px center;
+    background-image: url(../images/project/icon/form_icon/icon_input_info.png);
+    text-indent: 33px;
+}
+
+/* Label icon */
+.icon_label_group_gray{
+	background-image: url(../images/project/main/icon/label_icon/icon_label_group_gray.png);
+	background-repeat: no-repeat;
+	background-position: 5px center;
+    padding-left: 30px !important;
+}
+
+
+/**** Button Icon Add ****/
+
+/* only button */
+.icon_btn_arrowUp_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_arrowUp_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_arrowUp_gray:after{
+    content: "\00a0";
+}
+.icon_btn_arrowDown_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_arrowDown_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_arrowDown_gray:after{
+    content: "\00a0";
+}
+.icon_btn_trash_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trash_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_trash_white:after{
+    content: "\00a0";
+}
+.icon_btn_trash_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trash_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_trash_gray:after{
+    content: "\00a0";
+}
+.icon_btn_evaluation_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_evaluation_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_evaluation_gray:after{
+    content: "\00a0";
+}
+.icon_btn_evaluation_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_evaluation_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_evaluation_white:after{
+    content: "\00a0";
+}
+.icon_btn_trace_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trace_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_trace_gray:after{
+    content: "\00a0";
+}
+.icon_btn_trace_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trace_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_trace_white:after{
+    content: "\00a0";
+}
+/* .icon_btn_exit_gray{
+    background-image: url(images/icon_btn_exit_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+} */
+.icon_btn_exit_gray{
+    background-image: url(images/icon_btn_exit_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 3px center;
+    padding-left: 14px !important;
+}
+.icon_btn_exit_gray:after{
+    content: "\00a0";
+}
+.icon_btn_view_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_view_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_view_gray:after{
+    content: "\00a0";
+}
+.icon_btn_view_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_view_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_view_white:after{
+    content: "\00a0";
+}
+.icon_btn_addBtn_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_add_white.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 5px center;
+    padding-left: 14px !important;
+}
+.icon_btn_addBtn_white:after{
+    content: "\00a0";
+}
+.icon_btn_penBtn_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_pen_gray.png);
+    background-repeat: no-repeat;
+    background-size: 16px;
+    background-position: 5px center;
+    padding-left: 14px !important;
+}
+.icon_btn_penBtn_gray:after{
+    content: "\00a0";
+}
+/* button + text */
+
+.icon_btn_viewTxt_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_view_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_viewTxt_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_view_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_exelTxt_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_exel_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_exelTxt_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_exel_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_downloadTxt_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_download_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_traceTxt_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trace_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_traceTxt_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trace_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_trashTxt_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trash_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_trashTxt_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_trash_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_gear_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_gear_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_gear_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_gear_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_grid_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_grid_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_grid_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_card_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_card_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_card_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_card_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_card_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_cube_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_cube_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_cube_white{
+    background-image: url(images/icon_btn_cube_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_search_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_search_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_search_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_search_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_historySearch_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_historySearch_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_historySearch_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_historySearch_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_save_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_save_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_save_white{
+    background-image: url(images/icon_btn_save_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_add_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_add_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_add_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_add_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_arrowBottom_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_arrowBottom_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_arrowTop_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_arrowTop_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_pen_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_pen_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_pen_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_pen_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_clear_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_clear_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_print_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_print_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_customerSearch_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_customerSearch_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_addgroup_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_addgroup_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_addgroup_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_addgroup_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_adduser_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_adduser_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_adduser_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_adduser_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_key_gray{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_key_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}
+.icon_btn_key_white{
+    background-image: url(../images/project/icon/btn_icon/icon_btn_key_white.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 26px !important;
+}

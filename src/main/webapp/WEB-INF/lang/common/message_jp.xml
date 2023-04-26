@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>共通(common)画面用メッセージ定義</comment>
+
+	<entry key="header.label.hello">おはようございます</entry>
+	<entry key="header.title.settings">環境設定</entry>
+	<entry key="header.title.modifyUser">個人情報の変更</entry>
+	<entry key="header.title.logout">ログアウト</entry>
+	<entry key="header.menu.label.searchNListen">録音管理</entry>
+	<entry key="header.menu.label.searchNListenCallType">コールタイプ聴取管理</entry>	
+	<entry key="header.menu.label.searchNDate">記録検索期間の管理</entry>
+	<entry key="header.menu.label.playerSetting">プレイヤー設定</entry>
+	<entry key="header.menu.label.playerUnderMenu">プレイヤー下段メニュー</entry>
+	<entry key="header.menu.label.playersectionMenu">プレイヤー区間設定</entry>	
+	<entry key="header.menu.label.downloadApproveInit">ダウンロードリクエスト権限</entry>
+	<entry key="header.menu.label.searchNListenMemo">メモ</entry>
+	<entry key="header.menu.label.reportNDashboard">統計</entry>
+	<entry key="header.menu.label.dashboard">ダッシュボード</entry>
+	<entry key="header.menu.label.callAll">コール統計</entry>
+	<entry key="header.menu.label.callUser">ユーザー別コール統計</entry>
+	<entry key="header.menu.label.callMobile">モバイルコール統計</entry>
+	<entry key="header.menu.label.callDayTimeUser">ユーザーダッシュボード</entry>
+	<entry key="header.menu.label.monitoring">モニタリング</entry>
+	<entry key="header.menu.label.realtimeMonitoring">カードビューモニタリング</entry>
+	<entry key="header.menu.label.realtimeMonitoringGrid">グリッドビューモニタリング</entry>
+	<entry key="header.menu.label.realtimeMonitoringOffice">オフィスビューモニタリング</entry>
+	<entry key="header.menu.label.systemMonitoring">システムモニタリング</entry>
+	<entry key="header.menu.label.BluePrintMonitoring">図面モニタリング</entry>
+	<entry key="header.menu.label.serverMonitoring">サーバーモニタリング</entry>
+	<entry key="header.menu.label.systemRealtimeMonitoring">システムモニタリング</entry>
+	<entry key="header.menu.label.myFolderMenu">マイフォルダー</entry>
+	<entry key="header.menu.label.uploadStatus">アップロード現況</entry>
+	<entry key="header.menu.label.individualUploadstatus">個別アップロード現況</entry>
+	<entry key="header.menu.label.uploadStatusSearch">グループ別アップロード現況</entry>
+	<entry key="header.menu.label.BestCall">ウスコール</entry>
+	<entry key="header.menu.label.BestCallManage">ウスコール管理</entry>
+	<entry key="header.menu.label.BestCallShare">ウスコール共有</entry>
+	<entry key="header.menu.label.approveList">聴取·ダウンロードリクエスト管理</entry>
+	<entry key="header.menu.label.evaluation">評価管理</entry>
+	<entry key="header.menu.label.evaluationList">評価照会</entry>
+	<entry key="header.menu.label.itemManage">評価項目管理</entry>
+	<entry key="header.menu.label.sheetManage">評価地管理</entry>
+	<entry key="header.menu.label.campaignManage">キャンペーン管理</entry>
+	<entry key="header.menu.label.administer">アカウント管理</entry>
+	<entry key="header.menu.label.evaluationStatistics">評価統計</entry>
+	<entry key="header.menu.label.evaluating">評価すること</entry>
+	<entry key="header.menu.label.transcript">全社管理</entry>
+	<entry key="header.menu.label.learningTranscript">全社学習管理</entry>
+	<entry key="header.menu.label.sttModel">STTモデル管理</entry>
+	<entry key="header.menu.label.sttEnginState">STT適用モデル情報</entry>
+	<entry key="header.menu.label.sttResultManage">STT 役人</entry>
+		
+	<entry key="header.popup.modifyUser.label.manageUserInfo">ユーザー情報管理</entry>
+	<entry key="header.popup.modifyUser.label.id">ID</entry>
+	<entry key="header.popup.modifyUser.label.userName">ユーザー名</entry>
+	<entry key="header.popup.modifyUser.label.userEmp">ユーザーID</entry>
+	<entry key="header.popup.modifyUser.label.userId">ID</entry>
+	<entry key="header.popup.modifyUser.label.password">パスワード</entry>
+	<entry key="header.popup.modifyUser.label.passwordCheck">パスワード確認</entry>
+	<entry key="header.popup.modifyUser.label.ext">内線番号</entry>
+	<entry key="header.popup.modifyUser.label.phoneNo">連絡先</entry>
+	<entry key="header.popup.modifyUser.label.sex">性別</entry>
+	<entry key="header.popup.modifyUser.option.male">男子</entry>
+	<entry key="header.popup.modifyUser.option.female">女子</entry>
+	<entry key="header.popup.modifyUser.label.userLevel">権限等級</entry>
+	<entry key="header.popup.modifyUser.label.level1">大分類</entry>
+	<entry key="header.popup.modifyUser.label.level2">中分類</entry>
+	<entry key="header.popup.modifyUser.label.level3">小分類</entry>
+	<entry key="header.popup.modifyUser.label.empNo">社員番号</entry>
+	<entry key="header.popup.modifyUser.label.email">Eメール</entry>
+	<entry key="header.popup.modifyUser.label.ctiId">CTIID</entry>
+	<entry key="header.popup.modifyUser.button.modify">個人情報の修正</entry>
+	<entry key="header.popup.evaluation.label.evaluation">カウンセラー評価</entry>
+	<entry key="header.popup.evaluation.option.selectCampaign">キャンペーン選択</entry>
+	<entry key="header.popup.evaluation.option.selectSheet">評価紙選択</entry>
+	<entry key="header.popup.evaluation.input.notification">相談員のお知らせ</entry>
+	<entry key="header.popup.evaluation.input.objection">異議申し立て</entry>
+	<entry key="header.popup.evaluation.input.revaluation">再評価の可否</entry>
+	<entry key="header.popup.evaluation.input.scoringSystem">採点方式</entry>
+	<entry key="header.popup.evaluation.label.evaluatorComment">評価者総合意見</entry>
+	<entry key="header.popup.evaluation.label.evaluatorComment2">二次評価者総合意見</entry>
+	<entry key="header.popup.evaluation.label.appraiseeComment">相談員総合意見</entry>
+	<entry key="header.popup.evaluation.button.moveCampaign">キャンペーン管理に移動</entry>
+	<entry key="header.popup.evaluation.label.sheetScore">評価総点数</entry>
+	<entry key="header.popup.evaluation.label.totalScore">評価された点数</entry>
+	<entry key="header.popup.evaluation.button.interimStorage">中間貯蔵</entry>
+	<entry key="header.popup.evaluation.button.done">評価済み</entry>
+	<entry key="header.popup.evaluation.alert.noData">項目がありません</entry>
+	<entry key="header.popup.evaluation.alert.notAllSelected">選択していない項目があります。</entry>
+	<entry key="header.popup.evaluation.alert.updateEvaluationComplete">評価が保存されました。</entry>
+	<entry key="header.popup.evaluation.alert.updateEvaluationFailed">評価保存に失敗しました。</entry>
+	<entry key="header.popup.modifyUser.label.userInfo">ユーザー情報</entry>
+	<entry key="header.popup.modifyUser.label.custInfo">顧客情報</entry>
+
+
+
+	<entry key="tab.alert.exceeds">タブ個数が10個を超えることはできません。 使用中のタブを終了してください</entry>
+
+	<entry key="recsee.title.version">バージョン</entry>		
+	<entry key="recsee.version">v3.0</entry>		
+					
+	<entry key="message.title.alert">警告</entry>		
+	<entry key="message.title.notifications">お知らせ</entry>		
+	<entry key="message.btn.ok">確認</entry>		
+	<entry key="message.btn.cancel">キャンセル</entry>		
+	<entry key="message.btn.add">アイテム追加</entry>		
+	<entry key="message.btn.memo">メモ追加</entry>		
+	<entry key="message.btn.modify">修整</entry>		
+	<entry key="message.btn.del">削除</entry>		
+	<entry key="message.btn.apply">適用</entry>		
+	<entry key="message.btn.clear">フォーム初期化</entry>		
+	<entry key="message.btn.csv">csvけんさく</entry>		
+	<entry key="message.btn.excelDownload">エクセル·ダウンロード</entry>		
+	<entry key="message.btn.testMailSend">テストメール送信</entry>		
+	<entry key="message.btn.save">保存</entry>		
+	<entry key="message.btn.restart">リスタート</entry>		
+	<entry key="message.btn.upload">アップロード</entry>		
+	<entry key="message.btn.selectionType">選択形</entry>		
+	<entry key="message.btn.inputType">入力型</entry>		
+	<entry key="message.btn.checkType">チェック形</entry>		
+	<entry key="message.btn.answerType">答弁型</entry>		
+					
+	<entry key="ws.message.not_support">使用中のブラウザは、Web Socketに対応しません。</entry>		
+	<entry key="ws.message.exception">WebSocket処理中にエラーが発生しました。</entry>		
+	<entry key="ws.message.no_message">リクエストメッセージがありません。</entry>		
+	<entry key="ws.message.send_exception">要請メッセージを伝達中にエラーが発生しました。</entry>		
+	<entry key="ws.message.connect_fail"><![CDATA[サーバーが応答しません。<br>確認後、再度お試しください。]]></entry>
+	<entry key="ws.message.save_fail"><![CDATA[修正された設定を保存できませんでした。]]></entry>	
+	<entry key="ws.message.regException">例外</entry>		
+	<entry key="ws.message.isNaN">数字のみ入力してください。</entry>		
+	<entry key="ws.message.isCharacter">特殊文字は使用できません。</entry>		
+	<entry key="ws.message.isEng">英文字のみ入力してください。</entry>		
+	<entry key="ws.message.isIDCheck"><![CDATA[IDは英文字、数字の組み合わせで入力してください。<br>英文字で始めなければなりません。.]]></entry>
+	<entry key="ws.message.inputLength">入力長</entry>		
+					
+	<entry key="call.type.ALL">全体</entry>		
+	<entry key="call.type.I">着信</entry>		
+	<entry key="call.type.O">発信</entry>		
+	<entry key="call.type.T">好転換</entry>		
+	<entry key="call.type.TR">切替受信</entry>		
+	<entry key="call.type.TS">切替送信</entry>		
+	<entry key="call.type.C">懐疑</entry>		
+	<entry key="call.type.Z">内線</entry>		
+	<entry key="call.type.R">IVR</entry>		
+	<entry key="call.type.T2">内線送信</entry>		
+	<entry key="call.type.C2">懐疑</entry>		
+	<entry key="call.type.Z2">内線</entry>		
+					
+	<entry key="call.buffer13.S">現場出動</entry>		
+	<entry key="call.buffer13.E">緊急出動</entry>		
+	<entry key="call.buffer13.A">事故の受付</entry>		
+					
+	<entry key="call.buffer14.1">勤続</entry>		
+	<entry key="call.buffer14.2">新入</entry>		
+					
+	<entry key="use.yes">例</entry>		
+	<entry key="use.no">いいえ</entry>		
+					
+	<entry key="call.rec.type.acr">全数録取</entry>		
+	<entry key="call.rec.type.odr">選択録音</entry>		
+	<entry key="call.rec.type.tacr">部分録音</entry>		
+	<entry key="call.rec.type.tcr">全体</entry>		
+					
+	<entry key="call.rec.startType.A">全数録取</entry>		
+	<entry key="call.rec.startType.S">選択録音</entry>		
+	<entry key="call.rec.startType.P">部分録音</entry>		
+	<entry key="call.rec.startType.T">全録音</entry>		
+					
+	<entry key="call.type.startType.A">全数録取</entry>		
+	<entry key="call.type.startType.S">選択録音</entry>		
+	<entry key="call.type.startType.P">部分録音</entry>		
+	<entry key="call.type.startType.T">全録音</entry>		
+	<entry key="call.type.startType.T">全録音</entry>		
+	<entry key="call.type.OUT">OUT</entry>		
+	<entry key="call.type.IN">IN</entry>		
+					
+	<entry key="access.grade.A">全体</entry>		
+	<entry key="access.grade.B">大分類</entry>		
+	<entry key="access.grade.M">中分類</entry>		
+	<entry key="access.grade.S">小分類</entry>		
+	<entry key="access.grade.U">本人</entry>		
+	<entry key="access.grade.add">許容追加</entry>		
+					
+	<entry key="line.20">====================</entry>		
+	<entry key="line.10">==========</entry>		
+					
+	<entry key="message.download.nofile">ファイルがありません。</entry>		
+	<entry key="message.download.logout">ログインセッションが終了しました。</entry>		
+	<entry key="message.alert.noData">データがありません。</entry>		
+					
+	<entry key="message.combo.select">選択</entry>		
+					
+	<entry key="message.combo.default">既定値</entry>		
+					
+	<entry key="common.sperater.1">/</entry>		
+					
+	<entry key="message.title.status">状態</entry>		
+					
+	<entry key="combo.ALL">全体</entry>		
+					
+	<entry key="contextMenu.allChecked"><![CDATA[全体選択]]></entry>	
+	<entry key="contextMenu.allUnChecked"><![CDATA[全体解除]]></entry>	
+					
+	<entry key="combo.filePattern.a">CID</entry>		
+	<entry key="combo.filePattern.b">コールタイプ</entry>		
+	<entry key="combo.filePattern.c">ユーザーID</entry>		
+					
+					
+	<entry key="common.date.start">開始日</entry>		
+	<entry key="common.date.end">終了日</entry>		
+	<entry key="common.label.start">詩作</entry>		
+	<entry key="common.label.end">おしまい</entry>		
+	<entry key="common.label.move">移動</entry>		
+	<entry key="common.label.selectFolder">フォルダ選択</entry>		
+	<entry key="common.label.selectMoveFile">選択ファイル移動</entry>		
+	<entry key="common.label.folderName">フォルダー名</entry>		
+	<entry key="common.label.editFolder">フォルダ修正</entry>		
+	<entry key="common.label.addFolder">フォルダー追加</entry>		
+	<entry key="common.label.manageSearchList">照会リスト管理</entry>		
+	<entry key="common.label.download">ダウンロード</entry>		
+	<entry key="common.label.fileName">ファイル名</entry>		
+	<entry key="common.label.encYn">暗号化の有無</entry>		
+	<entry key="common.label.format">ファイル·フォーマット</entry>		
+	<entry key="common.label.reason">ダウンロード事由</entry>		
+	<entry key="common.label.sir">様</entry>		
+	<entry key="common.label.Noclassification">該当分類なし</entry>		
+
+	
+	<entry key="common.excel.download">エクセル·ダウンロード</entry>
+	<entry key="views.player.html.text1">再生中のファイルがありません。</entry>
+	<entry key="views.player.html.text2">現在再生中のファイル:</entry>
+	<entry key="views.player.html.text3">移動</entry>
+	<entry key="views.player.html.text4">一文字</entry>
+	<entry key="views.player.html.text5">時間</entry>
+	<entry key="views.player.html.text6">登録者</entry>
+	<entry key="views.player.html.text7">相手先番号</entry>
+	<entry key="views.player.html.text8">内線番号</entry>
+	<entry key="views.player.html.text9">メモ</entry>
+	<entry key="views.player.html.text10">タグ内容</entry>
+	<entry key="views.player.html.text11">貯蔵</entry>
+	<entry key="views.player.html.text12">区間設定</entry>
+	<entry key="views.player.html.text13">開始時間</entry>
+	<entry key="views.player.html.text14">終了時間</entry>
+	<entry key="views.player.html.text15">生成</entry>
+	<entry key="views.player.html.text16">聴取中情報 -</entry>
+	<entry key="views.player.html.text17">リピート</entry>
+	<entry key="views.player.html.text18">リピート解除</entry>
+	<entry key="views.player.html.text19">ダウン</entry>
+	<entry key="views.player.html.text20">ミュート</entry>
+	<entry key="views.player.html.text21">ミュート解除</entry>
+	<entry key="views.player.html.text22">切取り</entry>
+	<entry key="views.player.html.text23">切取り解除</entry>
+	<entry key="views.player.html.text24">削除</entry>
+	<entry key="views.player.html.text25">削除しますか?</entry>
+	<entry key="views.player.html.text26">相手先名</entry>
+	<entry key="views.player.html.text27">通話開始時間</entry>
+	<entry key="views.player.html.text28">共有タイトル</entry>
+	<entry key="views.player.html.text29">削除する項目をまずチェックしてください。</entry>
+	<entry key="views.player.html.text30">タグ情報</entry>
+
+	
+	
+	<entry key="common.label.playerDownload">プレイヤー·ダウンロード</entry>
+	<entry key="common.label.playerPeriod">満了期間(日)</entry>
+	<entry key="common.label.playerPassword">二次認証暗号</entry>
+	<entry key="common.label.playerRePassword">2次認証暗号確認</entry>
+		
+	<entry key="views.player.html.text31">プレイヤー満了期間を入力してください!</entry>
+	<entry key="views.player.html.text32">プレイヤーの満了期間は最低1日です。</entry>
+	<entry key="views.player.html.text33">プレイヤー満了期間は最大30日です。</entry>
+	<entry key="views.player.html.text34">2次認証パスワードを入力してください!</entry>
+	<entry key="views.player.html.text35">2次認証パスワードを確認してください!</entry>
+	<entry key="views.player.html.text36">プレイヤーをダウンロードしますか?</entry>
+		
+		
+	<entry key="common.alert.loginAgain">セッションが切れてログインページに移動します。 \\n再ログイン後ご利用ください。</entry>
+	<entry key="common.alert.PartialRec">※部分録音はデュアルプレイヤーで聴取できません。</entry>
+	<entry key="common.alert.noDevice">コンピューターに音声ファイルを再生可能な装置がありません。\\nコンピュータに再生可能なデバイスに接続してから、聞き取りを試みて下さい。</entry>
+	
+	<entry key="common.alert.savedMemo">メモの保存が完了しました。</entry>
+	<entry key="common.alert.deletedMemo">メモの削除が完了しました。</entry>
+	<entry key="common.alert.savedPlayerTag">プレイヤータグの保存が完了しました。</entry>
+	<entry key="common.alert.failUpdateTag">タグ情報が正常に更新されていません。 \\n再照会するとタグ情報が正常に更新されます。</entry>
+	<entry key="common.alert.inputTime">次のように時分秒を入力してください!</entry>
+	<entry key="common.alert.ex">例</entry>
+	<entry key="common.alert.chkDrawing">図面を先に照会してください。</entry>
+	<entry key="common.alert.searchWord">検索する単語を入力してください。</entry>
+		
+		
+	<entry key="common.alert.noPlayerTags">削除するプレイヤータグがありません。</entry>
+		
+		
+		
+	<entry key="common.alert.noUserID">ユーザーID情報がありません。\\n正しい経路でご利用ください!\\n確認を押すとログインページに移動します。</entry>
+	<entry key="common.alert.extension.succeeded">パスワード変更周期延長に成功しました。\\n確認を押すとログインページに移動します。\\n再ログインしてください!</entry>
+	<entry key="common.alert.extend.Failed">パスワード変更周期延長に失敗しました。</entry>
+	<entry key="common.alert.current.password">現在のパスワードを入力してください!</entry>
+	<entry key="common.alert.newPassword">新しいパスワードを入力してください!</entry>
+	<entry key="common.alert.notMatch.password">新しいパスワードとパスワードの確認が一致しません!</entry>
+	<entry key="common.alert.change.succeeded">パスワードの変更に成功しました。\\n確認を押すとログインページに移動します。\\n変更されたパスワードでログインしてください!</entry>
+	<entry key="common.alert.wrong.password">現在パスワードが一致しません。 \\nもう一度入力してください!</entry>
+	<entry key="common.alert.passwords.inThePast">過去のパスワード再使用許容回数を超えています。\\n他のパスワードを入力してください。</entry>
+	<entry key="common.alert.previous.password">以前使用していたパスワードは使用できません。 \\n他のパスワードを入力してください。</entry>
+	<entry key="common.alert.change.failed">パスワードの変更に失敗しました。</entry>
+		
+	<entry key="common.alert.noEvaluation">評価分配されたキャンペーンがありません。</entry>
+	<entry key="common.alert.enter.validDateFormat">正しい日付形式を入力してください。</entry>
+	<entry key="common.alert.modification.completed">情報修正が完了しました。</entry>
+		
+		
+		
+	<entry key="common.alert.disconnected.ID">ID重複接続により、既存のセッションが解除されました。</entry>
+	<entry key="common.alert.disconnected.IP">IP 重複接続により、既存のセッションが解除されました。</entry>
+	<entry key="common.alert.Unauthorized.IP">許可されていないipです。 管理者にお問い合わせください。</entry>
+	<entry key="common.alert.notMatchPasswords">パスワードが一致しません。</entry>
+	<entry key="common.alert.expired.password">パスワードの使用期限が切れたため、パスワードの変更が必要です。 \\n確認を押すと、パスワード変更ページに移動します。</entry>
+	<entry key="common.alert.required.changePwd">パスワードの変更が必要です。 \\n確認を押すと、パスワード変更ページに移動します。</entry>
+	<entry key="common.alert.locked.account">長い間アクセスできなかったり、持続的なログイン失敗でアカウントがロックされた状態です。 \\n 管理者に問い合わせて、パスワードを変更した後、再ログインしてください。</entry>
+	<entry key="common.alert.noPages.accessible">アクセス可能なページがありません。 権限を確認してください。</entry>
+	<entry key="common.alert.failedLogin.ID">ID重複接続によりログインに失敗しました。</entry>
+	<entry key="common.alert.failedLogin.IP">IP重複接続によりログインに失敗しました。</entry>
+	<entry key="common.alert.expired.session">セッションが終了しました。 もう一度ログインしてください。</entry>
+		
+	<entry key="common.alert.notListening">聴取中ではありません。</entry>
+	<entry key="common.alert.saveDrawing">図面を保存しますか?</entry>
+	<entry key="common.alert.changePwdNext">パスワードを次に変更しますか?</entry>
+	<entry key="common.alert.deleteMemo.file">現在ファイルに保存されたメモがすべて削除されます。 \\n本当に削除しますか?</entry>
+
+	<entry key="log.ChannelInfo.ChannelInfo">チャンネル情報</entry>
+	
+	<entry key="log.ChannelInfo.chNum">チャンネル番号</entry>
+	<entry key="log.ChannelInfo.oldSysCode">既存のシステムコード</entry>
+	<entry key="log.ChannelInfo.sysCode">システムコード</entry>
+	<entry key="log.ChannelInfo.extNum">内線番号</entry>
+	<entry key="log.ChannelInfo.extIp">IP</entry>
+	<entry key="log.ChannelInfo.recYn">録音の使用可否</entry>
+	<entry key="log.ChannelInfo.extKind">緑臭の種類</entry>
+	<entry key="log.ChannelInfo.recType">録取タイプ</entry>
+	<entry key="log.ChannelInfo.screenYn">スクリーン使用可否</entry>
+	<entry key="log.DBManage.DBManage">DB管理</entry>
+	<entry key="log.DBManage.dbName">DB名</entry>
+	<entry key="log.DBManage.dbServer">サーバー</entry>
+	<entry key="log.DBManage.url">URL</entry>
+	<entry key="log.DBManage.id">アイディー</entry>
+	<entry key="log.DBManage.pw">パスワード</entry>
+	<entry key="log.DBManage.timeout">タイムアウト</entry>
+	<entry key="log.ExecuteManage.ExecuteManage">スケジュール管理</entry>
+	<entry key="log.ExecuteManage.executeName">スケジュール名</entry>
+	<entry key="log.ExecuteManage.jobName">作業名</entry>
+	<entry key="log.ExecuteManage.rSchedulerSelect">スケジュール選択</entry>
+	<entry key="log.ExecuteManage.rSchedulerWeek">週</entry>
+	<entry key="log.ExecuteManage.rSchedulerDay">日</entry>
+	<entry key="log.ExecuteManage.rSchedulerHour">時</entry>
+	<entry key="log.ExecuteManage.rExecuteFlag">実行可否</entry>
+	<entry key="log.ExecuteManage.rExecuteDate">実行日付</entry>
+	<entry key="log.ExecuteManage.rExecuteTime">実行時間</entry>
+	<entry key="log.ExecuteManage.rCompleteDate">完了日</entry>
+	<entry key="log.ExecuteManage.rCompleteTime">完了時間</entry>
+	<entry key="log.ExecuteManage.rErrorMessage">エラー内容</entry>
+	<entry key="log.JobManage.JobManage">作業管理</entry>
+	<entry key="log.JobManage.jobName">作業名</entry>
+	<entry key="log.JobManage.dbName">DB名</entry>
+	<entry key="log.JobManage.sqlName">SQL名</entry>
+	<entry key="log.RUserInfo.RUserInfo">ユーザー情報</entry>
+	<entry key="log.RUserInfo.logContents">内容</entry>
+	<entry key="log.RUserInfo.userId">アイディー</entry>
+	<entry key="log.RUserInfo.userName">名前</entry>
+	<entry key="log.RUserInfo.bgCode">大分類コード</entry>
+	<entry key="log.RUserInfo.mgCode">中分類コード</entry>
+	<entry key="log.RUserInfo.sgCode">小分類コード</entry>
+	<entry key="log.RUserInfo.bgName">大分類名</entry>
+	<entry key="log.RUserInfo.mgName">中分類名</entry>
+	<entry key="log.RUserInfo.sgName">小分類名</entry>
+	<entry key="log.RUserInfo.userPhone">携帯電話</entry>
+	<entry key="log.RUserInfo.userLevel">権限情報</entry>
+	<entry key="log.RUserInfo.extNo">内線番号</entry>
+	<entry key="log.RUserInfo.userEmail">Eメール</entry>
+	<entry key="log.RUserInfo.userSex">性別</entry>
+	<entry key="log.SQLManage.SQLManage">SQL管理</entry>
+	<entry key="log.SQLManage.sqlName">SQL名</entry>
+	<entry key="log.SQLManage.sql">SQL</entry>
+	<entry key="log.UserDBInterface.UserDBInterface">ユーザーDBインタフェース</entry>
+	<entry key="log.UserDBInterface.seq">seq</entry>
+	<entry key="log.UserDBInterface.rDbIp">IP</entry>
+	<entry key="log.UserDBInterface.rDbUser">遺著</entry>
+	<entry key="log.UserDBInterface.rDbPwd">使用者</entry>
+	<entry key="log.UserDBInterface.rDbPort">Port</entry>
+	<entry key="log.UserDBInterface.rDbName">DB名</entry>
+	<entry key="log.UserDBInterface.rTeamCode">チームコード</entry>
+	<entry key="log.UserDBInterface.rTeamName">チーム名</entry>
+	<entry key="log.UserDBInterface.rHh">時</entry>
+	<entry key="log.UserDBInterface.rFlag">flag</entry>
+	<entry key="log.UserDBInterface.rDate">日付</entry>
+	<entry key="log.UserDBInterface.rCompleteDate">完了日</entry>
+	<entry key="log.UserDBInterface.rCompleteTime">完了時間</entry>
+	<entry key="log.BestCallInfo.BestCallInfo">優秀コールファイル情報</entry>
+	<entry key="log.BestCallInfo.rShareDate">登録日</entry>
+	<entry key="log.BestCallInfo.rShareTime">登録時間</entry>
+	<entry key="log.BestCallInfo.rUserId">登録者ID</entry>
+	<entry key="log.BestCallInfo.rShareTitle">ウスコールタイトル</entry>
+	<entry key="log.BestCallInfo.rSharePath">ファイル名</entry>
+	<entry key="log.BestCallInfo.rShareDueDate">共有期間</entry>
+	<entry key="log.BestCallInfo.rShareTarget">共有範囲</entry>
+	<entry key="log.CustConfigInfo.CustConfigInfo">顧客企業の設定</entry>
+	<entry key="log.CustConfigInfo.rCustCode">顧客企業コード</entry>
+	<entry key="log.CustConfigInfo.rConfigKey">設定キー</entry>
+	<entry key="log.CustConfigInfo.rConfigValue">設定値</entry>
+	<entry key="log.CustConfigInfo.desc">設定説明</entry>
+	<entry key="log.EtcConfigInfo.EtcConfigInfo">設定修正情報</entry>
+	<entry key="log.EtcConfigInfo.groupKey">グループ·キー</entry>
+	<entry key="log.EtcConfigInfo.mGroupKey">グループキー(修正)</entry>
+	<entry key="log.EtcConfigInfo.configKey">設定キー</entry>
+	<entry key="log.EtcConfigInfo.mConfigKey">設定キー(修正)</entry>
+	<entry key="log.EtcConfigInfo.configValue">設定値</entry>
+	<entry key="log.Log.Log">ログ情報</entry>
+	<entry key="log.Log.rLogDate">日付</entry>
+	<entry key="log.Log.rLogTime">時間</entry>
+	<entry key="log.Log.rLogCode">ログ·コード</entry>
+	<entry key="log.Log.rLogName">対数分類</entry>
+	<entry key="log.Log.rLogContents">対数内容</entry>
+	<entry key="log.Log.rLogDetailCode">ログ詳細コード</entry>
+	<entry key="log.Log.rLogLevel">対数レベル</entry>
+	<entry key="log.Log.rLogIp">ログIP</entry>
+	<entry key="log.Log.rLogServerIp">サーバIP</entry>
+	<entry key="log.Log.rLogUserId">ユーザーID</entry>
+	<entry key="log.Log.rLogEtc">その他</entry>
+	<entry key="log.Log.sDate">ログの日付[スタート]</entry>
+	<entry key="log.Log.eDate">ログの日付[終わり]</entry>
+	<entry key="log.Log.sTime">対数時間[スタート]</entry>
+	<entry key="log.Log.eTime">対数時間[終わり]</entry>
+	<entry key="log.LoginVO.LoginVO">ログイン情報</entry>
+	<entry key="log.LoginVO.failReason">内容</entry>
+	<entry key="log.LoginVO.userId">アイディー</entry>
+	<entry key="log.LoginVO.clientIp">登録されたIP</entry>
+	<entry key="log.LoginVO.userLevel">権限コード</entry>
+	<entry key="log.LoginVO.pwEditDate">パスワード修正日</entry>
+	<entry key="log.LoginVO.tryCount">ログイン失敗回数</entry>
+	<entry key="log.LoginVO.lastLoginDate">最後にログインした日付</entry>
+	<entry key="log.LoginVO.lockYn">施錠有無</entry>
+	<entry key="log.LoginVO.userLevelName">権限名</entry>
+	<entry key="log.MAccessLevelInfo.MAccessLevelInfo">詳細情報</entry>
+	<entry key="log.MAccessLevelInfo.levelCode">権限コード</entry>
+	<entry key="log.MAccessLevelInfo.levelName">権限名</entry>
+	<entry key="log.MMenuAccessInfo.MMenuAccessInfo">詳細情報</entry>
+	<entry key="log.MMenuAccessInfo.programCode">プログラムコード</entry>
+	<entry key="log.MMenuAccessInfo.levelCode">権限コード</entry>
+	<entry key="log.MMenuAccessInfo.accessLevel">許可範囲</entry>
+	<entry key="log.MMenuAccessInfo.readYn">読み</entry>
+	<entry key="log.MMenuAccessInfo.modiYn">修整</entry>
+	<entry key="log.MMenuAccessInfo.delYn">削除</entry>
+	<entry key="log.MMenuAccessInfo.listenYn">聴取</entry>
+	<entry key="log.MMenuAccessInfo.downloadYn">ダウンロード</entry>
+	<entry key="log.MMenuAccessInfo.excelYn">エクセルダウン</entry>
+	<entry key="log.MMenuAccessInfo.maskingYn">マスキング可否</entry>
+	<entry key="log.MMenuAccessInfo.prereciptYn">支店承認</entry>
+	<entry key="log.MMenuAccessInfo.reciptYn">コールセンター受付</entry>
+	<entry key="log.MMenuAccessInfo.approveYn">コールセンター承認</entry>
+	<entry key="log.MMenuAccessInfo.encYn">暗号化の有無</entry>
+	<entry key="log.MMenuAccessInfo.downloadApprove">ダウンロード申請権限</entry>
+	<entry key="log.MMenuAccessInfo.feedbackModifyYn">評価意見の修正</entry>
+	<entry key="log.MMenuAccessInfo.programTop">programTop</entry>
+	<entry key="log.MMenuAccessInfo.programPath">programPath</entry>
+	<entry key="log.MMenuAccessInfo.displayLevel">displayLevel</entry>
+	<entry key="log.MMenuAccessInfo.topPriority">topPriority</entry>
+	<entry key="log.PhoneMappingInfo.PhoneMappingInfo">電話番号マッピング情報</entry>
+	<entry key="log.PhoneMappingInfo.custPhone">電話番号</entry>
+	<entry key="log.PhoneMappingInfo.custNickName">代替文字</entry>
+	<entry key="log.PhoneMappingInfo.useNickName">使用区分</entry>
+	<entry key="log.PhoneMappingInfo.custPhoneKey">電話番号キー</entry>
+	<entry key="log.PhoneMappingInfo.procType">タイプ</entry>
+	<entry key="log.PhoneMappingInfo.procPosition">ポジション</entry>
+	<entry key="log.SubNumberInfo.SubNumberInfo">字番号情報</entry>
+	<entry key="log.SubNumberInfo.telNo">電話番号</entry>
+	<entry key="log.SubNumberInfo.nickName">代替文字</entry>
+	<entry key="log.SubNumberInfo.use">使用区分</entry>
+	<entry key="log.SubNumberInfo.idx">インデックス</entry>
+	<entry key="log.SystemInfo.SystemInfo">サーバー情報</entry>
+	<entry key="log.SystemInfo.sysId">サーバID</entry>
+	<entry key="log.SystemInfo.sysName">サーバー名</entry>
+	<entry key="log.SystemInfo.sysIp">サーバアイピー</entry>
+	<entry key="log.SystemInfo.pbxId">交換機ID</entry>
+	<entry key="log.SystemInfo.storagePath">貯蔵経路</entry>
+	<entry key="log.PublicIpInfo.PublicIpInfo">パブリック IP 情報</entry>
+	<entry key="log.PublicIpInfo.rPublicIp">IP</entry>
+	<entry key="log.PublicIpInfo.rPublicIpOld">オリジナルIP</entry>
+	
+	<entry key="log.etc.lockID">ロックID</entry>
+	<entry key="log.etc.noEqualPw">暗証番号の不一致</entry>
+	<entry key="log.etc.rePw">パスワード再設定</entry>
+	<entry key="log.etc.noMatchIP">IP不一致</entry>
+	<entry key="log.etc.expiredPw">パスワード使用期間満了</entry>
+	<entry key="log.etc.nullID">未登録ID</entry>
+	<entry key="log.etc.logout">ログアウト</entry>
+	<entry key="log.etc.pushBackChange">パスワード変更の延期</entry>
+	<entry key="log.etc.pushBackChangeFail">パスワード変更の延期に失敗</entry>
+	<entry key="log.etc.cntOverPw">以前のパスワード使用回数を超過</entry>
+	<entry key="log.etc.noPrePw">以前のパスワードを使用不可</entry>
+	<entry key="log.etc.pwChange">パスワード変更</entry>
+	<entry key="log.etc.pwChangeFail">パスワード変更失敗</entry>
+	<entry key="log.etc.loginDup">重複ログイン</entry>
+	<entry key="log.etc.day90">90日間使用しない</entry>
+	<entry key="log.etc.loginFail">ログイン失敗</entry>
+	<entry key="log.etc.loginSuccess">ログイン成功</entry>
+	<entry key="log.etc.dupID">ID重複ログイン</entry>
+	<entry key="log.etc.dupIP">IP重複ログイン</entry>
+	<entry key="log.etc.noAuthy">権限なし</entry>
+	<entry key="log.etc.IPDup">IP重複</entry>
+	<entry key="log.etc.IDDup">ID重複</entry>
+	<entry key="log.etc.regSuccess">ユーザー登録成功</entry>
+	<entry key="log.etc.regFail">ユーザー登録失敗</entry>
+	<entry key="log.etc.userModi">ユーザー情報修正</entry>
+	<entry key="log.etc.userModiFail">ユーザー情報修正失敗</entry>
+	<entry key="log.etc.mobileLicenseExceed">モバイルライセンス超過</entry>
+	<entry key="log.etc.man">男子</entry>
+	<entry key="log.etc.woman">女子</entry>
+	<entry key="log.etc.unlockUser">ユーザーロック解除</entry>
+	<entry key="log.etc.detail">詳細情報</entry>
+	<entry key="log.etc.dupAuthy">重複する権限名</entry>
+	
+	<entry key="log.SttServerInfo.SttServerInfo">STTサーバー情報</entry>
+	<entry key="log.SttServerInfo.sysCode">サーバCode</entry>
+	<entry key="log.SttServerInfo.sysName">サーバー名</entry>
+	<entry key="log.SttServerInfo.sysIp">サーバアイピー</entry>
+	
+	<entry key="common.alert.msg1"></entry>
+<!-- 	<entry key="common.alert.msg2"></entry>
+	<entry key="common.alert.msg3"></entry>
+	<entry key="common.alert.msg4"></entry>
+	<entry key="common.alert.msg5"></entry>
+	<entry key="common.alert.msg6"></entry> -->
+	
+</properties>

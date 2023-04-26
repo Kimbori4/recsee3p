@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>관리 화면용 메세지 정의</comment>
+
+	<!-- Management - Left Menu -->
+	<entry key="management.left_menu.setting">Setting management</entry>
+	<entry key="management.left_menu.setting.system">System setting management</entry>
+	<entry key="management.left_menu.setting.channel">Channel management</entry>
+	<entry key="management.left_menu.setting.backup">Backup management</entry>
+	<entry key="management.left_menu.setting.call_report_customize">User-define call report management</entry>
+	<entry key="management.left_menu.setting.search_customize">User-define search management</entry>
+	<entry key="management.left_menu.user">User Management</entry>
+	<entry key="management.left_menu.system">System Management</entry>
+
+	<!-- Management - System Setting - Search Customize -->
+	<entry key="management.search_customize.search_item">Search Items</entry>
+	<entry key="management.search_customize.search_list">Search List</entry>
+	<entry key="management.search_customize.base_item">Basic Items</entry>
+	<entry key="management.search_customize.user_item">User Items</entry>
+	<entry key="management.search_customize.btn.apply">Apply</entry>
+
+	<!-- Management - System Setting - Backup Management -->
+	<entry key="management.backup.title">Backup management</entry>
+	<entry key="management.backup.date">Start Date</entry>
+	<entry key="management.backup.storage">Storage Setting</entry>
+	<entry key="management.backup.btn.ok">OK</entry>
+	<entry key="management.backup.btn.cancel">Cancel</entry>
+
+	<!-- Management - System Setting - Channel Setting -->
+	<entry key="management.channel.tab.channel">Channel</entry>
+	<entry key="management.channel.tab.generation">Channel Generated Automatically</entry>
+
+	<entry key="management.channel.title.channel_generation">Channel Generated Automatically</entry>
+	<entry key="management.channel.title.no">Channel number</entry>
+	<entry key="management.channel.title.system">System</entry>
+	<entry key="management.channel.title.extnum">Extension number</entry>
+	<entry key="management.channel.title.ip">IP</entry>
+	<entry key="management.channel.title.user">User</entry>
+	<entry key="management.channel.title.recording_use">Use recording</entry>
+	<entry key="management.channel.title.recording_type">Kind of Recording</entry>
+	<entry key="management.channel.title.recording_kind">Recording type</entry>
+
+	<entry key="management.channel.title.excel_upload">Excel upload</entry>
+	<entry key="management.channel.title.excel_file">Excel file</entry>
+	<entry key="management.channel.title.channel_delete">Delete existing channels</entry>
+	<entry key="management.channel.title.channel_delete_help">Delete all of the registered channels</entry>
+
+	<entry key="management.channel.title.channel_add">Add channel</entry>
+
+	<entry key="management.channel.btn.generation">Generate</entry>
+	<entry key="management.channel.btn.upload">upload</entry>
+
+	<entry key="management.channel.alert.sChNum.empty">Please input the start channel number to use when automatic generated.</entry>
+	<entry key="management.channel.alert.eChNum.empty">Please input the end channel number to use when automatic generated.</entry>
+	<entry key="management.channel.alert.sExtNum.empty">Please input the extension start number to use when automatic generated.</entry>
+
+	<entry key="management.channel.alert.sChNum.zero">Please input the start channel number with at least 1 character.</entry>
+	<entry key="management.channel.alert.eChNum.zero">Please input the end channel number with at least 1 character.</entry>
+	<entry key="management.channel.alert.sExtNum.length_three">Please input start extension number with at least 3 characters.</entry>
+	<entry key="management.channel.alert.eChNum.small"><![CDATA[End channel number is less than start channel number.<br> Please try again.]]></entry>
+
+	<entry key="management.channel.alert.chNum.empty">Please input the channel number.</entry>
+	<entry key="management.channel.alert.chNum.zero">Please input the channel number with at least 1 character.</entry>
+	<entry key="management.channel.alert.extNum.empty">Please input the extension number.</entry>
+	<entry key="management.channel.alert.extNum.length_three">Please input extension number with at least 3 characters.</entry>
+	<entry key="management.channel.alert.extNum.duplicate">The extension has the same channel.</entry>
+
+	<entry key="management.channel.alert.chIp.empty">Please input the IP to use when automatic generated.</entry>
+	<entry key="management.channel.alert.chIp.rule_violation"><![CDATA[Violation of IP rules.<br> Please try again.]]></entry>
+	<entry key="management.channel.alert.chIp2.empty">Please input available IP.</entry>
+	<entry key="management.channel.alert.chIp.duplicate">IP channels are the same.</entry>
+
+	<entry key="management.channel.message.generation.success"><![CDATA[Channel successfully generated.]]></entry>
+	<entry key="management.channel.message.generation.fail"><![CDATA[An error occurred while generating channel.]]></entry>
+
+	<entry key="management.channel.message.add.success"><![CDATA[Channel added successfully.]]></entry>
+	<entry key="management.channel.message.add.fail"><![CDATA[An error occurred while adding channel.]]></entry>
+
+	<entry key="management.channel.message.modify.success"><![CDATA[Channel information successfully modified.]]></entry>
+	<entry key="management.channel.message.modify.fail"><![CDATA[An error occurred while modifying channel information.]]></entry>
+
+	<entry key="management.channel.message.delete.success"><![CDATA[Channel successfully deleted.]]></entry>
+	<entry key="management.channel.message.delete.fail"><![CDATA[An error occurred while deleting channel.]]></entry>
+	<entry key="management.channel.message.delete.confirm"><![CDATA[Are you sure you want to delete channel?]]></entry>
+	<entry key="management.channel.message.delete.nochecked"><![CDATA[Please select channel.]]></entry>
+	<entry key="management.channel.message.apply.confirm"><![CDATA[Are you sure you want to apply the channel information to the recording engine?]]></entry>
+	<entry key="management.channel.message.apply.success"><![CDATA[Channel information successfully applied.]]></entry>
+	<entry key="management.channel.message.apply.fail"><![CDATA[Fail to apply operational channels.]]></entry>
+
+	<!-- 관리 - 시스템 설정 - 시스템 설정 -->
+	<entry key="management.system.tab.system">System</entry>
+
+	<entry key="management.system.title.system_generation">System Generated</entry>
+	<entry key="management.system.title.sysId">System ID</entry>
+	<entry key="management.system.title.sysName">System Name</entry>
+	<entry key="management.system.title.sysIp">System IP</entry>
+	<entry key="management.system.title.pbxId">PBX ID</entry>
+	<entry key="management.system.title.storagePath">Storage location</entry>
+
+	<entry key="management.system.title.system_delete">System delete</entry>
+
+	<entry key="management.system.title.system_add">System add</entry>
+
+	<entry key="management.system.btn.generation">Generate</entry>
+
+	<entry key="management.system.alert.sysId.empty">Please input system ID.</entry>
+	<entry key="management.system.alert.sysId.zero">Please input system ID with at least 4 characters.</entry>
+	<entry key="management.system.alert.sysName.empty">Please input system name.</entry>
+	<entry key="management.system.alert.sysName.zero">Please input system name with at least 1 character.</entry>
+	<entry key="management.system.alert.sysIp.empty">Please input System IP.</entry>
+	<entry key="management.system.alert.sysIp.zero">Please input system IP with at least 1 character.</entry>
+
+	<entry key="management.system.alert.sysIp.rule_violation"><![CDATA[Violation of IP rules.<br>Please try again.]]></entry>
+	<entry key="management.system.alert.sysId.same">Already registered system ID.</entry>
+	<entry key="management.system.alert.sysName.same">Already registered system name.</entry>
+	<entry key="management.system.alert.sysIp.same">Already registered IP.</entry>
+
+	<entry key="management.system.message.add.success"><![CDATA[System successfully added.]]></entry>
+	<entry key="management.system.message.add.fail"><![CDATA[An error occurred while adding system.]]></entry>
+
+	<entry key="management.system.message.modify.success"><![CDATA[System Information successfully modified.]]></entry>
+	<entry key="management.system.message.modify.fail"><![CDATA[An error occurred while modifying system information.]]></entry>
+
+	<entry key="management.system.message.delete.success"><![CDATA[System successfully deleted.]]></entry>
+	<entry key="management.system.message.delete.fail"><![CDATA[An error occurred while deleting the system.]]></entry>
+	<entry key="management.system.message.delete.confirm"><![CDATA[Are you sure you want to delete the system information?]]></entry>
+	<entry key="management.system.message.delete.nochecked"><![CDATA[Please select System Information.]]></entry>
+	<entry key="management.system.message.usingSystem"><![CDATA[The system is not available.]]></entry>
+
+	<!-- 관리 - 사용자 관리 - 사용자 관리 -->
+	<entry key="management.user.title">User</entry>
+	<entry key="management.user.title.user_add">User registration</entry>
+	<entry key="management.user.title.name">User name</entry>
+	<entry key="management.user.title.userId">ID</entry>
+	<entry key="management.user.title.password">Password</entry>
+	<entry key="management.user.title.passwordChk">Confirm Password</entry>
+	<entry key="management.user.title.extNum">Extension number</entry>
+	<entry key="management.user.title.authy">Authorization level</entry>
+	<entry key="management.user.title.empId">Employee number</entry>
+	<entry key="management.user.title.email">E-mail</entry>
+	<entry key="management.user.title.ctiId">CTI ID</entry>
+	<entry key="management.user.title.bgClass">Category</entry>
+	<entry key="management.user.title.mgClass">Division</entry>
+	<entry key="management.user.title.sgClass">Section</entry>
+	<entry key="management.user.title.multiPart">Multi Part</entry>
+
+	<entry key="management.user.alert.userName.empty">Please input user name</entry>
+	<entry key="management.user.alert.userId.empty">Please input user ID</entry>
+	<entry key="management.user.alert.password.empty">Please input password.</entry>
+	<entry key="management.user.alert.passwordChk.empty">Please confirm password.</entry>
+	<entry key="management.user.alert.password.noSame"><![CDATA[Password entered does not match.<br> Please try again.]]></entry>
+	<entry key="management.user.alert.extNum.empty">Please input extension number.</entry>
+	<entry key="management.user.alert.extNum.duplicate">The users have the same extension number.</entry>
+	<entry key="management.user.alert.authy.empty">Please select the authorization level.</entry>
+	<entry key="management.user.alert.email.validation">Email address is not valid.</entry>
+	<entry key="management.user.alert.empId.validation">Incorrect input range of employee number.</entry>
+	<entry key="management.user.alert.empId.duplicate">The employee numbers are the same user.</entry>
+	<entry key="management.user.alert.ctiId.validation">Incorrect input range of CTI ID.</entry>
+	<entry key="management.user.alert.ctiId.duplicate">'CTI ID' are the same user.</entry>
+
+	<entry key="management.user.message.add.success">User successfully registered</entry>
+	<entry key="management.user.message.add.fail">An error occurred while registering user.</entry>
+	<entry key="management.user.message.modify.success">User information successfully modified</entry>
+	<entry key="management.user.message.modify.fail">An error occurred while modifying user information.</entry>
+	<entry key="management.user.message.delete.success">User successfully deleted.</entry>
+	<entry key="management.user.message.delete.fail">An error occurred while deleting user.</entry>
+	<entry key="management.user.message.delete.confirm">Are you sure you want to delete the selected user?</entry>
+	<entry key="management.user.message.delete.nochecked">Please select a user.</entry>
+	<entry key="management.user.message.apply.confirm"><![CDATA[Do you want to apply the user information recorded in the engine?]]></entry>
+	<entry key="management.user.message.apply.success"><![CDATA[The user information has been applied.]]></entry>
+	<entry key="management.user.message.apply.fail"><![CDATA[It did not apply.]]></entry>
+	<entry key="management.user.message.multiPart.success"><![CDATA[Additional group information has been applied.]]></entry>
+	<entry key="management.user.message.multiPart.fail"><![CDATA[No additional group information was applied.]]></entry>
+	<entry key="management.user.message.admin.multiPartNotSetting"><![CDATA[The site administrator does not need to set up additional groups.]]></entry>
+
+	<!-- 관리 - 권한 관리 -->
+	<entry key="management.access.title">Authorization Management</entry>
+	<entry key="management.access.title.groupName">Group name</entry>
+	<entry key="management.access.title.menuName">Menu</entry>
+	<entry key="management.access.title.use">Use</entry>
+	<entry key="management.access.title.range">Range</entry>
+	<entry key="management.access.title.access">Permissions</entry>
+	<entry key="management.access.title.read">Read</entry>
+	<entry key="management.access.title.write">Write</entry>
+	<entry key="management.access.title.modi">Modify</entry>
+	<entry key="management.access.title.delete">Delete</entry>
+	<entry key="management.access.title.listen">Listen</entry>
+	<entry key="management.access.title.download">Download</entry>
+	<entry key="management.access.title.excel">Excel</entry>
+	<entry key="management.access.title.masking">Masking</entry>
+	<entry key="management.access.title.prerecipt">Primary approval</entry>
+	<entry key="management.access.title.recipt">Second round of approval</entry>
+	<entry key="management.access.title.approve">Final approval</entry>
+	<entry key="management.access.title.downloadApprove">Download Approve</entry>
+	<entry key="management.access.title.encyn">REC Encryption</entry>
+	<entry key="management.access.title.upload">Upload</entry>
+	<entry key="management.access.title.bestcall">BestCall Add</entry>
+	<entry key="management.access.title.feedback.modify">Modify Evaluator Comment</entry>
+
+	<entry key="management.access.form.authyTitle">Authority Name</entry>
+
+	<entry key="management.access.message.delete.admin">Administrator privileges can not be deleted.</entry>
+	<entry key="management.access.message.delete.confirm">Are you sure you want to delete the selected privileges?</entry>
+	<entry key="management.access.message.delete.success">Privilege successfully deleted.</entry>
+	<entry key="management.access.message.delete.fail">An error occurred while deleting privileges.</entry>
+	<entry key="management.access.message.clear">Authorization Management screen is reset.</entry>
+	<entry key="management.access.message.modify.error">An error occurred while modifying privilege status.</entry>
+	<entry key="management.access.message.modify.success">Privilege successfully modified.</entry>
+	<entry key="management.access.message.modify.fail">An error occurred while modifying privilege.</entry>
+	<entry key="management.access.message.insert.name.empty">Please input authorized name.</entry>
+	<entry key="management.access.message.insert.error">An error occurred while adding  permissions.</entry>
+	<entry key="management.access.message.insert.success">Privilege added successfully.</entry>
+
+	<entry key="management.searchCustomize.form.item.levelCombo">Level</entry>
+	<entry key="management.searchCustomize.form.item.fieldset.title">Search Item</entry>
+	<entry key="management.searchCustomize.form.list.fieldset.title">Search List</entry>
+
+	<entry key="management.searchCustomize.rCustAddress">Cust Address</entry>
+
+	<entry key="management.searchCustomize.item.grid.title.name">Search Item name</entry>
+	<entry key="management.searchCustomize.item.grid.title.var">Search Item variables</entry>
+	<entry key="management.searchCustomize.list.grid.title.name">Search List name</entry>
+	<entry key="management.searchCustomize.list.grid.title.var">Search List variables</entry>
+	<entry key="management.searchCustomize.copy.grid.title.name">Search Copyable list</entry>
+	<entry key="management.searchCustomize.copy.grid.title.var">Search Copyable list variables</entry>
+
+	<entry key="management.searchCustomize.rCheckBox">Check</entry>
+	<entry key="management.searchCustomize.rownumber">Number</entry>
+	<entry key="management.searchCustomize.rRecDate">Recording date</entry>
+	<entry key="management.searchCustomize.rRecTime">Recording time</entry>
+	<entry key="management.searchCustomize.rRecRtime">Recording hour</entry>
+	<entry key="management.searchCustomize.rBgCode">Category</entry>
+	<entry key="management.searchCustomize.rMgCode">Division</entry>
+	<entry key="management.searchCustomize.rSgCode">Section</entry>
+	<entry key="management.searchCustomize.rUserId">User Id</entry>
+	<entry key="management.searchCustomize.rChNum">Channel Number</entry>
+	<entry key="management.searchCustomize.rUserName">User name</entry>
+	<entry key="management.searchCustomize.rCallId1">Call Id</entry>
+	<entry key="management.searchCustomize.rCallId2">Call Id</entry>
+	<entry key="management.searchCustomize.rCallId3">Call id</entry>
+	<entry key="management.searchCustomize.rExtNum">Extension</entry>
+	<entry key="management.searchCustomize.rCustName">Customer name</entry>
+	<entry key="management.searchCustomize.rCustPhone1">Phone number</entry>
+	<entry key="management.searchCustomize.rCustPhone2">Phone number</entry>
+	<entry key="management.searchCustomize.rCustPhone3">Phone number</entry>
+	<entry key="management.searchCustomize.rCallKind1">Call type</entry>
+	<entry key="management.searchCustomize.rCallKind2">Call type</entry>
+	<entry key="management.searchCustomize.rCallStime">Recording Start time</entry>
+	<entry key="management.searchCustomize.rCallEtime">Recording End time</entry>
+	<entry key="management.searchCustomize.rCallTtime">Recording time(sec)</entry>
+	<entry key="management.searchCustomize.rSelfdisYn">Self Disconnect</entry>
+	<entry key="management.searchCustomize.rVSysCode">System code</entry>
+	<entry key="management.searchCustomize.rListenUrl">Listen Url</entry>
+	<entry key="management.searchCustomize.rRecMemo">Memo</entry>
+	<entry key="management.searchCustomize.rEvalYn">Evaluation Yes/No</entry>
+	<entry key="management.searchCustomize.rCustSocialNum">Social number</entry>
+	<entry key="management.searchCustomize.rCnid">CNID</entry>
+	<entry key="management.searchCustomize.rDestIp">Destination IP</entry>
+	<entry key="management.searchCustomize.rBuffer1">add1</entry>
+	<entry key="management.searchCustomize.rBuffer2">add2</entry>
+	<entry key="management.searchCustomize.rBuffer3">add3</entry>
+	<entry key="management.searchCustomize.rBuffer4">add4</entry>
+	<entry key="management.searchCustomize.rBuffer5">add5</entry>
+	<entry key="management.searchCustomize.rBuffer6">add6</entry>
+	<entry key="management.searchCustomize.rBuffer7">add7</entry>
+	<entry key="management.searchCustomize.rBuffer8">add8</entry>
+	<entry key="management.searchCustomize.rBuffer9">add9</entry>
+	<entry key="management.searchCustomize.rBuffer10">add10</entry>
+	<entry key="management.searchCustomize.rBuffer11">add11</entry>
+	<entry key="management.searchCustomize.rBuffer12">add12</entry>
+	<entry key="management.searchCustomize.rBuffer13">add13</entry>
+	<entry key="management.searchCustomize.rBuffer14">add14</entry>
+	<entry key="management.searchCustomize.rBuffer15">add15</entry>
+	<entry key="management.searchCustomize.rBuffer16">add16</entry>
+	<entry key="management.searchCustomize.rBuffer17">add17</entry>
+	<entry key="management.searchCustomize.rBuffer18">add18</entry>
+	<entry key="management.searchCustomize.rBuffer19">add19</entry>
+	<entry key="management.searchCustomize.rBuffer20">add20</entry>
+	<entry key="management.searchCustomize.rVdoUrl">Vdo url</entry>
+	<entry key="management.searchCustomize.rCustId">Customer ID</entry>
+	<entry key="management.searchCustomize.rRegiDate">Register Date</entry>
+	<entry key="management.searchCustomize.rManager">Manager</entry>
+	<entry key="management.searchCustomize.rSRtp">SRTP</entry>
+	<entry key="management.searchCustomize.fKey">F Key</entry>
+	<entry key="management.searchCustomize.rSSrc">SSRC</entry>
+	<entry key="management.searchCustomize.rKey">SRTP Key</entry>
+	<entry key="management.searchCustomize.rCoNum">CO Number</entry>
+	<entry key="management.searchCustomize.rDidNum">DID Number</entry>
+	<entry key="management.searchCustomize.rUeiData">UEI</entry>
+	<entry key="management.searchCustomize.rQueueNo1">Queue1</entry>
+	<entry key="management.searchCustomize.rQueueNo2">Queue2</entry>
+	<entry key="management.searchCustomize.rBgName">Category</entry>
+	<entry key="management.searchCustomize.rMgName">Division</entry>
+	<entry key="management.searchCustomize.rSgName">Section</entry>
+	<entry key="management.searchCustomize.evaluation">Evaluation</entry>
+	<entry key="management.searchCustomize.screen">Screen</entry>
+	<entry key="management.searchCustomize.trace">Trace</entry>
+	<entry key="management.searchCustomize.rRecStartType">Start type</entry>
+	<entry key="management.searchCustomize.rDownload">Edit/Download</entry>
+	<entry key="management.searchCustomize.rListAdd">Add Playlist</entry>
+	<entry key="management.searchCustomize.rMemoInfo">Memo Information</entry>
+	<entry key="management.searchCustomize.rMemo">Memo</entry>
+	<entry key="management.searchCustomize.rDivision">Division</entry>
+	<entry key="management.searchCustomize.rVFilename">FileName</entry>
+
+	<entry key="management.searchCustomize.rStockNo">Stock number</entry>
+	<entry key="management.searchCustomize.rCounselResultBgcode">Large category</entry>
+	<entry key="management.searchCustomize.rCounselResultMgcode">middle category</entry>
+	<entry key="management.searchCustomize.rCounselResultSgcode">small category</entry>
+	<entry key="management.searchCustomize.rGroupCode1">Group code1</entry>
+	<entry key="management.searchCustomize.rGroupCode2">Group code2</entry>
+	<entry key="management.searchCustomize.rGroupCode3">Group code3</entry>
+	<entry key="management.searchCustomize.rBankCode">Bank code</entry>
+	<entry key="management.searchCustomize.rBaccountNum">bank account number</entry>
+	<entry key="management.searchCustomize.rDualFlag">Center to Center Data Matching flag</entry>
+	<entry key="management.searchCustomize.rCallKindAp">ap interlock in/out</entry>
+	<entry key="management.searchCustomize.rCallKeyAp">ap interlock REC key</entry>
+	<entry key="management.searchCustomize.rCustPhoneAp">ap interlock cid</entry>
+	<entry key="management.searchCustomize.rIvrKey">Withdrawal agreement ivr key</entry>
+	<entry key="management.searchCustomize.rVsendFlag">Transfer REC File flag</entry>
+	<entry key="management.searchCustomize.rSsendFlag">Transfer Screen File flag</entry>
+	<entry key="management.searchCustomize.rSendInfoFlag">Data transfer flag</entry>
+
+	<entry key="management.searchCustomize.rCallStimeConnect">Effective call REC time</entry>
+	<entry key="management.searchCustomize.rSttPlayer">Call Script</entry>
+	<entry key="management.searchCustomize.rCallTtimeConnect">Effective call REC time(sec)</entry>
+	<entry key="management.searchCustomize.rLogListen">Listening History</entry>
+	<entry key="management.searchCustomize.rRecCategory">Category</entry>
+	<entry key="management.searchCustomize.rRecKeyword">Keyword</entry>
+	<entry key="management.searchCustomize.rRecText">Recording Contents</entry>
+	<entry key="management.searchCustomize.rRecSummary">Recording Contents</entry>
+	<entry key="management.searchCustomize.rTranscript">Division</entry>
+	<entry key="management.searchCustomize.rCompanyTelno">Phone Number</entry>
+	<entry key="management.searchCustomize.rCompanyTelnoNick">Name</entry>
+	<entry key="management.searchCustomize.rPhoneMapping">Phone Mapping</entry>
+	<entry key="management.searchCustomize.rRecVolume">Volume</entry>
+	<entry key="management.searchCustomize.rSttResult">STT status</entry>
+
+
+	<entry key="management.searchCustomize.alert.sameColumn">Duplicate column.</entry>
+	<entry key="management.searchCustomize.alert.itemTypeEmpty">There is no data to be applied.</entry>
+	<entry key="management.searchCustomize.alert.empty">There is no data to be applied.</entry>
+	<entry key="management.searchCustomize.alert.success">It has been applied.</entry>
+	<entry key="management.searchCustomize.alert.error">An error occurred while applying.</entry>
+
+	<entry key="management.screenUserListFieldSet.form.item.screenUserFieldset.title">Screen User List</entry>
+	<entry key="management.screenUserListFieldSet.form.item.UserFieldset.title">User List</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserUseCount">Screen User count</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserLicensesCount">Licenses</entry>
+	<entry key="management.screenUser.alert.message.noExtention">There is no target extension number.</entry>
+	<entry key="management.screenUser.alert.message.empty">There is no data to be applied.</entry>
+	<entry key="management.screenUser.alert.message.success">It has been applied.</entry>
+	<entry key="management.screenUser.alert.message.error">An error occurred while applying.</entry>
+	<entry key="management.screenUser.alert.message.overLicense">It is a licensed excess.</entry>
+
+	<!-- 그룹 -->
+	<entry key="management.group.title.group">Group management</entry>
+	<entry key="management.group.form.title.groupName">Group name</entry>
+	<entry key="management.group.form.title.excelUpload">Excel upload</entry>
+	<entry key="management.group.contextMenu.title.subClass">Sub Class</entry>
+	<entry key="management.group.newGroup.title">New Group</entry>
+	<entry key="management.group.alert.message.success">It has been applied.</entry>
+	<entry key="management.group.alert.message.error">An error occurred while applying.</entry>
+	<entry key="management.group.message.delete.confirm">Are you sure you want to delete this group?</entry>
+	<entry key="management.group.alert.message.overLevel">You can not add more than a small group.</entry>
+	<entry key="management.group.alert.message.checkExtension">Only Excel files can be uploaded.(Extension : xls, xlsx)</entry>
+	<entry key="management.group.alert.message.excelProcSuccess">The group information of the Excel file has been applied.</entry>
+	<entry key="management.group.alert.message.excelProcFail">An error occurred while applying group information in the Excel file.</entry>
+
+	<!-- 큐 -->
+	<entry key="management.queue.title.queue">Queue Management</entry>
+	<entry key="management.queue.form.title.queueAdd">Queue Add</entry>
+	<entry key="management.queue.form.title.queueNum">Queue number</entry>
+	<entry key="management.queue.form.title.queueName">Queue Name</entry>
+	<entry key="management.queue.form.title.excelUpload">Excel upload</entry>
+
+	<entry key="management.queue.alert.rQueueNum.empty">Please enter the queue number.</entry>
+	<entry key="management.queue.alert.rQueueNum.zero">Please enter more than 1 for the queue number.</entry>
+	<entry key="management.queue.alert.rQueueName.empty">Please enter a queue name.</entry>
+	<entry key="management.queue.alert.rQuqueNum.duplication">Duplicated queue number.</entry>
+
+	<entry key="management.queue.alert.message.success">It has been applied.</entry>
+	<entry key="management.queue.alert.message.error">An error occurred while applying.</entry>
+	<entry key="management.queue.message.delete.confirm">Are you sure you want to delete the queue?</entry>
+	<entry key="management.queue.alert.message.nochecked"><![CDATA[Please select a queue.]]></entry>
+	<entry key="management.queue.alert.message.checkExtension">Only Excel files can be uploaded.(Extension : xls, xlsx)</entry>
+	<entry key="management.queue.alert.message.excelProcSuccess">The queue information of the Excel file has been applied.</entry>
+	<entry key="management.queue.alert.message.excelProcFail">An error occurred while applying the queue information in the Excel file.</entry>
+
+	<!-- 관리 - 시스템 설정 - pbx 연동 정보 -->
+	<entry key="management.pbx.tab.pbx">System</entry>
+
+	<entry key="management.pbx.title.pbxId">PBX ID</entry>
+	<entry key="management.pbx.title.pbxName">PBX name</entry>
+	<entry key="management.pbx.title.pbxIp">PBX IP</entry>
+	<entry key="management.pbx.title.pbxLicense">License</entry>
+	<entry key="management.pbx.title.pbxSipId">SIP ID</entry>
+	<entry key="management.pbx.title.pbxSipPassword">SIP Password</entry>
+
+	<entry key="management.pbx.title.pbx_delete">PBX delete</entry>
+
+	<entry key="management.pbx.title.pbx_add">Add PBX</entry>
+
+	<entry key="management.pbx.btn.generation">Create</entry>
+
+	<entry key="management.pbx.alert.pbxId.empty">Please enter the PBX ID.</entry>
+	<entry key="management.pbx.alert.pbxId.zero">Please enter more than 4 characters for PBX ID.</entry>
+	<entry key="management.pbx.alert.pbxName.empty">Please enter the PBX name.</entry>
+	<entry key="management.pbx.alert.pbxName.zero">Please enter at least 1 character for PBX name.</entry>
+	<entry key="management.pbx.alert.pbxIp.empty">Enter PBX IP.</entry>
+	<entry key="management.pbx.alert.pbxIp.zero">Please enter at least 1 character for PBX IP.</entry>
+
+	<entry key="management.pbx.alert.pbxIp.rule_violation"><![CDATA[IP It's against the rules.<br>Please enter again.]]></entry>
+	<entry key="management.pbx.alert.pbxId.same">The PBX ID is already registered.</entry>
+	<entry key="management.pbx.alert.pbxName.same">The PBX name is already registered.</entry>
+	<entry key="management.pbx.alert.pbxIp.same">The PBX IP is already registered.</entry>
+	<entry key="management.pbx.alert.message.error">An error occurred during application.</entry>
+
+	<entry key="management.pbx.message.add.success"><![CDATA[PBX added]]></entry>
+	<entry key="management.pbx.message.add.fail"><![CDATA[An error occurred while adding PBX.]]></entry>
+
+	<entry key="management.pbx.message.modify.success"><![CDATA[PBX information has been modified.]]></entry>
+	<entry key="management.pbx.message.modify.fail"><![CDATA[An error occurred while modifying PBX information.]]></entry>
+
+	<entry key="management.pbx.message.delete.success"><![CDATA[PBX deleted.]]></entry>
+	<entry key="management.pbx.message.delete.fail"><![CDATA[An error occurred while deleting the PBX.]]></entry>
+	<entry key="management.pbx.message.delete.confirm"><![CDATA[Are you sure you want to delete PBX information?]]></entry>
+	<entry key="management.pbx.message.delete.nochecked"><![CDATA[Select PBX information.]]></entry>
+
+	<!-- 관리 - 시스템 관리 - log 관리 -->
+	<entry key="management.log.tab.log">Log</entry>
+
+	<entry key="management.log.title.logDate">Date</entry>
+	<entry key="management.log.title.logTime">Time</entry>
+	<entry key="management.log.title.logIp">Log IP</entry>
+	<entry key="management.log.title.logServerIp">Server IP</entry>
+	<entry key="management.log.title.logUserId">User ID</entry>
+	<entry key="management.log.title.logExt">Extension number</entry>
+	<entry key="management.log.title.logContents">Log Contents</entry>
+	<entry key="management.log.title.logEtc">Etc</entry>
+
+	<entry key="management.log.btn.logSearch">Search log</entry>
+	<entry key="management.log.btn.logDelete">Delete log</entry>
+	<entry key="management.log.btn.logExcel">Download Excel</entry>
+
+	<entry key="management.log.alert.message.error">An error occurred while applying.</entry>
+
+	<entry key="management.log.message.search.noData"><![CDATA[No log information found.]]></entry>
+	<entry key="management.log.message.delete.success"><![CDATA[Log deleted successfully.]]></entry>
+	<entry key="management.log.message.delete.fail"><![CDATA[An error occurred while deleting the log.]]></entry>
+	<entry key="management.log.message.delete.confirm"><![CDATA[Are you sure you want to delete the log information?]]></entry>
+
+		<!-- 관리 - 시스템 관리 - etc 관리 -->
+	<entry key="management.etc.tab.etc">Etc setting</entry>
+
+	<entry key="management.etc.title.mailServerInfo">Mail server information</entry>
+	<entry key="management.etc.title.mailServerAddr">Mail server address</entry>
+	<entry key="management.etc.title.mailServerPort">Mail Send Port</entry>
+	<entry key="management.etc.title.mailServerId">Mail Send ID</entry>
+	<entry key="management.etc.title.mailServerPw">Mail Send Password</entry>
+	<entry key="management.etc.title.senderEmail">Sender mail address</entry>
+	<entry key="management.etc.title.receiverEmail">Recipient Mail Address</entry>
+
+	<entry key="management.etc.title.faultCycleInfo">Fault Notification cycle information</entry>
+	<entry key="management.etc.title.faultCycle">Fault Notification cycle</entry>
+	<entry key="management.etc.title.faultCycleUnit">(sec)</entry>
+
+	<entry key="management.etc.title.realTimeMonitoringInfo">Real-time monitoring other settings</entry>
+	<entry key="management.etc.title.realTimeMonitoringCycle">Renewal cycle</entry>
+	<entry key="management.etc.title.realTimeMonitoringCycleUnit">(sec)</entry>
+
+	<entry key="management.etc.title.etcInfo">Other Settings</entry>
+	<entry key="management.etc.title.ipktsAliveCheck">IPKTS Alive check</entry>
+	<entry key="management.etc.title.sipLog">SIP Log</entry>
+	<entry key="management.etc.title.ethernetCard">Lancard</entry>
+	<entry key="management.etc.title.downloadEncrypt">Encrypted file download method</entry>
+
+	<entry key="management.etc.title.agentIdOutputOptions">Agent ID Output Options</entry>
+	<entry key="management.etc.title.haName">HA Name</entry>
+	<entry key="management.etc.title.fileExtension">Download file extension</entry>
+	<entry key="management.etc.title.filenamePattern">File Name Pattern</entry>
+	<entry key="management.etc.title.filenamePatternLabel">Date(YYYYMMDDhhmmss)-AgentID-</entry>
+	<entry key="management.etc.title.announcementRecording">REC a guide comment</entry>
+
+	<entry key="management.etc.title.serverRestart">Restart REC engine</entry>
+
+	<entry key="management.etc.title.voiceFileUpload">Upload Voice File</entry>
+	<entry key="management.etc.title.voiceFile">Voice file</entry>
+	<entry key="management.etc.message.maxUploadSize">Maximum Upload Size : 100M</entry>
+
+	<entry key="management.etc.title.updateFileUpload">Upload Update Files</entry>
+	<entry key="management.etc.title.updateFile">Update Files</entry>
+	<entry key="management.etc.title.memo">Memo</entry>
+	<entry key="management.etc.message.updateFileNotice">After the file is uploaded, you must reboot the server to complete the update.</entry>
+
+	<entry key="management.etc.title.serverTimezoneInfo">Server Time Zone Management</entry>
+	<entry key="management.etc.title.serverTimezone">Server Time Zone</entry>
+	<entry key="management.etc.title.nowServerTimezone">Current Time Zone</entry>
+	<entry key="management.etc.title.serverTimeChange">Change server time</entry>
+
+	<entry key="management.etc.alert.message.error">An error occurred during application.</entry>
+	<entry key="management.etc.alert.message.success"><![CDATA[Applied.]]></entry>
+	<entry key="management.etc.alert.message.send.error">Failed to send test mail.</entry>
+	<entry key="management.etc.alert.message.send.success"><![CDATA[The test mail was successfully sent.]]></entry>
+	<entry key="management.etc.message.restart.confirm">Do you want to restart?</entry>
+
+	<entry key="management.etc.message.testmail.subject">Test Mail</entry>
+	<entry key="management.etc.message.testmail.text">Test mail for checking mail setting information</entry>
+</properties>

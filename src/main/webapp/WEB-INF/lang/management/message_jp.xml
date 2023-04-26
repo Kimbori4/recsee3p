@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>管理画面用メッセージ定義</comment>
+
+	<!-- 관리 - 좌측 메뉴 -->
+	<entry key="management.left_menu.setting">システム設定</entry>
+	<entry key="management.left_menu.setting.system">システム管理</entry>
+	<entry key="management.left_menu.setting.channel">チャネル管理</entry>
+	<entry key="management.left_menu.setting.backup">バックアップ管理</entry>
+	<entry key="management.left_menu.setting.call_report_customize">コレポートユーザー定義</entry>
+	<entry key="management.left_menu.setting.search_customize">検索ユーザー定義</entry>
+	<entry key="management.left_menu.user">ユーザー管理</entry>
+	<entry key="management.left_menu.system">システム管理</entry>
+
+	<!-- 관리 - 시스템 설정 - 검색 사용자 정의 -->
+	<entry key="management.search_customize.search_item">検索項目</entry>
+	<entry key="management.search_customize.search_list">検索リスト</entry>
+	<entry key="management.search_customize.base_item">基本項目</entry>
+	<entry key="management.search_customize.user_item">ユーザー項目</entry>
+	<entry key="management.search_customize.btn.apply">適用</entry>
+
+	<!-- 관리 - 시스템 설정 - 백업 관리 -->
+	<entry key="management.backup.title">バックアップ管理</entry>
+	<entry key="management.backup.date">開始日</entry>
+	<entry key="management.backup.storage">容量設定</entry>
+	<entry key="management.backup.btn.ok">適用</entry>
+	<entry key="management.backup.btn.cancel">キャンセル</entry>
+
+
+	<!-- 관리 - 시스템 설정 - 채널 관리 -->
+	<entry key="management.channel.tab.channel">チャンネル</entry>
+	<entry key="management.channel.tab.generation">チャンネル自動生成</entry>
+		
+	<entry key="management.channel.title.channel_generation">チャンネル自動生成</entry>
+	<entry key="management.channel.title.no">チャンネル番号</entry>
+	<entry key="management.channel.title.system">システム</entry>
+	<entry key="management.channel.title.extnum">内線番号</entry>
+	<entry key="management.channel.title.ip">IP</entry>
+	<entry key="management.channel.title.user">使用者</entry>
+	<entry key="management.channel.title.recording_use">録取使用</entry>
+	<entry key="management.channel.title.recording_type">緑臭の種類</entry>
+	<entry key="management.channel.title.recording_kind">録取タイプ</entry>
+		
+	<entry key="management.channel.title.excel_upload">エクセルアップロード</entry>
+	<entry key="management.channel.title.excel_file">エクセル·ファイル</entry>
+	<entry key="management.channel.title.channel_delete">既存のチャンネル削除</entry>
+	<entry key="management.channel.title.channel_delete_help">登録されたすべてのチャンネルを削除</entry>
+		
+	<entry key="management.channel.title.channel_add">チャンネル追加</entry>
+		
+	<entry key="management.channel.btn.generation">生成</entry>
+	<entry key="management.channel.btn.upload">アップロード</entry>
+		
+	<entry key="management.channel.alert.sChNum.empty">自動生成時に使用する開始チャンネル番号を入力してください。</entry>
+	<entry key="management.channel.alert.eChNum.empty">自動生成時に使用する終了チャンネル番号を入力してください。</entry>
+	<entry key="management.channel.alert.sExtNum.empty">自動生成時に使用する開始内線番号を入力してください。</entry>
+		
+	<entry key="management.channel.alert.sChNum.zero">開始チャンネル番号は1以上を入力してください。</entry>
+	<entry key="management.channel.alert.eChNum.zero">終了チャンネル番号は1以上を入力してください。</entry>
+	<entry key="management.channel.alert.sExtNum.length_three">開始内線番号は3桁以上を入力してください。</entry>
+	<entry key="management.channel.alert.eChNum.small"><![CDATA[終了チャンネル番号が、開始チャンネル番号より小さいです。<br>もう一度入力してください。]]></entry>
+
+	<entry key="management.channel.alert.chNum.empty">チャンネル番号を入力してください。</entry>
+	<entry key="management.channel.alert.chNum.zero">チャンネル番号は1以上を入力してください。</entry>
+	<entry key="management.channel.alert.extNum.empty">内線番号を入力してください。</entry>
+	<entry key="management.channel.alert.extNum.length_three">内線番号は3桁以上を入力してください。</entry>
+	<entry key="management.channel.alert.extNum.duplicate">内線番号が同じチャンネルがあります。</entry>
+		
+	<entry key="management.channel.alert.chIp.empty">自動作成時に使用するIPを入力してください。</entry>
+	<entry key="management.channel.alert.chIp.rule_violation"><![CDATA[IPルール違反です。<br>もう一度入力してください。]]></entry>
+	<entry key="management.channel.alert.chIp2.empty">使用するIPを入力してください。</entry>
+	<entry key="management.channel.alert.chIp.duplicate">IPが同じチャンネルがあります。</entry>
+
+	<entry key="management.channel.message.generation.success"><![CDATA[チャンネルが作成されました。]]></entry>
+	<entry key="management.channel.message.generation.fail"><![CDATA[チャンネルが作成中にエラーが発生しました。]]></entry>
+
+	<entry key="management.channel.message.add.success"><![CDATA[チャンネルが追加されました。]]></entry>
+	<entry key="management.channel.message.add.fail"><![CDATA[チャンネル追加中にエラーが発生しました。]]></entry>
+
+	<entry key="management.channel.message.modify.success"><![CDATA[チャンネル情報が修正されました。]]></entry>
+	<entry key="management.channel.message.modify.fail"><![CDATA[チャンネル情報修正中にエラーが発生しました。]]></entry>
+
+	<entry key="management.channel.message.delete.success"><![CDATA[チャンネルを削除しました。]]></entry>
+	<entry key="management.channel.message.delete.fail"><![CDATA[チャンネル削除中にエラーが発生しました。]]></entry>
+	<entry key="management.channel.message.delete.confirm"><![CDATA[チャンネルを削除しますか?]]></entry>
+	<entry key="management.channel.message.delete.nochecked"><![CDATA[チャンネルを選択してください。]]></entry>
+	<entry key="management.channel.message.apply.confirm"><![CDATA[チャンネルの情報を録音エンジンに適用しますか?]]></entry>
+	<entry key="management.channel.message.apply.success"><![CDATA[チャンネル情報が適用されました。]]></entry>
+	<entry key="management.channel.message.apply.fail"><![CDATA[運用中のチャンネルがあり、適用されていません。]]></entry>
+
+	<!-- 관리 - 시스템 설정 - 시스템 설정 -->
+	<entry key="management.system.tab.system">システム</entry>
+		
+	<entry key="management.system.title.system_generation">システム生成</entry>
+	<entry key="management.system.title.sysId">システムID</entry>
+	<entry key="management.system.title.sysName">システム名</entry>
+	<entry key="management.system.title.sysIp">システムIP</entry>
+	<entry key="management.system.title.pbxId">PBXID</entry>
+	<entry key="management.system.title.storagePath">貯蔵位置</entry>
+		
+	<entry key="management.system.title.system_delete">システム削除</entry>
+		
+	<entry key="management.system.title.system_add">システム追加</entry>
+		
+	<entry key="management.system.btn.generation">生成</entry>
+		
+	<entry key="management.system.alert.sysId.empty">システムIDを入力してください。</entry>
+	<entry key="management.system.alert.sysId.zero">システムIDは4文字以上を入力してください。</entry>
+	<entry key="management.system.alert.sysName.empty">システム名を入力してください。</entry>
+	<entry key="management.system.alert.sysName.zero">システム名は1文字以上を入力してください。</entry>
+	<entry key="management.system.alert.sysIp.empty">システムIPを入力してください。</entry>
+	<entry key="management.system.alert.sysIp.zero">システムIPは1文字以上を入力してください。</entry>
+
+
+	<entry key="management.system.alert.sysIp.rule_violation"><![CDATA[IPルール違反です。<br>もう一度入力してください。]]></entry>
+	<entry key="management.system.alert.sysId.same">登録済みのシステムIDです。</entry>
+	<entry key="management.system.alert.sysName.same">登録済みのシステム名です。</entry>
+	<entry key="management.system.alert.sysIp.same">登録済みのシステムIPです。</entry>
+
+
+	<entry key="management.system.message.add.success"><![CDATA[システムが追加されました。]]></entry>
+	<entry key="management.system.message.add.fail"><![CDATA[システム追加中にエラーが発生しました。]]></entry>
+
+	<entry key="management.system.message.modify.success"><![CDATA[システム情報が修正されました。]]></entry>
+	<entry key="management.system.message.modify.fail"><![CDATA[システム情報の修正中にエラーが発生しました。]]></entry>
+
+	<entry key="management.system.message.delete.success"><![CDATA[システムを削除しました。]]></entry>
+	<entry key="management.system.message.delete.fail"><![CDATA[システム削除中にエラーが発生しました。]]></entry>
+	<entry key="management.system.message.delete.confirm"><![CDATA[システム情報を削除しますか?]]></entry>
+	<entry key="management.system.message.delete.nochecked"><![CDATA[システム情報を選択してください。]]></entry>
+	<entry key="management.system.message.usingSystem"><![CDATA[使用可能なシステムではありません。]]></entry>
+
+	<!-- 관리 - 사용자 관리 - 사용자 관리 -->
+	<entry key="management.user.title">使用者</entry>
+	<entry key="management.user.title.user_add">ユーザー登録</entry>
+	<entry key="management.user.title.name">ユーザー名</entry>
+	<entry key="management.user.title.userId">ID</entry>
+	<entry key="management.user.title.password">パスワード</entry>
+	<entry key="management.user.title.passwordChk">パスワードを再確認</entry>
+	<entry key="management.user.title.extNum">内線番号</entry>
+	<entry key="management.user.title.authy">権限等級</entry>
+	<entry key="management.user.title.empId">社員番号</entry>
+	<entry key="management.user.title.email">Eメール</entry>
+	<entry key="management.user.title.ctiId">CTIID</entry>
+	<entry key="management.user.title.bgClass">大分類</entry>
+	<entry key="management.user.title.mgClass">中分類</entry>
+	<entry key="management.user.title.sgClass">小分類</entry>
+	<entry key="management.user.title.multiPart">追加グループ</entry>
+		
+	<entry key="management.user.alert.userName.empty">ユーザー名を入力してください。</entry>
+	<entry key="management.user.alert.userId.empty">ユーザーIDを入力してください。</entry>
+	<entry key="management.user.alert.password.empty">非パスワードを入力してください。</entry>
+	<entry key="management.user.alert.passwordChk.empty">非パスワード再確認を入力してください。</entry>
+
+	<entry key="management.user.alert.password.noSame"><![CDATA[入力したパスワードが一致しません。<br>もう一度入力してください。]]></entry>
+	<entry key="management.user.alert.extNum.empty">内線番号を入力してください。</entry>
+	<entry key="management.user.alert.extNum.duplicate">内線番号が同じユーザーがいます。</entry>
+	<entry key="management.user.alert.authy.empty">権限等級を選択してください。</entry>
+	<entry key="management.user.alert.email.validation">Eメールのルールが正しくありません。</entry>
+	<entry key="management.user.alert.empId.validation">社員番号の入力範囲が違います。</entry>
+	<entry key="management.user.alert.empId.duplicate">社員番号が同じユーザーがいます。</entry>
+	<entry key="management.user.alert.ctiId.validation">CTIIDの入力範囲が違います。</entry>
+	<entry key="management.user.alert.ctiId.duplicate">CTIIDが同じユーザーがいます。</entry>
+		
+	<entry key="management.user.message.add.success">ユーザーを登録しました。</entry>
+	<entry key="management.user.message.add.fail">ユーザー登録中にエラーが発生しました。</entry>
+	<entry key="management.user.message.modify.success">ユーザー情報を修正しました。</entry>
+	<entry key="management.user.message.modify.fail">ユーザー情報修正中にエラーが発生しました。</entry>
+	<entry key="management.user.message.delete.success">ユーザーを削除しました。</entry>
+	<entry key="management.user.message.delete.fail">ユーザー削除中にエラーが発生しました。</entry>
+	<entry key="management.user.message.delete.confirm">選択したユーザーを削除しますか?</entry>
+	<entry key="management.user.message.delete.nochecked">ユーザーを選択してください。</entry>
+
+	<entry key="management.user.message.apply.confirm"><![CDATA[ユーザー情報を録音エンジンに適用しますか?]]></entry>
+	<entry key="management.user.message.apply.success"><![CDATA[ユーザー情報が適用されました。]]></entry>
+	<entry key="management.user.message.apply.fail"><![CDATA[適用されていません。]]></entry>
+	<entry key="management.user.message.multiPart.success"><![CDATA[追加グループ情報が適用されました。]]></entry>
+	<entry key="management.user.message.multiPart.fail"><![CDATA[追加のグループ情報が適用されていません。]]></entry>
+	<entry key="management.user.message.admin.multiPartNotSetting"><![CDATA[サイト管理者権限者は、追加のグループ設定をする必要がありません。]]></entry>
+
+	<!-- 관리 - 권한 관리 -->
+	<entry key="management.access.title">権限管理</entry>
+	<entry key="management.access.title.groupName">グループ名</entry>
+	<entry key="management.access.title.menuName">メニュー名</entry>
+	<entry key="management.access.title.use">私用</entry>
+	<entry key="management.access.title.range">許可範囲</entry>
+	<entry key="management.access.title.access">許容権限</entry>
+	<entry key="management.access.title.read">表示</entry>
+	<entry key="management.access.title.write">保存</entry>
+	<entry key="management.access.title.modi">編集</entry>
+	<entry key="management.access.title.delete">削除</entry>
+	<entry key="management.access.title.listen">再生</entry>
+
+	<entry key="management.access.title.download"><![CDATA[ファイル</br>ダウンロード]]></entry>
+	<entry key="management.access.title.excel"><![CDATA[エクセル</br>ダウンロード]]></entry>
+	<entry key="management.access.title.masking">マスキング</entry>
+	<entry key="management.access.title.prerecipt">一次承認</entry>
+	<entry key="management.access.title.recipt">二次承認</entry>
+	<entry key="management.access.title.approve">最終承認</entry>
+	<entry key="management.access.title.downloadApprove">ダウンロードリクエスト</entry>
+	<entry key="management.access.title.encyn">録音暗号化</entry>
+	<entry key="management.access.title.upload">ファイルアップロード</entry>
+	<entry key="management.access.title.bestcall">ウシュコール追加</entry>
+	<entry key="management.access.title.feedback.modify">評価意見の修正</entry>
+		
+		
+		
+	<entry key="management.access.form.authyTitle">権限名</entry>
+		
+		
+	<entry key="management.access.message.delete.admin">管理者権限は削除できません。</entry>
+	<entry key="management.access.message.delete.confirm">選択した権限を削除しますか?</entry>
+	<entry key="management.access.message.delete.success">権限が削除されました。</entry>
+	<entry key="management.access.message.delete.fail">権限削除中にエラーが発生しました。</entry>
+	<entry key="management.access.message.clear">権限管理画面を初期化しました。</entry>
+	<entry key="management.access.message.modify.error">権限ステータス変更時にエラーが発生しました。</entry>
+	<entry key="management.access.message.modify.success">権限が変更されました。</entry>
+	<entry key="management.access.message.modify.fail">権限変更時にエラーが発生しました。</entry>
+	<entry key="management.access.message.insert.name.empty">権限名を入力してください。</entry>
+	<entry key="management.access.message.insert.error">権限追加中にエラーが発生しました。</entry>
+	<entry key="management.access.message.insert.success">権限が追加されました。</entry>
+		
+	<entry key="management.searchCustomize.form.item.levelCombo">等級</entry>
+	<entry key="management.searchCustomize.form.item.fieldset.title">検索項目</entry>
+	<entry key="management.searchCustomize.form.list.fieldset.title">検索リスト</entry>
+		
+	<entry key="management.searchCustomize.item.grid.title.name">検索項目名  </entry>
+	<entry key="management.searchCustomize.item.grid.title.var">検索項目変数</entry>
+	<entry key="management.searchCustomize.list.grid.title.name">照会リスト名</entry>
+	<entry key="management.searchCustomize.list.grid.title.var">リスト変数</entry>
+	<entry key="management.searchCustomize.copy.grid.title.name">コピー可能なリスト</entry>
+	<entry key="management.searchCustomize.copy.grid.title.var">コピー可能なリスト変数</entry>
+		
+	<entry key="management.searchCustomize.rCheckBox">チェックボックス</entry>
+	<entry key="management.searchCustomize.rownumber">番号</entry>
+	<entry key="management.searchCustomize.rRecDate">録音日</entry>
+	<entry key="management.searchCustomize.rRecTime">録音時間帯</entry>
+	<entry key="management.searchCustomize.rRecRtime">時間</entry>
+	<entry key="management.searchCustomize.rBgCode">大分類</entry>
+	<entry key="management.searchCustomize.rMgCode">中分類</entry>
+	<entry key="management.searchCustomize.rSgCode">小分類</entry>
+	<entry key="management.searchCustomize.rUserId">ユーザーID</entry>
+	<entry key="management.searchCustomize.rChNum">チャンネル番号</entry>
+	<entry key="management.searchCustomize.rUserName">ユーザー名</entry>
+	<entry key="management.searchCustomize.rCallId1">コールID</entry>
+	<entry key="management.searchCustomize.rCallId2">コールID2</entry>
+	<entry key="management.searchCustomize.rCallId3">コールID3</entry>
+	<entry key="management.searchCustomize.rExtNum">内線番号</entry>
+	<entry key="management.searchCustomize.rCustName">相手先名</entry>
+	<entry key="management.searchCustomize.rCustPhone1">相手先番号</entry>
+	<entry key="management.searchCustomize.rCustPhone2">相手先番号2</entry>
+	<entry key="management.searchCustomize.rCustPhone3">相手先番号3</entry>
+	<entry key="management.searchCustomize.rCallKind1">コールタイプ</entry>
+	<entry key="management.searchCustomize.rCallKind2">追加コールタイプ</entry>
+	<entry key="management.searchCustomize.rCallStime">録音開始時間</entry>
+	<entry key="management.searchCustomize.rCallEtime">録音終了時間</entry>
+	<entry key="management.searchCustomize.rCallTtime">通話時間</entry>
+	<entry key="management.searchCustomize.rSelfdisYn">相談員終了の有無</entry>
+	<entry key="management.searchCustomize.rVSysCode">システムコード</entry>
+	<entry key="management.searchCustomize.rListenUrl">聴取URL</entry>
+	<entry key="management.searchCustomize.rRecMemo">メモ</entry>
+	<entry key="management.searchCustomize.rDivision">分配</entry>
+	<entry key="management.searchCustomize.rEvalYn">評価の有無</entry>
+	<entry key="management.searchCustomize.rCustSocialNum">住民登録番号</entry>
+	<entry key="management.searchCustomize.rCnid">CNID</entry>
+	<entry key="management.searchCustomize.rDestIp">相対IP</entry>
+	<entry key="management.searchCustomize.rBuffer1">追加1</entry>
+	<entry key="management.searchCustomize.rBuffer2">追加2</entry>
+	<entry key="management.searchCustomize.rBuffer3">追加3</entry>
+	<entry key="management.searchCustomize.rBuffer4">追加4</entry>
+	<entry key="management.searchCustomize.rBuffer5">追加5</entry>
+	<entry key="management.searchCustomize.rBuffer6">追加6</entry>
+	<entry key="management.searchCustomize.rBuffer7">追加7</entry>
+	<entry key="management.searchCustomize.rBuffer8">追加8</entry>
+	<entry key="management.searchCustomize.rBuffer9">追加9</entry>
+	<entry key="management.searchCustomize.rBuffer10">追加10</entry>
+	<entry key="management.searchCustomize.rBuffer11">追加11</entry>
+	<entry key="management.searchCustomize.rBuffer12">追加12</entry>
+	<entry key="management.searchCustomize.rBuffer13">追加13</entry>
+	<entry key="management.searchCustomize.rBuffer14">追加14</entry>
+	<entry key="management.searchCustomize.rBuffer15">追加15</entry>
+	<entry key="management.searchCustomize.rBuffer16">追加16</entry>
+	<entry key="management.searchCustomize.rBuffer17">追加17</entry>
+	<entry key="management.searchCustomize.rBuffer18">追加18</entry>
+	<entry key="management.searchCustomize.rBuffer19">追加19</entry>
+	<entry key="management.searchCustomize.rBuffer20">追加20</entry>
+	<entry key="management.searchCustomize.rVdoUrl">Vdoリンク</entry>
+	<entry key="management.searchCustomize.rCustId">顧客ID</entry>
+	<entry key="management.searchCustomize.rRegiDate">登録日</entry>
+	<entry key="management.searchCustomize.rManager">管理者</entry>
+	<entry key="management.searchCustomize.rSRtp">SRTPの有無</entry>
+	<entry key="management.searchCustomize.fKey">Fキー</entry>
+	<entry key="management.searchCustomize.rSSrc">SSRC</entry>
+	<entry key="management.searchCustomize.rKey">SRTPキー</entry>
+	<entry key="management.searchCustomize.rCoNum">CO番号</entry>
+	<entry key="management.searchCustomize.rDidNum">DID番号</entry>
+	<entry key="management.searchCustomize.rUeiData">UEI</entry>
+	<entry key="management.searchCustomize.rQueueNo1">キュー1</entry>
+	<entry key="management.searchCustomize.rQueueNo2">キュー2</entry>
+	<entry key="management.searchCustomize.rBgName">大分類</entry>
+	<entry key="management.searchCustomize.rMgName">中分類</entry>
+	<entry key="management.searchCustomize.rSgName">小分類</entry>
+	<entry key="management.searchCustomize.evaluation">評価</entry>
+	<entry key="management.searchCustomize.screen">スクリーン</entry>
+	<entry key="management.searchCustomize.trace">トレース</entry>
+	<entry key="management.searchCustomize.rRecStartType">試作タイプ</entry>
+	<entry key="management.searchCustomize.rDownload">編集/ダウンロード</entry>
+	<entry key="management.searchCustomize.rListAdd">プレイリスト追加</entry>
+	<entry key="management.searchCustomize.rMemoInfo">プレイヤータグ</entry>
+	<entry key="management.searchCustomize.rMemo">メモ</entry>
+	<entry key="management.searchCustomize.rVFilename">ファイル名</entry>
+		
+	<entry key="management.searchCustomize.rStockNo">証券番号</entry>
+	<entry key="management.searchCustomize.rCounselResultBgcode">カウンセリングコード帯</entry>
+	<entry key="management.searchCustomize.rCounselResultMgcode">商談コード中</entry>
+	<entry key="management.searchCustomize.rCounselResultSgcode">カウンセリングコード所</entry>
+	<entry key="management.searchCustomize.rGroupCode1">グループコード1</entry>
+	<entry key="management.searchCustomize.rGroupCode2">グループコード2</entry>
+	<entry key="management.searchCustomize.rGroupCode3">グループコード3</entry>
+	<entry key="management.searchCustomize.rBankCode">銀行コード</entry>
+	<entry key="management.searchCustomize.rBaccountNum">口座番号</entry>
+	<entry key="management.searchCustomize.rDualFlag">センター間データマッチング</entry>
+	<entry key="management.searchCustomize.rCallKindAp">ap連動 in/out</entry>
+	<entry key="management.searchCustomize.rCallKeyAp">ap連動録取キー</entry>
+	<entry key="management.searchCustomize.rCustPhoneAp">ap連動cid</entry>
+	<entry key="management.searchCustomize.rIvrKey">出金同意ivrキー</entry>
+	<entry key="management.searchCustomize.rVsendFlag">録音ファイル転送フラッグ</entry>
+	<entry key="management.searchCustomize.rSsendFlag">スクリーンファイル転送フラッグ</entry>
+	<entry key="management.searchCustomize.rSendInfoFlag">データ転送フラッグ</entry>
+	<entry key="management.searchCustomize.rSttPlayer">コール·スクリプト</entry>
+	<entry key="management.searchCustomize.rLogListen">聴取履歴</entry>
+	<entry key="management.searchCustomize.rRecCategory">カテゴリ</entry>
+	<entry key="management.searchCustomize.rRecKeyword">キーワード</entry>
+	<entry key="management.searchCustomize.rRecText">通話内容</entry>
+	<entry key="management.searchCustomize.rRecSummary">通話内容</entry>
+	<entry key="management.searchCustomize.rTranscript">分配</entry>
+	<entry key="management.searchCustomize.rCompanyTelno">電話番号</entry>
+	<entry key="management.searchCustomize.rCompanyTelnoNick">部署名</entry>
+	<entry key="management.searchCustomize.rPhoneMapping">電話番号マッピング</entry>
+	<entry key="management.searchCustomize.rRecVolume">音量</entry>
+		
+	<entry key="management.searchCustomize.rCallStimeConnect">有効コール録音時間</entry>
+	<entry key="management.searchCustomize.rCallTtimeConnect">有効コールを録音した時間(秒)</entry>
+		
+		
+	<entry key="management.searchCustomize.alert.sameColumn">重複したコラムがあります。</entry>
+	<entry key="management.searchCustomize.alert.itemTypeEmpty">適用するデータがありません。</entry>
+	<entry key="management.searchCustomize.alert.empty">適用するデータがありません。</entry>
+	<entry key="management.searchCustomize.alert.success">適用されました。</entry>
+	<entry key="management.searchCustomize.alert.error">適用中にエラーが発生しました。</entry>
+		
+	<entry key="management.screenUserListFieldSet.form.item.screenUserFieldset.title">スクリーンユーザー一覧</entry>
+	<entry key="management.screenUserListFieldSet.form.item.UserFieldset.title">ユーザーリスト</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserUseCount">スクリーンユーザー数</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserLicensesCount">ライセンス数</entry>
+	<entry key="management.screenUser.alert.message.noExtention">内線番号のない対象があります。</entry>
+	<entry key="management.screenUser.alert.message.empty">適用するデータがありません。</entry>
+	<entry key="management.screenUser.alert.message.success">適用されました。</entry>
+	<entry key="management.screenUser.alert.message.error">適用中にエラーが発生しました。</entry>
+	<entry key="management.screenUser.alert.message.overLicense">ライセンス超過です。</entry>
+
+	<!-- 그룹 -->
+		<entry key="management.group.title.group">グループ管理</entry>
+	<entry key="management.group.form.title.groupName">グループ名</entry>
+	<entry key="management.group.form.title.excelUpload">エクセルアップロード</entry>
+	<entry key="management.group.contextMenu.title.subClass">下位分類</entry>
+	<entry key="management.group.newGroup.title">新グループ</entry>
+	<entry key="management.group.alert.message.success">適用されました。</entry>
+	<entry key="management.group.alert.message.error">適用中の間違いが発生しました。</entry>
+	<entry key="management.group.message.delete.confirm">グループを削除しますか</entry>
+	<entry key="management.group.alert.message.overLevel">小分類以上にグループを追加できません。</entry>
+	<entry key="management.group.alert.message.checkExtension">エクセルファイルだけをアップロード可能です。(拡張子:xls、xlsx)</entry>
+	<entry key="management.group.alert.message.excelProcSuccess">エクセルファイルのグループの情報が適用されました。</entry>
+	<entry key="management.group.alert.message.excelProcFail">エクセルファイルのグループ情報適用してエラーが発生しました。</entry>
+
+	<!-- 큐 -->
+	<entry key="management.queue.title.queue">キュー管理</entry>
+	<entry key="management.queue.form.title.queueAdd">キュー追加</entry>
+	<entry key="management.queue.form.title.queueNum">キュー番号</entry>
+	<entry key="management.queue.form.title.queueName">キューの名前</entry>
+	<entry key="management.queue.form.title.excelUpload">エクセルアップロード</entry>
+		
+	<entry key="management.queue.alert.rQueueNum.empty">キュー番号を入力してください。</entry>
+	<entry key="management.queue.alert.rQueueNum.zero">キュー番号は1以上を入力してください</entry>
+	<entry key="management.queue.alert.rQueueName.empty">キュー名前を入力してください。</entry>
+	<entry key="management.queue.alert.rQuqueNum.duplication">重複したキュー番号です。</entry>
+		
+	<entry key="management.queue.alert.message.success">適用されました。</entry>
+	<entry key="management.queue.alert.message.error">適用中にエラーが発生しました。</entry>
+	<entry key="management.queue.message.delete.confirm">キューを削除しますか?</entry>
+
+	<entry key="management.queue.alert.message.nochecked"><![CDATA[キューを選択してください。]]></entry>
+	<entry key="management.queue.alert.message.checkExtension">エクセルファイルのみアップロード可能です。(拡張子:xls、xlsx)</entry>
+	<entry key="management.queue.alert.message.excelProcSuccess">エクセルファイルのキュー情報が適用されました。</entry>
+	<entry key="management.queue.alert.message.excelProcFail">エクセルファイルのキュー情報適用中にエラーが発生しました。</entry>
+
+	<!-- 관리 - 시스템 설정 - pbx 연동 정보 -->
+	<entry key="management.pbx.tab.pbx">交換機</entry>
+		
+	<entry key="management.pbx.title.pbxId">交換機ID</entry>
+	<entry key="management.pbx.title.pbxName">交換器名</entry>
+	<entry key="management.pbx.title.pbxIp">交換機IP</entry>
+	<entry key="management.pbx.title.pbxLicense">ライセンス</entry>
+	<entry key="management.pbx.title.pbxSipId">SIPID</entry>
+	<entry key="management.pbx.title.pbxSipPassword">SIPパスワード</entry>
+		
+	<entry key="management.pbx.title.pbx_delete">交換機の削除</entry>
+		
+	<entry key="management.pbx.title.pbx_add">交換機の追加</entry>
+		
+	<entry key="management.pbx.btn.generation">生成</entry>
+		
+	<entry key="management.pbx.alert.pbxId.empty">交換機IDを入力してください。</entry>
+	<entry key="management.pbx.alert.pbxId.zero">交換機IDは4文字以上を入力してください。</entry>
+	<entry key="management.pbx.alert.pbxName.empty">交換機名を入力してください。</entry>
+	<entry key="management.pbx.alert.pbxName.zero">交換器名は1文字以上を入力してください。</entry>
+	<entry key="management.pbx.alert.pbxIp.empty">交換機のIPを入力してください。</entry>
+	<entry key="management.pbx.alert.pbxIp.zero">交換機IPは1文字以上を入力してください。</entry>
+
+	<entry key="management.pbx.alert.pbxIp.rule_violation"><![CDATA[IPルール違反です。<br>もう一度入力してください。]]></entry>
+	<entry key="management.pbx.alert.pbxId.same">登録済みの交換機IDです。</entry>
+	<entry key="management.pbx.alert.pbxName.same">登録済みの交換機名です。</entry>
+	<entry key="management.pbx.alert.pbxIp.same">登録済みの交換機IPです。</entry>
+	<entry key="management.pbx.alert.message.error">適用中にエラーが発生しました。</entry>
+
+	<entry key="management.pbx.message.add.success"><![CDATA[交換機が追加されました。]]></entry>
+	<entry key="management.pbx.message.add.fail"><![CDATA[交換機の追加中にエラーが発生しました。]]></entry>
+
+	<entry key="management.pbx.message.modify.success"><![CDATA[交換機の情報が修正されました。]]></entry>
+	<entry key="management.pbx.message.modify.fail"><![CDATA[交換機の情報修正中にエラーが発生しました。]]></entry>
+
+	<entry key="management.pbx.message.delete.success"><![CDATA[交換機を削除しました。]]></entry>
+	<entry key="management.pbx.message.delete.fail"><![CDATA[交換機の削除中にエラーが発生しました。]]></entry>
+	<entry key="management.pbx.message.delete.confirm"><![CDATA[交換機の情報を削除しますか?]]></entry>
+	<entry key="management.pbx.message.delete.nochecked"><![CDATA[交換機の情報を選択してください。]]></entry>
+
+	<!-- 관리 - 시스템 관리 - log 관리 -->
+	<entry key="management.log.tab.log">ログ</entry>
+		
+	<entry key="management.log.title.logDate">日付</entry>
+	<entry key="management.log.title.logTime">時間</entry>
+	<entry key="management.log.title.logIp">ログIP</entry>
+	<entry key="management.log.title.logServerIp">サーバーIP</entry>
+	<entry key="management.log.title.logUserId">ユーザーID</entry>
+	<entry key="management.log.title.logExt">内線番号</entry>
+	<entry key="management.log.title.logContents">対数内容</entry>
+	<entry key="management.log.title.logEtc">その他</entry>
+		
+	<entry key="management.log.btn.logSearch">ログ検索</entry>
+	<entry key="management.log.btn.logDelete">ログ削除</entry>
+	<entry key="management.log.btn.logExcel">エクセルダウンロード</entry>
+		
+	<entry key="management.log.alert.message.error">適用中にエラーが発生しました。</entry>
+
+	<entry key="management.log.message.search.noData"><![CDATA[検索されたログ情報がありません。]]></entry>
+	<entry key="management.log.message.delete.success"><![CDATA[ログを削除しました。]]></entry>
+	<entry key="management.log.message.delete.fail"><![CDATA[ログ削除中にエラーが発生しました。]]></entry>
+	<entry key="management.log.message.delete.confirm"><![CDATA[ログ情報を削除しますか?]]></entry>
+
+	<!-- 관리 - 시스템 관리 - etc 관리 -->
+	<entry key="management.etc.tab.etc">その他の設定</entry>
+		
+	<entry key="management.etc.title.mailServerInfo">メールサーバ情報</entry>
+	<entry key="management.etc.title.mailServerAddr">メールアドレス</entry>
+	<entry key="management.etc.title.mailServerPort">メール送信ポート</entry>
+	<entry key="management.etc.title.mailServerId">メール送信ID</entry>
+	<entry key="management.etc.title.mailServerPw">メール送信パスワード</entry>
+	<entry key="management.etc.title.senderEmail">送信者メールアドレス</entry>
+	<entry key="management.etc.title.receiverEmail">フリーメールアドレス</entry>
+		
+	<entry key="management.etc.title.faultCycleInfo">Faultお知らせ周期情報</entry>
+	<entry key="management.etc.title.faultCycle">Fault通知周期</entry>
+	<entry key="management.etc.title.faultCycleUnit">(初)</entry>
+		
+	<entry key="management.etc.title.realTimeMonitoringInfo">リアルタイムモニタリングその他の設定</entry>
+	<entry key="management.etc.title.realTimeMonitoringCycle">更新周期</entry>
+	<entry key="management.etc.title.realTimeMonitoringCycleUnit">(初)</entry>
+		
+	<entry key="management.etc.title.etcInfo">その他の設定</entry>
+	<entry key="management.etc.title.ipktsAliveCheck">IPKTS Alive check</entry>
+	<entry key="management.etc.title.sipLog">SIP Log</entry>
+	<entry key="management.etc.title.ethernetCard">ランカード</entry>
+	<entry key="management.etc.title.downloadEncrypt">暗号化されたファイルのダウンロード方式</entry>
+		
+	<entry key="management.etc.title.agentIdOutputOptions">エージェントID出力オプション</entry>
+	<entry key="management.etc.title.haName">HA名称</entry>
+	<entry key="management.etc.title.fileExtension">ダウンロードファイル拡張子</entry>
+	<entry key="management.etc.title.filenamePattern">ファイル名パターン</entry>
+	<entry key="management.etc.title.filenamePatternLabel">日付(YYYMMDDhhmmss)-エージェントID-</entry>
+	<entry key="management.etc.title.announcementRecording">案内コメントの録音</entry>
+		
+	<entry key="management.etc.title.serverRestart">ノックアップエンジン再起動</entry>
+		
+	<entry key="management.etc.title.voiceFileUpload">音声ファイルのアップロード</entry>
+	<entry key="management.etc.title.voiceFile">音声ファイル</entry>
+	<entry key="management.etc.message.maxUploadSize">最大アップロードサイズ:100M</entry>
+		
+	<entry key="management.etc.title.updateFileUpload">アップデートファイルのアップロード</entry>
+	<entry key="management.etc.title.updateFile">アップデートファイル</entry>
+	<entry key="management.etc.title.memo">メモ</entry>
+	<entry key="management.etc.message.updateFileNotice">ファイルをアップロードした後、サーバーを再起動するとアップデートが完了します。</entry>
+		
+	<entry key="management.etc.title.serverTimezoneInfo">サーバータイムゾーン管理</entry>
+	<entry key="management.etc.title.serverTimezone">サーバー·タイム·ゾーン</entry>
+	<entry key="management.etc.title.nowServerTimezone">現在タイムゾーン</entry>
+	<entry key="management.etc.title.serverTimeChange">サーバー時間の変更</entry>
+		
+	<entry key="management.etc.alert.message.error">適用中にエラーが発生しました。</entry>
+
+	<entry key="management.etc.alert.message.success"><![CDATA[適用しました。]]></entry>
+	<entry key="management.etc.alert.message.send.error">テストメール送信に失敗しました。</entry>
+	<entry key="management.etc.alert.message.send.success"><![CDATA[テストメール送信に成功しました。]]></entry>
+	<entry key="management.etc.message.restart.confirm">リスタートしますか?</entry>
+		
+	<entry key="management.etc.message.testmail.subject">テストメール</entry>
+	<entry key="management.etc.message.testmail.text">メールセット情報確認用テストメール</entry>
+
+</properties>

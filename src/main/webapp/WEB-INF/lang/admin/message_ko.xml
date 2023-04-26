@@ -1,0 +1,1256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>관리자(admin) 화면용 메세지 정의</comment>
+
+	<entry key="admin.menu.systemOption">시스템 설정</entry>
+	<entry key="admin.menu.systemManage">시스템 관리</entry>
+	<entry key="admin.menu.userManage">어플리케이션 사용자 관리</entry>
+	<entry key="admin.menu.systemMonitoring">시스템 모니터링 관리</entry>
+	<entry key="admin.menu.backupProcess">백업 프로세스</entry>
+	<entry key="admin.menu.schedulerManage">스케줄러 관리</entry>
+	<entry key="admin.menu.li.systemOption.channel">채널 관리</entry>
+	<entry key="admin.menu.li.systemOption.channelMonitoring">채널별 모니터링 관리</entry>
+	<entry key="admin.menu.li.systemOption.server">서버 관리</entry>
+	<entry key="admin.menu.li.systemOption.switchboard">교환기 연동 정보</entry>
+	<entry key="admin.menu.li.systemOption.subNumber">자번호 관리</entry>
+	<entry key="admin.menu.li.systemOption.phoneMapping">전화번호 맵핑</entry>
+	<entry key="admin.menu.li.systemOption.publicIp">공인IP 관리</entry>
+	<entry key="admin.menu.li.systemOption.logoSetting">로고 관리</entry>	
+	<entry key="admin.menu.li.systemOption.packetSetting">패킷 에러 세팅</entry>	
+	<entry key="admin.menu.li.systemOption.sttServer">STT서버관리</entry>
+	<entry key="admin.menu.li.systemManage.group">그룹 관리</entry>
+	<entry key="admin.menu.li.systemManage.details">상세 관리</entry>
+	<entry key="admin.menu.li.systemManage.log">이력 관리</entry>
+	<entry key="admin.menu.li.systemManage.logView">로그 뷰</entry>
+	<entry key="admin.menu.li.systemManage.queue">큐 관리</entry>
+	<entry key="admin.menu.li.systemManage.backupSearch">백업 관리</entry>
+	<entry key="admin.menu.li.systemManage.userInterface">사용자 인터페이스</entry>
+	<entry key="admin.menu.li.systemManage.packetLogManage">패킷 에러 로그</entry>
+	<entry key="admin.menu.li.systemManage.fileRecoverManage">3차 백업 관리</entry>
+	<entry key="admin.menu.li.schedulerManage.deleteRecfile">녹취 삭제 관리</entry>
+	<entry key="admin.menu.li.schedulerManage.backupRecfile">녹취 백업 관리</entry>
+	<entry key="admin.menu.li.schedulerManage.dbManage">DBSync 관리</entry>
+	<entry key="admin.menu.li.schedulerManage.userDBInterface">사용자DB 인터페이스</entry>
+	<entry key="admin.menu.li.userManage.userManage">사용자 관리</entry>
+	<entry key="admin.menu.li.userManage.userManageRec">그룹 관리</entry><!-- 녹취 대상 관리 -->
+	<entry key="admin.menu.li.userManage.authyManage">권한 관리</entry>
+	<entry key="admin.menu.li.userManage.allowableRangeManage">허용 범위 관리</entry>
+	<entry key="admin.menu.li.userManage.usageScreen">스크린 사용자 관리</entry>
+	<entry key="admin.menu.li.userManage.userDefinition">조회 및 청취 사용자 정의</entry>
+	<entry key="admin.menu.li.userManage.approveList">청취 / 다운로드 요청 관리</entry>
+	<entry key="admin.menu.li.userManage.comboList">코드 관리</entry>
+	<entry key="admin.menu.li.userManage.mobileManage">모바일 관리</entry>
+	<entry key="admin.menu.li.backupProcess.rec">녹취파일 백업</entry>
+	<entry key="admin.menu.li.backupProcess.ftp">FTP 백업</entry>
+	<entry key="admin.menu.li.systemMonitoring.targetSetting">관제 대상 관리</entry>
+	<entry key="admin.menu.li.systemMonitoring.targetItemSetting">관제 항목 관리</entry>
+	<entry key="admin.menu.li.systemMonitoring.attrSetting">관제 지표 설정</entry>
+	<entry key="admin.menu.li.systemMonitoring.UISetting">관제 UI 설정</entry>
+	<entry key="admin.menu.li.systemMonitoring.alertList">알림 이력 관리</entry>
+	<entry key="admin.menu.placeholder.group">권한명을 입력해 주세요.</entry>
+	<entry key="admin.channel.title.createChannel">채널 추가</entry>
+	<entry key="admin.channel.title.autoCreateChannel">자동 채널 추가</entry>
+	<entry key="admin.channel.label.screen">스크린 사용</entry>
+	<entry key="admin.channel.label.channelNo">채널 번호</entry>
+	<entry key="admin.channel.label.system">시스템</entry>
+	<entry key="admin.channel.label.ext">내선 번호</entry>
+	<entry key="admin.channel.label.ip">IP</entry>
+	<entry key="admin.channel.label.backupIP">서브 IP</entry>
+	<entry key="admin.channel.label.backupIPTime">IP 동기화 시간</entry>
+	<entry key="admin.channel.label.ctiConnect">CTI 연동</entry>
+	<entry key="admin.channel.label.usageRec">녹취 사용</entry>
+	<entry key="admin.channel.label.recKind">녹취 종류</entry>
+	<entry key="admin.channel.label.recType">녹취 유형</entry>
+	<entry key="admin.channel.label.removeChannel2">채널 삭제</entry>
+	<entry key="admin.channel.label.removeChannel">기존 채널 삭제</entry>
+	<entry key="admin.channel.placeholder.ip">IP</entry>
+	<entry key="admin.channel.alert.serverWorking">작업이 진행중입니다. 잠시 후 다시 시도해 주세요.</entry>
+	
+	<entry key="admin.subNumber.title.addSubNumber">자번호 추가</entry>
+	<entry key="admin.subNumber.title.modifySubNumber">자번호 수정</entry>
+	<entry key="admin.subNumber.label.telNo">전화번호</entry>
+	<entry key="admin.subNumber.label.nickName">대체문자</entry>
+	<entry key="admin.subNumber.label.use">사용구분</entry>
+	<entry key="admin.subNumber.label.selY">사용</entry>
+	<entry key="admin.subNumber.label.selN">미사용</entry>
+	
+	<entry key="admin.logo.label.Logo">로고</entry>
+	<entry key="admin.logo.label.N">기본</entry>
+	<entry key="admin.logo.label.Y">변경</entry>
+	
+	<entry key="admin.subNumber.label.logoType">로고 타입</entry>
+	<entry key="admin.subNumber.label.logoChangeUse">로고 변경 사용여부</entry>
+	<entry key="admin.subNumber.label.logoPath">로고 이름</entry>	
+	<entry key="admin.subNumber.label.logoSize">로고 크기</entry>	
+	
+	<entry key="admin.subNumber.label.loginLogo">로그인 페이지 로고 변경</entry>	
+	<entry key="admin.subNumber.label.mainLogo">메인 페이지 로고 변경</entry>	
+	
+	<entry key="admin.subNumber.label.logoRegister">로고 등록</entry>	
+	
+	<entry key="admin.subNumber.confirm.changeLogo">로고를 변경하시겠습니까?</entry>	
+	<entry key="admin.subNumber.alert.registerLogo">변경할 로고 이미지를 등록해주세요.</entry>	
+	<entry key="admin.subNumber.alert.logo.onlyPng">파일 업로드는 png형식만 가능합니다.</entry>	
+	<entry key="admin.subNumber.alert.SelectLogo">파일을 선택하세요.</entry>	
+	<entry key="admin.subNumber.alert.success.registerLogo">로고가 등록되었습니다.</entry>	
+	<entry key="admin.subNumber.alert.fail.registerLogo">로고 등록에 실패하였습니다.</entry>	
+	
+	<entry key="admin.systemOption.label.custCode">고객 코드</entry>
+	<entry key="admin.systemOption.label.phoneSetting">전화번호 세팅</entry>
+	<entry key="admin.systemOption.label.returnMsg">출력 메세지</entry>
+	<entry key="admin.systemOption.label.returnUrl">전송 URL</entry>
+	
+	<entry key="admin.systemOption.label.settingAdd">세팅 추가</entry>
+	<entry key="admin.systemOption.label.settingModi">세팅 수정</entry>
+	
+	<entry key="admin.phoneMapping.title.addPhoneMapping">전화번호 추가</entry>
+	<entry key="admin.phoneMapping.title.modifyPhoneMapping">전화번호 수정</entry>
+	<entry key="admin.phoneMapping.label.custPhone">전화번호</entry>
+	<entry key="admin.phoneMapping.label.custNickName">대체문자</entry>
+	<entry key="admin.phoneMapping.label.useNickName">사용구분</entry>
+	<entry key="admin.phoneMapping.label.selY">사용</entry>
+	<entry key="admin.phoneMapping.label.selN">미사용</entry>
+	<entry key="admin.detail.title.recordingEngine">녹취 엔진</entry>
+	<entry key="admin.detail.title.etcSetting">기타 설정</entry>
+	<entry key="admin.detail.title.uploadRecordingFiles">음성 파일 업로드</entry>
+	<entry key="admin.detail.title.uploadUpdateFile">업데이트 파일 업로드</entry>
+	<entry key="admin.detail.title.mailServerData">메일 서버 정보</entry>
+	<entry key="admin.detail.title.serverTimezoneManage">서버 타임존 관리</entry>
+	<entry key="admin.detail.label.ipktsAliveCheck">IPKTS Alive check</entry>
+	<entry key="admin.detail.label.sipLog">SIP Log</entry>
+	<entry key="admin.detail.label.lanCard">Lan Card</entry>
+	<entry key="admin.detail.label.encodedFileDonwload">암호화된 파일 다운로드</entry>
+	<entry key="admin.detail.label.agentIdView">에이전트 ID 출력 옵션</entry>
+	<entry key="admin.detail.label.haName">HA Name</entry>
+	<entry key="admin.detail.label.fileExtension">다운로드 파일 확장자</entry>
+	<entry key="admin.detail.label.guideSpeechRecording">안내 멘트 녹취</entry>
+	<entry key="admin.detail.label.filenamePattern">파일명 패턴</entry>
+	<entry key="admin.detail.label.uploadFile">음성 파일</entry>
+	<entry key="admin.detail.label.upload">업로드</entry>
+	<entry key="admin.detail.label.memo">메모</entry>
+	<entry key="admin.detail.label.updateFile">업데이트 파일</entry>
+	<entry key="admin.detail.label.maxFileSize">파일 최대 크기</entry>
+	<entry key="admin.detail.label.mailServerAddress">메일 서버 주소</entry>
+	<entry key="admin.detail.label.mailSendPort">메일 발송 포트</entry>
+	<entry key="admin.detail.label.mailSendId">메일 발송 ID</entry>
+	<entry key="admin.detail.label.mailSendPw">메일 발송 비밀번호</entry>
+	<entry key="admin.detail.label.mailSenderAddress">발신자 메일 주소</entry>
+	<entry key="admin.detail.label.mailReceiverAddress">수신자 메일 주소</entry>
+	<entry key="admin.detail.label.nowTimezone">현재 타임 존</entry>
+	<entry key="admin.detail.label.changeServerTimezone">서버 타임존 / 시간 변경</entry>
+	<entry key="admin.detail.option.use">사용</entry>
+	<entry key="admin.detail.option.notUse">미사용</entry>
+	<entry key="admin.detail.option.choose">선택</entry>
+	<entry key="admin.detail.option.mp3">mp3</entry>
+	<entry key="admin.detail.option.wav">wav</entry>
+	<entry key="admin.detail.option.cid">CID</entry>
+	<entry key="admin.detail.option.callType">콜타입</entry>
+	<entry key="admin.detail.placeholder.selectFile">파일을 선택하세요.</entry>
+	<entry key="admin.group.add">권한 그룹 추가</entry>
+	<entry key="admin.button.addGroup">권한 그룹 추가</entry>
+	<entry key="admin.button.addModi">권한 그룹 수정</entry>
+	<entry key="admin.button.modify">변경 사항 적용</entry>
+	<entry key="admin.button.autoCreateChannel">채널 자동 생성</entry>
+	<entry key="admin.button.createChannel">채널 추가</entry>
+	<entry key="admin.button.create">생성</entry>
+	<entry key="admin.button.addSubNumber">자번호 추가</entry>
+	<entry key="admin.button.modifySubNumber">수정</entry>
+	<entry key="admin.button.addPhoneMapping">전화번호 추가</entry>
+	<entry key="admin.button.modifyPhoneMapping">수정</entry>
+	<entry key="admin.button.restart">녹취 엔진 재시작</entry>
+	<entry key="admin.button.save">저장</entry>
+	<entry key="admin.button.sendTestMail">테스트 메일 발송</entry>
+	<entry key="admin.alert.restartMessage">*녹취 엔진을 재시작하는 동안 녹취가 안 될 수 있습니다.</entry>
+	<entry key="admin.alert.fileUploadMessage">* 파일 업로드 후 서버를 재부팅해야 업데이트가 완료됩니다.</entry>
+
+	<entry key="admin.approve.label.req_Id">요청 ID</entry>
+	<entry key="admin.approve.label.req_date">요청 일자</entry>
+	<entry key="admin.approve.label.req_time">요청 시간</entry>
+	<entry key="admin.approve.label.req_fileName">요청 파일 명</entry>
+	<entry key="admin.approve.label.approve_Id">승인 ID</entry>
+	<entry key="admin.approve.label.approve_date">승인 일자</entry>
+	<entry key="admin.approve.label.approve_time">승인 시간</entry>
+	<entry key="admin.approve.label.approve_YN">승인 상태</entry>
+	<entry key="admin.button.chkApprove">승인</entry>
+
+
+	<entry key="admin.channel.monitoring.chTotal">전체 녹취파일 수</entry>
+	<entry key="admin.channel.monitoring.recSizeNone">녹취 청취불가 파일 수</entry>
+	<entry key="admin.channel.monitoring.chExtTotal">전체 채널 수</entry>
+	<entry key="admin.channel.monitoring.recExtYn">녹취 미사용 채널 수</entry>
+	<entry key="admin.channel.monitoring.recExtSizezero">녹취 청취불가 채널 수</entry>
+
+
+	<entry key="admin.approve.label.req_dateFrom">요청 시간(부터)</entry>
+	<entry key="admin.approve.label.req_dateTo">요청 시간(까지)</entry>
+	<entry key="admin.approve.label.req_emp">요청자 사번</entry>
+	<entry key="admin.approve.label.req_name">요청자 이름</entry>
+	<entry key="admin.approve.label.req_type">요청자 유형</entry>
+	<entry key="admin.approve.label.req_reason">요청자 사유</entry>
+	<entry key="admin.approve.label.req_team">요청자 소속</entry>
+	<entry key="admin.approve.label.req_day">요청 기간(일)</entry>
+	<entry key="admin.approve.label.status">진행 상태</entry>
+	<entry key="admin.approve.label.fileSetting">파일형식</entry>
+	<entry key="admin.button.chkNo">반려</entry>
+	<entry key="admin.button.listenAndDown">청취 / 다운로드 신청</entry>
+	<entry key="admin.button.approve">신청</entry>
+	<entry key="admin.button.type">유형</entry>
+	<entry key="admin.label.attr">관측 항목</entry>
+	<entry key="admin.label.essenType">임계치 유형</entry>
+	<entry key="admin.label.server">서버</entry>
+	<entry key="admin.label.job">업무</entry>
+	<entry key="admin.label.percent">퍼센트</entry>
+	<entry key="admin.label.input">직접 기입</entry>
+	<entry key="admin.label.logHistory">로그 기록</entry>
+	<entry key="admin.label.alert">알림 임계치</entry>
+	<entry key="admin.label.multi">다중</entry>
+	<entry key="admin.label.extBy">내선별</entry>
+	<entry key="admin.label.userBy">사용자별</entry>
+	<entry key="admin.label.groupBy">조직별</entry>
+	<entry key="admin.label.callBy">콜별</entry>
+	<entry key="admin.label.searchKind">검색조건</entry>
+	<entry key="admin.label.searchNum">내선번호 검색</entry>
+	<entry key="admin.label.searchEmp">사번 검색</entry>
+	<entry key="admin.label.searchUser">사용자 검색</entry>
+	<entry key="admin.label.notInResignation">퇴사자 미포함</entry>
+	<entry key="admin.label.addCode">코드 추가</entry>
+	<entry key="admin.label.code">코드</entry>
+	<entry key="admin.label.codeName">코드명</entry>
+	<entry key="admin.label.bgCode">대분류 코드</entry>
+	<entry key="admin.label.bgName">대분류 이름</entry>
+	<entry key="admin.label.mgCode">중분류 코드</entry>
+	<entry key="admin.label.mgName">중분류 이름</entry>
+	<entry key="admin.label.sgCode">소분류 코드</entry>
+	<entry key="admin.label.useYn">사용 유무</entry>
+	<entry key="admin.label.selectGroupKey">그룹 키 선택</entry>
+	<entry key="admin.label.selectEtcKey">설정 키 선택</entry>
+	<entry key="admin.label.search">조회</entry>
+	<entry key="admin.label.manageEtc">설정 값 관리</entry>
+	<entry key="admin.label.manageEtc.delRecfile">녹취 삭제 설정 정보 수정</entry>
+	<entry key="admin.label.manageEtc.backRecfile">녹취 백업 설정 정보 수정</entry>
+	<entry key="admin.label.groupKey">그룹 키</entry>
+	<entry key="admin.label.etcKey">설정 키</entry>
+	<entry key="admin.label.etcValue">설정 값</entry>
+	<entry key="admin.label.addGroup">그룹 추가</entry>
+	<entry key="admin.label.modiGroup">그룹 수정</entry>
+	<entry key="admin.label.addGroupPeo">그룹원 추가</entry>
+	<entry key="admin.label.removeGroupPeo">그룹원 제거</entry>
+	<entry key="admin.label.complete">완료</entry>
+	<entry key="admin.label.selectSearchDate">조회 기간 조회</entry>
+	<entry key="admin.label.today">오늘</entry>
+	<entry key="admin.label.week">일주일</entry>
+	<entry key="admin.label.month">한달</entry>
+	<entry key="admin.label.userCustom">사용자 지정</entry>
+	<entry key="admin.label.content">상세 내용</entry>
+	<entry key="admin.label.searchWord">검색 문자</entry>
+	<entry key="admin.label.TargetAdd">관제 대상 추가</entry>
+	<entry key="admin.label.TargetName">관제 대상 이름</entry>
+	<entry key="admin.label.TargetType">관제 대상 종류</entry>
+	<entry key="admin.label.TargetYn">관제 유무</entry>
+	<entry key="admin.label.explain">설명</entry>
+	<entry key="admin.label.size">크기</entry>
+	<entry key="admin.label.logIp">로그 IP</entry>
+	<entry key="admin.label.serverIp">서버 IP</entry>
+	<entry key="admin.label.userId">사용자 ID</entry>
+	<entry key="admin.label.targetModi">관측 순번 수정</entry>
+	<entry key="admin.label.targetUiSet">관제 대상 UI 설정</entry>
+	<entry key="admin.label.name">이름</entry>
+	<entry key="admin.label.extNo">내선번호</entry>
+	<entry key="admin.label.authy">권한등급</entry>
+	<entry key="admin.label.all">전체</entry>
+	<entry key="admin.label.noAuthy">권한없음</entry>
+	<entry key="admin.label.TargetContents">관제 대상 설명</entry>
+	<entry key="admin.label.UIwatchTime">관측 시간</entry>
+	<entry key="admin.label.object">오브젝트</entry>
+	<entry key="admin.label.mapContents">관제 Map 상세 정보</entry>
+	<entry key="admin.label.useThisMap">이 Map 사용</entry>
+	<entry key="admin.label.addQue">큐 추가</entry>
+	<entry key="admin.label.queNum">큐 번호</entry>
+	<entry key="admin.label.queName">큐 이름</entry>
+	<entry key="admin.label.saveModify">변경사항 적용</entry>
+	<entry key="admin.label.authyList">권한 리스트</entry>
+	<entry key="admin.label.addServer">서버 추가</entry>
+	<entry key="admin.label.modiServer">서버 수정</entry>
+	<entry key="admin.label.systemId">시스템 ID</entry>
+	<entry key="admin.label.systemName">시스템 이름</entry>
+	<entry key="admin.label.systemIp">시스템 IP</entry>
+	<entry key="admin.label.addPbx">교환기 정보 추가</entry>
+	<entry key="admin.label.modiPbx">교환기 정보 수정</entry>
+	<entry key="admin.label.pbxID">교환기 ID</entry>
+	<entry key="admin.label.pbxName">교환기 이름</entry>
+	<entry key="admin.label.pbxIp">교환기 IP</entry>
+	<entry key="admin.label.counselB">상담 코드 대</entry>
+	<entry key="admin.label.shareMemo">공유콜 메모</entry>
+	<entry key="admin.label.shareModi">공유설정 변경</entry>
+	<entry key="admin.label.status">상태</entry>
+	<entry key="admin.label.code">코드</entry>
+	<entry key="admin.label.recDate">녹취 일자</entry>
+	<entry key="admin.label.perDay">일간</entry>
+	<entry key="admin.label.perMonth">월간</entry>
+	<entry key="admin.label.group">조직</entry>
+	<entry key="admin.label.realtime">실시간</entry>
+	<entry key="admin.label.batch">배치</entry>
+	<entry key="admin.label.selectTargetGroup">대상 그룹을 선택 해 주세요</entry>
+	<entry key="admin.label.addUser">사용자 추가</entry>
+	<entry key="admin.label.MultiModiGroup">그룹변경</entry>
+	<entry key="admin.label.modiUser">사용자 수정</entry>
+	<entry key="admin.label.pwPolicy">PW 정책</entry>
+	<entry key="admin.label.groupName">그룹명</entry>
+	<entry key="admin.label.formDownload">양식 다운로드</entry>
+	<entry key="admin.label.groupUnit">그룹 단위</entry>
+	<entry key="admin.label.policySet1">정책 설정 적용</entry>
+	<entry key="admin.label.enterNum">숫자만 입력하세요</entry>
+	<entry key="admin.label.skinCode">신규 녹취 사용</entry>
+
+	<entry key="admin.label.passwordPolicySetting">비밀번호 정책 설정</entry>
+	<entry key="admin.label.pwModiTerm">PW 변경 주기</entry>
+	<entry key="admin.label.setModiTerm">변경 주기 설정</entry>
+	<entry key="admin.label.cycleDateD">일 마다 변경</entry>
+	<entry key="admin.label.cycleDateW">주 마다 변경</entry>
+	<entry key="admin.label.cycleDateM">개월 마다 변경</entry>
+	<entry key="admin.label.cycleDateY">해 마다 변경</entry>
+	<entry key="admin.label.lastPw">이전 PW 사용</entry>
+	<entry key="admin.label.pastPolicyY">허용</entry>
+	<entry key="admin.label.pastPolicyC">횟수 제한</entry>
+	<entry key="admin.label.pastPolicyB">차단</entry>
+	<entry key="admin.label.policySubGroup">PW 허용 횟수</entry>
+	<entry key="admin.label.tryPolicy">시도 제한</entry>
+	<entry key="admin.label.tryNumPolicy">시도 제한 횟수</entry>
+	<entry key="admin.label.lockPolicy">계정 잠금</entry>
+	<entry key="admin.label.lockNumTerm">잠금 주기 설정</entry>
+	<entry key="admin.label.lockDateD">일 동안 미사용 시</entry>
+	<entry key="admin.label.lockDateW">주 동안 미사용 시</entry>
+	<entry key="admin.label.lockDateM">개월 동안 미사용 시</entry>
+	<entry key="admin.label.lockDateY">년 동안 미사용 시</entry>
+	<entry key="admin.label.policyF">(강제)</entry>
+	<entry key="admin.label.policyY">(권고)</entry>
+	<entry key="admin.label.menuName1">기존 메뉴명</entry>
+	<entry key="admin.label.menuName2">현재 메뉴명</entry>
+	<entry key="admin.label.menuName3">변경 메뉴얼</entry>
+	<entry key="admin.label.modiCode">변경 코드</entry>
+
+	<entry key="admin.grid.expirationDay1">현재 만료기간(일)</entry>
+	<entry key="admin.grid.expirationDay2">변경할 만료기간(일)</entry>
+	<entry key="admin.grid.recStartType">녹취 시작 타임</entry>
+	<entry key="admin.grid.recStartTypeCode">녹취 시작 타임코드</entry>
+	<entry key="admin.grid.useCallcenterYn">콜센터 사용 유무</entry>
+	<entry key="admin.grid.maskingColumn">마스킹할 컬럼</entry>
+	<entry key="admin.grid.columnCode">컬럼 코드</entry>
+
+	<entry key="admin.grid.date">날짜</entry>
+	<entry key="admin.grid.time">시간</entry>
+	<entry key="admin.grid.logIp">로그 IP</entry>
+	<entry key="admin.grid.serverIp">서버IP</entry>
+	<entry key="admin.grid.userId">사용자 ID</entry>
+	<entry key="admin.grid.logType">로그 분류</entry>
+	<entry key="admin.grid.logContent">로그 내용</entry>
+	<entry key="admin.grid.contents">상세 내용</entry>
+	<entry key="admin.grid.num">번호</entry>
+	<entry key="admin.grid.center">센터</entry>
+	<entry key="admin.grid.sg">실</entry>
+	<entry key="admin.grid.skill">스킬</entry>
+	<entry key="admin.grid.apYn">AP 유무</entry>
+	<entry key="admin.grid.fileSize">파일 크기</entry>
+	<entry key="admin.grid.recApkeySize">AP 등록개수</entry>
+	<entry key="admin.grid.recCount">DB 이력개수</entry>
+	<entry key="admin.grid.saveLocation">저장 위치</entry>
+	<entry key="admin.grid.logInfoReset">로그인 정보 초기화</entry>
+	<entry key="admin.grid.emp">사번</entry>
+	<entry key="admin.grid.user">사용자</entry>
+    <entry key="admin.grid.clientIp">사용자 ip</entry>
+
+	<!-- 로그 관리 언어팩 -->
+	<entry key="admin.log.name.AUTH">권한 관리</entry>
+	<entry key="admin.log.name.BESTCALL">베스트 콜</entry>
+	<entry key="admin.log.name.CHANNEL">채널 관리</entry>
+	<entry key="admin.log.name.CONFIG">설정</entry>
+	<entry key="admin.log.name.LOGIN">로그인</entry>
+	<entry key="admin.log.name.ETCCONFIG">기타 설정</entry>
+	<entry key="admin.log.name.EXCELDOWN">엑셀 다운로드</entry>
+	<entry key="admin.log.name.FILEDOWN">파일 다운로드</entry>
+	<entry key="admin.log.name.LISTEN">청취</entry>
+	<entry key="admin.log.name.LOG">로그 관리</entry>
+	<entry key="admin.log.name.MONITORING">모니터링</entry>
+	<entry key="admin.log.name.RECSEARCH">녹취 조회</entry>
+	<entry key="admin.log.name.REPOSEARCH">통계</entry>
+	<entry key="admin.log.name.SERVER">서버</entry>
+	<entry key="admin.log.name.TAPPING">실시간 감청</entry>
+	<entry key="admin.log.name.USER">사용자 관리</entry>
+	<entry key="admin.log.name.USER_REC">그룹 관리</entry>
+	<entry key="admin.log.name.PLAYER">플레이어</entry>
+	<entry key="admin.log.name.REC_DELETE">녹취 삭제</entry>
+	<entry key="admin.log.name.REC_BACKUP">녹취 백업</entry>
+	<entry key="admin.log.name.SUBNUMBER">자번호 관리</entry>
+	<entry key="admin.log.name.PHONEMAPPING">전화번호 맵핑</entry>
+	<entry key="admin.log.name.BATCH">배치</entry>
+
+	<!-- 로그 디테일 언어팩 -->
+	<entry key="admin.log.contents.BATCH-ADW-START">adw 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-ADW-SUCCESS">adw 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-ADW-FAIL">adw 배치 실패</entry>
+	
+	<entry key="admin.log.contents.BATCH-USER-START">인사 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-USER-SUCCESS">인사 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-USER-FAIL">인사 배치 실패</entry>
+	
+	<entry key="admin.log.contents.BATCH-DEPT-START">조직 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-DEPT-SUCCESS">조직 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-DEPT-FAIL">조직 배치 실패</entry>
+	
+	<entry key="admin.log.contents.BATCH-ISA-START">ISA 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-ISA-SUCCESS">ISA 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-ISA-FAIL">ISA 배치 실패</entry>
+	
+	<entry key="admin.log.contents.BATCH-TOP-START">신탁 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-TOP-SUCCESS">신탁 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-TOP-FAIL">신탁 배치 실패</entry>
+	
+	<entry key="admin.log.contents.BATCH-WMS-START">펀드 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-WMS-SUCCESS">펀드 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-WMS-FAIL">펀드 배치 실패</entry>
+	
+	<entry key="admin.log.contents.BATCH-null"> </entry>
+	<entry key="admin.log.contents.null"> </entry>
+
+	<entry key="admin.log.contents.BATCH-FREE-REC-START">자유녹취 이력 삭제 시작</entry>
+	<entry key="admin.log.contents.BATCH-FREE-REC-STOP">자유녹취 이력 삭제 종료</entry>
+	<entry key="admin.log.contents.BATCH-FREE-REC-SUCCESS">자유녹취 이력 삭제 성공</entry>
+	<entry key="admin.log.contents.BATCH-FREE-REC-FAIL">자유녹취 이력 삭제 실패</entry>
+	
+	<!--WNS 오타로 입력된 이력 오류 안나게..  -->
+	<entry key="admin.log.contents.BATCH-WNS-START">펀드 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-WNS-SUCCESS">펀드 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-WNS-FAIL">펀드 배치 실패</entry>
+	
+	<entry key="admin.log.contents.BATCH-SHT-START">퇴직연금 배치 시작</entry>
+	<entry key="admin.log.contents.BATCH-SHT-SUCCESS">퇴직연금 배치 성공</entry>
+	<entry key="admin.log.contents.BATCH-SHT-FAIL">퇴직연금 배치 실패</entry>
+	<entry key="admin.log.contents.BATCH-TTS-ERROR">TTS 생성 요청 실패</entry>
+
+	<entry key="admin.log.contents.BATCH-SCRIPT-DELETE-EDIT-TRASH">미완료 스크립트 편집 데이터 삭제</entry>
+	<entry key="admin.log.contents.BATCH-SCRIPT-NEW-PRODUCT-INFO">상품스크립트 테이블 신규상품 추가</entry>
+	<entry key="admin.log.contents.BATCH-SCRIPT-SNAPSHOT-FOR-NOTUSE-PORDUCT">판매중지 상품 스냅샷 저장</entry>
+	<entry key="admin.log.contents.BATCH-SCRIPT-SNAPSHOT-FOR-EDIT-PORDUCT">상품스크립트 스냅샷 저장 </entry>
+	<entry key="admin.log.contents.BATCH-SCRIPT-UPDATE-SCRIPT-COMMON">공용스크립트 당일 예약건 적용 </entry>
+	<entry key="admin.log.contents.BATCH-SCRIPT-UPDATE-SCRIPT-PRODUCT">상품스크립트 당일 예약건 적용 </entry>
+
+	<entry key="admin.log.contents.AUTHORITY-CHANGE-FAIL">권한 변경 실패</entry>
+	<entry key="admin.log.contents.AUTHORITY-CHANGE-SUCCESS">권한 변경 성공</entry>
+	<entry key="admin.log.contents.AUTHORITY-CREATE-FAIL">권한 생성 실패</entry>
+	<entry key="admin.log.contents.AUTHORITY-CREATE-SUCCESS">권한 생성 성공</entry>
+	<entry key="admin.log.contents.AUTHORITY-DELETE-FAIL">권한 삭제 실패</entry>
+	<entry key="admin.log.contents.AUTHORITY-DELETE-SUCCESS">권한 삭제 성공</entry>
+	<entry key="admin.log.contents.BESTCALL-APPROVE">우수콜 승인</entry>
+	<entry key="admin.log.contents.BESTCALL-LISTEN">우수콜 청취</entry>
+	<entry key="admin.log.contents.BESTCALL-REQUEST">우수콜 요청</entry>
+	<entry key="admin.log.contents.BESTCALL-SHARE">우수콜 공유</entry>
+	
+	<entry key="admin.log.contents.CHANNEL-DELETE-FAIL">채널 삭제 실패</entry>
+	<entry key="admin.log.contents.CHANNEL-DELETE-SUCCESS">채널 삭제 성공</entry>
+	<entry key="admin.log.contents.CHANNEL-EXCEPTION">채널 관리 예외 발생</entry>
+	<entry key="admin.log.contents.CHANNEL-INSERT-FAIL">채널 추가 실패</entry>
+	<entry key="admin.log.contents.CHANNEL-INSERT-SUCCESS">채널 추가 성공</entry>
+	<entry key="admin.log.contents.CHANNEL-UPDATE-FAIL">채널 수정 실패</entry>
+	<entry key="admin.log.contents.CHANNEL-UPDATE-SUCCESS">채널 수정 성공</entry>
+	
+	<entry key="admin.log.contents.CONNECT-FAIL">로그인 실패</entry>
+	<entry key="admin.log.contents.CONNECT-LOGOUT">로그아웃</entry>
+	<entry key="admin.log.contents.CONNECT-SESSION">세션 해제</entry>
+	<entry key="admin.log.contents.CONNECT-SUCCESS">로그인 성공</entry>
+	
+	<entry key="admin.log.contents.ETCCONFIG-COMMAND-FAIL">기타 설정 명령 실패</entry>
+	<entry key="admin.log.contents.ETCCONFIG-DELETE-FAIL">기타 설정 삭제 실패</entry>
+	<entry key="admin.log.contents.ETCCONFIG-DELETE-SUCCESS">기타 설정 삭제 성공</entry>
+	<entry key="admin.log.contents.ETCCONFIG-EXCEPTION">기타 설정 예외 발생</entry>
+	<entry key="admin.log.contents.ETCCONFIG-INSERT-FAIL">기타 설정 저장 실패</entry>
+	<entry key="admin.log.contents.ETCCONFIG-INSERT-SUCCESS">기타 설정 저장 성공</entry>
+	<entry key="admin.log.contents.ETCCONFIG-UPDATE-FAIL">기타 설정 수정 실패</entry>
+	<entry key="admin.log.contents.ETCCONFIG-UPDATE-SUCCESS">기타 설정 수정 성공</entry>
+	
+	<entry key="admin.log.contents.EXCELDOWN">엑셀 다운로드</entry>
+	<entry key="admin.log.contents.FILEDOWN">파일 다운로드</entry>
+	<entry key="admin.log.contents.LISTEN">녹취 청취</entry>
+	
+	<entry key="admin.log.contents.LOG-COMMAND-FAIL">로그 관리 명령 실패</entry>
+	<entry key="admin.log.contents.LOG-DELETE-FAIL">로그 삭제 실패</entry>
+	<entry key="admin.log.contents.LOG-DELETE-SUCCESS">로그 삭제 성공</entry>
+	<entry key="admin.log.contents.LOG-EXCEPTION">로그 관리 예외 발생</entry>
+	<entry key="admin.log.contents.LOG-SEARCH">로그 조회</entry>
+	<entry key="admin.log.contents.RECSEARCH">녹취 리스트 조회</entry>
+	
+	<entry key="admin.log.contents.SERVER-COMMAND-FAIL">서버 관리 명령 실패</entry>
+	<entry key="admin.log.contents.SERVER-DELETE-FAIL">서버 삭제 실패</entry>
+	<entry key="admin.log.contents.SERVER-DELETE-SUCCESS">서버 삭제 성공</entry>
+	<entry key="admin.log.contents.SERVER-EXCEPTION">서버 관리 예외 발생</entry>
+	<entry key="admin.log.contents.SERVER-INSERT-FAIL">서버 추가 실패</entry>
+	<entry key="admin.log.contents.SERVER-INSERT-SUCCESS">서버 추가 성공</entry>
+	<entry key="admin.log.contents.SERVER-UPDATE-FAIL">서버 수정 실패</entry>
+	<entry key="admin.log.contents.SERVER-UPDATE-SUCCESS">서버 수정 성공</entry>
+	
+	<entry key="admin.log.contents.TAPPING-LISTEN-END">실시간 감청 종료</entry>
+	<entry key="admin.log.contents.TAPPING-LISTEN-START">실시간 감청 시작</entry>
+	
+	<entry key="admin.log.contents.USER-AUTHY-UPDATE-FAIL">사용자 수정 (권한) 실패</entry>
+	<entry key="admin.log.contents.USER-AUTHY-UPDATE-SUCCESS">사용자 수정 (권한) 성공</entry>
+	<entry key="admin.log.contents.USER-DELETE-FAIL">사용자 삭제 실패</entry>
+	<entry key="admin.log.contents.USER-DELETE-SUCCESS">사용자 삭제 성공</entry>
+	<entry key="admin.log.contents.USER-INSERT-FAIL">사용자 추가 실패</entry>
+	<entry key="admin.log.contents.USER-INSERT-SUCCESS">사용자 추가 성공</entry>
+	<entry key="admin.log.contents.USER-UPDATE-FAIL">사용자 수정 실패</entry>
+	<entry key="admin.log.contents.USER-UPDATE-SUCCESS">사용자 수정 성공</entry>
+	
+	<entry key="admin.log.contents.USER_REC-DELETE-FAIL">녹취 대상 삭제 실패</entry>
+	<entry key="admin.log.contents.USER_REC-DELETE-SUCCESS">녹취 대상 삭제 성공</entry>
+	<entry key="admin.log.contents.USER_REC-INSERT-FAIL">녹취 대상 추가 실패</entry>
+	<entry key="admin.log.contents.USER_REC-INSERT-SUCCESS">녹취 대상 추가 성공</entry>
+	<entry key="admin.log.contents.USER_REC-UPDATE-FAIL">녹취 대상 수정 실패</entry>
+	<entry key="admin.log.contents.USER_REC-UPDATE-SUCCESS">녹취 대상 수정 성공</entry>
+	
+	<entry key="admin.log.contents.PLAYER-LISTEN">플레이어 청취</entry>
+	<entry key="admin.log.contents.PLAYER-MOBILE-LISTEN">모바일 청취</entry>
+	<entry key="admin.log.contents.PLAYER-FILEDOWN-SUCCESS">플레이어 파일 다운 성공</entry>
+	<entry key="admin.log.contents.PLAYER-FILEDOWN-FAIL">플레이어 파일 다운 실패</entry>
+	<entry key="admin.log.contents.DELETE-RECFILE">녹취파일 삭제</entry>
+	<entry key="admin.log.contents.RECSEARCH">녹취 조회</entry>
+	<entry key="admin.log.contents.LISTEN-END">청취 종료</entry>
+	<entry key="admin.log.contents.LISTEN-START">청취 시작</entry>
+	<entry key="admin.log.contents.AUTHY-UPDATE-FAIL">권한 수정 실패</entry>
+	<entry key="admin.log.contents.AUTHY-UPDATE-SUCCESS">권한 수정 성공</entry>
+	
+	<entry key="admin.log.contents.REC_BACKUP-SUCCESS">녹취 백업 성공</entry>
+	<entry key="admin.log.contents.REC_BACKUP-FAIL">녹취 백업 실패</entry>
+	<entry key="admin.log.contents.REC_BACKUP-SCHEDULE-SUCCESS">녹취 백업 스케줄 성공</entry>
+	<entry key="admin.log.contents.REC_BACKUP-SCHEDULE-FAIL">녹취 백업 스케줄 실패</entry>
+
+	<entry key="admin.log.contents.SUBNUMBER-COMMAND-FAIL">자번호 설정 명령 실패</entry>
+	<entry key="admin.log.contents.SUBNUMBER-DELETE-FAIL">자번호 설정 삭제 실패</entry>
+	<entry key="admin.log.contents.SUBNUMBER-DELETE-SUCCESS">자번호 설정 삭제 성공</entry>
+	<entry key="admin.log.contents.SUBNUMBER-EXCEPTION">자번호 설정 예외 발생</entry>
+	<entry key="admin.log.contents.SUBNUMBER-INSERT-FAIL">자번호 설정 저장 실패</entry>
+	<entry key="admin.log.contents.SUBNUMBER-INSERT-SUCCESS">자번호 설정 저장 성공</entry>
+	<entry key="admin.log.contents.SUBNUMBER-UPDATE-FAIL">자번호 설정 수정 실패</entry>
+	<entry key="admin.log.contents.SUBNUMBER-UPDATE-SUCCESS">자번호 설정 수정 성공</entry>
+
+	<entry key="admin.log.contents.PHONEMAPPING-COMMAND-FAIL">전화번호 맵핑 설정 명령 실패</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-DELETE-FAIL">전화번호 맵핑 설정 삭제 실패</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-DELETE-SUCCESS">전화번호 맵핑 설정 삭제 성공</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-EXCEPTION">전화번호 맵핑 설정 예외 발생</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-INSERT-FAIL">전화번호 맵핑 설정 저장 실패</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-INSERT-SUCCESS">전화번호 맵핑 설정 저장 성공</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-UPDATE-FAIL">전화번호 맵핑 설정 수정 실패</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-UPDATE-SUCCESS">전화번호 맵핑 설정 수정 성공</entry>
+	
+	<entry key="admin.log.contents.DELETE-SCHEDULER-INSERT-SUCCESS">삭제 스케줄 등록 성공</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-INSERT-FAIL">삭제 스케줄 등록 실패</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-UPDATE-SUCCESS">삭제 스케줄 수정 성공</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-UPDATE-FAIL">삭제 스케줄 수정 실패</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-DELETE-SUCCESS">삭제 스케줄 삭제 성공</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-DELETE-FAIL">삭제 스케줄 삭제 실패</entry>
+	
+	<entry key="admin.alert.successDelete">알림 이력 삭제에 성공하였습니다</entry>
+	<entry key="admin.alert.failDelete">삭제 실패</entry>
+	<entry key="admin.alert.selectDeleteServer">삭제할 서버를 선택해주세요</entry>
+
+	<entry key="admin.alert.approveManage1">요청 유형이 다운로드가 아닙니다</entry>
+	<entry key="admin.alert.approveManage2">승인되지 않은 요청입니다</entry>
+	<entry key="admin.alert.approveManage3">권한이 없습니다.</entry>
+	<entry key="admin.alert.approveManage4">다운로드 기한이 종료되었습니다.</entry>
+	<entry key="admin.alert.approveManage5">요청 유형이 청취가 아닙니다</entry>
+	<entry key="admin.alert.approveManage6">승인되지 않은 요청입니다</entry>
+	<entry key="admin.alert.approveManage7">청취 기간이 종료되었습니다.</entry>
+	<entry key="admin.alert.approveManage8">요청 일자를 다음 형식에 맞게 입력 해 주세요</entry>
+	<entry key="admin.alert.approveManage9">이미 처리 완료된 건 입니다.</entry>
+	<entry key="admin.alert.approveManage10">선택하신 항목은 진행상태가 지점 신청인 항목 입니다.</entry>
+	<entry key="admin.alert.approveManage11">부점 승인 권한이 없는 사용자는 현재 요청을 반영 할 수 없습니다.</entry>
+	<entry key="admin.alert.approveManage12">선택하신 항목은 진행상태가 콜센터 신청인 항목 입니다.</entry>
+	<entry key="admin.alert.approveManage13">콜센터 접수 권한이 없는 사용자는 현재 요청을 반영 할 수 없습니다.</entry>
+	<entry key="admin.alert.approveManage14">선택하신 항목은 진행상태가 부점 승인인 항목 입니다.</entry>
+	<entry key="admin.alert.approveManage15">콜센터 접수 권한이 없는 사용자는 현재 요청을 반영 할 수 없습니다.</entry>
+	<entry key="admin.alert.approveManage16">선택하신 항목은 진행상태가 콜센터 접수인 항목 입니다.</entry>
+	<entry key="admin.alert.approveManage17">콜센터 승인 권한이 없는 사용자는 현재 요청을 반영 할 수 없습니다.</entry>
+	<entry key="admin.alert.approveManage18">정상적으로 처리 되었습니다.</entry>
+	<entry key="admin.alert.approveManage19">컴퓨터에 음성파일을 재생 가능한 장치가 없습니다.</entry>
+	<entry key="admin.alert.approveManage20">컴퓨터에 재생 가능한 장치를 먼저 연결 후 청취 시도를 해주세요.</entry>
+	<entry key="admin.alert.approveManage21">요청에 실패 하였습니다.</entry>
+
+	<entry key="admin.alert.attrManage1">관제 지표 추가</entry>
+	<entry key="admin.alert.attrManage2">삭제에 성공하였습니다.</entry>
+	<entry key="admin.alert.attrManage3">삭제를 실패하였습니다.</entry>
+	<entry key="admin.alert.attrManage4">삭제할 관제 대상을 선택해주세요</entry>
+	<entry key="admin.alert.attrManage5">관측항목명을 입력해 주세요</entry>
+	<entry key="admin.alert.attrManage6">알림임계치를 입력해 주세요.</entry>
+	<entry key="admin.alert.attrManage7">이미 등록된 관측항목 입니다.</entry>
+	<entry key="admin.alert.attrManage8">관제지표 수정에 성공하였습니다.</entry>
+	<entry key="admin.alert.attrManage9">관제지표 수정에 실패했습니다.</entry>
+	<entry key="admin.alert.attrManage10">관측항목명을 입력해 주세요</entry>
+	<entry key="admin.alert.attrManage11">알림임계치를 입력해 주세요.</entry>
+	<entry key="admin.alert.attrManage12">관제지표 추가에 성공하였습니다.</entry>
+	<entry key="admin.alert.attrManage13">관제지표 추가에 실패했습니다.</entry>
+	<entry key="admin.alert.attrManage14">임계치가 잘못 정의되어 있습니다.</entry>
+	<entry key="admin.alert.attrManage15">관제지표 저장이 완료되었습니다.</entry>
+	<entry key="admin.alert.attrManage16">관제 지표 저장에 저장에 실패했습니다.</entry>
+
+	<entry key="admin.alert.authyManage1">사용유무</entry>
+	<entry key="admin.alert.authyManage2">재생시점 구간지정</entry>
+	<entry key="admin.alert.authyManage3">사용자 구간지정</entry>
+	<entry key="admin.alert.authyManage4">마우스 구간지정</entry>
+	<entry key="admin.alert.authyManage5">메모일괄삭제</entry>
+	<entry key="admin.alert.authyManage6">업로드</entry>
+	<entry key="admin.alert.authyManage7">다운로드</entry>
+	<entry key="admin.alert.authyManage8">권한 그룹 추가</entry>
+	<entry key="admin.alert.authyManage9">권한 그룹 수정</entry>
+	<entry key="admin.alert.authyManage10">삭제할 권한을 먼저 선택 해 주세요!</entry>
+	<entry key="admin.alert.authyManage11">관리자 권한은 삭제가 불가능 합니다!</entry>
+	<entry key="admin.alert.authyManage12">권한 삭제가 완료 되었습니다.</entry>
+	<entry key="admin.alert.authyManage13">권한 삭제에 실패 하였습니다.</entry>
+	<entry key="admin.alert.authyManage14">선택하신 권한을 정말 삭제 하시겠습니까?</entry>
+	<entry key="admin.alert.authyManage15">권한명을 입력 해 주세요!</entry>
+	<entry key="admin.alert.authyManage16">수정할 권한을 먼저 선택 해 주세요!</entry>
+	<entry key="admin.alert.authyManage17">권한 수정이 완료 되었습니다.</entry>
+	<entry key="admin.alert.authyManage18">권한 수정이 실패 되었습니다.</entry>
+	<entry key="admin.alert.authyManage19">작업 처리 중 오류가 발생 하였습니다.</entry>
+	<entry key="admin.alert.authyManage20">다시 시도 해 주세요!</entry>
+
+	<entry key="admin.alert.chennelManage1">IP 규칙 위반입니다. 다시 입력해주세요.</entry>
+	<entry key="admin.alert.chennelManage2">내선번호는 6자리 이상 입력이 불가능 합니다.</entry>
+	<entry key="admin.alert.chennelManage3">빈값으로 수정 하실 수 없습니다!</entry>
+	<entry key="admin.alert.chennelManage4">동일시스템에서 이미 등록된 IP입니다.</entry>
+	<entry key="admin.alert.chennelManage5">채널 수정에 실패했습니다.</entry>
+	<entry key="admin.alert.chennelManage6">선택하신 채널을 삭제 하시겠습니까?</entry>
+	<entry key="admin.alert.chennelManage7">삭제할 채널을 선택해주세요</entry>
+	<entry key="admin.alert.chennelManage8">시스템을 선택 해 주세요.</entry>
+	<entry key="admin.alert.chennelManage9">내선번호를 입력 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage10">시작 내선번호를 입력 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage11">끝 내선번호를 입력 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage12">시작 내선번호는 끝 내선번호와 같거나 클 수 없습니다.</entry>
+	<entry key="admin.alert.chennelManage13">IP를 입력 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage14">시작 IP를 입력 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage15">녹취사용을 선택 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage16">녹취유형을 선택 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage17">IP 규칙 위반입니다. 다시 입력해주세요.</entry>
+	<entry key="admin.alert.chennelManage18">스크린 사용을 선택 해  주세요.</entry>
+	<entry key="admin.alert.chennelManage19">동일시스템에서 이미 등록된 IP입니다.</entry>
+	<entry key="admin.alert.chennelManage20">채널 수정이 완료되었습니다.</entry>
+	<entry key="admin.alert.chennelManage21">ip 대역은 </entry>
+	<entry key="admin.alert.chennelManage22"> ~ 최대 255 로 설정 가능 합니다.내선 범위를 다시 설정 해 주세요.</entry>
+	<entry key="admin.alert.chennelManage23">동일 시스템에서 시작과 끝 내선 사이에 이미 등록된 번호가 있습니다. 등록된 번호 : </entry>
+	<entry key="admin.alert.chennelManage24">동일 시스템에서 이미 등록된 아이피가 있습니다. 등록된 아이피 : </entry>
+	<entry key="admin.alert.chennelManage25">채널 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.chennelManage26">채널 추가에 실패했습니다.</entry>
+	<entry key="admin.alert.chennelManage27">채널 번호를 입력해주세요.</entry>
+	<entry key="admin.alert.chennelManage28">이미 등록된 채널 번호 입니다.</entry>
+	<entry key="admin.alert.chennelManage29">이미 등록된 내선 번호 입니다.</entry>
+	<entry key="admin.alert.chennelManage30">채널 라이센스가 부족합니다.</entry>
+
+	<entry key="admin.alert.comboManage1">코드 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.comboManage2">코드 추가에 실패하였습니다.</entry>
+	<entry key="admin.alert.comboManage3">변경이 완료되었습니다.</entry>
+	<entry key="admin.alert.comboManage4">코드 변경에 실패하였습니다.</entry>
+	<entry key="admin.alert.comboManage5">코드 사용 변경에 실패하였습니다.</entry>
+	<entry key="admin.alert.comboManage6">최소 만료기한은 1일입니다.</entry>
+	<entry key="admin.alert.comboManage7">최대 만료기한은 30일입니다.</entry>
+
+	<entry key="admin.alert.etcConfig1">설정 값을 삭제 하시겠습니까?</entry>
+	<entry key="admin.alert.etcConfig2">주의!!! 설정값 삭제는 시스템 환경에 영향을 끼치므로, 주의해서 삭제 해 주세요.</entry>
+	<entry key="admin.alert.etcConfig3">설정 값을 변경 하시겠습니까?</entry>
+	<entry key="admin.alert.etcConfig4">주의!!! 설정값 변경은 시스템 환경에 영향을 끼치므로, 주의해서 변경 해 주세요.</entry>
+	<entry key="admin.alert.etcConfig5">그룹 키 값은 필수 값 입니다.</entry>
+	<entry key="admin.alert.etcConfig6">설정 키 값은 필수 값 입니다.</entry>
+	<entry key="admin.alert.etcConfig7">입력된 설정 값이 없습니다. 계속 진행 하시겠습니까?</entry>
+	<entry key="admin.alert.etcConfig8">중복된 키값이 존재 합니다.</entry>
+	<entry key="admin.alert.etcConfig9">저장 성공!</entry>
+	<entry key="admin.alert.etcConfig10">수정 성공!</entry>
+	<entry key="admin.alert.etcConfig11">삭제 성공!</entry>
+	<entry key="admin.alert.etcConfig12">삭제할 설정 정보를 선택해주세요.</entry>
+	
+	<entry key="admin.alert.itemManage1">이미 등록된 관제대상입니다.</entry>
+	<entry key="admin.alert.itemManage2">저장할 항목이 없습니다</entry>
+	<entry key="admin.alert.itemManage3">더 이상 추가할 관제 항목이 없습니다.</entry>
+	<entry key="admin.alert.itemManage4">관제 항목 추가에 실패하였습니다.</entry>
+	<entry key="admin.alert.itemManage5">관제 항목 추가에 성공하였습니다.</entry>
+	<entry key="admin.alert.itemManage6">관제 항목 삭제에 실패하였습니다.</entry>
+	<entry key="admin.alert.itemManage7">관제 항목 삭제에 성공하였습니다.</entry>
+	<entry key="admin.alert.itemManage8">정말 삭제하시겠습니까?</entry>
+	<entry key="admin.alert.itemManage9">정말 시작하시겠습니까?</entry>
+
+	<entry key="admin.alert.logManage1">IP 규칙 위반입니다. 다시 입력해주세요.</entry>
+	<entry key="admin.alert.logManage2">현재 조건의 로그들을 삭제하시겠습니까?</entry>
+
+	<entry key="admin.alert.monitoringManage1">관제 대상 수정</entry>
+	<entry key="admin.alert.monitoringManage2">관제 대상 추가</entry>
+	<entry key="admin.alert.monitoringManage3">관제 대상 이름을 입력해 주세요.</entry>
+	<entry key="admin.alert.monitoringManage4">관제 대상 유형을 선택해 주세요.</entry>
+	<entry key="admin.alert.monitoringManage5">관제 대상 IP를 입력해 주세요.</entry>
+	<entry key="admin.alert.monitoringManage6">관제 유무를 입력해 주세요.</entry>
+	<entry key="admin.alert.monitoringManage7">IP 규칙 위반입니다. 다시 입력해 주세요.</entry>
+	<entry key="admin.alert.monitoringManage8">이미 등록된 IP입니다.</entry>
+	<entry key="admin.alert.monitoringManage9">관제대상 수정이 완료되었습니다.</entry>
+	<entry key="admin.alert.monitoringManage10">관제대상 수정에 실패했습니다.</entry>
+	<entry key="admin.alert.monitoringManage11">관제 대상 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.monitoringManage12">관제 대상 추가에 실패했습니다.</entry>
+
+	<entry key="admin.alert.queManage1">큐 번호가 이미 존재합니다.</entry>
+	<entry key="admin.alert.queManage2">큐 번호를 입력해주세요.</entry>
+	<entry key="admin.alert.queManage3">큐 이름을 입력해주세요.</entry>
+	<entry key="admin.alert.queManage4">큐를 추가 하시겠습니까?</entry>
+	<entry key="admin.alert.queManage5">큐 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.queManage6">큐 추가에 실패했습니다.</entry>
+	<entry key="admin.alert.queManage7">큐 정보가 삭제되었습니다.</entry>
+	<entry key="admin.alert.queManage8">큐 정보 삭제를 실패했습니다.</entry>
+	<entry key="admin.alert.queManage9">삭제할 큐 번호를 선택해주세요</entry>
+
+	<entry key="admin.alert.searchManage1">중복된 칼럼이 있습니다.</entry>
+ 	<entry key="admin.alert.searchManage2">검색 항목에서 \"상담코드 소\"는 \"상담코드 중\" 항목이 존재 하여야 합니다.</entry>
+	<entry key="admin.alert.searchManage3">검색 항목에서 \"상담코드 중\"은 \"상담코드 대\" 항목이 존재 하여야 합니다.</entry>
+	<entry key="admin.alert.searchManage4">적용 중 오류가 발생하였습니다.</entry>
+	<entry key="admin.alert.searchManage5">적용되었습니다.</entry>
+	<entry key="admin.alert.searchManage6">적용할 데이터가 없습니다.</entry>
+
+	<entry key="admin.alert.serverManage1">서버 추가</entry>
+	<entry key="admin.alert.serverManage2">서버 수정</entry>
+	<entry key="admin.alert.serverManage3">시스템 아이디를 입력해주세요.</entry>
+	<entry key="admin.alert.serverManage4">시스템 아이디는 두글자 이상입력해주세요.</entry>
+	<entry key="admin.alert.serverManage5">시스템 아이디는 다섯 글자까지 입력해주세요.</entry>
+	<entry key="admin.alert.serverManage6">시스템명을 입력해주세요.</entry>
+	<entry key="admin.alert.serverManage7">시스템명은 두글자 이상입력해주세요.</entry>
+	<entry key="admin.alert.serverManage8">특수 문자는 사용할 수 없습니다.</entry>
+	<entry key="admin.alert.serverManage9">시스템IP를 입력해주세요.</entry>
+	<entry key="admin.alert.serverManage10">IP 규칙 위반입니다. 다시 입력해주세요.</entry>
+	<entry key="admin.alert.serverManage11">이미 등록된 시스템 ID입니다.</entry>
+	<entry key="admin.alert.serverManage12">이미 등록된 시스템명입니다.</entry>
+	<entry key="admin.alert.serverManage13">이미 등록된 시스템IP입니다.</entry>
+	<entry key="admin.alert.serverManage14">서버 수정이 완료되었습니다.</entry>
+	<entry key="admin.alert.serverManage15">수정에 실패했습니다.</entry>
+	<entry key="admin.alert.serverManage16">선택하신 서버를 삭제 하시겠습니까?</entry>
+	<entry key="admin.alert.serverManage17">서버 정보가 삭제되었습니다.</entry>
+	<entry key="admin.alert.serverManage18">서버 정보 삭제를 실패했습니다.</entry>
+	<entry key="admin.alert.serverManage19">삭제할 서버를 선택해주세요</entry>
+	<entry key="admin.alert.serverManage20">서버 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.serverManage21">저장에 실패했습니다.</entry>
+
+	<entry key="admin.alert.switchManage1">교환기 정보 추가</entry>
+	<entry key="admin.alert.switchManage2">교환기 정보 수정</entry>
+	<entry key="admin.alert.switchManage3">교환기 아이디를 입력해주세요.</entry>
+	<entry key="admin.alert.switchManage4">교환기 아이디는 두글자 이상입력해주세요.</entry>
+	<entry key="admin.alert.switchManage5">교환기 아이디는 다섯 글자까지 입력해주세요.</entry>
+	<entry key="admin.alert.switchManage6">교환기명을 입력해주세요.</entry>
+	<entry key="admin.alert.switchManage7">교환기명은 두글자 이상입력해주세요.</entry>
+	<entry key="admin.alert.switchManage8">특수 문자는 사용할 수 없습니다.</entry>
+	<entry key="admin.alert.switchManage9">교환기 IP를 입력해주세요.</entry>
+	<entry key="admin.alert.switchManage10">SIP ID를 입력해주세요.</entry>
+	<entry key="admin.alert.switchManage11">SIP 패스워드를 입력해주세요.</entry>
+	<entry key="admin.alert.switchManage12">이미 등록된 교환기 ID입니다.</entry>
+	<entry key="admin.alert.switchManage13">이미 등록된 교환기명입니다.</entry>
+	<entry key="admin.alert.switchManage14">이미 등록된 교환기 IP입니다.</entry>
+	<entry key="admin.alert.switchManage15">교환기 정보 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.switchManage16">교환기 정보 추가에 실패했습니다.</entry>
+	<entry key="admin.alert.switchManage17">교환기 정보가 삭제되었습니다.</entry>
+	<entry key="admin.alert.switchManage18">교환기 정보 삭제를 실패했습니다.</entry>
+	<entry key="admin.alert.switchManage19">삭제할 교환기 정보를 선택해주세요</entry>
+	
+	<entry key="admin.alert.subNumberManage1">전화번호를 입력해주세요.</entry>
+	<entry key="admin.alert.subNumberManage2">전화번호는 숫자만 입력 가능합니다.</entry>
+	<entry key="admin.alert.subNumberManage3">대체문자를 입력해주세요.</entry>
+	<entry key="admin.alert.subNumberManage4">사용여부를 선택하세요.</entry>
+	<entry key="admin.alert.subNumberManage5">이미 등록된 전화번호 입니다.</entry>
+	<entry key="admin.alert.subNumberManage6">자번호 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.subNumberManage7">자번호 추가에 실패했습니다.</entry>
+	<entry key="admin.alert.subNumberManage8">선택하신 정보를 삭제하시겠습니까?</entry>
+	<entry key="admin.alert.subNumberManage9">자번호 정보가 삭제되었습니다.</entry>
+	<entry key="admin.alert.subNumberManage10">자번호 정보 삭제를 실패했습니다.</entry>
+	<entry key="admin.alert.subNumberManage11">삭제할 자번호 정보를 선택해주세요.</entry>
+	<entry key="admin.alert.subNumberManage12">정보수정이 완료되었습니다.</entry>
+	<entry key="admin.alert.subNumberManage13">정보수정에 실패했습니다.</entry>
+	
+	<entry key="admin.alert.phoneMapping1">전화번호를 입력해주세요.</entry>
+	<entry key="admin.alert.phoneMapping2">전화번호는 숫자만 입력 가능합니다.</entry>
+	<entry key="admin.alert.phoneMapping3">대체문자를 입력해주세요.</entry>
+	<entry key="admin.alert.phoneMapping4">사용여부를 선택하세요.</entry>
+	<entry key="admin.alert.phoneMapping5">이미 등록된 전화번호 입니다.</entry>
+	<entry key="admin.alert.phoneMapping6">전화번호 추가가 완료되었습니다.</entry>
+	<entry key="admin.alert.phoneMapping7">전화번호 추가에 실패했습니다.</entry>
+	<entry key="admin.alert.phoneMapping8">선택하신 정보를 삭제하시겠습니까?</entry>
+	<entry key="admin.alert.phoneMapping9">전화번호 정보가 삭제되었습니다.</entry>
+	<entry key="admin.alert.phoneMapping10">전화번호 정보 삭제를 실패했습니다.</entry>
+	<entry key="admin.alert.phoneMapping11">삭제할 전화번호 정보를 선택해주세요.</entry>
+	<entry key="admin.alert.phoneMapping12">정보수정이 완료되었습니다.</entry>
+	<entry key="admin.alert.phoneMapping13">정보수정에 실패했습니다.</entry>
+
+	<entry key="admin.alert.uiManage1">관제 오브젝트 Map 설정</entry>
+	<entry key="admin.alert.uiManage2">관제 UI 관리</entry>
+	<entry key="admin.alert.uiManage3">관제 오브젝트 Icon 설정</entry>
+	<entry key="admin.alert.uiManage4">리스트 불러오기를 실패하였습니다.</entry>
+	<entry key="admin.alert.uiManage5">관제 대상 UI 설정 수정에 성공하였습니다.</entry>
+	<entry key="admin.alert.uiManage6">관측 순번 수정에 성공하였습니다.</entry>
+	<entry key="admin.alert.uiManage7">관측 순번 수정에 실패하였습니다.</entry>
+	<entry key="admin.alert.uiManage8">Map 이름 수정에 성공하였습니다</entry>
+	<entry key="admin.alert.uiManage9">Map 이름 수정에 실패하였습니다.</entry>
+	<entry key="admin.alert.uiManage10">Map 사용 결정에 성공하였습니다.</entry>
+	<entry key="admin.alert.uiManage11">Map 사용 결정에 실패하였습니다.</entry>
+	<entry key="admin.alert.uiManage12">오브젝트 이미지 선택</entry>
+	<entry key="admin.alert.uiManage13">UI설정을 초기화할 대상을 선택해주세요</entry>
+	<entry key="admin.alert.uiManage14">선택한 관제대상의 UI설정을 초기화하였습니다.</entry>
+	<entry key="admin.alert.uiManage15">초기화 실패</entry>
+
+	<entry key="admin.alert.recUser1">그룹 수정</entry>
+	<entry key="admin.alert.recUser2">권한 그룹 추가</entry>
+	<entry key="admin.alert.recUser3">권한 그룹 수정</entry>
+	<entry key="admin.alert.recUser4">수정할 권한을 먼저 선택 해 주세요!</entry>
+	<entry key="admin.alert.recUser5">선택하신 권한을 정말 삭제 하시겠습니까?</entry>
+	<entry key="admin.alert.recUser6">권한 삭제가 완료 되었습니다.</entry>
+	<entry key="admin.alert.recUser7">권한 삭제에 실패 하였습니다.</entry>
+	<entry key="admin.alert.recUser8">아이디를 입력 해 주세요!</entry>
+	<entry key="admin.alert.recUser9">이름을 입력 해 주세요!</entry>
+	<entry key="admin.alert.recUser10">ID를 입력 해 주세요!</entry>
+	<entry key="admin.alert.recUser11">권한 등급을 선택 해 주세요!</entry>
+	<entry key="admin.alert.recUser12">대분류를 선택 해 주세요</entry>
+	<entry key="admin.alert.recUser13">이메일 형식을 확인 해 주세요!</entry>
+	<entry key="admin.alert.recUser14">이미 등록된 아이디 입니다.</entry>
+	<entry key="admin.alert.recUser15">사용자 추가에 성공 하였습니다.</entry>
+	<entry key="admin.alert.recUser16">이미 사용중인 아이디입니다.</entry>
+	<entry key="admin.alert.recUser17">사용자 추가에 실패 하였습니다.</entry>
+	<entry key="admin.alert.recUser18">그룹 proc에 성공 하였습니다.</entry>
+	<entry key="admin.alert.recUser19">선택 하신 사용자를 삭제 하시겠습니까?</entry>
+	<entry key="admin.alert.recUser20">삭제에 성공 하였습니다.</entry>
+	<entry key="admin.alert.recUser21">삭제 하실 사용자를 먼저 선택 해 주세요!</entry>
+	<entry key="admin.alert.recUser22">변경 주기를 1이상 입력 해 주세요!</entry>
+	<entry key="admin.alert.recUser23">시도 제한 횟수를 입력해 주세요 (1 이상)</entry>
+	<entry key="admin.alert.rec23">비빌번호 허용횟수를 입력해 주세요 (1 이상)</entry>
+	<entry key="admin.alert.recUser24">잠금 주기를 설정하여 주세요</entry>
+	<entry key="admin.alert.recUser25">설정 변경이 되지 않았습니다</entry>
+	<entry key="admin.alert.recUser26">로그인 정보 초기화에 성공하였습니다.</entry>
+	<entry key="admin.alert.recUser27">이전 PW 사용 정책에 위반되는 비밀번호 입니다. 비밀번호를 변경 해 주세요!</entry>
+	<entry key="admin.alert.recUser28">사용자정보 수정에 실패 하였습니다.</entry>
+	<entry key="admin.alert.recUser29">비밀번호 확인이 일치하지 않습니다. 다시입력 해 주세요!</entry>
+	<entry key="admin.alert.recUser30">사용자 수정</entry>
+	<entry key="admin.alert.recUser31">사용자 추가</entry>
+	<entry key="admin.alert.recUser32">그룹 추가</entry>
+	<entry key="admin.alert.recUser33">비밀번호 확인을 입력 해 주세요!</entry>
+	<entry key="admin.alert.recUser34">사용자정보 수정에 성공 하였습니다.</entry>
+	<entry key="admin.alert.recUser35">그룹 추가에 성공하였습니다.</entry>
+	<entry key="admin.alert.recUser36">그룹 수정에 성공하였습니다.</entry>
+	<entry key="admin.alert.recUser37">그룹 삭제에 성공하였습니다.</entry>
+	<entry key="admin.alert.recUser38">수정하실 그룹을 선택해주세요.</entry>
+	<entry key="admin.alert.recUser39">선택하신 그룹을 삭제하시겠습니까?</entry>
+	<entry key="admin.alert.recUser40">삭제하실 그룹을 선택해주세요.</entry>
+	<entry key="admin.alert.recUser41">비밀번호 정책 설정</entry>
+	<entry key="admin.alert.recUser42">비밀번호 정책이 저장되었습니다.</entry>
+	<entry key="admin.alert.recUser43">수정할 사용자를 선택해 주세요.</entry>
+	<entry key="admin.alert.recUser44">대분류조직을 선택해 주세요.</entry>
+	<entry key="admin.alert.recUser47">비밀번호를 입력 해 주세요!</entry>
+
+	<entry key="admin.alert.userManage1">조직도를 먼저 선택해 주세요</entry>
+	<entry key="admin.alert.userManage2">사용자 추가</entry>
+	<entry key="admin.alert.userManage3">그룹 수정</entry>
+	<entry key="admin.alert.userManage4">권한 그룹 추가</entry>
+	<entry key="admin.alert.userManage5">권한 그룹 수정</entry>
+	<entry key="admin.alert.userManage6">PW 유지 횟수를 2이상 입력 해 주세요!</entry>
+	<entry key="admin.alert.userManage7">사용자정보 수정에 실패 하였습니다.</entry>
+	<entry key="admin.alert.userManage8">변경된 정보가 없습니다.</entry>
+
+
+	<!-- 18-09-05 -pilip admin kor lang add -->
+	<entry key="admin.alert.authyManage21">권한 추가가 완료 되었습니다.</entry>
+	<entry key="admin.alert.authyManage22">권한 추가에 실패 하였습니다.</entry>
+	<entry key="admin.alert.authyManage23">플레이어 다운로드</entry>
+
+	<entry key="admin.channel.title.multiChannelAdd">다중 채널 추가</entry>
+	<entry key="admin.label.phone">연락처</entry>
+	<entry key="admin.label.men">남자</entry>
+	<entry key="admin.label.women">여자</entry>
+	<entry key="admin.label.add">추가</entry>
+	<entry key="admin.label.update">수정</entry>
+	<entry key="admin.label.day">일 별</entry>
+	<entry key="admin.label.week">주 별</entry>
+	<entry key="admin.label.month">월 별</entry>
+	<entry key="admin.label.userCustom">사용자 지정</entry>
+	<entry key="admin.label.notUse">사용불가</entry>
+	
+	<entry key="admin.grid.listenDownloadEnd">청취 다운로드 요청 만료기간</entry>
+	<entry key="admin.grid.passwordPolicy">비밀번호 정책</entry>
+	
+	
+	<!-- 19-04-03 -recsee_m -->
+	<entry key="admin.label.mobileUsage">모바일사용 현황</entry>
+	<entry key="admin.alert.recUser45">신규번호 등록이 불가능 합니다. 모바일사용 현황을 확인 해 주세요!</entry>
+	<entry key="admin.alert.recUser46">입력하신 IP가 사용중입니다.</entry>
+	
+	
+	<!-- 19-05-15 -allowableRange -->
+	<entry key="admin.allowableRange.button.rangeAdd">허용 범위 추가</entry>
+	<entry key="admin.allowableRange.button.rangeModi">허용 범위 수정</entry>
+	<entry key="admin.allowableRange.button.groupAdd">선택 조직 추가</entry>
+	
+	<entry key="admin.alert.allowableRangeManage1">선택하신 허용범위를 정말 삭제 하시겠습니까?</entry>
+	<entry key="admin.alert.allowableRangeManage2">삭제할 허용범위를 먼저 선택 해 주세요!</entry>
+	<entry key="admin.alert.allowableRangeManage3">허용범위 삭제가 완료 되었습니다.</entry>
+	<entry key="admin.alert.allowableRangeManage4">허용범위 삭제에 실패 하였습니다.</entry>
+	<entry key="admin.alert.allowableRangeManage5">허용 범위 명을 입력해 주세요.</entry>
+	<entry key="admin.alert.allowableRangeManage6">허용 범위 추가가 완료 되었습니다.</entry>
+	<entry key="admin.alert.allowableRangeManage7">허용 범위 추가에 실패 하였습니다.</entry>
+	<entry key="admin.alert.allowableRangeManage8">수정할 허용범위를 먼저 선택 해 주세요!</entry>
+	<entry key="admin.alert.allowableRangeManage10">허용범위 수정이 완료 되었습니다.</entry>
+	<entry key="admin.alert.allowableRangeManage11">허용범위 수정이 실패 하였습니다.</entry>
+	<entry key="admin.alert.allowableRangeManage12">이미 추가된 조직입니다.</entry>
+	<entry key="admin.alert.allowableRangeManage13">조직을 선택해 주세요.</entry>
+	<entry key="admin.alert.allowableRangeManage14">삭제 하실 조직을 체크해 주세요.</entry>
+	<entry key="admin.alert.allowableRangeManage15">조직 변경이 완료 되었습니다.</entry>
+	<entry key="admin.alert.allowableRangeManage16">조직 변경에 실패 하였습니다.</entry>
+	
+	<!-- 19-08-13 -11번가 보안관련 -->
+	<entry key="admin.grid.unlockBtn">잠금 해제</entry>
+	<entry key="admin.alert.unlockSuccess">잠금 해제에 성공 하였습니다.</entry>
+	<entry key="admin.alert.unlockFail">잠금 해제에 실패 하였습니다.</entry>
+	<entry key="admin.alert.unlockConfirm">선택하신 계정의 잠금을 해제 하시겠습니까?</entry>
+	
+	
+	<entry key="admin.confirm.deletingMemo">메모를 삭제 하시겠습니까?</entry>
+	<entry key="admin.confirm.chkPlayingMemo">현재 재생중인 파일이 없거나, 재생중인 파일과 다릅니다. \\n선택하신 메모의 파일을 재생 하시겠습니까?</entry>
+	
+	
+	<entry key="admin.alert.delType">삭제 유형을 선택해주세요.</entry>
+	<entry key="admin.alert.delFileType">삭제 파일 유형을 선택해주세요.</entry>
+	<entry key="admin.alert.delFilePathType">삭제 파일 위치를 선택해주세요.</entry>
+	<entry key="admin.alert.backType">백업 유형을 선택해주세요.</entry>
+	<entry key="admin.alert.logType">로그 유형을 선택해주세요.</entry>
+	<entry key="admin.alert.decType">복호화 유무를 선택해주세요.</entry>
+	<entry key="admin.alert.overWriteType">덮어쓰기 유므를 선택해주세요.</entry>
+	<entry key="admin.alert.urlUpdateType">파일경로 수정 유무를 선택해주세요.</entry>
+	<entry key="admin.alert.conformityType">적합성 검사 유무를 선택해주세요.</entry>
+	<entry key="admin.alert.dualBackupType">듀얼 녹취 백업 유무를 선택해주세요.</entry>
+	<entry key="admin.alert.scheTime">백업 시간을 입력해주십시오</entry>
+	<entry key="admin.alert.scheDate">백업 일을 입력해주십시오</entry>
+	<entry key="admin.alert.scheDayWeek">백업 요일을 입력해주십시오</entry>
+	<entry key="admin.alert.indexType">인덱스 생성 유무를 선택해주세요.</entry>
+	<entry key="admin.alert.delPeriod">삭제 기간을 입력해주세요.</entry>
+	<entry key="admin.alert.delPreriod.under11">삭제 개월수는 11이하로만 입력이 가능합니다.</entry>
+	<entry key="admin.alert.backupScheCreate">백업 스케줄을 등록 하시겠습니까?</entry>
+	<entry key="admin.alert.urlCheck">PATH CHECK를 해주십시오.</entry>
+	
+	<entry key="admin.alert.del.scheTime">삭제 스케줄 시간을 입력해주십시오</entry>
+	<entry key="admin.alert.del.scheDate">삭제 스케줄 일을 입력해주십시오</entry>
+	<entry key="admin.alert.del.scheDayWeek">삭제 스케줄 요일을 입력해주십시오</entry>
+	
+	<entry key="admin.title.delPeriod">삭제 기간</entry>
+	<entry key="admin.title.delPeriodOffset">삭제 기간 제한</entry>
+	<entry key="admin.title.backPeriod">백업 주기</entry>
+	<entry key="admin.title.backPeriodCnt">남은 백업 주기</entry>
+	<entry key="admin.title.backNowStart">지금 시작</entry>	
+	<entry key="admin.title.backDown">다운로드</entry>	
+	
+	<entry key="admin.title.backDate">백업 일</entry>
+	<entry key="admin.title.delType">삭제 유형</entry>
+	<entry key="admin.title.delFileType">삭제 파일 유형</entry>
+	<entry key="admin.title.delFilePathType">삭제 파일 위치</entry>
+	<entry key="admin.title.backType">백업 유형</entry>
+	<entry key="admin.title.backPath">백업 경로</entry>	
+	<entry key="admin.title.logType">로그 유형</entry>
+	<entry key="admin.title.delSearchType">삭제 기준</entry>
+	
+	<entry key="admin.title.decType">복호화 유형</entry>
+	<entry key="admin.title.urlUpdateType">파일경로 수정 유형</entry>
+	<entry key="admin.title.overWriteType">덮어쓰기 유형</entry>
+	<entry key="admin.title.conformityType">적합성 검사 유형</entry>
+	<entry key="admin.title.dualBackupType">듀얼 녹취 백업 유형</entry>
+	
+	<entry key="admin.title.indexType">인덱스 생성 유무</entry>
+	<entry key="admin.select.title.delSelect">삭제 방식 선택</entry>
+	
+	
+	<entry key="admin.select.title.backPath">백업 경로</entry>
+	<entry key="admin.select.title.selectGroup">그룹 선택</entry>
+	<entry key="admin.select.title.useDelOption">선택 옵션 사용 유무</entry>
+	<entry key="admin.select.title.delType">삭제 유형 선택</entry>
+	<entry key="admin.select.title.logType">로그 유형 선택</entry>
+	<entry key="admin.select.title.delPeriod">기간</entry>
+	<entry key="admin.select.title.delPeriodOffset">제한</entry>	
+	<entry key="admin.select.title.delYear">년</entry>
+	<entry key="admin.select.title.delMonth">개월</entry>
+	<entry key="admin.select.title.delDay">일</entry>
+	<entry key="admin.select.title.delFileType">삭제 파일 유형 선택</entry>
+	<entry key="admin.select.title.delFilePathType">삭제 파일 위치 선택</entry>
+	<entry key="admin.select.value.selectType">유형 선택</entry>
+	<entry key="admin.select.value.indexType">인덱스  생성 선택</entry>
+	<entry key="admin.select.value.decType">복호화 유무</entry>
+	<entry key="admin.select.value.urlUpdateType">파일경로 수정 유무</entry>
+	<entry key="admin.select.value.overWriteType">중복파일 덮어쓰기 유무</entry>
+	<entry key="admin.select.value.conformityType">적합성 검사 유무</entry>
+	<entry key="admin.select.value.dualBackupType">듀얼 녹취 백업 유무</entry>
+	<entry key="admin.select.value.delType.H">내역 숨김</entry>
+	<entry key="admin.select.value.delType.D">내역 삭제</entry>
+	<entry key="admin.select.value.delType.F">파일 삭제</entry>
+	<entry key="admin.select.value.delType.A">내역 및 파일 삭제</entry>
+	<entry key="admin.select.value.delType.B">파일 백업</entry>
+	<entry key="admin.select.value.delType.M">파일 이동</entry>
+	<entry key="admin.select.value.logType.A">상세 기록</entry>
+	<entry key="admin.select.value.logType.M">간단히 기록</entry>
+	<entry key="admin.select.value.logType.Y">생성</entry>
+	<entry key="admin.select.value.logType.N">미생성</entry>
+	<entry key="admin.select.value.delFileType.M">원본</entry>
+	<entry key="admin.select.value.delFileType.R">화자 분리 파일</entry>
+	<entry key="admin.select.value.delFileType.A">전체</entry>
+	<entry key="admin.select.value.delFilePathType.R">녹취 서버</entry>
+	<entry key="admin.select.value.delFilePathType.S">스토리지</entry>
+	<entry key="admin.select.value.delFilePathType.A">전체</entry>
+	<entry key="admin.select.value.delSelect.D">날짜</entry>
+	<entry key="admin.select.value.delSelect.S">파일용량</entry>	
+	
+	<entry key="admin.select.value.delSearchType.D">DB</entry>
+	<entry key="admin.select.value.delSearchType.F">파일</entry>	
+	
+	<entry key="admin.delRecfileInfo.saveSuccess">녹취 삭제 스케줄이 저장되었습니다.</entry>
+	<entry key="admin.delRecfileInfo.saveFail">녹취 삭제 스케줄 저장에 실패하였습니다.</entry>
+	
+	<entry key="admin.delRecfileInfo.deleteSuccess">녹취 삭제 스케줄이 삭제되었습니다.</entry>
+	<entry key="admin.delRecfileInfo.deleteFail">녹취 삭제 스케줄 삭제에 실패하였습니다.</entry>
+	
+	<entry key="admin.delRecfileInfo.modify">녹취 삭제 스케줄을 수정하시겠습니까?</entry>
+	
+	<entry key="admin.delRecfileInfo.modifySuccess">녹취 삭제 스케줄이 수정되었습니다.</entry>
+	<entry key="admin.delRecfileInfo.modifyFail">녹취 삭제 스케줄 수정에 실패하였습니다.</entry>
+	
+	<entry key="admin.backRecfileInfo.saveSuccess">녹취 백업 스케줄이 저장되었습니다.</entry>
+	<entry key="admin.backRecfileInfo.saveFail">녹취 백업 스케줄 저장에 실패하였습니다.</entry>
+	
+	<entry key="admin.backRecfileInfo.deleteSuccess">녹취 백업 스케줄이 삭제되었습니다.</entry>
+	<entry key="admin.backRecfileInfo.deleteFail">녹취 백업 스케줄 삭제에 실패하였습니다.</entry>
+	
+	<entry key="admin.backRecfileInfo.modify">녹취 백업 스케줄을 수정하시겠습니까?</entry>
+	
+	<entry key="admin.backRecfileInfo.modifySuccess">녹취 백업 스케줄이 수정되었습니다.</entry>
+	<entry key="admin.backRecfileInfo.modifyFail">녹취 백업 스케줄 수정에 실패하였습니다.</entry>
+	
+	<entry key="admin.etcConfig.label.prefix">Prefix 제거 옵션</entry>
+	<entry key="admin.etcConfig.option.use">사용</entry>
+	<entry key="admin.etcConfig.option.nouse">사용 안함</entry>	
+	<entry key="admin.etcConfig.alert.prefix.emptyNum">번호를 입력해주세요.</entry>
+	<entry key="admin.etcConfig.alert.prefix.useNum">이미 등록된 번호입니다.</entry>
+	<entry key="admin.etcConfig.alert.prefix.chkDelNum">삭제할 번호를 선택해주세요.</entry>
+	
+	<entry key="admin.etcConfig.label.masking">전화번호 마스킹</entry>
+	<entry key="admin.etcConfig.label.masking.from">시작 위치</entry>
+	<entry key="admin.etcConfig.label.masking.count">마스킹 개수</entry>	
+	<entry key="admin.etcConfig.alert.masking.emptyFrom">마스킹 할 시작 위치를 입력해주세요.</entry>
+	<entry key="admin.etcConfig.alert.masking.emptyCount">마스킹 개수를 입력해주세요.</entry>	
+	
+	<entry key="admin.etcConfig.label.hyphen">전화번호 표기옵션(-)</entry>
+	<entry key="admin.etcConfig.option.hyphen.val2">2자리</entry>
+	<entry key="admin.etcConfig.option.hyphen.val3">3자리</entry>
+	<entry key="admin.etcConfig.option.hyphen.val4">4자리</entry>
+	<entry key="admin.etcConfig.option.direct">직접입력</entry>
+	<entry key="admin.etcConfig.option.nouse">사용 안함</entry>
+	<entry key="admin.etcConfig.alert.hyphen.emptyNum">첫번째 전화번호 표기 개수를 입력해주세요.</entry>
+	<entry key="admin.etcConfig.alert.hyphen.under10">첫번째 전화번호 표기 개수는 10이하로 입력해주세요.</entry>
+	
+	<entry key="admin.etcConfig.alert.addSuccess">추가 성공</entry>
+	<entry key="admin.etcConfig.alert.addFail">추가 실패</entry>
+	<entry key="admin.etcConfig.alert.delSuccess">삭제 성공</entry>
+	<entry key="admin.etcConfig.alert.delFail">삭제 실패</entry>
+	<entry key="admin.etcConfig.alert.modifySuccess">변경 성공</entry>
+	<entry key="admin.etcConfig.alert.modifyFail">변경 실패</entry>
+	
+	<entry key="admin.etcConfig.btn.add">추가</entry>
+	<entry key="admin.etcConfig.btn.del">삭제</entry>
+	<entry key="admin.etcConfig.btn.set">설정</entry>
+	
+	<entry key="admin.etcConfig.confirm.delRecfile1">선택한 그룹의</entry>
+    <entry key="admin.etcConfig.confirm.delRecfile2">이전 파일이 삭제됩니다.</entry>
+    <entry key="admin.etcConfig.confirm.delRecfile3">정말 삭제하시겠습니까?</entry>
+    
+    <entry key="admin.etcConfig.confirm.backRecfile1">선택한 그룹의</entry>
+    <entry key="admin.etcConfig.confirm.backRecfile2">파일이 백업됩니다.</entry>
+    <entry key="admin.etcConfig.confirm.backRecfile3">정말 백업하시겠습니까?</entry>
+    
+    <entry key="admin.detail.label.week.sunday">일요일</entry>
+	<entry key="admin.detail.label.week.monday">월요일</entry>
+	<entry key="admin.detail.label.week.tuesday">화요일</entry>
+	<entry key="admin.detail.label.week.wednesday">수요일</entry>
+	<entry key="admin.detail.label.week.thursday">목요일</entry>
+	<entry key="admin.detail.label.week.friday">금요일</entry>
+	<entry key="admin.detail.label.week.saturday">토요일</entry>	
+    
+    	
+	<entry key="admin.detail.view.week.1">일요일</entry>
+	<entry key="admin.detail.view.week.2">월요일</entry>
+	<entry key="admin.detail.view.week.3">화요일</entry>
+	<entry key="admin.detail.view.week.4">수요일</entry>
+	<entry key="admin.detail.view.week.5">목요일</entry>
+	<entry key="admin.detail.view.week.6">금요일</entry>
+	<entry key="admin.detail.view.week.7">토요일</entry>	
+    
+    <entry key="admin.backup.label.backupSchedule">백업 일정</entry>    
+    <entry key="admin.backup.label.backupSelect">백업 날짜 설정</entry>
+	<entry key="admin.backup.label.backupData">백업 데이터</entry>
+	<entry key="admin.backup.label.backupStartTime">시작 시간</entry>
+	<entry key="admin.backup.label.backupRunTime">진행 시간</entry>
+	<entry key="admin.backup.label.backupEndTime">완료 시간</entry>
+	<entry key="admin.backup.label.backupState">진행 상태</entry>
+    <entry key="admin.detail.option.daily">일</entry>
+    <entry key="admin.detail.option.weekly">요일</entry>
+	<entry key="admin.detail.option.monthly">월</entry>
+	<entry key="admin.detail.option.noSche">일정 없음</entry>
+	<entry key="admin.detail.view.D">일</entry>
+    <entry key="admin.detail.view.W">요일</entry>
+	<entry key="admin.detail.view.M">월</entry>
+	<entry key="admin.detail.view.N">일정 없음</entry>
+	<entry key="admin.backup.label.mon">월</entry>
+	<entry key="admin.backup.label.week">요일</entry>
+	<entry key="admin.backup.label.day">일</entry>
+	<entry key="admin.backup.label.time">시간</entry>
+	<entry key="admin.backup.label.min">분</entry>
+	<entry key="admin.backup.label.hour">시</entry>
+	<entry key="admin.backup.label.fromTo">부터~까지</entry>
+	
+	<entry key="admin.button.addIp">등록</entry>
+	<entry key="admin.button.modifyIp">수정</entry>
+	<entry key="admin.publicIp.title.addIp">IP 등록</entry>
+	<entry key="admin.publicIp.title.modifyIp">IP 수정</entry>
+	<entry key="admin.publicIp.label.rIntranetIp">IP</entry>
+	<entry key="admin.alert.publicIpManage1">IP 정보를 입력하세요.</entry>
+	<entry key="admin.alert.publicIpManage2">이미 등록된 IP 입니다.</entry>
+	<entry key="admin.alert.publicIpManage3">등록이 완료 되었습니다.</entry>
+	<entry key="admin.alert.publicIpManage4">등록에 실패했습니다.</entry>
+	<entry key="admin.alert.publicIpManage5">수정이 완료 되었습니다.</entry>
+	<entry key="admin.alert.publicIpManage6">수정에 실패했습니다.</entry>
+	<entry key="admin.alert.publicIpManage7">선택한 IP 정보를 삭제하시겠습니까?</entry>
+	<entry key="admin.alert.publicIpManage8">삭제가 완료 되었습니다.</entry>
+	<entry key="admin.alert.publicIpManage9">삭제에 실패했습니다.</entry>
+	<entry key="admin.alert.publicIpManage10">삭제할 IP를 선택해주세요.</entry>
+	
+	<entry key="admin.dbManage.label.dbName">DB명</entry>
+	<entry key="admin.dbManage.label.dbServer">서버</entry>
+	<entry key="admin.dbManage.label.url">URL</entry>
+	<entry key="admin.dbManage.label.id">ID</entry>
+	<entry key="admin.dbManage.label.pw">PW</entry>
+	<entry key="admin.dbManage.label.timeout">Timeout</entry>
+	<entry key="admin.dbManage.label.dbConnectionTest">Connection Test</entry>
+	<entry key="admin.dbManage.label.sqlName">SQL명</entry>
+	<entry key="admin.dbManage.label.sql">SQL</entry>
+	<entry key="admin.dbManage.label.jobName">작업명</entry>
+	<entry key="admin.dbManage.label.executeName">스케줄명</entry>
+	<entry key="admin.dbManage.label.rSchedulerSelect">일정</entry>
+	<entry key="admin.dbManage.label.rSchedulerWeek">주</entry>
+	<entry key="admin.dbManage.label.rSchedulerDay">일</entry>
+	<entry key="admin.dbManage.label.rSchedulerHour">시</entry>
+	<entry key="admin.dbManage.label.rExecuteDate">실행날짜</entry>
+	<entry key="admin.dbManage.label.rExecuteTime">실행시간</entry>
+	<entry key="admin.dbManage.label.rCompleteDate">완료날짜</entry>
+	<entry key="admin.dbManage.label.rCompleteTime">완료시간</entry>
+	<entry key="admin.dbManage.label.rErrorMessage">Error</entry>
+	<entry key="admin.dbManage.label.executeQuery">실행</entry>
+	
+	<entry key="admin.dbManage.tab.db">DB</entry>
+	<entry key="admin.dbManage.tab.query">SQL</entry>
+	<entry key="admin.dbManage.tab.job">Job</entry>
+	<entry key="admin.dbManage.tab.execute">Schedule</entry>
+	
+	<entry key="admin.dbManage.button.addList">추가</entry>
+	<entry key="admin.dbManage.button.delList">제거</entry>
+	<entry key="admin.dbManage.button.addSQL">SQL등록</entry>
+	<entry key="admin.dbManage.button.addJob">작업등록</entry>
+	<entry key="admin.dbManage.button.addExecute">스케줄등록</entry>
+	<entry key="admin.dbManage.button.addDB">DB등록</entry>
+	<entry key="admin.dbManage.button.modify">수정</entry>
+	
+	<entry key="admin.dbManage.alert.message1">DB명을 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message2">서버를 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message3">URL을 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message4">ID를 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message5">비밀번호를 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message6">Timeout을 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message7">이미 등록된 DB명 입니다.</entry>
+	<entry key="admin.dbManage.alert.message8">DB정보가 등록되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message9">DB정보 등록에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message10">SQL명을 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message11">SQL을 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message12">이미 등록된 SQL명 입니다.</entry>
+	<entry key="admin.dbManage.alert.message13">SQL정보가 등록되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message14">SQL정보 등록에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message15">작업명을 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message16">DB/SQL set을 추가하세요.</entry>
+	<entry key="admin.dbManage.alert.message17">이미 등록된 작업명 입니다.</entry>
+	<entry key="admin.dbManage.alert.message18">작업정보가 등록되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message19">작업정보 등록에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message20">스케줄명을 입력하세요.</entry>
+	<entry key="admin.dbManage.alert.message21">일정을 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message22">요일을 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message23">날짜를 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message24">시간을 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message25">이미 등록된 스케줄명 입니다.</entry>
+	<entry key="admin.dbManage.alert.message26">스케줄이 등록되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message27">스케줄 등록에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message28">DB정보가 수정되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message29">DB정보 수정에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message30">SQL정보가 수정되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message31">SQL정보 수정에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message32">작업정보가 수정되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message33">작업정보 수정에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message34">스케줄이 수정되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message35">스케줄 수정에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message36">삭제되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message37">삭제에 실패했습니다.</entry>
+	<entry key="admin.dbManage.alert.message38">삭제할 정보를 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message39">DB연결에 성공하였습니다.</entry>
+	<entry key="admin.dbManage.alert.message40">유효하지 않은 DB정보 입니다.</entry>
+	<entry key="admin.dbManage.alert.message41">추가할 DB명을 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message42">추가할 SQL명을 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message43">제거할 DB/SQL set을 선택하세요.</entry>
+	<entry key="admin.dbManage.alert.message44">실행이 완료 되었습니다.</entry>
+	<entry key="admin.dbManage.alert.message45">실행에 실패 했습니다.</entry>
+	
+	<entry key="admin.dbManage.confirm.message1">선택한 DB를 포함하는 작업 및 스케줄 정보도 같이 삭제됩니다.\\n삭제하시겠습니까?</entry>
+	<entry key="admin.dbManage.confirm.message2">선택한 SQL을 포함하는 작업 및 스케줄 정보도 같이 삭제됩니다.\\n삭제하시겠습니까?</entry>
+	<entry key="admin.dbManage.confirm.message3">선택한 작업을 포함하는 스케줄 정보도 같이 삭제됩니다.\\n삭제하시겠습니까?</entry>
+	<entry key="admin.dbManage.confirm.message4">선택한 스케줄을 삭제하시겠습니까?</entry>
+	
+	<entry key="admin.userDBInterface.title.modify">수정</entry>
+	
+	<entry key="admin.userDBInterface.label.rDbIp">IP</entry>
+	<entry key="admin.userDBInterface.label.rDbUser">DB USER</entry>
+	<entry key="admin.userDBInterface.label.rDbPwd">DB PWD</entry>
+	<entry key="admin.userDBInterface.label.rDbPort">PORT</entry>
+	<entry key="admin.userDBInterface.label.rDbName">DB NAME</entry>
+	<entry key="admin.userDBInterface.label.rTeamCode">Team Code</entry>
+	<entry key="admin.userDBInterface.label.rTeamName">Team Name</entry>
+	<entry key="admin.userDBInterface.label.rHh">Process Time</entry>
+	<entry key="admin.userDBInterface.label.rCompleteDate">완료날짜</entry>
+	<entry key="admin.userDBInterface.label.rCompleteTime">완료시간</entry>
+	<entry key="admin.userDBInterface.label.rQuickExcution">실행</entry>
+	
+	<entry key="admin.userDBInterface.button.rQuickExcution">바로실행</entry>
+	<entry key="admin.userDBInterface.button.add">추가</entry>
+	<entry key="admin.userDBInterface.button.modify">수정</entry>
+	
+	<entry key="admin.userDBInterface.alert.message1">IP를 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message2">DB USER를 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message3">DB PWD를 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message4">PORT를 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message5">DB NAME을 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message6">Team Code를 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message7">Team Name을 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message8">Process Time을 입력하세요.</entry>
+	<entry key="admin.userDBInterface.alert.message9">이미 등록된 DB NAME 입니다.</entry>
+	<entry key="admin.userDBInterface.alert.message10">등롱되었습니다.</entry>
+	<entry key="admin.userDBInterface.alert.message11">등록에 실패했습니다.</entry>
+	<entry key="admin.userDBInterface.alert.message12">수정되었습니다.</entry>
+	<entry key="admin.userDBInterface.alert.message13">수정에 실패했습니다.</entry>
+	<entry key="admin.userDBInterface.alert.message14">삭제되었습니다.</entry>
+	<entry key="admin.userDBInterface.alert.message15">삭제에 실패했습니다.</entry>
+	<entry key="admin.userDBInterface.alert.message16">삭제할 정보를 선택하세요.</entry>
+	
+	<entry key="admin.userDBInterface.confirm.message1">선택한 정보를 삭제하시겠습니까?</entry>
+	
+	<entry key="admin.publicIp.label.rPublicIp">IP</entry>
+	
+	
+	<!-- 3차 백업 관리 언어팩 -->
+	<!-- 파일 복구 상태 -->
+	<entry key="admin.fileRecover.state.AS">자동 복구 성공</entry>
+	<entry key="admin.fileRecover.state.AF">자동 복구 실패</entry>
+	<entry key="admin.fileRecover.state.AW">자동 복구 대기</entry>
+	<entry key="admin.fileRecover.state.MS">수동 복구 성공</entry>
+	<entry key="admin.fileRecover.state.MF">수동 복구 실패</entry>
+	<entry key="admin.fileRecover.state.MW">수동 복구 대기</entry>
+	<entry key="admin.fileRecover.state.N">기본 상태</entry>
+</properties>

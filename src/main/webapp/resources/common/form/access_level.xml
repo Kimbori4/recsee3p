@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!-- <entry key="033">E1001</entry> -->
+    <!-- <entry key="156">E1004</entry> 팀장
+
+    <entry key="230">E1005</entry> 팀원
+    <entry key="180">E1005</entry> 계약직
+
+    <entry key="130">E1006</entry> 지사장
+	<entry key="127">E1006</entry> 센터장
+	<entry key="033">E1006</entry> 지역 본부장 -->
+
+   <!--  <entry key="156">E1007</entry> U센터 직원 -->
+    <!-- <entry key="path">E1008</entry> U센터 매니저
+    <entry key="max">E1009</entry> -->
+   <!--  <entry key="156">E1010</entry> 지사 팀장 -->
+
+   <!-- 이상 주공 -->
+
+	<!-- 넥서스 -->
+<!-- 	<entry key="4">E1003</entry> admin
+	<entry key="3">E1003</entry> 센터장
+	<entry key="2">E1003</entry> 파트장
+	<entry key="1">E1006</entry> 상담사 -->
+	<entry key="5">E1001</entry> <!-- admin -->
+	<entry key="4">E1005</entry> <!-- 센터장 -->
+	<entry key="3">E1004</entry> <!-- 그룹장 -->
+	<entry key="2">E1003</entry> <!-- 파트장 -->
+	<entry key="1">E1002</entry> <!-- 상담사 -->
+	<!-- 이상 넥서스 -->
+</properties>

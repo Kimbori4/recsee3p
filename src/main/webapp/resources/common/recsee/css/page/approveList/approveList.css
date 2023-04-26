@@ -1,0 +1,14 @@
+/*search Form*/
+.search_fieldset{
+	display:block;
+	float:left;
+	border: 1px solid #2d71c4 !important;
+	position : relative;
+	transition : transform 1s;
+}
+
+.search_fieldset legend{
+	font-size : 12px;
+	margin-left : 5px;
+	color: #3da0e3;
+}

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.myfolder.dao.MyFolderDao">
+	<resultMap id="myFolderMap" type="com.furence.recsee.myfolder.model.MyFolderInfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_FOLDER_NAME" jdbcType="VARCHAR" property="rFolderName" />
+	</resultMap>
+
+	<resultMap id="myFolderListMap" type="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_FOLDER_NAME" jdbcType="VARCHAR" property="rFolderName" />
+		<result column="R_REC_DATE" jdbcType="VARCHAR" property="rRecDate" />
+		<result column="R_REC_TIME" jdbcType="VARCHAR" property="rRecTime" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="R_REC_ID" jdbcType="VARCHAR" property="rRecId" />
+		<result column="R_REC_NAME" jdbcType="VARCHAR" property="rRecName" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="rExtNum" />
+		<result column="R_CUST_NAME" jdbcType="VARCHAR" property="rCustName" />
+		<result column="R_CUST_PHONE" jdbcType="VARCHAR" property="rCustPhone" />
+		<result column="R_ITEM_SERIAL" jdbcType="VARCHAR" property="rItemSerial" />
+	</resultMap>
+
+
+	<select id="selectMyFolderInfo" parameterType="com.furence.recsee.myfolder.model.MyFolderInfo" resultMap='myFolderMap'>
+		SELECT * FROM RS_MYFOLDER
+		WHERE R_USER_ID = #{rUserId}
+		ORDER BY
+			R_CREATE_FOLDER
+	</select>
+
+	<select id="selectMyfolderListInfo" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo" resultMap='myFolderListMap'>
+		SELECT R_USER_ID
+		     , R_FOLDER_NAME
+		     , R_REC_DATE
+		     , R_REC_TIME
+		     , R_BG_CODE
+		     , R_MG_CODE
+		     , R_SG_CODE
+		     , R_REC_ID
+		     , R_REC_NAME
+		     , R_EXT_NUM
+		    <if test="custNameIsEncrypt == &quot;Y&quot;">
+				,CASE WHEN length(R_CUST_NAME) in (32,64) THEN convert_from(decrypt(decode(R_CUST_NAME, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+				     ELSE R_CUST_NAME END AS R_CUST_NAME
+			</if>
+			<if test="custNameIsEncrypt != &quot;Y&quot;">
+				,R_CUST_NAME
+			</if>
+		     <if test="custPhone1IsEncrypt == &quot;Y&quot;">
+				,CASE WHEN length(R_CUST_PHONE) in (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+				     ELSE R_CUST_PHONE END AS R_CUST_PHONE
+			</if>
+			<if test="custPhone1IsEncrypt != &quot;Y&quot;">
+				,R_CUST_PHONE
+			</if>
+		     , R_ITEM_SERIAL
+		  FROM RS_MYFOLDER_LIST
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_FOLDER_NAME = #{rFolderName}
+			ORDER BY
+				R_ITEM_SERIAL DESC
+	</select>
+
+	<insert id="insertMyFolderItem"  databaseId="postgres"	parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		WITH UPSERT AS (
+			UPDATE RS_MYFOLDER_LIST
+			SET
+					R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				,	R_REC_TIME = REPLACE(#{rRecTime},':','')
+				,	R_EXT_NUM = #{rExtNum}
+			WHERE
+						R_USER_ID = #{rUserId}
+				AND	R_FOLDER_NAME = #{rFolderName}
+				AND  R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  R_EXT_NUM = #{rExtNum}
+			RETURNING *
+		)
+
+		INSERT INTO RS_MYFOLDER_LIST
+			SELECT
+				#{rUserId},
+				#{rFolderName},
+				R_REC_DATE,
+				R_REC_TIME,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_USER_ID,
+				R_USER_NAME,
+				R_EXT_NUM,
+				R_CUST_NAME,
+				R_CUST_PHONE1
+			FROM RS_RECFILE
+			WHERE
+					 R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  R_EXT_NUM = #{rExtNum}
+			AND NOT EXISTS (
+				SELECT 1 FROM UPSERT WHERE
+						UPSERT.R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  UPSERT.R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  UPSERT.R_EXT_NUM = #{rExtNum}
+			)
+	</insert>
+	<insert id="insertMyFolderItem"  databaseId="sqlserver"	parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+
+		<!-- 중복추가 대비해서 쿼리수정해야 됨... -->
+		INSERT INTO RS_MYFOLDER_LIST
+			SELECT
+				#{rUserId},
+				#{rFolderName},
+				R_REC_DATE,
+				R_REC_TIME,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_USER_ID,
+				R_USER_NAME,
+				R_EXT_NUM,
+				R_CUST_NAME,
+				R_CUST_PHONE1
+			FROM RS_RECFILE
+			WHERE
+					 R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  R_EXT_NUM = #{rExtNum}
+
+	</insert>
+	
+	<insert id="insertMyFolderItem"  databaseId="oracle" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_MYFOLDER_LIST
+			SET
+					R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				,	R_REC_TIME = REPLACE(#{rRecTime},':','')
+				,	R_EXT_NUM = #{rExtNum}
+			WHERE
+						R_USER_ID = #{rUserId}
+				AND	R_FOLDER_NAME = #{rFolderName}
+				AND  R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  R_EXT_NUM = #{rExtNum}
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_MYFOLDER_LIST (
+					R_USER_ID
+				,	R_FOLDER_NAME
+				,	R_REC_DATE
+				,	R_REC_TIME
+				,	R_BG_CODE
+				,	R_MG_CODE
+				,	R_SG_CODE
+				,	R_USER_ID
+				,	R_USER_NAME
+				,	R_EXT_NUM
+				,	R_CUST_NAME
+				,	R_CUST_PHONE
+				,	R_ITEM_SERIAL
+			)SELECT
+					#{rUserId}
+				,	#{rFolderName}
+				,	R_REC_DATE
+				,	R_REC_TIME
+				,	R_BG_CODE
+				,	R_MG_CODE
+				,	R_SG_CODE
+				,	R_REC_ID
+				,	R_REC_NAME
+				,	R_EXT_NUM
+				,	R_CUST_NAME
+				,	R_CUST_PHONE1
+				,	R_ITEM_SERIAL.nextval
+				FROM RS_RECFILE
+				WHERE
+					 R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  R_EXT_NUM = #{rExtNum}
+				AND NOT EXISTS (
+					SELECT 1 FROM RS_MYFOLDER_LIST 
+					WHERE	ROWID = row_id
+					AND		R_REC_DATE = REPLACE(#{rRecDate},'-','')
+					AND  	R_REC_TIME = REPLACE(#{rRecTime},':','')
+					AND  	R_EXT_NUM = #{rExtNum}
+				);
+				
+		END;
+	</insert>
+
+	<insert id="createMyFolder" databaseId="postgres" parameterType="com.furence.recsee.myfolder.model.MyFolderInfo">
+		INSERT INTO RS_MYFOLDER
+		VALUES (#{rUserId},#{rFolderName},current_timestamp)
+	</insert>
+	<insert id="createMyFolder" databaseId="sqlserver" parameterType="com.furence.recsee.myfolder.model.MyFolderInfo">
+		INSERT INTO RS_MYFOLDER
+		VALUES (#{rUserId},#{rFolderName},default)
+	</insert>
+	<insert id="createMyFolder" databaseId="oracle" parameterType="com.furence.recsee.myfolder.model.MyFolderInfo">
+		INSERT INTO RS_MYFOLDER
+		VALUES (#{rUserId},#{rFolderName},current_timestamp)
+	</insert>
+	<update id="modifyMyFolder" parameterType="com.furence.recsee.myfolder.model.MyFolderInfo">
+		UPDATE RS_MYFOLDER
+		SET
+			R_FOLDER_NAME = #{rFolderName}
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_FOLDER_NAME = #{oldrFolderName}
+	</update>
+
+	<update id="moveMyFolderItem"  databaseId="postgres" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		UPDATE RS_MYFOLDER_LIST
+		SET
+			R_FOLDER_NAME = #{rFolderName}
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_ITEM_SERIAL IN
+				<foreach collection="rItemSerialArr" item="item" separator="," open="(" close=")">
+					 #{item}::integer
+				</foreach>
+	</update>
+	<update id="moveMyFolderItem"  databaseId="sqlserver" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		UPDATE RS_MYFOLDER_LIST
+		SET
+			R_FOLDER_NAME = #{rFolderName}
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_ITEM_SERIAL IN
+				<foreach collection="rItemSerialArr" item="item" separator="," open="(" close=")">
+					 convert(integer, #{item})
+				</foreach>
+	</update>
+	<update id="moveMyFolderItem"  databaseId="oracle" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		UPDATE RS_MYFOLDER_LIST
+		SET
+			R_FOLDER_NAME = #{rFolderName}
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_ITEM_SERIAL IN
+				<foreach collection="rItemSerialArr" item="item" separator="," open="(" close=")">
+					 TO_NUMBER(#{item})
+				</foreach>
+	</update>
+	<delete id="deleteMyFolder" parameterType="com.furence.recsee.myfolder.model.MyFolderInfo">
+		DELETE FROM RS_MYFOLDER
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_FOLDER_NAME = #{rFolderName}
+	</delete>
+
+	<delete id="deleteMyFolderItem" databaseId="postgres" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		DELETE FROM RS_MYFOLDER_LIST
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_FOLDER_NAME = #{rFolderName}
+			AND
+				R_ITEM_SERIAL IN
+				<foreach collection="rItemSerialArr" item="item" separator="," open="(" close=")">
+					 #{item}::integer
+				</foreach>
+	</delete>
+	<delete id="deleteMyFolderItem" databaseId="sqlserver" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		DELETE FROM RS_MYFOLDER_LIST
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_FOLDER_NAME = #{rFolderName}
+			AND
+				R_ITEM_SERIAL IN
+				<foreach collection="rItemSerialArr" item="item" separator="," open="(" close=")">
+					 convert(integer,#{item})
+				</foreach>
+	</delete>
+	<delete id="deleteMyFolderItem" databaseId="oracle" parameterType="com.furence.recsee.myfolder.model.MyFolderListinfo">
+		DELETE FROM RS_MYFOLDER_LIST
+		WHERE
+				R_USER_ID = #{rUserId}
+			AND
+				R_FOLDER_NAME = #{rFolderName}
+			AND
+				R_ITEM_SERIAL IN
+				<foreach collection="rItemSerialArr" item="item" separator="," open="(" close=")">
+					 TO_NUMBER(#{item})
+				</foreach>
+	</delete>
+</mapper>

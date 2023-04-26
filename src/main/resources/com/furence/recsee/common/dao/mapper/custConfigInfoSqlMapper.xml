@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.CustConfigInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.CustConfigInfo">
+		<result column="R_CUST_CODE" 		jdbcType="VARCHAR" property="rCustCode" />
+		<result column="R_CONFIG_KEY" 		jdbcType="VARCHAR" property="rConfigKey" />
+		<result column="R_CONFIG_VALUE" 	jdbcType="VARCHAR" property="rConfigValue" />
+		<result column="DESC" 	jdbcType="VARCHAR" property="desc" />
+	</resultMap>
+	
+	<select id="selectCustConfigInfo" parameterType="com.furence.recsee.common.model.CustConfigInfo" resultMap="BaseResultMap">
+		SELECT
+			*
+		FROM
+			RS_CUST_CONFIG
+		WHERE
+			R_CONFIG_KEY = #{rConfigKey}
+		AND R_CUST_CODE = #{rCustCode}
+	</select>
+
+	<select id="selectMenuYCustConfigInfo" parameterType="com.furence.recsee.common.model.CustConfigInfo" resultMap="BaseResultMap">
+		SELECT
+			R_CONFIG_VALUE
+		FROM
+			RS_CUST_CONFIG
+		WHERE
+			R_CONFIG_KEY = #{rConfigKey}
+		AND R_CUST_CODE = #{rCustCode}
+	</select>
+	
+	<select id="selectMenuYCustConfigInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.CustConfigInfo" resultMap="BaseResultMap">
+		SELECT
+			R_CONFIG_VALUE
+		FROM
+			RS_CUST_CONFIG
+		WHERE
+			R_CONFIG_KEY = #{rConfigKey}
+		AND R_CUST_CODE = #{rCustCode}
+	</select>
+	
+	<select id="selectMenuYCustConfigInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.CustConfigInfo" resultMap="BaseResultMap">
+		SELECT
+			R_CONFIG_VALUE
+		FROM
+			RS_CUST_CONFIG
+		WHERE
+			R_CONFIG_KEY = #{rConfigKey}
+		AND R_CUST_CODE = #{rCustCode}
+	</select>
+
+	<select id="selectMenuNCustConfigInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.CustConfigInfo" resultMap="BaseResultMap">
+		SELECT DISTINCT
+			R_CONFIG_VALUE
+		FROM
+			RS_CUST_CONFIG
+		WHERE
+			R_CONFIG_KEY = #{rConfigKey}
+		AND R_CUST_CODE <![CDATA[<>]]> #{rCustCode}
+		EXCEPT
+			SELECT
+				R_CONFIG_VALUE
+			FROM
+				RS_CUST_CONFIG
+			WHERE
+				R_CONFIG_KEY = #{rConfigKey}
+			AND R_CUST_CODE = #{rCustCode}
+	</select>
+
+	<select id="selectMenuNCustConfigInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.CustConfigInfo" resultMap="BaseResultMap">
+		SELECT DISTINCT
+			R_CONFIG_VALUE
+		FROM
+			RS_CUST_CONFIG
+		WHERE
+			R_CONFIG_KEY = #{rConfigKey}
+		AND R_CUST_CODE <![CDATA[<>]]> #{rCustCode}
+		EXCEPT
+			SELECT
+				R_CONFIG_VALUE
+			FROM
+				RS_CUST_CONFIG
+			WHERE
+				R_CONFIG_KEY = #{rConfigKey}
+			AND R_CUST_CODE = #{rCustCode}
+	</select>
+	
+	<select id="selectMenuNCustConfigInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.CustConfigInfo" resultMap="BaseResultMap">
+		SELECT DISTINCT
+			R_CONFIG_VALUE
+		FROM
+			RS_CUST_CONFIG
+		WHERE
+			R_CONFIG_KEY = #{rConfigKey}
+		AND R_CUST_CODE <![CDATA[<>]]> #{rCustCode}
+		EXCEPT
+			SELECT
+				R_CONFIG_VALUE
+			FROM
+				RS_CUST_CONFIG
+			WHERE
+				R_CONFIG_KEY = #{rConfigKey}
+			AND R_CUST_CODE = #{rCustCode}
+	</select>
+
+</mapper>

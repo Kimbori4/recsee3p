@@ -1,0 +1,329 @@
+@charset "UTF-8";
+
+@font-face{
+	font-family: sh;
+	src : url('/recsee3p/resources/common/recsee/css/page/faceRecorder/font/NanumGothic.ttf');
+}
+*{
+	font-family: sh !important;
+}
+
+	body, html{
+	width: 100%;
+	height: 100%;
+	font-size:1.3vw;
+	font-weight: bold;
+	}
+	.none{
+		display: none !important;
+	}
+	
+	.main_contents {
+	width: 100%;
+    height: 100%;
+    background-image: url(/recsee3p/resources/common/recsee/images/project/icon/bg_NH_2.png);
+/*     background-image: url(/recsee3p/resources/common/recsee/images/project/icon/woori9BG.png); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    background-position: center,center;
+	}
+
+		
+	.headerWrap{
+	display: none !important;
+	}
+	.leftDesc {
+	font-size : 5vw !important;
+  	color:white;
+  	width: 25%;
+  	height : 5%;
+  	top : 40%;
+  	left : 6%;
+  	position: absolute;
+  	display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+	}
+  	.centerDesc{
+  	font-size:4vw !important;
+  	border:0px; !important;
+  	color : white;
+  	width:57%;
+  	height:11%;
+  	top:2%;
+  	left: 40%;
+  	position:absolute;
+  	display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+  	}
+  	.numInq{
+  	font-size: 2vw !important;
+    border: solid 2px skyblue !important;
+    border-radius: 50px;
+    color: white;
+    width: 3%;
+    height: 3%;
+    padding: 3px;
+    top: 20.5%;
+    left: 40%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  	}
+  	
+  	.numEx{
+  	font-size: 2vw !important;
+    border: solid 2px skyblue !important;
+    border-radius: 50px;
+    color: white;
+    width: 3%;
+    height: 3%;
+    padding: 3px;
+    top: 20.5%;
+    left: 62%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  	}
+  	
+  	.numRec{
+  	font-size: 2vw !important;
+    border: solid 2px skyblue !important;
+    border-radius: 50px;
+    color: white;
+    width: 3%;
+    height: 3%;
+    padding: 3px;
+    top: 20.5%;
+    left: 82%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  	}
+  	
+  	.inquiry {
+  	font-size : 2vw !important;
+  	color:white;
+  	width: 17%;
+  	height : 5%;
+  	top : 20%;
+  	left : 42%;
+  	position: absolute;
+  	display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+  	}
+  	
+  	.inquiry_1{
+  	border : solid 2px #8c8c8c !important;
+  	border-radius:50px;
+  	background-color:white;
+	width: 17%;
+    height: 5%;
+    cursor: pointer;
+    top: 27%;
+    left: 40%;
+    position: absolute;
+    display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+		}
+
+		
+	.inquiry_2{
+	border : solid 2px #8c8c8c !important;
+  	border-radius:50px;
+  	background-color:white;
+	width: 17%;
+    height: 5%;
+    cursor: pointer;
+    top: 35% ;
+    left: 40%;
+    position: absolute;
+    display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+		}
+	
+	.explain {
+	font-size : 2vw !important;
+	color:white;
+	width: 17%;
+	height: 5%;
+	position : absolute;
+	top: 20%;
+	left: 62%;
+	display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+	}
+	.explain_1{
+	border : solid 2px #8c8c8c !important;
+  	border-radius:50px;
+  	background-color:white;
+	width: 17%;
+    height: 5%;
+    cursor: pointer;
+    position: absolute;
+    top: 27% ;
+    left: 60% ;
+    display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+    
+	}
+			
+	.explain_2{
+	border : solid 2px #8c8c8c !important;
+  	border-radius:50px;
+  	background-color:white;
+ 	width: 17%;
+    height: 5%;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    left: 60%;
+    display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+	}
+			
+	.explain_3{
+	border : solid 2px #8c8c8c !important;
+  	border-radius:50px;
+  	background-color:white;
+	width: 17% ;
+    height: 5%;
+    cursor: pointer;
+    position: absolute;
+    top: 43% ;
+    left: 60% ;
+    display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+	}
+
+
+	.explain_4{
+	border : solid 2px #8c8c8c !important;
+  	border-radius:50px;
+  	background-color:white;
+	width: 17% ;
+    height: 5%;
+    cursor: pointer;
+    position: absolute;
+    top: 51% ;
+    left: 60%;
+    display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+	}
+	
+	.freeRec {
+	font-size : 2vw !important;
+	color : white;
+	width: 17%;
+	height: 5%;
+	position: absolute;
+	top:20%;
+	left:82%;
+	display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+	}
+		
+	.start{
+	border : solid 2px #8c8c8c !important;
+  	border-radius:50px;
+  	background-color:white;
+	width: 17% ;
+    height: 5%;
+    cursor: pointer;
+    top: 27%;
+    left: 80%;
+    position: absolute;
+    display: flex;
+  	flex-direction:column;
+  	justify-content:center;
+  	text-align:center;
+	}
+		
+/* 	.end{
+	width: 9%;
+    height:9%;
+    cursor: pointer;
+    top: 45% ;
+    left: 84%;
+    position: absolute;
+	} */
+
+
+		
+	.rec{
+	border: solid 1px white;
+  	border-radius:10px;
+  	background-color:white;
+	width: 131px;
+    height: 42px;
+    color : red;
+    font-size: 20px;
+    position: absolute;
+    }
+    
+	.displayHidden{
+	display:none;
+	}
+   
+  	p{
+  	font-size: 1.05vw;
+    color: #4847478c;
+  	}
+  	.selectCode{
+display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 58%;
+    width: 450px;
+  	}
+  	.codeBox{
+  		height: 32%;
+  	}
+  	.codeBtn{
+	    height: 47%;
+	    width: 50px;
+	    cursor: pointer;
+  	}
+  	.codeBtnF{
+	    height: 47%;
+	    width: 50px;
+	    cursor: pointer;
+  	}
+  	
+  	.title{
+  		font-size: 12pt;
+  		color: white;
+  	}
+  	.borderBox{
+  		border: 1px solid white !important;
+  		padding: 5px !important;
+  	}
+

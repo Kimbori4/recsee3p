@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>우수콜(bestCall) 화면용 메세지 정의</comment>
+
+
+	<!-- 우수콜 -->
+	
+	<entry key="views.bestCall.form.fieldset.fDate">등록 일자</entry>
+	<entry key="views.bestCall.form.fieldset.fOrgCode">등록자 조직 정보</entry>
+	<entry key="views.bestCall.form.fieldset.fUserInfo">등록자 정보</entry>
+	<entry key="views.bestCall.form.fieldset.fShare">세부 요건</entry>
+	
+	<entry key="views.bestCall.form.shareBtn">우수콜 공유</entry>
+	<entry key="views.bestCall.form.modifyBtn">우수콜 수정</entry>
+	<entry key="views.bestCall.form.delBtn">우수콜 취소</entry>
+	<entry key="views.bestCall.form.approveBtn">승인</entry>
+	<entry key="views.bestCall.form.rejectBtn">반려</entry>
+	<entry key="views.bestCall.form.shareYN">공유 상태</entry>
+	<entry key="views.bestCall.form.shareYN.W">공유전</entry>
+	<entry key="views.bestCall.form.shareYN.Y">공유중</entry>
+	<entry key="views.bestCall.form.shareYN.N">공유기간 만료</entry>
+	<entry key="views.bestCall.form.shareTarget">공유 범위</entry>
+	<entry key="views.bestCall.form.allTarget">모든 범위</entry>
+	<entry key="views.bestCall.form.approveYN">승인 여부</entry>
+	<entry key="views.bestCall.form.shareTitle">우수콜 제목</entry>
+	
+	<entry key="views.bestCall.popup.shareUserName">공유자 명</entry>
+	<entry key="views.bestCall.popup.shareUserId">공유자 아이디</entry>
+	<entry key="views.bestCall.popup.dueDate">공유 기간</entry>
+	<entry key="views.bestCall.popup.allSelect">모든 설정</entry>
+	
+	
+	<entry key="views.bestCall.grid.number">번호</entry>
+	<entry key="views.bestCall.grid.registTime">등록 시간</entry>
+	<entry key="views.bestCall.grid.registId">등록자 아이디</entry>
+	<entry key="views.bestCall.grid.registName">등록자 이름</entry>
+	<entry key="views.bestCall.grid.R_BG_CODE">등록자 대그룹</entry>
+	<entry key="views.bestCall.grid.R_MG_CODE">등록자 중그룹</entry>
+	<entry key="views.bestCall.grid.R_SG_CODE">등록자 소그룹</entry>
+	<entry key="views.bestCall.grid.fileName">파일명</entry>
+	
+	
+	<entry key="bestCall.text.share">공유</entry>
+	<entry key="bestCall.text.modify">수정</entry>
+	
+	
+	
+	<entry key="bestCall.alert.msg01">등록일자를 다음 형식에 맞게 입력 해 주세요!\\n예)2018-01-01</entry>
+	<entry key="bestCall.alert.msg02">취소할 우수콜들을 체크해 주세요.</entry>
+	<entry key="bestCall.alert.msg03">승인된 리스트가 포함되어 있습니다.</entry>
+	<entry key="bestCall.alert.msg04">승인된 리스트입니다.</entry>
+	<entry key="bestCall.alert.msg05">공유할 우수콜을 선택해 주세요.</entry>
+	<entry key="bestCall.alert.msg06">공유중인 리스트가 포함되어 있습니다.</entry>
+	<entry key="bestCall.alert.msg07">공유중인 리스트입니다.</entry>
+	<entry key="bestCall.alert.msg08">공유기간이 만료된 리스트가 포함되어 있습니다.</entry>
+	<entry key="bestCall.alert.msg09">공유기간이 만료된 리스트입니다.</entry>
+	<entry key="bestCall.alert.msg10">공유기간을 입력해 주세요.</entry>
+	<entry key="bestCall.alert.msg11">공유범위를 선택해 주세요.</entry>
+	<entry key="bestCall.alert.msg12">수정할 우수콜을 선택해 주세요.</entry>
+	<entry key="bestCall.alert.msg13">컴퓨터에 음성파일을 재생 가능한 장치가 없습니다.\\n컴퓨터에 재생 가능한 장치를 먼저 연결 후 청취 시도를 해주세요.</entry>
+	<entry key="bestCall.alert.msg14">네트워크 에러가 발생하였습니다.</entry>
+	<entry key="bestCall.alert.msg15">삭제에 성공하였습니다.</entry>
+	<entry key="bestCall.alert.msg16">선택한 우수콜을</entry>
+	<entry key="bestCall.alert.msg17">하시겠습니까?</entry>
+	<entry key="bestCall.alert.msg18">에 성공하였습니다.</entry>
+	<entry key="bestCall.alert.msg19">승인 또는 반려 할 우수콜을 선택해 주세요.</entry>
+	<entry key="bestCall.alert.msg20">승인, 반려 대상이 아닌 리스트가 포함되어 있습니다.</entry>
+	<entry key="bestCall.alert.msg21">승인, 반려 대상이 아닙니다.</entry>
+	<entry key="bestCall.alert.msg22">공유기간이 설정되지 않은 리스트가 있습니다.</entry>
+	<entry key="bestCall.alert.msg23">공유기간이 설정되지 않았습니다.</entry>
+	<entry key="bestCall.alert.msg24">선택한 우수콜을 승인 하시겠습니까?</entry>
+	<entry key="bestCall.alert.msg25">해당 리스트를</entry>
+	<entry key="bestCall.alert.msg26">하였습니다.</entry>
+	<entry key="bestCall.alert.msg27">정말로 취소하시겠습니까?</entry>
+	<entry key="bestCall.alert.msg28">우수콜 승인권한이 없습니다.</entry>
+	
+
+</properties>

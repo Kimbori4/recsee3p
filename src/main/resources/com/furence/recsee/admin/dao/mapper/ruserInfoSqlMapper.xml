@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.RUserInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.RUserInfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="userId" />
+		<result column="R_CTI_ID" jdbcType="VARCHAR" property="ctiId" />
+		<result column="R_USER_NAME" jdbcType="VARCHAR" property="userName" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="bgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="mgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="sgCode" />
+		<result column="R_EXT_NO" jdbcType="VARCHAR" property="extNo" />
+		<result column="R_EMP_ID" jdbcType="VARCHAR" property="empId" />
+		<result column="R_REGI_DATE" jdbcType="VARCHAR" property="regiDate" />
+		<result column="R_USER_LEVEL" jdbcType="VARCHAR" property="userLevel" />
+		<result column="R_PASSWORD" jdbcType="VARCHAR" property="password" />
+		<result column="R_CLIENT_KIND" jdbcType="VARCHAR" property="clientKind" />
+		<result column="R_USER_SEX" jdbcType="VARCHAR" property="userSex" />
+		<result column="R_LOCK_COUNT" jdbcType="VARCHAR" property="lockCount" />
+		<result column="R_LOCK_YN" jdbcType="VARCHAR" property="lockYn" />
+		<result column="R_PWEDIT_DATE" jdbcType="VARCHAR" property="pwEditDate" />
+		<result column="R_SHORT_RANGE" jdbcType="VARCHAR" property="shortRange" />
+		<result column="R_MIDDLE_RANGE" jdbcType="VARCHAR" property="middleRange" />
+		<result column="R_LONG_RANGE" jdbcType="VARCHAR" property="longRange" />
+		<result column="R_USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+		<result column="R_USER_PHONE" jdbcType="VARCHAR" property="userPhone" />
+		<result column="R_SKIN_CODE" jdbcType="VARCHAR" property="skinCode" />
+		<result column="R_BG_NAME" jdbcType="VARCHAR" property="bgName" />
+		<result column="R_MG_NAME" jdbcType="VARCHAR" property="mgName" />
+		<result column="R_SG_NAME" jdbcType="VARCHAR" property="sgName" />
+		<result column="R_USE_YN" jdbcType="VARCHAR" property="rUseYn" />
+		<result column="mobileYN" jdbcType="VARCHAR" property="mobileYN" />
+        <result column="R_CLIENT_IP" jdbcType="VARCHAR" property="clientIp" />
+		<result column="R_LEVEL_NAME" jdbcType="VARCHAR" property="levelName" />
+		<result column="R_SHARE_YN" jdbcType="VARCHAR" property="rShareYn" />
+		<result column="R_BLUEPRINT_SEQ" jdbcType="VARCHAR" property="rShareSeq" />
+	</resultMap>
+
+	<resultMap id="MultiPartResultMap" type="com.furence.recsee.admin.model.MultiPartInfo">
+		<result column="R_TYPE" jdbcType="VARCHAR" property="rType" />
+		<result column="R_TARGER" jdbcType="VARCHAR" property="rTarget" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="R_EXCEPT" jdbcType="VARCHAR" property="rExcept" />
+	</resultMap>
+
+	<resultMap id="CountMultiPartResultMap" type="java.util.HashMap">
+		<result column="R_TARGER" jdbcType="VARCHAR" property="target" />
+		<result column="R_COUNT" jdbcType="VARCHAR" property="count" />
+	</resultMap>
+
+	<select id="selectRUserInfo" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="postgres" resultMap="BaseResultMap">
+	<if test="rMonitoring == 'Y'.toString() and mobileYN == 'Y'.toString()">
+		SELECT
+					A.*,B.R_BG_NAME,B.R_MG_NAME,B.R_SG_NAME
+				FROM
+					(SELECT *
+						FROM RS_RUSER_INFO
+						 WHERE R_USE_YN='Y'
+					) A
+				LEFT JOIN (
+					SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,R_SG_CODE FROM RS_BG_INFO
+						LEFT JOIN RS_MG_INFO
+					ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+						LEFT JOIN RS_SG_INFO
+					ON RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+				)B
+				ON A.R_SG_CODE = B.R_SG_CODE
+	</if>
+	<if test="rMonitoring == 'Y'.toString() and mobileYN != 'Y'.toString()">
+		SELECT
+		AA.*,BB.*
+		FROM RS_CH_INFO AS AA
+		INNER JOIN (
+			SELECT
+					A.*,B.R_BG_NAME,B.R_MG_NAME,B.R_SG_NAME
+				FROM
+					(SELECT *
+						FROM RS_RUSER_INFO
+						 WHERE R_USE_YN='Y' and (r_ext_no is not null and r_ext_no !='' and r_ext_no !=' ' and r_ext_no !=' ')
+					) A
+				LEFT JOIN (
+					SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,RS_BG_INFO.R_BG_CODE, RS_MG_INFO.R_MG_CODE, R_SG_CODE FROM RS_BG_INFO
+						LEFT JOIN RS_MG_INFO
+					ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+						LEFT JOIN RS_SG_INFO
+					ON RS_MG_INFO.R_BG_CODE = RS_SG_INFO.R_BG_CODE AND RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+				)B
+				ON (A.R_BG_CODE = B.R_BG_CODE AND A.R_MG_CODE = B.R_MG_CODE AND A.R_SG_CODE = B.R_SG_CODE)
+		) AS BB
+		ON
+			AA.R_EXT_NUM = BB.R_EXT_NO
+	</if>
+	<if test="rMonitoring != 'Y'.toString()">
+		SELECT
+
+				A.*,
+				B.R_SG_NAME
+			FROM
+				(SELECT *
+
+				FROM RS_RUSER_INFO
+				<where>
+					<trim suffixOverrides="AND">
+						R_USE_YN='Y' and (r_ext_no is not null or r_ext_no !='') AND
+						<if test="userId != null">
+						R_USER_ID = #{userId} AND
+						</if>
+						<if test="group != null">
+							<foreach collection="group" item="item" separator="OR" open="(" close=")">
+								( <trim suffixOverrides="AND">
+									<if test="item.bgcode != null">
+									R_BG_CODE = #{item.bgcode} AND
+									</if>
+									<if test="item.mgcode != null">
+									R_MG_CODE = #{item.mgcode} AND
+									</if>
+									<if test="item.sgcode != null">
+									R_SG_CODE = #{item.sgcode} AND
+									</if>
+								</trim> )
+							</foreach>
+						</if>
+					</trim>
+				</where>
+				) A
+				LEFT JOIN
+				(
+					SELECT R_SG_CODE,R_SG_NAME FROM RS_SG_INFO
+				)B
+				ON A.R_BG_CODE = B.R_BG_CODE AND A.R_MG_CODE=B.R_MG_CODE AND A.R_SG_CODE = B.R_SG_CODE
+			ORDER BY R_USER_ID || R_USER_NAME
+	</if>
+	</select>
+	<select id="selectRUserInfo" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="sqlserver" resultMap="BaseResultMap">
+	<if test="rMonitoring == 'Y'.toString()">
+		SELECT
+		AA.*,BB.*
+		FROM RS_CH_INFO AS AA
+		INNER JOIN (
+			SELECT
+					A.*,B.R_BG_NAME,B.R_MG_NAME,B.R_SG_NAME
+				FROM
+					(SELECT *
+						FROM RS_RUSER_INFO
+						 WHERE R_USE_YN='Y' and (r_ext_no is not null and r_ext_no !='' and r_ext_no !=' ' and r_ext_no !=' ')
+					) A
+				LEFT JOIN (
+					SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,RS_BG_INFO.R_BG_CODE, RS_MG_INFO.R_MG_CODE, R_SG_CODE FROM RS_BG_INFO
+						LEFT JOIN RS_MG_INFO
+					ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+						LEFT JOIN RS_SG_INFO
+					ON  RS_MG_INFO.R_BG_CODE = RS_SG_INFO.R_BG_CODE AND RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+				)B
+				ON A.R_SG_CODE = B.R_SG_CODE
+		) AS BB
+		ON
+			AA.R_EXT_NUM = BB.R_EXT_NO
+	</if>
+	<if test="rMonitoring != 'Y'.toString()">
+		SELECT
+
+				A.*,
+				B.R_SG_NAME
+			FROM
+				(SELECT *
+
+				FROM RS_RUSER_INFO
+				<where>
+					<trim suffixOverrides="AND">
+						R_USE_YN='Y' and (r_ext_no is not null or r_ext_no !='') AND
+						<if test="userId != null">
+						R_USER_ID = #{userId} AND
+						</if>
+						<if test="group != null">
+							<foreach collection="group" item="item" separator="OR" open="(" close=")">
+								( <trim suffixOverrides="AND">
+									<if test="item.bgcode != null">
+									R_BG_CODE = #{item.bgcode} AND
+									</if>
+									<if test="item.mgcode != null">
+									R_MG_CODE = #{item.mgcode} AND
+									</if>
+									<if test="item.sgcode != null">
+									R_SG_CODE = #{item.sgcode} AND
+									</if>
+								</trim> )
+							</foreach>
+						</if>
+					</trim>
+				</where>
+				) A
+				LEFT JOIN
+				(
+					SELECT R_SG_CODE,R_SG_NAME FROM RS_SG_INFO
+				)B
+				ON A.R_BG_CODE = B.R_BG_CODE AND A.R_MG_CODE=B.R_MG_CODE AND A.R_SG_CODE = B.R_SG_CODE
+			ORDER BY R_USER_ID + R_USER_NAME
+	</if>
+	</select>
+	<select id="selectRUserInfo" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="oracle" resultMap="BaseResultMap">
+	<if test="rMonitoring == 'Y'.toString() and mobileYN == 'Y'.toString()">
+		SELECT
+					A.*,B.R_BG_NAME,B.R_MG_NAME,B.R_SG_NAME
+				FROM
+					(SELECT *
+						FROM RS_RUSER_INFO
+						 WHERE R_USE_YN='Y'
+					) A
+				LEFT JOIN (
+					SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,R_SG_CODE FROM RS_BG_INFO
+						LEFT JOIN RS_MG_INFO
+					ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+						LEFT JOIN RS_SG_INFO
+					ON RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+				)B
+				ON A.R_SG_CODE = B.R_SG_CODE
+	</if>
+	<if test="rMonitoring == 'Y'.toString() and mobileYN != 'Y'.toString()">
+		SELECT
+		AA.*,BB.*
+		FROM RS_CH_INFO AA
+		INNER JOIN (
+			SELECT
+					A.*,B.R_BG_NAME,B.R_MG_NAME,B.R_SG_NAME
+				FROM
+					(SELECT *
+						FROM RS_RUSER_INFO
+						 WHERE R_USE_YN='Y' and r_ext_no is not null 
+					) A
+				LEFT JOIN (
+					SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,R_SG_CODE FROM RS_BG_INFO
+						LEFT JOIN RS_MG_INFO
+					ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+						LEFT JOIN RS_SG_INFO
+					ON RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+				)B
+				ON A.R_SG_CODE = B.R_SG_CODE
+		) BB
+		ON
+			AA.R_EXT_NUM = BB.R_EXT_NO
+	</if>
+	<if test="rMonitoring != 'Y'.toString()">
+		SELECT
+
+				A.*,
+				B.R_SG_NAME
+			FROM
+				(SELECT *
+
+				FROM RS_RUSER_INFO
+				<where>
+					<trim suffixOverrides="AND">
+						R_USE_YN='Y' and (r_ext_no is not null or r_ext_no !='')
+						<if test="userId != null">
+						R_USER_ID = #{userId} AND
+						</if>
+						<if test="group != null">
+							<foreach collection="group" item="item" separator="OR" open="(" close=")">
+								( <trim suffixOverrides="AND">
+									<if test="item.bgcode != null">
+									R_BG_CODE = #{item.bgcode} AND
+									</if>
+									<if test="item.mgcode != null">
+									R_MG_CODE = #{item.mgcode} AND
+									</if>
+									<if test="item.sgcode != null">
+									R_SG_CODE = #{item.sgcode} AND
+									</if>
+								</trim> )
+							</foreach>
+						</if>
+					</trim>
+				</where>
+				) A
+				LEFT JOIN
+				(
+					SELECT R_SG_CODE,R_SG_NAME FROM RS_SG_INFO
+				)B
+				ON A.R_BG_CODE = B.R_BG_CODE AND A.R_MG_CODE=B.R_MG_CODE AND A.R_SG_CODE = B.R_SG_CODE
+			ORDER BY R_USER_ID || R_USER_NAME
+	</if>
+	</select>
+	
+	<!-- 202020302 김다빈 추가 -->
+	<select id="selectTreeViewRUserInfo" parameterType="com.furence.recsee.admin.model.RUserInfo" resultMap="BaseResultMap">
+	SELECT * FROM RS_RUSER_INFO WHERE R_USE_YN='Y'
+	<if test="userId != null and userId != ''">
+		AND R_USER_ID = #{userId}
+	</if>
+	
+	<!-- <if test="rMonitoring == 'Y'.toString() and mobileYN == 'Y'.toString()">
+		SELECT
+					A.*,B.R_BG_NAME,B.R_MG_NAME,B.R_SG_NAME
+				FROM
+					(SELECT *
+						FROM RS_RUSER_INFO
+						 WHERE R_USE_YN='Y'
+					) A
+				LEFT JOIN (
+					SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,R_SG_CODE FROM RS_BG_INFO
+						LEFT JOIN RS_MG_INFO
+					ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+						LEFT JOIN RS_SG_INFO
+					ON RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+				)B
+				ON A.R_SG_CODE = B.R_SG_CODE
+	</if>
+	<if test="rMonitoring == 'Y'.toString() and mobileYN != 'Y'.toString()">
+		SELECT
+		AA.*,BB.*
+		FROM RS_CH_INFO AS AA
+		INNER JOIN (
+			SELECT
+					A.*,B.R_BG_NAME,B.R_MG_NAME,B.R_SG_NAME
+				FROM
+					(SELECT *
+						FROM RS_RUSER_INFO
+						 WHERE R_USE_YN='Y' and (r_ext_no is not null and r_ext_no !='' and r_ext_no !=' ' and r_ext_no !=' ')
+					) A
+				LEFT JOIN (
+					SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,R_SG_CODE FROM RS_BG_INFO
+						LEFT JOIN RS_MG_INFO
+					ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+						LEFT JOIN RS_SG_INFO
+					ON RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+				)B
+				ON A.R_SG_CODE = B.R_SG_CODE
+		) AS BB
+		ON
+			AA.R_EXT_NUM = BB.R_EXT_NO
+	</if>
+	<if test="rMonitoring != 'Y'.toString()">
+		SELECT
+
+				A.*,
+				B.R_SG_NAME
+			FROM
+				(SELECT *
+
+				FROM RS_RUSER_INFO
+				<where>
+					<trim suffixOverrides="AND">
+						R_USE_YN='Y' and (r_ext_no is not null or r_ext_no !='')
+						<if test="userId != null">
+						R_USER_ID = #{userId} AND
+						</if>
+						<if test="group != null">
+							<foreach collection="group" item="item" separator="OR" open="(" close=")">
+								( <trim suffixOverrides="AND">
+									<if test="item.bgcode != null">
+									R_BG_CODE = #{item.bgcode} AND
+									</if>
+									<if test="item.mgcode != null">
+									R_MG_CODE = #{item.mgcode} AND
+									</if>
+									<if test="item.sgcode != null">
+									R_SG_CODE = #{item.sgcode} AND
+									</if>
+								</trim> )
+							</foreach>
+						</if>
+					</trim>
+				</where>
+				) A
+				LEFT JOIN
+				(
+					SELECT R_SG_CODE,R_SG_NAME FROM RS_SG_INFO
+				)B
+				ON A.R_BG_CODE = B.R_BG_CODE AND A.R_MG_CODE=B.R_MG_CODE AND A.R_SG_CODE = B.R_SG_CODE
+			ORDER BY R_USER_ID || R_USER_NAME
+	</if>
+	 -->
+	</select>
+	
+	
+	<select id="adminAUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="postgres" resultMap="BaseResultMap" >
+
+			WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+		FROM
+			(SELECT *
+
+			FROM RS_AUSER_INFO
+			<where>
+				 R_USE_YN='Y'
+				 <choose>
+					<when test="list !=null and list.size!=0">
+						and R_BG_CODE not in
+							<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+								#{item}
+							</foreach>
+					</when>
+				</choose>
+				<if test="userId != null">
+					AND R_USER_ID = #{userId}
+				</if>
+				<if test="bgCode != null and bgCode!=''">
+					 AND R_BG_CODE = #{bgCode}
+				</if>
+				<if test="userName != null and userName!=''">
+					AND R_USER_NAME LIKE '%'||#{userName}||'%'
+				</if>
+				<if test="mgCode != null and mgCode!=''">
+					 AND R_MG_CODE = #{mgCode}
+				</if>
+				<if test="sgCode != null and sgCode!=''">
+					 AND R_SG_CODE = #{sgCode}
+				</if>
+			</where>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		ORDER BY R_USER_ID || R_USER_NAME
+			<choose>
+					<when test="count != null and posStart != null">
+						LIMIT #{count} OFFSET #{posStart}
+					</when>
+					<otherwise>
+						LIMIT 100 OFFSET 0
+					</otherwise>
+			</choose>
+	</select>
+
+	<select id="adminAUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="sqlserver" resultMap="BaseResultMap" >
+				WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+					,TEMPTABLE AS (
+						SELECT
+							ROW_NUMBER() OVER(ORDER BY R_USER_ID + R_USER_NAME) as rownum
+							,A.*
+							,B.R_BG_NAME
+							, M.R_MG_NAME
+							, S.R_SG_NAME
+						FROM
+						(
+							SELECT *
+
+							FROM RS_AUSER_INFO
+							<where>
+								 R_USE_YN='Y'
+								 <choose>
+									<when test="list !=null and list.size!=0">
+										and R_BG_CODE not in
+											<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+												#{item}
+											</foreach>
+									</when>
+								</choose>
+								<if test="userId != null">
+									AND R_USER_ID = #{userId}
+								</if>
+								<if test="bgCode != null and bgCode!=''">
+									 AND R_BG_CODE = #{bgCode}
+								</if>
+								<if test="userName != null and userName!=''">
+									AND R_USER_NAME = #{userName}
+								</if>
+								<if test="mgCode != null and mgCode!=''">
+									 AND R_MG_CODE = #{mgCode}
+								</if>
+								<if test="sgCode != null and sgCode!=''">
+									 AND R_SG_CODE = #{sgCode}
+								</if>
+							</where>
+						) A
+						LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+						LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+						LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+						)
+
+						SELECT *
+						FROM TEMPTABLE
+
+						<choose>
+								<when test="count != null and posStart != null">
+									where rownum <![CDATA[>]]> #{posStart} and rownum<![CDATA[<=]]> #{count}
+								</when>
+								<otherwise>
+									where rownum <![CDATA[>]]> 0 and rownum<![CDATA[<=]]>100
+								</otherwise>
+						</choose>
+						ORDER BY rownum
+
+	</select>
+	<select id="adminAUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="oracle" resultMap="BaseResultMap" >
+	SELECT *
+		FROM (
+		    SELECT PAGE.*, ROWNUM AS RNUM
+		    FROM (
+
+			WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+		FROM
+			(SELECT *
+
+			FROM RS_AUSER_INFO
+			<where>
+				 R_USE_YN='Y'
+				 <choose>
+					<when test="list !=null and list.size!=0">
+						and R_BG_CODE not in
+							<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+								#{item}
+							</foreach>
+					</when>
+				</choose>
+				<if test="userId != null">
+					AND R_USER_ID = #{userId}
+				</if>
+				<if test="bgCode != null and bgCode!=''">
+					 AND R_BG_CODE = #{bgCode}
+				</if>
+				<if test="userName != null and userName!=''">
+					AND R_USER_NAME = #{userName}
+				</if>
+				<if test="mgCode != null and mgCode!=''">
+					 AND R_MG_CODE = #{mgCode}
+				</if>
+				<if test="sgCode != null and sgCode!=''">
+					 AND R_SG_CODE = #{sgCode}
+				</if>
+			</where>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		ORDER BY R_USER_ID || R_USER_NAME
+			<choose>
+					<when test="count != null and posStart != null">
+						<!-- LIMIT #{count} OFFSET #{posStart} -->
+						 ) PAGE
+				    WHERE ROWNUM <![CDATA[<=]]> #{count}+#{posStart}
+				) PAGE
+				WHERE RNUM <![CDATA[>]]> #{posStart}
+					</when>
+					<otherwise>
+						<!-- LIMIT 100 OFFSET 0 -->
+						 ) PAGE
+				    WHERE ROWNUM <![CDATA[<=]]> 100
+				) PAGE
+				WHERE RNUM <![CDATA[>]]> 0
+					</otherwise>
+			</choose>
+	</select>
+	<select id="CountadminAUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" resultType="Integer" >
+		SELECT count(*)
+		  		FROM RS_AUSER_INFO
+	 		 	WHERE		R_USE_YN='Y'
+	 		 	<choose>
+					<when test="list !=null and list.size!=0">
+						and R_BG_CODE not in
+							<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+								#{item}
+							</foreach>
+					</when>
+				</choose>
+				<if test="userId != null and userId!=''">
+				 AND R_USER_ID = #{userId}
+				</if>
+				<if test="userName != null and userName!=''">
+				AND R_USER_Name = #{userName}
+				</if>
+				<if test="bgCode != null and bgCode!=''">
+					 AND R_BG_CODE = #{bgCode}
+				</if>
+				<if test="mgCode != null and mgCode!=''">
+					 AND R_MG_CODE = #{mgCode}
+				</if>
+				<if test="sgCode != null and sgCode!=''">
+					 AND R_SG_CODE = #{sgCode}
+				</if>
+
+	</select>
+
+
+	<select id="adminUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="postgres" resultMap="BaseResultMap" >
+		WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_BG_CODE, R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_BG_CODE, R_MG_CODE, R_SG_CODE, R_SG_NAME, USE_YN FROM RS_SG_INFO)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+		FROM
+			(SELECT *
+
+			FROM RS_RUSER_INFO
+			<if test="rUseYn != null">
+				where r_use_yn = #{rUseYn}
+			</if>
+			<if test="rUseYn == null">
+				where r_use_yn='Y'
+			</if>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_BG_CODE=M.R_BG_CODE AND A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_BG_CODE=S.R_BG_CODE AND A.R_MG_CODE=S.R_MG_CODE AND A.R_SG_CODE=S.R_SG_CODE
+		where A.R_BG_CODE !='BGIVR' 
+			<if test="userId != null">
+				AND R_USER_ID like '%'||#{userId}||'%'
+			</if>
+			<if test="userName != null and userName!=''">
+				AND A.R_USER_NAME like '%'||#{userName}||'%'
+			</if>	
+			<if test="extNo != null and extNo!=''">
+				 AND A.R_EXT_NO like '%'||#{extNo}||'%'
+			</if>
+			<if test="userLevel != null and userLevel!=''">
+				 AND A.R_USER_LEVEL = #{userLevel}
+			</if>
+			<if test="bgCode != null and bgCode!=''">
+				 AND A.R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null and mgCode!=''">
+				 AND A.R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCode!=''">
+				 AND A.R_SG_CODE = #{sgCode}
+			</if>
+			<if test="sgCode == null or sgCode == ''">
+       			 AND (s.use_yn IS NULL OR S.use_yn != 'N' )
+			</if>
+			<if test='skinCode != null and skinCode == "N"'>
+       			 AND A.R_SKIN_CODE = #{skinCode}
+			</if>
+			<if test='skinCode != null and skinCode == "Y"'>
+       			 AND (A.R_SKIN_CODE = #{skinCode} OR A.R_SKIN_CODE IS NULL)
+			</if>
+			<if test="authyInfo != null">
+				AND(
+				<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						A.R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.mgcode != null">
+						A.R_MG_CODE = #{item.mgcode} AND
+						</if>
+						<if test="item.sgcode != null">
+						A.R_SG_CODE = #{item.sgcode} AND
+						</if>
+						<if test="item.user != null">
+						R_USER_ID = #{item.user} AND
+						</if>
+						<if test="item.noneallowable != null">
+						1=2
+						</if>
+					</trim>
+				</foreach>
+				)
+			</if>
+		<choose>
+			<when test="orderBy !=null and direction != null">
+				ORDER BY 
+				<if test="orderBy== 'userId'">
+					R_USER_ID
+				</if>
+				<if test="orderBy== 'userName'">
+					R_USER_NAME
+				</if>
+				<if test="orderBy== 'extNo'">
+					R_EXT_NO
+				</if>	
+				<if test="orderBy== 'userPhone'">
+					R_USER_PHONE
+				</if>		
+				<if test="orderBy== 'userSex'">
+					R_USER_SEX
+				</if>		
+				<if test="orderBy== 'userLevel'">
+					R_USER_LEVEL
+				</if>	
+				<if test="orderBy== 'bgName'">
+					R_BG_NAME
+				</if>
+				<if test="orderBy== 'mgName'">
+					R_MG_NAME
+				</if>
+				<if test="orderBy== 'sgName'">
+					R_SG_NAME
+				</if>
+				<if test="orderBy== 'userEmail'">
+					R_USER_EMAIL
+				</if>
+				<if test="orderBy== 'lockYn'">
+					R_LOCK_YN
+				</if>
+				<!-- 정렬  -->
+				<if test="direction == 'desc'">
+					DESC
+				</if>
+				<if test="direction == 'asc'">
+					ASC
+				</if>
+			</when>
+			<otherwise>
+				ORDER BY R_USER_ID || R_USER_NAME
+			</otherwise>
+		</choose>
+		<if test="userId == null and userName == null and selectAll == null">
+			<choose>
+						<when test="count != null and posStart != null">
+							LIMIT #{count} OFFSET #{posStart}
+						</when>
+						<otherwise>
+							LIMIT 100 OFFSET 0
+						</otherwise>
+			</choose>
+		</if>
+
+	</select>
+	<select id="adminUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="sqlserver" resultMap="BaseResultMap" >
+		with temptable as (
+			SELECT ROW_NUMBER() OVER(
+			<choose>
+				<when test="orderBy !=null and direction != null">
+					ORDER BY 
+					<if test="orderBy== 'userId'">
+						R_USER_ID
+					</if>
+					<if test="orderBy== 'userName'">
+						R_USER_NAME
+					</if>
+					<if test="orderBy== 'extNo'">
+						R_EXT_NO
+					</if>	
+					<if test="orderBy== 'userPhone'">
+						R_USER_PHONE
+					</if>		
+					<if test="orderBy== 'userSex'">
+						R_USER_SEX
+					</if>		
+					<if test="orderBy== 'userLevel'">
+						R_USER_LEVEL
+					</if>	
+					<if test="orderBy== 'bgName'">
+						R_BG_NAME
+					</if>
+					<if test="orderBy== 'mgName'">
+						R_MG_NAME
+					</if>
+					<if test="orderBy== 'sgName'">
+						R_SG_NAME
+					</if>
+					<if test="orderBy== 'userEmail'">
+						R_USER_EMAIL
+					</if>
+					<!-- 정렬  -->
+					<if test="direction == 'desc'">
+						DESC
+					</if>
+					<if test="direction == 'asc'">
+						ASC
+					</if>
+				</when>
+				<otherwise>
+					ORDER BY R_USER_ID + R_USER_NAME
+				</otherwise>
+			</choose>
+			) AS ROWNUMBER, 
+			*
+			FROM (
+				SELECT
+					A.*
+					,B.R_BG_NAME
+					, M.R_MG_NAME
+					, S.R_SG_NAME
+				FROM
+					(SELECT *
+		
+					FROM RS_RUSER_INFO
+					
+					<if test="rUseYn != null">
+						where r_use_yn = #{rUseYn}
+					</if>
+					<if test="rUseYn == null">
+						where r_use_yn='Y'
+					</if>
+					) A
+				LEFT OUTER JOIN (SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)B ON A.R_BG_CODE=B.R_BG_CODE
+				LEFT OUTER JOIN (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)M ON A.R_MG_CODE=M.R_MG_CODE
+				LEFT OUTER JOIN (SELECT R_SG_CODE, R_SG_NAME, USE_YN FROM RS_SG_INFO)S ON A.R_SG_CODE=S.R_SG_CODE
+				
+				where A.R_BG_CODE !='BGIVR'
+				<if test="userId != null">
+					AND R_USER_ID = #{userId}
+				</if>
+				<if test="userName != null and userName!=''">
+					AND A.R_USER_NAME like '%' || #{userName} || '%'
+				</if>	
+				<if test="extNo != null and extNo!=''">
+					 AND A.R_EXT_NO = #{extNo}
+				</if>
+				<if test="userLevel != null and userLevel!=''">
+					 AND A.R_USER_LEVEL = #{userLevel}
+				</if>
+				<if test="bgCode != null and bgCode!=''">
+					 AND A.R_BG_CODE = #{bgCode}
+				</if>
+				<if test="mgCode != null and mgCode!=''">
+					 AND A.R_MG_CODE = #{mgCode}
+				</if>
+				<if test="sgCode != null and sgCode!=''">
+					 AND A.R_SG_CODE = #{sgCode}
+				</if>
+				<if test="sgCode == null or sgCode == ''">
+					AND (s.use_yn IS NULL OR S.use_yn != 'N' )
+				</if>
+			) userinfo
+		)select 
+		* 
+		from temptable
+		<if test="userId == null and userName == null and selectAll == null">
+			<choose>
+				<when test="count != null and posStart != null">
+					where ROWNUMBER <![CDATA[>]]> #{posStart} and ROWNUMBER<![CDATA[<=]]>  convert(integer,#{posStart}+#{count})
+				</when>
+				<otherwise>
+					where ROWNUMBER <![CDATA[>]]> 0 and ROWNUMBER<![CDATA[<=]]>100
+				</otherwise>
+			</choose>
+		</if>
+		ORDER BY ROWNUMBER
+
+	</select>
+	<select id="adminUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="oracle" resultMap="BaseResultMap" >
+	<!-- SELECT *
+		FROM (
+		    SELECT PAGE.*, ROWNUM AS RNUM
+		    FROM (
+		    
+		WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+		FROM
+			(SELECT *
+
+			FROM RS_RUSER_INFO
+			where r_use_yn='Y'
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		where A.R_BG_CODE !='BGIVR'
+			<if test="userId != null">
+				AND R_USER_ID = #{userId}
+			</if>
+			<if test="userName != null and userName!=''">
+				AND A.R_USER_NAME like '%'||#{userName}||'%'
+			</if>	
+			<if test="extNo != null and extNo!=''">
+				 AND A.R_EXT_NO = #{extNo}
+			</if>
+			<if test="userLevel != null and userLevel!=''">
+				 AND A.R_USER_LEVEL = #{userLevel}
+			</if>
+			<if test="bgCode != null and bgCode!=''">
+				 AND A.R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null and mgCode!=''">
+				 AND A.R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCode!=''">
+				 AND A.R_SG_CODE = #{sgCode}
+			</if>
+		
+		<choose>
+			<when test="orderBy !=null and direction != null">
+				ORDER BY 
+				<if test="orderBy== 'userId'">
+					R_USER_ID
+				</if>
+				<if test="orderBy== 'userName'">
+					R_USER_NAME
+				</if>
+				<if test="orderBy== 'extNo'">
+					R_EXT_NO
+				</if>	
+				<if test="orderBy== 'userPhone'">
+					R_USER_PHONE
+				</if>		
+				<if test="orderBy== 'userSex'">
+					R_USER_SEX
+				</if>		
+				<if test="orderBy== 'userLevel'">
+					R_USER_LEVEL
+				</if>	
+				<if test="orderBy== 'bgName'">
+					R_BG_NAME
+				</if>
+				<if test="orderBy== 'mgName'">
+					R_MG_NAME
+				</if>
+				<if test="orderBy== 'sgName'">
+					R_SG_NAME
+				</if>
+				<if test="orderBy== 'userEmail'">
+					R_USER_EMAIL
+				</if>
+				<if test="orderBy== 'lockYn'">
+					R_LOCK_YN
+				</if>
+				정렬 
+				<if test="direction == 'desc'">
+					DESC
+				</if>
+				<if test="direction == 'asc'">
+					ASC
+				</if>
+			</when>
+			<otherwise>
+				ORDER BY R_USER_ID || R_USER_NAME
+			</otherwise>
+		</choose>
+		<if test="userId == null and userName == null and selectAll == null">
+			<choose>
+						<when test="count != null and posStart != null">
+							LIMIT #{count} OFFSET #{posStart}
+							) PAGE
+				    WHERE ROWNUM <![CDATA[<=]]> #{count}+#{posStart}
+				) PAGE
+				WHERE RNUM <![CDATA[>]]> #{posStart}
+						</when>
+						<otherwise>
+							LIMIT 100 OFFSET 0
+							) PAGE
+				    WHERE ROWNUM <![CDATA[<=]]> 100
+				) PAGE
+				WHERE RNUM <![CDATA[>]]> 0
+						</otherwise>
+			</choose>
+		</if> -->
+		with temptable as (
+			SELECT ROW_NUMBER() OVER(
+			<choose>
+				<when test="orderBy !=null and direction != null">
+					ORDER BY 
+					<if test="orderBy== 'userId'">
+						R_USER_ID
+					</if>
+					<if test="orderBy== 'userName'">
+						R_USER_NAME
+					</if>
+					<if test="orderBy== 'extNo'">
+						R_EXT_NO
+					</if>	
+					<if test="orderBy== 'userPhone'">
+						R_USER_PHONE
+					</if>		
+					<if test="orderBy== 'userSex'">
+						R_USER_SEX
+					</if>		
+					<if test="orderBy== 'userLevel'">
+						R_USER_LEVEL
+					</if>	
+					<if test="orderBy== 'bgName'">
+						R_BG_NAME
+					</if>
+					<if test="orderBy== 'mgName'">
+						R_MG_NAME
+					</if>
+					<if test="orderBy== 'sgName'">
+						R_SG_NAME
+					</if>
+					<if test="orderBy== 'userEmail'">
+						R_USER_EMAIL
+					</if>
+					<!-- 정렬  -->
+					<if test="direction == 'desc'">
+						DESC
+					</if>
+					<if test="direction == 'asc'">
+						ASC
+					</if>
+				</when>
+				<otherwise>
+					ORDER BY R_USER_ID || R_USER_NAME
+				</otherwise>
+			</choose>
+			) AS ROWNUMBER, 
+			userinfo.*
+			FROM (
+				SELECT
+					A.*
+					,B.R_BG_NAME
+					, M.R_MG_NAME
+					, S.R_SG_NAME
+				FROM
+					(SELECT *
+		
+					FROM RS_RUSER_INFO
+					where r_use_yn='Y'
+					) A
+				LEFT OUTER JOIN (SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)B ON A.R_BG_CODE=B.R_BG_CODE
+				LEFT OUTER JOIN (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)M ON A.R_MG_CODE=M.R_MG_CODE
+				LEFT OUTER JOIN (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)S ON A.R_SG_CODE=S.R_SG_CODE
+				
+				where A.R_BG_CODE !='BGIVR'
+				<if test="userId != null">
+					AND R_USER_ID = #{userId}
+				</if>
+				<if test="userName != null and userName!=''">
+					AND A.R_USER_NAME like '%' || #{userName} || '%'
+				</if>	
+				<if test="extNo != null and extNo!=''">
+					 AND A.R_EXT_NO = #{extNo}
+				</if>
+				<if test="userLevel != null and userLevel!=''">
+					 AND A.R_USER_LEVEL = #{userLevel}
+				</if>
+				<if test="bgCode != null and bgCode!=''">
+					 AND A.R_BG_CODE = #{bgCode}
+				</if>
+				<if test="mgCode != null and mgCode!=''">
+					 AND A.R_MG_CODE = #{mgCode}
+				</if>
+				<if test="sgCode != null and sgCode!=''">
+					 AND A.R_SG_CODE = #{sgCode}
+				</if>
+			) userinfo
+		)select 
+		* 
+		from temptable
+			<choose>
+				<when test="count != null and posStart != null">
+					where ROWNUMBER <![CDATA[>]]> #{posStart} and ROWNUMBER<![CDATA[<=]]>  TO_NUMBER(#{posStart}+#{count})
+				</when>
+				<otherwise>
+					where ROWNUMBER <![CDATA[>]]> 0 and ROWNUMBER<![CDATA[<=]]>100
+				</otherwise>
+			</choose>
+		ORDER BY ROWNUMBER
+
+	</select>
+	
+	<select id="adminUserManageSelectExcel" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="postgres" resultMap="BaseResultMap" >
+		WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+					, L AS (SELECT R_LEVEL_CODE, R_LEVEL_NAME FROM RS_ACCESS_LEVEL)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+			, L.R_LEVEL_NAME
+		FROM
+			(SELECT *
+
+			FROM RS_RUSER_INFO
+			<if test="rUseYn != null">
+				where r_use_yn = #{rUseYn}
+			</if>
+			<if test="rUseYn == null">
+				where r_use_yn='Y'
+			</if>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		LEFT OUTER JOIN L ON A.R_USER_LEVEL=L.R_LEVEL_CODE
+		
+		where A.R_BG_CODE !='BGIVR'
+			<if test="userId != null">
+				AND R_USER_ID = #{userId}
+			</if>
+			<if test="userName != null and userName!=''">
+				AND A.R_USER_NAME like '%'||#{userName}||'%'
+			</if>	
+			<if test="extNo != null and extNo!=''">
+				 AND A.R_EXT_NO = #{extNo}
+			</if>
+			<if test="userLevel != null and userLevel!=''">
+				 AND A.R_USER_LEVEL = #{userLevel}
+			</if>
+			<if test="bgCode != null and bgCode!=''">
+				 AND A.R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null and mgCode!=''">
+				 AND A.R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCode!=''">
+				 AND A.R_SG_CODE = #{sgCode}
+			</if>
+		ORDER BY R_USER_ID || R_USER_NAME
+			
+ 
+	</select>
+	<select id="adminUserManageSelectExcel" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="sqlserver" resultMap="BaseResultMap" >
+		WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+					, L AS (SELECT R_LEVEL_CODE, R_LEVEL_NAME FROM RS_ACCESS_LEVEL)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+			, L.R_LEVEL_NAME
+		FROM
+			(SELECT *
+
+			FROM RS_RUSER_INFO
+			<if test="rUseYn != null">
+				where r_use_yn = #{rUseYn}
+			</if>
+			<if test="rUseYn == null">
+				where r_use_yn='Y'
+			</if>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		LEFT OUTER JOIN L ON A.R_USER_LEVEL=L.R_LEVEL_CODE
+		where A.R_BG_CODE !='BGIVR'
+			<if test="userId != null">
+				AND R_USER_ID = #{userId}
+			</if>
+			<if test="userName != null and userName!=''">
+				AND A.R_USER_NAME like '%' || #{userName} || '%'
+			</if>	
+			<if test="extNo != null and extNo!=''">
+				 AND A.R_EXT_NO = #{extNo}
+			</if>
+			<if test="userLevel != null and userLevel!=''">
+				 AND A.R_USER_LEVEL = #{userLevel}
+			</if>
+			<if test="bgCode != null and bgCode!=''">
+				 AND A.R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null and mgCode!=''">
+				 AND A.R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCode!=''">
+				 AND A.R_SG_CODE = #{sgCode}
+			</if>
+		ORDER BY R_USER_ID + R_USER_NAME
+			
+	</select>
+	<select id="adminUserManageSelectExcel" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="oracle" resultMap="BaseResultMap" >
+		WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+					, L AS (SELECT R_LEVEL_CODE, R_LEVEL_NAME FROM RS_ACCESS_LEVEL)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+			, L.R_LEVEL_NAME
+		FROM
+			(SELECT *
+
+			FROM RS_RUSER_INFO
+			where r_use_yn='Y'
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		LEFT OUTER JOIN L ON A.R_USER_LEVEL=L.R_LEVEL_CODE
+		where A.R_BG_CODE !='BGIVR'
+			<if test="userId != null">
+				AND R_USER_ID = #{userId}
+			</if>
+			<if test="userName != null and userName!=''">
+				AND A.R_USER_NAME like '%'||#{userName}||'%'
+			</if>	
+			<if test="extNo != null and extNo!=''">
+				 AND A.R_EXT_NO = #{extNo}
+			</if>
+			<if test="userLevel != null and userLevel!=''">
+				 AND A.R_USER_LEVEL = #{userLevel}
+			</if>
+			<if test="bgCode != null and bgCode!=''">
+				 AND A.R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null and mgCode!=''">
+				 AND A.R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCode!=''">
+				 AND A.R_SG_CODE = #{sgCode}
+			</if>
+		ORDER BY R_USER_ID || R_USER_NAME
+			
+ 
+	</select>
+	
+	<select id="adminAUserManageSelectTree" parameterType="com.furence.recsee.admin.model.RUserInfo" resultMap="BaseResultMap" >
+
+		SELECT RS_BG_INFO.R_BG_NAME,RS_MG_INFO.R_MG_NAME,R_SG_NAME,RS_SG_INFO.R_BG_CODE,RS_SG_INFO.R_MG_CODE,R_SG_CODE
+					FROM RS_SG_INFO
+			LEFT JOIN RS_MG_INFO
+		ON RS_SG_INFO.R_MG_CODE =RS_MG_INFO.R_MG_CODE
+		LEFT JOIN RS_BG_INFO
+		ON RS_BG_INFO.R_BG_CODE = RS_SG_INFO.R_BG_CODE
+		WHERE R_BG_CODE!='0995500'
+	</select>
+
+<!-- 기존 쿼리문 작동안됨 -->
+<!-- <select id="CountadminUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" resultType="Integer" >
+
+	SELECT
+			count(*)
+		FROM
+				(SELECT *
+
+				FROM RS_RUSER_INFO
+				<where>
+					<trim suffixOverrides="AND">
+						R_USE_YN='Y' and (r_ext_no is not null or r_ext_no !='')
+						<if test="userId != null">
+						R_USER_ID = #{userId} AND
+						</if>
+						<if test="bgCode != null and bgCode!=''">
+							 AND R_BG_CODE = #{bgCode} 
+						</if>
+						<if test="mgCode != null and mgCode!=''">
+							 AND R_MG_CODE = #{mgCode} 
+						</if>
+						<if test="sgCode != null and sgCode!=''">
+							 AND R_SG_CODE = #{sgCode} 
+						</if>
+						<if test="group != null">
+							<foreach collection="group" item="item" separator="OR" open="(" close=")">
+								( <trim suffixOverrides="AND">
+									<if test="item.bgcode != null">
+									R_BG_CODE = #{item.bgcode} AND
+									</if>
+									<if test="item.mgcode != null">
+									R_MG_CODE = #{item.mgcode} AND
+									</if>
+									<if test="item.sgcode != null">
+									R_SG_CODE = #{item.sgcode} AND
+									</if>
+								</trim> )
+							</foreach>
+						</if>
+					</trim>
+				</where>
+				) A
+		LEFT JOIN (
+			SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,R_SG_CODE FROM RS_BG_INFO
+				LEFT JOIN RS_MG_INFO
+			ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+				LEFT JOIN RS_SG_INFO
+			ON RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+		)B
+		ON A.R_SG_CODE = B.R_SG_CODE
+	</select> -->
+	
+<select id="CountadminUserManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" resultType="Integer" >
+		SELECT count(*)
+		FROM RS_RUSER_INFO AS A
+		
+		LEFT OUTER JOIN (SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO) B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN (SELECT R_BG_CODE, R_MG_CODE, R_MG_NAME FROM RS_MG_INFO) M ON A.R_BG_CODE=M.R_BG_CODE AND A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN (SELECT R_BG_CODE, R_MG_CODE, R_SG_CODE, R_SG_NAME, USE_YN FROM RS_SG_INFO) S ON A.R_BG_CODE=S.R_BG_CODE AND A.R_MG_CODE=S.R_MG_CODE AND A.R_SG_CODE=S.R_SG_CODE
+					  
+		 WHERE	1=1	<!-- R_USE_YN='Y' -->
+		 	<if test="rUseYn != null">
+				AND A.r_use_yn = #{rUseYn}
+			</if>
+			<if test="rUseYn == null">
+				AND A.r_use_yn='Y'
+			</if>
+			<if test="userId != null and userId!=''">
+			 	AND A.R_USER_ID = #{userId} 
+			</if>
+			<if test="userName != null and userName!=''">
+				AND A.R_USER_Name = #{userName}
+			</if>
+			<if test="userLevel != null and userLevel!=''">
+				 AND A.R_USER_LEVEL = #{userLevel}
+			</if>
+			<if test="extNo != null and extNo!=''">
+				 AND A.R_EXT_NO = #{extNo}
+			</if>
+			<if test="bgCode != null and bgCode!=''">
+				 AND A.R_BG_CODE = #{bgCode} 
+			</if>
+			<if test="mgCode != null and mgCode!=''">
+				 AND A.R_MG_CODE = #{mgCode} 
+			</if>
+			<if test="sgCode != null and sgCode!=''">
+				 AND A.R_SG_CODE = #{sgCode} 
+			</if>	
+			<if test="sgCode == null or sgCode ==''">
+       			 AND (s.use_yn IS NULL OR S.use_yn != 'N' )
+			</if>
+			<if test='skinCode != null and skinCode == "N"'>
+       			 AND A.R_SKIN_CODE = #{skinCode}
+			</if>
+			<if test='skinCode != null and skinCode == "Y"'>
+       			 AND (A.R_SKIN_CODE = #{skinCode} OR A.R_SKIN_CODE IS NULL)
+			</if>
+			<if test="authyInfo != null">
+				AND(
+				<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						A.R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.mgcode != null">
+						A.R_MG_CODE = #{item.mgcode} AND
+						</if>
+						<if test="item.sgcode != null">
+						A.R_SG_CODE = #{item.sgcode} AND
+						</if>
+						<if test="item.user != null">
+						R_USER_ID = #{item.user} AND
+						</if>
+						<if test="item.noneallowable != null">
+						1=2
+						</if>
+					</trim>
+				</foreach>
+				)
+			</if>
+</select>
+
+
+<select id="selectPeople" databaseId="postgres" parameterType="com.furence.recsee.admin.model.RUserInfo" resultType="com.furence.recsee.admin.model.RUserInfo">
+		SELECT R_USER_NAME as userName, r_user_id as userId
+		FROM RS_RUSER_INFO
+		WHERE r_use_yn='Y'
+				<if test="mobileYN != 'Y'.toString()">
+					and COALESCE(R_EXT_NO,'') !=''
+				</if>
+	    		  AND
+	    		  <choose>
+						<when test="list !=null and list.size!=0">
+						R_BG_CODE in
+							<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+								#{item}
+							</foreach>
+						</when>
+						<otherwise>
+						 R_BG_CODE = #{bgCode}
+						</otherwise>
+				  </choose>
+
+	    		  <if test="mgCode != null">
+	    		  	AND R_MG_CODE = #{mgCode}
+	    		  </if>
+	    		  <if test="sgCode != null">
+	    		  	AND R_SG_CODE = #{sgCode}
+	    		  </if>
+</select>
+
+<select id="selectPeople" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.RUserInfo" resultType="com.furence.recsee.admin.model.RUserInfo">
+		SELECT R_USER_NAME as userName, r_user_id as userId
+		FROM RS_RUSER_INFO
+		WHERE r_use_yn='Y'
+				<if test="mobileYN != 'Y'.toString()">
+					and COALESCE(R_EXT_NO,'') !=''
+				</if>
+	    		  AND
+	    		  <choose>
+						<when test="list !=null and list.size!=0">
+						R_BG_CODE in
+							<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+								#{item}
+							</foreach>
+						</when>
+						<otherwise>
+						 R_BG_CODE = #{bgCode}
+						</otherwise>
+				  </choose>
+
+	    		  <if test="mgCode != null">
+	    		  	AND R_MG_CODE = #{mgCode}
+	    		  </if>
+	    		  <if test="sgCode != null">
+	    		  	AND R_SG_CODE = #{sgCode}
+	    		  </if>
+</select>
+
+<select id="selectPeople" databaseId="oracle" parameterType="com.furence.recsee.admin.model.RUserInfo" resultType="com.furence.recsee.admin.model.RUserInfo">
+		SELECT R_USER_NAME as userName, r_user_id as userId
+		FROM RS_RUSER_INFO
+		WHERE r_use_yn='Y' 
+			 	<!-- <if test="mobileYN != 'Y'.toString()">
+					and COALESCE(R_EXT_NO,'') !=''
+				</if> -->
+	    		AND
+	    		  <choose>
+						<when test="list !=null and list.size!=0">
+						R_BG_CODE in
+							<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+								#{item}
+							</foreach>
+						</when>
+						<otherwise>
+						 R_BG_CODE = #{bgCode}
+						</otherwise>
+				  </choose>
+	    	    <if test="mgCode != null">
+	    		  	AND R_MG_CODE = #{mgCode}
+	    		</if>
+	    		<if test="sgCode != null">
+	    		  	AND R_SG_CODE = #{sgCode}
+	    		</if> 
+</select>
+
+
+	<insert id="insertRUserInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.RUserInfo">
+			<if test="aUser != null">
+				INSERT INTO RS_AUSER_INFO(
+				</if>
+				<if test="aUser == null">
+				INSERT INTO RS_RUSER_INFO(
+				</if>
+				<trim suffixOverrides=",">
+					<if test="userId != null">R_USER_ID,</if>
+					<if test="ctiId != null">R_CTI_ID,</if>
+					<if test="userName != null">R_USER_NAME,</if>
+					<if test="bgCode != null">R_BG_CODE,</if>
+					<if test="mgCode != null">R_MG_CODE,</if>
+					<if test="sgCode != null">R_SG_CODE,</if>
+					<if test="extNo != null">R_EXT_NO,</if>
+					<if test="empId != null">R_EMP_ID,</if>
+					<if test="userLevel != null">R_USER_LEVEL,</if>
+					<if test="password != null">R_PASSWORD,</if>
+					<if test="clientKind != null">R_CLIENT_KIND,</if>
+					<if test="userSex != null">R_USER_SEX,</if>
+					<if test="lockCount != null">R_LOCK_COUNT,</if>
+					<if test="shortRange != null">R_SHORT_RANGE,</if>
+					<if test="middleRange != null">R_MIDDLE_RANGE,</if>
+					<if test="longRange != null">R_LONG_RANGE,</if>
+					<if test="userEmail != null">R_USER_EMAIL,</if>
+					<if test="userPhone != null">R_USER_PHONE,</if>
+					<if test="skinCode != null">R_SKIN_CODE,</if>
+                    <if test="clientIp != null">R_CLIENT_IP,</if>
+                    <if test="rUseYn != null">R_USE_YN,</if>
+					R_TRY_COUNT,
+					R_LOCK_YN,
+					R_REGI_DATE,
+					R_PWEDIT_DATE
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="userId != null">#{userId},</if>
+					<if test="ctiId != null">#{ctiId},</if>
+					<if test="userName != null">#{userName},</if>
+					<if test="bgCode != null">#{bgCode},</if>
+					<if test="mgCode != null">#{mgCode},</if>
+					<if test="sgCode != null">#{sgCode},</if>
+					<if test="extNo != null">#{extNo},</if>
+					<if test="empId != null">#{empId},</if>
+					<if test="userLevel != null">#{userLevel},</if>
+					<if test="password != null">#{password},</if>
+					<if test="clientKind != null">#{clientKind},</if>
+					<if test="userSex != null">#{userSex},</if>
+					<if test="lockCount != null">#{lockCount},</if>
+					<if test="shortRange != null">#{shortRange},</if>
+					<if test="middleRange != null">#{middleRange},</if>
+					<if test="longRange != null">#{longRange},</if>
+					<if test="userEmail != null">#{userEmail},</if>
+					<if test="userPhone != null">#{userPhone},</if>
+					<if test="skinCode != null">#{skinCode},</if>
+                    <if test="clientIp != null">#{clientIp},</if>
+                    <if test="rUseYn != null">#{rUseYn},</if>
+					0,
+					'N',
+					to_char(now(), 'yyyyMMddHH24miss'),
+					'00000000'
+				</trim>
+			)		
+
+	</insert>
+	<insert id="insertRUserInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.RUserInfo">
+
+				<if test="aUser != null">
+				INSERT INTO RS_AUSER_INFO(
+				</if>
+				<if test="aUser == null">
+				INSERT INTO RS_RUSER_INFO(
+				</if>
+				<trim suffixOverrides=",">
+					<if test="userId != null">R_USER_ID,</if>
+					<if test="ctiId != null">R_CTI_ID,</if>
+					<if test="userName != null">R_USER_NAME,</if>
+					<if test="bgCode != null">R_BG_CODE,</if>
+					<if test="mgCode != null">R_MG_CODE,</if>
+					<if test="sgCode != null">R_SG_CODE,</if>
+					<if test="extNo != null">R_EXT_NO,</if>
+					<if test="empId != null">R_EMP_ID,</if>
+					<if test="userLevel != null">R_USER_LEVEL,</if>
+					<if test="password != null">R_PASSWORD,</if>
+					<if test="clientKind != null">R_CLIENT_KIND,</if>
+					<if test="userSex != null">R_USER_SEX,</if>
+					<if test="lockCount != null">R_LOCK_COUNT,</if>
+					<if test="shortRange != null">R_SHORT_RANGE,</if>
+					<if test="middleRange != null">R_MIDDLE_RANGE,</if>
+					<if test="longRange != null">R_LONG_RANGE,</if>
+					<if test="userEmail != null">R_USER_EMAIL,</if>
+					<if test="userPhone != null">R_USER_PHONE,</if>
+					<if test="skinCode != null">R_SKIN_CODE,</if>
+                    <if test="clientIp != null">R_CLIENT_IP,</if>
+                     <if test="rUseYn != null">R_USE_YN,</if>
+					R_TRY_COUNT,
+					R_LOCK_YN,
+					R_REGI_DATE,
+					R_PWEDIT_DATE
+				</trim>
+				)
+
+				OUTPUT
+				 	CONVERT(varchar(8),GETDATE(),112)
+				,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+			 	,	'C'
+				<if test="aUser != null">
+				,	'rs_auser_info'
+				</if>
+				<if test="aUser == null">
+				,	'rs_ruser_info'
+				</if>
+				,	INSERTED.R_USER_ID
+				,	INSERTED.R_CTI_ID
+				,	INSERTED.R_USER_NAME
+				,	INSERTED.R_BG_CODE
+				,	INSERTED.R_MG_CODE
+				,	INSERTED.R_SG_CODE
+				,	INSERTED.R_EXT_NO
+				,	INSERTED.R_EMP_ID
+				,	INSERTED.R_REGI_DATE
+				,	INSERTED.R_USER_LEVEL
+				,	INSERTED.R_PASSWORD
+				,	INSERTED.R_CLIENT_KIND
+				,	INSERTED.R_USER_SEX
+				,	INSERTED.R_PWEDIT_DATE
+				,	INSERTED.R_SHORT_RANGE
+				,	INSERTED.R_MIDDLE_RANGE
+				,	INSERTED.R_LONG_RANGE
+				,	INSERTED.R_USER_EMAIL
+				,	INSERTED.R_USER_PHONE
+				,	INSERTED.R_SKIN_CODE
+				,	INSERTED.R_TRY_COUNT
+				,	INSERTED.R_LOCK_YN
+				,	INSERTED.R_LAST_LOGIN_DATE
+				,	INSERTED.R_USE_YN
+
+				INTO RS_SYNC_DATA
+				(
+						R_SYNC_DATE
+					  , R_SYNC_TIME
+					  , R_SYNC_TYPE
+					  , R_SYNC_TABLENAME
+					  , R_SYNC_CULUMN1
+					  , R_SYNC_CULUMN2
+					  , R_SYNC_CULUMN3
+					  , R_SYNC_CULUMN4
+					  , R_SYNC_CULUMN5
+					  , R_SYNC_CULUMN6
+					  , R_SYNC_CULUMN7
+					  , R_SYNC_CULUMN8
+					  , R_SYNC_CULUMN9
+					  , R_SYNC_CULUMN10
+					  , R_SYNC_CULUMN11
+					  , R_SYNC_CULUMN12
+					  , R_SYNC_CULUMN13
+					  , R_SYNC_CULUMN14
+					  , R_SYNC_CULUMN15
+					  , R_SYNC_CULUMN16
+					  , R_SYNC_CULUMN17
+					  , R_SYNC_CULUMN18
+					  , R_SYNC_CULUMN19
+					  , R_SYNC_CULUMN20
+					  , R_SYNC_CULUMN21
+					  , R_SYNC_CULUMN22
+					  , R_SYNC_CULUMN23
+					  , R_SYNC_CULUMN24
+
+
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="userId != null">#{userId},</if>
+					<if test="ctiId != null">#{ctiId},</if>
+					<if test="userName != null">#{userName},</if>
+					<if test="bgCode != null">#{bgCode},</if>
+					<if test="mgCode != null">#{mgCode},</if>
+					<if test="sgCode != null">#{sgCode},</if>
+					<if test="extNo != null">#{extNo},</if>
+					<if test="empId != null">#{empId},</if>
+					<if test="userLevel != null">#{userLevel},</if>
+					<if test="password != null">#{password},</if>
+					<if test="clientKind != null">#{clientKind},</if>
+					<if test="userSex != null">#{userSex},</if>
+					<if test="lockCount != null">#{lockCount},</if>
+					<if test="shortRange != null">#{shortRange},</if>
+					<if test="middleRange != null">#{middleRange},</if>
+					<if test="longRange != null">#{longRange},</if>
+					<if test="userEmail != null">#{userEmail},</if>
+					<if test="userPhone != null">#{userPhone},</if>
+					<if test="skinCode != null">#{skinCode},</if>
+                    <if test="clientIp != null">#{clientIp},</if>
+                    <if test="rUseYn != null">#{rUseYn},</if>
+					0,
+					'N',
+					CONVERT(VARCHAR(8), getdate(), 112),
+					<!-- replace(replace(replace(CONVERT(varchar(30),getdate(), 120),':',''),'-',''),' ','') -->
+					'00000000'
+				</trim>
+			)
+
+	</insert>
+	<insert id="insertRUserInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		<!-- DECLARE
+	 		 	row_id ROWID;
+		BEGIN
+ 		 
+				<if test="aUser != null">
+				INSERT INTO RS_AUSER_INFO(
+				</if>
+				<if test="aUser == null">
+				INSERT INTO RS_RUSER_INFO(
+				</if>
+				<trim suffixOverrides=",">
+					<if test="userId != null">R_USER_ID,</if>
+					<if test="ctiId != null">R_CTI_ID,</if>
+					<if test="userName != null">R_USER_NAME,</if>
+					<if test="bgCode != null">R_BG_CODE,</if>
+					<if test="mgCode != null">R_MG_CODE,</if>
+					<if test="sgCode != null">R_SG_CODE,</if>
+					<if test="extNo != null">R_EXT_NO,</if>
+					<if test="empId != null">R_EMP_ID,</if>
+					<if test="userLevel != null">R_USER_LEVEL,</if>
+					<if test="password != null">R_PASSWORD,</if>
+					<if test="clientKind != null">R_CLIENT_KIND,</if>
+					<if test="userSex != null">R_USER_SEX,</if>
+					<if test="lockCount != null">R_LOCK_COUNT,</if>
+					<if test="shortRange != null">R_SHORT_RANGE,</if>
+					<if test="middleRange != null">R_MIDDLE_RANGE,</if>
+					<if test="longRange != null">R_LONG_RANGE,</if>
+					<if test="userEmail != null">R_USER_EMAIL,</if>
+					<if test="userPhone != null">R_USER_PHONE,</if>
+					<if test="skinCode != null">R_SKIN_CODE,</if>
+                    <if test="clientIp != null">R_CLIENT_IP,</if>
+					R_TRY_COUNT,
+					R_LOCK_YN,
+					R_REGI_DATE,
+					R_PWEDIT_DATE
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="userId != null">#{userId},</if>
+					<if test="ctiId != null">#{ctiId},</if>
+					<if test="userName != null">#{userName},</if>
+					<if test="bgCode != null">#{bgCode},</if>
+					<if test="mgCode != null">#{mgCode},</if>
+					<if test="sgCode != null">#{sgCode},</if>
+					<if test="extNo != null">#{extNo},</if>
+					<if test="empId != null">#{empId},</if>
+					<if test="userLevel != null">#{userLevel},</if>
+					<if test="password != null">#{password},</if>
+					<if test="clientKind != null">#{clientKind},</if>
+					<if test="userSex != null">#{userSex},</if>
+					<if test="lockCount != null">#{lockCount},</if>
+					<if test="shortRange != null">#{shortRange},</if>
+					<if test="middleRange != null">#{middleRange},</if>
+					<if test="longRange != null">#{longRange},</if>
+					<if test="userEmail != null">#{userEmail},</if>
+					<if test="userPhone != null">#{userPhone},</if>
+					<if test="skinCode != null">#{skinCode},</if>
+                    <if test="clientIp != null">#{clientIp},</if>
+					0,
+					'N',
+					to_char(CURRENT_TIMESTAMP, 'yyyyMMddHH24miss'),
+					'00000000'
+				</trim>
+			)
+			RETURNING ROWID INTO row_id;
+		
+
+		INSERT INTO RS_SYNC_DATA
+		(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+		)
+			SELECT
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'C'
+				<if test="aUser != null">
+				,	'rs_auser_info'
+				</if>
+				<if test="aUser == null">
+				,	'rs_ruser_info'
+				</if>
+				,	UI.R_USER_ID
+				,	UI.R_CTI_ID
+				,	UI.R_USER_NAME
+				,	UI.R_BG_CODE
+				,	UI.R_MG_CODE
+				,	UI.R_SG_CODE
+				,	UI.R_EXT_NO
+				,	UI.R_EMP_ID
+				,	UI.R_REGI_DATE
+				,	UI.R_USER_LEVEL
+				,	UI.R_PASSWORD
+				,	UI.R_CLIENT_KIND
+				,	UI.R_USER_SEX
+				,	UI.R_PWEDIT_DATE
+				,	UI.R_SHORT_RANGE
+				,	UI.R_MIDDLE_RANGE
+				,	UI.R_LONG_RANGE
+				,	UI.R_USER_EMAIL
+				,	UI.R_USER_PHONE
+				,	UI.R_SKIN_CODE
+				,	UI.R_TRY_COUNT
+				,	UI.R_LOCK_YN
+				,	UI.R_LAST_LOGIN_DATE
+				,	UI.R_USE_YN
+				<if test="aUser != null">
+				 FROM DUAL, RS_AUSER_INFO AI
+					FROM DUAL, RS_AUSER_INFO UI
+				</if>
+				<if test="aUser == null">
+				 FROM DUAL, RS_AUSER_INFO AI
+					FROM DUAL, RS_RUSER_INFO UI
+				</if>
+		        WHERE UI.ROWID = row_id;
+		        
+		     END; -->
+		     <if test="aUser != null">
+				INSERT INTO RS_AUSER_INFO(
+				</if>
+				<if test="aUser == null">
+				INSERT INTO RS_RUSER_INFO(
+				</if>
+				<trim suffixOverrides=",">
+					<if test="userId != null">R_USER_ID,</if>
+					<if test="ctiId != null">R_CTI_ID,</if>
+					<if test="userName != null">R_USER_NAME,</if>
+					<if test="bgCode != null">R_BG_CODE,</if>
+					<if test="mgCode != null">R_MG_CODE,</if>
+					<if test="sgCode != null">R_SG_CODE,</if>
+					<if test="extNo != null">R_EXT_NO,</if>
+					<if test="empId != null">R_EMP_ID,</if>
+					<if test="userLevel != null">R_USER_LEVEL,</if>
+					<if test="password != null">R_PASSWORD,</if>
+					<if test="clientKind != null">R_CLIENT_KIND,</if>
+					<if test="userSex != null">R_USER_SEX,</if>
+					<if test="lockCount != null">R_LOCK_COUNT,</if>
+					<if test="shortRange != null">R_SHORT_RANGE,</if>
+					<if test="middleRange != null">R_MIDDLE_RANGE,</if>
+					<if test="longRange != null">R_LONG_RANGE,</if>
+					<if test="userEmail != null">R_USER_EMAIL,</if>
+					<if test="userPhone != null">R_USER_PHONE,</if>
+					<if test="skinCode != null">R_SKIN_CODE,</if>
+                    <if test="clientIp != null">R_CLIENT_IP,</if>
+					R_TRY_COUNT,
+					R_LOCK_YN,
+					R_REGI_DATE,
+					R_PWEDIT_DATE
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="userId != null">#{userId},</if>
+					<if test="ctiId != null">#{ctiId},</if>
+					<if test="userName != null">#{userName},</if>
+					<if test="bgCode != null">#{bgCode},</if>
+					<if test="mgCode != null">#{mgCode},</if>
+					<if test="sgCode != null">#{sgCode},</if>
+					<if test="extNo != null">#{extNo},</if>
+					<if test="empId != null">#{empId},</if>
+					<if test="userLevel != null">#{userLevel},</if>
+					<if test="password != null">#{password},</if>
+					<if test="clientKind != null">#{clientKind},</if>
+					<if test="userSex != null">#{userSex},</if>
+					<if test="lockCount != null">#{lockCount},</if>
+					<if test="shortRange != null">#{shortRange},</if>
+					<if test="middleRange != null">#{middleRange},</if>
+					<if test="longRange != null">#{longRange},</if>
+					<if test="userEmail != null">#{userEmail},</if>
+					<if test="userPhone != null">#{userPhone},</if>
+					<if test="skinCode != null">#{skinCode},</if>
+                    <if test="clientIp != null">#{clientIp},</if>
+					0,
+					'N',
+					to_char(CURRENT_DATE, 'yyyyMMddHH24miss'),
+					'00000000'
+				</trim>
+			)
+
+	</insert>
+	<update id="updateRUserInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.RUserInfo">
+				<if test="aUser != null">
+				UPDATE RS_AUSER_INFO
+				</if>
+				<if test="aUser == null">
+				UPDATE RS_RUSER_INFO
+				</if>
+			<set>
+			<choose>
+				<when test="userName != null">
+					<if test="ctiId != null">
+					R_CTI_ID = #{ctiId},
+					</if>
+					<if test="userName != null">
+					R_USER_NAME = #{userName},
+					</if>
+					<if test="bgCode != null">
+					R_BG_CODE = #{bgCode},
+					</if>
+					<if test="mgCode != null">
+					R_MG_CODE = #{mgCode},
+					</if>
+					<if test="sgCode != null">
+					R_SG_CODE = #{sgCode},
+					</if>
+					<if test='extNo != null'>
+					R_EXT_NO = #{extNo},
+					</if>
+					<if test='empId != null'>
+					R_EMP_ID = #{empId},
+					</if>
+					<if test="regiDate != null">
+					R_REGI_DATE = #{regiDate},
+					</if>
+					<if test="userLevel != null">
+					R_USER_LEVEL = #{userLevel},
+					</if>
+					<if test="password != null">
+					R_PASSWORD = #{password},
+					R_PWEDIT_DATE = to_char(now(),'yyyyMMdd'),
+					</if>
+					<if test="clientKind != null">
+					R_CLIENT_KIND = #{clientKind},
+					</if>
+					<if test="userSex != null">
+					R_USER_SEX = #{userSex},
+					</if>
+					<if test="lockCount != null">
+					R_LOCK_COUNT = #{lockCount},
+					</if>
+					<if test="shortRange != null">
+					R_SHORT_RANGE = #{shortRange},
+					</if>
+					<if test="middleRange != null">
+					R_MIDDLE_RANGE = #{middleRange},
+					</if>
+					<if test="longRange != null">
+					R_LONG_RANGE = #{longRange},
+					</if>
+					<if test="userEmail != null">
+					R_USER_EMAIL = #{userEmail},
+					</if>
+					<if test="userPhone != null">
+					R_USER_PHONE = #{userPhone},
+					</if>
+					<if test="skinCode != null">
+					R_SKIN_CODE = #{skinCode},
+					</if>
+					<if test="skinCode == null">
+					R_SKIN_CODE = null,
+					</if>
+	                <if test="clientIp != null">
+					R_CLIENT_IP = #{clientIp},
+					</if>
+					<if test="rUseYn !=null">
+					R_USE_YN	= #{rUseYn}
+					</if>
+				</when>
+				<when test="password != null">
+					R_PASSWORD = #{password},
+					R_PWEDIT_DATE = to_char(now(),'yyyyMMdd')
+				</when>
+				<otherwise>
+					R_PWEDIT_DATE = to_char(now(),'yyyyMMdd')
+				</otherwise>
+			</choose>
+			</set>
+			WHERE
+				R_USER_ID = #{userId}		
+	</update>
+	<update id="updateRUserInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.RUserInfo">
+
+				<if test="aUser != null">
+				UPDATE RS_AUSER_INFO
+				</if>
+				<if test="aUser == null">
+				UPDATE RS_RUSER_INFO
+				</if>
+			<set>
+				<if test="ctiId != null">
+				R_CTI_ID = #{ctiId},
+				</if>
+				<if test="userName != null">
+				R_USER_NAME = #{userName},
+				</if>
+				<if test="bgCode != null">
+				R_BG_CODE = #{bgCode},
+				</if>
+				<if test="mgCode != null">
+				R_MG_CODE = #{mgCode},
+				</if>
+				<if test="sgCode != null">
+				R_SG_CODE = #{sgCode},
+				</if>
+				<if test='extNo != null'>
+				R_EXT_NO = #{extNo},
+				</if>
+				<if test='empId != null'>
+				R_EMP_ID = #{empId},
+				</if>
+				<if test="regiDate != null">
+				R_REGI_DATE = #{regiDate},
+				</if>
+				<if test="userLevel != null">
+				R_USER_LEVEL = #{userLevel},
+				</if>
+				<if test="password != null">
+				R_TRY_COUNT = 0,
+				R_PASSWORD = #{password},
+				</if>
+				<if test="clientKind != null">
+				R_CLIENT_KIND = #{clientKind},
+				</if>
+				<if test="userSex != null">
+				R_USER_SEX = #{userSex},
+				</if>
+				<if test="lockCount != null">
+				R_LOCK_COUNT = #{lockCount},
+				</if>
+				<if test="shortRange != null">
+				R_SHORT_RANGE = #{shortRange},
+				</if>
+				<if test="middleRange != null">
+				R_MIDDLE_RANGE = #{middleRange},
+				</if>
+				<if test="longRange != null">
+				R_LONG_RANGE = #{longRange},
+				</if>
+				<if test="userEmail != null">
+				R_USER_EMAIL = #{userEmail},
+				</if>
+				<if test="userPhone != null">
+				R_USER_PHONE = #{userPhone},
+				</if>
+				<if test="skinCode != null">
+				R_SKIN_CODE = #{skinCode},
+				</if>
+                <if test="clientIp != null">
+				R_CLIENT_IP = #{clientIp},
+				</if>
+				<!-- R_PWEDIT_DATE = replace(CONVERT(varchar(10),getdate(), 121),'-',''), -->
+			</set>
+
+			OUTPUT
+			CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+			<if test="aUser != null">
+			,	'rs_auser_info'
+			</if>
+			<if test="aUser == null">
+			,	'rs_ruser_info'
+			</if>
+			,	INSERTED.R_USER_ID
+			,	INSERTED.R_CTI_ID
+			,	INSERTED.R_USER_NAME
+			,	INSERTED.R_BG_CODE
+			,	INSERTED.R_MG_CODE
+			,	INSERTED.R_SG_CODE
+			,	INSERTED.R_EXT_NO
+			,	INSERTED.R_EMP_ID
+			,	INSERTED.R_REGI_DATE
+			,	INSERTED.R_USER_LEVEL
+			,	INSERTED.R_PASSWORD
+			,	INSERTED.R_CLIENT_KIND
+			,	INSERTED.R_USER_SEX
+			,	INSERTED.R_PWEDIT_DATE
+			,	INSERTED.R_SHORT_RANGE
+			,	INSERTED.R_MIDDLE_RANGE
+			,	INSERTED.R_LONG_RANGE
+			,	INSERTED.R_USER_EMAIL
+			,	INSERTED.R_USER_PHONE
+			,	INSERTED.R_SKIN_CODE
+			,	INSERTED.R_TRY_COUNT
+			,	INSERTED.R_LOCK_YN
+			,	INSERTED.R_LAST_LOGIN_DATE
+			,	INSERTED.R_USE_YN
+
+			INTO RS_SYNC_DATA
+			(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				  , R_SYNC_CULUMN6
+				  , R_SYNC_CULUMN7
+				  , R_SYNC_CULUMN8
+				  , R_SYNC_CULUMN9
+				  , R_SYNC_CULUMN10
+				  , R_SYNC_CULUMN11
+				  , R_SYNC_CULUMN12
+				  , R_SYNC_CULUMN13
+				  , R_SYNC_CULUMN14
+				  , R_SYNC_CULUMN15
+				  , R_SYNC_CULUMN16
+				  , R_SYNC_CULUMN17
+				  , R_SYNC_CULUMN18
+				  , R_SYNC_CULUMN19
+				  , R_SYNC_CULUMN20
+				  , R_SYNC_CULUMN21
+				  , R_SYNC_CULUMN22
+				  , R_SYNC_CULUMN23
+				  , R_SYNC_CULUMN24
+			)
+
+			WHERE
+				R_USER_ID = #{userId}
+
+
+	</update>
+	<update id="updateRUserInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.RUserInfo">
+	
+			<!-- DECLARE
+	 		 	row_id ROWID;
+			BEGIN
+			
+				<if test="aUser != null">
+				UPDATE RS_AUSER_INFO
+				</if>
+				<if test="aUser == null">
+				UPDATE RS_RUSER_INFO
+				</if>
+			<set>
+			<choose>
+				<when test="userName != null">
+					<if test="ctiId != null">
+					R_CTI_ID = #{ctiId},
+					</if>
+					<if test="userName != null">
+					R_USER_NAME = #{userName},
+					</if>
+					<if test="bgCode != null">
+					R_BG_CODE = #{bgCode},
+					</if>
+					<if test="mgCode != null">
+					R_MG_CODE = #{mgCode},
+					</if>
+					<if test="sgCode != null">
+					R_SG_CODE = #{sgCode},
+					</if>
+					<if test='extNo != null'>
+					R_EXT_NO = #{extNo},
+					</if>
+					<if test='empId != null'>
+					R_EMP_ID = #{empId},
+					</if>
+					<if test="regiDate != null">
+					R_REGI_DATE = #{regiDate},
+					</if>
+					<if test="userLevel != null">
+					R_USER_LEVEL = #{userLevel},
+					</if>
+					<if test="password != null">
+					R_PASSWORD = #{password},
+					R_PWEDIT_DATE = to_char(CURRENT_TIMESTAMP,'yyyyMMdd'),
+					</if>
+					<if test="clientKind != null">
+					R_CLIENT_KIND = #{clientKind},
+					</if>
+					<if test="userSex != null">
+					R_USER_SEX = #{userSex},
+					</if>
+					<if test="lockCount != null">
+					R_LOCK_COUNT = #{lockCount},
+					</if>
+					<if test="shortRange != null">
+					R_SHORT_RANGE = #{shortRange},
+					</if>
+					<if test="middleRange != null">
+					R_MIDDLE_RANGE = #{middleRange},
+					</if>
+					<if test="longRange != null">
+					R_LONG_RANGE = #{longRange},
+					</if>
+					<if test="userEmail != null">
+					R_USER_EMAIL = #{userEmail},
+					</if>
+					<if test='userPhone != null'>
+					R_USER_PHONE = #{userPhone},
+					</if>
+					<if test="skinCode != null">
+					R_SKIN_CODE = #{skinCode},
+					</if>
+	                <if test="clientIp != null">
+					R_CLIENT_IP = #{clientIp}
+					</if>
+				</when>
+				<when test="password != null">
+					R_PASSWORD = #{password},
+					R_PWEDIT_DATE = to_char(CURRENT_TIMESTAMP,'yyyyMMdd')
+				</when>
+				<otherwise>
+					R_PWEDIT_DATE = to_char(CURRENT_TIMESTAMP,'yyyyMMdd')
+				</otherwise>
+			</choose>
+			</set>
+			WHERE
+				R_USER_ID = #{userId}
+
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				  , R_SYNC_CULUMN6
+				  , R_SYNC_CULUMN7
+				  , R_SYNC_CULUMN8
+				  , R_SYNC_CULUMN9
+				  , R_SYNC_CULUMN10
+				  , R_SYNC_CULUMN11
+				  , R_SYNC_CULUMN12
+				  , R_SYNC_CULUMN13
+				  , R_SYNC_CULUMN14
+				  , R_SYNC_CULUMN15
+				  , R_SYNC_CULUMN16
+				  , R_SYNC_CULUMN17
+				  , R_SYNC_CULUMN18
+				  , R_SYNC_CULUMN19
+				  , R_SYNC_CULUMN20
+				  , R_SYNC_CULUMN21
+				  , R_SYNC_CULUMN22
+				  , R_SYNC_CULUMN23
+				  , R_SYNC_CULUMN24
+			)
+			SELECT
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'U'
+				<if test="aUser != null">
+				,	'rs_auser_info'
+				</if>
+				<if test="aUser == null">
+				,	'rs_ruser_info'
+				</if>
+				,	AI.R_USER_ID
+				,	AI.R_CTI_ID
+				,	AI.R_USER_NAME
+				,	AI.R_BG_CODE
+				,	AI.R_MG_CODE
+				,	AI.R_SG_CODE
+				,	AI.R_EXT_NO
+				,	AI.R_EMP_ID
+				,	AI.R_REGI_DATE
+				,	AI.R_USER_LEVEL
+				,	AI.R_PASSWORD
+				,	AI.R_CLIENT_KIND
+				,	AI.R_USER_SEX
+				,	AI.R_PWEDIT_DATE
+				,	AI.R_SHORT_RANGE
+				,	AI.R_MIDDLE_RANGE
+				,	AI.R_LONG_RANGE
+				,	AI.R_USER_EMAIL
+				,	AI.R_USER_PHONE
+				,	AI.R_SKIN_CODE
+				,	AI.R_TRY_COUNT
+				,	AI.R_LOCK_YN
+				,	AI.R_LAST_LOGIN_DATE
+				,	AI.R_USE_YN
+			 FROM DUAL, RS_AUSER_INFO AI
+	         WHERE AI.ROWID = row_id;
+	
+			END; -->
+			<if test="aUser != null">
+				UPDATE RS_AUSER_INFO
+				</if>
+				<if test="aUser == null">
+				UPDATE RS_RUSER_INFO
+				</if>
+			<set>
+			<choose>
+				<when test="userName != null">
+					<if test="ctiId != null">
+					R_CTI_ID = #{ctiId},
+					</if>
+					<if test="userName != null">
+					R_USER_NAME = #{userName},
+					</if>
+					<if test="bgCode != null">
+					R_BG_CODE = #{bgCode},
+					</if>
+					<if test="mgCode != null">
+					R_MG_CODE = #{mgCode},
+					</if>
+					<if test="sgCode != null">
+					R_SG_CODE = #{sgCode},
+					</if>
+					<if test='extNo != null'>
+					R_EXT_NO = #{extNo},
+					</if>
+					<if test='empId != null'>
+					R_EMP_ID = #{empId},
+					</if>
+					<if test="regiDate != null">
+					R_REGI_DATE = #{regiDate},
+					</if>
+					<if test="userLevel != null">
+					R_USER_LEVEL = #{userLevel},
+					</if>
+					<if test="password != null">
+					R_PASSWORD = #{password},
+					R_PWEDIT_DATE = to_char(CURRENT_DATE,'yyyyMMdd'),
+					</if>
+					<if test="clientKind != null">
+					R_CLIENT_KIND = #{clientKind},
+					</if>
+					<if test="userSex != null">
+					R_USER_SEX = #{userSex},
+					</if>
+					<if test="lockCount != null">
+					R_LOCK_COUNT = #{lockCount},
+					</if>
+					<if test="shortRange != null">
+					R_SHORT_RANGE = #{shortRange},
+					</if>
+					<if test="middleRange != null">
+					R_MIDDLE_RANGE = #{middleRange},
+					</if>
+					<if test="longRange != null">
+					R_LONG_RANGE = #{longRange},
+					</if>
+					<if test="userEmail != null">
+					R_USER_EMAIL = #{userEmail},
+					</if>
+					<if test='userPhone != null'>
+					R_USER_PHONE = #{userPhone},
+					</if>
+					<if test="skinCode != null">
+					R_SKIN_CODE = #{skinCode},
+					</if>
+	                <if test="clientIp != null">
+					R_CLIENT_IP = #{clientIp}
+					</if>
+				</when>
+				<when test="password != null">
+					R_PASSWORD = #{password},
+					R_PWEDIT_DATE = to_char(CURRENT_DATE,'yyyyMMdd')
+				</when>
+				<otherwise>
+					R_PWEDIT_DATE = to_char(CURRENT_DATE,'yyyyMMdd')
+				</otherwise>
+			</choose>
+			</set>
+			WHERE
+				R_USER_ID = #{userId}
+	</update>
+	<update id="unlockUser" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="postgres">
+		UPDATE RS_RUSER_INFO
+		<set>
+		R_LOCK_YN = 'N'
+		,	R_LAST_LOGIN_DATE = to_char(now(),'yyyyMMdd')
+		,	R_TRY_COUNT = 0
+		,	R_PASSWORD = #{password}
+		<if test="skinCode != null">
+		,   R_PWEDIT_DATE = '00000000'
+		</if>
+		</set>
+		<where>
+		R_USER_ID = #{userId};
+		</where>
+		UPDATE RS_AUSER_INFO
+		<set>
+		R_LOCK_YN = 'N'
+		,	R_LAST_LOGIN_DATE = to_char(now(),'yyyyMMdd')
+		,	R_TRY_COUNT = 0
+		,	R_PASSWORD = #{password}
+		<if test="skinCode != null">
+		,   R_PWEDIT_DATE = '00000000'
+		</if>
+		</set>
+		<where>
+		R_USER_ID = #{userId};
+		</where>
+	</update>
+	
+	
+	<update id="unlockUser" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="sqlserver">
+		UPDATE RS_RUSER_INFO
+		<set>
+		R_LOCK_YN = 'N'
+		,	R_LAST_LOGIN_DATE = replace(CONVERT(varchar(10),getdate(), 121),'-','')
+		,	R_TRY_COUNT = 0
+		,	R_PASSWORD = #{password}
+		,   R_PWEDIT_DATE = '00000000'
+		</set>
+		<where>
+		R_USER_ID = #{userId};
+		</where>
+		UPDATE RS_AUSER_INFO
+		<set>
+		R_LOCK_YN = 'N'
+		,	R_LAST_LOGIN_DATE = replace(CONVERT(varchar(10),getdate(), 121),'-','')
+		,	R_TRY_COUNT = 0
+		,	R_PASSWORD = #{password}
+		,   R_PWEDIT_DATE = '00000000'
+		</set>
+		<where>
+		R_USER_ID = #{userId};
+		</where>
+	</update>
+	
+	<update id="unlockUser" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="oracle">
+		UPDATE RS_RUSER_INFO
+		SET
+		R_LOCK_YN = 'N'
+		, R_LAST_LOGIN_DATE = to_char(CURRENT_TIMESTAMP,'yyyymmdd')
+		, R_TRY_COUNT = 0
+		, R_PASSWORD = #{password}
+		<if test="skinCode != null">
+		, R_PWEDIT_DATE = '00000000'
+		</if>
+		WHERE R_USER_ID = #{userId}
+
+	</update>
+	
+	<update id="userLevelEmpty" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		UPDATE RS_RUSER_INFO
+		<set>
+		R_USER_LEVEL = ''
+		</set>
+		<where>
+		R_USER_LEVEL = #{userLevel};
+		</where>
+		UPDATE RS_AUSER_INFO
+		<set>
+		R_USER_LEVEL = ''
+		</set>
+		<where>
+		R_USER_LEVEL = #{userLevel}
+		</where>
+	</update>
+	
+	<update id="userLevelEmpty" databaseId="oracle" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		DECLARE
+		BEGIN
+		
+		UPDATE RS_RUSER_INFO
+		<set>
+		R_USER_LEVEL = ''
+		</set>
+		<where>
+		R_USER_LEVEL = #{userLevel}
+		</where>
+		;
+		UPDATE RS_AUSER_INFO
+		<set>
+		R_USER_LEVEL = ''
+		</set>
+		<where>
+		R_USER_LEVEL = #{userLevel}
+		</where>
+		;
+		END;
+	</update>
+
+	<delete id="deleteRUserInfo" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		<if test="aUser != null">
+			DELETE FROM RS_AUSER_INFO
+		</if>
+		<if test="aUser == null">
+			DELETE FROM RS_RUSER_INFO
+		</if>
+		<where>
+			<if test="userId != null">
+			R_USER_ID = #{userId}
+			</if>
+		</where>
+	</delete>
+	
+	<update id="multiGroupModify" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		<if test="aUser != null">
+			UPDATE RS_AUSER_INFO
+		</if>
+		<if test="aUser == null">
+			UPDATE RS_RUSER_INFO
+		</if>
+		SET r_bg_code= #{bgCode}, r_mg_code= #{mgCode}, r_sg_code= #{sgCode}
+		where R_USER_ID in (${userId})
+	</update>
+
+	<select id="selectMultiPartInfo" parameterType="com.furence.recsee.admin.model.MultiPartInfo" resultMap="MultiPartResultMap">
+	SELECT *
+	FROM RS_MULTI_PART
+	<where>
+		<trim suffixOverrides="AND">
+		R_TYPE = 'U' AND
+		<if test="rTarget != null">
+		R_TARGET = #{rTarget} AND
+		</if>
+		<if test="rBgCode != null">
+		R_BG_CODE = #{rBgCode}
+		</if>
+		<if test="rMgCode != null">
+		R_MG_CODE = #{rMgCode}
+		</if>
+		<if test="rSgCode != null">
+		R_SG_CODE = #{rSgCode}
+		</if>
+		</trim>
+	</where>
+	ORDER BY R_TARGET, R_IDX
+	</select>
+
+	<select id="countMultiPartInfo" parameterType="com.furence.recsee.admin.model.MultiPartInfo" resultMap="CountMultiPartResultMap">
+	SELECT
+		R_TARGET AS target,
+		COUNT(R_TARGET) AS count
+	FROM RS_MULTI_PART
+	<where>
+		<trim suffixOverrides="AND">
+		R_TYPE = 'U' AND
+		<if test="rTarget != null">
+		R_TARGET = #{rTarget} AND
+		</if>
+		<if test="rBgCode != null">
+		R_BG_CODE = #{rBgCode} AND
+		</if>
+		<if test="rMgCode != null">
+		R_MG_CODE = #{rMgCode} AND
+		</if>
+		<if test="rSgCode != null">
+		R_SG_CODE = #{rSgCode} AND
+		</if>
+		</trim>
+	</where>
+	GROUP BY R_TARGET
+	ORDER BY R_TARGET
+	</select>
+	
+	<insert id="insertMultiPartInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.MultiPartInfo">
+		INSERT INTO RS_MULTI_PART (
+			<trim suffixOverrides=",">
+			R_IDX,
+			R_TYPE,
+			R_TARGET,
+			<if test="rBgCode != null">
+			R_BG_CODE,
+			</if>
+			<if test="rMgCode != null">
+			R_MG_CODE,
+			</if>
+			<if test="rSgCode != null">
+			R_SG_CODE,
+			</if>
+			<if test="rExcept != null">
+			R_EXCEPT,
+			</if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+			R_IDX.nextval,
+			'U',
+			#{rTarget},
+			<if test="rBgCode != null">
+			#{rBgCode},
+			</if>
+			<if test="rMgCode != null">
+			#{rMgCode},
+			</if>
+			<if test="rSgCode != null">
+			#{rSgCode},
+			</if>
+			<if test="rExcept != null">
+			#{rExcept},
+			</if>
+			</trim>
+		)
+	</insert>
+	
+	<insert id="insertMultiPartInfo" parameterType="com.furence.recsee.admin.model.MultiPartInfo">
+	INSERT INTO RS_MULTI_PART (
+		<trim suffixOverrides=",">
+		R_TYPE,
+		R_TARGET,
+		<if test="rBgCode != null">
+		R_BG_CODE,
+		</if>
+		<if test="rMgCode != null">
+		R_MG_CODE,
+		</if>
+		<if test="rSgCode != null">
+		R_SG_CODE,
+		</if>
+		<if test="rExcept != null">
+		R_EXCEPT,
+		</if>
+		</trim>
+	) VALUES (
+		<trim suffixOverrides=",">
+		'U',
+		#{rTarget},
+		<if test="rBgCode != null">
+		#{rBgCode},
+		</if>
+		<if test="rMgCode != null">
+		#{rMgCode},
+		</if>
+		<if test="rSgCode != null">
+		#{rSgCode},
+		</if>
+		<if test="rExcept != null">
+		#{rExcept},
+		</if>
+		</trim>
+	)
+	</insert>
+
+	<delete id="deleteMultiPartInfo" parameterType="com.furence.recsee.admin.model.MultiPartInfo">
+		DELETE FROM RS_MULTI_PART
+		<where>
+			<trim suffixOverrides="AND">
+			R_TYPE = 'U' AND
+			<if test="rTarget != null">
+			R_TARGET = #{rTarget} AND
+			</if>
+			<if test="rBgCode != null">
+			R_BG_CODE = #{rBgCode} AND
+			</if>
+			<if test="rMgCode != null">
+			R_MG_CODE = #{rMgCode} AND
+			</if>
+			<if test="rSgCode != null">
+			R_SG_CODE = #{rSgCode} AND
+			</if>
+			</trim>
+		</where>
+	</delete>
+
+	<select id="checkId" parameterType="com.furence.recsee.admin.model.RUserInfo" resultType="Integer">
+		SELECT COUNT(*)
+		FROM
+			<if test="aUser != null">
+				RS_AUSER_INFO
+			</if>
+			<if test="aUser == null">
+				RS_RUSER_INFO
+			</if>
+		where R_USER_ID = #{userId}
+	</select>
+	
+	<select id="checkIP" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="sqlserver" resultType="Integer">
+		SELECT COUNT(*)
+		FROM
+			<if test="aUser != null">
+				RS_AUSER_INFO
+			</if>
+			<if test="aUser == null">
+				RS_RUSER_INFO
+			</if>
+		where R_CLIENT_IP = #{clientIp}  AND R_CLIENT_IP NOT IN ( '0.0.0.0','',
+			(CASE WHEN (SELECT COUNT(*)	FROM RS_RUSER_INFO	WHERE R_USER_ID=#{userId})!=0 THEN (SELECT ISNULL(R_CLIENT_IP,'')	FROM RS_RUSER_INFO	WHERE R_USER_ID=#{userId}) 	
+			 ELSE '' 
+			 END )
+			 ) AND R_CLIENT_IP IS NOT NULL
+	</select>
+	
+	<select id="checkIP" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="postgres" resultType="Integer">
+		SELECT COUNT(*)
+		FROM
+			<if test="aUser != null">
+				RS_AUSER_INFO
+			</if>
+			<if test="aUser == null">
+				RS_RUSER_INFO
+			</if>
+		where R_CLIENT_IP = #{clientIp}  AND R_CLIENT_IP NOT IN ( '0.0.0.0','',
+			(CASE WHEN (SELECT COUNT(*)	FROM RS_RUSER_INFO	WHERE R_USER_ID=#{userId})!=0 THEN (SELECT COALESCE(R_CLIENT_IP,'')	FROM RS_RUSER_INFO	WHERE R_USER_ID=#{userId}) 	
+			 ELSE '' 
+			 END )
+			 ) AND R_CLIENT_IP IS NOT NULL
+	</select>
+	
+	<select id="checkIP" parameterType="com.furence.recsee.admin.model.RUserInfo" databaseId="oracle" resultType="Integer">
+		SELECT COUNT(*)
+		FROM
+			<if test="aUser != null">
+				RS_AUSER_INFO
+			</if>
+			<if test="aUser == null">
+				RS_RUSER_INFO
+			</if>
+		where R_CLIENT_IP = #{clientIp}  AND R_CLIENT_IP NOT IN ( '0.0.0.0','',
+			(CASE WHEN (SELECT COUNT(*)	FROM RS_RUSER_INFO	WHERE R_USER_ID=#{userId})!=0 THEN (SELECT COALESCE(R_CLIENT_IP,'')	FROM RS_RUSER_INFO	WHERE R_USER_ID=#{userId}) 	
+			 ELSE '' 
+			 END )
+			 ) AND R_CLIENT_IP IS NOT NULL
+	</select>
+	
+	
+	<select id="checkPhone" parameterType="String" resultType="Integer">
+		SELECT COUNT(*)
+		FROM RS_RUSER_INFO
+		WHERE R_USER_PHONE = #{phoneNumber}
+	</select>
+	
+	<select id="mobileUsage" resultType="Integer">
+		SELECT COUNT(*)
+		FROM
+		(SELECT R_USER_PHONE 
+		FROM 
+		RS_RUSER_INFO 
+		WHERE R_USER_PHONE!='' AND R_USER_PHONE IS NOT NULL 
+		GROUP BY R_USER_PHONE) CO
+	</select>
+	
+	<delete id="deleteMgRUserInfo" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		DELETE FROM
+			RS_RUSER_INFO
+		WHERE
+			R_BG_CODE = #{bgCode}
+		AND
+			R_MG_CODE = #{mgCode}
+	</delete>
+	
+	<insert id="upsertRUserInfo" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		WITH UPSERT AS (
+			UPDATE RS_RUSER_INFO
+				SET
+					R_USER_ID=#{userId},
+					R_CTI_ID=#{ctiId},
+					R_USER_NAME=#{userName},
+					R_EMP_ID=#{empId},
+					R_USER_SEX=#{userSex},
+					R_BG_CODE=#{bgCode},
+					R_MG_CODE=#{mgCode},
+					R_SG_CODE=#{sgCode}
+					
+				WHERE
+					R_USER_ID=#{userId}
+				RETURNING*	
+		)
+		INSERT INTO RS_RUSER_INFO
+			(
+				R_USER_ID,
+				R_CTI_ID,
+				R_USER_NAME,
+				R_EMP_ID,
+				R_USER_SEX,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE
+			)
+		SELECT
+			#{userId},
+			#{ctiId},
+			#{userName},
+			#{empId},
+			#{userSex},
+			#{bgCode},
+			#{mgCode},
+			#{sgCode}
+		WHERE NOT EXISTS(
+			SELECT
+				R_USER_ID,
+				R_CTI_ID,
+				R_USER_NAME,
+				R_EMP_ID,
+				R_USER_SEX,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE
+			FROM
+				UPSERT
+		)
+	</insert>
+	
+	<select id="mobileManageSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" resultMap="BaseResultMap" >
+		SELECT * FROM RS_RUSER_INFO
+	</select>
+	<select id="adminAUserManageRealTimeSelect" parameterType="com.furence.recsee.admin.model.RUserInfo" resultMap="BaseResultMap" >
+				
+			WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+					, sharePrint AS (SELECT * FROM RS_BLUEPRINT WHERE R_BLUEPRINT_NAME = #{rShareName})
+		SELECT 
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+			, CASE WHEN sharePrint.R_BLUEPRINT_SHARE_ID != '' THEN 'Y' ELSE 'N' END AS R_SHARE_YN
+		FROM
+			(SELECT *
+			
+			FROM RS_AUSER_INFO
+			<where>
+				<!--  R_USE_YN='Y'  -->
+				 <choose>
+					<when test="list !=null and list.size!=0">
+						and R_BG_CODE not in 
+							<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+								#{item}
+							</foreach>
+					</when>
+				</choose>
+				<if test="userId != null">
+					AND R_USER_ID = #{userId}
+				</if>
+				<if test="bgCode != null and bgCode!=''">
+					 AND R_BG_CODE = #{bgCode} 
+				</if>
+				<if test="userName != null and userName!=''">
+					AND R_USER_NAME = #{userName}
+				</if>
+				<if test="mgCode != null and mgCode!=''">
+					 AND R_MG_CODE = #{mgCode} 
+				</if>
+				<if test="sgCode != null and sgCode!=''">
+					 AND R_SG_CODE = #{sgCode} 
+				</if>	
+			</where>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		LEFT OUTER JOIN sharePrint ON A.R_USER_ID = sharePrint.R_BLUEPRINT_SHARE_ID
+		ORDER BY R_USER_ID || R_USER_NAME
+			<choose>
+					<when test="count != null and posStart != null">
+						LIMIT #{count} OFFSET #{posStart}
+					</when>
+					<otherwise>
+						LIMIT 100 OFFSET 0
+					</otherwise>
+			</choose>
+	</select>
+</mapper>

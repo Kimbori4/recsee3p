@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>評価(evaluation)画面用メッセージの定義</comment>
+
+	<!-- 평가 결과 조회(evaluation_result) 페이지 -->
+	<entry key="evaluation.result.label.whole">評価結果全体</entry>
+	<entry key="evaluation.result.label.closed">完了した評価</entry>
+	<entry key="evaluation.result.label.inProgress">評価中</entry>
+	<entry key="evaluation.result.placeholder.evalDateStart">評価日付</entry>
+	<entry key="evaluation.result.placeholder.evalDateEnd">終了の日付</entry>
+	<entry key="evaluation.result.placeholder.recDateStart">録取日付</entry>
+	<entry key="evaluation.result.placeholder.recDateEnd">終了の日付</entry>
+	<entry key="evaluation.result.option.recTimeStart">録音開始時間</entry>
+	<entry key="evaluation.result.option.recTimeEnd">録音終了時間</entry>
+	<entry key="evaluation.result.button.search">照会</entry>
+	<entry key="evaluation.result.option.campaignTitle">キャンペーン名</entry>
+	<entry key="evaluation.result.option.status">評価状態</entry>
+	<entry key="evaluation.result.option.all">全体</entry>
+	<entry key="evaluation.result.option.status.C">完了</entry>
+	<entry key="evaluation.result.option.status.I">未完了</entry>
+	<entry key="evaluation.result.option.status.X">-</entry>
+	<entry key="evaluation.result.placeholder.evaluator">評価者</entry>
+	<entry key="evaluation.result.placeholder.evaluatorId">評価者ID</entry>
+	<entry key="evaluation.result.placeholder.evaluatorComment">評価者フィードバック</entry>
+	<entry key="evaluation.result.placeholder.appraiseeComment">カウンセラーのフィードバック</entry>
+	<entry key="evaluation.result.placeholder.agentId">カウンセラーID</entry>
+	<entry key="evaluation.result.placeholder.agentName">相談員名</entry>
+	<entry key="evaluation.result.placeholder.callNumber">顧客番号</entry>
+	<entry key="evaluation.result.placeholder.agreeStatus">状態同意</entry>
+	<entry key="evaluation.result.placeholder.lastDate">最終日</entry>
+	<entry key="evaluation.result.placeholder.delete">削除</entry>
+	<entry key="evaluation.result.placeholder.rejectCount">拒否回数</entry>
+	<entry key="evaluation.result.placeholder.rejectDate">拒否日付</entry>
+		
+	<entry key="evaluation.management.create.step1">評価項目の段階を区分せず、細部の項目のみを利用した評価を進めます。</entry>
+	<entry key="evaluation.management.create.step2">大タイトル - 内容のとおり、項目を2段階に分類して評価を進めます。</entry>
+	<entry key="evaluation.management.create.step3">大タイトル-中タイトル-内容のように、項目を3段階に分類して評価を進めます。</entry>
+	<entry key="evaluation.management.create.step4">評価項目を大-中-小-の内容に段階を分類して評価を進めます。</entry>
+	<entry key="evaluation.management.create.steptitle1">1段階評価誌</entry>
+	<entry key="evaluation.management.create.steptitle2">二段階評価誌</entry>
+	<entry key="evaluation.management.create.steptitle3">三段階評価誌</entry>
+	<entry key="evaluation.management.create.steptitle4">4段階評価誌</entry>
+	<entry key="evaluation.management.create.selectstep">評価ステップ選択</entry>
+		
+	<entry key="evaluation.management.sheet.management">評価地管理</entry>
+	<entry key="evaluation.management.sheet.delete">削除</entry>
+	<entry key="evaluation.management.sheet.create">評価誌の生成</entry>
+	<entry key="evaluation.management.sheet.createSheet">評価紙作り</entry>
+	<entry key="evaluation.management.placeholder.name">評価タイトルを入力してください。</entry>
+	<entry key="evaluation.management.placeholder.description">評価誌の説明を入力してください。</entry>
+	<entry key="evaluation.management.sheet.score">評価点数</entry>
+	<entry key="evaluation.management.sheet.back">後ろへ</entry>
+	<entry key="evaluation.management.sheet.deletion">削除</entry>
+	<entry key="evaluation.management.sheet.add">追加</entry>
+	<entry key="evaluation.management.sheet.insertSheet">評価紙保存</entry>
+		
+	<entry key="evaluation.management.sheet.evaluation">評価</entry>
+	<entry key="evaluation.management.sheet.selectCampaign">キャンペーン選択</entry>
+	<entry key="evaluation.management.sheet.score2">点数</entry>
+	<entry key="evaluation.management.sheet.refresh">リニューアル</entry>
+	<entry key="evaluation.management.sheet.state">評価状態</entry>
+	<entry key="evaluation.management.sheet.begin">テストスタート</entry>
+	<entry key="evaluation.management.sheet.end">評価終了</entry>
+	<entry key="evaluation.management.sheet.input">入力</entry>
+	<entry key="evaluation.management.sheet.transterence">評価管理に移行</entry>
+	<entry key="evaluation.management.sheet.evalresult">結果</entry>
+	<entry key="evaluation.management.sheet.compleeval">評価済み</entry>
+	<entry key="evaluation.management.sheet.agreeleader">チーム長の同意</entry>
+	<entry key="evaluation.management.sheet.objection">異議申し立て</entry>
+		
+		
+	<entry key="evaluation.management.sheet.totalScoreString">総点</entry>
+	<entry key="evaluation.management.sheet.evaluatorOp">評価者の意見</entry>
+	<entry key="evaluation.management.sheet.counselorOp">相談員の意見</entry>
+		
+	<entry key="evaluation.management.sheet.details">詳細内容</entry>
+	<entry key="evaluation.management.sheet.itemS">項目</entry>
+	<entry key="evaluation.management.sheet.big">大分類</entry>
+	<entry key="evaluation.management.sheet.Middle">中分類</entry>
+	<entry key="evaluation.management.sheet.Small">小分類</entry>
+	<entry key="evaluation.management.sheet.item">細部項目</entry>
+	<entry key="evaluation.management.sheet.itemSelect">点数選択</entry>
+	<entry key="evaluation.management.sheet.subitem">リスト</entry>
+	<entry key="evaluation.management.sheet.modify">修整</entry>
+	<entry key="evaluation.management.sheet.create2">生成</entry>
+	<entry key="evaluation.management.sheet.itemcreate">項目作成</entry>
+	<entry key="evaluation.management.sheet.itemtitle">項目名を入力してください。</entry>
+	<entry key="evaluation.management.sheet.itemdescrip">項目の説明を入力してください。</entry>
+	<entry key="evaluation.management.sheet.selectsmall">小分類を選択してください。</entry>
+	<entry key="evaluation.management.sheet.itemscore">項目の点数を入力してください。</entry>
+		
+	<entry key="evaluation.management.sheet.check">チェック</entry>
+	<entry key="evaluation.management.sheet.no">NO</entry>
+	<entry key="evaluation.management.sheet.bigname">大分類名</entry>
+	<entry key="evaluation.management.sheet.bigdesc">大分類説明</entry>
+	<entry key="evaluation.management.sheet.createdate">生成日付</entry>
+	<entry key="evaluation.management.sheet.modifydate">修正日</entry>
+	<entry key="evaluation.management.sheet.smallname">小分類名</entry>
+	<entry key="evaluation.management.sheet.smalldesc">小分類の説明</entry>
+	<entry key="evaluation.management.sheet.middlename">中分類名</entry>
+	<entry key="evaluation.management.sheet.middledesc">中分類説明</entry>
+	<entry key="evaluation.management.sheet.itemname">詳細項目名</entry>
+	<entry key="evaluation.management.sheet.itemdesc">細目説明</entry>
+		
+	<entry key="evaluation.management.sheet.sheetname">評価誌の題目</entry>
+	<entry key="evaluation.management.sheet.sheetdesc">評価誌の説明</entry>
+	<entry key="evaluation.management.sheet.itemcount">項目数</entry>
+	<entry key="evaluation.management.sheet.stepofeval">評価段階</entry>
+	<entry key="evaluation.management.sheet.creator">生成子</entry>
+		
+	<entry key="evaluation.management.sheet.tabtitleindividaul">人別</entry>
+	<entry key="evaluation.management.sheet.tabtitlepart">パート別</entry>
+		
+	<entry key="evaluation.management.sheet.totalpeople">総員</entry>
+	<entry key="evaluation.management.sheet.totalscore">総点</entry>
+	<entry key="evaluation.management.sheet.greeting">あいさつの言葉</entry>
+	<entry key="evaluation.management.sheet.jobperformance">業務能力</entry>
+	<entry key="evaluation.management.sheet.listening">傾聴</entry>
+	<entry key="evaluation.management.sheet.attitude">態度</entry>
+	<entry key="evaluation.management.sheet.voice">音声</entry>
+	<entry key="evaluation.management.sheet.speed">速度</entry>
+	<entry key="evaluation.management.sheet.response">呼応</entry>
+	<entry key="evaluation.management.sheet.excuse">諒解</entry>
+	<entry key="evaluation.management.sheet.advicetone">相談口調</entry>
+		
+	<entry key="evaluation.management.sheet.recipient">対象者</entry>
+	<entry key="evaluation.management.sheet.department">仕分け</entry>
+	<entry key="evaluation.management.sheet.part">パート</entry>
+	<entry key="evaluation.management.sheet.pic">担当者</entry>
+	<entry key="evaluation.management.sheet.level">レベル</entry>
+	<entry key="evaluation.management.sheet.evaluationgrade">評価点数</entry>
+	<entry key="evaluation.management.sheet.greetingadjustment">人事監</entry>
+	<entry key="evaluation.management.sheet.imputationsubtraction">帰責減点</entry>
+	<entry key="evaluation.management.sheet.excellentpoint">優秀価点</entry>
+	<entry key="evaluation.management.sheet.finaltotalscore">最終総点</entry>
+	<entry key="evaluation.management.sheet.thismonth">当月</entry>
+	<entry key="evaluation.management.sheet.lastmonth">前月</entry>
+	<entry key="evaluation.management.sheet.gap">GAP</entry>
+
+	<entry key="evaluation.campaign.ongoing.tabName">進行中のキャンペーン</entry>
+	<entry key="evaluation.campaign.outOfDate.tabName">済南キャンペーン</entry>
+	<entry key="evaluation.campaign.ongoing.create">キャンペーン作成</entry>
+	<entry key="evaluation.campaign.outOfDate.reuse">再使用</entry>
+	<entry key="evaluation.campaign.placeholder.campTitle">キャンペーンのタイトルを入力してください。</entry>
+	<entry key="evaluation.campaign.placeholder.campContent">キャンペーンについての説明を入力してください。</entry>
+	<entry key="evaluation.campaign.ongoing.date">評価期間</entry>
+	<entry key="evaluation.campaign.ongoing.evalStart">テストスタート</entry>
+	<entry key="evaluation.campaign.create.duration">期間未指定</entry>
+	<entry key="evaluation.campaign.create.durationEnabled">期間指定</entry>
+	<entry key="evaluation.campaign.create.endEval">評価終了</entry>
+	<entry key="evaluation.campaign.create.evalGroup">評価対象グループ</entry>
+	<entry key="evaluation.campaign.create.groupSelect">グループ指定</entry>
+	<entry key="evaluation.campaign.create.permission">許容</entry>
+	<entry key="evaluation.campaign.create.forbidden">未許可</entry>
+	<entry key="evaluation.campaign.create.disagree">異議申し立て</entry>
+	<entry key="evaluation.campaign.create.feedback">フィードバック</entry>
+	<entry key="evaluation.campaign.create.reEval">再評価の可否</entry>
+	<entry key="evaluation.campaign.create.socoring">採点方式</entry>
+	<entry key="evaluation.campaign.create.sheetSelect">評価紙選択</entry>
+	<entry key="evaluation.campaign.create.evaldescription">評価説明</entry>
+	<entry key="evaluation.campaign.create.step">段階</entry>
+	<entry key="evaluation.campaign.create.add">追加</entry>
+	<entry key="evaluation.campaign.sheetNumber">評価指数</entry>
+	<entry key="evaluation.campaign.sumCampScore">キャンペーンスコア合計</entry>
+	<entry key="evaluation.campaign.deleteSheet">削除</entry>
+	<entry key="evaluation.campaign.evalGroupSelect">評価グループ指定</entry>
+	<entry key="evaluation.campaign.groupSelectPlaceholer">ご希望のグループを選択してください。</entry>
+	<entry key="evaluation.campaign.all">全体</entry>
+	<entry key="evaluation.campaign.mgroup">中グループ</entry>
+	<entry key="evaluation.campaign.sgroup">小グループ</entry>
+	<entry key="evaluation.campaign.selectionCancle">選択取り消し</entry>
+	<entry key="evaluation.campaign.completionDesig">指定取消し</entry>
+	<entry key="evaluation.campaign.grid.check">チェック</entry>
+	<entry key="evaluation.campaign.grid.num">順番</entry>
+		
+	<entry key="evaluation.campaign.grid.campTitle">キャンペーンのタイトル</entry>
+	<entry key="evaluation.campaign.grid.campContent">キャンペーン説明</entry>
+	<entry key="evaluation.campaign.grid.reEval">再評価の可否</entry>
+	<entry key="evaluation.campaign.grid.evalTarget">評価対象</entry>
+	<entry key="evaluation.campaign.grid.evalMethod">採点方式</entry>
+	<entry key="evaluation.campaign.grid.createDate">生成日付</entry>
+	<entry key="evaluation.campaign.grid.updatedDate">最終修正日</entry>
+	<entry key="evaluation.campaign.grid.remnantDuration">残る評価期間</entry>
+	<entry key="evaluation.campaign.grid.modification">編集</entry>
+		
+	<entry key="evaluation.campaign.grid.gruopName">グループ名</entry>
+	<entry key="evaluation.campaign.grid.groupMemberNum">グループメンバー数</entry>
+		
+		
+	<entry key="evaluation.management.sheet.evaltime">評価時間</entry>
+	<entry key="evaluation.result.placeholder.rectime">録音時間帯</entry>
+		
+	<entry key="evaluation.management.sheet.detail">見本</entry>
+	<entry key="evaluation.management.sheet.campaign">キャンペーン</entry>
+	<entry key="evaluation.management.sheet.evaluationCount">評価回数</entry>
+	<entry key="evaluation.management.sheet.evaluationCountManage">評価回数管理</entry>
+	<entry key="evaluation.campaign.copyCampaign">キャンペーンコピー</entry>
+	<entry key="evaluation.campaign.grid.evalTargetSet">評価対象指定</entry>
+	<entry key="evaluation.campaign.grid.evalCount">評価次数</entry>
+	<entry key="evaluation.campaign.grid.evalShare">評価分配</entry>
+	<entry key="evaluation.campaign.grid.evalShareSet">評価分配指定</entry>
+	<entry key="evaluation.campaign.grid.evalsheet">評価誌</entry>
+	<entry key="evaluation.campaign.grid.evalsheetTotalScore">評価紙の総点数</entry>
+	<entry key="evaluation.campaign.byGroup">グループ別指定</entry>
+	<entry key="evaluation.campaign.bySkill">スキル別指定</entry>
+	<entry key="evaluation.campaign.byPerson">個人別指定</entry>
+	<entry key="evaluation.campaign.byAffilicate">提携会社別指定</entry>
+	<entry key="evaluation.campaign.selectGroupType">評価グループの種類を指定してください。</entry>
+	<entry key="evaluation.campaign.selectComplete">指定済み</entry>
+	<entry key="evaluation.campaign.copySheet">評価用紙の放射</entry>
+	<entry key="evaluation.campaign.lastMonth">前月</entry>
+	<entry key="evaluation.campaign.thisMonth">当月</entry>
+	<entry key="evaluation.campaign.selectType">タイプ選択</entry>
+	<entry key="evaluation.month.1">一月</entry>
+	<entry key="evaluation.month.2">2月</entry>
+	<entry key="evaluation.month.3">3月</entry>
+	<entry key="evaluation.month.4">4月</entry>
+	<entry key="evaluation.month.5">五月</entry>
+	<entry key="evaluation.month.6">6月</entry>
+	<entry key="evaluation.month.7">7月</entry>
+	<entry key="evaluation.month.8">8月</entry>
+	<entry key="evaluation.month.9">9月</entry>
+	<entry key="evaluation.month.10">10月</entry>
+	<entry key="evaluation.month.11">11月</entry>
+	<entry key="evaluation.month.12">12月</entry>
+		
+	<entry key="evaluation.querter.1">第1四半期</entry>
+	<entry key="evaluation.querter.2">2四半期</entry>
+	<entry key="evaluation.querter.3">三ブン基</entry>
+	<entry key="evaluation.querter.4">四半期</entry>
+
+	<entry key="evaluation.selectPeriod.day">日別</entry>
+	<entry key="evaluation.selectPeriod.month">月別</entry>
+	<entry key="evaluation.selectPeriod.querter">分岐星</entry>
+	<entry key="evaluation.selectPeriod.year">年星</entry>
+	<entry key="evaluation.selectPeriod.evalEndDate">評価終了日</entry>
+	<entry key="evaluation.selectPeriod.evalScore">評価された点数</entry>
+	<entry key="evaluation.selectPeriod.reval">異議の申し立ての可否</entry>
+	<entry key="evaluation.selectPeriod.evalScore">配点</entry>
+
+	<!-- 18-09-05 -pilip evaluation kor lang add -->
+	<entry key="evaluation.label.next">つぎ</entry>
+	<entry key="evaluation.js.alert.msg1">職員名</entry>
+	<entry key="evaluation.js.alert.msg2">内線番号</entry>
+	<entry key="evaluation.js.alert.msg3">全体</entry>
+	<entry key="evaluation.js.alert.msg4">中グループ</entry>
+	<entry key="evaluation.js.alert.msg5">小グループ</entry>
+	<entry key="evaluation.js.alert.msg6">評価グループの種類を指定してください。</entry>
+	<entry key="evaluation.js.alert.msg7">グループ名</entry>
+	<entry key="evaluation.js.alert.msg8">スキル名</entry>
+	<entry key="evaluation.js.alert.msg9">提携会社名</entry>
+	<entry key="evaluation.js.alert.msg10">評価対象者を指定してください。</entry>
+	<entry key="evaluation.js.alert.msg11">グループ指定が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg12">グループ指定をやり直してください。</entry>
+	<entry key="evaluation.js.alert.msg13">数字のみ入力してください。</entry>
+	<entry key="evaluation.js.alert.msg14">300番以下に指定してください。</entry>
+	<entry key="evaluation.js.alert.msg15">評価·分配された評価者がいません。 もう一度作成してください。</entry>
+	<entry key="evaluation.js.alert.msg16">評価分配指定が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg17">評価者指定をやり直してください。</entry>
+	<entry key="evaluation.js.alert.msg18">コピーするキャンペーンを1つだけ選択してください。</entry>
+	<entry key="evaluation.js.alert.msg19">キャンペーンのタイトルを入力してください。</entry>
+	<entry key="evaluation.js.alert.msg20">不可能な文字が入っています。 題目から を抜いてください。</entry>
+	<entry key="evaluation.js.alert.msg21">キャンペーン期間を指定してください。</entry>
+	<entry key="evaluation.js.alert.msg22">キャンペーン開始日を指定してください。</entry>
+	<entry key="evaluation.js.alert.msg23">キャンペーン終了日を指定してください。</entry>
+	<entry key="evaluation.js.alert.msg24">評価者評価分配を指定してください。</entry>
+	<entry key="evaluation.js.alert.msg25">評価紙を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg26">キャンペーン保存に失敗しました。 もう一度お試しください。</entry>
+	<entry key="evaluation.js.alert.msg27">キャンペーン修正</entry>
+	<entry key="evaluation.js.alert.msg28">キャンペーンコピー</entry>
+	<entry key="evaluation.js.alert.msg29">指定済み</entry>
+	<entry key="evaluation.js.alert.msg30">評価対象者を指定してください。</entry>
+	<entry key="evaluation.js.alert.msg31">修正に失敗しました。 もう一度お試しください。</entry>
+	<entry key="evaluation.js.alert.msg32">選択された項目を消しますか?</entry>
+	<entry key="evaluation.js.alert.msg33">評価結果が存在するキャンペーンのほか、削除が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg34">選択したキャンペーンがすべて削除されました。</entry>
+	<entry key="evaluation.js.alert.msg35">評価されたキャンペーンが存在するため、削除できません。 \\n確認後に削除してください。</entry>
+	<entry key="evaluation.js.alert.msg36">削除に失敗しました。</entry>
+	<entry key="evaluation.js.alert.msg37">終了時点が開始時点より前です。</entry>
+	<entry key="evaluation.js.alert.msg38">終了時点が開始時点と同じか以前です。</entry>
+	<entry key="evaluation.js.alert.msg39">選択</entry>
+	<entry key="evaluation.js.alert.msg40">評価紙作り</entry>
+	<entry key="evaluation.js.alert.msg41">選択されていない評価コードがあります。\\n選択後、もう一度お試しください。</entry>
+	<entry key="evaluation.js.alert.msg42">これ以上削除できません。</entry>
+	<entry key="evaluation.js.alert.msg43">評価タイトルを入力してください。</entry>
+	<entry key="evaluation.js.alert.msg44">評価説明を入力してください。</entry>
+	<entry key="evaluation.js.alert.msg45">選択されていない評価コードがあります。\\n選択後、もう一度お試しください。</entry>
+	<entry key="evaluation.js.alert.msg46">設定した評価紙が保存されました。</entry>
+	<entry key="evaluation.js.alert.msg47">作成した評価誌に重複した項目が存在します。</entry>
+	<entry key="evaluation.js.alert.msg48">評価誌</entry>
+	<entry key="evaluation.js.alert.msg49">選択した評価紙をコピーしますか?</entry>
+	<entry key="evaluation.js.alert.msg50">評価紙を1つだけ選択してください。</entry>
+	<entry key="evaluation.js.alert.msg51">コピーする評価紙を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg52">選択した評価紙を削除しますか?</entry>
+	<entry key="evaluation.js.alert.msg53">キャンペーンで使用中の評価紙は削除できません。</entry>
+	<entry key="evaluation.js.alert.msg54">削除リストのうち、キャンペーンで使用中の評価紙を除いて削除されました。</entry>
+	<entry key="evaluation.js.alert.msg55">選択した評価紙が削除されました。</entry>
+	<entry key="evaluation.js.alert.msg56">削除作業が失敗しました。\\n管理者にお問い合わせください。</entry>
+	<entry key="evaluation.js.alert.msg57">削除する評価紙を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg58">この評価紙を削除しますか?</entry>
+	<entry key="evaluation.js.alert.msg59">キャンペーンで使用中の評価紙は削除できません。</entry>
+	<entry key="evaluation.js.alert.msg60">評価紙が削除されました。</entry>
+	<entry key="evaluation.js.alert.msg61">評価紙の情報を持ってくるのに失敗しました。</entry>
+	<entry key="evaluation.js.alert.msg62">既に開いている評価紙があります。 選択した評価紙を新しく開きますか?</entry>
+	<entry key="evaluation.js.alert.msg63">相談員の総合意見欄に意見を書いてください。</entry>
+	<entry key="evaluation.js.alert.msg64">異議申し立てが完了しました。</entry>
+	<entry key="evaluation.js.alert.msg65">保存に失敗しました。 もう一度お試しください。</entry>
+	<entry key="evaluation.js.alert.msg66">評価紙を選択してから評価を行ってください。</entry>
+	<entry key="evaluation.js.alert.msg67">選択されていない項目が存在します。</entry>
+	<entry key="evaluation.js.alert.msg68">評価保存が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg69">日付を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg70">終了時点が開始時点より前です。</entry>
+	<entry key="evaluation.js.alert.msg71">終了時点が開始時点と同じか以前です。</entry>
+	<entry key="evaluation.js.alert.msg72">既に評価されました。</entry>
+	<entry key="evaluation.js.alert.msg73">現在の評価結果を消しますか?</entry>
+	<entry key="evaluation.js.alert.msg74">相談員の総合意見欄に意見を書いてください。</entry>
+	<entry key="evaluation.js.alert.msg75">再評価回数を超過し、再評価が不可能です。</entry>
+	<entry key="evaluation.js.alert.msg76">評価修正が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg77">評価削除が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg78">対象者、区分、パート、担当者、Level、評価点数、帰責減点、最終総点、当月、前月、GAP、</entry>
+	<entry key="evaluation.js.alert.msg79">週間</entry>
+	<entry key="evaluation.js.alert.msg80">夜間</entry>
+	<entry key="evaluation.js.alert.msg81">新入</entry>
+	<entry key="evaluation.js.alert.msg82">勤続</entry>
+	<entry key="evaluation.js.alert.msg83">エクセルをダウンロードするデータがありません。</entry>
+	<entry key="evaluation.js.alert.msg84">期間を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg85">タイプを選択してください。</entry>
+	<entry key="evaluation.js.alert.msg86">年度を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg87">ウォールを選択してください。</entry>
+	<entry key="evaluation.js.alert.msg88">日付を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg89">分岐選択をしてください。</entry>
+	<entry key="evaluation.js.alert.msg90">キャンペーンを選択してください。</entry>
+	<entry key="evaluation.js.alert.msg91">年度を選択してください。</entry>
+	<entry key="evaluation.js.alert.msg92">相談員名を入力してください。</entry>
+	<entry key="evaluation.js.alert.msg93">当月順位</entry>
+	<entry key="evaluation.js.alert.msg94">、前月順位</entry>
+	<entry key="evaluation.js.alert.msg95">、GAP</entry>
+	<entry key="evaluation.js.alert.msg96">対象者、区分、パート、担当者、Level、評価点数、帰責減点、最終総点</entry>
+	<entry key="evaluation.js.alert.msg97">勤務、総員、\cspan、総点、\cspan、\cspan、挨拶、\cspan、業務能力、\cspan、傾聴/態度、\cspan、音声/速度、\cspan、呼応/了解、\cspan、相談口調、\cspan</entry>
+	<entry key="evaluation.js.alert.msg98">前月</entry>
+	<entry key="evaluation.js.alert.msg99">当月</entry>
+	<entry key="evaluation.js.alert.msg100">対象者、評価区分、担当者、</entry>
+	<entry key="evaluation.js.alert.msg101">、録音情報、顧客情報、総点、</entry>
+	<entry key="evaluation.js.alert.msg102">1月、2月、3月、4月、5月、6月、7月、8月、9月、10月、11月、12月</entry>
+
+	<!-- 18-09-07 -pilip evaluation kor lang add -->
+	<entry key="evaluation.js.alert.msg103">フィードバック使用中はフィードバック終了期間を設定してください。</entry>
+	<entry key="evaluation.js.alert.msg104">フィードバック終了期間はキャンペーン終了期間より長く設定できません。</entry>
+		
+		
+	<entry key="evaluation.sheet.btn.revaluation">再評価</entry>
+	<entry key="evaluation.sheet.label.revaluation">(異議申し立て期間が過ぎました。)</entry>
+	<entry key="evaluation.sheet.label.agree">同意</entry>
+	<entry key="evaluation.sheet.label.disagree">非同意</entry>
+		
+	<entry key="evaluation.js.alert.msg105">本人が行った評価のみ削除できます。</entry>
+	<entry key="agreeStatus.type.R">非同意</entry>
+	<entry key="agreeStatus.type.A">同意</entry>
+	<entry key="agreeStatus.type.F">完了</entry>
+	<entry key="evaluation.js.alert.msg106">本当に削除しますか?</entry>
+		
+		
+	<entry key="evaluation.js.alert.msg107">詳細項目名を入力してください。</entry>
+	<entry key="evaluation.js.alert.msg108">番目のサブアイテム名を入力してください。</entry>
+	<entry key="evaluation.js.alert.msg109">2つ目の点数を入力してください。</entry>
+	<entry key="evaluation.js.alert.msg110">項目名を入力してください。</entry>
+	<entry key="evaluation.js.alert.msg111">保存に失敗しました。 もう一度お試しください。</entry>
+	<entry key="evaluation.js.alert.msg112">修正する項目を一つだけ選択してください。</entry>
+	<entry key="evaluation.js.alert.msg113">値段を読み込むのに失敗しました。</entry>
+	<entry key="evaluation.js.alert.msg114">名前を入力してください!</entry>
+	<entry key="evaluation.js.alert.msg115">修正する値がありません。</entry>
+	<entry key="evaluation.js.alert.msg116">該当項目を修正しました。</entry>
+	<entry key="evaluation.js.alert.msg117">修正に失敗しました。</entry>
+	<entry key="evaluation.js.alert.msg118">該当項目を現在評価誌で使用中です。\\n確認後もう一度お試しください。</entry>
+	<entry key="evaluation.js.alert.msg119">修正が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg120">選択された項目がありません。</entry>
+	<entry key="evaluation.js.alert.msg121">評価誌に含まれた項目外削除が完了しました。</entry>
+	<entry key="evaluation.js.alert.msg122">選択した項目がすべて削除されました。</entry>
+	<entry key="evaluation.js.alert.msg123">選択された項目を消しますか?</entry>
+	<entry key="evaluation.js.alert.msg124">評価誌に含まれる項目が存在し、削除できません。 \\n確認後に削除してください。</entry>
+	<entry key="evaluation.js.alert.msg125">削除に失敗しました。</entry>
+	<entry key="evaluation.js.alert.msg126">選択されていない項目があります。 選択されない項目は最低点数で保存されます。 \\n保存しますか?</entry>
+	<entry key="evaluation.js.alert.msg127">キャンペーンを選択してください。</entry>
+	<entry key="evaluation.js.alert.msg128">大グループを選択してください。</entry>
+	<entry key="evaluation.js.alert.msg129">中グループを選択してください。</entry>
+	<entry key="evaluation.js.alert.msg130">小グループを選択してください。</entry>
+	<entry key="evaluation.js.alert.msg131">入力なし</entry>
+	<entry key="evaluation.js.alert.msg132">設定した評価紙が修正されました。</entry>
+		
+	<entry key="evaluation.statistics.evaluationListStatistics">評価リスト統計</entry>
+	<entry key="evaluation.statistics.siteAndGrouptStatistics">サイトおよびグループ別評価基準</entry>
+	<entry key="evaluation.statistics.referenceScoreStatistics">基準点数の統計</entry>
+	<entry key="evaluation.statistics.teamCategory">チームカテゴリー統計</entry>
+	<entry key="evaluation.statistics.point">点</entry>
+		
+		
+	<entry key="evaluation.result.title.first.evaluator">一次評価者</entry>
+	<entry key="evaluation.result.title.first.evaluatorOp">一次評価者の意見</entry>
+	<entry key="evaluation.result.title.second.evaluator">二次評価者</entry>
+	<entry key="evaluation.result.title.second.evaluatorOp">二次評価者の意見</entry>
+	<entry key="evaluation.result.title.agentOp">相談員の意見</entry>
+
+
+
+</properties>

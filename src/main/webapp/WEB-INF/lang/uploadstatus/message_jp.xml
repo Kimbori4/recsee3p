@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>アップロード状態(uploadstatus)画面用メッセージ定義</comment>
+	
+	
+	<entry key="uploadstatus.label.indivUpStat">個別アップロード現況</entry>
+	<entry key="uploadstatus.label.date">録取日時</entry>
+	<entry key="uploadstatus.label.sDate">開始日</entry>
+	<entry key="uploadstatus.label.eDate">終了日</entry>
+	<entry key="uploadstatus.label.timeFrom">時間</entry>
+	<entry key="uploadstatus.label.all">全体</entry>
+	<entry key="uploadstatus.label.timeTo">時間(まで)</entry>
+	<entry key="uploadstatus.label.recInfo">録音情報</entry>
+	<entry key="uploadstatus.label.extNum">内線番号</entry>
+	<entry key="uploadstatus.label.custPhone1">顧客の電話番号</entry>
+	<entry key="uploadstatus.label.status">状態</entry>
+	<entry key="uploadstatus.label.workType">作業種類</entry>
+	<entry key="uploadstatus.label.batch">配置</entry>
+	<entry key="uploadstatus.label.direct">即時</entry>
+	<entry key="uploadstatus.label.uploadStatus">アップロード状態</entry>
+	<entry key="uploadstatus.label.transCompl">転送済み</entry>
+	<entry key="uploadstatus.label.noRec">録音ファイルなし</entry>
+	<entry key="uploadstatus.label.retry1">やり直し(1回目)</entry>
+	<entry key="uploadstatus.label.retry2">やり直し(2回目)</entry>
+	<entry key="uploadstatus.label.transFailInfo">送信失敗(録音情報)</entry>
+	<entry key="uploadstatus.label.transFailFile">送信失敗(録音ファイル)</entry>
+	<entry key="uploadstatus.label.waitTrans">即時転送待ち</entry>
+	<entry key="uploadstatus.label.notSend">未転送</entry>
+	<entry key="uploadstatus.label.search">検 索</entry>
+	
+	
+	<entry key="uploadstatus.grid.num">順番</entry>
+	<entry key="uploadstatus.grid.recDate">録取日</entry>
+	<entry key="uploadstatus.grid.recTime">通話時間</entry>
+	<entry key="uploadstatus.grid.extNum">内線番号</entry>
+	<entry key="uploadstatus.grid.workType">作業種類</entry>
+	<entry key="uploadstatus.grid.result">処理結果</entry>
+	<entry key="uploadstatus.grid.firstTrySTime">1回目の試み(開始日時)</entry>
+	<entry key="uploadstatus.grid.firstTryFTime">1回目(終了日時)</entry>
+	<entry key="uploadstatus.grid.secondTrySTime">2回目(開始日時)</entry>
+	<entry key="uploadstatus.grid.secondTryFTime">2回目(終了日時)</entry>
+	<entry key="uploadstatus.grid.thirdTrySTime">3次試み(開始日時)</entry>
+	<entry key="uploadstatus.grid.thirdTryFTime">3次課程(終了日時)</entry>
+	<entry key="uploadstatus.grid.directTrans">即時転送</entry>
+	<entry key="uploadstatus.grid.direct">即時</entry>
+	<entry key="uploadstatus.grid.batch">配置</entry>
+	<entry key="uploadstatus.grid.transCompl">転送済み</entry>
+	<entry key="uploadstatus.grid.noRec">録音ファイルなし</entry>
+	<entry key="uploadstatus.grid.retry1">やり直し(1回目)</entry>
+	<entry key="uploadstatus.grid.retry2">やり直し(2回目)</entry>
+	<entry key="uploadstatus.grid.transFailInfo">送信失敗(録音情報)</entry>
+	<entry key="uploadstatus.grid.transFailFile">送信失敗(録音ファイル)</entry>
+	<entry key="uploadstatus.grid.waitTrans">即時転送待ち</entry>
+	<entry key="uploadstatus.grid.notSend">未転送</entry>
+	<entry key="uploadstatus.grid.transfer">転送</entry>
+	
+	
+	<entry key="uploadstatus.alert.someReqFail">一部の申請に失敗しました。</entry>
+	<entry key="uploadstatus.alert.reqTrans">直ちに転送申請をしました。</entry>
+	<entry key="uploadstatus.alert.transReqFail">即時転送申請に失敗しました。</entry>
+
+</properties>

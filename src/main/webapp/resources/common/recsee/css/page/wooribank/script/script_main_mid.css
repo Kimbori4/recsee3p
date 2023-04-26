@@ -1,0 +1,485 @@
+@charset "UTF-8";
+
+*******************************************************************************	
+*******************************************************************************
+	/* 스크립트 조회 페이지*/ 
+
+#search_box {
+	width: 1900px !important;
+	height: 900px !important;
+	float: right !important;
+	position: absolute !important;
+	margin-top: 100px !important;
+}
+
+
+#searchKeyword {
+	width: 415px !important;
+}
+
+#script_info_box {
+	height: 730px !important;
+	background-color: white !important;
+	float: left !important;
+	font-size: 14px !important;
+}
+
+.search_btn {
+/* 	position: absolute !important; */
+	margin-top: 3px !important;
+}
+
+#script_info_box ul select {
+	width: 10% !important;
+	height: 26px !important;
+	border-radius: 4px !important;
+	float: left !important;
+	display: block !important;
+	border: 1px solid #dddddd !important;
+	padding-left: 3px !important;
+	font-size: 12px !important;
+}
+
+/*상품 내역검색 input창 */
+.search_script_contents {
+	width: 1275px !important;
+	height: 28px !important;
+	line-height: 28px !important;
+	background-color: transparent !important;
+	border: 0 !important;
+	border-bottom: 1px solid #fff !important;
+	color: white !important;
+	margin-right: 10px !important;
+	margin-left: 15px !important;
+	box-sizing: border-box !important;
+	outline: 0 !important;
+	border-radius: 0 !important;
+	padding-left: 0 !important;
+}
+
+#search_script_grid {
+	width: 1620px !important;
+	height: 733px !important;
+}
+
+.right_bottom_btn {
+	margin-top: 0px !important;
+	margin-right: 2px !important;
+	width: auto !important;
+	float: right !important;
+}
+
+.direct_Scipt_Insert_Btn {
+	width: 87px !important;
+	height: 38px !important;
+	margin: 0px 0px 0px -10px !important;
+	text-align: center !important;
+	float: left !important;
+}
+
+/* 스크립트 조회 페이지 신규수정*/
+
+/*조회 section class */
+.filter {
+	background-color: #4cb51e !important;
+/* 	background-color: #7AACFE !important; */
+	padding: 7px !important;
+	height: 89px !important;
+}
+
+#searchBtn {
+	width: 63px !important;
+	height: 26px !important;
+	background: #111418 !important;
+	color: #fff !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	float: none !important;
+}
+
+.script_edit_line1 .script_edit_title2 {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	margin-bottom: 16px !important;
+	width: 100.5% !important;
+}
+
+.script_edit_line1 .script_edit_title2 input {
+	width: calc(100% - 70px) !important;
+	height: 20px !important;
+	border-radius: 4px !important;
+}
+
+.script_edit_line2 .script_edit_content_btn {
+	/*     display: inline-block !important; */
+	/*     display: flex !important; */
+	align-items: center !important;
+	justify-content: space-between !important;
+	margin-bottom: 4px !important;
+}
+
+#script_textAtrea {
+	background-color: white !important;
+	border: 1px solid #dddddd !important;
+	border-radius: 4px !important;
+	width: 1043px !important;
+	line-height: 20px !important;
+}
+
+.scriptTextArea {
+	background-color: white !important;
+	border: 1px solid #dddddd !important;
+	border-radius: 4px !important;
+	width: 1043px !important;
+}
+
+*******************************************************************************	
+*******************************************************************************
+	/* 스크립트 조회 페이지*/ 
+
+.top_area {
+	height: 20% !important;
+	width: 99% !important;
+}
+
+.script_search_result {
+	height: 90px !important;
+	padding: 10px 0px 10px 10px !important;
+    display: flex;
+	background-color: #efefef !important;
+	 width: 100% !important;
+}
+
+.script_search_Code {
+	height: 100% !important;
+    width: auto !important;
+    display: flex;
+   	justify-content : space-between;
+}
+
+.line1 {
+	width: 30% !important;
+	height: 100% !important;
+	float: lemax-contentft !important;
+}
+
+.line2, .line4 {
+	width: 23% !important;
+	height: 100% !important;
+	float: left !important;
+}
+
+.line5 {
+	width: 23% !important;
+	height: 100% !important;
+	float: right !important;
+	font-size: 11px;
+}
+
+#winiValue {
+	padding: 5px;
+	margin: 0px 0px 0px 0px;
+	color: #e71515;
+	font-family: monospace, monospace;
+}
+
+.winiInfoText {
+	line-height: 20px;
+	margin: 3px 0px 3px 0px;
+}
+
+#winiInfoTitle {
+	font-weight: bold;
+}
+
+#repre_product_code {
+	width: 35% !important;
+	height: 25px !important;
+	line-height: 25px !important;
+	padding-top: 3px !important;
+	margin-top: 3px !important;
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	letter-spacing: 2px !important;
+	border: 1px solid #efefef !important;
+	border-radius: 4px !important;
+	background-color: #efefef !important;
+	color: black !important;
+	padding-left: 10px !important;
+}
+
+#product_name_title, #product_type_title, #product_code_title {
+	width: 30% !important;
+	height: 25px !important;
+	line-height: 25px !important;
+	padding-top: 3px !important;
+	margin-top: 3px !important;
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	letter-spacing: 2px !important;
+	border: 1px solid #efefef !important;
+	border-radius: 4px !important;
+	color: black !important;
+	background-color: #efefef !important;
+	padding-left: 10px !important;
+}
+
+#product_name_value {
+	width: 90% !important;
+	height: 25px !important;
+	line-height: 25px !important;
+	font-size: 12px !important;
+	font-weight: 500 !important;
+	margin: 4px 0px 4px 10% !important;
+	float: left !important;
+	text-align: left !important;
+	padding-top: 3px !important;
+	padding-left: 3px !important;
+}
+
+#product_type_value, #repre_product_code_value, #product_code_value {
+	width: 8% !important;
+	height: 25px !important;
+	line-height: 25px !important;
+	font-size: 12px !important;
+	font-weight: 500 !important;
+	margin: 4px 0px 4px 10% !important;
+	float: left !important;
+	text-align: left !important;
+	padding-top: 3px !important;
+	padding-left: 3px !important;
+}
+
+.line3 {
+	width: 23% !important;
+	height: 100% !important;
+	float: left !important;
+}
+
+#left_box {
+	width: 30% !important;
+	height: 695px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	position: absolute !important;
+}
+
+#first_right_box {
+	width: 70% !important;
+	height: 70% !important;
+	margin-right: 10px !important;
+	margin-left: 415px !important;
+	margin-top: -42px !important;
+}
+
+#script_info_box2 {
+	width: 99% !important;
+	height: 50px !important;
+	background-color: white !important;
+	padding: 5px 5px 5px 5px !important;
+	float: left !important;
+	font-size: 14px !important;
+}
+
+#first_right_box_title {
+	width: 99% !important;
+	height: 32px !important;
+}
+
+#back_script_btn {
+	width: 63px !important;
+	height: 26px !important;
+	background: #111418 !important;
+	color: #fff !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	float: none !important;
+}
+
+#edit_script_btn {
+	font-size: 14px !important;
+	height: 23px !important;
+	width: 95px !important;
+	float: right !important;
+	background-color: #dad7d7 !important;
+	color: black !important;
+	margin-left: 10px !important;
+}
+
+#cancel_scriptGrid_btn {
+	font-size: 14px !important;
+	dispaly: none !important;
+	float: right !important;
+	margin-left: 10px !important;
+	width: 50px !important;
+	height: 22px !important;
+}
+
+#add_scriptDetail_btn {
+	font-size: 14px !important;
+	width: 50px !important;
+	height: 23px !important;
+	margin-left: 10px;
+	float: right !important;
+}
+
+.script_edit_line1 {
+	width: 99% !important;
+	height: 50px !important;
+	margin-bottom: 5px !important;
+}
+
+#script_edit_title {
+	height: 50px !important;
+	line-height: 50px !important;
+}
+
+#script_edit_title, #script_edit_content {
+	width: 15% !important;
+}
+
+.script_edit_line2 {
+	height: 560px !important;
+}
+
+#script_edit_content {
+	height: 606px !important;
+	line-height: 590px !important;
+}
+
+#script_edit_content2 {
+	height: 513px !important;
+	border: 1px solid #efefef !important;
+	background-color: #efefef !important;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	padding: 6px !important;
+	width: 98.5% !important;
+}
+
+#script_edit_content_btn {
+	height: 30px !important;
+	margin-bottom: 5px !important;
+	margin-top: 3px !important;
+	margin-bottom: 3px !important;
+	width: 1067px !important;
+}
+
+#script_edit_content3 {
+	font-size: 16px !important;
+}
+
+#playZone {
+	margin-top: 5px !important;
+	width: 100% !important;
+	height: 50px !important;
+	background-color: #f1f3f4 !important;
+}
+
+#audioPlayer {
+	width: 100% !important;
+	height: 50px !important;
+}
+
+.title {
+	width: 400px !important;
+	height: 30px !important;
+	margin: -15px 0px 5px 5px !important;
+}
+
+#scriptGrid {
+	width: 100% !important;
+}
+
+.script_tree {
+	height: 669px !important;
+	width: 100%;
+	border-bottom: 2px solid #dee1e7 !important;
+}
+
+#scriptTreeGrid {
+	margin-left: 10px !important;
+	width: 370px !important;
+	height: 673px !important;
+	background-color: white !important;
+	border-collapse: collapse !important;
+	position: relative !important;
+	overflow: auto !important;
+}
+
+#scriptGrid.gridbox table.obj td {
+	border: 0px !important;
+}
+
+#scriptGrid.gridbox {
+	border: 0px !important;
+}
+
+#scriptGrid>.xhdr {
+	height: 0px !important;
+}
+
+#scriptTreeGrid ul {
+	width: 100% !important;
+	height: 100% !important s;
+}
+
+#scriptTreeGrid ul li {
+	width: 400px !important;
+	height: 40px !important;
+	font-size: 15px !important;
+	text-align: left !important;
+	color: #000000 !important;
+	border: 1px solid #efefef !important;
+	border-collapse: collapse !important;
+	padding: 20px 40px 0px !important;
+	vertical-align: middle !important;
+	cursor: pointer !important;
+}
+
+#scriptTreeGrid ul li:hover {
+	background-color: #deedff !important;
+}
+
+#rightButtonWrap {
+	margin-left: 15%;
+}
+
+/* 스크립트  ELt 상품 조건 표출 될 bar*/
+.eltProductCondition {
+	overflow-y: hidden;
+	overflow-x: auto;
+	width: 1043px !important;
+	line-height: 20px !important;
+	height: auto;
+	margin: 5px 0px 0px 0px;
+	display: inline-flex;
+}
+
+.eltProductValue {
+	border: 1px solid #dddddd;
+	border-radius: 5px !important;
+	line-height: 20px !important;
+	margin: 0px 0px 0px 0px;
+	height: 20px;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-end;
+	padding: 0px 5px 0px 5px;
+}
+
+.eltProductConditionName {
+	width: auto;
+	color: white;
+	font-weight: 100;
+	font-size: 11px;
+}
+
+*******************************************************************************	
+*******************************************************************************	
+
+@media screen and (min-width:0\0) {
+}

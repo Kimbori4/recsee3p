@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>ウスコール(bestCall)画面用メッセージ定義</comment>
+
+	<!-- 우수콜 -->
+	
+	<entry key="views.bestCall.form.fieldset.fDate">登録日付</entry>
+	<entry key="views.bestCall.form.fieldset.fOrgCode">登録者組織情報</entry>
+	<entry key="views.bestCall.form.fieldset.fUserInfo">登録者情報</entry>
+	<entry key="views.bestCall.form.fieldset.fShare">細部の要件</entry>
+		
+	<entry key="views.bestCall.form.shareBtn">ウスコール共有</entry>
+	<entry key="views.bestCall.form.modifyBtn">ウスコール修正</entry>
+	<entry key="views.bestCall.form.delBtn">ウシュコール取り消し</entry>
+	<entry key="views.bestCall.form.approveBtn">承認</entry>
+	<entry key="views.bestCall.form.rejectBtn">伴侶</entry>
+	<entry key="views.bestCall.form.shareYN">共有状態</entry>
+	<entry key="views.bestCall.form.shareYN.W">共有戦</entry>
+	<entry key="views.bestCall.form.shareYN.Y">共有中</entry>
+	<entry key="views.bestCall.form.shareYN.N">共有期間満了</entry>
+	<entry key="views.bestCall.form.shareTarget">共有範囲</entry>
+	<entry key="views.bestCall.form.allTarget">全範囲</entry>
+	<entry key="views.bestCall.form.approveYN">承認の可否</entry>
+	<entry key="views.bestCall.form.shareTitle">ウスコールタイトル</entry>
+		
+	<entry key="views.bestCall.popup.shareUserName">共有者名</entry>
+	<entry key="views.bestCall.popup.shareUserId">共有者ID</entry>
+	<entry key="views.bestCall.popup.dueDate">共有期間</entry>
+	<entry key="views.bestCall.popup.allSelect">すべての設定</entry>
+		
+		
+	<entry key="views.bestCall.grid.number">番号</entry>
+	<entry key="views.bestCall.grid.registTime">登録時間</entry>
+	<entry key="views.bestCall.grid.registId">登録者ID</entry>
+	<entry key="views.bestCall.grid.registName">登録者名</entry>
+	<entry key="views.bestCall.grid.R_BG_CODE">登録者大グループ</entry>
+	<entry key="views.bestCall.grid.R_MG_CODE">登録者のうちグループ</entry>
+	<entry key="views.bestCall.grid.R_SG_CODE">登録者小グループ</entry>
+	<entry key="views.bestCall.grid.fileName">ファイル名</entry>
+		
+		
+	<entry key="bestCall.text.share">コンユ</entry>
+	<entry key="bestCall.text.modify">修整</entry>
+		
+		
+		
+	<entry key="bestCall.alert.msg01">登録日を次の形式に合わせて入力してください!\\n例)2018-01-01</entry>
+	<entry key="bestCall.alert.msg02">キャンセルする優秀コールをチェックしてください。</entry>
+	<entry key="bestCall.alert.msg03">承認されたリストが含まれています。</entry>
+	<entry key="bestCall.alert.msg04">承認されたリストです。</entry>
+	<entry key="bestCall.alert.msg05">共有する優秀コールを選択してください。</entry>
+	<entry key="bestCall.alert.msg06">共有中のリストが含まれています。</entry>
+	<entry key="bestCall.alert.msg07">共有中のリストです。</entry>
+	<entry key="bestCall.alert.msg08">共有期間が満了したリストが含まれています。</entry>
+	<entry key="bestCall.alert.msg09">共有期間が満了したリストです。</entry>
+	<entry key="bestCall.alert.msg10">共有期間を入力してください。</entry>
+	<entry key="bestCall.alert.msg11">共有範囲を選択してください。</entry>
+	<entry key="bestCall.alert.msg12">修正する優秀コールを選択してください。</entry>
+	<entry key="bestCall.alert.msg13">コンピューターに音声ファイルを再生可能な装置がありません。\\nコンピュータに再生可能なデバイスに接続してから、聞き取りを試みて下さい。</entry>
+	<entry key="bestCall.alert.msg14">ネットワークエラーが発生しました。</entry>
+	<entry key="bestCall.alert.msg15">削除に成功しました。</entry>
+	<entry key="bestCall.alert.msg16">選択した偶数コールを</entry>
+	<entry key="bestCall.alert.msg17">なさいますか。</entry>
+	<entry key="bestCall.alert.msg18">に成功しました。</entry>
+	<entry key="bestCall.alert.msg19">承認または返戻する優秀コールを選択してください。</entry>
+	<entry key="bestCall.alert.msg20">承認·返戻対象でないリストが含まれています。</entry>
+	<entry key="bestCall.alert.msg21">承認·返戻の対象ではありません。</entry>
+	<entry key="bestCall.alert.msg22">共有期間が設定されていないリストがあります。</entry>
+	<entry key="bestCall.alert.msg23">共有期間が設定されていません。</entry>
+	<entry key="bestCall.alert.msg24">選択した優秀コールを承認しますか?</entry>
+	<entry key="bestCall.alert.msg25">該当リストを</entry>
+	<entry key="bestCall.alert.msg26">しました。</entry>
+	<entry key="bestCall.alert.msg27">本当にキャンセルしますか。</entry>
+	<entry key="bestCall.alert.msg28">優秀コール承認権限がありません。</entry>
+
+	
+
+</properties>

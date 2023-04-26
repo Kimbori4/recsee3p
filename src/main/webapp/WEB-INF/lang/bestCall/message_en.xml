@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>우수콜(bestCall) 화면용 메세지 정의</comment>
+
+
+	<!-- 우수콜 -->
+	
+	<entry key="views.bestCall.form.fieldset.fDate">Registration Date</entry>
+	<entry key="views.bestCall.form.fieldset.fOrgCode">Registration Group List</entry>
+	<entry key="views.bestCall.form.fieldset.fUserInfo">Registration Information</entry>
+	<entry key="views.bestCall.form.fieldset.fShare">Detailed Requirements</entry>
+	
+	<entry key="views.bestCall.form.shareBtn">Share BestCall</entry>
+	<entry key="views.bestCall.form.modifyBtn">Edit BestCall</entry>
+	<entry key="views.bestCall.form.delBtn">Remove BestCall</entry>
+	<entry key="views.bestCall.form.approveBtn">approval</entry>
+	<entry key="views.bestCall.form.rejectBtn">rejection</entry>
+	<entry key="views.bestCall.form.shareYN">shared state</entry>
+	<entry key="views.bestCall.form.shareYN.W">Before sharing</entry>
+	<entry key="views.bestCall.form.shareYN.Y">Sharing</entry>
+	<entry key="views.bestCall.form.shareYN.N">period expiring</entry>
+	<entry key="views.bestCall.form.shareTarget">Shared scope</entry>
+	<entry key="views.bestCall.form.allTarget">All target</entry>
+	<entry key="views.bestCall.form.approveYN">Approval status</entry>
+	<entry key="views.bestCall.form.shareTitle">BestCall Title</entry>
+	
+	<entry key="views.bestCall.popup.shareUserName">Sharer Name</entry>
+	<entry key="views.bestCall.popup.shareUserId">Sharer ID</entry>
+	<entry key="views.bestCall.popup.dueDate">Sharing period</entry>
+	<entry key="views.bestCall.popup.allSelect">All settings</entry>
+	
+	<entry key="views.bestCall.grid.number">Number</entry>
+	<entry key="views.bestCall.grid.registTime">Registration time</entry>
+	<entry key="views.bestCall.grid.registId">Registrant ID</entry>
+	<entry key="views.bestCall.grid.registName">Registrant Name</entry>
+	<entry key="views.bestCall.grid.R_BG_CODE">Large Group</entry>
+	<entry key="views.bestCall.grid.R_MG_CODE">Middle Group</entry>
+	<entry key="views.bestCall.grid.R_SG_CODE">Small Group</entry>
+	<entry key="views.bestCall.grid.fileName">File Name</entry>
+	
+	<entry key="bestCall.text.share">sharing</entry>
+	<entry key="bestCall.text.modify">editing</entry>
+	
+	
+	
+	<entry key="bestCall.alert.msg01">Please enter your registration date in the following format!\\n Example) 2018-01-01</entry>
+	<entry key="bestCall.alert.msg02">Please check the best calls to cancel.</entry>
+	<entry key="bestCall.alert.msg03">An approved list is included.</entry>
+	<entry key="bestCall.alert.msg04">Approved list.</entry>
+	<entry key="bestCall.alert.msg05">Please select an outstanding call to share</entry>
+	<entry key="bestCall.alert.msg06">Contains the list you are sharing.</entry>
+	<entry key="bestCall.alert.msg07">This list is being shared.</entry>
+	<entry key="bestCall.alert.msg08">The sharing period has expired.</entry>
+	<entry key="bestCall.alert.msg09">The list of shares has expired.</entry>
+	<entry key="bestCall.alert.msg10">Please enter a share duration.</entry>
+	<entry key="bestCall.alert.msg11">Please select a share scope.</entry>
+	<entry key="bestCall.alert.msg12">Please select an outstanding call to edit.</entry>
+	<entry key="bestCall.alert.msg13">Your computer does not have a device capable of playing voice files.\\n Attempt to listen to a playable device first on your computer.</entry>
+	<entry key="bestCall.alert.msg14">A network error has occurred.</entry>
+	<entry key="bestCall.alert.msg15">Successfully deleted.</entry>
+	<entry key="bestCall.alert.msg16">Do you want to</entry>
+	<entry key="bestCall.alert.msg17">the selected outstanding call</entry>
+	<entry key="bestCall.alert.msg18">was successful</entry>
+	<entry key="bestCall.alert.msg19">Please select an outstanding call to approve or reject</entry>
+	<entry key="bestCall.alert.msg20">It contains a list that is not subject to approval or rejection.</entry>
+	<entry key="bestCall.alert.msg21">It is not subject to approval and rejection.</entry>
+	<entry key="bestCall.alert.msg22">There is a list with no sharing period set.</entry>
+	<entry key="bestCall.alert.msg23">Sharing period is not set.</entry>
+	<entry key="bestCall.alert.msg24">Are you sure you want to accept the selected outstanding call?</entry>
+	<entry key="bestCall.alert.msg25"></entry>
+	<entry key="bestCall.alert.msg26">this list</entry>
+	<entry key="bestCall.alert.msg27">Are you sure you want to cancel?</entry>
+	<entry key="bestCall.alert.msg28">You do not have the authority to approve the call.</entry>
+	
+</properties>

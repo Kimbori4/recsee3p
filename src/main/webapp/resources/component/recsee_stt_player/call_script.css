@@ -1,0 +1,17 @@
+.player_header , .play_btn_group , .play_control_wrap{
+	display : none !important;
+}
+
+.play_wrap_all_text{
+	width : 85% !important;
+	height : 93% !important;
+}
+
+.play_base_wrap{
+	height : 105% !important;
+}
+
+body{
+	overflow-x:hidden;
+	overflow-y:hidden;
+}

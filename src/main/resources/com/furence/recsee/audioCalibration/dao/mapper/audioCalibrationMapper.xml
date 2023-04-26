@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.audioCalibration.dao.AudioCalibrationDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.audioCalibration.model.AudioCalibrationInfo">
+		<result column="R_REC_DATE" 		jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_RTIME" 		jdbcType="VARCHAR" property="recRtime" />
+		<result column="R_REC_TIME" 		jdbcType="VARCHAR" property="recTime" />
+	</resultMap>
+</mapper>

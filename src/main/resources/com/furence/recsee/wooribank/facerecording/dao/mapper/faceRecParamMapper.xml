@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.furence.recsee.recording.dao.SttDao">
+	<update id="sendTaResult" parameterType="String">
+		update rs_script_step_history 
+			set rs_script_ta_state =#{param2} , 
+				rs_ta_reason = #{param3}::jsonb 
+			where rs_script_step_call_key=#{param1}
+	</update>	
+</mapper>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>관리 화면용 메세지 정의</comment>
+
+	<!-- 관리 - 좌측 메뉴 -->
+	<entry key="management.left_menu.setting">시스템 설정</entry>
+	<entry key="management.left_menu.setting.system">시스템 관리</entry>
+	<entry key="management.left_menu.setting.channel">채널 관리</entry>
+	<entry key="management.left_menu.setting.backup">백업 관리</entry>
+	<entry key="management.left_menu.setting.call_report_customize">콜 레포트 사용자 정의</entry>
+	<entry key="management.left_menu.setting.search_customize">조회 사용자 정의</entry>
+	<entry key="management.left_menu.user">사용자 관리</entry>
+	<entry key="management.left_menu.system">시스템 관리</entry>
+
+	<!-- 관리 - 시스템 설정 - 검색 사용자 정의 -->
+	<entry key="management.search_customize.search_item">조회 항목</entry>
+	<entry key="management.search_customize.search_list">조회 목록</entry>
+	<entry key="management.search_customize.base_item">기본 항목</entry>
+	<entry key="management.search_customize.user_item">사용자 항목</entry>
+	<entry key="management.search_customize.btn.apply">적용</entry>
+
+	<!-- 관리 - 시스템 설정 - 백업 관리 -->
+	<entry key="management.backup.title">백업 관리</entry>
+	<entry key="management.backup.date">시작 날짜</entry>
+	<entry key="management.backup.storage">용량 설정</entry>
+	<entry key="management.backup.btn.ok">적용</entry>
+	<entry key="management.backup.btn.cancel">취소</entry>
+
+	<!-- 관리 - 시스템 설정 - 채널 관리 -->
+	<entry key="management.channel.tab.channel">채널</entry>
+	<entry key="management.channel.tab.generation">채널 자동 생성</entry>
+
+	<entry key="management.channel.title.channel_generation">채널 자동 생성</entry>
+	<entry key="management.channel.title.no">채널번호</entry>
+	<entry key="management.channel.title.system">시스템</entry>
+	<entry key="management.channel.title.extnum">내선번호</entry>
+	<entry key="management.channel.title.ip">IP</entry>
+	<entry key="management.channel.title.user">사용자</entry>
+	<entry key="management.channel.title.recording_use">녹취 사용</entry>
+	<entry key="management.channel.title.recording_type">녹취 종류</entry>
+	<entry key="management.channel.title.recording_kind">녹취 유형</entry>
+
+	<entry key="management.channel.title.excel_upload">엑셀 업로드</entry>
+	<entry key="management.channel.title.excel_file">엑셀 파일</entry>
+	<entry key="management.channel.title.channel_delete">기존 채널 삭제</entry>
+	<entry key="management.channel.title.channel_delete_help">등록된 모든 채널 삭제</entry>
+
+	<entry key="management.channel.title.channel_add">채널 추가</entry>
+
+	<entry key="management.channel.btn.generation">생성</entry>
+	<entry key="management.channel.btn.upload">업로드</entry>
+
+	<entry key="management.channel.alert.sChNum.empty">자동 생성 시 사용할 시작 채널 번호를 입력해주십시요.</entry>
+	<entry key="management.channel.alert.eChNum.empty">자동 생성 시 사용할 종료 채널 번호를 입력해주십시요.</entry>
+	<entry key="management.channel.alert.sExtNum.empty">자동 생성 시 사용할 시작 내선번호를 입력해주십시요.</entry>
+
+	<entry key="management.channel.alert.sChNum.zero">시작 채널 번호는 1이상을 입력해주십시요.</entry>
+	<entry key="management.channel.alert.eChNum.zero">종료 채널 번호는 1이상을 입력해주십시요.</entry>
+	<entry key="management.channel.alert.sExtNum.length_three">시작 내선번호는 3자리 이상을 입력해주십시요.</entry>
+	<entry key="management.channel.alert.eChNum.small"><![CDATA[종료 채널 번호가 시작 채널 번호보다 작습니다.<br>다시 입력해주십시요.]]></entry>
+
+	<entry key="management.channel.alert.chNum.empty">채널 번호를 입력해주십시요.</entry>
+	<entry key="management.channel.alert.chNum.zero">채널 번호는 1이상을 입력해주십시요.</entry>
+	<entry key="management.channel.alert.extNum.empty">내선번호를 입력해주십시요.</entry>
+	<entry key="management.channel.alert.extNum.length_three">내선번호는 3자리 이상을 입력해주십시요.</entry>
+	<entry key="management.channel.alert.extNum.duplicate">내선번호가 같은 채널이 있습니다.</entry>
+
+	<entry key="management.channel.alert.chIp.empty">자동 생성 시 사용할 IP를  입력해주십시요.</entry>
+	<entry key="management.channel.alert.chIp.rule_violation"><![CDATA[IP 규칙 위반입니다.<br>다시 입력해주십시요.]]></entry>
+	<entry key="management.channel.alert.chIp2.empty">사용할 IP를  입력해주십시요.</entry>
+	<entry key="management.channel.alert.chIp.duplicate">IP가 같은 채널이 있습니다.</entry>
+
+	<entry key="management.channel.message.generation.success"><![CDATA[채널이 생성되었습니다.]]></entry>
+	<entry key="management.channel.message.generation.fail"><![CDATA[채널이 생성 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.channel.message.add.success"><![CDATA[채널이 추가되었습니다.]]></entry>
+	<entry key="management.channel.message.add.fail"><![CDATA[채널 추가 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.channel.message.modify.success"><![CDATA[채널 정보가 수정되었습니다.]]></entry>
+	<entry key="management.channel.message.modify.fail"><![CDATA[채널 정보 수정 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.channel.message.delete.success"><![CDATA[채널을 삭제하였습니다.]]></entry>
+	<entry key="management.channel.message.delete.fail"><![CDATA[채널 삭제 중 오류가 발생하였습니다.]]></entry>
+	<entry key="management.channel.message.delete.confirm"><![CDATA[채널을 삭제하시겠습니까?]]></entry>
+	<entry key="management.channel.message.delete.nochecked"><![CDATA[채널을 선택해주세요.]]></entry>
+	<entry key="management.channel.message.apply.confirm"><![CDATA[채널 정보를 녹취 엔진에 적용하시겠습니까?]]></entry>
+	<entry key="management.channel.message.apply.success"><![CDATA[채널 정보가 적용되었습니다.]]></entry>
+	<entry key="management.channel.message.apply.fail"><![CDATA[운영 중인 채널이 있어, 적용되지 않았습니다.]]></entry>
+
+	<!-- 관리 - 시스템 설정 - 시스템 설정 -->
+	<entry key="management.system.tab.system">시스템</entry>
+
+	<entry key="management.system.title.system_generation">시스템생성</entry>
+	<entry key="management.system.title.sysId">시스템 ID</entry>
+	<entry key="management.system.title.sysName">시스템명</entry>
+	<entry key="management.system.title.sysIp">시스템 IP</entry>
+	<entry key="management.system.title.pbxId">PBX ID</entry>
+	<entry key="management.system.title.storagePath">저장 위치</entry>
+
+	<entry key="management.system.title.system_delete">시스템 삭제</entry>
+
+	<entry key="management.system.title.system_add">시스템 추가</entry>
+
+	<entry key="management.system.btn.generation">생성</entry>
+
+	<entry key="management.system.alert.sysId.empty">시스템 ID를 입력해주십시요.</entry>
+	<entry key="management.system.alert.sysId.zero">시스템 ID는 4자 이상을 입력해주십시요.</entry>
+	<entry key="management.system.alert.sysName.empty">시스템명을 입력해주십시요.</entry>
+	<entry key="management.system.alert.sysName.zero">시스템명은 1자 이상을 입력해주십시요.</entry>
+	<entry key="management.system.alert.sysIp.empty">시스템 IP를 입력해주십시요.</entry>
+	<entry key="management.system.alert.sysIp.zero">시스템 IP는  1자 이상을 입력해주십시요.</entry>
+
+	<entry key="management.system.alert.sysIp.rule_violation"><![CDATA[IP 규칙 위반입니다.<br>다시 입력해주십시요.]]></entry>
+	<entry key="management.system.alert.sysId.same">이미 등록된 시스템 ID입니다.</entry>
+	<entry key="management.system.alert.sysName.same">이미 등록된 시스템명입니다.</entry>
+	<entry key="management.system.alert.sysIp.same">이미 등록된 시스템IP입니다.</entry>
+
+	<entry key="management.system.message.add.success"><![CDATA[시스템이  추가되었습니다.]]></entry>
+	<entry key="management.system.message.add.fail"><![CDATA[시스템 추가 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.system.message.modify.success"><![CDATA[시스템 정보가 수정되었습니다.]]></entry>
+	<entry key="management.system.message.modify.fail"><![CDATA[시스템 정보 수정 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.system.message.delete.success"><![CDATA[시스템을 삭제하였습니다.]]></entry>
+	<entry key="management.system.message.delete.fail"><![CDATA[시스템 삭제 중 오류가 발생하였습니다.]]></entry>
+	<entry key="management.system.message.delete.confirm"><![CDATA[시스템 정보를 삭제하시겠습니까?]]></entry>
+	<entry key="management.system.message.delete.nochecked"><![CDATA[시스템 정보를 선택해주세요.]]></entry>
+	<entry key="management.system.message.usingSystem"><![CDATA[사용 가능한 시스템이 아닙니다.]]></entry>
+
+	<!-- 관리 - 사용자 관리 - 사용자 관리 -->
+	<entry key="management.user.title">사용자</entry>
+	<entry key="management.user.title.user_add">사용자 등록</entry>
+	<entry key="management.user.title.name">사용자 이름</entry>
+	<entry key="management.user.title.userId">ID</entry>
+	<entry key="management.user.title.password">비밀번호</entry>
+	<entry key="management.user.title.passwordChk">비밀번호 재확인</entry>
+	<entry key="management.user.title.extNum">내선번호</entry>
+	<entry key="management.user.title.authy">권한등급</entry>
+	<entry key="management.user.title.empId">사원번호</entry>
+	<entry key="management.user.title.email">이메일</entry>
+	<entry key="management.user.title.ctiId">CTI ID</entry>
+	<entry key="management.user.title.bgClass">대분류</entry>
+	<entry key="management.user.title.mgClass">중분류</entry>
+	<entry key="management.user.title.sgClass">소분류</entry>
+	<entry key="management.user.title.multiPart">추가 그룹</entry>
+
+	<entry key="management.user.alert.userName.empty">사용자명을 입력해주십시요.</entry>
+	<entry key="management.user.alert.userId.empty">사용자ID를 입력해주십시요.</entry>
+	<entry key="management.user.alert.password.empty">비밃번호를 입력해주십시요.</entry>
+	<entry key="management.user.alert.passwordChk.empty">비밃번호 재확인을 입력해주십시요.</entry>
+	<entry key="management.user.alert.password.noSame"><![CDATA[입력한 비밀번호가 일치하지 않습니다.<br>다시 입력해주십시요.]]></entry>
+	<entry key="management.user.alert.extNum.empty">내선번호를 입력해주십시요.</entry>
+	<entry key="management.user.alert.extNum.duplicate">내선번호가 같은 사용자가 있습니다.</entry>
+	<entry key="management.user.alert.authy.empty">권한등급을 선택해주십시요.</entry>
+	<entry key="management.user.alert.email.validation">이메일 규칙이 맞지 않습니다.</entry>
+	<entry key="management.user.alert.empId.validation">사원번호의 입력 범위가 틀립니다.</entry>
+	<entry key="management.user.alert.empId.duplicate">사원번호가 같은 사용자가 있습니다.</entry>
+	<entry key="management.user.alert.ctiId.validation">CTI ID의 입력 범위가 틀립니다.</entry>
+	<entry key="management.user.alert.ctiId.duplicate">CTI ID가 같은 사용자가 있습니다.</entry>
+
+	<entry key="management.user.message.add.success">사용자를 등록하였습니다.</entry>
+	<entry key="management.user.message.add.fail">사용자 등록 중 오류가 발생하였습니다.</entry>
+	<entry key="management.user.message.modify.success">사용자 정보를 수정하였습니다.</entry>
+	<entry key="management.user.message.modify.fail">사용자 정보 수정 중 오류가 발생하였습니다.</entry>
+	<entry key="management.user.message.delete.success">사용자를 삭제하였습니다.</entry>
+	<entry key="management.user.message.delete.fail">사용자 삭제 중 오류가 발생하였습니다.</entry>
+	<entry key="management.user.message.delete.confirm">선택한 사용자를 삭제하시겠습니까?</entry>
+	<entry key="management.user.message.delete.nochecked">사용자를 선택해주세요.</entry>
+	<entry key="management.user.message.apply.confirm"><![CDATA[사용자 정보를 녹취 엔진에 적용하시겠습니까?]]></entry>
+	<entry key="management.user.message.apply.success"><![CDATA[사용자 정보가 적용되었습니다.]]></entry>
+	<entry key="management.user.message.apply.fail"><![CDATA[적용되지 않았습니다.]]></entry>
+	<entry key="management.user.message.multiPart.success"><![CDATA[추가 그룹 정보가 적용되었습니다.]]></entry>
+	<entry key="management.user.message.multiPart.fail"><![CDATA[추가 그룹 정보가 적용되지 않았습니다.]]></entry>
+	<entry key="management.user.message.admin.multiPartNotSetting"><![CDATA[사이트 관리자 권한자는 추가 그룹 설정을 할 필요가 없습니다.]]></entry>
+
+	<!-- 관리 - 권한 관리 -->
+	<entry key="management.access.title">권한 관리</entry>
+	<entry key="management.access.title.groupName">그룹명</entry>
+	<entry key="management.access.title.menuName">메뉴명</entry>
+	<entry key="management.access.title.use">사용</entry>
+	<entry key="management.access.title.range">허용 범위</entry>
+	<entry key="management.access.title.access">허용 권한</entry>
+	<entry key="management.access.title.read">접근</entry>
+	<entry key="management.access.title.write">저장</entry>
+	<entry key="management.access.title.modi">수정</entry>
+	<entry key="management.access.title.delete">삭제</entry>
+	<entry key="management.access.title.listen">청취</entry>
+	<entry key="management.access.title.download"><![CDATA[파일</br>다운로드]]></entry>
+	<entry key="management.access.title.excel"><![CDATA[엑셀</br>다운로드]]></entry>
+	<entry key="management.access.title.masking">마스킹</entry>
+	<entry key="management.access.title.prerecipt">1차 승인</entry>
+	<entry key="management.access.title.recipt">2차 승인</entry>
+	<entry key="management.access.title.approve">최종 승인</entry>
+	<entry key="management.access.title.downloadApprove">다운로드 요청</entry>
+	<entry key="management.access.title.encyn">녹취 암호화</entry>
+	<entry key="management.access.title.upload">파일 업로드</entry>
+	<entry key="management.access.title.bestcall">우수콜 추가</entry>
+	<entry key="management.access.title.feedback.modify">평가 의견 수정</entry>
+
+
+
+	<entry key="management.access.form.authyTitle">권한명</entry>
+
+
+	<entry key="management.access.message.delete.admin">관리자 권한은 삭제할 수 없습니다.</entry>
+	<entry key="management.access.message.delete.confirm">선택한 권한을 삭제하시겠습니까?</entry>
+	<entry key="management.access.message.delete.success">권한이 삭제되었습니다.</entry>
+	<entry key="management.access.message.delete.fail">권한 삭제 중 오류가 발생하였습니다.</entry>
+	<entry key="management.access.message.clear">권한 관리 화면을 초기화 했습니다.</entry>
+	<entry key="management.access.message.modify.error">권한 상태 변경 시 오류가 발생하였습니다.</entry>
+	<entry key="management.access.message.modify.success">권한이 변경되었습니다.</entry>
+	<entry key="management.access.message.modify.fail">권한 변경 시 오류가 발생하였습니다.</entry>
+	<entry key="management.access.message.insert.name.empty">권한명을 입력해주세요.</entry>
+	<entry key="management.access.message.insert.error">권한 추가 중 오류가 발생하였습니다.</entry>
+	<entry key="management.access.message.insert.success">권한이 추가되었습니다.</entry>
+
+	<entry key="management.searchCustomize.form.item.levelCombo">등급</entry>
+	<entry key="management.searchCustomize.form.item.fieldset.title">검색 항목</entry>
+	<entry key="management.searchCustomize.form.list.fieldset.title">검색 목록</entry>
+	
+	<entry key="management.searchCustomize.rCustAddress">고객 주소</entry>
+	<entry key="management.searchCustomize.item.grid.title.name">검색 항목명</entry>
+	<entry key="management.searchCustomize.item.grid.title.var">검색 항목 변수</entry>
+	<entry key="management.searchCustomize.list.grid.title.name">조회 목록명</entry>
+	<entry key="management.searchCustomize.list.grid.title.var">조회 목록 변수</entry>
+	<entry key="management.searchCustomize.copy.grid.title.name">복사 가능 목록</entry>
+	<entry key="management.searchCustomize.copy.grid.title.var">복사 가능 목록 변수</entry>
+
+	<entry key="management.searchCustomize.rCheckBox">체크박스</entry>
+	<entry key="management.searchCustomize.rownumber">번호</entry>
+	<entry key="management.searchCustomize.rRecDate">날짜</entry>
+	<entry key="management.searchCustomize.rRecTime">시간</entry>
+	<entry key="management.searchCustomize.rRecRtime">시각</entry>
+	<entry key="management.searchCustomize.rBgCode">대분류</entry>
+	<entry key="management.searchCustomize.rMgCode">중분류</entry>
+	<entry key="management.searchCustomize.rSgCode">소분류</entry>
+	<entry key="management.searchCustomize.rUserId">상담사 ID</entry>
+	<entry key="management.searchCustomize.rChNum">채널번호</entry>
+	<entry key="management.searchCustomize.rUserName">상담사명</entry>
+	<entry key="management.searchCustomize.rCallId1">녹취 아이디1</entry>
+	<entry key="management.searchCustomize.rCallId2">녹취 아이디2</entry>
+	<entry key="management.searchCustomize.rCallId3">콜아이디</entry>
+	<entry key="management.searchCustomize.rExtNum">내선번호</entry>
+	<entry key="management.searchCustomize.rCustName">고객명</entry>
+	<entry key="management.searchCustomize.rCustPhone1">고객 전화번호</entry>
+	<entry key="management.searchCustomize.rCustPhone2">전환 번호</entry>
+	<entry key="management.searchCustomize.rCustPhone3">고객 전화번호2</entry>
+	<entry key="management.searchCustomize.rCallKind1">콜타입</entry>
+	<entry key="management.searchCustomize.rCallKind2">추가 콜타입</entry>
+	<entry key="management.searchCustomize.rCallStime">통화시작시간</entry>
+	<entry key="management.searchCustomize.rCallEtime">통화종료시간</entry>
+	<entry key="management.searchCustomize.rCallTtime">통화시간</entry>
+	<entry key="management.searchCustomize.rSelfdisYn">상담원 종료 유무</entry>
+	<entry key="management.searchCustomize.rVSysCode">시스템코드</entry>
+	<entry key="management.searchCustomize.rListenUrl">청취URL</entry>
+	<entry key="management.searchCustomize.rRecMemo">메모</entry>
+	<entry key="management.searchCustomize.rDivision">분배</entry>
+	<entry key="management.searchCustomize.rEvalYn">평가유무</entry>
+	<entry key="management.searchCustomize.rCustSocialNum">주민등록번호</entry>
+	<entry key="management.searchCustomize.rCnid">CNID</entry>
+	<entry key="management.searchCustomize.rDestIp">상대IP</entry>
+	<entry key="management.searchCustomize.rBuffer1">홀드건수</entry>
+	<entry key="management.searchCustomize.rBuffer2">홀드타임</entry>
+	<entry key="management.searchCustomize.rBuffer3">연관콜</entry>
+	<entry key="management.searchCustomize.rBuffer4">추가4</entry>
+	<entry key="management.searchCustomize.rBuffer5">권유자번호</entry>
+	<entry key="management.searchCustomize.rBuffer6">권유자명</entry>
+	<entry key="management.searchCustomize.rBuffer7">추가7</entry>
+	<entry key="management.searchCustomize.rBuffer8">추가8</entry>
+	<entry key="management.searchCustomize.rBuffer9">추가9</entry>
+	<entry key="management.searchCustomize.rBuffer10">접수번호</entry>
+	<entry key="management.searchCustomize.rBuffer11">고객번호</entry>
+	<entry key="management.searchCustomize.rBuffer12">SR번호</entry>
+	<entry key="management.searchCustomize.rBuffer13">주문번호</entry>
+	<entry key="management.searchCustomize.rBuffer14">녹취보관</entry>
+	<entry key="management.searchCustomize.rBuffer15">증권번호</entry>
+	<entry key="management.searchCustomize.rBuffer16">접수구분</entry>
+	<entry key="management.searchCustomize.rBuffer17">콜 아이디</entry>
+	<entry key="management.searchCustomize.rBuffer18">부분 저장</entry>
+	<entry key="management.searchCustomize.rBuffer19">추가19</entry>
+	<entry key="management.searchCustomize.rBuffer20">추가20</entry>
+	<entry key="management.searchCustomize.rVdoUrl">Vdo 링크</entry>
+	<entry key="management.searchCustomize.rCustId">고객 ID</entry>
+	<entry key="management.searchCustomize.rRegiDate">등록일</entry>
+	<entry key="management.searchCustomize.rManager">관리자</entry>
+	<entry key="management.searchCustomize.rSRtp">SRTP 유무</entry>
+	<entry key="management.searchCustomize.fKey">F 키</entry>
+	<entry key="management.searchCustomize.rSSrc">SSRC</entry>
+	<entry key="management.searchCustomize.rKey">SRTP 키</entry>
+	<entry key="management.searchCustomize.rCoNum">CO 번호</entry>
+	<entry key="management.searchCustomize.rDidNum">DID 번호</entry>
+	<entry key="management.searchCustomize.rUeiData">UEI</entry>
+	<entry key="management.searchCustomize.rQueueNo1">큐1</entry>
+	<entry key="management.searchCustomize.rQueueNo2">큐2</entry>
+	<entry key="management.searchCustomize.rBgName">대분류</entry>
+	<entry key="management.searchCustomize.rMgName">중분류</entry>
+	<entry key="management.searchCustomize.rSgName">소분류</entry>
+	<entry key="management.searchCustomize.evaluation">평가</entry>
+	<entry key="management.searchCustomize.screen">스크린</entry>
+	<entry key="management.searchCustomize.trace">트레이스</entry>
+	<entry key="management.searchCustomize.rRecStartType">시작유형</entry>
+	<entry key="management.searchCustomize.rDownload">편집/다운로드</entry>
+	<entry key="management.searchCustomize.rListAdd">플레이 리스트 추가</entry>
+	<entry key="management.searchCustomize.rMemoInfo">메모 정보</entry>
+	<entry key="management.searchCustomize.rMemo">메모</entry>
+	<entry key="management.searchCustomize.rVFilename">파일명</entry>
+
+	<entry key="management.searchCustomize.rStockNo">증권 번호</entry>
+	<entry key="management.searchCustomize.rCounselResultBgcode">상담코드대</entry>
+	<entry key="management.searchCustomize.rCounselResultMgcode">상담코드중</entry>
+	<entry key="management.searchCustomize.rCounselResultSgcode">상담코드소</entry>
+	<entry key="management.searchCustomize.rGroupCode1">그룹코드1</entry>
+	<entry key="management.searchCustomize.rGroupCode2">그룹코드2</entry>
+	<entry key="management.searchCustomize.rGroupCode3">그룹코드3</entry>
+	<entry key="management.searchCustomize.rBankCode">은행코드</entry>
+	<entry key="management.searchCustomize.rBaccountNum">계좌번호</entry>
+	<entry key="management.searchCustomize.rDualFlag">센터간 데이터 매칭 flag</entry>
+	<entry key="management.searchCustomize.rCallKindAp">ap 연동 in/out</entry>
+	<entry key="management.searchCustomize.rCallKeyAp">ap 연동 녹취키</entry>
+	<entry key="management.searchCustomize.rCustPhoneAp">ap 연동 cid</entry>
+	<entry key="management.searchCustomize.rIvrKey">출금동의 ivr키</entry>
+	<entry key="management.searchCustomize.rVsendFlag">녹취파일 전송 flag</entry>
+	<entry key="management.searchCustomize.rSsendFlag">스크린파일 전송 flag</entry>
+	<entry key="management.searchCustomize.rSendInfoFlag">데이터 전송 flag</entry>
+	<entry key="management.searchCustomize.rSttPlayer">콜 스크립트</entry>
+	<entry key="management.searchCustomize.rLogListen">청취 이력</entry>
+	<entry key="management.searchCustomize.rRecCategory">카테고리</entry>
+	<entry key="management.searchCustomize.rRecKeyword">키워드</entry>
+	<entry key="management.searchCustomize.rRecText">통화 내용</entry>
+	<entry key="management.searchCustomize.rRecSummary">통화 내용</entry>
+	<entry key="management.searchCustomize.rTranscript">분배</entry>
+	<entry key="management.searchCustomize.rCompanyTelno">자번호</entry>
+	<entry key="management.searchCustomize.rCompanyTelnoNick">자번호닉네임</entry>
+	<entry key="management.searchCustomize.rPhoneMapping">전화번호 맵핑</entry>
+	<entry key="management.searchCustomize.rRecVolume">볼륨</entry>
+	<entry key="management.searchCustomize.rProductType">상품타입</entry>
+
+	<entry key="management.searchCustomize.rCallStimeConnect">유효콜 녹취시간</entry>
+	<entry key="management.searchCustomize.rCallTtimeConnect">유효콜 녹취한시간(초)</entry>
+	
+	<entry key="management.searchCustomize.rSttResult">STT 진행 상태</entry>
+
+	<entry key="management.searchCustomize.alert.sameColumn">중복된 칼럼이 있습니다.</entry>
+	<entry key="management.searchCustomize.alert.itemTypeEmpty">적용할 데이타가 없습니다.</entry>
+	<entry key="management.searchCustomize.alert.empty">적용할 데이타가 없습니다.</entry>
+	<entry key="management.searchCustomize.alert.success">적용되었습니다.</entry>
+	<entry key="management.searchCustomize.alert.error">적용 중 오류가 발생하였습니다.</entry>
+
+	<entry key="management.screenUserListFieldSet.form.item.screenUserFieldset.title">스크린 사용자 목록</entry>
+	<entry key="management.screenUserListFieldSet.form.item.UserFieldset.title">사용자 목록</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserUseCount">스크린 사용자 수</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserLicensesCount">라이센스 수</entry>
+	<entry key="management.screenUser.alert.message.noExtention">내선번호가 없는 대상이 있습니다.</entry>
+	<entry key="management.screenUser.alert.message.empty">적용할 데이타가 없습니다.</entry>
+	<entry key="management.screenUser.alert.message.success">적용되었습니다.</entry>
+	<entry key="management.screenUser.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+	<entry key="management.screenUser.alert.message.overLicense">라이센스 초과입니다.</entry>
+
+	<!-- 그룹 -->
+	<entry key="management.group.title.group">그룹 관리</entry>
+	<entry key="management.group.form.title.groupName">그룹 명</entry>
+	<entry key="management.group.form.title.excelUpload">엑셀 업로드</entry>
+	<entry key="management.group.contextMenu.title.subClass">하위 분류</entry>
+	<entry key="management.group.newGroup.title">새 그룹</entry>
+	<entry key="management.group.alert.message.success">적용되었습니다.</entry>
+	<entry key="management.group.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+	<entry key="management.group.message.delete.confirm">그룹을 삭제하시겠습니까?</entry>
+	<entry key="management.group.alert.message.overLevel">소분류 이상으로 그룹을 추가할 수 없습니다.</entry>
+	<entry key="management.group.alert.message.checkExtension">엑셀 파일만 업로드 가능합니다.(확장자 : xls, xlsx)</entry>
+	<entry key="management.group.alert.message.excelProcSuccess">엑셀 파일의 그룹 정보가 적용되었습니다.</entry>
+	<entry key="management.group.alert.message.excelProcFail">엑셀 파일의 그룹 정보 적용 중 에러가 발생하였습니다.</entry>
+
+	<!-- 큐 -->
+	<entry key="management.queue.title.queue">큐 관리</entry>
+	<entry key="management.queue.form.title.queueAdd">큐 추가</entry>
+	<entry key="management.queue.form.title.queueNum">큐 번호</entry>
+	<entry key="management.queue.form.title.queueName">큐 이름</entry>
+	<entry key="management.queue.form.title.excelUpload">엑셀 업로드</entry>
+
+	<entry key="management.queue.alert.rQueueNum.empty">큐 번호를 입력해주십시요.</entry>
+	<entry key="management.queue.alert.rQueueNum.zero">큐 번호는 1이상을 입력해주십시요.</entry>
+	<entry key="management.queue.alert.rQueueName.empty">큐 이름을 입력해주십시요.</entry>
+	<entry key="management.queue.alert.rQuqueNum.duplication">중복된 큐 번호입니다.</entry>
+
+	<entry key="management.queue.alert.message.success">적용되었습니다.</entry>
+	<entry key="management.queue.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+	<entry key="management.queue.message.delete.confirm">큐를 삭제하시겠습니까?</entry>
+	<entry key="management.queue.alert.message.nochecked"><![CDATA[큐를 선택해주세요.]]></entry>
+	<entry key="management.queue.alert.message.checkExtension">엑셀 파일만 업로드 가능합니다.(확장자 : xls, xlsx)</entry>
+	<entry key="management.queue.alert.message.excelProcSuccess">엑셀 파일의 큐 정보가 적용되었습니다.</entry>
+	<entry key="management.queue.alert.message.excelProcFail">엑셀 파일의 큐 정보 적용 중 에러가 발생하였습니다.</entry>
+
+	<!-- 관리 - 시스템 설정 - pbx 연동 정보 -->
+	<entry key="management.pbx.tab.pbx">교환기</entry>
+
+	<entry key="management.pbx.title.pbxId">교환기 ID</entry>
+	<entry key="management.pbx.title.pbxName">교환기명</entry>
+	<entry key="management.pbx.title.pbxIp">교환기 IP</entry>
+	<entry key="management.pbx.title.pbxLicense">라이선스</entry>
+	<entry key="management.pbx.title.pbxSipId">SIP ID</entry>
+	<entry key="management.pbx.title.pbxSipPassword">SIP 비밀번호</entry>
+
+	<entry key="management.pbx.title.pbx_delete">교환기 삭제</entry>
+
+	<entry key="management.pbx.title.pbx_add">교환기 추가</entry>
+
+	<entry key="management.pbx.btn.generation">생성</entry>
+
+	<entry key="management.pbx.alert.pbxId.empty">교환기 ID를 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxId.zero">교환기 ID는 4자 이상을 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxName.empty">교환기명을 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxName.zero">교환기명은 1자 이상을 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxIp.empty">교환기 IP를 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxIp.zero">교환기 IP는  1자 이상을 입력해주십시요.</entry>
+
+	<entry key="management.pbx.alert.pbxIp.rule_violation"><![CDATA[IP 규칙 위반입니다.<br>다시 입력해주십시요.]]></entry>
+	<entry key="management.pbx.alert.pbxId.same">이미 등록된 교환기 ID입니다.</entry>
+	<entry key="management.pbx.alert.pbxName.same">이미 등록된 교환기명입니다.</entry>
+	<entry key="management.pbx.alert.pbxIp.same">이미 등록된 교환기IP입니다.</entry>
+	<entry key="management.pbx.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+
+	<entry key="management.pbx.message.add.success"><![CDATA[교환기이  추가되었습니다.]]></entry>
+	<entry key="management.pbx.message.add.fail"><![CDATA[교환기 추가 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.pbx.message.modify.success"><![CDATA[교환기 정보가 수정되었습니다.]]></entry>
+	<entry key="management.pbx.message.modify.fail"><![CDATA[교환기 정보 수정 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.pbx.message.delete.success"><![CDATA[교환기을 삭제하였습니다.]]></entry>
+	<entry key="management.pbx.message.delete.fail"><![CDATA[교환기 삭제 중 오류가 발생하였습니다.]]></entry>
+	<entry key="management.pbx.message.delete.confirm"><![CDATA[교환기 정보를 삭제하시겠습니까?]]></entry>
+	<entry key="management.pbx.message.delete.nochecked"><![CDATA[교환기 정보를 선택해주세요.]]></entry>
+
+	<!-- 관리 - 시스템 관리 - log 관리 -->
+	<entry key="management.log.tab.log">로그</entry>
+
+	<entry key="management.log.title.logDate">날짜</entry>
+	<entry key="management.log.title.logTime">시간</entry>
+	<entry key="management.log.title.logIp">로그 IP</entry>
+	<entry key="management.log.title.logServerIp">서버 IP</entry>
+	<entry key="management.log.title.logUserId">사용자 ID</entry>
+	<entry key="management.log.title.logExt">내선번호</entry>
+	<entry key="management.log.title.logContents">로그 내용</entry>
+	<entry key="management.log.title.logEtc">기타</entry>
+
+	<entry key="management.log.btn.logSearch">로그 조회</entry>
+	<entry key="management.log.btn.logDelete">로그 삭제</entry>
+	<entry key="management.log.btn.logExcel">엑셀다운로드</entry>
+
+	<entry key="management.log.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+
+	<entry key="management.log.message.search.noData"><![CDATA[조회된 로그 정보가 없습니다.]]></entry>
+	<entry key="management.log.message.delete.success"><![CDATA[로그을 삭제하였습니다.]]></entry>
+	<entry key="management.log.message.delete.fail"><![CDATA[로그 삭제 중 오류가 발생하였습니다.]]></entry>
+	<entry key="management.log.message.delete.confirm"><![CDATA[로그 정보를 삭제하시겠습니까?]]></entry>
+
+	<!-- 관리 - 시스템 관리 - etc 관리 -->
+	<entry key="management.etc.tab.etc">기타설정</entry>
+
+	<entry key="management.etc.title.mailServerInfo">메일 서버 정보</entry>
+	<entry key="management.etc.title.mailServerAddr">메일 서버 주소</entry>
+	<entry key="management.etc.title.mailServerPort">메일 발송 포트</entry>
+	<entry key="management.etc.title.mailServerId">메일 발송 ID</entry>
+	<entry key="management.etc.title.mailServerPw">메일 발송 비밀번호</entry>
+	<entry key="management.etc.title.senderEmail">발신자 메일 주소</entry>
+	<entry key="management.etc.title.receiverEmail">수신자 메일 주소</entry>
+
+	<entry key="management.etc.title.faultCycleInfo">Fault 알림 주기 정보</entry>
+	<entry key="management.etc.title.faultCycle">Fault 알림 주기</entry>
+	<entry key="management.etc.title.faultCycleUnit">(초)</entry>
+
+	<entry key="management.etc.title.realTimeMonitoringInfo">실시간 모니터링 기타 설정</entry>
+	<entry key="management.etc.title.realTimeMonitoringCycle">갱신주기</entry>
+	<entry key="management.etc.title.realTimeMonitoringCycleUnit">(초)</entry>
+
+	<entry key="management.etc.title.etcInfo">기타 설정</entry>
+	<entry key="management.etc.title.ipktsAliveCheck">IPKTS Alive check</entry>
+	<entry key="management.etc.title.sipLog">SIP Log</entry>
+	<entry key="management.etc.title.ethernetCard">랜카드</entry>
+	<entry key="management.etc.title.downloadEncrypt">암호화된 파일 다운로드 방식</entry>
+
+	<entry key="management.etc.title.agentIdOutputOptions">에이전트 ID 출력 옵션</entry>
+	<entry key="management.etc.title.haName">HA 명칭</entry>
+	<entry key="management.etc.title.fileExtension">다운로드 파일 확장자</entry>
+	<entry key="management.etc.title.filenamePattern">파일명 패턴</entry>
+	<entry key="management.etc.title.filenamePatternLabel">날짜(YYYYMMDDhhmmss)-에이전트ID-</entry>
+	<entry key="management.etc.title.announcementRecording">안내 멘트 녹취</entry>
+
+	<entry key="management.etc.title.serverRestart">녹취 엔진 재시작</entry>
+
+	<entry key="management.etc.title.voiceFileUpload">음성 파일 업로드</entry>
+	<entry key="management.etc.title.voiceFile">음성 파일</entry>
+	<entry key="management.etc.message.maxUploadSize">최대 업로드 크기 : 100M</entry>
+
+	<entry key="management.etc.title.updateFileUpload">업데이트 파일 업로드</entry>
+	<entry key="management.etc.title.updateFile">업데이트 파일</entry>
+	<entry key="management.etc.title.memo">메모</entry>
+	<entry key="management.etc.message.updateFileNotice">파일 업로드 후 서버를 재부팅해야 업데이트가 완료됩니다.</entry>
+
+	<entry key="management.etc.title.serverTimezoneInfo">서버 타임존 관리</entry>
+	<entry key="management.etc.title.serverTimezone">서버 타임존</entry>
+	<entry key="management.etc.title.nowServerTimezone">현재 타임존</entry>
+	<entry key="management.etc.title.serverTimeChange">서버 시간 변경</entry>
+
+	<entry key="management.etc.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+	<entry key="management.etc.alert.message.success"><![CDATA[적용하였습니다.]]></entry>
+	<entry key="management.etc.alert.message.send.error">테스트 메일 발송에 실패하였습니다.</entry>
+	<entry key="management.etc.alert.message.send.success"><![CDATA[테스트 메일 발송에 성공하였습니다.]]></entry>
+	<entry key="management.etc.message.restart.confirm">재시작 하시겠습니까?</entry>
+
+	<entry key="management.etc.message.testmail.subject">테스트 메일</entry>
+	<entry key="management.etc.message.testmail.text">메일 셋팅 정보 확인용 테스트 메일</entry>
+</properties>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.ScreenInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.ScreenInfo">
+		<result column="R_EXT_NO" jdbcType="VARCHAR" property="rExtNo" />
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_SCREEN_YN" jdbcType="VARCHAR" property="rScreenYn" />
+		<result column="R_SCREEN_STATUS" jdbcType="VARCHAR" property="rScreenStatus" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+	</resultMap>
+
+	<select id="selectUserInfo" parameterType="com.furence.recsee.admin.model.ScreenInfo" databaseId="postgres" resultMap="BaseResultMap">
+	SELECT
+		A.R_EXT_NUM AS R_EXT_NO,
+		R_USER_ID,
+		R_SCREEN_YN,
+		'' AS R_SCREEN_STATUS,
+		R_BG_CODE,
+		R_MG_CODE,
+		R_SG_CODE
+	FROM
+		RS_CH_INFO A
+	FULL JOIN
+		RS_RUSER_INFO B
+	ON
+		A.R_EXT_NUM = B.R_EXT_NO
+	WHERE
+		( R_BG_CODE != 'B001' OR COALESCE(LENGTH(LTRIM(RTRIM(R_BG_CODE))),0) = 0 )
+		AND ( R_SCREEN_YN != 'Y' OR COALESCE(LENGTH(LTRIM(RTRIM(R_SCREEN_YN))),0) = 0 )
+		<if test="rBgCode != null">
+		AND R_BG_CODE = #{rBgCode}
+		</if>
+		<if test="rMgCode != null">
+		AND R_MG_CODE = #{rMgCode}
+		</if>
+		<if test="rSgCode != null">
+		AND R_SG_CODE = #{rSgCode}
+		</if>
+	ORDER BY
+		R_USER_NAME, R_EXT_NO
+	</select>
+	<select id="selectUserInfo" parameterType="com.furence.recsee.admin.model.ScreenInfo" databaseId="sqlserver" resultMap="BaseResultMap">
+	SELECT
+		A.R_EXT_NUM AS R_EXT_NO,
+		R_USER_ID,
+		R_SCREEN_YN,
+		'' AS R_SCREEN_STATUS,
+		R_BG_CODE,
+		R_MG_CODE,
+		R_SG_CODE
+	FROM
+		RS_CH_INFO A
+	FULL JOIN
+		RS_RUSER_INFO B
+	ON
+		A.R_EXT_NUM = B.R_EXT_NO
+	WHERE
+		( R_BG_CODE != 'B001' OR COALESCE(LEN(LTRIM(RTRIM(R_BG_CODE))),0) = 0 )
+		AND ( R_SCREEN_YN != 'Y' OR COALESCE(LEN(LTRIM(RTRIM(R_SCREEN_YN))),0) = 0 )
+		<if test="rBgCode != null">
+		AND R_BG_CODE = #{rBgCode}
+		</if>
+		<if test="rMgCode != null">
+		AND R_MG_CODE = #{rMgCode}
+		</if>
+		<if test="rSgCode != null">
+		AND R_SG_CODE = #{rSgCode}
+		</if>
+	ORDER BY
+		R_USER_NAME, R_EXT_NO
+	</select>
+	<select id="selectUserInfo" parameterType="com.furence.recsee.admin.model.ScreenInfo" databaseId="oracle" resultMap="BaseResultMap">
+	SELECT
+		A.R_EXT_NUM AS R_EXT_NO,
+		R_USER_ID,
+		R_SCREEN_YN,
+		'' AS R_SCREEN_STATUS,
+		R_BG_CODE,
+		R_MG_CODE,
+		R_SG_CODE
+	FROM
+		RS_CH_INFO A
+	FULL JOIN
+		RS_RUSER_INFO B
+	ON
+		A.R_EXT_NUM = B.R_EXT_NO
+	WHERE
+		( R_BG_CODE != 'B001' OR COALESCE(LENGTH(LTRIM(RTRIM(R_BG_CODE))),0) = 0 )
+		AND ( R_SCREEN_YN != 'Y' OR COALESCE(LENGTH(LTRIM(RTRIM(R_SCREEN_YN))),0) = 0 )
+		<if test="rBgCode != null">
+		AND R_BG_CODE = #{rBgCode}
+		</if>
+		<if test="rMgCode != null">
+		AND R_MG_CODE = #{rMgCode}
+		</if>
+		<if test="rSgCode != null">
+		AND R_SG_CODE = #{rSgCode}
+		</if>
+	ORDER BY
+		R_USER_NAME, R_EXT_NO
+	</select>
+
+	<select id="selectScreenUserInfo" parameterType="com.furence.recsee.admin.model.ScreenInfo" resultMap="BaseResultMap">
+	SELECT
+		A.R_EXT_NUM AS R_EXT_NO,
+		R_USER_ID,
+		R_SCREEN_YN,
+		'' AS R_SCREEN_STATUS,
+		R_BG_CODE,
+		R_MG_CODE,
+		R_SG_CODE
+	FROM
+		RS_CH_INFO A
+	FULL JOIN
+		RS_RUSER_INFO B
+	ON
+		A.R_EXT_NUM = B.R_EXT_NO
+	WHERE R_SCREEN_YN = 'Y'
+	ORDER BY
+		R_USER_NAME, R_EXT_NO
+	</select>
+
+	<update id="updateScreenUser" parameterType="com.furence.recsee.admin.model.ScreenInfo">
+	UPDATE
+		RS_CH_INFO
+	SET
+		R_SCREEN_YN = #{rScreenYn}
+	<where>
+		<if test="sExtNo != null">
+		R_EXT_NUM = #{sExtNo}
+		</if>
+	</where>
+	</update>
+</mapper>
+

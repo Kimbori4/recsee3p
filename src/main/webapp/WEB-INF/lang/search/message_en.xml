@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>조회(search) 화면용 메세지 정의</comment>
+
+	<entry key="search.option.startDate">Start Date</entry>
+	<entry key="search.option.endDate">End date</entry>
+	<entry key="search.option.recStart">Start recording</entry>
+	<entry key="search.option.recEnd">Recording end</entry>
+	<entry key="search.option.callStart">Start call</entry>
+	<entry key="search.option.callEnd">End call</entry>
+	<entry key="search.option.search">Search</entry>
+	<entry key="search.option.callType">Call Type</entry>
+	<entry key="search.option.callType2">Call Type2</entry>
+	<entry key="search.option.custNo">Customer number</entry>
+	<entry key="search.option.custName">Customer name</entry>
+	<entry key="search.option.agentId">User ID</entry>
+
+	<entry key="search.option.agentName">User name</entry>
+	<entry key="search.option.ext">Extension number</entry>
+	<entry key="search.option.que1">Que1</entry>
+	<entry key="search.option.que2">Que2</entry>
+	<entry key="search.option.agentClose">Agent termination</entry>
+	<entry key="search.option.medium">Middle Group</entry>
+	<entry key="search.option.small">Small Group</entry>
+	<entry key="search.option.natId">ID card number </entry>
+	<entry key="search.option.empId">Employee number</entry>
+	<entry key="search.option.screen">Screen</entry>
+	<entry key="search.option.trace">Trace</entry>
+	<entry key="search.option.evaluation">Evaluation</entry>
+	<entry key="search.option.startType">Start Type</entry>
+
+	<entry key="search.player.nowPlaying">currently playing : </entry>
+	<entry key="search.player.nowPlaying2">Files currently playing</entry>
+	<entry key="search.player.noFiles">No files are playing.</entry>
+
+
+
+	<entry key="search.player.inputMsg">Best call title as 25 characters or less.</entry>
+	<entry key="search.player.addBestcall">Add an Bestcall</entry>
+	<entry key="search.player.addBestCallManage">Add Best call management</entry>
+	<entry key="search.player.specifyStart">Specify interval from playback point</entry>
+	<entry key="search.player.specifyFinish">Finish specifying interval from playback point</entry>
+	<entry key="search.player.defineSpecify">Specify a user-defined interval</entry>
+	<entry key="search.player.mouseSpecify">Specify mouse segment</entry>
+	<entry key="search.player.delSection">Delete batches in batches</entry>
+	<entry key="search.player.uploadFile">Upload a file</entry>
+	<entry key="search.player.playerTag">Player Tags</entry>
+	<entry key="search.player.repeat">repeat</entry>
+	<entry key="search.player.cancelRepeat">Repeat off</entry>
+	<entry key="search.player.down">download</entry>
+	<entry key="search.player.mute">Silence</entry>
+	<entry key="search.player.cancelMute">Silence cancellation</entry>
+	<entry key="search.player.remove">remove</entry>
+	<entry key="search.player.cancelRemove">remove cancellation</entry>
+	<entry key="search.player.del">delete</entry>
+	<entry key="search.player.fileDown">file download</entry>
+	<entry key="search.player.PlayerDown">player download</entry>
+
+	<entry key="search.player.alert.msg1">This file is out of date!</entry>
+	<entry key="search.player.alert.msg2">This file is not playable on the player.\\n Only files downloaded from the player can be played.</entry>
+	<entry key="search.player.alert.msg3">The requested recording file could not be found.</entry>
+	<entry key="search.player.alert.msg4">No more to play.</entry>
+	<entry key="search.player.alert.msg5">Request failed.</entry>
+	<entry key="search.player.alert.msg6">Please click the listen button to listen to.</entry>
+	<entry key="search.player.alert.msg7">No files found</entry>
+	<entry key="search.player.alert.msg8">There are currently no real-time interceptors.</entry>
+	<entry key="search.player.alert.msg9">Your player tags have been saved.</entry>
+	<entry key="search.player.alert.msg10">Player Tag Removal is complete.</entry>
+	<entry key="search.player.alert.msg11">Please enter an excellent call title.</entry>
+	<entry key="search.player.alert.msg12">No files are playing.</entry>
+	<entry key="search.player.alert.msg13">Please indicate where you want to silence / remove recordings.</entry>
+	<entry key="search.player.alert.msg14">Successful call registration.</entry>
+	<entry key="search.player.alert.msg15">Failed to register for Best call.</entry>
+	<entry key="search.player.alert.msg16">This file is out of date!</entry>
+	<entry key="search.player.alert.msg17">Do you want to add an Best call?</entry>
+	<entry key="search.player.alert.msg18">Are you sure you want to delete?</entry>
+	<entry key="search.player.alert.msg19">This is the file you were playing.\\n Do you want to play it again?</entry>
+	<entry key="search.player.alert.msg20">All player tags stored in the current file will be deleted.\\n Are you sure you want to delete them?</entry>
+
+
+
+
+
+
+
+
+	<entry key="views.search.tabs.a1">Basic</entry>
+	<entry key="views.search.tabs.a2">Expansion</entry>
+	<entry key="views.search.tabs.a3">Favorite</entry>
+
+	<entry key="views.search.combo.all">Call Type</entry>
+
+	<entry key="views.search.button.search">search</entry>
+	<entry key="views.search.button.excelDownload">Page to Excel Download</entry>
+	<entry key="views.search.button.multiListen">Listen to Selection</entry>
+	<entry key="views.search.button.multiDownload">Download Selection</entry>
+	<entry key="views.search.grid.head.ROWNUMBER">Number</entry>
+	<entry key="views.search.grid.head.R_CHECK_BOX"></entry>
+	<entry key="views.search.grid.head.R_FAVORITES">Favorite</entry>
+	<entry key="views.search.grid.head.R_REC_DATE">Date</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME">Time</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME1">Time(From)</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME2">Time(to)</entry>
+	<entry key="views.search.grid.head.R_REC_TIME">Time</entry>
+	<entry key="views.search.grid.head.R_REC_TIME1">Time(From)</entry>
+	<entry key="views.search.grid.head.R_REC_TIME2">Time(to)</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT1">Effective recording time(from)</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT2">Effective recording time(to)</entry>
+	<entry key="views.search.grid.head.R_BG_CODE">Large Group</entry>
+	<entry key="views.search.grid.head.R_MG_CODE">Middle Group</entry>
+	<entry key="views.search.grid.head.R_SG_CODE">Small Group</entry>
+	<entry key="views.search.grid.head.R_USER_ID">Employee number</entry>
+	<entry key="views.search.grid.head.R_CH_NUM">Channel number</entry>
+	<entry key="views.search.grid.head.R_USER_NAME">Name of agent</entry>
+	<entry key="views.search.grid.head.R_CALL_ID1">Call ID</entry>
+	<entry key="views.search.grid.head.R_CALL_ID2">Call ID</entry>
+	<entry key="views.search.grid.head.R_CALL_ID3">Call ID</entry>
+	<entry key="views.search.grid.head.R_EXT_NUM">Extension number</entry>
+	<entry key="views.search.grid.head.R_EXT_NUM_MOBILE">Phone</entry>
+	<entry key="views.search.grid.head.R_CUST_NAME">Customer name</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE1">Customer telephone number</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE2">Conversion number</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE3">Customer telephone number</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND1">Call type</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND2">Additional call type</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME">Call start time</entry>
+	<entry key="views.search.grid.head.R_CALL_ETIME">Call end time</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME">calling time</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME1">calling time(from)</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME2">calling time(to)</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT1">Effective call time(from)</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT2">Effective call time(to)</entry>
+	<entry key="views.search.grid.head.R_SELFDIS_YN">Agent termination status</entry>
+	<entry key="views.search.grid.head.R_V_SYS_CODE">System code</entry>
+	<entry key="views.search.grid.head.R_V_HDD_FLAG">HDD Recognition symbol</entry>
+	<entry key="views.search.grid.head.R_LISTEN_URL">Recording file path</entry>
+	<entry key="views.search.grid.head.R_V_FILENAME">Recording file name</entry>
+	<entry key="views.search.grid.head.R_S_SYS_CODE">Screen system code</entry>
+	<entry key="views.search.grid.head.R_S_HDD_FLAG">Screen HDD Recognition Symbol</entry>
+	<entry key="views.search.grid.head.R_S_SCREEN_URL">Screen file path</entry>
+	<entry key="views.search.grid.head.R_S_FILENAME">Screen filename</entry>
+	<entry key="views.search.grid.head.R_S_UPLOAD_YN">Screen upload status</entry>
+	<entry key="views.search.grid.head.R_T_SYS_CODE">Text Recording System Code</entry>
+	<entry key="views.search.grid.head.R_T_HDD_FLAG">Text HDD Recognition Symbol</entry>
+	<entry key="views.search.grid.head.R_TEXT_URL">Text file path</entry>
+	<entry key="views.search.grid.head.R_T_FILENAME">Text file name</entry>
+	<entry key="views.search.grid.head.R_PART_START">Partial recording start time</entry>
+	<entry key="views.search.grid.head.R_PART_END">Partial recording end time</entry>
+	<entry key="views.search.grid.head.R_MARKGIN1">Display 1</entry>
+	<entry key="views.search.grid.head.R_MARKGIN2">Display 2</entry>
+	<entry key="views.search.grid.head.R_MARKING3">Display 3</entry>
+	<entry key="views.search.grid.head.R_MARKING4">Display 4</entry>
+	<entry key="views.search.grid.head.R_REC_MEMO">Recording Memo</entry>
+	<entry key="views.search.grid.head.R_CUST_SOCIAL_NUM">ID card number </entry>
+	<entry key="views.search.grid.head.R_CONTRACK_NUM">Contract Number</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_CODE">Counseling code</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_CONTENT">Call Details</entry>
+	<entry key="views.search.grid.head.R_CUST_ADDRESS">Customer address</entry>
+	<entry key="views.search.grid.head.R_RECEIPT_NUM">Receipt number</entry>
+	<entry key="views.search.grid.head.R_PLAYER_KIND">Player Type</entry>
+	<entry key="views.search.grid.head.R_BUFFER1">Hold Count</entry>
+	<entry key="views.search.grid.head.R_BUFFER2">Hold Time</entry>
+	<entry key="views.search.grid.head.R_BUFFER3">Buffer 3</entry>
+	<entry key="views.search.grid.head.R_BW_YN"><![CDATA[BEST&WORST Y/N]]></entry>
+	<entry key="views.search.grid.head.R_BW_BG_CODE"><![CDATA[BEST&WORST Large GROUP CODE]]></entry>
+	<entry key="views.search.grid.head.R_BW_SG_CODE"><![CDATA[BEST&WORST SMALL GROUP CODE]]></entry>
+	<entry key="views.search.grid.head.R_SCREEN_DUAL_URL">Screen Dual URL</entry>
+	<entry key="views.search.grid.head.R_CUST_ID">Customer ID</entry>
+	<entry key="views.search.grid.head.R_BUFFER4">Buffer4</entry>
+	<entry key="views.search.grid.head.R_BUFFER5">Buffer5</entry>
+	<entry key="views.search.grid.head.R_BUFFER6">Buffer6</entry>
+	<entry key="views.search.grid.head.R_BUFFER7">Buffer7</entry>
+	<entry key="views.search.grid.head.R_BUFFER8">Buffer8</entry>
+	<entry key="views.search.grid.head.R_BUFFER9">Buffer9</entry>
+	<entry key="views.search.grid.head.R_BUFFER10">Key value1</entry>
+	<entry key="views.search.grid.head.R_BUFFER11">Key value2</entry>
+	<entry key="views.search.grid.head.R_BUFFER12">Affiliate</entry>
+	<entry key="views.search.grid.head.R_BUFFER13">Recording type</entry>
+	<entry key="views.search.grid.head.R_BUFFER14">Continuous service</entry>
+	<entry key="views.search.grid.head.R_BUFFER15">Buffer15</entry>
+	<entry key="views.search.grid.head.R_BUFFER16">Buffer16</entry>
+	<entry key="views.search.grid.head.R_BUFFER17">Call ID</entry>
+	<entry key="views.search.grid.head.R_BUFFER18">Buffer18</entry>
+	<entry key="views.search.grid.head.R_BUFFER19">Buffer19</entry>
+	<entry key="views.search.grid.head.R_BUFFER20">Buffer20</entry>
+	<entry key="views.search.grid.head.R_CNID">CNID</entry>
+	<entry key="views.search.grid.head.R_DEST_IP">Destination IP</entry>
+	<entry key="views.search.grid.head.R_VDO_URL">VDO LINK</entry>
+	<entry key="views.search.grid.head.R_CUST_ID">Customer id</entry>
+	<entry key="views.search.grid.head.R_REGI_DATE">Registration date</entry>
+	<entry key="views.search.grid.head.R_MANAGER">Manager</entry>
+	<entry key="views.search.grid.head.R_SRTP">SRTP Y/N</entry>
+	<entry key="views.search.grid.head.F_KEY">F Key</entry>
+	<entry key="views.search.grid.head.R_SSRC">SSRC</entry>
+	<entry key="views.search.grid.head.R_KEY">KEY</entry>
+	<entry key="views.search.grid.head.R_CO_NUM">CO Number</entry>
+	<entry key="views.search.grid.head.R_DID_NUM">DID Number</entry>
+	<entry key="views.search.grid.head.R_UEI_DATA">UEI</entry>
+	<entry key="views.search.grid.head.R_QUEUE_NO1">QUEUE1</entry>
+	<entry key="views.search.grid.head.R_QUEUE_NO2">QUEUE2</entry>
+	<entry key="views.search.grid.head.R_BG_NAME">Large Group</entry>
+	<entry key="views.search.grid.head.R_MG_NAME">Middle Group</entry>
+	<entry key="views.search.grid.head.R_SG_NAME">Small Group</entry>
+	<entry key="views.search.grid.head.EVALUATION">evaluation</entry>
+	<entry key="views.search.grid.head.SCREEN">Screen</entry>
+	<entry key="views.search.grid.head.R_REC_START_TYPE">Recording type</entry>
+	<entry key="views.search.grid.head.TRACE">Trace</entry>
+	<entry key="views.search.grid.head.R_REC_START_TYPE">Startup type</entry>
+	<entry key="views.search.grid.head.R_LIST_ADD">Add playlist</entry>
+	<entry key="views.search.grid.head.R_MEMO_INFO">Player Tags</entry>
+	<entry key="views.search.grid.head.R_MEMO">Memo</entry>
+	<entry key="views.search.grid.head.R_DIVISION">Division</entry>
+	<entry key="views.search.grid.head.R_REC_VISIBLE">Deleted file</entry>
+	<entry key="views.search.grid.head.R_TAG">Tag</entry>
+	<entry key="views.search.grid.head.R_STT_PLAYER">Call Script</entry>
+
+	<entry key="views.search.grid.head.R_STOCK_NO">Stock number</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_BGCODE">Large category</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_MGCODE">Middle category</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_SGCODE">Small category</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE1">Group Code1</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE2">Group Code2</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE3">Group Code3</entry>
+	<entry key="views.search.grid.head.R_BANK_CODE">Bank code</entry>
+	<entry key="views.search.grid.head.R_BACCOUNT_NUM">Bank account number</entry>
+	<entry key="views.search.grid.head.R_DUAL_FLAG">Center to Center Data Matching flag</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND_AP">AP interlock IN/OUT</entry>
+	<entry key="views.search.grid.head.R_CALL_KEY_AP">AP interlock REC Key</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE_AP">AP interlock CID</entry>
+	<entry key="views.search.grid.head.R_IVR_KEY">Withdrawal consent IVR Key</entry>
+	<entry key="views.search.grid.head.R_VSEND_FLAG">REC file transfer flag</entry>
+	<entry key="views.search.grid.head.R_SSEND_FLAG">Screen File Transfer flag</entry>
+	<entry key="views.search.grid.head.R_SEND_INFO_FLAG">Data transfer flag</entry>
+	<entry key="views.search.grid.head.R_REC_KEYWORD">Keyword</entry>
+	<entry key="views.search.grid.head.R_REC_CATEGORY">Category</entry>
+	<entry key="views.search.grid.head.R_REC_TEXT">Recording Contents</entry>
+	<entry key="views.search.grid.head.R_REC_SUMMARY">Recording Summary</entry>
+	<entry key="views.search.grid.head.R_LOG_LISTEN">Listening history</entry>
+	<entry key="views.search.grid.head.listenDate">Listening Date</entry>
+	<entry key="views.search.grid.head.listenTime">Listening Time</entry>
+	<entry key="views.search.grid.head.listenUserId">Listener ID</entry>
+	<entry key="views.search.grid.head.listenUserName">Listener Name</entry>
+
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT">Effective call time</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT">Effective Call Talk Time</entry>
+	
+   	<entry key="views.search.grid.head.R_PHONE_MAPPING">Phone Mapping</entry>
+	<entry key="views.search.grid.head.R_COMPANY_TELNO">Phone Number</entry>
+	<entry key="views.search.grid.head.R_COMPANY_TELNO_NICK">Name</entry>
+	<entry key="views.search.grid.head.R_PRODUCT_TYPE">Product Type</entry>
+	
+	<entry key="views.search.grid.head.EmploymentCategory">Employment Category</entry>
+	<entry key="views.search.grid.head.Incumbent">Incumbent</entry>
+	<entry key="views.search.grid.head.Retiree">Retiree</entry>
+	<entry key="views.search.grid.head.BatchUsageStatus">Batch usage status</entry>
+	<entry key="views.search.grid.head.R_STT_RESULT">STT usage status</entry>
+	
+	<entry key="views.search.grid.head.mobileR_BUFFER1">Drop Reason</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER2">Start Type</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER3">Uploaded</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER4">Cust Code</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER5">Cust cName</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER6">Cust Id</entry>
+	
+
+	<entry key="views.search.grid.user.title.operationInfo">User Info</entry>
+	<entry key="views.search.grid.user.title.name">Name</entry>
+	<entry key="views.search.grid.user.title.id">ID</entry>
+	<entry key="views.search.grid.user.title.ext">Extension number</entry>
+
+	<entry key="views.search.grid.call.title.callInfo">Call info</entry>
+	<entry key="views.search.grid.call.title.date">Date</entry>
+	<entry key="views.search.grid.call.title.time">Time</entry>
+	<entry key="views.search.grid.call.title.callTime">Call Time</entry>
+	<entry key="views.search.grid.call.title.phoneNo">Phone Number</entry>
+	<entry key="views.search.grid.call.title.callType">Call type</entry>
+
+	<entry key="views.search.grid.log.title.callLog">Call log</entry>
+
+	<entry key="views.search.grid.alert.noInfo">No related recording information.</entry>
+	<entry key="views.search.grid.alert.noChecked">Please select a target to download.</entry>
+	<entry key="views.search.grid.alert.moreReason">Please enter a reason for at least 5 characters.</entry>
+	<entry key="views.search.grid.alert.mobileNotUpload">The file you selected is a file that has not been uploaded.</entry>
+
+	<entry key="views.search.form.fieldset.fDate">Rec date</entry>
+	<entry key="views.search.form.fieldset.fTime">Rec time</entry>
+	<entry key="views.search.form.fieldset.fTtime">Call time</entry>
+	<entry key="views.search.form.fieldset.fRtime">Rec time</entry>
+	<entry key="views.search.form.fieldset.fCallKind">Call type</entry>
+	<entry key="views.search.form.fieldset.fCounselResultCode">Counsel result code</entry>
+	<entry key="views.search.form.fieldset.fStatus">Status</entry>
+	<entry key="views.search.form.fieldset.fUserInfo">User Info</entry>
+	<entry key="views.search.form.fieldset.fCustInfo">Customer Info</entry>
+	<entry key="views.search.form.fieldset.fOrgCode">Organization Info</entry>
+	<entry key="views.search.form.fieldset.fRecInfo">Recording Info</entry>
+	<entry key="views.search.form.fieldset.fEtc">Etc</entry>
+	<entry key="views.search.form.fieldset.fTimeConnect">Effective Rec time</entry>
+	<entry key="views.search.form.fieldset.fTtimeConnect">Effective Call time</entry>
+	<entry key="views.search.form.fieldset.selectFileExcelDown">Download Selection File Excel</entry>
+	<entry key="views.search.form.fieldset.fileExcelDown">Download full file Excel</entry>
+	<entry key="views.search.form.fieldset.fix">Fix</entry>
+	<entry key="views.search.form.fieldset.nonFix">Non fix</entry>
+	<entry key="views.search.form.fieldset.trace">trace</entry>
+	<entry key="views.search.form.fieldset.defaultPlayerChange">default Player Change</entry>
+	<entry key="views.search.form.fieldset.STTPlayer">STT Player</entry>
+	<entry key="views.search.form.fieldset.fText">Call Details</entry>
+	<entry key="views.search.form.fieldset.memoList">Memo List</entry>
+	<entry key="views.search.form.fieldset.listenList">Listen History</entry>
+	<entry key="views.search.form.fieldset.transcriber">Transcript Info</entry>
+	<entry key="views.search.form.fieldset.fSubNumberInfo">SubNumber Info</entry>
+	<entry key="admin.approve.label.transcript">Add Transcript</entry>
+	<entry key="admin.approve.label.addMyFolder">Add MyFolder</entry>
+	<entry key="admin.upload.form.stauts">Upload state</entry>
+	<entry key="admin.approve.label.addToMyfolder">Add to Myfolder</entry>
+	<entry key="admin.approve.label.addToBestcall">Add to Bestcall</entry>
+
+	<!-- 18-09-05 -pilip search kor lang add -->
+	<entry key="views.search.alert.msg1">Please enter the date of the recording according to the following format!\\nex)01-01-2018</entry>
+	<entry key="views.search.alert.msg2">Can't add a file list in speaker-separated player status.</entry>
+	<entry key="views.search.alert.msg3">Can't add a filelist in the Edit Playlist mode.</entry>
+	<entry key="views.search.alert.msg4">No recording file selected.</entry>
+	<entry key="views.search.alert.msg5">No folders have been added to the MyFolder.</entry>
+	<entry key="views.search.alert.msg6">You don't have permission to apply for the download.</entry>
+	<entry key="views.search.alert.msg7">Waiting for branch approval.</entry>
+	<entry key="views.search.alert.msg8">Request denied branch approval.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg9">Waiting for reception.</entry>
+	<entry key="views.search.alert.msg10">Request rejected.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg11">Waiting for approval.</entry>
+	<entry key="views.search.alert.msg12">Request denied approval.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg13">This request has expired due to approval date.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg14">Waiting for branch approval.</entry>
+	<entry key="views.search.alert.msg15">Request denied branch approval.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg16">Waiting for reception.</entry>
+	<entry key="views.search.alert.msg17">Request rejected.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg18">Waiting for approval.</entry>
+	<entry key="views.search.alert.msg19">Request denied approval.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg20">This request has expired due to approval date.\\nWould you like to request again?</entry>
+	<entry key="views.search.alert.msg21">Please enter the date of the recording according to the following format!\\nex)01-01-2018</entry>
+	<entry key="views.search.alert.msg22">The request period must be longer than or equal to 1 day</entry>
+	<entry key="views.search.alert.msg23">Request has been processed successfully.</entry>
+	<entry key="views.search.alert.msg24">The requested period is</entry>
+	<entry key="views.search.alert.msg25">Can't exceed 1</entry>
+	<entry key="views.search.alert.msg26">The request failed.</entry>
+	<entry key="views.search.alert.msg27">Don't have access to the memo.</entry>
+	<entry key="views.search.alert.msg28">Create Notes</entry>
+	<entry key="views.search.alert.msg29">You can't listen to partial recording with dual player.</entry>
+	<entry key="views.search.alert.msg30">Deleted recording file.</entry>
+	<entry key="views.search.alert.msg31">No file selected.</entry>
+	<entry key="views.search.alert.msg32">There is no device on computer that can play voice files.\\nPlease connect a playable device to computer first and then try listening.</entry>
+	<entry key="views.search.alert.msg33">Added recording file to My Folder.</entry>
+	<entry key="views.search.alert.msg34">Failed to add recording file to My Folder.</entry>
+	<entry key="views.search.alert.msg35">There is already an evaluation sheet under evaluation. Do you confirm the opening of the selected evaluation?</entry>
+	<entry key="views.search.alert.msg36">No campaign exists to evaluate</entry>
+	<entry key="views.search.alert.msg37">Select a evaluation sheet and proceed with the evaluation.</entry>
+	<entry key="views.search.alert.msg38">Unselected item exists.</entry>
+	<entry key="views.search.alert.msg39">Saving evaluation completed.</entry>
+	<entry key="views.search.alert.msg40">The recording file is already added to the play list.</entry>
+	<entry key="views.search.alert.msg41">Don't have download privileges.</entry>
+	<entry key="views.search.alert.msg42">The Player tag deletion is complete.</entry>
+	<entry key="views.search.alert.msg43">Files that have expired listening periods!</entry>
+	<entry key="views.search.alert.msg44">This file can't be played by the Player.\\nOnly files downloaded by the Player can be played.</entry>
+	<entry key="views.search.alert.msg45">Only files of type mp3 can be uploaded!</entry>
+	<entry key="views.search.alert.msg46">Do you want to play from the previous playback location?</entry>
+	<entry key="views.search.alert.msg47">The recording file you requested could not be found.</entry>
+	<entry key="views.search.alert.msg48">This is the file that was playing. Do you want to play contunuely?</entry>
+	<entry key="views.search.alert.msg49">There are no more lists to play.</entry>
+	<entry key="views.search.alert.msg50">hour:minute:second Please enter 6 digits!!\\nex)00:00:15</entry>
+	<entry key="views.search.alert.msg51">Click the Listen button for the audience to listen to.</entry>
+	<entry key="views.search.alert.msg52">File not found.</entry>
+	<entry key="views.search.alert.msg53">There are no real-time wiretapping targets at this time.</entry>
+	<entry key="views.search.alert.msg54">Save Player Tag completed successfully.</entry>
+	<entry key="views.search.alert.msg55">All Player tags currently stored in the file will be deleted.\\nAre you sure you want to delete?</entry>
+	<entry key="views.search.alert.msg56">The Player tag deletion is complete.</entry>
+	<entry key="views.search.alert.msg57">Please enter the start time of the section you want to set.</entry>
+	<entry key="views.search.alert.msg58">Please enter the end time of the section you want to set.</entry>
+	<entry key="views.search.alert.msg59">Start and end times can't be the same.</entry>
+	<entry key="views.search.alert.msg60">Start time can't be greater than end time</entry>
+	<entry key="views.search.alert.msg61">Please enter the hour, minute, second as follows!\\nex) 000530</entry>
+	<entry key="views.search.alert.msg62">Please select a voice file.</entry>
+	<entry key="views.search.alert.msg63">Would you like to apply?</entry>
+	<entry key="views.search.alert.msg64">It's been applied.</entry>
+	<entry key="views.search.alert.msg65">Approval has already been completed.</entry>
+	<entry key="views.search.alert.msg66">File waiting for approval.</entry>
+	<entry key="views.search.alert.msg67">Operation failed.</entry>
+	<entry key="views.search.alert.msg68">No files are playing.</entry>
+	<entry key="views.search.alert.msg69">The checked list contains a list that is playing.\\nAre you sure you want to stop playback and delete it?</entry>
+	<entry key="views.search.alert.msg70">Please enter a valid time format.</entry>
+	<entry key="views.search.alert.msg71">The end point is the same or earlier than the start point.</entry>
+
+	<!-- 18-09-07 -pilip search kor lang add -->
+	<entry key="views.search.alert.msg72">Play Selected File</entry>
+	<entry key="views.search.alert.msg73">Affiliate</entry>
+	<entry key="views.search.alert.msg74">Starch type</entry>
+	<entry key="views.search.alert.msg75">Download Selected File</entry>
+	<entry key="views.search.alert.msg76">File Download</entry>
+	<entry key="views.search.alert.msg77">adding to selection list</entry>
+	<entry key="views.search.alert.msg78">This is a request from an unauthorized user.\nPlease request download as a user with Excel download privilege!</entry>
+	
+	<entry key="views.search.alert.msg79">Player Change</entry>
+	<entry key="views.search.alert.msg80">STT analysis is in progress.</entry>
+	<entry key="views.search.alert.msg81">Delete entire file</entry>
+	<entry key="views.search.alert.msg82">Full Download</entry>
+	
+	<entry key="views.search.alert.msg83">There are no files to delete.</entry>
+	<entry key="views.search.alert.msg84">Are you sure you want to delete all recordings you have retrieved?</entry>
+	<entry key="views.search.alert.msg85">Are you sure you want to delete all recording indexes you have retrieved?</entry>
+	<entry key="views.search.alert.msg86">Successfully deleted recording.</entry>
+	<entry key="views.search.alert.msg87">Failed to delete recording.</entry>
+	<entry key="views.search.alert.msg88">There are recordings that have not been deleted. Please check again.</entry>
+	
+	<entry key="views.search.alert.msg89">There is a window with the same contents. Would you like it yet?</entry>
+	<entry key="views.search.alert.msg90">Please select only one file.</entry>
+	
+	<entry key="views.search.alert.msg91">There is already a page being copied. Would you like to open a new transcription page for the selected recording file?</entry>
+	
+	<entry key="views.search.alert.msg92">Delete file</entry>
+	<entry key="views.search.alert.msg93">Delete Selected File</entry>
+	<entry key="views.search.alert.msg94">Delete File Menu</entry>
+	<entry key="views.search.alert.msg95">Type</entry>
+	<entry key="views.search.alert.msg96">Data Inactive</entry>
+	<entry key="views.search.alert.msg97">Record File/Data Remove</entry>
+	<entry key="views.search.alert.msg98">delete</entry>
+	
+	<entry key="views.search.alert.msg99">Are you sure you want to delete selected recordings?</entry>
+	<entry key="views.search.alert.msg100">Are you sure you want to delete selected recording indexes?</entry>
+	<entry key="views.search.alert.msg101">Please select the data to inactivate.</entry>
+	<entry key="views.search.alert.msg102">Are you sure you want to inactivate all recording indexes you have retrieved?</entry>
+	<entry key="views.search.alert.msg103">Are you sure you want to inactivate selected recording indexes?</entry>
+	<entry key="views.search.alert.msg104">Inactivation complete.</entry>
+	<entry key="views.search.alert.msg105">Failed to inactivate.</entry>
+	<entry key="views.search.alert.msg106">CSV Load</entry>
+	<entry key="views.search.alert.msg107">Please select a file.</entry>
+	<entry key="views.search.alert.msg108">Search File</entry>
+	<entry key="views.search.alert.msg109">Download form</entry>
+	<entry key="views.search.alert.msg110">Upload</entry>
+	<entry key="views.search.alert.msg111">Please upload a file in the format of csv.</entry>
+	<entry key="views.search.alert.msg112">There's no data.</entry>
+	<entry key="views.search.alert.msg113">Upload result</entry>
+	<entry key="views.search.alert.msg114">Search</entry>
+	<entry key="views.search.alert.msg115">All</entry>
+	<entry key="views.search.alert.msg116">Valid</entry>
+	<entry key="views.search.alert.msg117">Error</entry>
+	<entry key="views.search.alert.fileDivision">File division</entry>
+	
+	<entry key="views.search.alert.listenPeriod1">You cannot search for recordings prior to</entry>
+    <entry key="views.search.alert.listenPeriod2">months from the current date</entry>
+    
+	<entry key="views.search.alert.noDownTarget">There is no target to download.</entry>
+	<entry key="views.search.alert.failFullDown2">Failed to download a batch of recordings.</entry>
+	<entry key="views.search.alert.hours">hours</entry>
+	<entry key="views.search.alert.minutes">minutes</entry>
+	<entry key="views.search.alert.second">second</entry>
+	<entry key="views.search.alert.comfrimFullDown">Do you want to download all recorded files of the conditions you have viewed?</entry>
+	<entry key="views.search.alert.caution2GB">***If the file size is over 2GB, it can not be downloaded***</entry>
+	<entry key="views.search.alert.selectCallTime">Total call duration for the selected file       : </entry>
+	<entry key="views.search.alert.downloadableCallTime">Downloadable  total call duration(estimated)    : 250 hours</entry>
+	<entry key="views.search.alert.completedZip">Creation of zip file is completed.</entry>
+	<entry key="views.search.alert.zipOver2GB">Download failed because the zip file size exceeds 2GB.</entry>
+	<entry key="views.search.alert.successFileBefore">Number of files successfully compressed before 2GB: </entry>
+	<entry key="views.search.alert.zipProgress">Creating zip file.(Progress: </entry>
+	
+	<entry key="views.search.alert.selectGrid">You need to select a block area in grid first.</entry>
+	<entry key="views.search.alert.nameCheck">Please enter characters or more.</entry>
+
+
+	
+	<entry key="views.search.alert.noSelectRec">No recording file selected.</entry>
+	<entry key="views.search.alert.directUpload">Do you want to upload the selected recording file immediately?</entry>
+
+	<!-- 렉시 모바일 drop reason 언어팩 추가 -->
+	<entry key="views.search.grid.mobile.dropreason.busy">Calling</entry>
+	<entry key="views.search.grid.mobile.dropreason.noAnswer">NoAnswer</entry>
+	<entry key="views.search.grid.mobile.dropreason.notFound">NotFound</entry>
+	<entry key="views.search.grid.mobile.dropreason.endCall">EndCall</entry>
+	<entry key="views.search.grid.mobile.dropreason.phone">Termination</entry>
+	<entry key="views.search.grid.mobile.dropreason.custDrop">Relative termination</entry>
+	
+	<entry key="views.search.grid.mobile.dropreason.success">Connection successful</entry>
+	<entry key="views.search.grid.mobile.dropreason.fail">Call failed</entry>
+	
+	
+	<!-- 업로드 신청 관련 언어팩 추가(19.06.03) -->
+	<entry key="views.search.alert.indivUpload">Selected Files Upload</entry>
+	<entry key="views.search.alert.someReqFail">Some request failed.</entry>
+	<entry key="views.search.alert.reqTrans">requested immediately for transfer.</entry>
+	<entry key="views.search.alert.transReqFail">Immediate transfer request failed.</entry>
+	
+	<entry key="views.search.column.title.volume">Volume</entry>
+	<entry key="views.search.column.value.volume">basic</entry>
+	<entry key="views.search.column.value.volumeTwo">2x volume</entry>
+	<entry key="views.search.column.value.volumeThree">3x volume</entry>
+	<entry key="views.search.volume.title.volumeSetting">Volume Data Setting</entry>
+	<entry key="views.search.volume.btn.setup">Save</entry>
+	<entry key="views.search.button.pathCheck">Path Check</entry>
+	<entry key="views.search.button.pathChange">Path Change</entry>
+	
+	<entry key="views.search.title.noSelect">no select</entry>
+	<!-- 녹취 파일 분배 및 전사여부 -->
+	<entry key="views.search.alert.already.division">Among the selected files, there are already distributed recording files.</entry>
+	<!-- <entry key="views.search.title.TP">transcript planning</entry>
+	<entry key="views.search.title.TF">transcript finished</entry>
+	<entry key="views.search.title.LI">learning</entry>
+	<entry key="views.search.title.LF">learning finished</entry>
+	
+	<entry key="views.search.title.transcriber">transcriber</entry>
+	<entry key="views.search.title.transcript">transcript</entry>	
+	<entry key="views.search.title.noSelect">no select</entry>
+	
+	
+	<entry key="views.search.alert.select.agent">Please select a user to assign the recording file.</entry>
+	<entry key="views.search.alert.already.division">Among the selected files, there are already distributed recording files.</entry>
+	<entry key="views.search.alert.division.success">The selected recording file has been distributed.</entry>
+	<entry key="views.search.alert.division.fail">Failed to distribute the selected recording file.</entry>
+	
+	
+	
+	<entry key="views.transcript.alert.learning.success">The request to learn was successful.</entry>
+	<entry key="views.transcript.alert.learning.fail">Request to learn failed.</entry>
+	<entry key="views.transcript.confirm.learning">Would you like to train selected files?</entry>
+	<entry key="views.transcript.confirm.remove">Are you sure you want to remove the selected files from the list? In the case of transferred files, the contents of the transfer are deleted.</entry>
+	<entry key="views.transcript.alert.remove.success">The file was removed successfully.</entry>
+	<entry key="views.transcript.alert.remove.fail">File removal failed.</entry>
+	
+	<entry key="views.transcript.button.remove">Remove files</entry>
+	<entry key="views.transcript.button.learning">Select file learning</entry>
+	<entry key="views.transcript.button.transcript.save">Transcript save</entry>
+	<entry key="views.transcript.button.transcript.modify">Transcript modify</entry>
+	<entry key="views.transcript.button.transcript.del">Transcript delete</entry>
+	
+	<entry key="views.transcript.alert.noFile">There are no files.</entry>
+	<entry key="views.transcript.alert.noTranscript">No content has been transferred.</entry>
+	<entry key="views.transcript.alert.noTranscript.cust">전사 된 고객 대화 내용이 없습니다.</entry>
+	<entry key="views.transcript.alert.noTranscript.agent">전사 된 상담사 대화 내용이 없습니다.</entry>
+	
+	<entry key="views.transcript.alert.transcript.save.success">Transcription has been saved.</entry>
+	<entry key="views.transcript.alert.transcript.save.fail">Failed to save transcription contents.</entry>
+	
+	<entry key="views.transcript.alert.transcript.modify.success">Transcription content has been modified.</entry>
+	<entry key="views.transcript.alert.transcript.modify.fail">Transcription content modify failed.</entry>
+	
+	<entry key="views.transcript.alert.transcript.del.success">Transcription has been deleted.</entry>
+	<entry key="views.transcript.alert.transcript.del.fail">Failed to delete the transcript.</entry>
+	
+	<entry key="views.transcript.confirm.transcript.save">Do you want to save the transcription of the current file?</entry>
+	<entry key="views.transcript.confirm.transcript.modify">Do you want to modify the transcription of the current file?</entry>
+	<entry key="views.transcript.confirm.transcript.del">Do you want to delete the transcription of the current file?</entry>
+	
+	<entry key="views.transcript.alert.noTranscriptFile">Among the requested files, there are untransferred files.</entry> -->
+</properties>

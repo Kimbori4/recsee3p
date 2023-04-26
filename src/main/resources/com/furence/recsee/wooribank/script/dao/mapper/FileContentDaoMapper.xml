@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.furence.recsee.wooribank.script.repository.dao.FileContentDao" >
+	
+	<resultMap id="scriptSnapshot" type="com.furence.recsee.wooribank.script.param.response.ScriptSnapshot">
+		<result column="rs_script_edit_user" 		jdbcType="VARCHAR"			property="updateUser" />
+		<result column="rs_approvement_regist_date" jdbcType="TIMESTAMP"		property="updateDate" />
+		<result column="rs_approvement_user" 		jdbcType="VARCHAR"			property="approveUser" />		
+		<result column="rs_approvement_date" 		jdbcType="TIMESTAMP"		property="approveDate" />
+		<result column="rs_current_version"			jdbcType="INTEGER"			property="version" />
+		<result column="rs_script_json"				jdbcType="VARCHAR"			property="scriptInfo" 
+				javaType="com.furence.recsee.wooribank.script.param.response.ScriptInfo"
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.JsonTypeHandler"/>
+	</resultMap>
+	
+	<!-- 상품 버전 스냅샷 정보 조회 -->
+	<select id="selectScriptVersionSnapshot"
+			parameterType="com.furence.recsee.wooribank.script.param.request.FileDownloadParam$VersionSnapshot"
+			resultMap="scriptSnapshot">
+			
+	 	select  c.rs_script_edit_user,
+                c.rs_approvement_regist_date,
+                c.rs_approvement_user,
+                c.rs_approvement_date,
+                c.rs_script_current_version,
+                a.rs_script_json
+        from 	rs_script_json_snapshot as a
+                left outer join vw_product_list as b on a.rs_product_list_pk = b.rs_product_list_pk
+                left outer join rs_script_edit_info as c on b.rs_script_step_fk = c.rs_script_product_pk and a.rs_script_version = c.rs_script_current_version
+        where   a.rs_product_list_pk = #{productPk}::integer
+                and a.rs_script_version = #{scriptVersion}::integer
+                and c.rs_script_apply_date is not null
+                and c.rs_script_apply_yn = 'Y'   
+		 		
+	</select>
+	
+	
+	<!-- 해당 상품의 현재 스크립트 정보 조회 -->
+	<select id="selectProductScriptInfo" resultType="String">
+		
+		select	scriptInfo::varchar 
+		from 	fn_select_script_info_json(#{productPk}::varchar)
+		
+	</select>
+	
+	<!-- 해당 녹취의 상품 스크립트 정보 조회 -->
+	<select id="selectCallScriptInfo" resultType="String">
+		
+		select	scriptInfo::varchar
+		from	fn_select_call_script_info_json(#{callKey}::varchar)
+             
+	</select>
+	<!-- 해당 녹취의 상품 스크립트 정보 조회 -->
+	<select id="selectCallScriptInfoRec" resultType="String">
+			with tree2 as(
+			with recursive script_tree as ( 
+					select  1 as t_depth,  
+							rs_script_step_pk as t_key, 
+							rs_script_step_name as t_name,  
+							--case 
+							--	when length(rs_script_step_order::text) = 1 then '0'||rs_script_step_order::text 
+							--	else rs_script_step_order::text 
+							--end as t_order,
+							(100 + rs_script_step_order )::varchar  t_order,
+							rs_script_rec_state, 
+							rs_script_ta_state, 
+							rs_script_call_key as callkey,
+							rs_script_step_parent as step_parent
+				   from		rs_script_step_history  
+				   where    rs_use_yn='Y' 
+							and rs_script_step_parent = 0 
+							and rs_script_call_key = #{callKey}::varchar
+				   union all 
+				   select	a.t_depth+1, 
+							b.rs_script_step_pk, 
+							b.rs_script_step_name,  
+							a.t_order||','||(100 + b.rs_script_step_order )::varchar, 
+							b.rs_script_rec_state, 
+							b.rs_script_ta_state, 
+							b.rs_script_call_key,
+							b.rs_script_step_parent
+				   from		script_tree a, rs_script_step_history b 
+				   where	a.t_key =b.rs_script_step_parent 
+							and rs_use_yn='Y' 
+							and b.rs_script_call_key = #{callKey}::varchar
+			)
+			
+			select	
+					(
+						select 
+								case when count(*) > 1 then '다계좌 신규 ('||count(*)||'건)'
+									 when count(*) = 1 then (select	rpl.rs_product_name as p_name
+						from	rs_product_list rpl,
+								rs_script_step_history rssh 
+						where	rpl.rs_product_list_pk = rssh.rs_script_step_fk and
+								rssh.rs_script_call_key =#{callKey}::varchar
+						group by rpl.rs_product_name
+						limit 1
+						)
+						end
+						from (select	rpl.rs_product_name as p_name
+						from	rs_product_list rpl,
+								rs_script_step_history rssh 
+						where	rpl.rs_product_list_pk = rssh.rs_script_step_fk and
+								rssh.rs_script_call_key =#{callKey}::varchar
+						group by rpl.rs_product_name
+						) as tmp1
+					)
+					as r_prd_nm, 
+					(
+						select array_to_string(array_agg(tmp2.rs_product_code),' , ') from (select	rpl.rs_product_code 
+						from	rs_product_list rpl,
+								rs_script_step_history rssh 
+						where	rpl.rs_product_list_pk = rssh.rs_script_step_fk and
+								rssh.rs_script_call_key =#{callKey}::varchar
+						group by rpl.rs_product_code
+						) as tmp2
+					) as r_prd_cd, 
+					tree.t_order, 
+					tree.t_name as step_name,
+					tree.callkey,
+					tree.step_parent,
+					rssd.rs_script_step_detail_type as detail_type,
+					(select r_code_name from rs_common_code where r_code_value = rssd.rs_script_step_detail_type) as detail_type_name, 
+					rssd.rs_script_step_detail_text as detail_text, 
+					string_to_array(
+						fn_convert_product_attributes_description(
+							coalesce(rssd.rs_product_attributes, '{}'::jsonb)||coalesce(rssd.rs_product_attributes_ext, '{}'::jsonb)
+						),
+						','
+					) as product_attributesText, 
+					rssd.rs_script_step_detail_elt_case, 
+					rssd.rs_Script_step_detail_case_attributes, 
+					rssd.rs_script_step_detail_order as detail_order
+			from    script_tree tree 
+					full outer join rs_script_step_detail_history rssd 
+					on tree.callKey = rssd.rs_script_call_key and tree.t_key = rssd.rs_script_step_fk and
+					<if test="recType == 1">
+					rssd.rs_script_step_detail_type in ('T','G','S')
+					</if>
+					<if test="recType == 0">
+					rssd.rs_script_step_detail_type in ('T')
+					</if>
+			where   tree.callkey = #{callKey}::varchar and
+					rssd.rs_use_yn ='Y'
+			
+			order by 
+					tree.t_order , rssd.rs_script_step_detail_order
+		)
+		
+		select	json_build_object (
+				'rsProductName',r_prd_nm,
+				'rsProductCode',r_prd_cd,
+				'stepList',json_agg(stepInfo)
+			) as scriptInfo
+		from (
+				select	tree2.t_order,r_prd_nm,r_prd_cd,
+						json_build_object (
+							'rsScriptStepName',step_name,
+							'rsScriptStepParent',step_parent,
+							'detailList',json_agg(
+								json_build_object(
+									'rsScriptStepDetailType',detail_type,
+									'rsScriptStepDetailTypeName',detail_type_name,
+									'rsScriptDetailText',detail_text,
+									'rsScriptDetailOrder',detail_order,
+									'rsProductAttributesText',product_attributesText
+								) order by detail_order
+							)
+						) as stepInfo
+				from    tree2
+				group by
+						r_prd_nm,r_prd_cd,t_order,step_name,step_parent	
+				order by 
+						tree2.t_order
+			) a
+		group by
+				r_prd_nm,r_prd_cd;
+	</select>
+</mapper>		

@@ -1,0 +1,283 @@
+.search_main_pannel{
+	float: left;
+	clear: both;
+	width: 100%;
+}
+.player_pannel{
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	bottom: 0px;
+	z-index: 50;
+}
+
+/* search pannel css */
+.player_pannel{
+	border-top: 1px solid #dddddd;
+}
+#screenPopup{
+	min-width: 926px;
+	width: 926px;
+	height: 500px;
+	min-height: 300px;
+}
+#screenPopup .play_control_header{
+	display: none !important;
+}
+
+#searchListPopup{
+	min-width : 700px;
+	width : 700px;
+	height : 500px;
+	min-height : 500px;
+}
+
+#addMyfolderPopup{
+	min-width : 300px;
+	width : 300px;
+	height : 140px;
+	min-height : 140px;
+}
+
+@media screen and (min-width : 1920px){
+	#gridSearch .gridbox{
+		max-width : 1715px !important;
+	}
+
+	#gridSearch .gridbox .xhdr{
+		max-width : 1715px !important;
+	}
+
+	#gridSearch .gridbox .objbox{
+		max-width : 1715px !important;
+	}
+}
+
+@media screen and (min-width : 1250px){
+	#gridSearch .gridbox{
+		max-width : 1115px;
+	}
+
+	#gridSearch .gridbox .xhdr{
+		max-width : 1115px;
+	}
+
+	#gridSearch .gridbox .objbox{
+		max-width : 1115px;
+	}
+}
+
+
+
+/*search Form*/
+.search_fieldset{
+	display:block;
+	float:left;
+	border: 1px solid #2d71c4 !important;
+	position : relative;
+	transition : transform 1s;
+}
+
+.search_fieldset legend{
+	font-size : 12px;
+	margin-left : 5px;
+	color: #3da0e3;
+}
+
+#searchBtn{
+	float: left;
+	height: 35px;
+	margin-top: 10px;
+}
+
+.search_fieldset_move{
+	position : absolute;
+	right : 3px;
+	transform : scale(1.1);
+	cursor : pointer;
+}
+
+.delete-item{
+	right : -4px;
+	position : absolute;
+	top : 2px;
+	transform : scale(1.2);
+	border : 1px solid #999;
+	border-radius : 15px;
+	background-color: #999;
+	cursor : pointer;
+}
+
+
+/* #sDate, #eDate{
+	border:2px solid #d99103
+}
+
+#sDate:-ms-input-placeholder, #eDate:-ms-input-placeholder{
+	color: #d99103 !important
+}
+
+
+
+#sTime, #sTimeS, #eTime, #eTimeS{
+	border:2px solid #2d71c4
+}
+
+#sTime:-ms-input-placeholder, #sTimeS:-ms-input-placeholder, #eTime:-ms-input-placeholder, #eTimeS:-ms-input-placeholder{
+	color: #2d71c4 !important
+}
+
+
+
+
+
+#sTtime, #sTtimeS, #eTtime, #eTtimeS{
+	border:2px solid #d99103
+}
+#sTtime:-ms-input-placeholder, #sTtimeS:-ms-input-placeholder, #eTtime:-ms-input-placeholder, #eTtimeS:-ms-input-placeholder{
+	color: #d99103 !important
+}
+
+
+#userName, #extNum{
+	border:2px solid #2d71c4
+}
+
+#userName:-ms-input-placeholder, #extNum:-ms-input-placeholder{
+	color: #2d71c4 !important
+}
+
+
+#custName, #custPhone1{
+	border:2px solid #d99103
+}
+
+#custName:-ms-input-placeholder, #custPhone1:-ms-input-placeholder{
+	color: #d99103 !important
+} */
+
+/* context menu */
+.context-menus{
+	position : absolute;
+	display : none;
+	border : 1px solid #555;
+	border-radius : 2px;
+	color: #777;
+	box-shadow : 0 5px 15px 1px rgba(0, 0 , 0 , 0.6),
+					 0 0 200px 1px rgba(255, 255, 255, 0.5);
+	text-align : center;
+}
+
+.context-menus.active{
+	display : block;
+	background-color:white;
+	z-index:100;
+}
+
+.context-menus.active>ul>li{
+	list-style:none;
+	color : #777;
+	font-size : 11px;
+	line-height : 23px;
+	padding : 0px 15px; 
+	cursor:pointer;
+}
+
+.context-menus.active>ul>li:hover{
+	background-color : #ccc;
+	color:white;
+}
+
+#gridEvaluation.gridbox input[type="radio"]{
+	width: 15px !important;
+}
+.subRadioBox{
+	widht: 40px !important;
+}
+.itemTitle{
+	width: 100%;
+	min-height: 20px;
+	/* height: 20px; */
+	height: auto;
+	line-height: 20px;
+	border-bottom: 2px solid #BDBDBD;
+	background-color: #F9F9F9;
+	padding-left: 5px;
+}
+.subItemTitle{
+	width: 100%;
+	min-height: 20px;
+	/* height: 20px; */
+	height: auto;
+	border-bottom: 2px solid #BDBDBD;
+	background-color: #F9F9F9;
+	
+}
+.bottomLiner{
+	min-height: 16px;
+	height: 22px;
+	line-height: 22px;
+	border-bottom: 1px solid #ddd;
+	background-color: #FCFCFC;
+}
+#gridEvaluation .obj tr td{
+	vertical-align: middle;
+}
+#gridEvaluation.gridbox_dhx_web.gridbox table.obj tr td{
+	padding: 0px !important;
+}
+#gridEvaluation.gridbox_dhx_web.gridbox .odd_dhx_web{
+	background-color: #fff;
+}
+#gridEvaluation.gridbox_dhx_web.gridbox table.obj tr td{
+	border-bottom: 2px solid #BDBDBD;
+	/* border-right: 0px; */
+}
+
+/* 선택했을때의 row 색상 없애기 병합때문에 이상함... default 스타일로 강제 변경 */
+#gridEvaluation.gridbox.gridbox_dhx_web table.obj tr td.cellselected{
+	background-color: #fff !important;
+	border-right: 1px solid #ededed !important;
+}
+#gridEvaluation.gridbox.gridbox_dhx_web table.obj tr.rowselected td{
+	background-color: #fff !important;
+	border-right: 1px solid #ededed !important;
+}
+
+#fEtc span{
+	float: left;
+    margin-top: 4px;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+#fEtc span:first-child{
+	margin-right: 3px !important;
+	color: red;
+}
+#fEtc span div{
+	height: 26px;
+    line-height: 26px;
+}
+#fEtc span div .dhxcombo_input{
+	margin-top: 2px;
+	text-align: left;
+	margin-left: 0px !important;
+	font-size: 14px;
+}
+.dhxcombo_select_button {
+    background-color: transparent !important;
+}
+.dhxcombo_select_img {
+    background-image: url(../../../images/project/main/icon/arrow.png) !important;
+}
+
+#bestCallBtn{
+	margin-top: 10px;
+}
+
+#sharePopup{
+	width:450px;
+	margin-top: -147px;
+    margin-left: -237px;
+}

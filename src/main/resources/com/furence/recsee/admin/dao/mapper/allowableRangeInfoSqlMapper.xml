@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.AllowableRangeInfoDao">
+
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.AllowableRangeInfo">
+	    <result column="R_LIST_CODE" 		jdbcType="VARCHAR" property="rListCode" />
+	    <result column="R_ALLOWABLE_CODE" 			jdbcType="VARCHAR" property="rAllowableCode" />
+	    <result column="R_BG_CODE" 			jdbcType="VARCHAR" property="rBgCode" />
+	    <result column="R_MG_CODE" 		jdbcType="VARCHAR" property="rMgCode" />
+	    <result column="R_SG_CODE" 		jdbcType="VARCHAR" property="rSgCode" />
+	    <result column="R_BG_NAME" 		jdbcType="VARCHAR" property="rBgName" />
+	    <result column="R_MG_NAME" 		jdbcType="VARCHAR" property="rMgName" />
+	    <result column="R_SG_NAME" 		jdbcType="VARCHAR" property="rSgName" />
+	    <result column="LIST_COUNT" 		jdbcType="VARCHAR" property="listCount" />
+	    <result column="MAX_LIST_CODE" 		jdbcType="VARCHAR" property="maxListCode" />
+	</resultMap>
+
+	<!-- Menu 접근  조회 -->
+    <select id="selectAllowableRangeInfo" parameterType="com.furence.recsee.admin.model.AllowableRangeInfo" resultMap="BaseResultMap">
+    	WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_BG_CODE, R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_BG_CODE, R_MG_CODE, R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+		FROM
+			(SELECT 
+				*
+			FROM RS_ALLOWABLE_RANGE_LIST
+			<where>
+				 R_ALLOWABLE_CODE = #{rAllowableCode}
+			</where>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_BG_CODE=M.R_BG_CODE AND A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_BG_CODE=S.R_BG_CODE AND A.R_MG_CODE=S.R_MG_CODE AND A.R_SG_CODE=S.R_SG_CODE
+		ORDER BY A.R_BG_CODE, A.R_MG_CODE, A.R_SG_CODE
+    </select>
+    
+    <delete id="deleteAllowableRangeInfo" parameterType="com.furence.recsee.admin.model.AllowableRangeInfo">
+		
+		DELETE FROM RS_ALLOWABLE_RANGE_LIST
+		<where>
+			<trim suffixOverrides="AND">
+				R_ALLOWABLE_CODE = #{rAllowableCode}
+				<choose>
+					<when test="rBgCode == null and rMgCode == null and rSgCode == null">
+					</when>
+					<when test="rBgCode != null">
+						 AND R_BG_CODE = #{rBgCode} AND R_MG_CODE IS NULL AND R_SG_CODE IS NULL
+					</when>
+					<when test="rMgCode != null">
+						 AND R_BG_CODE = split_part(#{rMgCode}, '_', 1) AND R_MG_CODE = split_part(#{rMgCode}, '_', 2) AND R_SG_CODE IS NULL
+					</when>
+					<when test="rSgCode != null">
+						 AND R_BG_CODE = split_part(#{rSgCode}, '_', 1) AND R_MG_CODE = split_part(#{rSgCode}, '_', 2) AND R_SG_CODE = split_part(#{rSgCode}, '_', 3)
+					</when>
+				</choose>
+			</trim>
+		</where>
+	</delete>
+
+    <insert id="insertAllowableRangeInfo" parameterType="com.furence.recsee.admin.model.AllowableRangeInfo">
+		
+		INSERT INTO RS_ALLOWABLE_RANGE_LIST(
+			<trim suffixOverrides=",">
+				R_LIST_CODE,
+				R_ALLOWABLE_CODE,
+				<if test="rBgCode != null">R_BG_CODE,</if>
+				<if test="rMgCode != null">R_MG_CODE,</if>
+				<if test="rSgCode != null">R_SG_CODE</if>
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+				#{rListCode},
+				#{rAllowableCode},
+				<if test="rBgCode != null">#{rBgCode},</if>
+				<if test="rMgCode != null">#{rMgCode},</if>
+				<if test="rSgCode != null">#{rSgCode},</if>
+			</trim>
+		)
+	</insert>
+		
+	<select id="checkAllowableRangeInfo" parameterType="com.furence.recsee.admin.model.AllowableRangeInfo" resultMap="BaseResultMap">
+		SELECT
+		COUNT(R_LIST_CODE) AS LIST_COUNT,
+		MAX(R_LIST_CODE) AS MAX_LIST_CODE
+		FROM RS_ALLOWABLE_RANGE_LIST
+	</select>
+	
+	
+</mapper>

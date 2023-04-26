@@ -1,0 +1,617 @@
+.admin_body{
+	float: left !important;
+	clear: none !important;
+	width: calc(100% - 240px) !important;
+	height: auto;
+}
+.admin_lnb{
+	position: relative;
+	float: left !important;
+	width: 240px;
+	/* height: 100%; */
+	background-color: #444444;
+	color: #ffffff;
+	z-index: 1;
+	overflow:auto;
+}
+.admin_menu{
+	text-indent: 10px;
+}
+.admin_menu .admin_menu_tit{
+	cursor : pointer;
+	float: left;
+	clear: both;
+	width: 100%;
+	padding: 9.5px 0;
+	background-color: #393939;
+	border-bottom : 1px solid #999999;
+	color: #fcf4c8;
+	font-size: 14px;
+	transition: all ease 0.4s;
+}
+.admin_menu li{
+	float: left;
+	clear: both;
+	width: 100%;
+	padding: 15px 0;
+	font-size: 13px;
+	text-indent: 20px;
+	color: #f1f1f1;
+	border-bottom: 1px solid #393939;
+	cursor: pointer;
+}
+.admin_menu li:hover{
+	background-color: #404040;
+}
+.admin_menu li:last-child{
+	border-bottom: 0px;
+}
+
+.icon_authy_common{
+	background-image: url(../../../images/project/icon/authy_icon/icon_authy_agent_gray.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	padding-left: 30px !important;
+}
+.icon_authy_E1001{
+	background-image: url(../../../images/project/icon/authy_icon/icon_authy_man_gray.png) !important;
+}
+
+.input_group_name{
+	width: 170px !important;
+    text-align: center;
+    text-indent: 0px;
+}
+
+.ui-icon-plus-white{
+	background-image : url("../../../../../component/jquery/jquery-ui/images/ui-icons_ffffff_256x240.png");
+}
+
+.ui-icons-right{
+	float : right;
+	right : 10px;
+	top : 3px;
+	transition : 1s;
+	transform : scale(1.3);
+}
+
+.ui-icons-rotate{
+	transform : rotate(90deg) scale(1.3);
+}
+
+.group_list_wrap{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	background-color: rgb(45,113,196);
+}
+.group_list ul{
+	float: left;
+	clear: both;
+	width: 100%;
+	text-indent: 10px;
+}
+.group_list ul li{
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	transition: all ease 0.4s;
+}
+.group_list ul li:hover{
+	background-color: rgba(0,0,0,0.1) !important;
+}
+.group_list ul li:nth-child(2n){
+	background-color: rgba(0,0,0,0.05);
+}
+.group_name_wrap{
+	float: left;
+	clear: both;
+	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	cursor: pointer;
+}
+.group_name_wrap p{
+	float: left;
+}
+.group_name_wrap .juri_checkbox{
+	position: relative;
+	float: left;
+    top: 13px;
+    margin-left: 10px;
+}
+.group_name_wrap_active{
+	background-color: rgba(0,0,0,0.3) !important;
+}
+.group_name_wrap button{
+	margin-top: 2.5px;
+	margin-right: 2.5px;
+	float: right;
+}
+.group_name p{
+	float: left;
+	padding: 10px 0;
+	font-size: 15px;
+}
+.allowable_name p{
+	float: left;
+	padding: 10px 0;
+	font-size: 15px;
+}
+.add_juri_wrap input{
+	width: calc(100% - 2px);
+	padding: 10px 0;
+}
+
+/* 로그 뷰 */
+div#fileframe {
+	background-color: #F5F5F5 ;
+	float: left ;
+	height: 100% ;
+	overflow: hidden ;
+	width: 245px ;
+}
+div#contentframe {
+	background-color: #FFFFFF ;
+	background-image: url( "../../../images/project/log_view_tree/content_background.gif" ) ;
+	background-position: left top ;
+	background-repeat: repeat-y ;
+	float: left ; 
+	height: 100% ;
+	overflow: hidden;
+	width: calc(100% - 245px);
+}
+div#content{
+	height:100%;
+	margin-bottom: 8px;
+}
+
+div#filetree {	
+	font-size: 1.1em ;
+	line-height: 1.1em ;
+	padding: 10px 5px 10px 5px ;
+	width: calc(100% - 10px);
+	overflow-y:auto;
+	height:calc(100% - 10px);
+}
+	
+div#filetree ul {
+	margin: 0px 0px 0px 0px ;
+	padding: 0px 0px 0px 0px ;
+	list-style-type: none ;
+}
+	
+div#filetree ul ul {
+	display: none ;
+	margin-left: 20px ;
+}
+	
+div#filetree ul a {
+	background-color: #F5F5F5 ;
+	background-position: left 50% ;
+	background-repeat: no-repeat ;
+	border: 1px solid #F5F5F5 ;
+	color: #000000 ;
+	display: block ;
+	margin: 0px 0px 2px 0px ;
+	padding: 3px 25px 3px 25px ;
+	text-decoration: none ;
+	font-size:13px;
+}
+	
+div#filetree ul a.file {
+	background-image: url( "../../../images/project/log_view_tree/file.gif" ) ;
+	word-break: break-all;
+}
+	
+div#filetree ul a.dir {
+	background-image: url( "../../../images/project/log_view_tree/dir.gif" ) ;
+	font-size:13px;
+	word-break: break-all;
+}
+	
+div#filetree ul a.selected {
+	background-color: #F2F0E6 ;
+	border-color: #CAC193 ;
+	color: #FC7215 ;
+	font-size:13px;
+}
+	
+.lines{
+	width: 50px;
+	overflow:hidden;
+}
+
+.linedtextarea{
+	padding:0px;
+	margin:0px;
+	overflow:hidden;
+	height:100%;
+}
+
+.linedtextarea .lined, .linedwrap .codelines .lineno{
+	font-size: 10pt;
+/* 	font-family: monospace !important; */
+	line-height: normal !important;
+	width:100%
+}
+
+.linedtextarea .lined{
+	padding-right:0.3em;
+	padding-top:0.3em;
+	border: 0;
+	width:calc(100% - 5px);
+	height: calc(100% - 5px);
+	overflow-y:auto;
+}
+
+.linedwrap{
+	height:100%;
+	border-bottom: 1px solid rgb(192, 192, 192);
+	border-right: 1px solid rgb(192, 192, 192);
+}
+
+.linedwrap .lines{
+	margin-top: 4px;
+	width: 50px;
+	float:left;
+	overflow: hidden;
+	border-right:1px solid #c0c0c0;
+	margin-right: 10px;
+	height:calc(100% - 4px);
+}
+
+.linedwrap .codelines{
+	/* padding-top:5px; */
+	overflow-y: scroll;
+	overflow-x: hidden;
+	width: 66px;
+	height: calc(100% - 5px);	
+}
+
+.linedwrap .codelines .lineno{
+	color:#aaaaaa;
+	padding-right: 0.5em;
+	padding-top: 0.0em;
+	text-align : right;
+	white-space: nowrap;
+	margin-left: -2px;
+}
+
+.linewrap .codelines .lineselect{
+	color: red;
+}	
+
+.linecontents{
+	width: calc(100% - 30px);
+    white-space: pre-wrap;
+    word-break: break-all
+}
+
+span.text-red {
+    background-color: red;
+}
+
+span.text-yellow {
+    background-color: yellow;
+}
+.filterLine{
+	display:none;
+}
+
+td.lineline.lined-numbers {
+    color:#aaaaaa;
+    padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.0em;
+	text-align : right;
+	white-space: nowrap;
+	margin-left: -2px;
+	vertical-align: top;
+	width:45px;
+}
+
+td.lineline.lined-lines{
+	border-left: 1px solid #c0c0c0;
+	padding-left: 5px;
+	word-break: break-all;
+}
+
+/* paging */
+.paginationWrap{
+	text-align:center;
+	width:100%;
+	/* margin-left: 50px; */
+}
+
+.pagination{
+	display : inline-block;	
+}
+.pagination a{
+	color : black;
+	float: left;
+	padding: 8px 16px;
+	text-decoration:none;
+	transition:background-color .3s;
+	border-radius: 5px;
+}
+.pagination a.active{
+	background-color:#2d71c4;
+	color : white;
+	border-radius: 5px;
+}
+.pagination a:hover:not(.active){
+	background-color:#DDD;
+	border-radius: 5px;
+}
+
+.paginationWrap .paginSize{
+	float: left;
+    width: 45px;
+    padding: 4px 0;
+    -webkit-padding-before: 6px;
+    -webkit-padding-after: 6px;
+    margin: 3.5px;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: -1px;
+    margin-top: 2px;
+    text-align: center;
+}
+.paginationWrap label{
+	float: left;
+    margin-top: 8px;
+}
+
+/* .pagination a.absLeft{
+	background-image: url( "../../../images/project/dhxgrid_web/ar_left_abs_dis.gif" ) ;
+	background-size: cover;
+	color : #ffffff;
+}
+.pagination a.left{
+	background-image: url( "../../../images/project/dhxgrid_web/ar_left_dis.gif" ) ;
+	background-size: cover;
+	color : #bfbfbf;
+}
+.pagination a.absRight{
+	background-image: url( "../../../images/project/dhxgrid_web/ar_right_abs_dis.gif" ) ;
+	background-size: cover;
+	color : #ffffff;
+}
+.pagination a.right{
+	background-image: url( "../../../images/project/dhxgrid_web/ar_right_dis.gif" ) ;
+	background-size: cover;
+	color : #bfbfbf;
+} */
+
+/*�떆�뒪�뀥 愿��젣 �븘�씠肄� */
+.icon_selecter{
+	font-size:12px;
+	height: 25px;
+}
+.ui_map_obj_building_bank{
+	width: 40px;
+	height:40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-image: url(../../../images/project/map-view/ui_server_default.png);
+}
+.ui_map_obj_building_default {
+    background-image: url(../../../images/project/map-view/ui_server_multi.png);
+    background-size: 75px;
+    background-position-x: 118%;
+    background-position-y: 27%;
+    width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.add_attr{
+	background-image: url(../../../images/project/main/icon/arrow_down_white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.add_item {
+    margin-top: 1px;
+    height: 19px;
+    width:20px;
+    float: right;
+    background-size: 11px;
+    background-position: center;
+    padding-left: 0px !important;
+}
+.item_selector{
+	padding : 0px;
+}
+#pgSession{
+	padding-right: 5px;
+	padding-bottom: 8px;
+	text-align: center;
+	background-color: transparent;
+}
+.percent_control{
+   /*  position: relative; */
+    float: left;
+    transition: all ease 0.4s;
+    /* border-left: 1px solid #bbbbbb; */
+}
+.percent{
+   /*  position: absolute; */
+   /*  top: -26px;
+    right: -10px; */
+    float: left;
+    width: 100px;
+    height: 15px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 2px;
+    margin-right: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #bbbbbb;
+    z-index: 4;
+    transition: all ease 0.4s;
+}
+
+.percent_bar{
+    position: relative;
+    float: left;
+    width: 100px;
+    max-width: 100px;
+    height: 5px;
+    background-color: #333333;
+    cursor: pointer;
+}
+.percent_value{
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background-color: #459ed7;
+    z-index: 2;
+}
+.percent_location{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin-top: -3px;
+    margin-left: -6px;
+    border-radius: 500px;
+    left: 34px;
+    background-color: #459ed7;
+    cursor: pointer;
+    z-index: 3;
+}
+.getvalue{
+	float:left;
+	margin-left:120px;
+	margin-right:10px;
+}
+
+.ui_map_kor{
+    background-image: url(../../../images/project/map-view/ui_map_korea.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.ui_map_seoul{
+    background-image: url(../../../images/project/map-view/ui_map_kor_seoul.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.ui_map_kangwon{
+    background-image: url(../../../images/project/map-view/ui_map_kor_kangwon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#map_viewer{
+	width: 500px;
+	height: 500px;
+}
+
+#addTarget{
+	width:350px;
+}
+.slider{
+	margin-left: 151px;
+}
+.name_title{
+	margin-left: 10px;
+}
+.slider_input, .input_input{
+	line-height: 10px;
+}
+#itemTypeLabel{
+	clear: both;
+}
+#itemName, #limit{
+	margin-left:0;
+	margin-right:0;
+	margin-bottom:5px;
+	width: calc(100% - 121px);
+	padding-left: 2px !important;
+}
+#limit{
+	margin-top:0;
+}
+#itemType, #limitType{
+	padding-left: 5px !important;
+}
+#autoAddChannel input{
+	width:calc(100% - 126px);
+	margin: 3.5px 3px;
+}
+/* #imgoption{
+	width: 10px;
+	height:10px;
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: contain;
+	background-image: url(http://localhost:8080/recsee3p/resources/common/recsee/images/project/map-view/ui_server_multi.png);
+} */
+.iconWrap{
+	width: 75px;
+	float:left;
+}
+.pWrap{
+	float:left;
+}
+.iconCombo, .select2-container--default [aria-selected].select2-results__option--highlighted, .select2-container--default [aria-selected=true].select2-results__option{
+	height: 40px;
+}
+.select2_option{
+	line-height: 40px;
+}
+.select2-results__option{
+	clear:both;
+}
+.dataViewCard{
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+}
+.dataViewP{
+    background-color: rgba(51, 117, 197, 1);
+    padding: 4.5px 0;
+    text-align: center;
+    color: white;
+}
+.cardWrap{
+	box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
+}
+.useMap{
+	background-color:rgba(216, 144, 3, 1);
+}
+.useMapCard{
+	background-color:rgba(216, 144, 3, 0.1);
+}
+#map_detail_wrap{
+	background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+#gridApproveManage tr td:nth-child(6),#gridApproveManage tr td:nth-child(8), #gridApproveManage tr td:nth-child(9), #gridApproveManage tr td:nth-child(19),#gridApproveManage tr td:nth-child(22),#gridApproveManage tr td:nth-child(25),#gridApproveManage tr td:nth-child(28){
+	border-right: 3px solid rgba(240, 240, 240, 1) !important;
+}
+
+.myCell:after{
+	color: rgba(208, 208, 208, 1);
+	/* content:"사용불가"; */
+}
+
+/* 채널 사용 현황  */
+.licenceUsage{
+	float: left;
+	margin-right: 25px;
+	margin-top: 10px;
+	font-size: 15px;
+}

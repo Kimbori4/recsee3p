@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.furence</groupId>
+	<artifactId>recsee3p</artifactId>
+	<name>recsee</name>
+	<packaging>war</packaging>
+	<version>1.0.12-BUILD-SNAPSHOT</version>
+	<repositories>
+<!-- 		<repository>
+			<id>project-lib</id>
+      		<name>this project repo</name>
+      		<url>file://${project.basedir}/src/main/webapp/WEB-INF/lib</url>
+		</repository>
+ -->		
+	<!--
+		<repository>
+			<id>oracle</id>
+			<name>ORACLE JDBC Repository</name>
+			<url>http://maven.jahia.org/maven2</url>
+		</repository>
+
+		<repository>
+			<id>jWebSocket-Repo</id>
+			<name>jWebSocket Repository</name>
+			<url>http://mvn.jwebsocket.org/</url>
+		</repository>
+	-->
+	</repositories>
+	<properties>
+		<java-version>1.8</java-version>
+		<org.springframework-version>4.0.0.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.7.4</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<org.poi-version>3.17</org.poi-version>
+        <org.tiles-version>3.0.5</org.tiles-version>
+        <project.lib.path>${project.basedir}/src/main/webapp/WEB-INF/lib</project.lib.path>
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+        <env>dev</env>
+        <timestamp>${maven.build.timestamp}</timestamp>
+        <maven.build.timestampt.format>yyyy-MM-dd HH:mm:ss</maven.build.timestampt.format>
+        <warExportDirectory>D:\\war-export</warExportDirectory>
+	</properties>
+	<profiles>		
+		<profile>
+			<id>test</id>
+			<properties>
+				<env>test</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<env>dev</env>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env>prod</env>
+			</properties>
+		</profile>
+	</profiles>
+	<dependencies>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				 </exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.2.13.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>3.2.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+	
+		<dependency>
+		    <groupId>xerces</groupId>
+		    <artifactId>xercesImpl</artifactId>
+		    <version>2.9.1</version>
+		</dependency>
+
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.7</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Jackson JSON Mapper -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
+		<!-- @Inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-dbcp</artifactId>
+			<version>7.0.57</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
+		<!-- myBatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.7</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.mybatis</groupId>
+    		<artifactId>mybatis-spring</artifactId>
+    		<version>2.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- JDBC -->
+		<!-- <dependency>
+    		<groupId>com.microsoft.sqlserver</groupId>
+    		<artifactId>sqljdbc41</artifactId>
+    		<version>4.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/sqljdbc41.jar</systemPath>
+		</dependency> -->
+
+		<!-- maria DB -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+
+		<!-- PostgreSQL -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.23</version>
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.1.0.7.0</version>
+		</dependency>
+		-->
+
+		<!-- Tiles
+	    <dependency>
+	        <groupId>org.apache.tiles</groupId>
+	        <artifactId>tiles-extras</artifactId>
+	        <version>${org.tiles-version}</version>
+	    </dependency>
+	     -->
+
+		<!-- POI -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${org.poi-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${org.poi-version}</version>
+		</dependency>
+		<!-- -->
+
+		<dependency>
+		    <groupId>com.microsoft.ews-java-api</groupId>
+		    <artifactId>ews-java-api</artifactId>
+		    <version>2.0</version>
+		</dependency>
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<!-- jWebSocketServer
+		<dependency>
+			<artifactId>jWebSocketServer</artifactId>
+			<groupId>org.jwebsocket</groupId>
+			<version>1.0-RC3</version>
+			<type>jar</type>
+		</dependency>
+ 		-->
+
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.13</version>
+		</dependency>
+		
+
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.lazyluke</groupId>
+		    <artifactId>log4jdbc-remix</artifactId>
+		    <version>0.2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fusesource</groupId>
+			<artifactId>sigar</artifactId>
+			<version>1.6.4</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<!-- Apache Commons FileUpload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<!-- Apache Commons IO -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		
+		
+		
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.7</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.ini4j/ini4j -->
+		<dependency>
+		    <groupId>org.ini4j</groupId>
+		    <artifactId>ini4j</artifactId>
+		    <version>0.5.4</version>
+		</dependency>
+	
+	        <!-- 2021-09-24 soon 초기설정 오류수정 -->
+       	<dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        
+        
+
+
+	<!--2021.09.24-->
+		<dependency>
+        	<groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0.1</version>
+        </dependency> 
+                
+        <dependency>
+        	<groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.3.1</version>
+        </dependency> 
+        
+        <dependency>
+        	<groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.3.04</version>
+        </dependency>
+         
+		<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+        </dependency>          
+         
+        <!-- project lib path -->
+		<dependency>
+			<groupId>org.apache.commons.pool</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>2.4.2</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/commons-pool2-2.4.2.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons.pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.5.5</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/commons-pool-1.5.5.jar</systemPath>
+		</dependency>
+				
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>INICommon</artifactId>
+			<version>1.1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/INICommon_v1.1.0.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>INILog4j</artifactId>
+			<version>1.0.1</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/INILog4j_v1.0.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>INICrypto</artifactId>
+			<version>4.1.17</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/INICrypto_v4.1.17.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>INISAFECore</artifactId>
+			<version>2.1.38</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/INISAFECore_v2.1.38.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>INISAFENet</artifactId>
+			<version>7.2.27</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/INISAFENet_v7.2.27_NS.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>INISAFEPKI</artifactId>
+			<version>1.1.19</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/INISAFEPKI_v1.1.19.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>INISAFEToolSet</artifactId>
+			<version>1.0.2</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/INISAFEToolSet_v1.0.2.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.java_websocket</groupId>
+			<artifactId>WebSocket</artifactId>
+			<version>1.3.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/java-websocket-1.3.0.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/jedis-2.1.0.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>log4j</artifactId>
+			<version>2.17.1</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/log4j-core-2.17.1.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>log4j-ext</artifactId>
+			<version>1.2.13</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/log4j-ext-1.2.13.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>SafeDBCore</artifactId>
+			<version>4.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/SafeDBCore_v4.0.0.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>SafeDBCrypto</artifactId>
+			<version>4.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/SafeDBCrypto_v4.0.0.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>SafeDBSDK</artifactId>
+			<version>4.0.4</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/SafeDBSDK_v4.0.4.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>SHTTPServer</artifactId>
+			<version>7.6.14</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/SHTTPServer_v7.6.14.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.initech</groupId>
+			<artifactId>sso-manager</artifactId>
+			<version>1.3.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/sso-manager_1.3.0.jar</systemPath>
+		</dependency>
+				
+		<dependency>
+			<groupId>jxl</groupId>
+			<artifactId>jxl</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/jxl.jar</systemPath>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>org.spring</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>1.1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/spring-data-redis-1.1.0.RELEASE.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>rsDBGenrator</groupId>
+			<artifactId>rsDBGenrator</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/rsDBGenrator.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat.dbcp</groupId>
+			<artifactId>dbcp2</artifactId>
+			<version>2.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/tomcat-dbcp.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>external-debug</groupId>
+			<artifactId>external-debug</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/external-debug.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>nls-debug</groupId>
+			<artifactId>nls-debug</artifactId>
+			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.lib.path}/nls-debug.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.5.13</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.itextpdf.tool</groupId>
+			<artifactId>xmlworker</artifactId>
+			<version>5.5.13</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>31.0.1-jre</version>
+		</dependency>
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>checker-qual</artifactId>
+			<version>3.5.0</version>
+		</dependency>
+	</dependencies>
+	
+	
+    <build>
+       	<resources>
+    		<resource>
+    			<directory>src/main/config/${env}</directory>
+    			<targetPath>${basedir}/target/${project.artifactId}-${project.version}/WEB-INF/config</targetPath>
+    			<filtering>true</filtering>
+    		</resource>
+    		<resource>
+    			<directory>src/main/resources</directory>
+    			<filtering>true</filtering>
+    		</resource>
+    	</resources>
+    
+        <plugins>
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <additionalProjectnatures>
+                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                    </additionalProjectnatures>
+                    <additionalBuildcommands>
+                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+                    </additionalBuildcommands>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+           <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                	<execution>
+                		<id>copy-config</id>
+                		<phase>compile</phase>
+                		<goals>
+                			<goal>copy-resources</goal>
+                		</goals>
+                		<configuration>
+                			<outputDirectory>${basedir}/target/${project.artifactId}-${project.version}/WEB-INF/config</outputDirectory>
+                			<resources>
+                				<resource>
+                					<directory>src/main/config/${env}</directory>
+                				</resource>
+                			</resources>
+                		</configuration>
+                	</execution>
+                </executions>
+            </plugin> -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>org.test.int1.Main</mainClass>
+                </configuration>
+            </plugin>   
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                	<execution>
+                		<id>date-property</id>
+                		<phase>compile</phase>
+                		<goals>
+                			<goal>timestamp-property</goal>
+                		</goals>
+                		<configuration>
+                			<name>today</name>
+                			<pattern>yyyy-MM-dd</pattern>
+                			<timeZone>GMT+9</timeZone>
+                		</configuration>
+                	</execution>
+                </executions>
+            </plugin>   
+            
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>                
+                    <outputDirectory>${warExportDirectory}/${today}/${env}</outputDirectory>
+                    <webResources>
+                    	<webResource> 
+                    		<directory>src/main/config/${env}</directory>
+                    		<targetPath>WEB-INF/config</targetPath>
+                    	</webResource>
+                    </webResources>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version><!--$NO-MVN-MAN-VER$-->
+                <executions>
+                	<execution>
+                		<id>antrun-plugin</id>
+                		<phase>install</phase>
+                		<goals>
+                			<goal>run</goal>
+                		</goals>
+                		<configuration>
+                			<target>
+                				<echo message="==========================================" level="info"/>
+                				<echo message="Build Finished ${project.artifactId}" level="info"/>
+                				<echo message="Build Profile: ${env}" level="info"/>
+                				<echo message="==========================================" level="info"/>
+                			</target>
+                		</configuration>
+                	</execution>
+                </executions>
+            </plugin>                    
+        </plugins>
+        <!-- <resources>
+        	<resource>
+        		<directory>src/main/java</directory>
+        		<includes>
+        			<include>**/*.properties</include>
+        			<include>**/*.xml</include>
+        		</includes>
+        		<filtering>false</filtering>
+        	</resource>
+        	<resource>
+        		<directory>src/main/resources</directory>
+        		<includes>
+        			<include>**/*.properties</include>
+        			<include>**/*.xml</include>
+        		</includes>
+        		<filtering>false</filtering>
+        	</resource>
+        </resources> -->
+    </build>
+</project>

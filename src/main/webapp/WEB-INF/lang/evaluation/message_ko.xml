@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>평가(evaluation) 화면용 메세지 정의</comment>
+
+	<!-- 평가 결과 조회(evaluation_result) 페이지 -->
+	<entry key="evaluation.result.label.whole">평가 결과 전체</entry>
+	<entry key="evaluation.result.label.closed">완료된 평가</entry>
+	<entry key="evaluation.result.label.inProgress">평가 중</entry>
+	<entry key="evaluation.result.placeholder.evalDateStart">평가 날짜</entry>
+	<entry key="evaluation.result.placeholder.evalDateEnd">종료 날짜</entry>
+	<entry key="evaluation.result.placeholder.recDateStart">녹취 날짜</entry>
+	<entry key="evaluation.result.placeholder.recDateEnd">종료 날짜</entry>
+	<entry key="evaluation.result.option.recTimeStart">녹취 시작 시간</entry>
+	<entry key="evaluation.result.option.recTimeEnd">녹취 종료 시간</entry>
+	<entry key="evaluation.result.button.search">조회</entry>
+	<entry key="evaluation.result.option.campaignTitle">캠페인명</entry>
+	<entry key="evaluation.result.option.status">평가상태</entry>
+	<entry key="evaluation.result.option.all">전체</entry>
+	<entry key="evaluation.result.option.status.C">완료</entry>
+	<entry key="evaluation.result.option.status.I">미완료</entry>
+	<entry key="evaluation.result.option.status.X">-</entry>
+	<entry key="evaluation.result.placeholder.evaluator">평가자</entry>
+	<entry key="evaluation.result.placeholder.evaluatorId">평가자ID</entry>
+	<entry key="evaluation.result.placeholder.evaluatorComment">평가자 피드백</entry>
+	<entry key="evaluation.result.placeholder.appraiseeComment">상담원 피드백</entry>
+	<entry key="evaluation.result.placeholder.agentId">상담원ID</entry>
+	<entry key="evaluation.result.placeholder.agentName">상담원명</entry>
+	<entry key="evaluation.result.placeholder.callNumber">고객번호</entry>
+	<entry key="evaluation.result.placeholder.agreeStatus">상태동의</entry>
+	<entry key="evaluation.result.placeholder.lastDate">최종날짜</entry>
+	<entry key="evaluation.result.placeholder.delete">삭제</entry>
+	<entry key="evaluation.result.placeholder.rejectCount">거부 횟수</entry>
+	<entry key="evaluation.result.placeholder.rejectDate">거부 날짜</entry>
+	<entry key="evaluation.result.placeholder.agentFlag">조회 가능 여부</entry>
+
+	<entry key="evaluation.management.create.step1">평가 항목의 단계 구분없이 세부항목만을 이용한 평가를 진행합니다.</entry>
+	<entry key="evaluation.management.create.step2">대제목 - 내용 같이 항목을 두 단계로 분류하여 평가를 진행합니다.</entry>
+	<entry key="evaluation.management.create.step3">대제목 - 중제목 - 내용 같이 항목을 세 단계로 분류하여 평가를  진행합니다.</entry>
+	<entry key="evaluation.management.create.step4">평가 항목을 대 - 중 - 소 - 내용으로 단계를 분류하여 평가를 진행합니다.</entry>
+	<entry key="evaluation.management.create.steptitle1">1단계 평가지</entry>
+	<entry key="evaluation.management.create.steptitle2">2단계 평가지</entry>
+	<entry key="evaluation.management.create.steptitle3">3단계 평가지</entry>
+	<entry key="evaluation.management.create.steptitle4">4단계 평가지</entry>
+	<entry key="evaluation.management.create.selectstep">평가 단계 선택</entry>
+
+	<entry key="evaluation.management.sheet.management">평가지 관리</entry>
+	<entry key="evaluation.management.sheet.delete">삭제</entry>
+	<entry key="evaluation.management.sheet.create">평가지 생성</entry>
+	<entry key="evaluation.management.sheet.createSheet">평가지 만들기</entry>
+	<entry key="evaluation.management.placeholder.name">평가 제목을 입력해 주세요.</entry>
+	<entry key="evaluation.management.placeholder.description">평가지에 대한 설명을 입력해 주세요.</entry>
+	<entry key="evaluation.management.sheet.score">평가지 점수</entry>
+	<entry key="evaluation.management.sheet.back">뒤로</entry>
+	<entry key="evaluation.management.sheet.deletion">삭제</entry>
+	<entry key="evaluation.management.sheet.add">추가</entry>
+	<entry key="evaluation.management.sheet.insertSheet">평가지 저장</entry>
+
+	<entry key="evaluation.management.sheet.evaluation">평가</entry>
+	<entry key="evaluation.management.sheet.selectCampaign">캠페인 선택</entry>
+	<entry key="evaluation.management.sheet.score2">점수</entry>
+	<entry key="evaluation.management.sheet.refresh">새로고침</entry>
+	<entry key="evaluation.management.sheet.state">평가상태</entry>
+	<entry key="evaluation.management.sheet.begin">평가시작</entry>
+	<entry key="evaluation.management.sheet.end">평가종료</entry>
+	<entry key="evaluation.management.sheet.input">입력</entry>
+	<entry key="evaluation.management.sheet.transterence">평가 관리로 이동</entry>
+	<entry key="evaluation.management.sheet.evalresult">결과</entry>
+	<entry key="evaluation.management.sheet.compleeval">평가 완료</entry>
+	<entry key="evaluation.management.sheet.agreeleader">팀장동의</entry>
+	<entry key="evaluation.management.sheet.objection">이의제기</entry>
+
+
+	<entry key="evaluation.management.sheet.totalScoreString">총점</entry>
+	<entry key="evaluation.management.sheet.evaluatorOp">평가자 의견</entry>
+	<entry key="evaluation.management.sheet.counselorOp">상담원 의견</entry>
+	
+	<entry key="evaluation.management.sheet.details">상세내용</entry>
+	<entry key="evaluation.management.sheet.itemS">항목</entry>
+	<entry key="evaluation.management.sheet.big">대분류</entry>
+	<entry key="evaluation.management.sheet.Middle">중분류</entry>
+	<entry key="evaluation.management.sheet.Small">소분류</entry>
+	<entry key="evaluation.management.sheet.item">세부항목</entry>
+	<entry key="evaluation.management.sheet.itemSelect">점수선택</entry>
+	<entry key="evaluation.management.sheet.subitem">리스트</entry>
+	<entry key="evaluation.management.sheet.modify">수정</entry>
+	<entry key="evaluation.management.sheet.create2">생성</entry>
+	<entry key="evaluation.management.sheet.itemcreate">항목 생성</entry>
+	<entry key="evaluation.management.sheet.itemtitle">항목명을 입력해주세요.</entry>
+	<entry key="evaluation.management.sheet.itemdescrip">항목 설명을 입력해주세요.</entry>
+	<entry key="evaluation.management.sheet.selectsmall">소분류를 선택해주세요.</entry>
+	<entry key="evaluation.management.sheet.itemscore">항목 점수를 입력해주세요.</entry>	
+
+	<entry key="evaluation.management.sheet.check">체크</entry>
+	<entry key="evaluation.management.sheet.no">순번</entry>
+	<entry key="evaluation.management.sheet.bigname">대분류 명</entry>
+	<entry key="evaluation.management.sheet.bigdesc">대분류 설명</entry>
+	<entry key="evaluation.management.sheet.createdate">생성 날짜</entry>
+	<entry key="evaluation.management.sheet.modifydate">수정 날짜</entry>
+	<entry key="evaluation.management.sheet.smallname">소분류 명</entry>
+	<entry key="evaluation.management.sheet.smalldesc">소분류 설명</entry>
+	<entry key="evaluation.management.sheet.middlename">중분류 명</entry>
+	<entry key="evaluation.management.sheet.middledesc">중분류 설명</entry>
+	<entry key="evaluation.management.sheet.itemname">세부항목 명</entry>
+	<entry key="evaluation.management.sheet.itemdesc">세부항목 설명</entry>
+
+	<entry key="evaluation.management.sheet.sheetname">평가지 제목</entry>
+	<entry key="evaluation.management.sheet.sheetdesc">평가지 설명</entry>
+	<entry key="evaluation.management.sheet.itemcount">항목 수</entry>
+	<entry key="evaluation.management.sheet.stepofeval">평가 단계</entry>
+	<entry key="evaluation.management.sheet.creator">생성자</entry>
+
+	<entry key="evaluation.management.sheet.tabtitleindividaul">개인별</entry>
+	<entry key="evaluation.management.sheet.tabtitlepart">파트별</entry>
+
+	<entry key="evaluation.management.sheet.totalpeople">총원</entry>
+	<entry key="evaluation.management.sheet.totalscore">총점</entry>
+	<entry key="evaluation.management.sheet.greeting">인사말</entry>
+	<entry key="evaluation.management.sheet.jobperformance">업무능력</entry>
+	<entry key="evaluation.management.sheet.listening">경청</entry>
+	<entry key="evaluation.management.sheet.attitude">태도</entry>
+	<entry key="evaluation.management.sheet.voice">음성</entry>
+	<entry key="evaluation.management.sheet.speed">속도</entry>
+	<entry key="evaluation.management.sheet.response">호응</entry>
+	<entry key="evaluation.management.sheet.excuse">양해</entry>
+	<entry key="evaluation.management.sheet.advicetone">상담어투</entry>
+
+	<entry key="evaluation.management.sheet.recipient">대상자</entry>
+	<entry key="evaluation.management.sheet.department">구분</entry>
+	<entry key="evaluation.management.sheet.part">파트</entry>
+	<entry key="evaluation.management.sheet.pic">담당자</entry>
+	<entry key="evaluation.management.sheet.level">레벨</entry>
+	<entry key="evaluation.management.sheet.evaluationgrade">평가점수</entry>
+	<entry key="evaluation.management.sheet.greetingadjustment">인사가감</entry>
+	<entry key="evaluation.management.sheet.imputationsubtraction">귀책감점</entry>
+	<entry key="evaluation.management.sheet.excellentpoint">우수가점</entry>
+	<entry key="evaluation.management.sheet.finaltotalscore">최종총점</entry>
+	<entry key="evaluation.management.sheet.thismonth">당월</entry>
+	<entry key="evaluation.management.sheet.lastmonth">전월</entry>
+	<entry key="evaluation.management.sheet.gap">GAP</entry>
+
+	<entry key="evaluation.campaign.ongoing.tabName">진행중인 캠페인</entry>
+	<entry key="evaluation.campaign.outOfDate.tabName">지난 캠페인</entry>
+	<entry key="evaluation.campaign.ongoing.create">캠페인 생성</entry>
+	<entry key="evaluation.campaign.outOfDate.reuse">재사용</entry>
+	<entry key="evaluation.campaign.placeholder.campTitle">캠페인 제목을 입력하해주세요.</entry>
+	<entry key="evaluation.campaign.placeholder.campContent">캠페인에 대한 설명을 입력해주세요.</entry>
+	<entry key="evaluation.campaign.ongoing.date">평가 기간</entry>
+	<entry key="evaluation.campaign.ongoing.evalStart">평가 시작</entry>
+	<entry key="evaluation.campaign.create.duration">기간미지정</entry>
+	<entry key="evaluation.campaign.create.durationEnabled">기간지정</entry>
+	<entry key="evaluation.campaign.create.endEval">평가종료</entry>
+	<entry key="evaluation.campaign.create.evalGroup">평가대상그룹</entry>
+	<entry key="evaluation.campaign.create.groupSelect">그룹지정</entry>
+	<entry key="evaluation.campaign.create.permission">허용</entry>
+	<entry key="evaluation.campaign.create.forbidden">미허용</entry>
+	<entry key="evaluation.campaign.create.disagree">이의제기</entry>
+	<entry key="evaluation.campaign.create.feedback">피드백</entry>
+	<entry key="evaluation.campaign.create.reEval">재평가 여부</entry>
+	<entry key="evaluation.campaign.create.socoring">채점 방식</entry>
+	<entry key="evaluation.campaign.create.sheetSelect">평가지 선택</entry>
+	<entry key="evaluation.campaign.create.evaldescription">평가 설명</entry>
+	<entry key="evaluation.campaign.create.step">단계</entry>
+	<entry key="evaluation.campaign.create.add">추가</entry>
+	<entry key="evaluation.campaign.sheetNumber">평가지 수</entry>
+	<entry key="evaluation.campaign.sumCampScore">캠페인 점수 합계</entry>
+	<entry key="evaluation.campaign.deleteSheet">삭제</entry>
+	<entry key="evaluation.campaign.evalGroupSelect">평가 그룹 지정</entry>
+	<entry key="evaluation.campaign.groupSelectPlaceholer">원하시는 그룹을 선택해주세요</entry>
+	<entry key="evaluation.campaign.all">전체</entry>
+	<entry key="evaluation.campaign.mgroup">중그룹</entry>
+	<entry key="evaluation.campaign.sgroup">소그룹</entry>
+	<entry key="evaluation.campaign.selectionCancle">선택 취소</entry>
+	<entry key="evaluation.campaign.completionDesig">지정 취소</entry>
+	<entry key="evaluation.campaign.grid.check">체크</entry>
+	<entry key="evaluation.campaign.grid.num">순번</entry>
+
+	<entry key="evaluation.campaign.grid.campTitle">캠페인 제목</entry>
+	<entry key="evaluation.campaign.grid.campContent">캠페인 설명</entry>
+	<entry key="evaluation.campaign.grid.reEval">재평가 여부</entry>
+	<entry key="evaluation.campaign.grid.evalTarget">평가 대상</entry>
+	<entry key="evaluation.campaign.grid.evalMethod">채점 방식</entry>
+	<entry key="evaluation.campaign.grid.createDate">생성 날짜</entry>
+	<entry key="evaluation.campaign.grid.updatedDate">최종 수정 날짜</entry>
+	<entry key="evaluation.campaign.grid.remnantDuration">남은 평가 기간</entry>
+	<entry key="evaluation.campaign.grid.modification">수정</entry>
+
+	<entry key="evaluation.campaign.grid.gruopName">그룹명</entry>
+	<entry key="evaluation.campaign.grid.groupMemberNum">그룹원 수</entry>
+
+
+	<entry key="evaluation.management.sheet.evaltime">평가시간</entry>
+	<entry key="evaluation.result.placeholder.rectime">녹취시간</entry>
+
+	<entry key="evaluation.management.sheet.detail">보기</entry>
+	<entry key="evaluation.management.sheet.campaign">캠페인</entry>
+	<entry key="evaluation.management.sheet.evaluationCount">평가 횟수</entry>
+	<entry key="evaluation.management.sheet.evaluationCountManage">평가 횟수 관리</entry>
+	<entry key="evaluation.campaign.copyCampaign">캠페인 복사</entry>
+	<entry key="evaluation.campaign.grid.evalTargetSet">평가 대상 지정</entry>
+	<entry key="evaluation.campaign.grid.evalCount">평가 차수</entry>
+	<entry key="evaluation.campaign.grid.evalShare">평가 분배</entry>
+	<entry key="evaluation.campaign.grid.evalShareSet">평가 분배 지정</entry>
+	<entry key="evaluation.campaign.grid.evalsheet">평가지</entry>
+	<entry key="evaluation.campaign.grid.evalsheetVisible">평가지 활성화 유무</entry>
+	<entry key="evaluation.campaign.grid.elvaDateSelect">날짜 선택</entry>
+	<entry key="evaluation.campaign.grid.evalsheetTotalScore">평가지 총 점수</entry>
+	<entry key="evaluation.campaign.byGroup">그룹 별 지정</entry>
+	<entry key="evaluation.campaign.bySkill">스킬 별 지정</entry>
+	<entry key="evaluation.campaign.byPerson">개인 별 지정</entry>
+	<entry key="evaluation.campaign.byAffilicate">제휴사 별 지정</entry>
+	<entry key="evaluation.campaign.selectGroupType">평가 그룹 종류를 지정해주세요.</entry>
+	<entry key="evaluation.campaign.selectComplete">지정 완료</entry>
+	<entry key="evaluation.campaign.copySheet">평가지 복사</entry>
+	<entry key="evaluation.campaign.lastMonth">전월</entry>
+	<entry key="evaluation.campaign.thisMonth">당월</entry>
+	<entry key="evaluation.campaign.selectType">유형선택</entry>
+	<entry key="evaluation.month.1">1월</entry>
+	<entry key="evaluation.month.2">2월</entry>
+	<entry key="evaluation.month.3">3월</entry>
+	<entry key="evaluation.month.4">4월</entry>
+	<entry key="evaluation.month.5">5월</entry>
+	<entry key="evaluation.month.6">6월</entry>
+	<entry key="evaluation.month.7">7월</entry>
+	<entry key="evaluation.month.8">8월</entry>
+	<entry key="evaluation.month.9">9월</entry>
+	<entry key="evaluation.month.10">10월</entry>
+	<entry key="evaluation.month.11">11월</entry>
+	<entry key="evaluation.month.12">12월</entry>
+
+	<entry key="evaluation.querter.1">1분기</entry>
+	<entry key="evaluation.querter.2">2분기</entry>
+	<entry key="evaluation.querter.3">3븐기</entry>
+	<entry key="evaluation.querter.4">4분기</entry>
+
+
+	<entry key="evaluation.selectPeriod.day">일 별</entry>
+	<entry key="evaluation.selectPeriod.month">월 별</entry>
+	<entry key="evaluation.selectPeriod.querter">분기 별</entry>
+	<entry key="evaluation.selectPeriod.year">년 별</entry>
+	<entry key="evaluation.selectPeriod.evalEndDate">평가 종료 날짜</entry>
+	<entry key="evaluation.selectPeriod.evalScore">평가된 점수</entry>
+	<entry key="evaluation.selectPeriod.reval">이의제기 여부</entry>
+	<entry key="evaluation.selectPeriod.evalScore">배점</entry>
+
+
+	<!-- 18-09-05 -pilip evaluation kor lang add -->
+	<entry key="evaluation.label.next">다음</entry>
+	<entry key="evaluation.js.alert.msg1">직원명</entry>
+	<entry key="evaluation.js.alert.msg2">내선번호</entry>
+	<entry key="evaluation.js.alert.msg3">전체</entry>
+	<entry key="evaluation.js.alert.msg4">중그룹</entry>
+	<entry key="evaluation.js.alert.msg5">소그룹</entry>
+	<entry key="evaluation.js.alert.msg6">평가 그룹 종류를 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg7">그룹명</entry>
+	<entry key="evaluation.js.alert.msg8">스킬명</entry>
+	<entry key="evaluation.js.alert.msg9">제휴사명</entry>
+	<entry key="evaluation.js.alert.msg10">평가 대상자를 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg11">그룹 지정이 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg12">그룹 지정을 다시 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg13">숫자만 입력하세요</entry>
+	<entry key="evaluation.js.alert.msg14">300번 이하로 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg15">평가 분배된 평가자가 없습니다. 다시 작성해주세요.</entry>
+	<entry key="evaluation.js.alert.msg16">평가 분배 지정이 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg17">평가자 지정을 다시 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg18">복사할 캠페인을 하나만 선택해주세요.</entry>
+	<entry key="evaluation.js.alert.msg19">캠페인 제목을 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg20">불가능한 문자가 들어가있습니다. 제목에 ,를 빼주세요.</entry>
+	<entry key="evaluation.js.alert.msg21">캠페인 기간을 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg22">캠페인 시작 날짜를 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg23">캠페인 종료 날짜를 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg24">평가자 평가 분배를 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg25">평가지를 선택해주세요.</entry>
+	<entry key="evaluation.js.alert.msg26">캠페인 저장에 실패했습니다. 다시 시도해주세요.</entry>
+	<entry key="evaluation.js.alert.msg27">캠페인 수정</entry>
+	<entry key="evaluation.js.alert.msg28">캠페인 복사</entry>
+	<entry key="evaluation.js.alert.msg29">지정완료</entry>
+	<entry key="evaluation.js.alert.msg30">평가 대상자를 지정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg31">수정에 실패했습니다. 다시 시도해주세요.</entry>
+	<entry key="evaluation.js.alert.msg32">선택된 항목을 지울까요?</entry>
+	<entry key="evaluation.js.alert.msg33">평가결과가 존재하는 캠페인 외 삭제가 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg34">선택한 캠페인이 모두 삭제되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg35">평가된 캠페인이 존재하여 삭제가 불가능합니다. \\n확인 후 삭제해주세요.</entry>
+	<entry key="evaluation.js.alert.msg36">삭제를 실패하였습니다.</entry>
+	<entry key="evaluation.js.alert.msg37">종료시점이 시작시점보다 이전입니다.</entry>
+	<entry key="evaluation.js.alert.msg38">종료시점이 시작시점과 같거나 이전입니다.</entry>
+	<entry key="evaluation.js.alert.msg39">선택</entry>
+	<entry key="evaluation.js.alert.msg40">평가지 만들기</entry>
+	<entry key="evaluation.js.alert.msg41">선택되지 않은 평가 코드가 있습니다.\\n선택 후 다시 시도해주세요.</entry>
+	<entry key="evaluation.js.alert.msg42">더 이상 삭제 할 수 없습니다.</entry>
+	<entry key="evaluation.js.alert.msg43">평가 제목을 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg44">평가 설명을 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg45">선택되지 않은 평가 코드가 있습니다.\\n선택 후 다시 시도해주세요.</entry>
+	<entry key="evaluation.js.alert.msg46">설정하신 평가지가 저장 되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg47">만드신 평가지에 중복된 항목이 존재합니다.</entry>
+	<entry key="evaluation.js.alert.msg48">평가지</entry>
+	<entry key="evaluation.js.alert.msg49">선택하신 평가지를 복사 하시겠습니까?</entry>
+	<entry key="evaluation.js.alert.msg50">평가지를 1개만 선택 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg51">복사하실 평가지를 선택 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg52">선택하신 평가지를 삭제 하시겠습니까?</entry>
+	<entry key="evaluation.js.alert.msg53">캠페인에서 사용중인 평가지는 삭제 할 수 없습니다.</entry>
+	<entry key="evaluation.js.alert.msg54">삭제 리스트 중 캠페인에서 사용중인 평가지를 제외하고 삭제 되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg55">선택한 평가지가 삭제되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg56">삭제 작업이 실패하였습니다.\\n관리자에게 문의해주세요.</entry>
+	<entry key="evaluation.js.alert.msg57">삭제하실 평가지를 선택 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg58">해당 평가지를 삭제하시겠습니까?</entry>
+	<entry key="evaluation.js.alert.msg59">캠페인에서 사용중인 평가지는 삭제 할 수 없습니다.</entry>
+	<entry key="evaluation.js.alert.msg60">평가지가 삭제 되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg61">평가지 정보를 가져오는데 실패했습니다.</entry>
+	<entry key="evaluation.js.alert.msg62">이미 열려있는 평가지가 있습니다. 선택한 평가지를 새로 열겠습니까?</entry>
+	<entry key="evaluation.js.alert.msg63">상담원 종합의견란에 의견을 적어주세요.</entry>
+	<entry key="evaluation.js.alert.msg64">이의제기가 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg65">저장에 실패하였습니다. 다시 시도해주세요.</entry>
+	<entry key="evaluation.js.alert.msg66">평가지 선택 후 평가를 진행해주세요.</entry>
+	<entry key="evaluation.js.alert.msg67">선택 되지 않은 항목이 존재합니다.</entry>
+	<entry key="evaluation.js.alert.msg68">평가 저장이 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg69">날짜 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg70">종료시점이 시작시점보다 이전입니다.</entry>
+	<entry key="evaluation.js.alert.msg71">종료시점이 시작시점과 같거나 이전입니다.</entry>
+	<entry key="evaluation.js.alert.msg72">이미 평가 되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg73">현재 평가 결과를 지우시겠습니까?</entry>
+	<entry key="evaluation.js.alert.msg74">상담원 종합의견란에 의견을 적어주세요.</entry>
+	<entry key="evaluation.js.alert.msg75">재평가 횟수를 초과하여 재평가가 불가능합니다.</entry>
+	<entry key="evaluation.js.alert.msg76">평가 수정이 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg77">평가 삭제가 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg78">대상자,구분,파트,담당자,Level,평가점수,귀책감점,최종총점,당월,전월,GAP,</entry>
+	<entry key="evaluation.js.alert.msg79">주간</entry>
+	<entry key="evaluation.js.alert.msg80">야간</entry>
+	<entry key="evaluation.js.alert.msg81">신입</entry>
+	<entry key="evaluation.js.alert.msg82">근속</entry>
+	<entry key="evaluation.js.alert.msg83">엑셀다운로드 할 데이터가 없습니다.</entry>
+	<entry key="evaluation.js.alert.msg84">기간 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg85">유형 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg86">년도 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg87">월 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg88">일자를 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg89">분기 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg90">캠페인 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg91">년도 선택을 해주세요.</entry>
+	<entry key="evaluation.js.alert.msg92">상담원 이름을 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg93">,당월순위</entry>
+	<entry key="evaluation.js.alert.msg94">,전월순위</entry>
+	<entry key="evaluation.js.alert.msg95">,GAP</entry>
+	<entry key="evaluation.js.alert.msg96">대상자,구분,파트,담당자,Level,평가점수,귀책감점,최종총점</entry>
+	<entry key="evaluation.js.alert.msg97">근무,총원,#cspan,총점,#cspan,#cspan,인사말,#cspan,업무능력,#cspan,경청/태도,#cspan,음성/속도,#cspan,호응/양해,#cspan,상담어투,#cspan</entry>
+	<entry key="evaluation.js.alert.msg98">전월</entry>
+	<entry key="evaluation.js.alert.msg99">당월</entry>
+	<entry key="evaluation.js.alert.msg100">대상자,평가구분,담당자,</entry>
+	<entry key="evaluation.js.alert.msg101">,녹취정보,고객정보,총점,</entry>
+	<entry key="evaluation.js.alert.msg102">1월,2월,3월,4월,5월,6월,7월,8월,9월,10월,11월,12월</entry>
+	
+	
+
+	<!-- 18-09-07 -pilip evaluation kor lang add -->
+	<entry key="evaluation.js.alert.msg103">피드백 사용 중에는 피드백 종료기간을 설정해주세요.</entry>
+	<entry key="evaluation.js.alert.msg104">피드백 종료기간은 캠페인 종료기간보다 길게 설정할 수 없습니다.</entry>
+
+	
+	<entry key="evaluation.sheet.btn.revaluation">재평가</entry>
+	<entry key="evaluation.sheet.label.revaluation">(이의제기 기간이 지났습니다.)</entry>
+	<entry key="evaluation.sheet.label.agree">동의</entry>
+	<entry key="evaluation.sheet.label.disagree">비동의</entry>
+
+	<entry key="evaluation.js.alert.msg105">본인이 한 평가만 삭제가 가능합니다.</entry>
+	<entry key="agreeStatus.type.R">비동의</entry>
+	<entry key="agreeStatus.type.A">동의</entry>
+	<entry key="agreeStatus.type.F">완료</entry>
+	<entry key="evaluation.js.alert.msg106">정말 삭제하시겠습니까?</entry>
+
+
+	<entry key="evaluation.js.alert.msg107">세부항목명을 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg108">번째 subitem 이름을 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg109">번째 점수를 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg110">항목명을 입력해주세요.</entry>
+	<entry key="evaluation.js.alert.msg111">저장에 실패했습니다. 다시 시도해주세요.</entry>
+	<entry key="evaluation.js.alert.msg112">수정하실 항목을 하나만 선택해주세요.</entry>
+	<entry key="evaluation.js.alert.msg113">값을 불러오는데 실패했습니다.</entry>
+	<entry key="evaluation.js.alert.msg114">이름을 입력해주세요!</entry>
+	<entry key="evaluation.js.alert.msg115">수정할 값이 없습니다.</entry>
+	<entry key="evaluation.js.alert.msg116">해당 항목을 수정했습니다.</entry>
+	<entry key="evaluation.js.alert.msg117">수정에 실패하였습니다.</entry>
+	<entry key="evaluation.js.alert.msg118">해당 항목을 현재 평가지에서 사용중입니다.\\n확인 후 다시 시도해주세요.</entry>
+	<entry key="evaluation.js.alert.msg119">수정이 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg120">선택된 항목이 없습니다.</entry>
+	<entry key="evaluation.js.alert.msg121">평가지에 포함된 항목 외 삭제가 완료되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg122">선택한 항목이 모두 삭제되었습니다.</entry>
+	<entry key="evaluation.js.alert.msg123">선택된 항목을 지울까요?</entry>
+	<entry key="evaluation.js.alert.msg124">평가지에 포함되는 항목이 존재하여 삭제가 불가능합니다. \\n확인 후 삭제해주세요.</entry>
+	<entry key="evaluation.js.alert.msg125">삭제를 실패하였습니다.</entry>
+	<entry key="evaluation.js.alert.msg126">선택되지 않은 항목이 있습니다. 선택 되지 않은 항목들은 최저 점수로 저장됩니다. \\n저장하시겠습니까?</entry>
+	<entry key="evaluation.js.alert.msg127">캠페인을 선택해주세요.</entry>
+	<entry key="evaluation.js.alert.msg128">대그룹을 선택해주세요.</entry>
+	<entry key="evaluation.js.alert.msg129">중그룹을 선택해주세요.</entry>
+	<entry key="evaluation.js.alert.msg130">소그룹을 선택해주세요.</entry>
+	<entry key="evaluation.js.alert.msg131">입력없음</entry>
+	<entry key="evaluation.js.alert.msg132">설정하신 평가지가 수정 되었습니다.</entry>
+
+	<entry key="evaluation.statistics.evaluationListStatistics">평가리스트 통계</entry>
+	<entry key="evaluation.statistics.siteAndGrouptStatistics">사이트 및 그룹별 평가 기준</entry>
+	<entry key="evaluation.statistics.referenceScoreStatistics">기준 점수 통계</entry>
+	<entry key="evaluation.statistics.teamCategory">팀 카테고리 통계</entry>
+	<entry key="evaluation.statistics.point">점</entry>
+	
+	
+	<entry key="evaluation.result.title.first.evaluator">1차 평가자</entry>
+	<entry key="evaluation.result.title.first.evaluatorOp">1차 평가자 의견</entry>
+	<entry key="evaluation.result.title.second.evaluator">2차 평가자</entry>
+	<entry key="evaluation.result.title.second.evaluatorOp">2차 평가자 의견</entry>
+	<entry key="evaluation.result.title.agentOp">상담원 의견</entry>
+
+
+
+</properties>

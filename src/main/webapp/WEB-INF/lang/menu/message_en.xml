@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>메뉴 화면용 메세지 정의</comment>
+
+	<entry key="menu.top.search">Search</entry>
+	<entry key="menu.top.search_listen"><![CDATA[Search&Listen]]></entry>
+
+	<entry key="menu.top.statistics">Statistics</entry>
+	<entry key="menu.top.statistics_dashboard">DashBoard</entry>
+	<entry key="menu.top.statistics_call">All Call Statistics</entry>
+	<entry key="menu.top.statistics_group">Group call statistics</entry>
+	<entry key="menu.top.statistics_user">User call statistics</entry>
+	<entry key="menu.top.statistics_day_time_user">User DashBoard</entry>
+
+
+	<entry key="menu.top.monitoring">Monitoring</entry>
+	<entry key="menu.top.monitoring_realtime">Real-time monitoring</entry>
+	<entry key="menu.top.monitoring_system">System monitoring</entry>
+	<entry key="menu.top.monitoring_dashboard">Dashboard</entry>
+
+	<entry key="menu.top.evaluation">Evaluation</entry>
+	<entry key="menu.top.evaluation_register">Register Evaluation</entry>
+	<entry key="menu.top.evaluation_result">Evaluation results</entry>
+	<entry key="menu.top.evaluate">Evaluation</entry>
+	<entry key="menu.top.evaluation_campaign">Campaign Management</entry>
+
+	<entry key="menu.top.management">Management</entry>
+	<entry key="menu.top.management_setting">Setting management</entry>
+	<entry key="menu.top.management_setting_backup">Backup management</entry>
+	<entry key="menu.top.management_setting_channel">Channel management</entry>
+	<entry key="menu.top.management_setting_callReportCustomize">User-defined call report management</entry>
+	<entry key="menu.top.management_setting_searchCustomize">User-defined search management</entry>
+	<entry key="menu.top.management_setting_system">System setting management</entry>
+	<entry key="menu.top.management_setting_pbx">PBX associatin infomation</entry>
+
+	<entry key="menu.top.management_user">User management</entry>
+	<entry key="menu.top.management_user_user">User information management</entry>
+	<entry key="menu.top.management_user_group">Group management</entry>
+	<entry key="menu.top.management_user_access">Authorization management</entry>
+	<entry key="menu.top.management_user_category">Category management</entry>
+	<entry key="menu.top.management_user_screenUser">Screen user management</entry>
+
+	<entry key="menu.top.management_system">System management</entry>
+	<entry key="menu.top.management_system_license">License management</entry>
+	<entry key="menu.top.management_system_log">Log management</entry>
+	<entry key="menu.top.management_system_etc">Other management</entry>
+	<entry key="menu.top.management_system_queue">Queue management</entry>
+
+	<entry key="menu.top.myinfo">My Info</entry>
+	<entry key="menu.top.myinfo_account">Account Information</entry>
+	<entry key="menu.top.myinfo_changePassword">Change Password</entry>
+	<entry key="menu.top.myinfo_logout">Logout</entry>
+
+
+</properties>

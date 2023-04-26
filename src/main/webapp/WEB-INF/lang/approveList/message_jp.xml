@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>聴取·ダウンロードリクエスト管理(approveList)画面用メッセージの定義</comment>
+		
+		
+	<entry key="views.approveList.grid.number">番号</entry>
+	<entry key="views.approveList.grid.reqDate">要請日付</entry>
+	<entry key="views.approveList.grid.reqTime">リクエスト時間</entry>
+	<entry key="views.approveList.grid.reqInfo">リクエスト情報</entry>
+	<entry key="views.approveList.grid.reqId">リクエスト者ID</entry>
+	<entry key="views.approveList.grid.reqName">リクエスト者名</entry>
+	<entry key="views.approveList.grid.reqGroup">リクエスト者所属</entry>
+	<entry key="views.approveList.grid.reqType">リクエストタイプ</entry>
+	<entry key="views.approveList.grid.reqReason">要請事由</entry>
+	<entry key="views.approveList.grid.state">進行状態</entry>
+	<entry key="views.approveList.grid.fileName">ファイル名</entry>
+	<entry key="views.approveList.grid.recDate">録取日付</entry>
+	<entry key="views.approveList.grid.recTime">通話時間</entry>
+	<entry key="views.approveList.grid.recExtNum">緑臭内線</entry>
+	<entry key="views.approveList.grid.recId">録音者ID</entry>
+	<entry key="views.approveList.grid.recName">録音者名</entry>
+	<entry key="views.approveList.grid.custName">録取顧客名</entry>
+	<entry key="views.approveList.grid.custNum">録音された顧客の電話番号</entry>
+	<entry key="views.approveList.grid.stockNum">録取証券番号</entry>
+	<entry key="views.approveList.grid.callType">録取コールタイプ</entry>
+	<entry key="views.approveList.grid.firstApprovalDate">一次承認日付</entry>
+	<entry key="views.approveList.grid.firstApprovalTime">一次承認時間</entry>
+	<entry key="views.approveList.grid.primaryApprover">一次承認者ID</entry>
+	<entry key="views.approveList.grid.secondApprovalDate">二次承認日付</entry>
+	<entry key="views.approveList.grid.secondApprovalTime">二次承認時間</entry>
+	<entry key="views.approveList.grid.secondApprover">2次承認者ID</entry>
+	<entry key="views.approveList.grid.finalApprovalDate">最終承認日</entry>
+	<entry key="views.approveList.grid.finalApprovalTime">最終承認時間</entry>
+	<entry key="views.approveList.grid.finalApprover">最終承認者ID</entry>
+	<entry key="views.approveList.grid.reqPeriod">要請期間</entry>
+		
+		
+	<entry key="views.approveList.from.sDate">開始日</entry>
+	<entry key="views.approveList.from.eDate">終了日</entry>
+	<entry key="views.approveList.from.fTime">リクエスト時間</entry>
+	<entry key="views.approveList.from.tTime">リクエスト時間(まで)</entry>
+	<entry key="views.approveList.from.search">検 索</entry>
+	<entry key="views.approveList.from.approval">承認</entry>
+	<entry key="views.approveList.from.return">伴侶</entry>
+		
+		
+	<entry key="approveList.alert.msg01">リクエストタイプがダウンロードされません。</entry>
+	<entry key="approveList.alert.msg02">承認されていない要請です。</entry>
+	<entry key="approveList.alert.msg03">権限がありません。</entry>
+	<entry key="approveList.alert.msg04">ダウンロード期限が終了しました。</entry>
+	<entry key="approveList.alert.msg05">リクエストタイプが 聴取ではありません。</entry>
+	<entry key="approveList.alert.msg06">聴取期間が終了しました。</entry>
+	<entry key="approveList.alert.msg07">リクエスト日を次の形式に合わせて入力してください!\\n例)2018-01-01</entry>
+	<entry key="approveList.alert.msg08">すでに処理済みの件です。</entry>
+	<entry key="approveList.alert.msg09">選択した項目は、1次承認待機中の項目です。\\n1次承認権限のないユーザーは現在の要求を反映できません。</entry>
+	<entry key="approveList.alert.msg10">選択した項目は、2次承認待機中の項目です。\\n2次承認権限のないユーザーは現在の要求を反映できません。</entry>
+	<entry key="approveList.alert.msg11">選択した項目は、最終承認待機中の項目です。\\n最終承認権限のないユーザーは現在の要求を反映できません。</entry>
+	<entry key="approveList.alert.msg12">正常に処理されました。</entry>
+	<entry key="approveList.alert.msg13">要請に失敗しました。</entry>
+	
+	
+</properties>

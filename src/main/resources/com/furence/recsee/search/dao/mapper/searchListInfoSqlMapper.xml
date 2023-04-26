@@ -1,0 +1,4079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.main.dao.SearchListInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.main.model.SearchListInfo">
+		<result column="R_REC_DATE" 		jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_RTIME" 		jdbcType="VARCHAR" property="recRtime" />
+		<result column="R_REC_TIME" 		jdbcType="VARCHAR" property="recTime" />
+		<result column="R_BG_CODE" 			jdbcType="VARCHAR" property="bgCode" />
+		<result column="R_MG_CODE" 			jdbcType="VARCHAR" property="mgCode" />
+		<result column="R_SG_CODE" 			jdbcType="VARCHAR" property="sgCode" />
+		<result column="R_USER_ID" 			jdbcType="VARCHAR" property="userId" />
+		<result column="R_CH_NUM" 			jdbcType="VARCHAR" property="chNum" />
+		<result column="R_USER_NAME" 		jdbcType="VARCHAR" property="userName" />
+		<result column="R_CALL_ID1" 		jdbcType="VARCHAR" property="callId1" />
+		<result column="R_CALL_ID2" 		jdbcType="VARCHAR" property="callId2" />
+		<result column="R_CALL_ID3" 		jdbcType="VARCHAR" property="callId3" />
+		<result column="R_EXT_NUM" 			jdbcType="VARCHAR" property="extNum" />
+		<result column="R_CUST_NAME" 		jdbcType="VARCHAR" property="custName" />
+		<result column="R_CUST_PHONE1" 		jdbcType="VARCHAR" property="custPhone1" />
+		<result column="R_CUST_PHONE2" 		jdbcType="VARCHAR" property="custPhone2" />
+		<result column="R_CUST_PHONE3"		jdbcType="VARCHAR" property="custPhone3" />
+		<result column="R_CALL_KIND1" 		jdbcType="VARCHAR" property="callKind1" />
+		<result column="R_CALL_KIND2" 		jdbcType="VARCHAR" property="callKind2" />
+		<result column="R_CALL_STIME" 		jdbcType="VARCHAR" property="callStime" />
+		<result column="R_CALL_ETIME" 		jdbcType="VARCHAR" property="callEtime" />
+		<result column="R_CALL_TTIME" 		jdbcType="VARCHAR" property="callTtime" />
+		
+		<result column="R_SELFDIS_YN" 		jdbcType="VARCHAR" property="selfDisYn" />
+		<result column="R_V_SYS_CODE" 		jdbcType="VARCHAR" property="vSysCode" />
+		<result column="R_V_HDD_FLAG" 		jdbcType="VARCHAR" property="vHddFlag" />
+		<result column="R_LISTEN_URL" 		jdbcType="VARCHAR" property="listenUrl" />
+		<result column="R_V_FILENAME" 		jdbcType="VARCHAR" property="vFileName" />
+		<result column="R_S_SYS_CODE" 		jdbcType="VARCHAR" property="sSysCode" />
+		<result column="R_S_HDD_FLAG" 		jdbcType="VARCHAR" property="sHddFlag" />
+		<result column="R_SCREEN_URL" 		jdbcType="VARCHAR" property="screenUrl" />
+		<result column="R_REC_VISIBLE" 		jdbcType="VARCHAR" property="recVisible" />
+		<result column="R_S_FILENAME" 		jdbcType="VARCHAR" property="sFileName" />
+		<result column="R_S_UPLOAD_YN" 		jdbcType="VARCHAR" property="sUploadYn" />
+		<result column="R_T_SYS_CODE" 		jdbcType="VARCHAR" property="tSysCode" />
+		<result column="R_REC_MEMO" 		jdbcType="VARCHAR" property="recMemo" />
+		<result column="R_T_HDD_FLAG" 		jdbcType="VARCHAR" property="tHddFlag" />
+		<result column="R_EVAL_YN" 			jdbcType="VARCHAR" property="evalYn" />
+		<result column="R_TEXT_URL" 		jdbcType="VARCHAR" property="textUrl" />
+		<result column="R_LISTEN_YN" 		jdbcType="VARCHAR" property="listenYn" />
+		<result column="R_T_FILENAME" 		jdbcType="VARCHAR" property="tFileName" />
+		<result column="R_T_UPLOAD_YN" 		jdbcType="VARCHAR" property="tUploadYn" />
+		<result column="R_PART_START" 		jdbcType="VARCHAR" property="partStart" />
+		<result column="R_PART_END" 		jdbcType="VARCHAR" property="partEnd" />
+		<result column="R_MARKING1" 		jdbcType="VARCHAR" property="marking1" />
+		<result column="R_MARKING2" 		jdbcType="VARCHAR" property="marking2" />
+		<result column="R_MARKING3" 		jdbcType="VARCHAR" property="marking3" />
+		<result column="R_MARKING4" 		jdbcType="VARCHAR" property="marking4" />
+		<result column="R_CUST_SOCIAL_NUM" 	jdbcType="VARCHAR" property="custSocialNum" />
+		<result column="R_CONTRACT_NUM" 	jdbcType="VARCHAR" property="contractNum" />
+		<result column="R_COUNSEL_CODE" 	jdbcType="VARCHAR" property="counselCode" />
+		<result column="R_COUNSEL_CONTENT"  jdbcType="VARCHAR" property="counselContent" />
+		<result column="R_CUST_ADDRESS" 	jdbcType="VARCHAR" property="custAddress" />
+		<result column="R_PLAYER_KIND" 		jdbcType="VARCHAR" property="playerKind" />
+		<result column="R_T_CONTENTS" 		jdbcType="VARCHAR" property="tContents" />
+		<result column="R_RECEIPT_NUM" 		jdbcType="VARCHAR" property="receiptNum" />
+		<result column="R_BUFFER1" 			jdbcType="VARCHAR" property="buffer1" />
+		<result column="R_BUFFER2" 			jdbcType="VARCHAR" property="buffer2" />
+		<result column="R_BUFFER3" 			jdbcType="VARCHAR" property="buffer3" />
+		<result column="R_BW_YN" 			jdbcType="VARCHAR" property="bwYn" />
+		<result column="R_BW_BG_CODE" 		jdbcType="VARCHAR" property="bwBgCode" />
+		<result column="R_BW_SG_CODE" 		jdbcType="VARCHAR" property="bwSgCode" />
+		<result column="R_SCREEN_DUAL_URL" 	jdbcType="VARCHAR" property="screenDaulUrl" />
+		<result column="R_BUFFER4" 			jdbcType="VARCHAR" property="buffer4" />
+		<result column="R_BUFFER5" 			jdbcType="VARCHAR" property="buffer5" />
+		<result column="R_BUFFER6" 			jdbcType="VARCHAR" property="buffer6" />
+		<result column="R_BUFFER7" 			jdbcType="VARCHAR" property="buffer7" />
+		<result column="R_BUFFER8" 			jdbcType="VARCHAR" property="buffer8" />
+		<result column="R_BUFFER9" 			jdbcType="VARCHAR" property="buffer9" />
+		<result column="R_BUFFER10" 		jdbcType="VARCHAR" property="buffer10" />
+		<result column="R_BUFFER11" 		jdbcType="VARCHAR" property="buffer11" />
+		<result column="R_BUFFER12" 		jdbcType="VARCHAR" property="buffer12" />
+		<result column="R_BUFFER13" 		jdbcType="VARCHAR" property="buffer13" />
+		<result column="R_BUFFER14" 		jdbcType="VARCHAR" property="buffer14" />
+		<result column="R_BUFFER15" 		jdbcType="VARCHAR" property="buffer15" />
+		<result column="R_BUFFER16" 		jdbcType="VARCHAR" property="buffer16" />
+		<result column="R_BUFFER17" 		jdbcType="VARCHAR" property="buffer17" />
+		<result column="R_BUFFER18" 		jdbcType="VARCHAR" property="buffer18" />
+		<result column="R_BUFFER19" 		jdbcType="VARCHAR" property="buffer19" />
+		<result column="R_BUFFER20" 		jdbcType="VARCHAR" property="buffer20" />
+		<result column="R_CNID" 			jdbcType="VARCHAR" property="cnId" />
+		<result column="R_DEST_IP" 			jdbcType="VARCHAR" property="destIp" />
+		<result column="R_VDO_URL" 			jdbcType="VARCHAR" property="vdoUrl" />
+		<result column="R_CUST_ID" 			jdbcType="VARCHAR" property="custId" />
+		<result column="R_REGI_DATE" 		jdbcType="VARCHAR" property="regiDate" />
+		<result column="R_MANAGER" 			jdbcType="VARCHAR" property="manager" />
+		<result column="R_SRTP" 			jdbcType="VARCHAR" property="sRtp" />
+		<result column="F_KEY" 				jdbcType="VARCHAR" property="fKey" />
+		<result column="R_SSRC" 			jdbcType="VARCHAR" property="sSrc" />
+		<result column="R_KEY" 				jdbcType="VARCHAR" property="rKey" />
+		<result column="R_CO_NUM" 			jdbcType="VARCHAR" property="coNum" />
+		<result column="R_DID_NUM" 			jdbcType="VARCHAR" property="didNum" />
+		<result column="R_UEI_DATA" 		jdbcType="VARCHAR" property="ueiData" />
+		<result column="R_QUEUE_NO1" 		jdbcType="VARCHAR" property="queueNo1" />
+		<result column="R_QUEUE_NO2" 		jdbcType="VARCHAR" property="queueNo2" />
+		<result column="R_REC_START_TYPE" 	jdbcType="VARCHAR" property="recStartType" />
+		<result column="R_MEMO_INFO" 		jdbcType="VARCHAR" property="memoInfo" />
+		<result column="R_TAG" 				jdbcType="VARCHAR" property="tag" />
+		<result column="R_STOCK_NO" 		jdbcType="VARCHAR" property="stockNo" />
+		<result column="R_COUNSEL_RESULT_BGCODE" 	jdbcType="VARCHAR" property="counselResultBgcode" />
+		<result column="R_COUNSEL_RESULT_MGCODE" 	jdbcType="VARCHAR" property="counselResultMgcode" />
+		<result column="R_COUNSEL_RESULT_SGCODE" 	jdbcType="VARCHAR" property="counselResultSgcode" />
+		<result column="TOTAL_COUNT" 		jdbcType="VARCHAR" property="totalCount" />
+
+		<result column="R_VSEND_FILE_FLAG" 	jdbcType="VARCHAR" property="vsendFileFlag" />
+		<result column="R_SSEND_FILE_FLAG" 	jdbcType="VARCHAR" property="ssendFileFlag" />
+		<result column="R_V_REC_IP" 		jdbcType="VARCHAR" property="vRecIp" />
+		<result column="R_V_REC_FULLPATH" 	jdbcType="VARCHAR" property="vRecFullpath" />
+		<result column="R_V_READ_IP" 		jdbcType="VARCHAR" property="vReadIp" />
+		<result column="R_V_READ_FULLPATH" 	jdbcType="VARCHAR" property="vReadFullpath" />
+		<result column="R_S_REC_IP" 		jdbcType="VARCHAR" property="sRecIp" />
+		<result column="R_S_REC_FULLPATH" 	jdbcType="VARCHAR" property="sRecFullpath" />
+		<result column="R_S_READ_IP" 		jdbcType="VARCHAR" property="sReadIp" />
+		<result column="R_S_READ_FULLPATH" 	jdbcType="VARCHAR" property="sReadFullpath" />
+
+		<result column="R_CALL_KEY_AP" 	jdbcType="VARCHAR" property="callKeyAp" />
+		<result column="ROW_NUMBER" 	jdbcType="VARCHAR" property="rownumber" />
+
+		<result column="r_call_stime_connect" 	jdbcType="VARCHAR" property="callStimeConnect" />
+		<result column="r_call_ttime_connect" 	jdbcType="VARCHAR" property="callTtimeConnect" />
+
+		<result column="R_IVR_CHK" 	jdbcType="VARCHAR" property="ivrChk" />
+		<result column="R_AFFILICATE_NAME" jdbcType="VARCHAR" property="affilicateName" />
+		
+		<result column="stt" jdbcType="VARCHAR" property="sttPlayer" />
+		
+		<result column="R_KEYWORD_NAME" jdbcType="VARCHAR" property="keywordName" />
+		<result column="R_KEYWORD_CODE" jdbcType="VARCHAR" property="keywordCode" />
+		<result column="R_REC_SUMMARY" jdbcType="VARCHAR" property="recSummary" />
+		
+		<result column="R_LOG_LISTEN" jdbcType="VARCHAR" property="logListen" />
+		<result column="R_LISTEN_DATE" jdbcType="VARCHAR" property="listenDate" />
+		<result column="R_LISTEN_TIME" jdbcType="VARCHAR" property="listenTime" />
+		<result column="R_CUST_PHONE_AP" jdbcType="VARCHAR" property="rCustPhoneAp" />
+
+		<result column="R_TRANSCRIPT_STATUS" jdbcType="VARCHAR" property="rTranscriptStatus" />
+			
+		<result column="R_COMPANY_TELNO" jdbcType="VARCHAR" property="companyTelno" />
+		<result column="R_COMPANY_TELNO_NICK" jdbcType="VARCHAR" property="companyTelnoNick" />
+		<result column="R_RESULT" jdbcType="VARCHAR" property="sttResult" />
+		
+		<result column="R_ERRORYN" jdbcType="VARCHAR" property="errorYn" />
+		<result column="R_PART_RECYN" jdbcType="VARCHAR" property="partRecYn" />
+		<result column="R_PDT_NM" jdbcType="VARCHAR" property="rPdtNm" />
+		<result column="R_CUST_INFO1" jdbcType="VARCHAR" property="rCustInfo1" />
+		<result column="R_CUST_INFO2" jdbcType="VARCHAR" property="rCustInfo2" />
+		<result column="R_CUST_INFO3" jdbcType="VARCHAR" property="rCustInfo3" />
+		<result column="RECTRY_OM" jdbcType="VARCHAR" property="rectryOm" />
+	</resultMap>
+
+	<resultMap id="ApproveResultMap" type="com.furence.recsee.main.model.ApproveListInfo">
+		<result column="R_REQ_DATE" 		jdbcType="VARCHAR" property="reqDate" />
+		<result column="R_REQ_TIME" 		jdbcType="VARCHAR" property="reqTime" />
+		<result column="R_USER_ID" 			jdbcType="VARCHAR" property="userId" />
+		<result column="R_USER_NAME" 		jdbcType="VARCHAR" property="userName" />
+		<result column="R_BG_CODE" 			jdbcType="VARCHAR" property="bgCode" />
+		<result column="R_MG_CODE" 			jdbcType="VARCHAR" property="mgCode" />
+		<result column="R_SG_CODE" 			jdbcType="VARCHAR" property="sgCode" />
+		<result column="R_SG_NAME" 			jdbcType="VARCHAR" property="sgName" />
+		<result column="R_APPROVE_TYPE" 	jdbcType="VARCHAR" property="approveType" />
+		<result column="R_APPROVE_REASON" 	jdbcType="VARCHAR" property="approveReason" />
+		<result column="R_APPROVE_DAY" 		jdbcType="VARCHAR" property="approveDay" />
+
+		<result column="R_FILE_NAME" 		jdbcType="VARCHAR" property="fileName" />
+		<result column="R_REC_EXT" 			jdbcType="VARCHAR" property="recExt" />
+		<result column="R_REC_DATE" 		jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_TIME" 		jdbcType="VARCHAR" property="recTime" />
+		<result column="R_APPROVE_STATE" 	jdbcType="VARCHAR" property="approveState" />
+		<result column="R_PRERECIPT_DATE" 		jdbcType="VARCHAR" property="prereciptDate" />
+		<result column="R_PRERECIPT_TIME" 		jdbcType="VARCHAR" property="prereciptTime" />
+		<result column="R_PRERECIPT_ID" 		jdbcType="VARCHAR" property="prereciptId" />
+		<result column="R_RECIPT_DATE" 		jdbcType="VARCHAR" property="reciptDate" />
+		<result column="R_RECIPT_TIME" 		jdbcType="VARCHAR" property="reciptTime" />
+		<result column="R_RECIPT_ID" 		jdbcType="VARCHAR" property="reciptId" />
+		<result column="R_APPROVE_DATE" 	jdbcType="VARCHAR" property="approveDate" />
+		<result column="R_APPROVE_TIME" 	jdbcType="VARCHAR" property="approveTime" />
+		<result column="R_APPROVE_ID" 		jdbcType="VARCHAR" property="approveId" />
+		<result column="R_V_REC_IP" 		jdbcType="VARCHAR" property="vRecIp" />
+		<result column="R_V_REC_FULLPATH" 	jdbcType="VARCHAR" property="vRecFullpath" />
+		<result column="R_LISTEN_URL" 	jdbcType="VARCHAR" property="listenUrl" />
+		<result column="R_CUST_NAME" 		jdbcType="VARCHAR" property="custName" />
+		<result column="R_CUST_PHONE1" 		jdbcType="VARCHAR" property="custPhone1" />
+		<result column="R_EXT_NUM" 			jdbcType="VARCHAR" property="extNum" />
+		<result column="R_CALL_KIND1" 		jdbcType="VARCHAR" property="callKind1" />
+		<result column="R_STOCK_NO" 		jdbcType="VARCHAR" property="stockNo" />
+		<result column="R_USER_ID_CALL" 		jdbcType="VARCHAR" property="userIdCall" />
+		<result column="R_USER_NAME_CALL" 		jdbcType="VARCHAR" property="userNameCall" />
+		<result column="R_FILE_COLUMN_KEY" 		jdbcType="VARCHAR" property="fileColumnKey" />
+		<result column="R_FILE_COLUMN_VALUE" 	jdbcType="VARCHAR" property="fileColumnValue" />
+	</resultMap>
+
+	<resultMap id="RecMemoResultMap" type="com.furence.recsee.common.model.RecMemo">
+		<result column="R_MEMO_IDX" 	jdbcType="VARCHAR" property="memoIdx" />
+		<result column="R_REC_DATE" 		jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_TIME" 			jdbcType="VARCHAR" property="recTime" />
+		<result column="R_EXT_NUM" 		jdbcType="VARCHAR" property="extNum" />
+		<result column="R_MEMO"				jdbcType="VARCHAR" property="memo" />
+		<result column="R_USER_ID" 		jdbcType="VARCHAR" property="userId" />
+		<result column="R_USER_NAME" 		jdbcType="VARCHAR" property="userName" />
+		<result column="R_BG_NAME" 		jdbcType="VARCHAR" property="bgName" />
+		<result column="R_MG_NAME" 	jdbcType="VARCHAR" property="mgName" />
+		<result column="R_SG_NAME" 		jdbcType="VARCHAR" property="sgName" />
+	</resultMap>
+	
+	<resultMap id="SearchScriptStepHistoryMap" type="com.furence.recsee.main.model.SearchListInfo">
+		<result column="R_REC_DATE" 			jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_TIME" 			jdbcType="VARCHAR" property="recTime" />
+		<result column="R_EXT_NUM" 				jdbcType="VARCHAR" property="extNum" />
+		<result column="R_CALL_TTIME"			jdbcType="VARCHAR" property="callTtime" />
+		<result column="R_CALL_ID1" 			jdbcType="VARCHAR" property="callId1" />
+		<result column="R_CALL_KEY_AP" 			jdbcType="VARCHAR" property="callKeyAp" />
+		<result column="RS_SCRIPT_STEP_NAME" 	jdbcType="VARCHAR" property="scriptStepName" />
+		<result column="R_RETRY_COUNT" 			jdbcType="VARCHAR" property="retryCount" />
+		<result column="R_RETRY_REASON" 		jdbcType="VARCHAR" property="retryReason" />
+		<result column="R_RETRY_REASON_DETAIL" 	jdbcType="VARCHAR" property="retryReasonDetail" />
+		<result column="R_REC_VISIBLE" 			jdbcType="VARCHAR" property="recVisible" />
+		<result column="t_depth" 			jdbcType="INTEGER" property="tDepth" />
+		<result column="t_key" 			jdbcType="INTEGER" property="tKey" />
+		<result column="t_parent" 			jdbcType="INTEGER" property="tParent" />
+		<result column="more_product_yn" 			jdbcType="INTEGER" property="moreProductYn" />
+		<result column="rs_script_ta_state" 			jdbcType="VARCHAR" property="taState" />
+	</resultMap>
+
+	<sql id="searchTraceColumnsCast"  databaseId="postgres">
+		<!-- 형태 변환하는 라인 -->
+			SUBSTRING(R_REC_DATE, 1, 4)||'-'||SUBSTRING(R_REC_DATE, 5, 2)||'-'||SUBSTRING(R_REC_DATE, 7, 2) AS R_REC_DATE, <!-- 날짜 형태로 변환 -->
+			R_REC_RTIME, <!-- 초를 시분초로 변환 -->
+			SUBSTRING(R_REC_TIME, 1, 2)||':'||SUBSTRING(R_REC_TIME, 3, 2)||':'||SUBSTRING(R_REC_TIME, 5, 2) AS R_REC_TIME, <!-- 시간 형태로 변환 -->
+			R_CH_NUM,
+			R_USER_NAME,
+			R_CALL_ID1,
+			R_CALL_ID2,
+			R_CALL_ID3,
+			R_EXT_NUM,
+			<if test="custNameIsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_CUST_NAME) in (32,64) THEN convert_from(decrypt(decode(R_CUST_NAME, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_CUST_NAME END AS R_CUST_NAME,
+<!-- 			    SELECT encode(encrypt_iv('암호화할 문자열', '암호키1', 'IV', '암호화방식'), 'hex'); -->
+<!--  				SELECT decrypt_iv(decode('복호화할 문자열', 'hex'), '암호키1', 'IV', '암호화방식'); -->
+			</if>
+			<if test="custNameIsEncrypt != &quot;Y&quot;">
+			R_CUST_NAME,
+			</if>
+			<!-- R_CUST_PHONE1, -->
+		<!-- 20200128 김다빈 수정
+			 (CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+				CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'-'||SUBSTRING(R_CUST_PHONE1, 5, 4)||'-'||SUBSTRING(R_CUST_PHONE1, 9)
+					 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'-'||SUBSTRING(R_CUST_PHONE1, 4, 4)||'-'||SUBSTRING(R_CUST_PHONE1, 8)
+					 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'-'||SUBSTRING(R_CUST_PHONE1, 3, 3)||'-'||SUBSTRING(R_CUST_PHONE1, 6)
+				ELSE
+					SUBSTRING(R_CUST_PHONE1, 1, 3)||'-'||SUBSTRING(R_CUST_PHONE1, 4, 4)||'-'||SUBSTRING(R_CUST_PHONE1, 8)
+				END
+			ELSE
+				R_CUST_PHONE1
+			END) AS  -->
+			<if test="custPhone1IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_CUST_PHONE1) in (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE1, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_CUST_PHONE1 END AS R_CUST_PHONE1,
+			</if>
+			<if test="custPhone1IsEncrypt != &quot;Y&quot;">
+			R_CUST_PHONE1,
+			</if>
+			<if test="custPhone2IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_CUST_PHONE2) in (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE2, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_CUST_PHONE2 END AS R_CUST_PHONE2,
+			</if>
+			<if test="custPhone2IsEncrypt != &quot;Y&quot;">
+			R_CUST_PHONE2,
+			</if>
+			<if test="custPhone3IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_CUST_PHONE3) in (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE3, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_CUST_PHONE3 END AS R_CUST_PHONE3,
+			</if>
+			<if test="custPhone3IsEncrypt != &quot;Y&quot;">
+			R_CUST_PHONE3,
+			</if>
+			R_CALL_KIND1,
+			R_CALL_KIND2,
+			SUBSTRING(R_CALL_STIME, 1, 2)||':'||SUBSTRING(R_CALL_STIME, 3, 2)||':'||SUBSTRING(R_CALL_STIME, 5, 2) AS R_CALL_STIME, <!-- 시간 형태로 변환 -->
+			SUBSTRING(R_CALL_ETIME, 1, 2)||':'||SUBSTRING(R_CALL_ETIME, 3, 2)||':'||SUBSTRING(R_CALL_ETIME, 5, 2) AS R_CALL_ETIME, <!-- 시간 형태로 변환 -->
+			CASE WHEN CAST(R_CALL_TTIME AS INT)/3600 &gt; 0		
+			THEN '0'||CAST(R_CALL_TTIME AS INT)/3600||':'||
+				CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)/60 &lt; 1		
+				THEN
+					'0'||CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+				ELSE
+					CASE WHEN 
+						(CAST(R_CALL_TTIME AS INT)%3600)/60 &lt; 10 THEN '0'||CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+					ELSE
+						CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+					END
+				END
+			ELSE
+				'00:'||
+				CASE WHEN CAST(R_CALL_TTIME AS INT)/60 &lt; 1		
+				THEN
+					'0'||CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+				ELSE
+					CASE WHEN 
+						CAST(R_CALL_TTIME AS INT)/60 &lt; 10 THEN '0'||CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+					ELSE
+						CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+					END
+				END		
+			END AS R_CALL_TTIME, <!-- 초를 분초로 변환 -->
+			
+			<if test="custSocailNumIsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_CUST_SOCIAL_NUM) in (32,64) THEN convert_from(decrypt(decode(R_CUST_SOCIAL_NUM, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_CUST_SOCIAL_NUM END AS R_CUST_SOCIAL_NUM,
+			</if>
+			<if test="custSocailNumIsEncrypt != &quot;Y&quot;">
+				R_CUST_SOCIAL_NUM,
+			</if>
+			
+			<if test="buffer1IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER1) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER1, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER1 END AS R_BUFFER1,	
+			</if>
+			<if test="buffer1IsEncrypt != &quot;Y&quot;">
+			R_BUFFER1,
+			</if>
+			<if test="buffer2IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER2) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER2, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER2 END AS R_BUFFER2,	
+			</if>
+			<if test="buffer2IsEncrypt != &quot;Y&quot;">
+			replace(R_BUFFER2, 'gw', 'CRM') as R_BUFFER2,<!-- gw를 CRM으로 변환 -->
+			</if>
+			<if test="buffer3IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER3) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER3, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER3 END AS R_BUFFER3,	
+			</if>
+			<if test="buffer3IsEncrypt != &quot;Y&quot;">
+			R_BUFFER3,
+			</if>
+			<if test="buffer4IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER4) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER4, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER4 END AS R_BUFFER4,	
+			</if>
+			<if test="buffer4IsEncrypt != &quot;Y&quot;">
+			R_BUFFER4,
+			</if>
+			<if test="buffer5IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER5) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER5, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER5 END AS R_BUFFER5,	
+			</if>
+			<if test="buffer5IsEncrypt != &quot;Y&quot;">
+			R_BUFFER5,
+			</if>
+			<if test="buffer6IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER6) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER6, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER6 END AS R_BUFFER6,	
+			</if>
+			<if test="buffer6IsEncrypt != &quot;Y&quot;">
+			R_BUFFER6,
+			</if>
+			<if test="buffer7IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER7) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER7, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER7 END AS R_BUFFER7,	
+			</if>
+			<if test="buffer7IsEncrypt != &quot;Y&quot;">
+			R_BUFFER7,
+			</if>
+			<if test="buffer8IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER8) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER8, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER8 END AS R_BUFFER8,	
+			</if>
+			<if test="buffer8IsEncrypt != &quot;Y&quot;">
+			R_BUFFER8,
+			</if>
+			<if test="buffer9IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER9) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER9, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER9 END AS R_BUFFER9,	
+			</if>
+			<if test="buffer9IsEncrypt != &quot;Y&quot;">
+			R_BUFFER9,
+			</if>
+			<if test="buffer10IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER10) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER10, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER10 END AS R_BUFFER10,	
+			</if>
+			<if test="buffer10IsEncrypt != &quot;Y&quot;">
+			R_BUFFER10,
+			</if>
+			<if test="buffer11IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER11) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER11, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER11 END AS R_BUFFER11,	
+			</if>
+			<if test="buffer11IsEncrypt != &quot;Y&quot;">
+			R_BUFFER11,
+			</if>
+			<if test="buffer12IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER12) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER12, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER12 END AS R_BUFFER12,	
+			</if>
+			<if test="buffer12IsEncrypt != &quot;Y&quot;">
+			R_BUFFER12,
+			</if>
+			<if test="buffer13IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER13) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER13, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER13 END AS R_BUFFER13,	
+			</if>
+			<if test="buffer13IsEncrypt != &quot;Y&quot;">
+			R_BUFFER13,
+			</if>
+			<if test="buffer14IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER14) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER14, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER14 END AS R_BUFFER14,	
+			</if>
+			<if test="buffer14IsEncrypt != &quot;Y&quot;">
+			R_BUFFER14,
+			</if>
+			<if test="buffer15IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER15) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER15, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER15 END AS R_BUFFER15,	
+			</if>
+			<if test="buffer15IsEncrypt != &quot;Y&quot;">
+			R_BUFFER15,
+			</if>
+			<if test="buffer16IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER16) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER16, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER16 END AS R_BUFFER16,	
+			</if>
+			<if test="buffer16IsEncrypt != &quot;Y&quot;">
+			R_BUFFER16,
+			</if>
+			<if test="buffer17IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER17) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER17, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER17 END AS R_BUFFER17,	
+			</if>
+			<if test="buffer17IsEncrypt != &quot;Y&quot;">
+			R_BUFFER17,
+			</if>
+			<if test="buffer18IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER18) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER18, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER18 END AS R_BUFFER18,	
+			</if>
+			<if test="buffer18IsEncrypt != &quot;Y&quot;">
+			R_BUFFER18,
+			</if>
+			<if test="buffer19IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER19) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER19, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER19 END AS R_BUFFER19,	
+			</if>
+			<if test="buffer19IsEncrypt != &quot;Y&quot;">
+			R_BUFFER19,
+			</if>
+			<if test="buffer20IsEncrypt == &quot;Y&quot;">
+			CASE WHEN length(R_BUFFER20) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER20, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE R_BUFFER20 END AS R_BUFFER20,	
+			</if>
+			<if test="buffer20IsEncrypt != &quot;Y&quot;">
+			R_BUFFER20,
+			</if>
+			R_BG_CODE,
+			R_MG_CODE,
+			R_SG_CODE,
+			R_USER_ID,
+			R_V_FILENAME
+	</sql>
+	<sql id="searchColumnsCast"  databaseId="postgres">
+		<!-- 형태 변환하는 라인 -->
+		SUBSTRING(R_REC_DATE, 1, 4)||'-'||SUBSTRING(R_REC_DATE, 5, 2)||'-'||SUBSTRING(R_REC_DATE, 7, 2) AS R_REC_DATE, <!-- 날짜 형태로 변환 -->
+		R_REC_RTIME, <!-- 초를 시분초로 변환 -->
+		SUBSTRING(R_REC_TIME, 1, 2)||':'||SUBSTRING(R_REC_TIME, 3, 2)||':'||SUBSTRING(R_REC_TIME, 5, 2) AS R_REC_TIME, <!-- 시간 형태로 변환 -->
+		R_BG_CODE,
+		R_MG_CODE,
+		R_SG_CODE,
+		R_USER_ID,
+		R_CH_NUM,
+		R_USER_NAME,
+		R_CALL_ID1,
+		R_CALL_ID2,
+		R_CALL_ID3,
+		R_EXT_NUM,
+		<if test="custNameIsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_CUST_NAME) in (32,64) THEN convert_from(decrypt(decode(R_CUST_NAME, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_CUST_NAME END AS R_CUST_NAME,
+		</if>
+		<if test="custNameIsEncrypt != &quot;Y&quot;">
+		R_CUST_NAME,
+		</if>
+		<!-- R_CUST_PHONE1, -->
+	<!-- 20200128 김다빈 수정
+		 (CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+			CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'-'||SUBSTRING(R_CUST_PHONE1, 5, 4)||'-'||SUBSTRING(R_CUST_PHONE1, 9)
+				 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'-'||SUBSTRING(R_CUST_PHONE1, 4, 4)||'-'||SUBSTRING(R_CUST_PHONE1, 8)
+				 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'-'||SUBSTRING(R_CUST_PHONE1, 3, 3)||'-'||SUBSTRING(R_CUST_PHONE1, 6)
+			ELSE
+				SUBSTRING(R_CUST_PHONE1, 1, 3)||'-'||SUBSTRING(R_CUST_PHONE1, 4, 4)||'-'||SUBSTRING(R_CUST_PHONE1, 8)
+			END
+		ELSE
+			R_CUST_PHONE1
+		END) AS  -->
+		<if test="custPhone1IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_CUST_PHONE1) in (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE1, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_CUST_PHONE1 END AS R_CUST_PHONE1,
+		</if>
+		<if test="custPhone1IsEncrypt != &quot;Y&quot;">
+		R_CUST_PHONE1,
+		</if>
+		<if test="custPhone2IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_CUST_PHONE2) in (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE2, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_CUST_PHONE2 END AS R_CUST_PHONE2,
+		</if>
+		<if test="custPhone2IsEncrypt != &quot;Y&quot;">
+		R_CUST_PHONE2,
+		</if>
+		<if test="custPhone3IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_CUST_PHONE3) in (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE3, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_CUST_PHONE3 END AS R_CUST_PHONE3,
+		</if>
+		<if test="custPhone3IsEncrypt != &quot;Y&quot;">
+		R_CUST_PHONE3,
+		</if>
+		R_CALL_KIND1,
+		R_CALL_KIND2,
+		SUBSTRING(R_CALL_STIME, 1, 2)||':'||SUBSTRING(R_CALL_STIME, 3, 2)||':'||SUBSTRING(R_CALL_STIME, 5, 2) AS R_CALL_STIME, <!-- 시간 형태로 변환 -->
+		SUBSTRING(R_CALL_ETIME, 1, 2)||':'||SUBSTRING(R_CALL_ETIME, 3, 2)||':'||SUBSTRING(R_CALL_ETIME, 5, 2) AS R_CALL_ETIME, <!-- 시간 형태로 변환 -->
+		CASE WHEN CAST(R_CALL_TTIME AS INT)/3600 &gt; 0		
+		THEN '0'||CAST(R_CALL_TTIME AS INT)/3600||':'||
+			CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)/60 &lt; 1		
+			THEN
+				'0'||CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+			ELSE
+				CASE WHEN 
+					(CAST(R_CALL_TTIME AS INT)%3600)/60 &lt; 10 THEN '0'||CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+				ELSE
+					CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+				END
+			END
+		ELSE
+			'00:'||
+			CASE WHEN CAST(R_CALL_TTIME AS INT)/60 &lt; 1		
+			THEN
+				'0'||CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+			ELSE
+				CASE WHEN 
+					CAST(R_CALL_TTIME AS INT)/60 &lt; 10 THEN '0'||CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+				ELSE
+					CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+				END
+			END		
+		END AS R_CALL_TTIME, <!-- 초를 분초로 변환 -->
+		R_SELFDIS_YN,
+		R_V_SYS_CODE,
+		R_V_HDD_FLAG,
+		<if test='urlEncYn != null and urlEncYn == "Y"'>
+			split_part(r_listen_url, 'url=', 1)||'url='
+				||rtrim(encode(encrypt_iv(split_part(r_listen_url, 'url=', 2)::bytea, decode('f4150d4a1ac5708c29e437749045a39af4150d4a1ac5708c29e437749045a39a', 'hex'), decode('86afc43868fea6abd40fbf6d5ed50905', 'hex'), 'aes'::text), 'base64'), '=')
+			as r_listen_url,
+		</if>
+		<if test='urlEncYn == null or urlEncYn == "N"'>
+			r_listen_url,
+		</if>
+		r_v_filename,
+		R_S_SYS_CODE,
+		R_S_HDD_FLAG,
+		R_SCREEN_URL,
+		R_REC_VISIBLE,
+		R_S_FILENAME,
+		R_S_UPLOAD_YN,
+		R_T_SYS_CODE,
+		R_REC_MEMO,
+		R_T_HDD_FLAG,
+		R_EVAL_YN,
+		R_TEXT_URL,
+		R_LISTEN_YN,
+		R_T_FILENAME,
+		R_T_UPLOAD_YN,
+		R_PART_START,
+		R_PART_END,
+		R_MARKING1,
+		R_MARKING2,
+		R_MARKING3,
+		R_MARKING4,
+		<if test="custSocailNumIsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_CUST_SOCIAL_NUM) in (32,64) THEN convert_from(decrypt(decode(R_CUST_SOCIAL_NUM, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_CUST_SOCIAL_NUM END AS R_CUST_SOCIAL_NUM,
+		</if>
+		<if test="custSocailNumIsEncrypt != &quot;Y&quot;">
+			R_CUST_SOCIAL_NUM,
+		</if>
+		R_CONTRACT_NUM,
+		R_COUNSEL_CODE,
+		R_COUNSEL_CONTENT,
+		R_CUST_ADDRESS,
+		R_PLAYER_KIND,
+		R_T_CONTENTS,
+		R_RECEIPT_NUM,
+		R_BW_YN,
+		R_BW_BG_CODE,
+		R_BW_SG_CODE,
+		R_SCREEN_DUAL_URL,
+		<if test="buffer1IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER1) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER1, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER1 END AS R_BUFFER1,	
+		</if>
+		<if test="buffer1IsEncrypt != &quot;Y&quot;">
+		R_BUFFER1,
+		</if>
+		<if test="buffer2IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER2) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER2, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER2 END AS R_BUFFER2,	
+		</if>
+		<if test="buffer2IsEncrypt != &quot;Y&quot;">
+		replace(R_BUFFER2, 'gw', 'CRM') as R_BUFFER2,<!-- gw를 CRM으로 변환 -->
+		</if>
+		<if test="buffer3IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER3) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER3, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER3 END AS R_BUFFER3,	
+		</if>
+		<if test="buffer3IsEncrypt != &quot;Y&quot;">
+		R_BUFFER3,
+		</if>
+		<if test="buffer4IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER4) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER4, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER4 END AS R_BUFFER4,	
+		</if>
+		<if test="buffer4IsEncrypt != &quot;Y&quot;">
+		R_BUFFER4,
+		</if>
+		<if test="buffer5IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER5) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER5, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER5 END AS R_BUFFER5,	
+		</if>
+		<if test="buffer5IsEncrypt != &quot;Y&quot;">
+		R_BUFFER5,
+		</if>
+		<if test="buffer6IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER6) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER6, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER6 END AS R_BUFFER6,	
+		</if>
+		<if test="buffer6IsEncrypt != &quot;Y&quot;">
+		R_BUFFER6,
+		</if>
+		<if test="buffer7IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER7) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER7, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER7 END AS R_BUFFER7,	
+		</if>
+		<if test="buffer7IsEncrypt != &quot;Y&quot;">
+		R_BUFFER7,
+		</if>
+		<if test="buffer8IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER8) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER8, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER8 END AS R_BUFFER8,	
+		</if>
+		<if test="buffer8IsEncrypt != &quot;Y&quot;">
+		R_BUFFER8,
+		</if>
+		<if test="buffer9IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER9) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER9, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER9 END AS R_BUFFER9,	
+		</if>
+		<if test="buffer9IsEncrypt != &quot;Y&quot;">
+		R_BUFFER9,
+		</if>
+		<if test="buffer10IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER10) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER10, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER10 END AS R_BUFFER10,	
+		</if>
+		<if test="buffer10IsEncrypt != &quot;Y&quot;">
+		R_BUFFER10,
+		</if>
+		<if test="buffer11IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER11) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER11, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER11 END AS R_BUFFER11,	
+		</if>
+		<if test="buffer11IsEncrypt != &quot;Y&quot;">
+		R_BUFFER11,
+		</if>
+		<if test="buffer12IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER12) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER12, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER12 END AS R_BUFFER12,	
+		</if>
+		<if test="buffer12IsEncrypt != &quot;Y&quot;">
+		R_BUFFER12,
+		</if>
+		<if test="buffer13IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER13) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER13, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER13 END AS R_BUFFER13,	
+		</if>
+		<if test="buffer13IsEncrypt != &quot;Y&quot;">
+		R_BUFFER13,
+		</if>
+		<if test="buffer14IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER14) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER14, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER14 END AS R_BUFFER14,	
+		</if>
+		<if test="buffer14IsEncrypt != &quot;Y&quot;">
+		R_BUFFER14,
+		</if>
+		<if test="buffer15IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER15) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER15, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER15 END AS R_BUFFER15,	
+		</if>
+		<if test="buffer15IsEncrypt != &quot;Y&quot;">
+		R_BUFFER15,
+		</if>
+		<if test="buffer16IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER16) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER16, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER16 END AS R_BUFFER16,	
+		</if>
+		<if test="buffer16IsEncrypt != &quot;Y&quot;">
+		R_BUFFER16,
+		</if>
+		<if test="buffer17IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER17) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER17, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER17 END AS R_BUFFER17,	
+		</if>
+		<if test="buffer17IsEncrypt != &quot;Y&quot;">
+		R_BUFFER17,
+		</if>
+		<if test="buffer18IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER18) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER18, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER18 END AS R_BUFFER18,	
+		</if>
+		<if test="buffer18IsEncrypt != &quot;Y&quot;">
+		R_BUFFER18,
+		</if>
+		<if test="buffer19IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER19) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER19, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER19 END AS R_BUFFER19,	
+		</if>
+		<if test="buffer19IsEncrypt != &quot;Y&quot;">
+		R_BUFFER19,
+		</if>
+		<if test="buffer20IsEncrypt == &quot;Y&quot;">
+		CASE WHEN length(R_BUFFER20) in (32,64) THEN convert_from(decrypt(decode(R_BUFFER20, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE R_BUFFER20 END AS R_BUFFER20,	
+		</if>
+		<if test="buffer20IsEncrypt != &quot;Y&quot;">
+		R_BUFFER20,
+		</if>
+		R_CNID,
+		R_DEST_IP,
+		R_VDO_URL,
+		R_CUST_ID,
+		R_REGI_DATE,
+		R_MANAGER,
+		R_SRTP,
+		F_KEY,
+		R_SSRC,
+		R_KEY,
+		R_CO_NUM,
+		R_DID_NUM,
+		R_UEI_DATA,
+		(SELECT R_QUEUE_NAME  FROM RS_QUEUE_INFO WHERE R_QUEUE_NUM = R_QUEUE_NO1) AS R_QUEUE_NO1, <!-- queueInfo 테이블에서 데이터 변환 -->
+		(SELECT R_QUEUE_NAME  FROM RS_QUEUE_INFO WHERE R_QUEUE_NUM = R_QUEUE_NO2) AS R_QUEUE_NO2, <!-- queueInfo 테이블에서 데이터 변환 -->
+		R_REC_START_TYPE,
+		R_STOCK_NO,
+		R_COUNSEL_RESULT_BGCODE,
+		R_COUNSEL_RESULT_MGCODE,
+		R_COUNSEL_RESULT_SGCODE,
+		R_GROUP_CODE1,
+		R_GROUP_CODE2,
+		R_GROUP_CODE3,
+		R_BANK_CODE,
+		R_BACCOUNT_NUM,
+		R_DUAL_FLAG,
+		R_CALL_KIND_AP,
+		R_CALL_KEY_AP,
+		R_CUST_PHONE_AP,
+		R_IVR_KEY,
+		R_VSEND_FILE_FLAG,
+		R_SSEND_FILE_FLAG,
+		R_SEND_INFO_FLAG,
+		R_V_REC_IP,
+		r_v_rec_fullpath,
+		R_S_REC_IP,
+		R_S_REC_FULLPATH,
+		R_RECFILE_SIZE,
+		R_DUAL_SSEND_FLAG,
+		R_DUAL_VSEND_FLAG,
+		R_MB_SSEND_FLAG,
+		R_MB_VSEND_FLAG,
+		R_V_READ_IP,
+		R_V_READ_FULLPATH,
+		R_S_READ_IP,
+		R_S_READ_FULLPATH,
+		CASE WHEN coalesce(trim(R_CALL_STIME_CONNECT),'') = '' then '-' else SUBSTRING(R_CALL_STIME_CONNECT, 1, 2)||':'||SUBSTRING(R_CALL_STIME_CONNECT, 3, 2)||':'||SUBSTRING(R_CALL_STIME_CONNECT, 5, 2) end AS R_CALL_STIME_CONNECT,<!-- 유효 콜 시간 -->
+		R_CALL_TTIME_CONNECT,
+		R_MEMO_INFO,
+		R_TAG,
+		R_LOG_LISTEN
+		,R_COMPANY_TELNO,
+		R_COMPANY_TELNO_NICK
+	</sql>
+	
+	
+
+	<sql id="selectWhere"  databaseId="postgres">
+		<where>
+		1=1 AND (r_buffer13 is null OR r_buffer13 = 'Y')
+		<!-- 병합된 녹취이며 재녹취 된게 아닌 최종본인것만 조회 -->
+		<if test = 'partRecYn != null and partRecYn != ""'>
+			AND r_rec_visible = 'N'
+		</if>
+		<if test = 'errorYn != null and errorYn != ""'>
+			AND r_buffer10 != 'Y'
+		</if>
+		 
+			<if test = "sDate != null and eDate !=null">
+			AND R_REC_DATE BETWEEN #{sDate} AND #{eDate}
+			</if>
+			
+			<choose>
+				<when test="sTime != null and eTime != null">
+				AND R_REC_TIME BETWEEN #{sTime} AND #{eTime}
+				</when>
+				<when test="sTime != null and eTime eq null">
+				AND R_REC_TIME &gt;= #{sTime}
+				</when>
+				<when test="sTime eq null and eTime != null">
+				AND R_REC_TIME &lt;= #{eTime}
+				</when>
+			</choose>
+<!-- 			<if test="recDateLimit != null"> -->
+<!-- 			AND R_REC_DATE BETWEEN to_char(NOW() -  #{recDateLimit} ::interval,'YYYYMMDD') AND  #{eDate} 				 -->
+<!-- 			</if> -->
+
+			<if test="buffer1 != null">
+				AND R_BUFFER1 like '%' || #{buffer1} ||'%'
+			</if>			
+			<if test="buffer2 != null">
+				AND R_BUFFER2 like '%' || #{buffer2} ||'%'
+			</if>			
+			<if test="buffer3 != null">
+				AND R_BUFFER3 like '%' || #{buffer3} ||'%'
+			</if>			
+			<if test="buffer4 != null">
+				AND R_BUFFER4 like '%' || #{buffer4} ||'%'
+			</if>			
+			<if test="buffer5 != null">
+				AND R_BUFFER5 like '%' || #{buffer5} ||'%'
+			</if>				
+			<if test="buffer6 != null">
+				<if test="buffer6IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER6) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER6, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER6 END = #{buffer6}
+				</if>
+				<if test="buffer6IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER6 = #{buffer6}
+				</if>
+			</if>
+			<if test="buffer7 != null">
+				AND R_BUFFER7 like '%' || #{buffer7} ||'%'
+			</if>
+			<if test="buffer8 != null">
+				<if test="buffer8IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER8) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER8, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER8 END = #{buffer8}
+				</if>
+				<if test="buffer8IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER8 like  '%' ||#{buffer8}||'%'
+				</if>
+			</if>
+			<if test="buffer9 != null">
+				<if test="buffer9IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER9) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER9, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER9 END = #{buffer9}
+				</if>
+				<if test="buffer9IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER9 = #{buffer9}
+				</if>
+			</if>
+			<if test="buffer10 != null">
+				<if test="buffer10IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER10) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER10, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER10 END = #{buffer10}
+				</if>
+				<if test="buffer10IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER10 = #{buffer10}
+				</if>
+			</if>
+			<if test="buffer11 != null">
+				<if test="buffer11IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER11) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER11, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER11 END = #{buffer11}
+				</if>
+				<if test="buffer11IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER11 LIKE '%' || #{buffer11} || '%'
+				</if>
+			</if>
+			<if test="buffer12 != null">
+				<if test="buffer12IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER12) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER12, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER12 END = #{buffer12}
+				</if>
+				<if test="buffer12IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER12 LIKE '%' || #{buffer12} || '%'
+				</if>
+			</if>
+			<if test="buffer13 != null">
+				<if test="buffer13IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER13) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER13, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER13 END = #{buffer13}
+				</if>
+				<if test="buffer13IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER13 LIKE '%' || #{buffer13} || '%'
+				</if>
+			</if>
+			<if test="buffer14 != null">
+				<if test="buffer14IsEncrypt == &quot;Y&quot;">
+					<if test="buffer14 == &quot;1&quot;">
+						AND (CASE WHEN LENGTH(R_BUFFER14) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER14, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER14 END = '04'
+						OR CASE WHEN LENGTH(R_BUFFER14) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER14, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER14 END = '05'
+						OR R_REC_START_TYPE = 'P')
+					</if>
+					<if test="buffer14 != &quot;1&quot;">
+						AND (CASE WHEN LENGTH(R_BUFFER14) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER14, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER14 END != '04'
+						AND CASE WHEN LENGTH(R_BUFFER14) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER14, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER14 END != '05'
+						AND R_REC_START_TYPE != 'P')
+					</if>
+				</if>
+				<if test="buffer14IsEncrypt != &quot;Y&quot;">
+					<if test="buffer14 == &quot;1&quot;">
+						AND (R_BUFFER14 = '04' OR R_BUFFER14 = '05' OR R_REC_START_TYPE = 'P')
+					</if>
+					<if test="buffer14 != &quot;1&quot;">
+						AND (R_BUFFER14 != '04' AND R_BUFFER14 != '05' AND R_REC_START_TYPE != 'P')
+					</if>
+				</if>
+			</if>
+			<if test="buffer15 != null">
+				<if test="buffer15IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER15) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER15, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER15 END = #{buffer15}
+				</if>
+				<if test="buffer15IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER15 = #{buffer15}
+				</if>
+			</if>
+			<if test="buffer16 != null">
+				<if test="buffer16IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER16) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER16, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER16 END  = #{buffer16}
+				</if>
+				<if test="buffer16IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER16 = #{buffer16}
+				</if>
+			</if>
+			<if test="buffer17 != null">
+				<if test="buffer17IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER17) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER17, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER17 END  = #{buffer17}
+				</if>
+				<if test="buffer17IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER17 = #{buffer17}
+				</if>
+			</if>
+			<if test="buffer18 != null">
+				<if test="buffer18IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_BUFFER18) IN (32,64) THEN convert_from(decrypt(decode(R_BUFFER18, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_BUFFER18 END  = #{buffer18}
+				</if>
+				<if test="buffer18IsEncrypt != &quot;Y&quot;">
+				AND R_BUFFER18 = #{buffer18}
+				</if>
+			</if>
+			
+			<if test="recRtime != null">
+			AND R_REC_RTIME = #{recRtime}
+			</if>
+			<choose>
+				<when test="sRtime != null and eRtime != null">
+				AND R_REC_RTIME BETWEEN #{sRtime} AND #{eRtime}
+				</when>
+				<when test="sRtime != null and eRtime eq null">
+				AND R_REC_RTIME &gt;= #{sRtime}
+				</when>
+				<when test="sRtime eq null and eRtime != null">
+				AND R_REC_RTIME &lt;= #{eRtime}
+				</when>
+			</choose>
+			<if test="recTime != null">
+			AND R_REC_TIME = #{recTime}
+			</if>
+			<choose>
+				<when test="sTimeConnect != null and eTimeConnect != null">
+				AND R_CALL_STIME_CONNECT BETWEEN #{sTimeConnect} AND #{eTimeConnect}
+				</when>
+				<when test="sTimeConnect != null and eTimeConnect eq null">
+				AND R_CALL_STIME_CONNECT &gt;= #{sTimeConnect}
+				</when>
+				<when test="sTimeConnect eq null and eTimeConnect != null">
+				AND R_CALL_STIME_CONNECT &lt;= #{eTimeConnect}
+				</when>
+			</choose>
+			<if test="bgCode != null">
+			AND R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null">
+			AND R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCodeArray==null">
+			AND R_SG_CODE = #{sgCode}
+			</if>
+
+			
+
+			<if test="sgCodeArray != null">
+				AND R_SG_CODE IN
+				<foreach collection="sgCodeArray" item="item" separator="," open="(" close=")">
+					<trim suffixOverrides="">
+						#{item}
+					</trim>
+				</foreach>
+			</if>
+			
+			<if test="custPhoneTelNo != null">
+				AND R_CUST_PHONE1 IN
+				<foreach collection="custPhoneTelNo" item="item" separator="," open="(" close=")">
+					<trim suffixOverrides="">
+						#{item}
+					</trim>
+				</foreach>
+			</if>			
+
+			<if test="stockNo != null">
+			AND R_STOCK_NO LIKE '%'||#{stockNo}||'%'
+			</if>
+			<if test="counselResultBgcode != null">
+			AND R_COUNSEL_RESULT_BGCODE = #{counselResultBgcode}
+			</if>
+			<if test="counselResultMgcode != null">
+			AND R_COUNSEL_RESULT_MGCODE = #{counselResultMgcode}
+			</if>
+			<if test="counselResultSgcode != null">
+			AND R_COUNSEL_RESULT_SGCODE = #{counselResultSgcode}
+			</if>
+			<if test="userId != null">
+			AND R_USER_ID LIKE '%' || #{userId} || '%'
+			<!-- AND R_USER_ID = #{userId} -->
+			</if>
+			<if test="chNum != null">
+			AND R_CH_NUM = #{chNum}
+			</if>
+			<if test="userName != null">
+			AND R_USER_NAME LIKE '%'||#{userName}||'%'
+			</if>
+			<if test="callId1 != null">
+			AND R_CALL_ID1 = #{callId1}
+			</if>
+			<if test="callId2 != null">
+			AND R_CALL_ID2 = #{callId2}
+			</if>
+			<if test="callId3 != null">
+			AND R_CALL_ID3 = #{callId3}
+			</if>
+			<if test="extNum != null">
+			AND R_EXT_NUM LIKE '%'||#{extNum}||'%'
+			</if>
+			<if test="custName != null">
+				<if test="custNameIsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_CUST_NAME) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_NAME, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_NAME END  LIKE '%'||#{custName}||'%'
+				</if>
+				<if test="custNameIsEncrypt != &quot;Y&quot;">
+				AND R_CUST_NAME LIKE '%'||#{custName}||'%'
+				</if>
+			</if>
+			<if test="custPhone1 != null">
+				<if test="custPhone1IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_CUST_PHONE1) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE1, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_PHONE1 END LIKE '%'||#{custPhone1}||'%'
+				</if>
+				<if test="custPhone1IsEncrypt != &quot;Y&quot;">
+				AND R_CUST_PHONE1 LIKE '%'||#{custPhone1}||'%'
+				</if>					
+			</if>
+			<if test="custPhone2 != null">
+				<if test="custPhone2IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_CUST_PHONE2) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE2, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_PHONE2 END LIKE '%'||#{custPhone2}||'%'
+				</if>
+				<if test="custPhone2IsEncrypt != &quot;Y&quot;">
+				AND R_CUST_PHONE2 LIKE '%'||#{custPhone2}||'%'
+				</if>					
+			</if>
+			<if test="custPhone3 != null">
+				<if test="custPhone3IsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_CUST_PHONE3) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE3, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_PHONE3 END LIKE '%'||#{custPhone3}||'%'
+				</if>
+				<if test="custPhone3IsEncrypt != &quot;Y&quot;">
+				AND R_CUST_PHONE3 LIKE '%'||#{custPhone3}||'%'
+				</if>					
+			</if>
+			<if test="callKind1 != null">
+			AND R_CALL_KIND1 LIKE '%' || #{callKind1} || '%'
+			<!-- AND R_CALL_KIND1 = #{callKind1} -->
+			</if>
+			<if test="callKind2 != null">
+			AND R_CALL_KIND2 LIKE '%' || #{callKind2} || '%'
+			<!-- AND R_CALL_KIND2 = #{callKind2} -->
+			</if>
+			<if test="callStime != null">
+			AND R_CALL_STIME BETWEEN #{sStime} AND #{eStime}
+			</if>
+			<if test="callEtime != null">
+			AND R_CALL_ETIME BETWEEN #{eEtime} AND #{eEtime}
+			</if>
+			<if test="callTtime != null">
+			AND R_CALL_TTIME = #{callTtime}
+			</if>
+			<choose>
+				<when test="sTtime != null and eTtime != null">
+				AND CAST(R_CALL_TTIME AS INT) BETWEEN #{sTtime}::integer AND #{eTtime}::integer
+				</when>
+				<when test="sTtime != null and eTtime eq null">
+				AND CAST(R_CALL_TTIME AS INT) &gt;= #{sTtime}::integer
+				</when>
+				<when test="sTtime eq null and eTtime != null">
+				AND CAST(R_CALL_TTIME AS INT) &lt;= #{eTtime}::integer
+				</when>
+			</choose>
+			<choose>
+				<when test="sTtimeConnect != null and eTtimeConnect != null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) BETWEEN #{sTtimeConnect}::integer AND #{eTtimeConnect}::integer
+				</when>
+				<when test="sTtimeConnect != null and eTtimeConnect eq null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) &gt;= #{sTtimeConnect}::integer
+				</when>
+				<when test="sTtimeConnect eq null and eTtimeConnect != null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) &lt;= #{eTtimeConnect}::integer
+				</when>
+			</choose>
+			<if test="vSysCode != null">
+			AND R_V_SYS_CODE = #{vSysCode}
+			</if>
+			<if test="listenUrl != null">
+			AND R_LISTEN_URL = #{listenUrl}
+			</if>
+			<if test="vFileName != null">
+			AND R_V_FILENAME = #{vFileName}
+			</if>
+			<if test="recMemo != null">
+			AND R_REC_MEMO LIKE '%'||#{recMemo}||'%'
+			</if>
+
+			<if test="tContents != null">
+			AND R_T_CONTENTS LIKE '%'||#{tContents}||'%'
+			</if>
+			<if test="custSocialNum != null">
+				<if test="custSocailNumIsEncrypt == &quot;Y&quot;">
+				AND CASE WHEN LENGTH(R_CUST_SOCIAL_NUM) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_SOCIAL_NUM, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_SOCIAL_NUM END LIKE '%'||#{custSocialNum}||'%'
+				</if>
+				<if test="custSocailNumIsEncrypt != &quot;Y&quot;">
+				AND R_CUST_SOCIAL_NUM LIKE '%'||#{custSocialNum}||'%'
+				</if>					
+			</if>
+			<if test="companyTelno != null">
+			AND R_COMPANY_TELNO = #{companyTelno}
+			</if>
+			<if test="companyTelnoNick != null">
+			AND R_COMPANY_TELNO_NICK = #{companyTelnoNick}
+			</if>
+
+			<!-- 선택적 엑셀 다운로드 추가 -->
+			<if test="recDateArr != null">
+				AND R_REC_DATE IN
+				<foreach collection="recDateArr" item="item" separator="," open="(" close=")">
+					#{item}
+				</foreach>
+			</if>
+
+			<if test="recTimeArr != null">
+				AND R_REC_TIME IN
+				<foreach collection="recTimeArr" item="item" separator="," open="(" close=")">
+					#{item}
+				</foreach>
+			</if>
+
+			<if test="recExtArr != null">
+				AND R_EXT_NUM IN
+				<foreach collection="recExtArr" item="item" separator="," open="(" close=")">
+					#{item}
+				</foreach>
+			</if>
+			<!-- 어디서 쓰는건지 모르겠음...혹시몰라서 주석처리했는데 나중에 지우셈 -->
+			<!-- AND (R_BUFFER8 != 'B' OR R_BUFFER8 != 'A' OR R_BUFFER8 IS NULL) -->
+			<if test="queueNo1 != null">
+			AND R_QUEUE_NO1 = #{queueNo1}
+			</if>
+			<if test="queueNo2 != null">
+			AND R_QUEUE_NO2 = #{queueNo2}
+			</if>
+			<if test="recStartType != null">
+			AND R_REC_START_TYPE = #{recStartType}
+			</if>
+			<if test="selfDisYn != null">
+			<choose>
+				<when test="selfDisYn eq 'Y'.toString()">
+				AND R_SELFDIS_YN = 'Y'
+				</when>
+				<otherwise>
+				AND ( R_SELFDIS_YN IS NULL OR R_SELFDIS_YN != 'Y' )
+				</otherwise>
+			</choose>
+			</if>
+			<if test="userIdPlus == null and authyInfo != null">
+				AND(
+					(
+				<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+					<trim suffixOverrides="AND">
+					
+						<if test="item.bgcode != null">
+						R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.mgcode != null">
+						R_MG_CODE = #{item.mgcode} AND
+						</if>
+						<if test="item.sgcode != null">
+						R_SG_CODE = #{item.sgcode} AND
+						</if>
+						<if test="item.noneallowable != null">
+						1=2
+						</if>
+					</trim>
+					
+				<if test="item.user != null">
+					OR R_USER_ID = #{item.user}
+				</if>
+				</foreach>
+				) )
+			</if>
+			<if test="userIdPlus != null">
+				<choose>
+					<when test="plusType eq 'B'.toString()">
+					AND R_USER_ID IN (SELECT R_USER_ID FROM RS_RUSER_INFO WHERE R_BG_CODE = #{userIdPlus})
+					</when>
+					<when test="plusType eq 'M'.toString()">
+					AND R_USER_ID IN (SELECT R_USER_ID FROM RS_RUSER_INFO WHERE R_MG_CODE = #{userIdPlus})
+					</when>
+					<when test="plusType eq 'S'.toString()">
+					AND R_USER_ID IN (SELECT R_USER_ID FROM RS_RUSER_INFO WHERE R_SG_CODE = #{userIdPlus})
+					</when>
+					<otherwise>
+					AND R_USER_ID=#{userIdPlus}
+					</otherwise>
+				</choose>
+			</if>
+			<if test="callKeyAp != null">
+			AND R_CALL_KEY_AP LIKE '%' || #{callKeyAp} || '%'
+			<!-- AND R_CALL_KEY_AP = #{callKeyAp} -->
+			</if>
+			
+			<if test="sttResult != null and sttResult != ''">
+			AND A.stt = #{sttResult}
+			</if>
+			
+			<if test='rProductType != null and rProductType == "T"'>
+			AND substr(r_buffer7,1,1) = 'T'
+			</if>
+			<if test='rProductType != null and rProductType == "S"'>
+			AND substr(r_buffer7,1,1) != 'T'
+			</if>
+		</where>
+	</sql>
+	
+	
+	<select id="selectSearchListInfo" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap" databaseId="sqlserver">
+		with temptable as (
+			SELECT ROW_NUMBER() OVER(order by
+		 	<choose>
+				<when test="orderBy eq 'r_call_ttime'.toString() and direction != null">
+					CAST( r_call_ttime as int )
+					<!-- 정렬 -->
+					<if test="direction == 'desc'">
+						DESC
+					</if>
+					<if test="direction == 'asc'">
+						ASC
+					</if>
+				,	R_REC_DATE
+					<if test="dateOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="dateOrderBy == 'asc'">
+						ASC
+					</if>
+				,	R_REC_TIME
+					<if test="timeOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="timeOrderBy == 'asc'">
+						ASC
+					</if>
+				</when>
+				<when test="orderBy !=null and direction != null">
+					<if test="orderBy== 'r_rec_rtime'">
+						R_REC_RTIME
+					</if>
+					<if test="orderBy== 'r_rec_time'">
+						R_REC_TIME
+					</if>
+					<if test="orderBy== 'r_user_id'">
+						R_USER_ID
+					</if>
+					<if test="orderBy== 'r_user_name'">
+						R_USER_NAME
+					</if>
+					<if test="orderBy== 'r_ext_num'">
+						R_EXT_NUM
+					</if>
+					<if test="orderBy== 'r_cust_name'">
+						R_CUST_NAME
+					</if>
+					<if test="orderBy== 'r_cust_phone1'">
+						R_CUST_PHONE1
+					</if>
+					<if test="orderBy== 'r_cust_phone2'">
+						R_CUST_PHONE2
+					</if>
+					<if test="orderBy== 'r_call_kind1'">
+						R_CALL_KIND1
+					</if>
+					<if test="orderBy== 'r_call_kind2'">
+						R_CALL_KIND2
+					</if>
+					<if test="orderBy== 'r_call_ttime'">
+						R_CALL_TTIME
+					</if>
+					<if test="orderBy== 'r_bg_name'">
+						R_BG_NAME
+					</if>
+					<if test="orderBy== 'r_mg_name'">
+						R_MG_NAME
+					</if>
+					<if test="orderBy== 'r_sg_name'">
+						R_SG_NAME
+					</if>
+					<if test="orderBy== 'r_rec_start_type'">
+						R_REC_START_TYPE
+					</if>
+					<if test="orderBy== 'r_memo_info'">
+						R_MEMO_INFO
+					</if>
+					<if test="orderBy== 'r_tag'">
+						R_TAG
+					</if>
+					<if test="orderBy== 'r_stock_no'">
+						R_STOCK_NO
+					</if>
+					<if test="orderBy== 'r_counsel_result_bgcode'">
+						R_COUNSEL_RESULT_BGCODE
+					</if>
+					<if test="orderBy== 'r_counsel_result_mgcode'">
+						R_COUNSEL_RESULT_MGCODE
+					</if>
+					<if test="orderBy== 'r_counsel_result_sgcode'">
+						R_COUNSEL_RESULT_SGCODE
+					</if>
+					<if test="orderBy== 'r_v_sys_code'">
+						R_V_SYS_CODE
+					</if>
+					<if test="orderBy== 'rownumber'">
+						ROWNUMBER
+					</if>
+					<if test="orderBy== 'r_call_stime_connect'">
+						R_CALL_STIME_CONNECT
+					</if>
+					<if test="orderBy== 'r_call_ttime_connect'">
+						R_CALL_TTIME_CONNECT
+					</if>
+					<if test="orderBy== 'r_buffer1'">
+						r_buffer1
+					</if>
+					<if test="orderBy== 'r_buffer2'">
+						r_buffer2
+					</if>
+					<if test="orderBy== 'r_buffer3'">
+						r_buffer3
+					</if>
+					<if test="orderBy== 'r_buffer4'">
+						r_buffer4
+					</if>
+					<if test="orderBy== 'r_buffer5'">
+						r_buffer5
+					</if>
+					<if test="orderBy== 'r_buffer6'">
+						r_buffer6
+					</if>
+					<if test="orderBy== 'r_buffer7'">
+						r_buffer7
+					</if>
+					<if test="orderBy== 'r_buffer8'">
+						r_buffer8
+					</if>
+					<if test="orderBy== 'r_buffer9'">
+						r_buffer9
+					</if>
+					<if test="orderBy== 'r_buffer10'">
+						r_buffer10
+					</if>
+					<if test="orderBy== 'r_buffer11'">
+						r_buffer11
+					</if>
+					<if test="orderBy== 'r_buffer12'">
+						r_buffer12
+					</if>
+					<if test="orderBy== 'r_buffer13'">
+						r_buffer13
+					</if>
+					<if test="orderBy== 'r_buffer14'">
+						r_buffer14
+					</if>
+					<if test="orderBy== 'r_buffer15'">
+						r_buffer15
+					</if>
+					<if test="orderBy== 'r_call_id1'">
+						R_CALL_ID1
+					</if>
+					<if test="orderBy== 'r_call_id2'">
+						R_CALL_ID2
+					</if>
+					<if test="orderBy== 'r_buffer16'">
+						R_BUFFER16
+					</if>
+					<if test="orderBy== 'r_buffer17'">
+						R_BUFFER17
+					</if>
+					<if test="orderBy== 'r_buffer18'">
+						R_BUFFER18
+					</if>
+					<if test="orderBy== 'r_buffer19'">
+						R_BUFFER19
+					</if>
+					<if test="orderBy== 'r_buffer20'">
+						R_BUFFER20
+					</if>
+					<if test="orderBy== 'r_cust_social_num'">
+						r_cust_social_num
+					</if>
+					<if test="orderBy== 'r_cust_address'">
+						r_cust_address
+					</if>
+					<if test="orderBy== 'r_rec_summury'">
+						R_REC_SUMMURY
+					</if>
+					<if test="orderBy== 'r_log_listen'">
+						R_LOG_LISTEN
+					</if>
+
+					<!-- 정렬  -->
+					<if test="direction == 'desc'">
+						DESC
+					</if>
+					<if test="direction == 'asc'">
+						ASC
+					</if>
+				,	R_REC_DATE
+					<if test="dateOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="dateOrderBy == 'asc'">
+						ASC
+					</if>
+				,	R_REC_TIME
+					<if test="timeOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="timeOrderBy == 'asc'">
+						ASC
+					</if>
+				</when>
+				<when test="dateOrderBy !=null and timeOrderBy != null">
+					R_REC_DATE
+					<if test="dateOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="dateOrderBy == 'asc'">
+						ASC
+					</if>
+				,	R_REC_TIME
+					<if test="timeOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="timeOrderBy == 'asc'">
+						ASC
+					</if>
+				</when>
+				<otherwise>
+					R_REC_DATE DESC
+				,	R_REC_TIME DESC
+				</otherwise>
+			</choose>
+			) AS ROWNUMBER, 
+			*,
+			FROM
+			(
+			SELECT *
+			, (
+				SELECT
+
+
+					 CONVERT(varchar(8000),( CAST(RS_REC_MEMO.R_MEMO_IDX AS varchar(800))+','+ CAST(RS_REC_MEMO.R_START_TIME AS varchar(800))+','+CAST(RS_REC_MEMO.R_END_TIME AS varchar(800))+','+CAST(B.R_USER_NAME AS varchar(800))+','+  CAST(B.R_USER_ID AS varchar(800))+','+CAST(RS_REC_MEMO.R_MEMO AS varchar(800)))) + '|'
+
+
+						FROM (
+								SELECT
+									R_USER_ID,
+									R_USER_NAME,
+									R_BG_CODE,
+									R_MG_CODE,
+									R_SG_CODE
+								FROM (
+									SELECT R_USER_ID, R_USER_NAME, R_BG_CODE, R_MG_CODE, R_SG_CODE FROM RS_AUSER_INFO
+									UNION 
+									SELECT R_USER_ID, R_USER_NAME, R_BG_CODE, R_MG_CODE, R_SG_CODE FROM RS_RUSER_INFO
+								) TMP
+							)as b LEFT JOIN RS_REC_MEMO as rs_rec_memo
+
+
+					ON RS_REC_MEMO.R_USER_ID = B.R_USER_ID
+						where A.R_REC_DATE =R_REC_DATE
+						AND A.R_REC_TIME = R_REC_TIME
+						AND A.R_EXT_NUM = R_EXT_NUM
+						AND R_MEMO_TYPE = 'S'
+						<if test="memoInfo != null">
+							AND R_MEMO LIKE '%' || #{memoInfo} || '%'
+						</if>
+						<choose>
+							<when test="bgCodeM != null">
+								AND B.R_BG_CODE = #{bgCodeM}
+							</when>
+							<when test="mgCodeM != null">
+								AND B.R_MG_CODE = #{mgCodeM}
+							</when>
+							<when test="sgCodeM != null">
+								AND B.R_SG_CODE = #{sgCodeM}
+							</when>
+							<when test="userIdM != null">
+								AND B.R_USER_ID = #{userIdM}
+							</when>
+						</choose>
+					FOR XML PATH('')
+
+
+			) AS R_MEMO_INFO
+
+			,
+			(
+			SELECT
+				COUNT(R_MEMO) AS TAG
+				FROM RS_REC_MEMO
+				LEFT JOIN
+				(
+						SELECT
+							R_USER_ID,
+							R_BG_CODE,
+							R_MG_CODE,
+							R_SG_CODE
+							FROM (
+									SELECT R_USER_ID, R_BG_CODE, R_MG_CODE, R_SG_CODE FROM RS_AUSER_INFO
+									UNION 
+									SELECT R_USER_ID, R_BG_CODE, R_MG_CODE, R_SG_CODE FROM RS_RUSER_INFO
+							) TMP
+
+				) AS B
+				ON RS_REC_MEMO.R_USER_ID = B.R_USER_ID left join rs_recfile as A on  A.R_REC_DATE = RS_REC_MEMO.R_REC_DATE
+					AND A.R_REC_TIME = RS_REC_MEMO.R_REC_TIME
+					AND A.R_EXT_NUM = RS_REC_MEMO.R_EXT_NUM
+					AND R_MEMO_TYPE = 'T'
+
+					<if test="tag != null">
+						AND R_MEMO LIKE '%' || #{tag} || '%'
+					</if>
+					<choose>
+						<when test="bgCodeM != null">
+							AND B.R_BG_CODE = #{bgCodeM}
+						</when>
+						<when test="mgCodeM != null">
+							AND B.R_MG_CODE = #{mgCodeM}
+						</when>
+						<when test="sgCodeM != null">
+							AND B.R_SG_CODE = #{sgCodeM}
+						</when>
+						<when test="userIdM != null">
+							AND B.R_USER_ID = #{userIdM}
+						</when>
+					</choose>
+
+			) AS R_TAG
+			
+			<!-- 청취이력 유무 컬럼 만들기-->
+			, (
+				SELECT
+					COUNT(*)
+				FROM RS_LOG_LISTEN
+				WHERE
+					A.R_REC_DATE = R_REC_DATE
+					AND A.R_REC_TIME = R_REC_TIME
+					AND A.R_EXT_NUM = R_EXT_NUM
+			) AS R_LOG_LISTEN
+ 			, (
+ 				select 
+ 					r_transcript_status 
+ 				from rs_transcript_list list 
+ 				where list.r_rec_date = A.r_rec_date 
+ 				and list.r_rec_time = A.r_rec_time 
+ 				and list.r_ext_num = A.r_ext_num 
+ 				and list.r_sys_code = A.r_v_sys_code
+			) as r_transcript_status
+			<if test="orderBy eq 'r_bg_name'.toString()">
+			, (SELECT R_BG_NAME FROM RS_BG_INFO WHERE R_BG_CODE = A.R_BG_CODE) AS R_BG_NAME
+			</if>
+			<if test="orderBy eq 'r_mg_name'.toString()">
+			, (SELECT R_MG_NAME FROM RS_MG_INFO WHERE R_MG_CODE = A.R_MG_CODE) AS R_MG_NAME
+			</if>
+			<if test="orderBy eq 'r_sg_name'.toString()">
+			, (SELECT R_SG_NAME FROM RS_SG_INFO WHERE R_SG_CODE = A.R_SG_CODE) AS R_SG_NAME
+			</if>
+			FROM rs_recfile A
+
+	)B
+		<include refid="selectWhere"></include>
+		and  1=1 and <!--  r_rec_visible is null or r_rec_visible != 'Y' --> 	
+		<if test="tag != null">
+			AND R_TAG >0
+		</if>
+		)
+
+		select 
+			<include refid="searchColumnsCast"></include>
+		from temptable
+		left join rs_affilicate_info on temptable.r_buffer12 = rs_affilicate_info.r_affilicate_code
+		<if test="topCount != null">
+			where ROWNUMBER <![CDATA[<=]]> #{topCount}
+		</if>
+		<if test="limitUse eq 'Y'.toString()">
+			<choose>
+				<when test="count != null and posStart != null">
+					where ROWNUMBER <![CDATA[>]]> #{posStart} and ROWNUMBER<![CDATA[<=]]>  convert(integer,#{posStart}+#{count})
+				</when>
+				<otherwise>
+					where ROWNUMBER <![CDATA[>]]> 0 and ROWNUMBER<![CDATA[<=]]>100
+				</otherwise>
+			</choose>
+		</if>
+			ORDER BY ROWNUMBER
+
+	</select>
+
+	<select id="selectSearchListInfoSTT" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap" databaseId="postgres">
+		SELECT ROW_NUMBER() OVER() AS ROW_NUMBER,'' as stt, ('') as r_transcript_status,
+			<include refid="searchColumnsCast"></include>
+			FROM
+			(
+			SELECT *
+			, ('') AS R_MEMO_INFO
+
+			, ('') AS R_TAG
+					<!-- 청취이력 유무 컬럼 만들기-->
+					, ('') AS R_LOG_LISTEN
+
+			<if test="orderBy eq 'r_bg_name'.toString()">
+			, '' AS R_BG_NAME
+			</if>
+			<if test="orderBy eq 'r_mg_name'.toString()">
+			, '' AS R_MG_NAME
+			</if>
+			<if test="orderBy eq 'r_sg_name'.toString()">
+			, '' AS R_SG_NAME
+			</if>
+			FROM rs_recfile A 
+			<include refid="selectWhere"></include>
+			ORDER BY
+			<choose>
+				<when test="orderBy eq 'r_call_ttime'.toString() and direction != null">
+					CAST( r_call_ttime as int )
+					<!-- 정렬 -->
+					<if test="direction == 'desc'">
+						DESC
+					</if>
+					<if test="direction == 'asc'">
+						ASC
+					</if>
+				,	R_REC_DATE
+					<if test="dateOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="dateOrderBy == 'asc'">
+						ASC
+					</if>
+				,	R_REC_TIME
+					<if test="timeOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="timeOrderBy == 'asc'">
+						ASC
+					</if>
+				</when>
+				<when test="orderBy !=null and direction != null">
+					<if test="orderBy== 'r_rec_rtime'">
+						R_REC_RTIME
+					</if>
+					<if test="orderBy== 'r_rec_time'">
+						R_REC_TIME
+					</if>
+					<if test="orderBy== 'r_user_id'">
+						R_USER_ID
+					</if>
+					<if test="orderBy== 'r_user_name'">
+						R_USER_NAME
+					</if>
+					<if test="orderBy== 'r_ext_num'">
+						R_EXT_NUM
+					</if>
+					<if test="orderBy== 'r_cust_name'">
+						R_CUST_NAME
+					</if>
+					<if test="orderBy== 'r_cust_phone1'">
+						R_CUST_PHONE1
+					</if>
+					<if test="orderBy== 'r_cust_phone2'">
+						R_CUST_PHONE2
+					</if>
+					<if test="orderBy== 'r_cust_phone3'">
+						R_CUST_PHONE3
+					</if>
+					<if test="orderBy== 'r_call_kind1'">
+						R_CALL_KIND1
+					</if>
+					<if test="orderBy== 'r_call_kind2'">
+						R_CALL_KIND2
+					</if>
+					<if test="orderBy== 'r_call_ttime'">
+						R_CALL_TTIME
+					</if>
+					<if test="orderBy== 'r_bg_name'">
+						R_BG_NAME
+					</if>
+					<if test="orderBy== 'r_mg_name'">
+						R_MG_NAME
+					</if>
+					<if test="orderBy== 'r_sg_name'">
+						R_SG_NAME
+					</if>
+					<if test="orderBy== 'r_rec_start_type'">
+						R_REC_START_TYPE
+					</if>
+					<if test="orderBy== 'r_memo_info'">
+						R_MEMO_INFO
+					</if>
+					<if test="orderBy== 'r_tag'">
+						R_TAG
+					</if>
+					<if test="orderBy== 'r_stock_no'">
+						R_STOCK_NO
+					</if>
+					<if test="orderBy== 'r_counsel_result_bgcode'">
+						R_COUNSEL_RESULT_BGCODE
+					</if>
+					<if test="orderBy== 'r_counsel_result_mgcode'">
+						R_COUNSEL_RESULT_MGCODE
+					</if>
+					<if test="orderBy== 'r_counsel_result_sgcode'">
+						R_COUNSEL_RESULT_SGCODE
+					</if>
+					<if test="orderBy== 'r_v_sys_code'">
+						R_V_SYS_CODE
+					</if>
+					<if test="orderBy== 'rownumber'">
+						ROWNUMBER
+					</if>
+					<if test="orderBy== 'r_call_stime_connect'">
+						R_CALL_STIME_CONNECT
+					</if>
+					<if test="orderBy== 'r_call_ttime_connect'">
+						R_CALL_TTIME_CONNECT
+					</if>
+					<if test="orderBy== 'r_buffer1'">
+						r_buffer1
+					</if>
+					<if test="orderBy== 'r_buffer2'">
+						r_buffer2
+					</if>
+					<if test="orderBy== 'r_buffer3'">
+						r_buffer3
+					</if>
+					<if test="orderBy== 'r_buffer4'">
+						r_buffer4
+					</if>
+					<if test="orderBy== 'r_buffer5'">
+						r_buffer5
+					</if>
+					<if test="orderBy== 'r_buffer6'">
+						r_buffer6
+					</if>
+					<if test="orderBy== 'r_buffer7'">
+						r_buffer7
+					</if>
+					<if test="orderBy== 'r_buffer8'">
+						r_buffer8
+					</if>
+					<if test="orderBy== 'r_buffer9'">
+						r_buffer9
+					</if>
+					<if test="orderBy== 'r_buffer10'">
+						r_buffer10
+					</if>
+					<if test="orderBy== 'r_buffer11'">
+						r_buffer11
+					</if>
+					<if test="orderBy== 'r_buffer12'">
+						r_buffer12
+					</if>
+					<if test="orderBy== 'r_buffer13'">
+						r_buffer13
+					</if>
+					<if test="orderBy== 'r_call_id1'">
+						R_CALL_ID1
+					</if>
+					<if test="orderBy== 'r_call_id2'">
+						R_CALL_ID2
+					</if>
+					<if test="orderBy== 'r_buffer14'">
+						R_BUFFER14
+					</if>
+					<if test="orderBy== 'r_buffer15'">
+						R_BUFFER15
+					</if>
+					<if test="orderBy== 'r_buffer16'">
+						R_BUFFER16
+					</if>
+					<if test="orderBy== 'r_buffer17'">
+						R_BUFFER17
+					</if>
+					<if test="orderBy== 'r_buffer18'">
+						R_BUFFER18
+					</if>
+					<if test="orderBy== 'r_buffer19'">
+						R_BUFFER19
+					</if>
+					<if test="orderBy== 'r_buffer20'">
+						R_BUFFER20
+					</if>
+					<if test="orderBy== 'r_cust_social_num'">
+						r_cust_social_num
+					</if>
+					<if test="orderBy== 'r_cust_address'">
+						r_cust_address
+					</if>
+					<if test="orderBy== 'r_rec_summury'">
+						R_REC_SUMMURY
+					</if>
+					<if test="orderBy== 'r_log_listen'">
+						R_LOG_LISTEN
+					</if>
+					<if test="orderBy== 'r_call_key_ap'">
+						R_CALL_KEY_AP
+					</if>
+					<if test="orderBy== 'r_v_filename'">
+						R_V_FILENAME
+					</if>
+					<if test="orderBy== 'r_company_telno'">
+						R_COMPANY_TELNO
+					</if>
+					<if test="orderBy== 'r_company_telno_nick'">
+						R_COMPANY_TELNO_NICK
+					</if>
+					<if test="orderBy== 'r_stt_result'">
+						stt
+					</if>
+					
+					<!-- 정렬  -->
+					<if test="direction == 'desc'">
+						DESC
+					</if>
+					<if test="direction == 'asc'">
+						ASC
+					</if>
+				,	R_REC_DATE
+					<if test="dateOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="dateOrderBy == 'asc'">
+						ASC
+					</if>
+				,	R_REC_TIME
+					<if test="timeOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="timeOrderBy == 'asc'">
+						ASC
+					</if>
+				</when>
+				<when test="dateOrderBy !=null and timeOrderBy != null">
+					R_REC_DATE
+					<if test="dateOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="dateOrderBy == 'asc'">
+						ASC
+					</if>
+				,	R_REC_TIME
+					<if test="timeOrderBy == 'desc'">
+						DESC
+					</if>
+					<if test="timeOrderBy == 'asc'">
+						ASC
+					</if>
+				</when>
+				<otherwise>
+					R_REC_DATE DESC
+				,	R_REC_TIME DESC
+				</otherwise>
+			</choose>
+		)B
+		Where 1=1  <!--  and r_rec_visible is null or r_rec_visible != 'Y' --> 	
+		<if test="tag != null">
+<!-- 			AND R_TAG LIKE '%'||#{tag}||'%' -->
+			AND R_TAG >0
+		</if>
+		<if test="topCount != null">
+		LIMIT #{topCount}
+		</if>
+		<if test="limitUse eq 'Y'.toString()">
+			<choose>
+				<when test="count != null and posStart != null">
+				LIMIT #{count} OFFSET #{posStart}
+				</when>
+				<otherwise>
+				LIMIT 100 OFFSET 0
+				</otherwise>
+			</choose>
+		</if>
+	</select>
+		
+	<select id="totalSearchListInfo" parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL_COUNT
+		from rs_recfile A
+			<include refid="selectWhere"></include>
+	</select>
+	<select id="selectCustToRecSeeInfo" parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres" resultMap="BaseResultMap">
+	SELECT
+		<!-- R_CUST_PHONE1 -->
+		 --CASE WHEN LENGTH(R_CUST_PHONE1) = 7 OR LENGTH(R_CUST_PHONE1) = 8 THEN CONCAT('02',R_CUST_PHONE1) ELSE R_CUST_PHONE1 END
+		 CASE WHEN LENGTH(R_CUST_PHONE1) = 7 OR LENGTH(R_CUST_PHONE1) = 8 THEN '02' || R_CUST_PHONE1 ELSE R_CUST_PHONE1 END
+		<!-- 주택 금융 공사 : 국번없는 전화번호 02 붙여주는 작업 EX) 1234-5678 -> 02-1234-5678 -->
+	FROM rs_recfile
+	<where>
+		R_REC_DATE BETWEEN #{sDate} AND #{eDate}
+	AND R_REC_DATE || R_REC_TIME &gt;= #{sDate}||#{sTime} AND R_REC_DATE || R_REC_TIME &lt;= #{eDate}||#{eTime}
+	AND R_CUST_PHONE1 IS NOT NULL AND R_CUST_PHONE1 != ''
+    AND LENGTH(R_CUST_PHONE1) > 6		<!-- 주공 : 내선번호 통화 제외 조건 -->
+	AND ( R_CUST_NAME IS NULL OR R_CUST_NAME = '' )
+	AND(R_BUFFER1 IS NULL				<!-- 주공 선택녹취 처리 조건 -->
+	OR  R_BUFFER1 NOT LIKE '%##%' )		<!-- NOT LIKE '%##%' 으로 빈값 검출 못하여 IS NULL 에 OR 추가	 -->
+
+	</where>
+	GROUP BY R_CUST_PHONE1
+	</select>
+	<update id="updateCustToRecSeeInfo" databaseId="postgres" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		UPDATE rs_recfile
+		<set>
+			R_CUST_NAME = #{custName}
+			<if test="custSocialNum != null">
+			, R_CUST_SOCIAL_NUM = #{custSocialNum}
+			</if>
+		</set>
+		<where>
+			R_REC_DATE BETWEEN #{sDate} AND #{eDate}
+		AND R_REC_DATE || R_REC_TIME &gt;= #{sDate}||#{sTime} AND R_REC_DATE || R_REC_TIME &lt;= #{eDate}||#{eTime}
+		AND R_CUST_PHONE1 = #{custPhone1}
+		AND ( R_CUST_NAME IS NULL OR R_CUST_NAME = '' )
+		</where>
+	</update>
+	<select id="selectTraceSearchListInfo" parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT
+		<include refid="searchTraceColumnsCast"></include>
+		
+		<if test="orderBy eq 'r_bg_name'.toString()">
+		, (SELECT R_BG_NAME FROM RS_BG_INFO WHERE R_BG_CODE = REC.R_BG_CODE) AS R_BG_NAME
+		</if>
+		<if test="orderBy eq 'r_mg_name'.toString()">
+		, (SELECT R_MG_NAME FROM RS_MG_INFO WHERE R_MG_CODE = REC.R_MG_CODE) AS R_MG_NAME
+		</if>
+		<if test="orderBy eq 'r_sg_name'.toString()">
+		, (SELECT R_SG_NAME FROM RS_SG_INFO WHERE R_SG_CODE = REC.R_SG_CODE) AS R_SG_NAME
+		</if>
+		FROM rs_recfile
+		<if test="orderBy eq 'r_bg_name'.toString() or orderBy eq 'r_mg_name'.toString() or orderBy eq 'r_sg_name'.toString()">
+		AS REC
+		</if>
+		WHERE<!--  R_REC_DATE BETWEEN TO_CHAR(CURRENT_DATE + INTERVAL '-12 MONTH', 'YYYYMMDD') AND TO_CHAR(CURRENT_DATE, 'YYYYMMDD') -->
+		1=1
+
+		<if test = "sDate != null and eDate !=null">
+		AND	R_REC_DATE BETWEEN #{sDate} AND #{eDate}
+		</if>
+
+		<if test = "recTimeRaw != null and recTimeRaw  !=''">
+		AND	R_REC_TIME BETWEEN TO_CHAR(#{recTimeRaw}::time - INTERVAL '2 hour', 'HH24MISS') AND TO_CHAR(#{recTimeRaw}::time + INTERVAL '2 hour', 'HH24MISS')
+		</if>
+
+		<!-- 일단 제외
+		<if test = "sRtime != null and eRtime !=null">
+		AND	R_REC_RTIME BETWEEN #{sRtime} AND #{eRtime}
+		</if> -->
+
+		<choose>
+			<when test="callKeyAp != null">
+				AND R_CALL_KEY_AP = #{callKeyAp}
+			</when>
+
+			<otherwise>
+				AND ( 	R_CALL_KIND1 IN ('TR','TS','C') OR
+						R_CALL_KIND2 IN ('TR','TS','C') )
+				AND R_REC_START_TYPE = 'A'
+				<if test="callId1 != null or callId2 != null or callId3 != null">
+					AND (
+						<trim prefixOverrides="OR">
+							<if test="callId1 != null and callId1 != ''">
+								OR R_CALL_ID1 = #{callId1} OR R_CALL_ID2 = #{callId1} OR R_CALL_ID3 = #{callId1}
+							</if>
+							<if test="callId2 != null and callId2 != ''">
+								OR R_CALL_ID1 = #{callId2} OR R_CALL_ID2 = #{callId2} OR R_CALL_ID3 = #{callId2}
+							</if>
+							<if test="callId3 != null and callId3 != ''">
+								OR R_CALL_ID1 = #{callId3} OR R_CALL_ID2 = #{callId3} OR R_CALL_ID3 = #{callId3}
+							</if>
+						</trim>
+					)
+				</if>
+			</otherwise>
+		</choose>
+
+		ORDER BY
+				R_REC_DATE DESC
+			,	R_REC_TIME DESC
+	</select>
+	
+	<select id="selectApproveInfo" parameterType="com.furence.recsee.main.model.ApproveListInfo" resultMap="ApproveResultMap">
+		SELECT * FROM RS_APPROVE_LIST
+
+		<where>
+
+			<choose>
+				<when test="checkYn == 'Y'.toString()">
+						 R_USER_ID 			=	#{userId}
+						AND R_APPROVE_TYPE 		=	#{approveType}
+						AND R_FILE_NAME 		= 	#{fileName}
+						AND R_REC_EXT 			= 	#{recExt}
+						AND R_REC_DATE 			= 	REPLACE(#{recDate},'-','')
+						AND R_REC_TIME 			= 	REPLACE(#{recTime},':','')
+
+				</when>
+				<otherwise>
+					<if test="reqsDate!=null and reqeDate!=null">
+						R_REQ_DATE BETWEEN REPLACE(#{reqsDate},'-','') AND REPLACE(#{reqeDate},'-','')
+					</if>
+					<if test="reqsTime!=null and reqeTime!=null">
+						AND R_REQ_TIME BETWEEN REPLACE(#{reqsTime},':','') AND REPLACE(#{reqeTime},':','')
+					</if>
+					<if test="userId!=null">
+						AND R_USER_ID = #{userId}
+					</if>
+					<if test="userName!=null">
+						AND R_USER_NAME = #{userName}
+					</if>
+					<if test="bgCode!=null">
+						AND R_BG_CODE = #{bgCode}
+					</if>
+					<if test="mgCode!=null">
+						AND R_MG_CODE = #{mgCode}
+					</if>
+					<if test="sgCode!=null">
+						AND R_SG_CODE = #{sgCode}
+					</if>
+					<if test="approveType!=null">
+						AND R_APPROVE_TYPE = #{approveType}
+					</if>
+					<if test="approveReason!=null">
+						AND R_APPROVE_REASON = #{approveReason}
+					</if>
+					<if test="approveState!=null">
+						AND R_APPROVE_STATE = #{approveState}
+					</if>
+					<if test="authyInfo != null">
+						AND(
+						<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+							<trim suffixOverrides="AND">
+								<if test="item.bgcode != null">
+								R_BG_CODE = #{item.bgcode} AND
+								</if>
+								<if test="item.mgcode != null">
+								R_MG_CODE = #{item.mgcode} AND
+								</if>
+								<if test="item.sgcode != null">
+								R_SG_CODE = #{item.sgcode} AND
+								</if>
+								<if test="item.user != null">
+								R_USER_ID = #{item.user} AND
+								</if>
+								<if test="item.noneallowable != null">
+								1=2
+								</if>
+							</trim>
+						</foreach>
+						)
+					</if>
+				</otherwise>
+			</choose>
+		</where>
+
+		ORDER BY R_REQ_DATE DESC, R_REQ_TIME, R_REC_DATE, R_REC_TIME DESC
+	</select>
+
+	<update id="updateApproveInfo" databaseId="postgres" parameterType="com.furence.recsee.main.model.ApproveListInfo">
+			UPDATE RS_APPROVE_LIST
+			<set>
+			 		R_APPROVE_STATE = #{approveState},
+				<choose>
+					<when test = "approveState == '2'.toString() or approveState == '3'.toString()">
+					R_PRERECIPT_DATE = to_char(now(),'yyyymmdd'),
+					R_PRERECIPT_TIME = to_char(now(), 'HH24MISS'),
+					R_PRERECIPT_ID = #{prereciptId}
+					</when>
+					<when test = "approveState == '4'.toString() or approveState == '5'.toString()">
+					R_RECIPT_DATE = to_char(now(),'yyyymmdd'),
+					R_RECIPT_TIME = to_char(now(), 'HH24MISS'),
+					R_RECIPT_ID = #{reciptId}
+					</when>
+					<when test = "approveState == '6'.toString() or approveState == '7'.toString()">
+					R_APPROVE_DATE = to_char(now(),'yyyymmdd'),
+					R_APPROVE_TIME = to_char(now(), 'HH24MISS'),
+					R_APPROVE_ID = #{approveId}
+					</when>
+				</choose>
+			</set>
+			WHERE
+				 R_REQ_DATE 			=	REPLACE(#{reqDate},'-','')
+				AND R_REQ_TIME 			=	REPLACE(#{reqTime},':','')
+				AND R_USER_ID 			=	#{userId}
+				AND R_APPROVE_TYPE 		=	#{approveType}
+				AND R_APPROVE_REASON	=	#{approveReason}
+				AND R_FILE_NAME 		= 	#{fileName}
+				AND R_REC_EXT 			= 	#{recExt}
+				AND R_REC_DATE 			= 	REPLACE(#{recDate},'-','')
+				AND R_REC_TIME 			= 	REPLACE(#{recTime},':','')
+	</update>
+
+	<update id="updateApproveInfo" databaseId="sqlserver" parameterType="com.furence.recsee.main.model.ApproveListInfo">
+
+			UPDATE RS_APPROVE_LIST
+			<set>
+			 		R_APPROVE_STATE = #{approveState},
+				<choose>
+					<when test = "approveState == '2'.toString() or approveState == '3'.toString()">
+					R_PRERECIPT_DATE = CONVERT(varchar(8),GETDATE(),112),
+					R_PRERECIPT_TIME = (REPLACE(CONVERT(varchar(8),GETDATE(),114),':','')),
+					R_PRERECIPT_ID = #{prereciptId}
+					</when>
+					<when test = "approveState == '4'.toString() or approveState == '5'.toString()">
+					R_RECIPT_DATE = CONVERT(varchar(8),GETDATE(),112),
+					R_RECIPT_TIME = (REPLACE(CONVERT(varchar(8),GETDATE(),114),':','')),
+					R_RECIPT_ID = #{reciptId}
+					</when>
+					<when test = "approveState == '6'.toString() or approveState == '7'.toString()">
+					R_APPROVE_DATE = CONVERT(varchar(8),GETDATE(),112),
+					R_APPROVE_TIME = (REPLACE(CONVERT(varchar(8),GETDATE(),114),':','')),
+					R_APPROVE_ID = #{approveId}
+					</when>
+				</choose>
+			</set>
+			OUTPUT
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_approve_list'
+		 	,	INSERTED.R_REQ_DATE
+			,	INSERTED.R_REQ_TIME
+			,	INSERTED.R_USER_ID
+			,	INSERTED.R_USER_NAME
+			,	INSERTED.R_BG_CODE
+			,	INSERTED.R_MG_CODE
+			,	INSERTED.R_SG_CODE
+			,	INSERTED.R_SG_NAME
+			,	INSERTED.R_APPROVE_TYPE
+			,	INSERTED.R_APPROVE_REASON
+			,	INSERTED.R_APPROVE_DAY
+			,	SUBSTRING(INSERTED.R_FILE_NAME,1,500)
+			,	INSERTED.R_REC_EXT
+			,	INSERTED.R_REC_DATE
+			,	INSERTED.R_REC_TIME
+			,	INSERTED.R_APPROVE_STATE
+			,	INSERTED.R_PRERECIPT_DATE
+			,	INSERTED.R_PRERECIPT_TIME
+			,	INSERTED.R_PRERECIPT_ID
+			,	INSERTED.R_RECIPT_DATE
+			,	INSERTED.R_RECIPT_TIME
+			,	INSERTED.R_RECIPT_ID
+			,	INSERTED.R_APPROVE_DATE
+			,	INSERTED.R_APPROVE_TIME
+			,	INSERTED.R_APPROVE_ID
+			,	INSERTED.R_V_REC_IP
+			,	INSERTED.R_V_REC_FULLPATH
+			,	SUBSTRING(INSERTED.R_LISTEN_URL,1,500)
+			,	INSERTED.R_CUST_NAME
+			,	INSERTED.R_CUST_PHONE1
+			,	INSERTED.R_CALL_KIND1
+			,	INSERTED.R_STOCK_NO
+			,	INSERTED.R_USER_ID_CALL
+			,	INSERTED.R_USER_NAME_CALL
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			)
+
+			WHERE
+				 R_REQ_DATE 			=	REPLACE(#{reqDate},'-','')
+				AND R_REQ_TIME 			=	REPLACE(#{reqTime},':','')
+				AND R_USER_ID 			=	#{userId}
+				AND R_APPROVE_TYPE 		=	#{approveType}
+				AND R_APPROVE_REASON	=	#{approveReason}
+				AND R_FILE_NAME 		= 	#{fileName}
+				AND R_REC_EXT 			= 	#{recExt}
+				AND R_REC_DATE 			= 	REPLACE(#{recDate},'-','')
+				AND R_REC_TIME 			= 	REPLACE(#{recTime},':','')
+
+	</update>
+	
+	<update id="updateApproveInfo" databaseId="oracle" parameterType="com.furence.recsee.main.model.ApproveListInfo">
+		DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_APPROVE_LIST
+			<set>
+			 		R_APPROVE_STATE = #{approveState},
+				<choose>
+					<when test = "approveState == '2'.toString() or approveState == '3'.toString()">
+					R_PRERECIPT_DATE = to_char(current_date,'yyyymmdd'),
+					R_PRERECIPT_TIME = to_char(current_date, 'HH24MISS'),
+					R_PRERECIPT_ID = #{prereciptId}
+					</when>
+					<when test = "approveState == '4'.toString() or approveState == '5'.toString()">
+					R_RECIPT_DATE = to_char(current_date,'yyyymmdd'),
+					R_RECIPT_TIME = to_char(current_date, 'HH24MISS'),
+					R_RECIPT_ID = #{reciptId}
+					</when>
+					<when test = "approveState == '6'.toString() or approveState == '7'.toString()">
+					R_APPROVE_DATE = to_char(current_date,'yyyymmdd'),
+					R_APPROVE_TIME = to_char(current_date, 'HH24MISS'),
+					R_APPROVE_ID = #{approveId}
+					</when>
+				</choose>
+			</set>
+			WHERE
+				 R_REQ_DATE 			=	REPLACE(#{reqDate},'-','')
+				AND R_REQ_TIME 			=	REPLACE(#{reqTime},':','')
+				AND R_USER_ID 			=	#{userId}
+				AND R_APPROVE_TYPE 		=	#{approveType}
+				AND R_APPROVE_REASON	=	#{approveReason}
+				AND R_FILE_NAME 		= 	#{fileName}
+				AND R_REC_EXT 			= 	#{recExt}
+				AND R_REC_DATE 			= 	REPLACE(#{recDate},'-','')
+				AND R_REC_TIME 			= 	REPLACE(#{recTime},':','')
+
+				RETURNING ROWID INTO row_id;
+			
+
+				INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_IDX
+			  ,	R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			)
+			 SELECT
+			 	R_SYNC_IDX.nextval
+		 	, 	TO_CHAR(CURRENT_DATE, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_DATE, 'HH24MISS')
+		 	,	'U'
+		 	,	'rs_approve_list'
+		 	,	AL.R_REQ_DATE
+			,	AL.R_REQ_TIME
+			,	AL.R_USER_ID
+			,	AL.R_USER_NAME
+			,	AL.R_BG_CODE
+			,	AL.R_MG_CODE
+			,	AL.R_SG_CODE
+			,	AL.R_SG_NAME
+			,	AL.R_APPROVE_TYPE
+			,	AL.R_APPROVE_REASON
+			,	AL.R_APPROVE_DAY
+			,	SUBSTR(AL.R_FILE_NAME,1,500)
+			,	AL.R_REC_EXT
+			,	AL.R_REC_DATE
+			,	AL.R_REC_TIME
+			,	AL.R_APPROVE_STATE
+			,	AL.R_PRERECIPT_DATE
+			,	AL.R_PRERECIPT_TIME
+			,	AL.R_PRERECIPT_ID
+			,	AL.R_RECIPT_DATE
+			,	AL.R_RECIPT_TIME
+			,	AL.R_RECIPT_ID
+			,	AL.R_APPROVE_DATE
+			,	AL.R_APPROVE_TIME
+			,	AL.R_APPROVE_ID
+			,	AL.R_V_REC_IP
+			,	AL.R_V_REC_FULLPATH
+			,	SUBSTR(AL.R_LISTEN_URL,1,500)
+			,	AL.R_CUST_NAME
+			,	AL.R_CUST_PHONE1
+			,	AL.R_CALL_KIND1
+			,	AL.R_STOCK_NO
+			,	AL.R_USER_ID_CALL
+			,	AL.R_USER_NAME_CALL
+			FROM DUAL, RS_APPROVE_LIST AL
+       	 	WHERE AL.ROWID = row_id;
+
+		END;
+	</update>
+
+	<delete id="deleteApproveInfo" databaseId="postgres" parameterType="com.furence.recsee.main.model.ApproveListInfo">
+			DELETE FROM RS_APPROVE_LIST
+			WHERE
+				 R_REQ_DATE 			=	REPLACE(#{reqDate},'-','')
+				AND R_REQ_TIME 			=	REPLACE(#{reqTime},':','')
+				AND R_USER_ID 			=	#{userId}
+				AND R_APPROVE_TYPE		=	#{approveType}
+				AND R_APPROVE_REASON	=	#{approveReason}
+				AND R_FILE_NAME 		= 	#{fileName}
+				AND R_REC_EXT 			= 	#{recExt}
+				AND R_REC_DATE 			= 	REPLACE(#{recDate},'-','')
+				AND R_REC_TIME 			= 	REPLACE(#{recTime},':','')
+				
+	</delete>
+	<delete id="deleteApproveInfo" databaseId="sqlserver" parameterType="com.furence.recsee.main.model.ApproveListInfo">
+
+			DELETE FROM RS_APPROVE_LIST
+
+			OUTPUT
+			CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'D'
+		 	,	'rs_approve_list'
+		 	,	DELETED.R_REQ_DATE
+			,	DELETED.R_REQ_TIME
+			,	DELETED.R_USER_ID
+			,	DELETED.R_USER_NAME
+			,	DELETED.R_BG_CODE
+			,	DELETED.R_MG_CODE
+			,	DELETED.R_SG_CODE
+			,	DELETED.R_SG_NAME
+			,	DELETED.R_APPROVE_TYPE
+			,	DELETED.R_APPROVE_REASON
+			,	DELETED.R_APPROVE_DAY
+			,	SUBSTR(DELETED.R_FILE_NAME,1,500)
+			,	DELETED.R_REC_EXT
+			,	DELETED.R_REC_DATE
+			,	DELETED.R_REC_TIME
+			,	DELETED.R_APPROVE_STATE
+			,	DELETED.R_PRERECIPT_DATE
+			,	DELETED.R_PRERECIPT_TIME
+			,	DELETED.R_PRERECIPT_ID
+			,	DELETED.R_RECIPT_DATE
+			,	DELETED.R_RECIPT_TIME
+			,	DELETED.R_RECIPT_ID
+			,	DELETED.R_APPROVE_DATE
+			,	DELETED.R_APPROVE_TIME
+			,	DELETED.R_APPROVE_ID
+			,	DELETED.R_V_REC_IP
+			,	DELETED.R_V_REC_FULLPATH
+			,	SUBSTR(DELETED.R_LISTEN_URL,1,500)
+			,	DELETED.R_CUST_NAME
+			,	DELETED.R_CUST_PHONE1
+			,	DELETED.R_CALL_KIND1
+			,	DELETED.R_STOCK_NO
+			,	DELETED.R_USER_ID_CALL
+			,	DELETED.R_USER_NAME_CALL
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			)
+
+			WHERE
+				 R_REQ_DATE 			=	REPLACE(#{reqDate},'-','')
+				AND R_REQ_TIME 			=	REPLACE(#{reqTime},':','')
+				AND R_USER_ID 			=	#{userId}
+				AND R_APPROVE_TYPE		=	#{approveType}
+				AND R_APPROVE_REASON	=	#{approveReason}
+				AND R_FILE_NAME 		= 	#{fileName}
+				AND R_REC_EXT 			= 	#{recExt}
+				AND R_REC_DATE 			= 	REPLACE(#{recDate},'-','')
+				AND R_REC_TIME 			= 	REPLACE(#{recTime},':','')
+
+	</delete>
+	
+	<delete id="deleteApproveInfo" databaseId="oracle" parameterType="com.furence.recsee.main.model.ApproveListInfo">
+		DECLARE
+		  row_id ROWID;
+		BEGIN
+			DELETE FROM RS_APPROVE_LIST
+			WHERE
+				 R_REQ_DATE 			=	REPLACE(#{reqDate},'-','')
+				AND R_REQ_TIME 			=	REPLACE(#{reqTime},':','')
+				AND R_USER_ID 			=	#{userId}
+				AND R_APPROVE_TYPE		=	#{approveType}
+				AND R_APPROVE_REASON	=	#{approveReason}
+				AND R_FILE_NAME 		= 	#{fileName}
+				AND R_REC_EXT 			= 	#{recExt}
+				AND R_REC_DATE 			= 	REPLACE(#{recDate},'-','')
+				AND R_REC_TIME 			= 	REPLACE(#{recTime},':','')
+				
+			RETURNING ROWID INTO row_id;	
+			
+
+			INSERT INTO RS_SYNC_DATA
+			(   
+				R_SYNC_IDX
+			  ,	R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			)
+			 SELECT
+			 	R_SYNC_IDX.nextval
+		 	, 	TO_CHAR(CURRENT_DATE, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_DATE, 'HH24MISS')
+		 	,	'D'
+		 	,	'rs_approve_list'
+		 	,	AL.R_REQ_DATE
+			,	AL.R_REQ_TIME
+			,	AL.R_USER_ID
+			,	AL.R_USER_NAME
+			,	AL.R_BG_CODE
+			,	AL.R_MG_CODE
+			,	AL.R_SG_CODE
+			,	AL.R_SG_NAME
+			,	AL.R_APPROVE_TYPE
+			,	AL.R_APPROVE_REASON
+			,	AL.R_APPROVE_DAY
+			,	SUBSTR(AL.R_FILE_NAME,1,500)
+			,	AL.R_REC_EXT
+			,	AL.R_REC_DATE
+			,	AL.R_REC_TIME
+			,	AL.R_APPROVE_STATE
+			,	AL.R_PRERECIPT_DATE
+			,	AL.R_PRERECIPT_TIME
+			,	AL.R_PRERECIPT_ID
+			,	AL.R_RECIPT_DATE
+			,	AL.R_RECIPT_TIME
+			,	AL.R_RECIPT_ID
+			,	AL.R_APPROVE_DATE
+			,	AL.R_APPROVE_TIME
+			,	AL.R_APPROVE_ID
+			,	AL.R_V_REC_IP
+			,	AL.R_V_REC_FULLPATH
+			,	SUBSTR(AL.R_LISTEN_URL,1,500)
+			,	AL.R_CUST_NAME
+			,	AL.R_CUST_PHONE1
+			,	AL.R_CALL_KIND1
+			,	AL.R_STOCK_NO
+			,	AL.R_USER_ID_CALL
+			,	AL.R_USER_NAME_CALL
+			FROM DUAL, RS_APPROVE_LIST AL
+        	WHERE AL.ROWID = row_id;
+
+		END;
+	</delete>
+
+	<select id="selectApproveInfoByFileName" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="ApproveResultMap">
+		SELECT R_REC_DATE
+			 , R_REC_TIME
+			 , R_USER_ID
+			 , R_USER_NAME AS R_USER_NAME_CALL
+			 , R_EXT_NUM
+			 , R_CUST_NAME
+			 , R_CUST_PHONE1
+			 , R_CALL_KIND1
+			 , R_STOCK_NO,
+			 <if test="fileNameChange == null">
+		 	 r_v_filename as R_FILE_NAME
+		 	 </if>
+		 	 <if test="fileNameChange != null">
+		 	 concat(#{fileNameChange}) as R_FILE_NAME
+		 	 </if>
+		FROM rs_recfile
+		WHERE r_rec_date=#{recDateRaw} and r_rec_time=#{recTimeRaw} and r_ext_num=#{extNum}
+	</select>
+
+	<select id='selectFullPath'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+			SELECT
+		(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_IP ELSE R_V_REC_IP END) AS R_V_REC_IP ,
+		(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_FULLPATH ELSE R_V_REC_FULLPATH END) AS R_V_REC_FULLPATH ,
+		(CASE WHEN R_REC_START_TYPE = 'P' THEN 'IVR' ELSE 'NOIVR' END) AS R_IVR_CHK,
+		R_BUFFER1,
+		R_REC_START_TYPE
+	FROM
+		rs_recfile
+	WHERE
+		R_REC_DATE = #{recDateRaw}
+		AND R_REC_TIME = #{recTimeRaw}
+		AND R_EXT_NUM = #{extNum}
+		AND R_BUFFER10 = 'N'
+			
+		<if test="vSysCode != null and vSysCode != ''">
+			AND R_V_SYS_CODE = #{vSysCode}
+		</if>
+		<if test="recStartType !=null">
+		AND R_REC_START_TYPE = #{recStartType}
+		</if>
+	</select>
+	
+	<!-- ListenUrl 암호화 적용 -->
+	<select id='selectFullPath' databaseId='postgres' parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+			SELECT
+		(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_IP ELSE R_V_REC_IP END) AS R_V_REC_IP ,
+		<if test='urlEncYn == "Y"'>
+			rtrim(encode(encrypt_iv((CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_FULLPATH ELSE R_V_REC_FULLPATH END)::bytea, decode('f4150d4a1ac5708c29e437749045a39af4150d4a1ac5708c29e437749045a39a', 'hex')::bytea, decode('86afc43868fea6abd40fbf6d5ed50905', 'hex')::bytea,'aes'::text), 'base64'), '=')
+			AS R_V_REC_FULLPATH ,
+		</if>
+		<if test='urlEncYn == null or urlEncYn == "N"'>
+			(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_FULLPATH ELSE R_V_REC_FULLPATH END) AS R_V_REC_FULLPATH ,
+		</if>
+		(CASE WHEN R_REC_START_TYPE = 'P' THEN 'IVR' ELSE 'NOIVR' END) AS R_IVR_CHK,
+		R_BUFFER1,
+		R_REC_START_TYPE
+	FROM
+		rs_recfile
+	WHERE
+		R_REC_DATE = #{recDateRaw}
+		AND R_REC_TIME = #{recTimeRaw}
+		AND R_EXT_NUM = #{extNum}
+		AND R_BUFFER10 = 'N'
+			
+		<if test="vSysCode != null and vSysCode != ''">
+			AND R_V_SYS_CODE = #{vSysCode}
+		</if>
+		<if test="recStartType !=null">
+		AND R_REC_START_TYPE = #{recStartType}
+		</if>
+	</select>
+	
+	<select id="selectRecMemo" databaseId="postgres" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="RecMemoResultMap">
+		SELECT
+				A.R_MEMO_IDX
+			,	A.R_REC_DATE
+			,	A.R_REC_TIME
+			,	A.R_EXT_NUM
+			,	B.R_USER_ID
+			,	B.R_USER_NAME
+			,	A.R_MEMO
+			,	C.R_BG_NAME
+			,	D.R_MG_NAME
+			,	E.R_SG_NAME
+		FROM RS_REC_MEMO AS A
+		LEFT JOIN
+			(
+				WITH  REF AS(SELECT *	FROM
+								(
+										(
+											SELECT
+												R_USER_ID AS AID, R_USER_NAME AS ANAME, R_BG_CODE AS ABG, R_MG_CODE AS AMG, R_SG_CODE AS ASG
+											FROM
+												RS_AUSER_INFO
+										) AUSER
+									LEFT JOIN
+										(
+											SELECT
+												R_USER_ID AS RID, R_USER_NAME AS RNAME,R_BG_CODE AS RBG, R_MG_CODE AS RMG, R_SG_CODE AS RSG
+											FROM
+												RS_RUSER_INFO
+										) RUSER
+									ON AUSER.AID=RUSER.RID
+								)
+			)
+				SELECT
+					CASE WHEN RID IS NOT NULL THEN RID ELSE AID END AS R_USER_ID,
+					CASE WHEN RID IS NOT NULL THEN RNAME ELSE ANAME END AS R_USER_NAME,
+					CASE WHEN RID IS NOT NULL THEN RBG ELSE ABG END AS R_BG_CODE,
+					CASE WHEN RID IS NOT NULL THEN RMG ELSE AMG END AS R_MG_CODE,
+					CASE WHEN RID IS NOT NULL THEN RSG ELSE ASG END AS R_SG_CODE
+				FROM REF
+			) AS B
+		ON A.R_USER_ID = B.R_USER_ID
+		LEFT JOIN
+		 	RS_BG_INFO AS C
+		ON B.R_BG_CODE = C.R_BG_CODE
+		LEFT JOIN
+			RS_MG_INFO AS D
+		ON B.R_MG_CODE = D.R_MG_CODE
+		LEFT JOIN
+			RS_SG_INFO AS E
+		ON B.R_SG_CODE = E.R_SG_CODE
+		WHERE A.R_REC_DATE::DATE = #{recDate}::DATE AND A.R_REC_TIME::TIME = #{recTime}::TIME AND A.R_EXT_NUM = #{extNum} AND A.R_MEMO_TYPE = 'T'
+		<if test="bgCode != null and bgCode != ''">
+			AND B.R_BG_CODE = #{bgCode}
+		</if>
+		<if test="mgCode != null and mgCode != ''">
+			AND B.R_MG_CODE = #{mgCode}
+		</if>
+		<if test="sgCode != null and sgCode != ''">
+			AND B.R_SG_CODE = #{sgCode}
+		</if>
+		<if test="userId != null">
+			AND A.R_USER_ID = #{userId}
+		</if>	
+	</select>
+	<select id="selectRecMemo" databaseId="sqlserver" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="RecMemoResultMap">
+		SELECT
+				A.R_MEMO_IDX
+			,	A.R_REC_DATE
+			,	A.R_REC_TIME
+			,	A.R_EXT_NUM
+			,	B.R_USER_ID
+			,	B.R_USER_NAME
+			,	A.R_MEMO
+			,	C.R_BG_NAME
+			,	D.R_MG_NAME
+			,	E.R_SG_NAME
+		FROM RS_REC_MEMO AS A
+		LEFT JOIN
+			(
+
+									SELECT
+												R_USER_ID ,
+												R_USER_NAME,
+												R_BG_CODE,
+												R_MG_CODE,
+												R_SG_CODE
+
+											FROM
+								      RS_RUSER_INFO     ) b
+
+
+		ON A.R_USER_ID = B.R_USER_ID
+		LEFT JOIN
+		 	RS_BG_INFO AS C
+		ON B.R_BG_CODE = C.R_BG_CODE
+		LEFT JOIN
+			RS_MG_INFO AS D
+		ON B.R_MG_CODE = D.R_MG_CODE
+		LEFT JOIN
+			RS_SG_INFO AS E
+		ON B.R_SG_CODE = E.R_SG_CODE
+		<!-- WHERE convert(date,A.R_REC_DATE) = convert(date,#{recDate}) AND convert(time,A.R_REC_TIME) = convert(time,#{recTime}) AND A.R_EXT_NUM = #{extNum} AND A.R_MEMO_TYPE = 'T' -->
+		WHERE A.R_REC_DATE = #{recDate} AND A.R_REC_TIME = #{recTime} AND A.R_EXT_NUM = #{extNum} AND A.R_MEMO_TYPE = 'T'
+		<if test="bgCode != null">
+			AND B.R_BG_CODE = #{bgCode}
+		</if>
+		<if test="mgCode != null">
+			AND B.R_MG_CODE = #{mgCode}
+		</if>
+		<if test="sgCode != null">
+			AND B.R_SG_CODE = #{sgCode}
+		</if>
+		<if test="userId != null">
+			AND A.R_USER_ID = #{userId}
+		</if>
+	</select>
+	
+	<select id="selectRecMemo" databaseId="oracle" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="RecMemoResultMap">
+		SELECT
+				A.R_MEMO_IDX
+			,	A.R_REC_DATE
+			,	A.R_REC_TIME
+			,	A.R_EXT_NUM
+			,	B.R_USER_ID
+			,	B.R_USER_NAME
+			,	A.R_MEMO
+			,	C.R_BG_NAME
+			,	D.R_MG_NAME
+			,	E.R_SG_NAME
+		FROM RS_REC_MEMO A
+		LEFT JOIN
+			(
+				WITH  REF AS(SELECT *	FROM
+								(
+										(
+											SELECT
+												R_USER_ID AS RID, R_USER_NAME AS RNAME,R_BG_CODE AS RBG, R_MG_CODE AS RMG, R_SG_CODE AS RSG
+											FROM
+												RS_RUSER_INFO
+										) RUSER
+									LEFT OUTER JOIN
+										(
+											SELECT
+												R_USER_ID AS AID, R_USER_NAME AS ANAME, R_BG_CODE AS ABG, R_MG_CODE AS AMG, R_SG_CODE AS ASG
+											FROM
+												RS_AUSER_INFO
+										) AUSER
+									ON RUSER.RID = AUSER.AID
+								)
+			)
+				SELECT
+					CASE WHEN RID IS NOT NULL THEN RID ELSE AID END AS R_USER_ID,
+					CASE WHEN RID IS NOT NULL THEN RNAME ELSE ANAME END AS R_USER_NAME,
+					CASE WHEN RID IS NOT NULL THEN RBG ELSE ABG END AS R_BG_CODE,
+					CASE WHEN RID IS NOT NULL THEN RMG ELSE AMG END AS R_MG_CODE,
+					CASE WHEN RID IS NOT NULL THEN RSG ELSE ASG END AS R_SG_CODE
+				FROM REF
+			) B
+		ON A.R_USER_ID = B.R_USER_ID
+		LEFT JOIN
+		 	RS_BG_INFO C
+		ON B.R_BG_CODE = C.R_BG_CODE
+		LEFT JOIN
+			RS_MG_INFO D
+		ON B.R_MG_CODE = D.R_MG_CODE
+		LEFT JOIN
+			RS_SG_INFO E
+		ON B.R_SG_CODE = E.R_SG_CODE
+		WHERE A.R_REC_DATE =#{recDate}  AND A.R_REC_TIME = #{recTime} 
+		AND A.R_EXT_NUM = #{extNum} AND A.R_MEMO_TYPE = 'T'
+		<if test="bgCode != null and bgCode != ''">
+			AND B.R_BG_CODE = #{bgCode}
+		</if>
+		<if test="mgCode != null and mgCode != ''">
+			AND B.R_MG_CODE = #{mgCode}
+		</if>
+		<if test="sgCode != null and sgCode != ''">
+			AND B.R_SG_CODE = #{sgCode}
+		</if>
+		<if test="userId != null">
+			AND A.R_USER_ID = #{userId}
+		</if>		
+	</select>
+
+	<select id='selectURL'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		SELECT
+			R_LISTEN_URL, R_BUFFER1, R_REC_START_TYPE, R_TEXT_URL
+		FROM
+			rs_recfile
+		WHERE
+			R_REC_DATE = #{recDateRaw}
+			AND R_REC_TIME = #{recTimeRaw}
+			AND R_EXT_NUM = #{extNum}
+			<if test="vSysCode !=null">
+			AND R_V_SYS_CODE = #{vSysCode}
+			</if>
+			<if test="recStartType !=null">
+			AND R_REC_START_TYPE = #{recStartType}
+			</if>
+	</select>
+	
+	<!-- ListenURL 암호화 처리 -->
+	<select id='selectURL' databaseId="postgres" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		SELECT
+			<if test='urlEncYn == "Y"'>
+				split_part(r_listen_url, 'url=', 1)||'url='
+					||replace(encode(encrypt_iv(split_part(r_listen_url, 'url=', 2)::bytea, decode('f4150d4a1ac5708c29e437749045a39af4150d4a1ac5708c29e437749045a39a', 'hex')::bytea, decode('86afc43868fea6abd40fbf6d5ed50905', 'hex')::bytea,'aes'::text), 'base64'), '=', '')
+				AS R_LISTEN_URL,
+			</if>
+			<if test='urlEncYn == null or urlEncYn == "N"'>
+				R_LISTEN_URL,
+			</if>
+			R_BUFFER1, R_REC_START_TYPE, R_TEXT_URL
+		FROM
+			rs_recfile
+		WHERE
+			R_REC_DATE = #{recDateRaw}
+			AND R_REC_TIME = #{recTimeRaw}
+			AND R_EXT_NUM = #{extNum}
+			<if test="vSysCode !=null">
+			AND R_V_SYS_CODE = #{vSysCode}
+			</if>
+			<if test="recStartType !=null">
+			AND R_REC_START_TYPE = #{recStartType}
+			</if>
+	</select>
+	
+	<select id='selectRsRecfileInfo'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		SELECT
+			<foreach collection="updateColumn" item="item" separator="," >
+				<trim suffixOverrides="">
+					#{item}
+				</trim>
+			</foreach>
+		FROM
+			rs_recfile
+		WHERE
+			R_REC_DATE = #{recDateRaw}
+			AND R_REC_TIME = #{recTimeRaw}
+			AND R_EXT_NUM = #{extNum}
+			<if test="vSysCode !=null and vSysCode != ''">
+			AND R_V_SYS_CODE = #{vSysCode}
+			</if>
+	</select>
+	
+	<select id='selectPgDecoding'  parameterType="String" resultType="String">
+		SELECT CASE WHEN length(#{temp}) in (32,64) THEN convert_from(decrypt(decode(#{temp}, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+		     ELSE #{temp} END	
+	</select>	
+	
+	<!--TODO  -->
+	<!-- 리슨유알엘 url인 경우 -->
+	<select id='selectRecIp'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT DISTINCT SPLIT_PART(SPLIT_PART(R_LISTEN_URL,'://',2),':',1) AS R_LISTEN_URL
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		and R_LISTEN_URL!='' and R_LISTEN_URL is not null
+	</select>
+	<select id='selectRecIp'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="oracle" resultMap="BaseResultMap">
+		SELECT DISTINCT regexp_substr(R_LISTEN_URL,'[^:// ]+', 1,2) AS R_LISTEN_URL
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		and R_LISTEN_URL!='' and R_LISTEN_URL is not null
+	</select>
+	
+	<!-- 리슨유알엘 path인 경우 -->
+	<select id='selectRecIp2'  parameterType="com.furence.recsee.main.model.SearchListInfo"  resultMap="BaseResultMap">
+		SELECT
+			DISTINCT (CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_IP ELSE R_V_REC_IP END) AS R_V_REC_IP
+		FROM
+			rs_recfile
+		<include refid="selectWhere"></include>
+		and R_V_READ_IP!='' and R_V_READ_IP is not null
+	</select>
+	
+	<!-- 리슨유알엘 url이면서 checkList인 경우 -->
+	<select id='selectRecIp3'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT DISTINCT SPLIT_PART(SPLIT_PART(R_LISTEN_URL,'://',2),':',1) AS R_LISTEN_URL
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		AND R_LISTEN_URL IN
+		<foreach collection="listenUrlList" item="item" separator="," open="(" close=")">
+			<trim suffixOverrides="">
+				#{item}
+			</trim>
+		</foreach>
+		and R_LISTEN_URL!='' and R_LISTEN_URL is not null
+	</select>
+	<select id='selectRecIp3'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="oracle" resultMap="BaseResultMap">
+		SELECT DISTINCT regexp_substr(R_LISTEN_URL,'[^:// ]+', 1,2) AS R_LISTEN_URL
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		AND R_LISTEN_URL IN
+		<foreach collection="listenUrlList" item="item" separator="," open="(" close=")">
+			<trim suffixOverrides="">
+				#{item}
+			</trim>
+		</foreach>
+		and R_LISTEN_URL!='' and R_LISTEN_URL is not null
+	</select>
+	<!-- 리슨유알엘 path이면서 checkList인 경우 -->
+	<select id='selectRecIp4'  parameterType="com.furence.recsee.main.model.SearchListInfo"  resultMap="BaseResultMap">
+		SELECT
+			DISTINCT (CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_IP ELSE R_V_REC_IP END) AS R_V_REC_IP
+		FROM
+			rs_recfile
+		<include refid="selectWhere"></include>
+		AND R_LISTEN_URL IN
+		<foreach collection="listenUrlList" item="item" separator="," open="(" close=")">
+			<trim suffixOverrides="">
+				#{item}
+			</trim>
+		</foreach>
+		and R_V_READ_IP!='' and R_V_READ_IP is not null
+	</select>
+	
+	
+	<select id='selectDownRecIpCount'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL_COUNT
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+	</select>
+	
+	<!--TODO  -->
+	<!-- 리슨유알엘 url인 경우 -->
+	<select id='selectDownRecIp'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT R_LISTEN_URL
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		AND R_LISTEN_URL!='' and R_LISTEN_URL is not null		
+		ORDER BY R_REC_DATE ASC, R_REC_TIME ASC
+		LIMIT #{count} OFFSET #{posStart}
+	</select>
+	
+	<!-- 리슨유알엘 url인 경우 -->
+	<select id='selectDownRecIp'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="sqlserver" resultMap="BaseResultMap">
+		SELECT R_LISTEN_URL
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		AND R_LISTEN_URL!='' and R_LISTEN_URL is not null		
+		ORDER BY R_REC_DATE ASC, R_REC_TIME ASC
+		OFFSET #{posStart} ROWS FETCH NEXT #{count} ROWS ONLY
+	</select>
+	
+	<!-- 리슨유알엘 url인 경우 -->
+	<select id='selectDownRecIp'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="oracle" resultMap="BaseResultMap">
+		SELECT *
+		FROM (
+    		SELECT a.*, ROWNUM AS "rnum"
+    		FROM (
+    		
+				SELECT R_LISTEN_URL
+				FROM rs_recfile
+				<include refid="selectWhere"></include>
+				AND R_LISTEN_URL!='' and R_LISTEN_URL is not null		
+				ORDER BY R_REC_DATE ASC, R_REC_TIME ASC
+				) a
+				 WHERE ROWNUM <![CDATA[<=]]> #{count}
+			) a
+			WHERE ROWNUM <![CDATA[>=]]> #{posStart}
+	</select>
+	
+	<!--TODO  -->
+	<!-- 리슨유알엘 path인 경우 -->
+	<select id='selectDownRecIp2'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT
+			(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_IP ELSE R_V_REC_IP END) AS R_V_REC_IP, 
+			(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_FULLPATH ELSE R_V_REC_FULLPATH END) AS R_V_REC_FULLPATH
+		FROM
+			rs_recfile
+		<include refid="selectWhere"></include>
+		<!-- and R_V_READ_IP!='' and R_V_READ_IP is not null -->		
+		ORDER BY R_REC_DATE ASC, R_REC_TIME ASC
+		LIMIT #{count} OFFSET #{posStart}
+	</select>
+	
+	<!-- 리슨유알엘 path인 경우 -->
+	<select id='selectDownRecIp2'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="sqlserver" resultMap="BaseResultMap">
+		SELECT
+			(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_IP ELSE R_V_REC_IP END) AS R_V_REC_IP, 
+			(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_FULLPATH ELSE R_V_REC_FULLPATH END) AS R_V_REC_FULLPATH
+		FROM
+			rs_recfile
+		<include refid="selectWhere"></include>
+		<!-- and R_V_READ_IP!='' and R_V_READ_IP is not null -->		
+		ORDER BY R_REC_DATE ASC, R_REC_TIME ASC
+		OFFSET #{posStart} ROWS FETCH NEXT #{count} ROWS ONLY
+	</select>
+	
+	<!-- 리슨유알엘 path인 경우 -->
+	<select id='selectDownRecIp2'  parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="oracle" resultMap="BaseResultMap">
+		SELECT *
+		FROM (
+    		SELECT a.*, ROWNUM AS "rnum"
+    		FROM (
+		
+				SELECT
+					(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_IP ELSE R_V_REC_IP END) AS R_V_REC_IP, 
+					(CASE WHEN R_VSEND_FILE_FLAG = 'Y' THEN R_V_READ_FULLPATH ELSE R_V_REC_FULLPATH END) AS R_V_REC_FULLPATH
+				FROM
+					rs_recfile
+				<include refid="selectWhere"></include>
+				<!-- and R_V_READ_IP!='' and R_V_READ_IP is not null -->		
+				ORDER BY R_REC_DATE ASC, R_REC_TIME ASC
+				) a
+				 WHERE ROWNUM <![CDATA[<=]]> #{count}
+			) a
+			WHERE ROWNUM <![CDATA[>=]]> #{posStart}
+	</select>
+	
+	<!-- 총 재생시간 -->
+	<select id='selectTotalTime'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="Integer">
+		SELECT SUM(R_CALL_TTIME::INTEGER) AS TOTAL_COUNT
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		AND R_CALL_TTIME IS NOT NULL
+		AND R_CALL_TTIME != ''
+	</select>
+	
+	<!-- 총 재생시간 -->
+	<select id='selectTotalTime'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="Integer" databaseId="oracle">
+		SELECT SUM(TO_NUMBER(R_CALL_TTIME)) AS TOTAL_COUNT
+		FROM rs_recfile
+		<include refid="selectWhere"></include>
+		AND R_CALL_TTIME IS NOT NULL
+		AND R_CALL_TTIME != ''
+	</select>
+	
+	<select id='selectWhere'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="String">
+		SELECT '
+			<if test = "sDate != null and eDate !=null">
+			R_REC_DATE BETWEEN #{sDate} AND #{eDate}
+			</if>
+			<if test="recDateLimit != null">
+			AND R_REC_DATE BETWEEN #{sDate} AND  to_char(NOW() - #{recDateLimit} 'day'::interval,'YYYYMMDD')					
+			</if>			
+			<if test="recRtime != null">
+			AND R_REC_RTIME = #{recRtime}
+			</if>
+			<choose>
+				<when test="sRtime != null and eRtime != null">
+				AND R_REC_RTIME BETWEEN #{sRtime} AND #{eRtime}
+				</when>
+				<when test="sRtime != null and eRtime eq null">
+				AND R_REC_RTIME &gt;= #{sRtime}
+				</when>
+				<when test="sRtime eq null and eRtime != null">
+				AND R_REC_RTIME &lt;= #{eRtime}
+				</when>
+			</choose>
+			<if test="recTime != null">
+			AND R_REC_TIME = #{recTime}
+			</if>
+			<choose>
+				<when test="sTime != null and eTime != null">
+				AND R_REC_TIME BETWEEN #{sTime} AND #{eTime}
+				</when>
+				<when test="sTime != null and eTime eq null">
+				AND R_REC_TIME &gt;= #{sTime}
+				</when>
+				<when test="sTime eq null and eTime != null">
+				AND R_REC_TIME &lt;= #{eTime}
+				</when>
+			</choose>
+			<choose>
+				<when test="sTimeConnect != null and eTimeConnect != null">
+				AND R_CALL_STIME_CONNECT BETWEEN #{sTimeConnect} AND #{eTimeConnect}
+				</when>
+				<when test="sTimeConnect != null and eTimeConnect eq null">
+				AND R_CALL_STIME_CONNECT &gt;= #{sTimeConnect}
+				</when>
+				<when test="sTimeConnect eq null and eTimeConnect != null">
+				AND R_CALL_STIME_CONNECT &lt;= #{eTimeConnect}
+				</when>
+			</choose>
+			<if test="bgCode != null">
+			AND R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null">
+			AND R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCodeArray==null">
+			AND R_SG_CODE = #{sgCode}
+			</if>
+
+			<if test="sgCodeArray != null">
+				AND R_SG_CODE IN
+				<foreach collection="sgCodeArray" item="item" separator="," open="(" close=")">
+					<trim suffixOverrides="">
+						#{item}
+					</trim>
+				</foreach>
+			</if>
+			
+	
+
+			<if test="stockNo != null">
+			AND R_STOCK_NO LIKE '%' || #{stockNo} || '%'
+			</if>
+			<if test="counselResultBgcode != null">
+			AND R_COUNSEL_RESULT_BGCODE = #{counselResultBgcode}
+			</if>
+			<if test="counselResultMgcode != null">
+			AND R_COUNSEL_RESULT_MGCODE = #{counselResultMgcode}
+			</if>
+			<if test="counselResultSgcode != null">
+			AND R_COUNSEL_RESULT_SGCODE = #{counselResultSgcode}
+			</if>
+			<if test="userId != null">
+			AND R_USER_ID = #{userId}
+			</if>
+			<if test="chNum != null">
+			AND R_CH_NUM = #{chNum}
+			</if>
+			<if test="userName != null">
+			AND R_USER_NAME LIKE '%' || #{userName} || '%'
+			</if>
+			<if test="callId1 != null">
+			AND R_CALL_ID1 = #{callId1}
+			</if>
+			<if test="callId2 != null">
+			AND R_CALL_ID2 = #{callId2}
+			</if>
+			<if test="callId3 != null">
+			AND R_CALL_ID3 = #{callId3}
+			</if>
+			<if test="extNum != null">
+			AND R_EXT_NUM LIKE '%' || #{extNum} || '%'
+			</if>
+			<if test="custName != null">
+			AND R_CUST_NAME LIKE '%' || #{custName} || '%'
+			</if>
+			<if test="custPhone1 != null">
+			AND ( '02' || R_CUST_PHONE1 LIKE '%' || #{custPhone1} || '%' OR R_CUST_PHONE1 LIKE '%' || #{custPhone1} || '%' )
+			</if>
+			<if test="custPhone2 != null">
+			AND R_CUST_PHONE2 LIKE '%' || #{custPhone2} || '%'
+			</if>
+			<if test="custPhone3 != null">
+			AND R_CUST_PHONE3 LIKE '%' || #{custPhone3} || '%'
+			</if>
+			<if test="callKind1 != null">
+			AND R_CALL_KIND1 = #{callKind1}
+			</if>
+			<if test="callKind2 != null">
+			AND R_CALL_KIND2 = #{callKind2}
+			</if>
+			<if test="callStime != null">
+			AND R_CALL_STIME BETWEEN #{sStime} AND #{eStime}
+			</if>
+			<if test="callEtime != null">
+			AND R_CALL_ETIME BETWEEN #{eEtime} AND #{eEtime}
+			</if>
+			<if test="callTtime != null">
+			AND R_CALL_TTIME = #{callTtime}
+			</if>
+			<choose>
+				<when test="sTtime != null and eTtime != null">
+				AND CAST(R_CALL_TTIME AS INT) BETWEEN #{sTtime}::integer AND #{eTtime}::integer
+				</when>
+				<when test="sTtime != null and eTtime eq null">
+				AND CAST(R_CALL_TTIME AS INT) &gt;= #{sTtime}::integer
+				</when>
+				<when test="sTtime eq null and eTtime != null">
+				AND CAST(R_CALL_TTIME AS INT) &lt;= #{eTtime}::integer
+				</when>
+			</choose>
+			<choose>
+				<when test="sTtimeConnect != null and eTtimeConnect != null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) BETWEEN #{sTtimeConnect}::integer AND #{eTtimeConnect}::integer
+				</when>
+				<when test="sTtimeConnect != null and eTtimeConnect eq null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) &gt;= #{sTtimeConnect}::integer
+				</when>
+				<when test="sTtimeConnect eq null and eTtimeConnect != null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) &lt;= #{eTtimeConnect}::integer
+				</when>
+			</choose>
+			<if test="vSysCode != null">
+			AND R_V_SYS_CODE = #{vSysCode}
+			</if>
+			<if test="listenUrl != null">
+			AND R_LISTEN_URL = #{listenUrl}
+			</if>
+			<if test="vFileName != null">
+			AND R_V_FILENAME = #{vFileName}
+			</if>
+			<if test="recMemo != null">
+			AND R_REC_MEMO LIKE '%' || #{recMemo} || '%'
+			</if>
+
+			<if test="tContents != null">
+			AND R_T_CONTENTS LIKE '%' || #{tContents} || '%'
+			</if>
+			<if test="custSocialNum != null">
+			AND R_CUST_SOCIAL_NUM LIKE '%' || #{custSocialNum} || '%'
+			</if>
+			<!-- 선택적 엑셀 다운로드 추가 -->
+			<if test="recDateArr != null">
+				AND R_REC_DATE IN
+				<foreach collection="recDateArr" item="item" separator="," open="(" close=")">
+					#{item}
+				</foreach>
+			</if>
+
+			<if test="recTimeArr != null">
+				AND R_REC_TIME IN
+				<foreach collection="recTimeArr" item="item" separator="," open="(" close=")">
+					#{item}
+				</foreach>
+			</if>
+
+			<if test="recExtArr != null">
+				AND R_EXT_NUM IN
+				<foreach collection="recExtArr" item="item" separator="," open="(" close=")">
+					#{item}
+				</foreach>
+			</if>
+			<!-- AND (R_BUFFER8 != ''B'' OR R_BUFFER8 != ''A'' OR R_BUFFER8 IS NULL) -->
+			<if test="queueNo1 != null">
+			AND R_QUEUE_NO1 = #{queueNo1}
+			</if>
+			<if test="queueNo2 != null">
+			AND R_QUEUE_NO2 = #{queueNo2}
+			</if>
+			<if test="recStartType != null">
+			AND R_REC_START_TYPE = #{recStartType}
+			</if>
+			<if test="selfDisYn != null">
+			<choose>
+				<when test="selfDisYn eq 'Y'.toString()">
+				AND R_SELFDIS_YN = 'Y'
+				</when>
+				<when test="selfDisYn eq 'N'.toString()">
+				AND R_SELFDIS_YN = 'N'
+				</when>
+				<otherwise>
+				AND R_SELFDIS_YN IS NULL
+				</otherwise>
+			</choose>
+			</if>
+			<if test="authyInfo != null">
+				AND
+				<foreach collection="authyInfo" item="item" separator="OR" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.mgcode != null">
+						R_MG_CODE = #{item.mgcode} AND
+						</if>
+						<if test="item.sgcode != null">
+						R_SG_CODE = #{item.sgcode} AND
+						</if>
+						<if test="item.user != null">
+						R_USER_ID = #{item.user} AND
+						</if>
+					</trim>
+				</foreach>
+			</if>
+			'
+	</select>
+	
+	<!-- ORACLE을 따로 구분할 필요가 있는지...20200325 김현기 -->
+	<!-- <select id='selectWhere'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="String" databaseId="oracle">
+		SELECT '
+			<if test = "sDate != null and eDate !=null">
+			R_REC_DATE BETWEEN '${sDate}' AND '${eDate}'
+			</if>
+			<if test="recRtime != null">
+			AND R_REC_RTIME = '${recRtime}'
+			</if>
+			<choose>
+				<when test="sRtime != null and eRtime != null">
+				AND R_REC_RTIME BETWEEN '${sRtime}' AND '${eRtime}'
+				</when>
+				<when test="sRtime != null and eRtime eq null">
+				AND R_REC_RTIME &gt;= '${sRtime}'
+				</when>
+				<when test="sRtime eq null and eRtime != null">
+				AND R_REC_RTIME &lt;= '${eRtime}'
+				</when>
+			</choose>
+			<if test="recTime != null">
+			AND R_REC_TIME = '${recTime}'
+			</if>
+			<choose>
+				<when test="sTime != null and eTime != null">
+				AND R_REC_TIME BETWEEN '${sTime}' AND '${eTime}'
+				</when>
+				<when test="sTime != null and eTime eq null">
+				AND R_REC_TIME &gt;= '${sTime}'
+				</when>
+				<when test="sTime eq null and eTime != null">
+				AND R_REC_TIME &lt;= '${eTime}'
+				</when>
+			</choose>
+			<choose>
+				<when test="sTimeConnect != null and eTimeConnect != null">
+				AND R_CALL_STIME_CONNECT BETWEEN '${sTimeConnect}' AND '${eTimeConnect}'
+				</when>
+				<when test="sTimeConnect != null and eTimeConnect eq null">
+				AND R_CALL_STIME_CONNECT &gt;= '${sTimeConnect}'
+				</when>
+				<when test="sTimeConnect eq null and eTimeConnect != null">
+				AND R_CALL_STIME_CONNECT &lt;= '${eTimeConnect}'
+				</when>
+			</choose>
+			<if test="bgCode != null">
+			AND R_BG_CODE = '${bgCode}'
+			</if>
+			<if test="mgCode != null">
+			AND R_MG_CODE = '${mgCode}'
+			</if>
+			<if test="sgCode != null and sgCodeArray==null">
+			AND R_SG_CODE = '${sgCode}'
+			</if>
+
+			<if test="sgCodeArray != null">
+				AND R_SG_CODE IN
+				<foreach collection="sgCodeArray" item="item" separator="," open="(" close=")">
+					<trim suffixOverrides="">
+						'${item}'
+					</trim>
+				</foreach>
+			</if>
+
+			<if test="stockNo != null">
+			AND R_STOCK_NO LIKE '%'||${stockNo}||'%'
+			</if>
+			<if test="counselResultBgcode != null">
+			AND R_COUNSEL_RESULT_BGCODE = '${counselResultBgcode}'
+			</if>
+			<if test="counselResultMgcode != null">
+			AND R_COUNSEL_RESULT_MGCODE = '${counselResultMgcode}'
+			</if>
+			<if test="counselResultSgcode != null">
+			AND R_COUNSEL_RESULT_SGCODE = '${counselResultSgcode}'
+			</if>
+			<if test="userId != null">
+			AND R_USER_ID = '${userId}'
+			</if>
+			<if test="chNum != null">
+			AND R_CH_NUM = '${chNum}'
+			</if>
+			<if test="userName != null">
+			AND R_USER_NAME = '${userName}'
+			</if>
+			<if test="callId1 != null">
+			AND R_CALL_ID1 = '${callId1}'
+			</if>
+			<if test="callId2 != null">
+			AND R_CALL_ID2 = '${callId2}'
+			</if>
+			<if test="callId3 != null">
+			AND R_CALL_ID3 = '${callId3}'
+			</if>
+			<if test="extNum != null">
+			AND R_EXT_NUM LIKE '%'||${extNum}||'%'
+			</if>
+			<if test="custName != null">
+			AND R_CUST_NAME = '${custName}'
+			</if>
+			<if test="custPhone1 != null">
+			AND ( '02' || R_CUST_PHONE1 LIKE '%'||${custPhone1}||'%' OR R_CUST_PHONE1 LIKE '%'||${custPhone1}||'%' )
+			</if>
+			<if test="custPhone2 != null">
+			AND R_CUST_PHONE2 LIKE '%'||${custPhone2}||'%'
+			</if>
+			<if test="custPhone3 != null">
+			AND R_CUST_PHONE3 LIKE '%'||${custPhone3}||'%'
+			</if>
+			<if test="callKind1 != null">
+			AND R_CALL_KIND1 = '${callKind1}'
+			</if>
+			<if test="callKind2 != null">
+			AND R_CALL_KIND2 = '${callKind2}'
+			</if>
+			<if test="callStime != null">
+			AND R_CALL_STIME BETWEEN '${sStime}' AND '${eStime}'
+			</if>
+			<if test="callEtime != null">
+			AND R_CALL_ETIME BETWEEN '${eEtime}' AND '${eEtime}'
+			</if>
+			<if test="callTtime != null">
+			AND R_CALL_TTIME = '${callTtime}'
+			</if>
+			<choose>
+				<when test="sTtime != null and eTtime != null">
+				AND CAST(R_CALL_TTIME AS INT) BETWEEN TO_NUMBER('${sTtime}') AND TO_NUMBER('${eTtime}')
+				</when>
+				<when test="sTtime != null and eTtime eq null">
+				AND CAST(R_CALL_TTIME AS INT) &gt;= TO_NUMBER('${sTtime}')
+				</when>
+				<when test="sTtime eq null and eTtime != null">
+				AND CAST(R_CALL_TTIME AS INT) &lt;= TO_NUMBER('${eTtime}')
+				</when>
+			</choose>
+			<choose>
+				<when test="sTtimeConnect != null and eTtimeConnect != null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) BETWEEN TO_NUMBER('${sTtimeConnect}') AND TO_NUMBER('${eTtimeConnect}')
+				</when>
+				<when test="sTtimeConnect != null and eTtimeConnect eq null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) &gt;= TO_NUMBER('${sTtimeConnect}')
+				</when>
+				<when test="sTtimeConnect eq null and eTtimeConnect != null">
+				AND CAST(R_CALL_TTIME_CONNECT AS INT) &lt;= TO_NUMBER('${eTtimeConnect}')
+				</when>
+			</choose>
+			<if test="vSysCode != null">
+			AND R_V_SYS_CODE = '${vSysCode}'
+			</if>
+			<if test="listenUrl != null">
+			AND R_LISTEN_URL = '${listenUrl}'
+			</if>
+			<if test="vFileName != null">
+			AND R_V_FILENAME = '${vFileName}'
+			</if>
+			<if test="recMemo != null">
+			AND R_REC_MEMO LIKE '%'||${recMemo}||'%'
+			</if>
+
+			<if test="tContents != null">
+			AND R_T_CONTENTS LIKE '%'||${tContents}||'%'
+			</if>
+			<if test="custSocialNum != null">
+			AND R_CUST_SOCIAL_NUM LIKE '%'||${custSocialNum}||'%'
+			</if>
+			선택적 엑셀 다운로드 추가
+			<if test="recDateArr != null">
+				AND R_REC_DATE IN
+				<foreach collection="recDateArr" item="item" separator="," open="(" close=")">
+					'${item}'
+				</foreach>
+			</if>
+
+			<if test="recTimeArr != null">
+				AND R_REC_TIME IN
+				<foreach collection="recTimeArr" item="item" separator="," open="(" close=")">
+					'${item}'
+				</foreach>
+			</if>
+
+			<if test="recExtArr != null">
+				AND R_EXT_NUM IN
+				<foreach collection="recExtArr" item="item" separator="," open="(" close=")">
+					'${item}'
+				</foreach>
+			</if>
+			AND (R_BUFFER8 != 'B' OR R_BUFFER8 != 'A' OR R_BUFFER8 IS NULL)
+			<if test="queueNo1 != null">
+			AND R_QUEUE_NO1 = '${queueNo1}'
+			</if>
+			<if test="queueNo2 != null">
+			AND R_QUEUE_NO2 = '${queueNo2}'
+			</if>
+			<if test="recStartType != null">
+			AND R_REC_START_TYPE = '${recStartType}'
+			</if>
+			<if test="selfDisYn != null">
+			<choose>
+				<when test="selfDisYn eq 'Y'.toString()">
+				AND R_SELFDIS_YN = 'Y'
+				</when>
+				<otherwise>
+				AND ( R_SELFDIS_YN IS NULL OR R_SELFDIS_YN != 'Y' )
+				</otherwise>
+			</choose>
+			</if>
+			<if test="authyInfo != null">
+				AND
+				<foreach collection="authyInfo" item="item" separator="OR" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						R_BG_CODE = '${item.bgcode}' AND
+						</if>
+						<if test="item.mgcode != null">
+						R_MG_CODE = '${item.mgcode}' AND
+						</if>
+						<if test="item.sgcode != null">
+						R_SG_CODE = '${item.sgcode}' AND
+						</if>
+						<if test="item.user != null">
+						R_USER_ID = '${item.user}' AND
+						</if>
+					</trim>
+				</foreach>
+			</if>
+			'
+	</select> -->
+	
+	<!-- 청취이력 기록 -->
+	<insert id="insertLogListen" parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="postgres">
+		INSERT INTO RS_LOG_LISTEN(
+			r_rec_date,
+			r_rec_time,
+			r_ext_num,
+			r_user_id,
+			r_user_name,
+			r_listen_date,
+			r_listen_time
+		)VALUES (
+			#{recDate},
+			#{recTime},
+			#{extNum},
+			#{userId},
+			#{userName},
+			to_char(now(), 'yyyyMMdd'),
+			to_char(now(), 'HH24miss')
+		)
+	</insert>
+	<insert id="insertLogListen" parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId='sqlserver'>
+		INSERT INTO RS_LOG_LISTEN(
+			r_rec_date,
+			r_rec_time,
+			r_ext_num,
+			r_user_id,
+			r_user_name,
+			r_listen_date,
+			r_listen_time
+		)VALUES (
+			#{recDate},
+			#{recTime},
+			#{extNum},
+			#{userId},
+			#{userName},
+			CONVERT(varchar(8),GETDATE(),112),
+			(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		)
+	</insert>
+	<insert id="insertLogListen" parameterType="com.furence.recsee.main.model.SearchListInfo" databaseId="oracle">
+		INSERT INTO RS_LOG_LISTEN(
+			r_rec_date,
+			r_rec_time,
+			r_ext_num,
+			r_user_id,
+			r_user_name,
+			r_listen_date,
+			r_listen_time
+		)VALUES (
+			#{recDate},
+			#{recTime},
+			#{extNum},
+			#{userId},
+			#{userName},
+			TO_CHAR(CURRENT_DATE,'yyyymmdd')
+			TO_CHAR(CURRENT_DATE,'hh24miss')
+		)
+	</insert>
+	
+	
+	<!-- 청취이력 조회 -->
+	<select id="selectLogListen" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM
+		RS_LOG_LISTEN
+		<where>
+			R_REC_DATE = #{recDate}
+			AND	R_REC_TIME = #{recTime}
+			AND R_EXT_NUM = #{extNum}
+		</where>
+	</select>
+	
+	
+	<!-- 사용자 조직정보 변경시, 청취이력의 정보도 업데이트 by 천재교육 -->
+	<update id="updateGroupInfo" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		UPDATE rs_recfile
+		SET R_BG_CODE=#{bgCode}, R_MG_CODE=#{mgCode}, R_SG_CODE=#{sgCode}
+		<where>
+			R_REC_DATE <![CDATA[>=]]> #{recDateRaw}
+			AND	R_USER_ID=#{userId}
+		</where>
+	</update>
+	<!-- 파일 비활성 -->
+	<update id="updateInActive" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		UPDATE rs_recfile
+		SET R_REC_VISIBLE='H'
+		<where>
+			R_LISTEN_URL IN
+			<foreach collection="listenUrlList" item="item" separator="," open="(" close=")">
+				<trim suffixOverrides="">
+					<if test='urlEncYn != null and urlEncYn == "Y"'>
+						split_part(#{item}, 'url=', 1)||'url='
+							||convert_from(decrypt_iv(decode(split_part(#{item}, 'url=', 2), 'base64'), decode('f4150d4a1ac5708c29e437749045a39af4150d4a1ac5708c29e437749045a39a', 'hex'), decode('86afc43868fea6abd40fbf6d5ed50905', 'hex'), 'aes'), 'utf-8')
+					</if>
+					<if test='urlEncYn == null or urlEncYn == "N"'>
+						#{item}
+					</if>
+				</trim>
+			</foreach>
+		</where>
+	</update>
+	<select id="selectCSV" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM
+		rs_recfile
+		<where>
+			R_CALL_KEY_AP IN
+			<foreach collection="callKeyApList" item="item" separator="," open="(" close=")">
+				<trim suffixOverrides="">
+					#{item}
+				</trim>
+			</foreach>
+		</where>
+	</select>
+	
+	<select id="selectValidation" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM
+		rs_recfile
+		<where>
+			R_CALL_KEY_AP = #{callKeyAp}
+			<if test="recDate != null">
+				AND R_REC_DATE = #{recDate}
+			</if>
+<!-- 			<if test="recDate != null">
+				AND R_REC_DATE = #{recDate}
+			</if> -->
+		</where>
+	</select>
+	
+	<select id="selectRecSectionListInfo" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		SELECT
+				r_v_sys_code 
+			,	r_rec_date
+			,	r_rec_time
+			,	CASE WHEN CAST(R_CALL_TTIME AS INT)/3600 &gt; 0		
+				THEN '0'||TRUNC(CAST(R_CALL_TTIME AS INT)/3600)||':'||
+					CASE WHEN (MOD(CAST(R_CALL_TTIME AS INT),3600))/60 &lt; 1		
+					THEN
+						'0'||CASE WHEN MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60) &lt; 10 THEN TRUNC((MOD(CAST(R_CALL_TTIME AS INT),3600))/60) || ':0' || TRUNC(MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60)) ELSE TRUNC((MOD(CAST(R_CALL_TTIME AS INT),3600))/60) || ':' || TRUNC(MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60)) END
+					ELSE
+						CASE WHEN 
+							(MOD(CAST(R_CALL_TTIME AS INT),3600))/60 &lt; 10 THEN '0'||CASE WHEN MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60) &lt; 10 THEN TRUNC((MOD(CAST(R_CALL_TTIME AS INT),3600))/60) || ':0' || TRUNC(MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60)) ELSE TRUNC((MOD(CAST(R_CALL_TTIME AS INT),3600))/60) || ':' || TRUNC(MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60)) END
+						ELSE
+							CASE WHEN MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60) &lt; 10 THEN TRUNC((MOD(CAST(R_CALL_TTIME AS INT),3600))/60) || ':0' || TRUNC(MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60)) ELSE TRUNC((MOD(CAST(R_CALL_TTIME AS INT),3600))/60) || ':' || TRUNC(MOD((MOD(CAST(R_CALL_TTIME AS INT),3600)),60)) END
+						END
+					END
+				ELSE
+					'00:'||
+					CASE WHEN CAST(R_CALL_TTIME AS INT)/60 &lt; 1		
+					THEN
+						'0'||CASE WHEN MOD(CAST(R_CALL_TTIME AS INT),60) &lt; 10 THEN TRUNC(CAST(R_CALL_TTIME AS INT)/60) || ':0' || TRUNC(MOD(CAST(R_CALL_TTIME AS INT),60)) ELSE TRUNC(CAST(R_CALL_TTIME AS INT)/60) || ':' || TRUNC(MOD(CAST(R_CALL_TTIME AS INT),60)) END
+					ELSE
+						CASE WHEN 
+							CAST(R_CALL_TTIME AS INT)/60 &lt; 10 THEN '0'||CASE WHEN MOD(CAST(R_CALL_TTIME AS INT),60) &lt; 10 THEN TRUNC(CAST(R_CALL_TTIME AS INT)/60) || ':0' || TRUNC(MOD(CAST(R_CALL_TTIME AS INT),60)) ELSE TRUNC(CAST(R_CALL_TTIME AS INT)/60) || ':' || TRUNC(MOD(CAST(R_CALL_TTIME AS INT),60)) END
+						ELSE
+							CASE WHEN MOD(CAST(R_CALL_TTIME AS INT),60) &lt; 10 THEN TRUNC(CAST(R_CALL_TTIME AS INT)/60) || ':0' || TRUNC(MOD(CAST(R_CALL_TTIME AS INT),60)) ELSE TRUNC(CAST(R_CALL_TTIME AS INT)/60) || ':' || TRUNC(MOD(CAST(R_CALL_TTIME AS INT),60)) END
+						END
+					END		
+				END AS R_CALL_TTIME
+			,	r_cust_phone1
+			,	r_user_name
+			,	r_ext_num
+			,	r_call_id1
+			,	r_call_id2
+			,	r_rec_start_type
+		FROM
+		rs_recfile
+		<where>
+			<if test="callId1 != null">
+			r_call_id2 = #{callId1}
+			</if>
+			<if test="buffer3 != null">
+			r_buffer3 = #{buffer3}
+			</if>
+			<if test="buffer17 != null">
+			R_BUFFER17 = #{buffer17}
+			</if>
+			<if test="callId1 != null">
+			AND R_REC_DATE = #{callId1}
+			</if>
+		</where>
+		ORDER BY R_REC_DATE DESC, R_REC_TIME DESC
+	</select>
+	
+	<select id="selectBuffer3Count" parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="Integer">
+		SELECT
+				Count(*)
+		FROM
+		rs_recfile
+		<where>
+			R_REC_DATE = #{sDate} 
+		<if test="buffer3 != null">
+			AND R_BUFFER3 = #{buffer3}
+		</if>
+		<if test="buffer17 != null">
+			AND R_BUFFER17 = #{buffer17}
+		</if>
+		</where>
+	</select>
+	
+	<update id="updateRsRecfileInfo" databaseId="postgres" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		UPDATE rs_recfile
+			<include refid="updateRsRecfileInfoSet"></include>
+			<where>
+				R_REC_DATE = #{recDate}
+				AND R_REC_TIME = #{recTime}
+				AND R_EXT_NUM = #{extNum}
+				AND R_V_SYS_CODE = #{vSysCode}
+			</where>
+	</update>
+	
+	<sql id="updateRsRecfileInfoSet"  databaseId="postgres">
+		<set>
+			<trim prefixOverrides=",">
+				<if test="recRtime != null">, R_REC_RTIME = #{recRtime}</if>
+				<if test="bgCode != null">, R_BG_CODE = #{bgCode}</if>
+				<if test="mgCode != null">, R_MG_CODE = #{mgCode}</if>
+				<if test="sgCode != null">, R_SG_CODE = #{sgCode}</if>
+				<if test="userId != null">, R_USER_ID = #{userId}</if>
+				<if test="chNum != null">, R_CH_NUM = #{chNum}</if>
+				<if test="userName != null">, R_USER_NAME = #{userName}</if>
+				<if test="callId1 != null">, R_CALL_ID1 = #{callId1}</if>
+				<if test="callId2 != null">, R_CALL_ID2 = #{callId2}</if>
+				<if test="callId3 != null">, R_CALL_ID3 = #{callId3}</if>
+				<if test="custName != null">, R_CUST_NAME = #{custName}</if>
+				<if test="custPhone1 != null">, R_CUST_PHONE1 = #{custPhone1}</if>
+				<if test="custPhone2 != null">, R_CUST_PHONE2 = #{custPhone2}</if>
+				<if test="custPhone3 != null">, R_CUST_PHONE3 = #{custPhone3}</if>
+				<if test="callKind1 != null">, R_CALL_KIND1 = #{callKind1}</if>
+				<if test="callKind2 != null">, R_CALL_KIND2 = #{callKind2}</if>
+				<if test="callStime != null">, R_CALL_STIME = #{callStime}</if>
+				<if test="callEtime != null">, R_CALL_ETIME = #{callEtime}</if>
+				<if test="callTtime != null">, R_CALL_TTIME = #{callTtime}</if>
+				<if test="selfDisYn != null">, R_SELFDIS_YN = #{selfDisYn}</if>
+				<if test="vHddFlag != null">, R_V_HDD_FLAG = #{vHddFlag}</if>
+				<if test="listenUrl != null">, R_LISTEN_URL = #{listenUrl}</if>
+				<if test="vFileName != null">, R_V_FILENAME = #{vFileName}</if>
+				<if test="sSysCode != null">, R_S_SYS_CODE = #{sSysCode}</if>
+				<if test="sHddFlag != null">, R_S_HDD_FLAG = #{sHddFlag}</if>
+				<if test="screenUrl != null">, R_SCREEN_URL = #{screenUrl}</if>
+				<if test="recVisible != null">, R_REC_VISIBLE = #{recVisible}</if>
+				<if test="sFileName != null">, R_S_FILENAME = #{sFileName}</if>
+				<if test="sUploadYn != null">, R_S_UPLOAD_YN = #{sUploadYn}</if>
+				<if test="tSysCode != null">, R_T_SYS_CODE = #{tSysCode}</if>
+				<if test="recMemo != null">, R_REC_MEMO = #{recMemo}</if>
+				<if test="tHddFlag != null">, R_T_HDD_FLAG = #{tHddFlag}</if>
+				<if test="evalYn != null">, R_EVAL_YN = #{evalYn}</if>
+				<if test="textUrl != null">, R_TEXT_URL = #{textUrl}</if>
+				<if test="listenYn != null">, R_LISTEN_YN = #{listenYn}</if>
+				<if test="tFileName != null">, R_T_FILENAME = #{tFileName}</if>
+				<if test="tUploadYn != null">, R_T_UPLOAD_YN = #{tUploadYn}</if>
+				<if test="partStart != null">, R_PART_START = #{partStart}</if>
+				<if test="partEnd != null">, R_PART_END = #{partEnd}</if>
+				<if test="marking1 != null">, R_MARKING1 = #{marking1}</if>
+				<if test="marking2 != null">, R_MARKING2 = #{marking2}</if>
+				<if test="marking3 != null">, R_MARKING3 = #{marking3}</if>
+				<if test="marking4 != null">, R_MARKING4 = #{marking4}</if>
+				<if test="custSocialNum != null">, R_CUST_SOCIAL_NUM = #{custSocialNum}</if>
+				<if test="contractNum != null">, R_CONTRACT_NUM = #{contractNum}</if>
+				<if test="counselCode != null">, R_COUNSEL_CODE = #{counselCode}</if>
+				<if test="counselContent != null">, R_COUNSEL_CONTENT = #{counselContent}</if>
+				<if test="custAddress != null">, R_CUST_ADDRESS = #{custAddress}</if>
+				<if test="playerKind != null">, R_PLAYER_KIND = #{playerKind}</if>
+				<if test="tContents != null">, R_T_CONTENTS = #{tContents}</if>
+				<if test="receiptNum != null">, R_RECEIPT_NUM = #{receiptNum}</if>
+				<if test="buffer1 != null">, R_BUFFER1 = #{buffer1}</if>
+				<if test="buffer2 != null">, R_BUFFER2 = #{buffer2}</if>
+				<if test="buffer3 != null">, R_BUFFER3 = #{buffer3}</if>
+				<if test="bwYn != null">, R_BW_YN = #{bwYn}</if>
+				<if test="bwBgCode != null">, R_BW_BG_CODE = #{bwBgCode}</if>
+				<if test="bwSgCode != null">, R_BW_SG_CODE = #{bwSgCode}</if>
+				<if test="screenDaulUrl != null">, R_SCREEN_DUAL_URL = #{screenDaulUrl}</if>
+				<if test="buffer4 != null">, R_BUFFER4 = #{buffer4}</if>
+				<if test="buffer5 != null">, R_BUFFER5 = #{buffer5}</if>
+				<if test="buffer6 != null">, R_BUFFER6 = #{buffer6}</if>
+				<if test="buffer7 != null">, R_BUFFER7 = #{buffer7}</if>
+				<if test="buffer8 != null">, R_BUFFER8 = #{buffer8}</if>
+				<if test="buffer9 != null">, R_BUFFER9 = #{buffer9}</if>
+				<if test="buffer10 != null">, R_BUFFER10 = #{buffer10}</if>
+				<if test="buffer11 != null">, R_BUFFER11 = #{buffer11}</if>
+				<if test="buffer12 != null">, R_BUFFER12 = #{buffer12}</if>
+				<if test="buffer13 != null">, R_BUFFER13 = #{buffer13}</if>
+				<if test="buffer14 != null">, R_BUFFER14 = #{buffer14}</if>
+				<if test="buffer15 != null">, R_BUFFER15 = #{buffer15}</if>
+				<if test="buffer16 != null">, R_BUFFER16 = #{buffer16}</if>
+				<if test="buffer17 != null">, R_BUFFER17 = #{buffer17}</if>
+				<if test="buffer18 != null">, R_BUFFER18 = #{buffer18}</if>
+				<if test="buffer19 != null">, R_BUFFER19 = #{buffer19}</if>
+				<if test="buffer20 != null">, R_BUFFER20 = #{buffer20}</if>
+				<if test="cnId != null">, R_CNID = #{cnId}</if>
+				<if test="destIp != null">, R_DEST_IP = #{destIp}</if>
+				<if test="vdoUrl != null">, R_VDO_URL = #{vdoUrl}</if>
+				<if test="custId != null">, R_CUST_ID = #{custId}</if>
+				<if test="regiDate != null">, R_REGI_DATE = #{regiDate}</if>
+				<if test="manager != null">, R_MANAGER = #{manager}</if>
+				<if test="sRtp != null">, R_SRTP = #{sRtp}</if>
+				<if test="fKey != null">, F_KEY = #{fKey}</if>
+				<if test="sSrc != null">, R_SSRC = #{sSrc}</if>
+				<if test="rKey != null">, R_KEY = #{rKey}</if>
+				<if test="coNum != null">, R_CO_NUM = #{coNum}</if>
+				<if test="didNum != null">, R_DID_NUM = #{didNum}</if>
+				<if test="ueiData != null">, R_UEI_DATA = #{ueiData}</if>
+				<if test="queueNo1 != null">, R_QUEUE_NO1 = #{queueNo1}</if>
+				<if test="queueNo2 != null">, R_QUEUE_NO2 = #{queueNo2}</if>
+				<if test="recStartType != null">, R_REC_START_TYPE = #{recStartType}</if>
+				<if test="memoInfo != null">, R_MEMO_INFO = #{memoInfo}</if>
+				<if test="tag != null">, R_TAG = #{tag}</if>
+				<if test="stockNo != null">, R_STOCK_NO = #{stockNo}</if>
+				<if test="counselResultBgcode != null">, R_COUNSEL_RESULT_BGCODE = #{counselResultBgcode}</if>
+				<if test="counselResultMgcode != null">, R_COUNSEL_RESULT_MGCODE = #{counselResultMgcode}</if>
+				<if test="counselResultSgcode != null">, R_COUNSEL_RESULT_SGCODE = #{counselResultSgcode}</if>
+				<if test="vsendFileFlag != null">, R_VSEND_FILE_FLAG = #{vsendFileFlag}</if>
+				<if test="ssendFileFlag != null">, R_SSEND_FILE_FLAG = #{ssendFileFlag}</if>
+				<if test="vRecIp != null">, R_V_REC_IP = #{vRecIp}</if>
+				<if test="vRecFullpath != null">, R_V_REC_FULLPATH = #{vRecFullpath}</if>
+				<if test="vReadIp != null">, R_V_READ_IP = #{vReadIp}</if>
+				<if test="vReadFullpath != null">, R_V_READ_FULLPATH = #{vReadFullpath}</if>
+				<if test="sRecIp != null">, R_S_REC_IP = #{sRecIp}</if>
+				<if test="sRecFullpath != null">, R_S_REC_FULLPATH = #{sRecFullpath}</if>
+				<if test="sReadIp != null">, R_S_READ_IP = #{sReadIp}</if>
+				<if test="sReadFullpath != null">, R_S_READ_FULLPATH = #{sReadFullpath}</if>
+				
+				<if test="callKeyAp != null">, R_CALL_KEY_AP = #{callKeyAp}</if>
+				
+				<if test="callStimeConnect != null">, r_call_stime_connect = #{callStimeConnect}</if>
+				<if test="callTtimeConnect != null">, r_call_ttime_connect = #{callTtimeConnect}</if>
+				
+				<if test="rCustPhoneAp != null">, R_CUST_PHONE_AP = #{rCustPhoneAp}</if>
+				
+				<if test="companyTelno != null">, R_COMPANY_TELNO = #{companyTelno}</if>
+				<if test="companyTelnoNick != null">, R_COMPANY_TELNO_NICK = #{companyTelnoNick}</if>
+			</trim>
+		</set>
+	</sql>
+	
+	<!-- URL 복호화 쿼리 -->
+	<select id="selectUrlDecrypt" databaseId="postgres" resultMap="BaseResultMap">
+		select convert_from(decrypt_iv(decode(#{listenUrl}, 'base64'), decode('f4150d4a1ac5708c29e437749045a39af4150d4a1ac5708c29e437749045a39a', 'hex'), decode('86afc43868fea6abd40fbf6d5ed50905', 'hex'), 'aes'), 'utf-8');
+	</select>
+	
+	<update id="updateRsRecfile2Info" databaseId="postgres" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		UPDATE rs_recfile2
+		<set>
+			R_ERRORYN = 'Y'
+		</set>
+		<where>
+			R_CALL_KEY_AP = #{callKeyAp}
+		AND R_ERRORYN != 'Y'
+		AND R_PART_RECYN = 'N'
+		</where>
+	</update>
+	
+	
+	<insert id="insertRsRecfileInfo" databaseId="postgres" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		INSERT INTO public.rs_recfile2(
+	r_rec_date, r_rec_rtime, r_rec_time, r_br_cd, r_br_nm, r_cust_id, r_cust_nm, r_agnpe_nm, r_biz_dis, r_opr_no, r_opr_nm, r_advpe_no, r_advpe_nm, r_prd_cd, r_prd_nm, r_v_filename, r_call_key_ap, r_vsend_file_flag, r_v_rec_ip, r_v_rec_fullpath, r_v_read_ip, r_v_read_fullpath, r_call_stime, r_call_etime, r_call_ttime, r_re_recyn, r_part_recyn, r_erroryn, r_rec_key, r_prd_risk_gd, r_csinc_gd_nm, r_cust_info1, r_cust_info2,r_cust_info3)
+	
+	(select to_char(now(),'YYYYMMDD'),to_char(now(),'HH24'),to_char(now(),'HH24MISS'),
+	r_br_cd, r_br_nm, r_cust_id, r_cust_nm, r_agnpe_nm, r_biz_dis, r_opr_no,r_opr_nm, r_advpe_no, r_advpe_nm,
+	replace(r_prd_cd,'|',' / '),
+	<choose>
+		<when test="rPdtNm !=null">
+	 		#{rPdtNm}, 
+		</when>
+		<otherwise>
+			r_prd_nm,
+		</otherwise>
+	</choose>
+			#{vFileName}, 
+	r_call_key_ap,
+	'N',
+			#{vRecIp},
+			#{vRecFullpath}, 
+	null, null,
+			#{callStime},
+			#{callEtime},
+			#{callTtime}, 
+	'N', 'N', 'N', 
+			#{rRecKey},
+ 	<choose>
+		<when test="riskNm !=null">
+			#{riskNm},
+		</when>
+		<otherwise>
+			r_prd_risk_gd,
+		</otherwise>
+	</choose>
+	 r_csinc_gd_nm, r_cust_info1,
+	 	<choose>
+		<when test="server !=null">
+			#{server},
+		</when>
+		<otherwise>
+			r_cust_info2,
+		</otherwise>
+	</choose>
+ 	<choose>
+		<when test="!freeRecFlag">
+			'N'
+		</when>
+		<otherwise>
+			'Y'
+		</otherwise>
+	</choose>
+	from rs_recfile2
+	where r_call_key_ap=#{callKeyAp} and r_part_recyn ='Y' and  r_erroryn !='Y' and r_re_recyn ='N' limit 1)
+	
+	</insert>
+	
+	
+	<select id="selectttime" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="BaseResultMap">
+		select min(r_call_stime) as r_call_stime, max(r_call_etime) as r_call_etime, sum (r_call_ttime::integer)  as r_call_ttime
+		from rs_recfile2 
+				<choose>
+					<when test="!freeRecFlag">
+		where r_call_key_ap in (#{callKeyAp})
+					</when>
+					<otherwise>
+		where r_rec_key in (
+						select rs_script_step_call_key 
+						from rs_script_step_history
+						where rs_script_call_key = #{callKeyAp}
+							and rs_script_rec_state='Y' and rs_script_step_call_key!=''
+							)
+					</otherwise>
+				</choose>
+	</select>
+	
+	<!-- 녹취 관리 팝업 플레이어 그리드 조회 쿼리 -->
+	<select id="selectSearchScriptStepHistory" resultMap="SearchScriptStepHistoryMap">
+
+		WITH RECURSIVE script_tree as (        
+			select    1 as t_depth,                                 
+						rs_script_step_pk as t_key,                                
+						rs_script_step_name as t_name,                                
+						array[rs_script_step_order] as t_order,            
+						rs_script_step_parent as t_parent,                   
+						rs_script_rec_state,							    
+						rs_script_ta_state,							    
+						rs_script_step_call_key ,
+						rs_script_call_key
+			from rs_script_step_history            
+			where rs_script_call_key =  #{callId1}                      
+				and rs_use_yn='Y'                     
+				and rs_script_step_parent = 0                            
+		
+			union all           
+			
+			select a.t_depth+1,  
+					b.rs_script_step_pk, 
+					b.rs_script_step_name,           
+					array_append(a.t_order,b.rs_script_step_order),
+					rs_script_step_parent as t_parent,          
+					b.rs_script_rec_state,		   
+					b.rs_script_ta_state,		  
+					b.rs_script_step_call_key,
+					b.rs_script_call_key
+			from script_tree a, 
+					rs_script_step_history b           
+			where a.t_key =b.rs_script_step_parent                    
+				and rs_use_yn='Y'                     
+				and b.rs_script_call_key =  #{callId1}		
+		)			
+		
+		SELECT			r_rec_date, 			
+						r_rec_time, 			
+						CASE WHEN r_rec_visible = 'N' THEN '병합 파일' ELSE t_name END AS rs_script_step_name,
+						CASE WHEN (select count(*) from rs_retry_rec_history where r_call_key_ap=rs_recfile.r_call_key_ap) > 0 then 'Y' ELSE 'N' END AS r_retry_count,			
+						r_ext_num, 			
+						coalesce(r_call_ttime,'0') as r_call_ttime,			
+						coalesce(r_call_id1,#{callId1}) as r_call_id1 	, 			
+						CASE WHEN r_retry_reason = '0' or r_retry_reason = '3' then r_retry_reason_detail else (select r_code_name from rs_common_code where r_parent_code='retryRecReason' and r_code_value = r_retry_reason order by r_date desc, r_time desc limit 1) end as r_retry_reason_detail, 			
+						rs_script_step_call_key,rs_recfile.r_call_key_ap ,			
+						coalesce(r_rec_visible,'Y') as r_rec_visible		,
+						t_depth , 
+						t_parent,
+						t_key , 
+						coalesce((select count(*) from rs_script_step rss where rss.rs_script_step_pk = t_key),0) as more_product_yn ,
+						rs_script_ta_state
+		FROM			script_tree		
+		LEFT JOIN 			rs_recfile		
+				ON			rs_recfile.r_call_id1 = script_tree.rs_script_call_key		
+				AND			rs_recfile.r_call_key_ap = script_tree.rs_script_step_call_key		
+		LEFT JOIN 			rs_retry_rec_history		
+			ON 			rs_recfile.r_call_key_ap = rs_retry_rec_history.r_call_key_ap		
+		WHERE 			r_call_id1 = #{callId1} or r_call_id1 is null
+		ORDER BY			t_order
+
+			
+			
+			
+	</select>
+
+	<!-- 재녹취 전문 전송용 파라미터 조회 쿼리 (web -> client) -->
+	<select id="selectRecParamHistory" parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="String">
+		select r_rec_param from rs_rec_param_history where r_rec_key = #{callId1}
+	</select>
+		
+	<!-- 단계별 최종 녹취 파일 중 한달 이내 녹취된 파일들의 그룹 키 뽑아냄, 파라미터로 받아온 녹취(청취할라고 선택한 녹취)의 그룹키가 리스트에 있는지 체크, 있으면 0 없으면 1(삭제됨) -->
+	<select id="selectRectryOneMonth" parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="String" databaseId="postgres">
+		with rectry_om as (select r_call_id1 from rs_recfile where r_rec_visible = 'Y' and r_buffer10 = 'N' and r_rec_date > to_char(now()::timestamp - interval '1 month', 'YYYYMMDD') group by r_call_id1)
+		select case when #{callId1} IN (select * from rectry_om) then 0 else 1 end as rectry_om
+	</select>
+	
+	<select id="selectApiListenUrl" parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="Integer">
+		select  r_rec_date, r_rec_time
+		from rs_recfile  
+		where r_call_id1='%s' and r_rec_visible='N' and r_buffer10!='Y' order by 1 desc , 2 desc 
+		limit 1
+	</select>
+	<select id="selectMergeFileToCallKey" parameterType="String" resultMap="BaseResultMap">
+		select * from  rs_recfile rr  where rr.r_call_key_ap =#{callKey} and r_rec_visible = 'N' and r_buffer10='N'
+	</select>
+</mapper>

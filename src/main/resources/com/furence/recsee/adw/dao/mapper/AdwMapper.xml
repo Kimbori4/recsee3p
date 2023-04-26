@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.furence.recsee.adw.dao.AdwDao">
+
+	<resultMap id="adwData" type="com.furence.recsee.adw.model.CsvInfo">
+		<result column="r_rec_key" jdbcType="VARCHAR" property="recKey" />
+		<result column="r_call_key_ap" jdbcType="VARCHAR"
+			property="callKeyAp" />
+		<result column="r_cust_id" jdbcType="VARCHAR" property="custId" />
+		<result column="rcd_fmlt_auto_yn" jdbcType="VARCHAR"
+			property="rcdFmltAutoYn" />
+		<result column="add_rcd_yn" jdbcType="VARCHAR"
+			property="addRcdYn" />
+		<result column="add_rcd_rncd" jdbcType="VARCHAR"
+			property="addRcdMcd" />
+		<result column="add_rcd_rsn_2_txt" jdbcType="VARCHAR"
+			property="addRcdRsn2Txt" />
+		<result column="r_rec_date" jdbcType="VARCHAR"
+			property="recDate" />
+		<result column="r_rec_time" jdbcType="VARCHAR"
+			property="recTime" />
+		<result column="r_call_ttime" jdbcType="VARCHAR"
+			property="callTtime" />
+		<result column="lst_rcd_yn" jdbcType="VARCHAR"
+			property="lstRcdYn" />
+		<result column="r_prd_nm" jdbcType="VARCHAR"
+			property="productName" />
+		<result column="r_advpe_no" jdbcType="VARCHAR"
+			property="advpeNo" />
+		<result column="r_opr_no" jdbcType="VARCHAR" property="oprNo" />
+		<result column="ext_num" jdbcType="VARCHAR" property="extNum" />
+		<result column="r_biz_dis" jdbcType="VARCHAR" property="bizDis" />
+		<result column="rcd_sys_dscd" jdbcType="VARCHAR"
+			property="rcdSysDscd" />
+		<result column="rcd_sys_db_chg_dtm" jdbcType="VARCHAR"
+			property="rcdSysDbChgDtm" />
+		<result column="rcd_trn_kdcd" jdbcType="VARCHAR"
+			property="rcdTrnKdcd" />
+		<result column="mult_prd_rcd_yn" jdbcType="VARCHAR"
+			property="multPrdRcdYn" />
+	</resultMap>
+
+	<select id="selectAdwData" resultMap="adwData" parameterType="HashMap">
+		select
+			r_rec_key ,
+			r_call_key_ap ,
+			case
+				when length(r_cust_id)>9 then substr(r_cust_id,
+				0,
+				10)
+				else r_cust_id
+			end as r_cust_id ,
+			case
+				when r_prd_nm like '%수동%' then 'N'
+				else 'Y'
+			end as RCD_FMLT_AUTO_YN ,
+			(
+			select
+				case
+					when count(*) >0 then 'Y'
+					else 'N'
+				end as ADD_RCD_YN
+			from
+				rs_retry_rec_history
+			where
+				rs_retry_rec_history.r_call_key_ap in (
+				select
+					r_rec_key
+				from
+					rs_recfile2 b
+				where
+					b.r_call_key_ap = a.r_call_key_ap ) ) ,
+			'' as ADD_RCD_RNCD ,
+			(
+			select
+				substr(coalesce(array_to_string(array_agg(reason), ' / '), ''),
+				0,
+				130) as ADD_RCD_RSN_2_TXT
+			from
+				(
+				select
+					*
+				from
+					(
+					select
+						distinct
+						(case
+							when rs_retry_rec_history.r_retry_reason != '3' then (
+							select
+								r_code_name
+							from
+								rs_common_code
+							where
+								r_parent_code = 'retryRecReason'
+								and r_code_value = r_retry_reason )
+							else r_retry_reason_detail
+						end) reason
+					from
+						rs_script_step_history rs
+					left join rs_retry_rec_history on
+						rs_retry_rec_history.r_call_key_ap = rs.rs_script_step_call_key
+					where
+						rs_retry_rec_history.r_call_key_ap in (
+						select
+							r_rec_key
+						from
+							rs_recfile2 b
+						where
+							b.r_call_key_ap = a.r_call_key_ap
+							and r_part_recyn = 'Y' )
+						and r_retry_reason in ('3', '4', '5')
+				union (
+					select
+						case
+							when array_to_string(array_agg(reason), ' , ') is not null then '구간 - ' || array_to_string(array_agg(reason), ' / ')
+							else null
+						end
+					from
+						(
+						select
+							substring(rs_script_step_name, 0, 7) || ' - ' ||
+							(case when rs_retry_rec_history.r_retry_reason != '0' then (
+							select
+								r_code_name
+							from
+								rs_common_code
+							where
+								r_parent_code = 'retryRecReason'
+								and r_code_value = r_retry_reason )
+							else '기타사유 : ' || r_retry_reason_detail
+						end) reason,
+							r_date,
+							r_time
+						from
+							rs_script_step_history rs
+						left join rs_retry_rec_history on
+							rs_retry_rec_history.r_call_key_ap = rs.rs_script_step_call_key
+						where
+							rs_retry_rec_history.r_call_key_ap in (
+							select
+								r_rec_key
+							from
+								rs_recfile2 b
+							where
+								b.r_call_key_ap = a.r_call_key_ap
+								and r_part_recyn = 'Y' )
+							and r_retry_reason in ('0', '1', '2')
+						order by
+							r_date,
+							r_time )rx ) )tt
+				order by
+					reason desc )t ) ,
+			r_rec_date ,
+			r_rec_time ,
+			case
+				when cast(R_CALL_TTIME as INT)/ 3600 > 0 then '0' || cast(R_CALL_TTIME as INT)/ 3600 || ':' ||
+				case
+					when (cast(R_CALL_TTIME as INT)%3600)/ 60 <![CDATA[<]]> 1 then '0'
+					|| case when (cast(R_CALL_TTIME as INT)%3600)%60 <![CDATA[<]]> 10 then (cast(R_CALL_TTIME as INT)%3600)/ 60 || ':0' || (cast(R_CALL_TTIME as INT)%3600)%60
+					else (cast(R_CALL_TTIME as INT)%3600)/ 60 || ':' || (cast(R_CALL_TTIME as INT)%3600)%60
+				end
+				else
+				case
+					when (cast(R_CALL_TTIME as INT)%3600)/ 60 <![CDATA[<]]> 10 then '0'
+					|| case when (cast(R_CALL_TTIME as INT)%3600)%60 <![CDATA[<]]> 10 then (cast(R_CALL_TTIME as INT)%3600)/ 60 || ':0' || (cast(R_CALL_TTIME as INT)%3600)%60
+					else (cast(R_CALL_TTIME as INT)%3600)/ 60 || ':' || (cast(R_CALL_TTIME as INT)%3600)%60
+				end
+				else
+				case
+					when (cast(R_CALL_TTIME as INT)%3600)%60 <![CDATA[<]]> 10 then (cast(R_CALL_TTIME as INT)%3600)/ 60 || ':0' || (cast(R_CALL_TTIME as INT)%3600)%60
+					else (cast(R_CALL_TTIME as INT)%3600)/ 60 || ':' || (cast(R_CALL_TTIME as INT)%3600)%60
+				end
+			end
+		end
+		else '00:' ||
+		case
+			when cast(R_CALL_TTIME as INT)/ 60 <![CDATA[<]]> 1 then '0'
+			|| case when cast(R_CALL_TTIME as INT)%60 <![CDATA[<]]> 10 then cast(R_CALL_TTIME as INT)/ 60 || ':0' || cast(R_CALL_TTIME as INT)%60
+			else cast(R_CALL_TTIME as INT)/ 60 || ':' || cast(R_CALL_TTIME as INT)%60
+		end
+		else
+		case
+			when cast(R_CALL_TTIME as INT)/ 60 <![CDATA[<]]> 10 then '0'
+			|| case when cast(R_CALL_TTIME as INT)%60 <![CDATA[<]]> 10 then cast(R_CALL_TTIME as INT)/ 60 || ':0' || cast(R_CALL_TTIME as INT)%60
+			else cast(R_CALL_TTIME as INT)/ 60 || ':' || cast(R_CALL_TTIME as INT)%60
+		end
+		else
+		case
+			when cast(R_CALL_TTIME as INT)%60 <![CDATA[<]]> 10 then cast(R_CALL_TTIME as INT)/ 60 || ':0' || cast(R_CALL_TTIME as INT)%60
+			else cast(R_CALL_TTIME as INT)/ 60 || ':' || cast(R_CALL_TTIME as INT)%60
+		end
+		end
+		end
+		end as R_CALL_TTIME ,
+		'Y' as LST_RCD_YN ,
+		case
+		when r_prd_nm = '' then '(펀드신탁)투자성향분석'
+		else r_prd_nm
+		end as r_prd_nm ,
+		coalesce(r_advpe_no, '') as r_advpe_no,
+		r_opr_no,
+		'' as ext_num,
+		coalesce(r_biz_dis, '') as r_biz_dis ,
+		case
+		when coalesce(r_cust_info1, '')= '' then
+		(case
+		when (
+		select
+		count(*)
+		from
+		rs_product_list
+		where
+		rs_product_type = r_biz_dis
+		and rs_product_code = r_prd_cd) = 0 then 'CM'
+		else (
+		select
+		rs_sysdis_type
+		from
+		rs_product_list
+		where
+		rs_product_type = r_biz_dis
+		and rs_product_code = r_prd_cd
+		limit 1)
+		end )
+		else
+		(case
+		when r_cust_info1 in ('EISA', 'TISA') then 'ISA'
+		else r_cust_info1
+		end)
+		end as RCD_SYS_DSCD ,
+		r_rec_date || r_rec_time as RCD_SYS_DB_CHG_DTM ,
+		case
+		when r_prd_cd in('T0000000000001', 'T2014001580081') then 2
+		else 1
+		end as RCD_TRN_KDCD ,
+		case
+		when (r_prd_nm like '%양수도%'
+		or r_prd_nm like '%다계좌%') then 'Y'
+		else 'N'
+		end as MULT_PRD_RCD_YN
+		from
+		rs_recfile2 a
+		where
+		(r_rec_date <![CDATA[<=]]> #{eTime} and r_rec_date <![CDATA[>=]]> #{sTime})
+		and r_part_recyn = 'N'
+		and r_erroryn = 'N'
+		and r_br_nm != '영업점'
+	</select>
+
+
+</mapper>

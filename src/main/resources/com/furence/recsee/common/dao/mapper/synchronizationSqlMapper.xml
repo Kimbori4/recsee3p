@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.furence.recsee.common.dao.SynchronizationDao">
+	<resultMap id="BaseResultMap"
+		type="com.furence.recsee.common.model.SynchronizationVO">
+		<result column="R_IP" jdbcType="VARCHAR" property="ip" />
+		<result column="R_QUERY" jdbcType="VARCHAR" property="query" />
+		<result column="R_REASON" jdbcType="VARCHAR" property="reason" />
+	</resultMap>
+
+	<insert id="insertSynchronizationInfo" parameterType="com.furence.recsee.common.model.SynchronizationVO">
+		INSERT INTO rs_synchronization_info(r_ip,r_query,r_reason)
+		     VALUES (#{ip},#{query},#{reason})
+	</insert>
+
+
+</mapper>

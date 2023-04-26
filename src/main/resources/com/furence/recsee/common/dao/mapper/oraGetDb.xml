@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.OraGetDbDao">
+
+	<resultMap id="CodeInfoMap" type="com.furence.recsee.common.model.CodeInfoVO">
+		<result column="r_bg_code" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="r_bg_name" jdbcType="VARCHAR" property="rBgName" />
+		<result column="r_bg_sys" jdbcType="VARCHAR" property="rBgSys" />
+		<result column="r_bg_etc" jdbcType="VARCHAR" property="rBgEtc" />
+
+		<result column="r_mg_code" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="r_mg_name" jdbcType="VARCHAR" property="rMgName" />
+		<result column="r_mg_sys" jdbcType="VARCHAR" property="rMgSys" />
+		<result column="r_mg_etc" jdbcType="VARCHAR" property="rMgEtc" />
+
+		<result column="r_sg_code" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="r_sg_name" jdbcType="VARCHAR" property="rSgName" />
+		<result column="r_sg_sys" jdbcType="VARCHAR" property="rSgSys" />
+		<result column="r_sg_etc" jdbcType="VARCHAR" property="rSgEtc" />
+	</resultMap>
+
+	<resultMap id="CustomerInfoMap" type="com.furence.recsee.common.model.CustomerInfoVO">
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_MG_NAME" jdbcType="VARCHAR" property="rMgName" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="R_SG_NAME" jdbcType="VARCHAR" property="rSgName" />
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_USER_NAME" jdbcType="VARCHAR" property="rUserName" />
+		<result column="R_USER_LEVEL" jdbcType="VARCHAR" property="rUserLevel" />
+		<result column="POS_CD_NM" jdbcType="VARCHAR" property="posCdNm" />
+		<result column="JGRD_CD" jdbcType="VARCHAR" property="jgrdCd" />
+		<result column="JGRD_NM" jdbcType="VARCHAR" property="jgrdNm" />
+		<result column="MAIN_ROLE_CONT" jdbcType="VARCHAR" property="mainRoleCont" />
+		<result column="R_EXT_NO" jdbcType="VARCHAR" property="rExtNo" />
+		<result column="ATTEND_NM" jdbcType="VARCHAR" property="attendNm" />
+		<result column="OFFICE_TEL_NO" jdbcType="VARCHAR" property="officeTel" />
+		<result column="R_REGI_DATE" jdbcType="VARCHAR" property="rRegDate"/>
+		<result column="R_PASSWORD" jdbcType="VARCHAR" property="rPassword"/>
+	</resultMap>
+
+	<resultMap id="ChannInfoMap" type="com.furence.recsee.common.model.ChannInfo">
+		<result column="R_CH_NUM" jdbcType="INTEGER" property="rChNum" />
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="rSysCode" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="rExtNum" />
+		<result column="R_EXT_KIND" jdbcType="VARCHAR" property="rExtKind" />
+		<result column="R_EXT_IP" jdbcType="VARCHAR" property="rExtIp" />
+		<result column="R_EXT_MAC" jdbcType="VARCHAR" property="rExtMac" />
+		<result column="R_RX_AMP" jdbcType="DOUBLE" property="rRxAmp" />
+		<result column="R_EXT_KEY" jdbcType="VARCHAR" property="rExtKey" />
+		<result column="R_EXT_AGT_IP" jdbcType="VARCHAR" property="rExtAgtIp" />
+		<result column="R_TX_AMP" jdbcType="DOUBLE" property="rTxAmp" />
+		<result column="R_VOLUME" jdbcType="DOUBLE" property="rVolume" />
+		<result column="R_AGC" jdbcType="DOUBLE" property="rAgc" />
+		<result column="R_REC_YN" jdbcType="VARCHAR" property="rRecYn" />
+		<result column="R_LOG_YN" jdbcType="VARCHAR" property="rLogYn" />
+		<result column="R_SCREEN_YN" jdbcType="VARCHAR" property="rScreenYn" />
+		<result column="R_CH_TENANT" jdbcType="VARCHAR" property="rChTenant" />
+		<result column="R_REC_TYPE" jdbcType="VARCHAR" property="rRecType" />
+	</resultMap>
+
+	<parameterMap id="custInfoMap" type="hashmap">
+		<parameter property="P_CUST_PHONE_NO" 	mode="IN" 	jdbcType="VARCHAR" 	javaType="java.lang.String"/>
+		<parameter property="P_INFO_YN" 		mode="OUT" 	jdbcType="VARCHAR" 	javaType="java.lang.String"/>
+		<parameter property="P_CUST_NM" 		mode="OUT" 	jdbcType="VARCHAR" 	javaType="java.lang.String"/>
+		<parameter property="P_JUMIN_NO" 		mode="OUT" 	jdbcType="VARCHAR" 	javaType="java.lang.String"/>
+	</parameterMap>
+
+	<!-- <select id="selectsCustomerList" databaseId="oracle" parameterType="string" resultMap="CustomerInfoMap">
+
+		SELECT *
+		FROM (
+			SELECT
+				DISTINCT CASE WHEN SUBSTR(OFFICE_TEL_NO,-4) IS NOT NULL THEN ROW_NUMBER() OVER(PARTITION BY SUBSTR(OFFICE_TEL_NO,-4) ORDER BY UPDT_DT DESC) ELSE 1 END RN,
+				A.BRCD			R_MG_CODE,
+				A.BRCD_NM		R_MG_NAME,
+				A.TEAM_CD		R_SG_CODE,
+				CASE WHEN A.TEAM_CD_NM IS NULL THEN TEAM_CD END R_SG_NAME,
+				A.EMP_NO		R_USER_ID,
+				A.HAN_NM		R_USER_NAME,
+				A.POS_CD		R_USER_LEVEL,
+				SUBSTR(A.OFFICE_TEL_NO , -4) AS R_EXT_NO,
+				A.EMP_NO 		R_PASSWORD,
+				A.UPDT_DT
+			FROM ZZ.TB_ZZ1401_EMP A ,
+				ZZ.TB_ZZ1601_EMPCONDT B
+			WHERE
+					(A.WORK_STCD = '1' OR A.WORK_STCD = '2')
+	           AND   A.BR_CD != 'ADD'
+	           AND   A.EMP_NO = B.EMP_NO(+)
+	           AND   A.EMP_NO NOT LIKE '%u%'
+	           AND   A.EMP_NO NOT LIKE '%C%'
+	           AND	( A.POS_CD = '230'
+	            OR   A.POS_CD = '180'
+	            OR	 A.POS_CD = '156'
+	            OR   A.POS_CD = '130'
+	            OR   A.POS_CD = '127'
+	            OR   A.POS_CD = '033'
+			)
+		) WHERE RN = 1
+
+	</select> -->
+
+	<!-- <select id="selectsMgCodeList" databaseId="oracle" parameterType="string" resultMap="CodeInfoMap">
+
+		SELECT
+			DISTINCT
+			BRCD 		R_MG_CODE,
+		   	BRCD_NM		R_MG_NAME
+
+		FROM 	ZZ.TB_ZZ1401_EMP
+
+		WHERE ( WORK_STCD = '1' OR WORK_STCD = '2')
+		 	AND 	BR_CD 	 != 'ADD'
+			AND   BR_CD_NM != '영업부'
+			AND   EMP_NO NOT LIKE '%u%'
+		    AND   EMP_NO NOT LIKE '%C%'
+
+	</select>
+ -->
+	<!-- <select id="selectsSgCodeList" databaseId="oracle" parameterType="string" resultMap="CodeInfoMap">
+
+		SELECT
+			DISTINCT
+	   		BRCD		R_MG_CODE,
+	     	BRCD_NM		R_MG_NAME,
+			TEAM_CD		R_SG_CODE,
+			CASE WHEN TEAM_CD_NM IS NULL THEN TEAM_CD ELSE TEAM_CD_NM END R_SG_NAME
+
+	   	FROM 	ZZ.TB_ZZ1401_EMP A,
+	      		ZZ.TB_ZZ1601_EMPCONDT B
+
+	 	WHERE ( A.WORK_STCD = '1' OR A.WORK_STCD = '2')
+	   	  AND 	A.BR_CD != 'ADD'
+	   	  AND 	A.EMP_NO = B.EMP_NO(+)
+	   	  AND 	B.ATTEND_DY(+) = TO_CHAR(SYSDATE,'YYYYMMDD')
+
+	</select>
+ -->
+	<select id="selectCustInfo" databaseId="oracle" statementType="CALLABLE" parameterMap="custInfoMap">
+		{ call SE.SP_TMP_CC_GETCUSTINFO(?, ?, ?, ?) }
+	</select>
+
+	<!-- 상단 주공 프로젝트 -->
+
+	<!-- 넧서스 인코딩 관련 부분, 단, 다른 사용자는 아래 SET NAMES 부분을 의미없는 select 쿼리로 변경하여 사용할 것  -->
+	<select id="encodingCHAR" databaseId="mysql" resultType="string">
+		set names utf8
+	</select>
+	<select id="encodingCHAR" databaseId="oracle" resultType="string">
+		SELECT '' FROM DUAL
+	</select>
+	<select id="encodingCHAR" resultType="string">
+		SELECT ''
+	</select>
+
+	<!-- 넥서스 시작 -->
+
+	<!-- <select id="selectsCustomerList" databaseId="mysql" parameterType="string" resultMap="CustomerInfoMap"> -->
+	<select id="selectsCustomerList" databaseId="oracle" parameterType="string" resultMap="CustomerInfoMap">
+		SELECT DISTINCT
+			EMPLOYEEGRP_ID AS R_MG_CODE,
+			EMPLOYEEGRP_ID AS R_MG_NAME,
+			EMPLOYEEPART_ID AS R_SG_CODE,
+			EMPLOYEEPART_ID AS R_SG_NAME,
+			<!-- EMPLOYEE_PAWD AS R_PASSWORD, -->
+			EMPLOYEE_ID AS R_PASSWORD,
+			EMPLOYEE_ID AS R_USER_ID,
+			LOGIN_ID AS R_EMP_ID,
+			EMPLOYEE_NAME AS R_USER_NAME,
+			EMPLOYEE_CLASS AS R_USER_LEVEL,
+			LOGIN_ID AS R_EXT_NO,
+			REPLACE(JOINING_DATE,'-','') AS R_REGI_DATE
+         FROM ma_employee
+            where EMPLOYEEPART_ID not in (select EMPLOYEEPART_ID from MA_EMPLOYEEPART WHERE EMPLOYEEPART_NAME = 'IVR')
+
+	</select>
+
+
+	<!-- <select id="selectsMgCodeList" databaseId="mysql" parameterType="string" resultMap="CodeInfoMap"> -->
+	<select id="selectsMgCodeList" databaseId="oracle" parameterType="string" resultMap="CodeInfoMap">
+	   	SELECT
+	   		EMPLOYEEGRP_ID as R_MG_CODE,
+	     	EMPLOYEEGRP_NAME as R_MG_NAME
+	   	FROM
+	   		MA_EMPLOYEEGRP
+	   	where EMPLOYEEGRP_NAME NOT IN ('IVR')
+
+	</select>
+<!--
+	<select id="selectsSgCodeList" databaseId="mysql" parameterType="string" resultMap="CodeInfoMap"> -->
+	<select id="selectsSgCodeList" databaseId="oracle" parameterType="string" resultMap="CodeInfoMap">
+	   	SELECT  <!-- DISTINCT -->
+	   			EMPLOYEEGRP_ID as R_MG_CODE,
+	     	    EMPLOYEEGRP_ID as R_MG_NAME,
+				EMPLOYEEPART_ID as R_SG_CODE,
+				<!-- EMPLOYEEPART_ID as R_SG_NAME -->
+				EMPLOYEEPART_NAME as R_SG_NAME
+	   	<!-- FROM 	MA_EMPLOYEE -->
+	   	FROM 	MA_EMPLOYEEPART
+	   	where EMPLOYEEPART_NAME NOT IN ('IVR')
+	</select>
+
+	<select id="selectChannelInfo" databaseId="mysql" resultMap="ChannInfoMap">
+		SELECT DN AS R_CH_NUM, DN_IP AS R_EXT_IP, OBSERVER_FLAG AS R_REC_YN
+		FROM MA_DN
+	</select>
+
+	<select id="selectMChannCnt" databaseId="mysql" parameterType="com.furence.recsee.common.model.ChannInfo" resultType="Integer">
+		SELECT COUNT(DN) FROM MA_DN WHERE DN= #{rExtNum}
+	</select>
+	<!-- 넥서스 끝 -->
+</mapper>

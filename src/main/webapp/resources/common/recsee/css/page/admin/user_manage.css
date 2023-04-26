@@ -1,0 +1,70 @@
+/* 해당페이지만 body style 변경 */
+/* body,html{
+	background-color: #ffffff !important;
+} */
+
+/* 해당페이지만 탭바 디자인 변경 */
+/* .ui_tabbar_section{
+	background-color: #ffffff !important;
+} */
+
+
+/* 사용자 그룹관리 레이어 */
+.group_tree_pannel{
+	float: left;
+	width: 255px !important; 
+	/* width: 290px !important; *//* css for jp */
+	background-color: #ffffff;
+	border-bottom: 1px solid #dddddd;
+}
+/* 사용자 관리 레이어 */
+.user_manage_pannel{
+	float: left;
+ 	width: calc(99.9% - 256px) !important; 
+/*	width: calc(99.9% - 291px) !important; *//* css for jp */
+	border-left: 1px solid #bbbbbb;
+}
+
+/* 허용 범위 관리 레이어 */
+.allowable_manage_pannel{
+	float: left;
+	width: calc(99.9% - 551px) !important;
+	border-left: 1px solid #bbbbbb;
+}
+
+/* 녹취 삭제 관리 레이어 */
+.delRecfile_manage_pannel{
+	float: left;
+	 width: calc(99.9% - 256px) !important; 
+	border-left: 1px solid #bbbbbb;
+}
+
+/* 녹취 삭제 관리 레이어 */
+.userInterface_manage_pannel{
+	float: left;
+	width: calc(99.9% - 256px) !important;
+	border-left: 1px solid #bbbbbb;
+}
+/* 권한 그룹관리 레이어 */
+.group_manage_pannel{
+	float: left;
+	width: 295px;
+	/* width: 340px; css for jp */
+	height: auto;
+	background-color: #ffffff;
+}
+
+/* 권한관리 레이어 */
+.juri_manage_pannel{
+	float: left;
+    width: calc(100% - 296px);
+    /* width: calc(100% - 342px); css for jp */
+    height: auto;
+    border-left: 1px solid #bbbbbb;
+}
+
+/* 해당 페이지만 그리드 디자인 변경 */
+#gridGroupManage table.hdr tr:nth-child(2) td {
+    border-bottom: 1px solid #eeeeee!important;
+    vertical-align: middle !important;
+}

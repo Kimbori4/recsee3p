@@ -1,0 +1,206 @@
+@charset "UTF-8";
+*******************************************************************************	
+*******************************************************************************
+/* 스크립트 조회 페이지*/
+
+#search_box{
+	width: 1250px !important;
+    height: 900px !important;
+    
+    float: right !important;
+    position: absolute !important;
+    margin-top: 100px !important;
+}
+#keywordRemoveImg {
+	width: 30px;
+	height: 15px;
+	background-image: url('../../../../images/project/icon/wooribank/icon_btn_exit_white.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 10px;
+	position: absolute;
+	right: 15px;
+	bottom: 5px;
+	cursor: pointer;
+}
+#searchBox {
+	position: relative;
+}
+#fixed_div{
+	width: 1250px !important;		
+}
+
+#searchKeyword{
+	width: 490px !important;
+}
+
+#script_info_box{
+ 	width: 100%  !important;  
+    height: 750px !important;   
+    background-color: white !important;
+   	float: left !important;
+    font-size: 14px !important;
+}
+.search_btn{
+	margin-top : 3px !important;
+}
+
+#script_info_box ul select{
+    width: 80px !important;
+    height: 26px !important;
+    border-radius : 4px !important;
+    float: left !important;
+    display: block !important;
+    border: 1px solid #dddddd !important;
+    padding-left: 3px !important;
+    font-size : 12px !important;
+}
+
+/*상품 내역검색 input창 */
+.search_script_contents{
+	width: 850px !important;
+    height: 22px !important;
+    line-height: 22px !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-bottom: 1px solid #fff !important;
+    color: white !important;
+    margin-right: 10px !important;
+    margin-left: 15px !important;
+    box-sizing: border-box !important;
+    outline: 0 !important;
+    border-radius: 0 !important;
+    padding-left: 0 !important;
+
+	}
+
+
+#search_script_grid{
+	width: 100% !important;
+/* 	width: 1270px !important; */
+   	height: 670px !important;
+}
+
+.right_bottom_btn{
+    margin-top: 0px !important;
+   	margin-right: 1% !important;
+   	width: auto !important;
+   	float: right !important;
+}
+
+.direct_Scipt_Insert_Btn{
+	width: 87px  !important;
+    height: 38px  !important;
+    margin: 0px 0px 0px -10px !important;
+	text-align: center !important;
+    float: left !important;
+}
+
+
+
+/* 스크립트 조회 페이지 신규수정*/
+
+/*조회 section class */
+.filter {
+/*     background-color: #7AACFE !important; */
+    background-color: #4cb51e !important;
+    padding: 7px !important;
+    height : 80px !important;
+}
+
+#searchBtn{
+	width : 63px !important;
+	height : 26px !important ;
+	background: #111418 !important;
+    color: #fff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;	
+    float : none !important;	
+}
+
+
+	
+*******************************************************************************	
+*******************************************************************************	
+
+#scriptGrid.gridbox table.obj td{
+	border : 0px!important;
+}
+
+#scriptGrid.gridbox {
+	border : 0px !important;
+}
+
+
+#scriptGrid>.xhdr {
+	height: 0px !important;
+}
+
+#scriptTreeGrid ul {
+	width: 100% !important;
+	height: 100% !importants;
+}
+
+#scriptTreeGrid ul li {
+	width: 400px !important;
+	height: 40px !important;
+	font-size: 15px !important;
+	text-align: left !important;
+	color: #000000 !important;
+	border: 1px solid #efefef !important;
+	border-collapse: collapse !important;
+	padding: 20px 40px 0px !important;
+	vertical-align: middle !important;
+	cursor: pointer !important;
+}
+
+#scriptTreeGrid ul li:hover {
+	background-color: #deedff !important;
+}
+
+#scriptGrid.gridbox {
+	border : 0px !important;
+}
+
+
+/* 스크립트  ELt 상품 조건 표출 될 bar*/
+.eltProductCondition{
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 823px !important;
+    line-height: 20px !important;
+    height: auto;
+    margin: 5px 0px 0px 0px;
+    display: inline-flex;
+}
+
+.eltProductValue{ 
+    border: 1px solid #dddddd;
+    border-radius: 5px !important;
+    line-height: 20px !important;
+    margin: 0px 0px 0px 0px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    padding: 0px 5px 0px 5px;		
+}
+
+.eltProductConditionName{
+    width: auto;
+    color : white;
+    font-weight : 100;
+    font-size : 11px;
+}
+*******************************************************************************	
+*******************************************************************************	
+/* IE버전 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+	#search_script_edit_title1{
+	/* 		height: 648px !important; */
+		
+	}
+
+}
+	

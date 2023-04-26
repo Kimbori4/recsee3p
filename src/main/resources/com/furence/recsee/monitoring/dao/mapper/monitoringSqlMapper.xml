@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.monitoring.dao.MonitoringInfoDao">
+
+	<resultMap id="OfficeMonitoringRoomMap" type="com.furence.recsee.monitoring.model.OfficeMonitoringRoomVO">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_ROOM_INFO" jdbcType="VARCHAR" property="rRoomInfo" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="R_BG_LOCATION" jdbcType="VARCHAR" property="rBgLocation" />
+		<result column="R_MG_LOCATION" jdbcType="VARCHAR" property="rMgLocation" />
+		<result column="R_SG_LOCATION" jdbcType="VARCHAR" property="rSgLocation" />
+		<result column="R_SEE_PERSON" jdbcType="VARCHAR" property="rSeePerson" />
+		<result column="R_ROOM_IDX" jdbcType="VARCHAR" property="rRoomIdx" />
+	</resultMap>
+	<resultMap id="OfficeMonitoringAgentMap" type="com.furence.recsee.monitoring.model.OfficeMonitoringVO">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_ROOM_IDX" jdbcType="VARCHAR" property="rRoomIdx" />
+		<result column="R_EXT_NO" jdbcType="VARCHAR" property="rExtNo" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="R_BG_CODE_SEAT" jdbcType="VARCHAR" property="rBgCodeSeat" />
+		<result column="R_MG_CODE_SEAT" jdbcType="VARCHAR" property="rMgCodeSeat" />
+		<result column="R_SG_CODE_SEAT" jdbcType="VARCHAR" property="rSgCodeSeat" />
+	</resultMap>
+
+	<resultMap id="AlertListMap" type="com.furence.recsee.monitoring.model.AlertList">
+		<result column="R_ALERT_OBJECT" jdbcType="VARCHAR" property="rAlertObject" />
+		<result column="R_ALERT_INDEX" jdbcType="VARCHAR" property="r_alert_index" />
+		<result column="R_ALERT_OBJECT_NAME" jdbcType="VARCHAR" property="rAlertObjectName" />
+		<result column="R_ALERT_REASON_OBJECT" jdbcType="VARCHAR" property="rAlertReasonObject" />
+		<result column="R_ALERT_REASON_OBJECT_NAME" jdbcType="VARCHAR" property="rAlertReasonObjectName" />
+		<result column="R_ALERT_START_DATE" jdbcType="VARCHAR" property="rAlertStartDate" />
+		<result column="R_ALERT_START_TIME" jdbcType="VARCHAR" property="rAlertStartTime" />
+		<result column="R_ALERT_END_DATE" jdbcType="INTEGER" property="rAlertEndDate" />
+		<result column="R_ALERT_END_TIME" jdbcType="VARCHAR" property="rAlertEndTime" />
+		<result column="R_RESOLVE" jdbcType="VARCHAR" property="rResolve" />
+		<result column="R_ALERT_STATE" jdbcType="VARCHAR" property="rAlertState" />
+		<result column="R_ALERT_DEFINE" jdbcType="VARCHAR" property="rAlertDefine" />
+		<result column="R_ALERT_STATE_TYPE" jdbcType="VARCHAR" property="rAlertStateType" />
+	</resultMap>
+
+	<resultMap id="selectUsingTargetItemListMaP" type="com.furence.recsee.monitoring.model.ControlTargetVO">
+		<result column="RM_TARGET_ID" jdbcType="VARCHAR" property="rm_target_id" />
+		<result column="RM_TARGET_NAME" jdbcType="VARCHAR" property="rm_target_name" />
+		<result column="RM_TARGET_TYPE" jdbcType="VARCHAR" property="rm_target_type" />
+		<result column="RM_TARGET_IP" jdbcType="VARCHAR" property="rm_target_ip" />
+		<collection property="itemList" ofType="com.furence.recsee.monitoring.model.ItemVo">
+			<result column="RM_ITEM_INDEX" jdbcType="VARCHAR" property="rm_item_index" />
+			<result column="RM_USE_MONITORING_ITEM_ID" jdbcType="VARCHAR" property="rm_use_monitoring_item_id" />
+			<result column="RM_ITEM_NAME" jdbcType="VARCHAR" property="rm_item_name" />
+			<result column="RM_ITEM_LIMIT" jdbcType="VARCHAR" property="rm_item_limit" />
+			<result column="RM_ITEM_UNIT" jdbcType="INTEGER" property="rm_item_unit" />
+		</collection>
+	</resultMap>
+
+	<resultMap id="realTimeSettingMap" type="com.furence.recsee.monitoring.model.RealTimeSettingInfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_SETTING_YN" jdbcType="VARCHAR" property="rSettingYn" />
+		<result column="R_SETTING_TYPE" jdbcType="VARCHAR" property="rSettingType" />
+		<result column="R_SETTING_NUM" jdbcType="VARCHAR" property="rSettingNum" />
+	</resultMap>
+	
+	<resultMap id="bluePrintMap" type="com.furence.recsee.monitoring.model.BluePrintInfo">
+		<result column="R_BLUEPRINT_SEQ" jdbcType="VARCHAR" property="rBlueprintSeq" />
+		<result column="R_BLUEPRINT_NAME" jdbcType="VARCHAR" property="rBlueprintname" />
+		<result column="R_BLUEPRINT_JOIN_ID" jdbcType="VARCHAR" property="rBlueprintjoinId" />
+		<result column="R_BLUEPRINT_SHARE_ID" jdbcType="VARCHAR" property="rBlueprintshareId" />
+		<result column="R_BLUEPRINT_MG_SHARE" jdbcType="VARCHAR" property="rBlueprintMgShare" />
+		<result column="R_BLUEPRINT_SG_SHARE" jdbcType="VARCHAR" property="rBlueprintsgShare" />
+		<result column="R_BLUEPRINT_PAINT" jdbcType="VARCHAR" property="rBlueprintPaint" />
+	</resultMap>
+	
+	<resultMap id="SearchResultMap" type="com.furence.recsee.main.model.SearchListInfo">
+		<result column="CALL_COUNT" jdbcType="VARCHAR" property="rCallCount" />
+		<result column="CALL_TIME" jdbcType="VARCHAR" property="rCallTtime" />
+	</resultMap>
+
+	<resultMap id="SystemRealtimeInfoMap" type="com.furence.recsee.monitoring.model.SystemRealtimeInfo">
+		<result column="R_SYS_GROUP_CODE" jdbcType="VARCHAR" property="rSysGroupCode" />
+		<result column="R_SYS_IP" jdbcType="VARCHAR" property="rSysIp" />
+		<result column="R_SYS_NAME" jdbcType="VARCHAR" property="rSysName" />
+		<result column="R_USE_YN" jdbcType="VARCHAR" property="rUseYn" />
+	</resultMap>
+
+	<select id="selectTargetList" databaseId="postgres" resultType="com.furence.recsee.monitoring.model.ControlTargetVO">
+	   	SELECT
+	   			RM_TARGET_ID
+	   		,	RM_TARGET_NAME
+	   		,	RM_TARGET_TYPE
+	   		,	RM_TARGET_IP
+	   		,	RM_TARGET_USE
+	   		,	RM_TARGET_DESCR
+	   	FROM RM_MONITORING_TARGET_LIST
+	   	ORDER BY RM_TARGET_ID::integer
+	</select>
+ 	<select id="selectTargetList" databaseId="sqlserver" resultType="com.furence.recsee.monitoring.model.ControlTargetVO">
+	   	SELECT
+	   			RM_TARGET_ID
+	   		,	RM_TARGET_NAME
+	   		,	RM_TARGET_TYPE
+	   		,	RM_TARGET_IP
+	   		,	RM_TARGET_USE
+	   		,	RM_TARGET_DESCR
+	   	FROM RM_MONITORING_TARGET_LIST
+	   	ORDER BY convert(integer,RM_TARGET_ID)
+	</select>
+	<select id="selectTargetList" databaseId="oracle" resultType="com.furence.recsee.monitoring.model.ControlTargetVO">
+	   	SELECT
+	   			RM_TARGET_ID
+	   		,	RM_TARGET_NAME
+	   		,	RM_TARGET_TYPE
+	   		,	RM_TARGET_IP
+	   		,	RM_TARGET_USE
+	   		,	RM_TARGET_DESCR
+	   	FROM RM_MONITORING_TARGET_LIST
+	   	ORDER BY TO_NUMBER(RM_TARGET_ID)
+	</select>
+
+	<update id="updateTarget" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+	 	UPDATE RM_MONITORING_TARGET_LIST
+	 	SET RM_TARGET_NAME=#{rm_target_name}
+		 	,	RM_TARGET_TYPE=#{rm_target_type}
+	 		,	RM_TARGET_IP=#{rm_target_ip}
+	 		,	RM_TARGET_USE=#{rm_target_use}
+	 		,	RM_TARGET_DESCR=#{rm_target_descr}
+	 	WHERE RM_TARGET_ID=#{rm_target_id}
+	</update>
+ 	<!-- 관제 대상 추가 -->
+	<insert id="insertTarget" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		<selectKey keyProperty="seq" resultType="Integer" order="BEFORE">
+			select coalesce(max(rm_target_id::integer),0)+1 from rm_monitoring_target_list
+		</selectKey>
+		INSERT
+		INTO RM_MONITORING_TARGET_LIST
+		VALUES (#{seq}::CHARACTER VARYING, #{rm_target_name}, #{rm_target_type}, #{rm_target_ip}, #{rm_target_use}, #{rm_target_descr})
+	</insert>
+	<insert id="insertTarget" databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		<selectKey keyProperty="seq" resultType="Integer" order="BEFORE">
+			select coalesce(max(convert(integer,rm_target_id)),0)+1 from rm_monitoring_target_list
+		</selectKey>
+		INSERT
+		INTO RM_MONITORING_TARGET_LIST
+		VALUES (convert(varchar,#{seq}), #{rm_target_name}, #{rm_target_type}, #{rm_target_ip}, #{rm_target_use}, #{rm_target_descr})
+	</insert>
+	<insert id="insertTarget" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		<selectKey keyProperty="seq" resultType="Integer" order="BEFORE">
+			select coalesce(max(TO_NUMBER(rm_target_id)),0)+1 from rm_monitoring_target_list
+		</selectKey>
+		INSERT
+		INTO RM_MONITORING_TARGET_LIST
+		VALUES (TO_CHAR(#{seq}), #{rm_target_name}, #{rm_target_type}, #{rm_target_ip}, #{rm_target_use}, #{rm_target_descr})
+	</insert>
+	<!-- 관제 대상 추가에 따른 ui추가 -->
+	<insert id="insertTargetOrder" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		INSERT
+		INTO RM_MONITORING_TARGET_UI_INFO (RM_TARGET_UI_ID, RM_TARGET_ID, RM_TARGET_UI_ORDER)
+		VALUES ((SELECT coalesce(MAX(RM_TARGET_UI_ID::INTEGER),0)+1 FROM RM_MONITORING_TARGET_UI_INFO),
+						#{seq}::CHARACTER VARYING,
+						(SELECT  coalesce(MAX(RM_TARGET_UI_ORDER::INTEGER),0)+1FROM RM_MONITORING_TARGET_UI_INFO))
+	</insert>
+	<insert id="insertTargetOrder" databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		INSERT
+		INTO RM_MONITORING_TARGET_UI_INFO (RM_TARGET_UI_ID, RM_TARGET_ID, RM_TARGET_UI_ORDER)
+		VALUES ((SELECT coalesce(MAX(convert(integer,RM_TARGET_UI_ID)),0)+1 FROM RM_MONITORING_TARGET_UI_INFO),
+						convert(varchar,#{seq}),
+						(SELECT  coalesce(MAX(convert(integer,RM_TARGET_UI_ORDER)),0)+1 FROM RM_MONITORING_TARGET_UI_INFO))
+	</insert>
+	<insert id="insertTargetOrder" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		INSERT
+		INTO RM_MONITORING_TARGET_UI_INFO (RM_TARGET_UI_ID, RM_TARGET_ID, RM_TARGET_UI_ORDER)
+		VALUES ((SELECT coalesce(MAX(TO_NUMBER(RM_TARGET_UI_ID)),0)+1 FROM RM_MONITORING_TARGET_UI_INFO),
+						TO_CHAR(#{seq}),
+						(SELECT  coalesce(MAX(TO_NUMBER(RM_TARGET_UI_ORDER)),0)+1FROM RM_MONITORING_TARGET_UI_INFO))
+	</insert>
+	<!-- 관제 대상 삭제 -->
+	<delete id="deleteTarget" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		DELETE
+		FROM RM_MONITORING_TARGET_LIST
+		WHERE RM_TARGET_ID=#{rm_target_id}
+	</delete>
+	<!-- 관제 대상 삭제에 따른 관제 순서 업데이트 -->
+	<update  id='updateTargetOrderbyDelete' databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MONITORING_TARGET_UI_INFO
+		SET	RM_TARGET_UI_ORDER = (RM_TARGET_UI_ORDER::INTEGER-1)::CHARACTER VARYING
+		WHERE RM_TARGET_UI_ORDER::INTEGER > (SELECT RM_TARGET_UI_ORDER::INTEGER
+											 FROM RM_MONITORING_TARGET_UI_INFO
+											 WHERE RM_TARGET_ID=#{rm_target_id})
+	</update>
+	<update  id='updateTargetOrderbyDelete' databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MONITORING_TARGET_UI_INFO
+		SET	RM_TARGET_UI_ORDER = convert(varchar,(convert(integer,RM_TARGET_UI_ORDER)-1))
+		WHERE convert(integer,RM_TARGET_UI_ORDER)  > (SELECT convert(integer,RM_TARGET_UI_ORDER)
+													 FROM RM_MONITORING_TARGET_UI_INFO
+													 WHERE RM_TARGET_ID=#{rm_target_id})
+	</update>
+	<update  id='updateTargetOrderbyDelete' databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MONITORING_TARGET_UI_INFO
+		SET	RM_TARGET_UI_ORDER = TO_CHAR((TO_NUMBER(RM_TARGET_UI_ORDER)-1))
+		WHERE TO_NUMBER(RM_TARGET_UI_ORDER) > (SELECT TO_NUMBER(RM_TARGET_UI_ORDER)
+											 FROM RM_MONITORING_TARGET_UI_INFO
+											 WHERE RM_TARGET_ID=#{rm_target_id})
+	</update>
+	<!-- 관제 대상 삭제에 따른 ui 삭제 -->
+	<delete id="deleteTargetUi" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		DELETE
+		FROM RM_MONITORING_TARGET_UI_INFO
+		WHERE RM_TARGET_ID=#{rm_target_id}
+	</delete>
+
+	<select id="officeMonitoringSelect" parameterType="com.furence.recsee.monitoring.model.OfficeMonitoringRoomVO"  resultMap="OfficeMonitoringRoomMap">
+		SELECT
+				R_USER_ID
+			,	R_ROOM_INFO
+			,	R_BG_CODE
+			,	R_MG_CODE
+			,	R_SG_CODE
+			,	R_SEE_PERSON
+			,	R_ROOM_IDX
+			,	R_BG_LOCATION
+			,	R_MG_LOCATION
+			,	R_SG_LOCATION
+		FROM
+			RS_OFFICE_MONITORING_ROOM
+		<where>
+			R_USER_ID = #{rUserId}
+		</where>
+	</select>
+
+	<select id="officeMonitoringAgentSelect" parameterType="com.furence.recsee.monitoring.model.OfficeMonitoringVO"  resultMap="OfficeMonitoringAgentMap">
+		SELECT
+				*
+		FROM
+			RS_OFFICE_MONITORING_SEAT
+		<where>
+			R_USER_ID = #{rUserId}
+		</where>
+	</select>
+
+	<insert id="officeMoitoringInsert" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.OfficeMonitoringVO">
+		WITH UPSERT AS (
+			UPDATE RS_OFFICE_MONITORING_SEAT
+				SET(
+					<if test="rBgCode != null">
+							R_BG_CODE
+						,	R_BG_CODE_SEAT
+					</if>
+					<if test="rMgCode != null">
+							R_MG_CODE
+						,	R_MG_CODE_SEAT
+					</if>
+					<if test="rSgCode != null">
+							R_SG_CODE
+						,	R_SG_CODE_SEAT
+					</if>
+					)
+				= (
+					<if test="rBgCodeSeat != null">
+							#{rBgCode}
+						,	#{rBgCodeSeat}
+					</if>
+					<if test="rMgCodeSeat != null">
+							#{rMgCode}
+						,	#{rMgCodeSeat}
+					</if>
+					<if test="rSgCodeSeat != null">
+							#{rSgCode}
+						,	#{rSgCodeSeat}
+					</if>
+				)
+				WHERE
+					R_USER_ID = #{rUserId} AND
+					R_EXT_NO = #{rExtNo}
+				RETURNING*
+			)
+
+		INSERT INTO RS_OFFICE_MONITORING_SEAT(
+				R_USER_ID
+			,	R_EXT_NO
+			,	R_BG_CODE
+			,	R_MG_CODE
+			,	R_SG_CODE
+			,	R_BG_CODE_SEAT
+			,	R_MG_CODE_SEAT
+			,	R_SG_CODE_SEAT
+		) SELECT
+				#{rUserId}
+		 	,	#{rExtNo}
+			,	#{rBgCode}
+			,	#{rMgCode}
+			,	#{rSgCode}
+			,	#{rBgCodeSeat}
+			,	#{rMgCodeSeat}
+			,	#{rSgCodeSeat}
+		WHERE NOT EXISTS(
+			SELECT 1 FROM UPSERT WHERE UPSERT.R_EXT_NO = #{rExtNo} AND UPSERT.R_USER_ID = #{rUserId}
+		)
+	</insert>
+	<insert id="officeMoitoringInsert" databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.OfficeMonitoringVO">
+
+			UPDATE RS_OFFICE_MONITORING_SEAT
+				SET(
+					<if test="rBgCode != null">
+							R_BG_CODE
+						,	R_BG_CODE_SEAT
+					</if>
+					<if test="rMgCode != null">
+							R_MG_CODE
+						,	R_MG_CODE_SEAT
+					</if>
+					<if test="rSgCode != null">
+							R_SG_CODE
+						,	R_SG_CODE_SEAT
+					</if>
+					)
+				= (
+					<if test="rBgCodeSeat != null">
+							#{rBgCode}
+						,	#{rBgCodeSeat}
+					</if>
+					<if test="rMgCodeSeat != null">
+							#{rMgCode}
+						,	#{rMgCodeSeat}
+					</if>
+					<if test="rSgCodeSeat != null">
+							#{rSgCode}
+						,	#{rSgCodeSeat}
+					</if>
+				)
+
+
+				WHERE
+					R_USER_ID = #{rUserId} AND
+					R_EXT_NO = #{rExtNo}
+
+
+		INSERT INTO RS_OFFICE_MONITORING_SEAT(
+				R_USER_ID
+			,	R_EXT_NO
+			,	R_BG_CODE
+			,	R_MG_CODE
+			,	R_SG_CODE
+			,	R_BG_CODE_SEAT
+			,	R_MG_CODE_SEAT
+			,	R_SG_CODE_SEAT
+		) SELECT
+				#{rUserId}
+		 	,	#{rExtNo}
+			,	#{rBgCode}
+			,	#{rMgCode}
+			,	#{rSgCode}
+			,	#{rBgCodeSeat}
+			,	#{rMgCodeSeat}
+			,	#{rSgCodeSeat}
+		WHERE NOT EXISTS(
+			SELECT 1 FROM UPSERT WHERE UPSERT.R_EXT_NO = #{rExtNo} AND UPSERT.R_USER_ID = #{rUserId}
+		)
+	</insert>
+	<insert id="officeMoitoringInsert" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.OfficeMonitoringVO">
+		<!-- DECLARE
+			 row_id ROWID;
+		BEGIN
+			UPDATE RS_OFFICE_MONITORING_SEAT
+				SET(
+					<if test="rBgCode != null">
+							R_BG_CODE
+						,	R_BG_CODE_SEAT
+					</if>
+					<if test="rMgCode != null">
+							R_MG_CODE
+						,	R_MG_CODE_SEAT
+					</if>
+					<if test="rSgCode != null">
+							R_SG_CODE
+						,	R_SG_CODE_SEAT
+					</if>
+					)
+				= (
+					SELECT 
+					<if test="rBgCodeSeat != null">
+							#{rBgCode}
+						,	#{rBgCodeSeat}
+					</if>
+					<if test="rMgCodeSeat != null">
+							#{rMgCode}
+						,	#{rMgCodeSeat}
+					</if>
+					<if test="rSgCodeSeat != null">
+							#{rSgCode}
+						,	#{rSgCodeSeat}
+					</if>
+					FROM DUAL
+				)
+				WHERE
+					R_USER_ID = #{rUserId} AND
+					R_EXT_NO = #{rExtNo}
+				RETURNING ROWID INTO row_id;
+			
+
+				INSERT INTO RS_OFFICE_MONITORING_SEAT(
+						R_USER_ID
+					,	R_EXT_NO
+					,	R_BG_CODE
+					,	R_MG_CODE
+					,	R_SG_CODE
+					,	R_BG_CODE_SEAT
+					,	R_MG_CODE_SEAT
+					,	R_SG_CODE_SEAT
+				) SELECT
+						#{rUserId}
+				 	,	#{rExtNo}
+					,	#{rBgCode}
+					,	#{rMgCode}
+					,	#{rSgCode}
+					,	#{rBgCodeSeat}
+					,	#{rMgCodeSeat}
+					,	#{rSgCodeSeat}
+				FROM DUAL
+				WHERE NOT EXISTS(
+					SELECT 1 FROM RS_OFFICE_MONITORING_SEAT 
+         			WHERE ROWID = row_id
+         			AND R_EXT_NO = #{rExtNo} 
+         			AND R_USER_ID = #{rUserId}
+				);
+				
+				END; -->
+				UPDATE RS_OFFICE_MONITORING_SEAT
+				SET(
+					<if test="rBgCode != null">
+							R_BG_CODE
+						,	R_BG_CODE_SEAT
+					</if>
+					<if test="rMgCode != null">
+							R_MG_CODE
+						,	R_MG_CODE_SEAT
+					</if>
+					<if test="rSgCode != null">
+							R_SG_CODE
+						,	R_SG_CODE_SEAT
+					</if>
+					)
+				= (
+					SELECT 
+					<if test="rBgCodeSeat != null">
+							#{rBgCode}
+						,	#{rBgCodeSeat}
+					</if>
+					<if test="rMgCodeSeat != null">
+							#{rMgCode}
+						,	#{rMgCodeSeat}
+					</if>
+					<if test="rSgCodeSeat != null">
+							#{rSgCode}
+						,	#{rSgCodeSeat}
+					</if>
+					FROM DUAL
+				)
+				WHERE
+					R_USER_ID = #{rUserId} AND
+					R_EXT_NO = #{rExtNo}
+	</insert>
+	<insert id="officeMoitoringRoomInsert" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.OfficeMonitoringRoomVO">
+		WITH UPSERT AS (
+			UPDATE RS_OFFICE_MONITORING_ROOM
+				SET(
+					<if test="rBgCode != null">
+							R_BG_CODE
+						,	R_BG_LOCATION
+					</if>
+					<if test="rMgCode != null">
+							R_MG_CODE
+						,	R_MG_LOCATION
+					</if>
+					<if test="rSgCode != null">
+							R_SG_CODE
+						,	R_SG_LOCATION
+					</if>
+					)
+				= (
+					<if test="rBgLocation != null">
+							#{rBgCode}
+						,	#{rBgLocation}
+					</if>
+					<if test="rMgLocation != null">
+							#{rMgCode}
+						,	#{rMgLocation}
+					</if>
+					<if test="rSgLocation != null">
+							#{rSgCode}
+						,	#{rSgLocation}
+					</if>
+				)
+				WHERE
+					<if test="rUserId != null">
+						R_USER_ID = #{rUserId} AND
+					</if>
+					<if test="rBgCode != null">
+						R_BG_CODE = #{rBgCode}
+					</if>
+					<if test="rMgCode != null">
+						R_MG_CODE = #{rMgCode}
+					</if>
+					<if test="rSgCode != null">
+						R_SG_CODE = #{rSgCode}
+					</if>
+				RETURNING*
+			)
+
+		INSERT INTO RS_OFFICE_MONITORING_ROOM(
+				R_USER_ID
+			,	R_BG_CODE
+			,	R_MG_CODE
+			,	R_SG_CODE
+			,	R_BG_LOCATION
+			,	R_MG_LOCATION
+			,	R_SG_LOCATION
+			,	R_SEE_PERSON
+		) SELECT
+				#{rUserId}
+			,	#{rBgCode}
+			,	#{rMgCode}
+			,	#{rSgCode}
+			,	#{rBgLocation}
+			,	#{rMgLocation}
+			,	#{rSgLocation}
+			,	#{rSeePerson}
+		WHERE NOT EXISTS(
+			SELECT 1 FROM UPSERT WHERE
+			<if test="rUserId != null">
+				UPSERT.R_USER_ID = #{rUserId} AND
+			</if>
+			<if test="rBgCode != null">
+				UPSERT.R_BG_CODE = #{rBgCode}
+			</if>
+			<if test="rMgCode != null">
+				UPSERT.R_MG_CODE = #{rMgCode}
+			</if>
+			<if test="rSgCode != null">
+				UPSERT.R_SG_CODE = #{rSgCode}
+			</if>
+		)
+	</insert>
+	
+	<insert id="officeMoitoringRoomInsert" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.OfficeMonitoringRoomVO">
+		DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_OFFICE_MONITORING_ROOM
+				SET(
+					<if test="rBgCode != null">
+							R_BG_CODE
+						,	R_BG_LOCATION
+					</if>
+					<if test="rMgCode != null">
+							R_MG_CODE
+						,	R_MG_LOCATION
+					</if>
+					<if test="rSgCode != null">
+							R_SG_CODE
+						,	R_SG_LOCATION
+					</if>
+					)
+				= (
+					SELECT
+					<if test="rBgLocation != null">
+							#{rBgCode}
+						,	#{rBgLocation}
+					</if>
+					<if test="rMgLocation != null">
+							#{rMgCode}
+						,	#{rMgLocation}
+					</if>
+					<if test="rSgLocation != null">
+							#{rSgCode}
+						,	#{rSgLocation}
+					</if>
+					FROM DUAL
+				)
+				WHERE
+					<if test="rUserId != null">
+						R_USER_ID = #{rUserId} AND
+					</if>
+					<if test="rBgCode != null">
+						R_BG_CODE = #{rBgCode}
+					</if>
+					<if test="rMgCode != null">
+						R_MG_CODE = #{rMgCode}
+					</if>
+					<if test="rSgCode != null">
+						R_SG_CODE = #{rSgCode}
+					</if>
+				RETURNING ROWID INTO row_id;
+			
+
+			INSERT INTO RS_OFFICE_MONITORING_ROOM(
+					R_USER_ID
+				,	R_BG_CODE
+				,	R_MG_CODE
+				,	R_SG_CODE
+				,	R_BG_LOCATION
+				,	R_MG_LOCATION
+				,	R_SG_LOCATION
+				,	R_SEE_PERSON
+				,	R_FAULT_IDX
+			) SELECT
+					#{rUserId}
+				,	#{rBgCode}
+				,	#{rMgCode}
+				,	#{rSgCode}
+				,	#{rBgLocation}
+				,	#{rMgLocation}
+				,	#{rSgLocation}
+				,	#{rSeePerson}
+				,	R_FAULT_IDX.nextval
+			FROM DUAL;
+			WHERE NOT EXISTS(
+				SELECT 1 FROM RS_OFFICE_MONITORING_SEAT 
+				WHERE ROWID = row_id
+				<if test="rUserId != null">
+					AND R_USER_ID = #{rUserId}
+				</if>
+				<if test="rBgCode != null">
+					AND R_BG_CODE = #{rBgCode}
+				</if>
+				<if test="rMgCode != null">
+					AND R_MG_CODE = #{rMgCode}
+				</if>
+				<if test="rSgCode != null">
+					AND R_SG_CODE = #{rSgCode}
+				</if>
+			);
+			
+			END;
+	</insert>
+
+	<select id="selectAlertList" parameterType="com.furence.recsee.monitoring.model.AlertList" resultMap="AlertListMap">
+		SELECT
+			RM_TARGET_NAME,
+			R_ALERT_INDEX,
+			R_ALERT_OBJECT,
+			R_ALERT_REASON_OBJECT,
+			R_ALERT_START_DATE,
+			R_ALERT_START_TIME,
+			R_ALERT_END_DATE,
+			R_ALERT_END_TIME,
+			R_ALERT_STATE,
+			R_ALERT_DEFINE,
+			R_ALERT_STATE_TYPE
+
+		FROM RS_ALERT_LIST
+			LEFT JOIN RM_MONITORING_TARGET_LIST ON R_ALERT_OBJECT = RM_TARGET_ID
+		ORDER BY R_ALERT_OBJECT
+		<!-- WHERE START_DATE BEETWEEN #{startDate} AND #{endDate} -->
+	</select>
+
+	<select id="selectUsingTargetItemList" databaseId="postgres" resultMap="selectUsingTargetItemListMaP">
+		SELECT RM_TARGET_ID, RM_TARGET_NAME, RM_TARGET_TYPE, RM_ITEM_INDEX, RM_ITEM_NAME,  RM_ITEM_UNIT, RM_ITEM_LIMIT ,RM_USE_MONITORING_ITEM_ID
+		FROM RM_MONITORING_TARGET_LIST A
+		LEFT JOIN (
+					SELECT RM_MONITORING_TARGET_ID, RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_UNIT, RM_ITEM_LIMIT ,RM_USE_MONITORING_ITEM_ID
+					FROM RM_USE_MONITORING_ITEM  ITEM
+					LEFT JOIN RM_MONITORING_ITEM_LIST ITEM_LIST ON ITEM.RM_MONITORING_ITEM_ID=ITEM_LIST.RM_ITEM_INDEX
+					)B
+		ON A.RM_TARGET_ID=B.RM_MONITORING_TARGET_ID
+		WHERE RM_TARGET_USE='Y'
+		ORDER BY RM_TARGET_ID::integer, RM_ITEM_INDEX::integer
+	</select>
+	<select id="selectUsingTargetItemList" databaseId="sqlserver" resultMap="selectUsingTargetItemListMaP">
+		SELECT RM_TARGET_ID, RM_TARGET_NAME, RM_TARGET_TYPE, RM_ITEM_INDEX, RM_ITEM_NAME,  RM_ITEM_UNIT, RM_ITEM_LIMIT ,RM_USE_MONITORING_ITEM_ID
+		FROM RM_MONITORING_TARGET_LIST A
+		LEFT JOIN (
+					SELECT RM_MONITORING_TARGET_ID, RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_UNIT, RM_ITEM_LIMIT ,RM_USE_MONITORING_ITEM_ID
+					FROM RM_USE_MONITORING_ITEM  ITEM
+					LEFT JOIN RM_MONITORING_ITEM_LIST ITEM_LIST ON ITEM.RM_MONITORING_ITEM_ID=ITEM_LIST.RM_ITEM_INDEX
+					)B
+		ON A.RM_TARGET_ID=B.RM_MONITORING_TARGET_ID
+		WHERE RM_TARGET_USE='Y'
+		ORDER BY convert(integer,RM_TARGET_ID), convert(integer,RM_ITEM_INDEX)
+	</select>
+	<select id="selectUsingTargetItemList" databaseId="oracle" resultMap="selectUsingTargetItemListMaP">
+		SELECT RM_TARGET_ID, RM_TARGET_NAME, RM_TARGET_TYPE, RM_ITEM_INDEX, RM_ITEM_NAME,  RM_ITEM_UNIT, RM_ITEM_LIMIT ,RM_USE_MONITORING_ITEM_ID
+		FROM RM_MONITORING_TARGET_LIST A
+		LEFT JOIN (
+					SELECT RM_MONITORING_TARGET_ID, RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_UNIT, RM_ITEM_LIMIT ,RM_USE_MONITORING_ITEM_ID
+					FROM RM_USE_MONITORING_ITEM  ITEM
+					LEFT JOIN RM_MONITORING_ITEM_LIST ITEM_LIST ON ITEM.RM_MONITORING_ITEM_ID=ITEM_LIST.RM_ITEM_INDEX
+					)B
+		ON A.RM_TARGET_ID=B.RM_MONITORING_TARGET_ID
+		WHERE RM_TARGET_USE='Y'
+		ORDER BY TO_NUMBER(RM_TARGET_ID), TO_NUMBER(RM_ITEM_INDEX)
+	</select>
+	<select id="selectTargetItemList" databaseId="postgres" resultType="com.furence.recsee.monitoring.model.ItemVo">
+		SELECT
+			RM_ITEM_INDEX
+		,	RM_ITEM_NAME
+		,	RM_ITEM_TYPE
+		,	RM_ITEM_UNIT
+		,	RM_ITEM_LIMIT
+		,	RM_ITEM_LOG_YN
+		FROM RM_MONITORING_ITEM_LIST
+		ORDER BY RM_ITEM_INDEX::integer
+	</select>
+	<select id="selectTargetItemList" databaseId="sqlserver" resultType="com.furence.recsee.monitoring.model.ItemVo">
+		SELECT
+			RM_ITEM_INDEX
+		,	RM_ITEM_NAME
+		,	RM_ITEM_TYPE
+		,	RM_ITEM_UNIT
+		,	RM_ITEM_LIMIT
+		,	RM_ITEM_LOG_YN
+		FROM RM_MONITORING_ITEM_LIST
+		ORDER BY convert(integer,RM_ITEM_INDEX)
+	</select>
+	<select id="selectTargetItemList" databaseId="oracle" resultType="com.furence.recsee.monitoring.model.ItemVo">
+		SELECT
+			RM_ITEM_INDEX
+		,	RM_ITEM_NAME
+		,	RM_ITEM_TYPE
+		,	RM_ITEM_UNIT
+		,	RM_ITEM_LIMIT
+		,	RM_ITEM_LOG_YN
+		FROM RM_MONITORING_ITEM_LIST
+		ORDER BY TO_NUMBER(RM_ITEM_INDEX)
+	</select>
+	<select id="selectTargetUIList" databaseId="postgres" resultType="com.furence.recsee.monitoring.model.ControlTargetVO">
+	SELECT
+				A.RM_TARGET_ID, RM_TARGET_NAME, RM_TARGET_TYPE, RM_TARGET_DESCR, RM_TARGET_IP
+			,	RM_TARGET_UI_ORDER, RM_TARGET_UI_WATCH_TIME, RM_TARGET_UI_POSITION_LEFT, RM_TARGET_UI_POSITION_TOP
+			,	RM_TARGET_UI_OBJECT_ICON, RM_ICON_PATH, RM_ICON_FILENAME, RM_ICON_DESCR
+		FROM RM_MONITORING_TARGET_LIST A
+		LEFT JOIN (
+					SELECT
+							RM_TARGET_ID, RM_TARGET_UI_ORDER, RM_TARGET_UI_WATCH_TIME, RM_TARGET_UI_POSITION_LEFT, RM_TARGET_UI_POSITION_TOP
+						,	RM_TARGET_UI_OBJECT_ICON, RM_ICON_PATH, RM_ICON_FILENAME, RM_ICON_DESCR
+					FROM RM_MONITORING_TARGET_UI_INFO
+					LEFT JOIN RM_ICON_INFO
+					ON RM_TARGET_UI_OBJECT_ICON = RM_ICON_INDEX
+				  ) B
+		ON A.RM_TARGET_ID = B.RM_TARGET_ID
+		WHERE RM_TARGET_USE='Y'
+		ORDER BY RM_TARGET_UI_ORDER::integer
+	</select>
+	<select id="selectTargetUIList" databaseId="sqlserver" resultType="com.furence.recsee.monitoring.model.ControlTargetVO">
+	SELECT
+				A.RM_TARGET_ID, RM_TARGET_NAME, RM_TARGET_TYPE, RM_TARGET_DESCR, RM_TARGET_IP
+			,	RM_TARGET_UI_ORDER, RM_TARGET_UI_WATCH_TIME, RM_TARGET_UI_POSITION_LEFT, RM_TARGET_UI_POSITION_TOP
+			,	RM_TARGET_UI_OBJECT_ICON, RM_ICON_PATH, RM_ICON_FILENAME, RM_ICON_DESCR
+		FROM RM_MONITORING_TARGET_LIST A
+		LEFT JOIN (
+					SELECT
+							RM_TARGET_ID, RM_TARGET_UI_ORDER, RM_TARGET_UI_WATCH_TIME, RM_TARGET_UI_POSITION_LEFT, RM_TARGET_UI_POSITION_TOP
+						,	RM_TARGET_UI_OBJECT_ICON, RM_ICON_PATH, RM_ICON_FILENAME, RM_ICON_DESCR
+					FROM RM_MONITORING_TARGET_UI_INFO
+					LEFT JOIN RM_ICON_INFO
+					ON RM_TARGET_UI_OBJECT_ICON = RM_ICON_INDEX
+				  ) B
+		ON A.RM_TARGET_ID = B.RM_TARGET_ID
+		WHERE RM_TARGET_USE='Y'
+		ORDER BY convert(integer,RM_TARGET_UI_ORDER)
+	</select>
+	<select id="selectTargetUIList" databaseId="oracle" resultType="com.furence.recsee.monitoring.model.ControlTargetVO">
+	SELECT
+				A.RM_TARGET_ID, RM_TARGET_NAME, RM_TARGET_TYPE, RM_TARGET_DESCR, RM_TARGET_IP
+			,	RM_TARGET_UI_ORDER, RM_TARGET_UI_WATCH_TIME, RM_TARGET_UI_POSITION_LEFT, RM_TARGET_UI_POSITION_TOP
+			,	RM_TARGET_UI_OBJECT_ICON, RM_ICON_PATH, RM_ICON_FILENAME, RM_ICON_DESCR
+		FROM RM_MONITORING_TARGET_LIST A
+		LEFT JOIN (
+					SELECT
+							RM_TARGET_ID, RM_TARGET_UI_ORDER, RM_TARGET_UI_WATCH_TIME, RM_TARGET_UI_POSITION_LEFT, RM_TARGET_UI_POSITION_TOP
+						,	RM_TARGET_UI_OBJECT_ICON, RM_ICON_PATH, RM_ICON_FILENAME, RM_ICON_DESCR
+					FROM RM_MONITORING_TARGET_UI_INFO
+					LEFT JOIN RM_ICON_INFO
+					ON RM_TARGET_UI_OBJECT_ICON = RM_ICON_INDEX
+				  ) B
+		ON A.RM_TARGET_ID = B.RM_TARGET_ID
+		WHERE RM_TARGET_USE='Y'
+		ORDER BY TO_NUMBER(RM_TARGET_UI_ORDER)
+	</select>
+	<select id="countItemList" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO" resultType='Integer'>
+		SELECT COUNT(*) FROM RM_MONITORING_ITEM_LIST
+		WHERE RM_ITEM_TYPE = #{rm_target_type};
+	</select>
+	<select id="countItemList" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO" resultType='Integer'>
+		SELECT COUNT(*) FROM RM_MONITORING_ITEM_LIST
+		WHERE RM_ITEM_TYPE = #{rm_target_type}
+	</select>
+	<select id="targetItemCombo" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO" resultType='com.furence.recsee.monitoring.model.ItemVo'>
+		SELECT RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_TYPE, RM_ITEM_LIMIT||CASE WHEN RM_ITEM_UNIT='percent' THEN '%' ELSE '' END AS RM_ITEM_LIMIT
+		FROM RM_MONITORING_ITEM_LIST LIST
+		LEFT JOIN (
+					SELECT RM_USE_MONITORING_ITEM_ID, RM_MONITORING_TARGET_ID, RM_MONITORING_ITEM_ID,RM_TARGET_TYPE
+					FROM RM_USE_MONITORING_ITEM
+					LEFT JOIN RM_MONITORING_TARGET_LIST ON RM_MONITORING_TARGET_ID=RM_MONITORING_TARGET_LIST.RM_TARGET_ID
+					WHERE RM_MONITORING_TARGET_ID=#{rm_target_id}
+				)A
+		ON LIST.RM_ITEM_INDEX = A.RM_MONITORING_ITEM_ID AND A.RM_TARGET_TYPE = LIST.RM_ITEM_TYPE
+		WHERE RM_USE_MONITORING_ITEM_ID IS NULL
+		ORDER BY RM_ITEM_INDEX::INTEGER
+	</select>
+	<select id="targetItemCombo" databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO" resultType='com.furence.recsee.monitoring.model.ItemVo'>
+		SELECT RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_TYPE, RM_ITEM_LIMIT||CASE WHEN RM_ITEM_UNIT='percent' THEN '%' ELSE '' END AS RM_ITEM_LIMIT
+		FROM RM_MONITORING_ITEM_LIST LIST
+		LEFT JOIN (
+					SELECT RM_USE_MONITORING_ITEM_ID, RM_MONITORING_TARGET_ID, RM_MONITORING_ITEM_ID,RM_TARGET_TYPE
+					FROM RM_USE_MONITORING_ITEM
+					LEFT JOIN RM_MONITORING_TARGET_LIST ON RM_MONITORING_TARGET_ID=RM_MONITORING_TARGET_LIST.RM_TARGET_ID
+					WHERE RM_MONITORING_TARGET_ID=#{rm_target_id}
+				)A
+		ON LIST.RM_ITEM_INDEX = A.RM_MONITORING_ITEM_ID AND A.RM_TARGET_TYPE = LIST.RM_ITEM_TYPE
+		WHERE RM_USE_MONITORING_ITEM_ID IS NULL
+		ORDER BY convert(integer,RM_ITEM_INDEX)
+	</select>
+	<select id="targetItemCombo" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO" resultType='com.furence.recsee.monitoring.model.ItemVo'>
+		SELECT RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_TYPE, RM_ITEM_LIMIT||CASE WHEN RM_ITEM_UNIT='percent' THEN '%' ELSE '' END AS RM_ITEM_LIMIT
+		FROM RM_MONITORING_ITEM_LIST LIST
+		LEFT JOIN (
+					SELECT RM_USE_MONITORING_ITEM_ID, RM_MONITORING_TARGET_ID, RM_MONITORING_ITEM_ID,RM_TARGET_TYPE
+					FROM RM_USE_MONITORING_ITEM
+					LEFT JOIN RM_MONITORING_TARGET_LIST ON RM_MONITORING_TARGET_ID=RM_MONITORING_TARGET_LIST.RM_TARGET_ID
+					WHERE RM_MONITORING_TARGET_ID=#{rm_target_id}
+				)A
+		ON LIST.RM_ITEM_INDEX = A.RM_MONITORING_ITEM_ID AND A.RM_TARGET_TYPE = LIST.RM_ITEM_TYPE
+		WHERE RM_USE_MONITORING_ITEM_ID IS NULL
+		ORDER BY TO_NUMBER(RM_ITEM_INDEX)
+	</select>
+	<delete id="deleteItemList" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		DELETE
+		FROM RM_USE_MONITORING_ITEM
+		WHERE RM_USE_MONITORING_ITEM_ID=#{rm_target_id}
+	</delete>
+
+	<insert id='addUseItem' databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		INSERT
+		INTO RM_USE_MONITORING_ITEM(RM_USE_MONITORING_ITEM_ID,RM_MONITORING_TARGET_ID,RM_MONITORING_ITEM_ID)
+		VALUES ((SELECT coalesce(MAX(RM_USE_MONITORING_ITEM_ID::INTEGER),0)+1 FROM RM_USE_MONITORING_ITEM),#{rm_monitoring_target_id}, #{rm_use_monitoring_item_id})
+	</insert>
+	<insert id='addUseItem' databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		INSERT
+		INTO RM_USE_MONITORING_ITEM(RM_USE_MONITORING_ITEM_ID,RM_MONITORING_TARGET_ID,RM_MONITORING_ITEM_ID)
+		VALUES ((SELECT coalesce(MAX(convert(integer,RM_USE_MONITORING_ITEM_ID)),0)+1 FROM RM_USE_MONITORING_ITEM),#{rm_monitoring_target_id}, #{rm_use_monitoring_item_id})
+	</insert>
+	<insert id='addUseItem' databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		INSERT
+		INTO RM_USE_MONITORING_ITEM(RM_USE_MONITORING_ITEM_ID,RM_MONITORING_TARGET_ID,RM_MONITORING_ITEM_ID)
+		VALUES ((SELECT coalesce(MAX(TO_NUMBER(RM_USE_MONITORING_ITEM_ID)),0)+1 FROM RM_USE_MONITORING_ITEM),#{rm_monitoring_target_id}, #{rm_use_monitoring_item_id})
+	</insert>
+	<update id='updateItem' parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		UPDATE
+		RM_MONITORING_ITEM_LIST
+		SET RM_ITEM_LIMIT=#{rm_item_limit},
+		RM_ITEM_LOG_YN= #{rm_item_log_yn}
+		WHERE RM_ITEM_INDEX=#{rm_item_index}
+	</update>
+
+	<!--관제지표 설정 추가  -->
+	<insert id='addItemList' databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		INSERT INTO RM_MONITORING_ITEM_LIST(RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_TYPE, RM_ITEM_UNIT, RM_ITEM_LIMIT)
+		VALUES((SELECT coalesce(MAX(RM_ITEM_INDEX::INTEGER),0)+1 FROM RM_MONITORING_ITEM_LIST),#{rm_item_name} ,#{rm_item_type} ,#{rm_item_unit} ,#{rm_item_limit} )
+	</insert>
+	<insert id='addItemList' databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		INSERT INTO RM_MONITORING_ITEM_LIST(RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_TYPE, RM_ITEM_UNIT, RM_ITEM_LIMIT)
+		VALUES((SELECT coalesce(MAX(convert(integer,RM_ITEM_INDEX)),0)+1 FROM RM_MONITORING_ITEM_LIST),#{rm_item_name} ,#{rm_item_type} ,#{rm_item_unit} ,#{rm_item_limit} )
+	</insert>
+	<insert id='addItemList' databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		INSERT INTO RM_MONITORING_ITEM_LIST(RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_TYPE, RM_ITEM_UNIT, RM_ITEM_LIMIT)
+		VALUES((SELECT coalesce(MAX(TO_NUMBER(RM_ITEM_INDEX)),0)+1 FROM RM_MONITORING_ITEM_LIST),#{rm_item_name} ,#{rm_item_type} ,#{rm_item_unit} ,#{rm_item_limit} )
+	</insert>
+	<!--관제지표 수정  -->
+	<update id='updateItemList' parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		UPDATE RM_MONITORING_ITEM_LIST SET RM_ITEM_NAME=#{rm_item_name}, RM_ITEM_TYPE=#{rm_item_type}, RM_ITEM_UNIT=#{rm_item_unit}, RM_ITEM_LIMIT=#{rm_item_limit},RM_ITEM_LOG_YN=#{rm_item_log_yn}
+		WHERE RM_ITEM_INDEX=#{rm_item_index}
+	</update>
+
+	<!-- 관계지표 삭제 -->
+	<delete id='deleteItemAttrList' parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		DELETE FROM RM_MONITORING_ITEM_LIST WHERE RM_ITEM_INDEX=#{rm_item_index}
+	</delete>
+
+	<!-- 관계지표 삭제와 연동된 관졔 항목 삭제 -->
+	<delete id='deleteItemAttrList2' parameterType="com.furence.recsee.monitoring.model.ItemVo">
+		DELETE FROM RM_USE_MONITORING_ITEM WHERE RM_MONITORING_ITEM_ID=#{rm_item_index}
+	</delete>
+	<!-- 맵리스트 부르기 -->
+	<select id='selectMaplist' resultType="com.furence.recsee.monitoring.model.UiInfoVO">
+		SELECT RM_MAP_NAME, RM_MAP_PATH, RM_MAP_FILENAME, RM_MAP_DESCR, RM_MAP_USE
+		FROM RM_MAP_INFO
+		ORDER BY RM_MAP_USE DESC, RM_MAP_DESCR ASC
+	</select>
+	<!--아이콘 리스트 부르기 -->
+	<select id='selectIconList' resultType="com.furence.recsee.monitoring.model.UiInfoVO">
+		SELECT RM_ICON_INDEX, RM_ICON_PATH, RM_ICON_FILENAME,  RM_ICON_NAME, RM_ICON_DESCR
+		FROM RM_ICON_INFO
+		ORDER BY RM_ICON_DESCR
+	</select>
+		<!--아이콘 콤보박스 -->
+	<select id='selectIconListCombo' resultType="com.furence.recsee.monitoring.model.UiInfoVO">
+		SELECT RM_ICON_PATH, RM_ICON_FILENAME, RM_ICON_DESCR, RM_ICON_INDEX
+		FROM RM_ICON_INFO
+		ORDER BY RM_ICON_DESCR
+	</select>
+
+	<!--관제대상 UI수정 -->
+	<update id="updateTargetUi" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MONITORING_TARGET_UI_INFO
+		SET RM_TARGET_UI_WATCH_TIME=#{rm_target_ui_watch_time}, RM_TARGET_UI_OBJECT_ICON=#{rm_target_ui_object_icon}
+		WHERE RM_TARGET_ID=#{rm_target_id}
+	</update>
+	<!--관제 대상 UI 초기화  -->
+	<update id="updateUisetting" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MONITORING_TARGET_UI_INFO
+		SET RM_TARGET_UI_WATCH_TIME='', RM_TARGET_UI_OBJECT_ICON='', RM_TARGET_UI_POSITION_LEFT='', RM_TARGET_UI_POSITION_TOP=''
+		WHERE RM_TARGET_ID=#{rm_target_id}
+	</update>
+	<!--관제 맵 이름 수정  -->
+	<update id="updateMapName" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MAP_INFO
+		SET RM_MAP_DESCR=#{rm_map_descr}
+		WHERE RM_MAP_NAME=#{rm_map_name}
+	</update>
+
+	<!-- 관제 맵 사용 초기화 -->
+	<update id="updateUseMapDefault">
+		UPDATE RM_MAP_INFO
+		SET RM_MAP_USE='N'
+	</update>
+	<!-- 관제 맵 사용 선택 -->
+	<update id="updateUseMap" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MAP_INFO
+		SET RM_MAP_USE='Y'
+		WHERE RM_MAP_NAME=#{rm_map_name}
+	</update>
+	<!--관제 대상 관측 순서 변경 -->
+	<update id="updateOrder" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MONITORING_TARGET_UI_INFO
+		SET RM_TARGET_UI_ORDER=#{rm_target_ui_order}
+		WHERE RM_TARGET_ID=#{rm_target_id}
+	</update>
+	<update id='updateTargetPosition' parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		UPDATE RM_MONITORING_TARGET_UI_INFO SET RM_TARGET_UI_POSITION_LEFT=#{rm_target_ui_position_left}, RM_TARGET_UI_POSITION_TOP=#{rm_target_ui_position_top}
+		WHERE RM_TARGET_ID=#{rm_target_id}
+	</update>
+
+	<select id='selecMonitoringItemOfTarget' parameterType="com.furence.recsee.monitoring.model.ItemVo"  resultType="com.furence.recsee.monitoring.model.ItemVo">
+		SELECT RM_MONITORING_TARGET_ID, RM_ITEM_INDEX, RM_ITEM_TYPE, RM_ITEM_NAME, RM_ITEM_UNIT, RM_ITEM_LIMIT
+		FROM RM_USE_MONITORING_ITEM USE
+		LEFT JOIN RM_MONITORING_ITEM_LIST LIST
+		ON USE.RM_MONITORING_ITEM_ID=LIST.RM_ITEM_INDEX
+		WHERE USE.RM_MONITORING_TARGET_ID=#{rm_monitoring_target_id}
+	</select>
+
+	<select id="selectLimit" resultType="com.furence.recsee.monitoring.model.ItemVo">
+		SELECT RM_ITEM_INDEX, RM_ITEM_NAME, RM_ITEM_TYPE, RM_ITEM_UNIT, RM_ITEM_LIMIT FROM RM_MONITORING_ITEM_LIST
+	</select>
+
+	<select id="selectTargetNameByIp" parameterType="com.furence.recsee.monitoring.model.ControlTargetVO" resultType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		select rm_target_id,rm_target_name from RM_MONITORING_TARGET_LIST where rm_target_ip=#{rm_target_ip}
+	</select>
+
+	<insert id="insertAlertList" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.AlertList">
+		insert into rs_alert_list(r_alert_object, r_alert_reason_object, r_alert_state, r_alert_define, r_alert_state_type, r_alert_start_date, r_alert_start_time)
+		values( #{rAlertObject},#{rAlertReasonObject},#{rAlertState},#{rAlertDefine},#{rAlertStateType},to_char(now(),'yyyymmdd'), to_char(now(),'HH24miss'));
+	</insert>
+	<insert id="insertAlertList" databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.AlertList">
+		insert into rs_alert_list(r_alert_object, r_alert_reason_object, r_alert_state, r_alert_define, r_alert_state_type, r_alert_start_date, r_alert_start_time)
+		values( #{rAlertObject},#{rAlertReasonObject},#{rAlertState},#{rAlertDefine},#{rAlertStateType},CONVERT(varchar(8),GETDATE(),112),(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))));
+	</insert>
+	<insert id="insertAlertList" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.AlertList">
+		insert into rs_alert_list(r_alert_object, r_alert_reason_object, r_alert_state, r_alert_define, r_alert_state_type, r_alert_start_date, r_alert_start_time)
+		values( #{rAlertObject},#{rAlertReasonObject},#{rAlertState},#{rAlertDefine},#{rAlertStateType},to_char(CURRENT_TIMESTAMP,'yyyymmdd'), to_char(CURRENT_TIMESTAMP,'HH24miss'))
+	</insert>
+	<select id="selectAlertListByCompare" parameterType="com.furence.recsee.monitoring.model.AlertList" resultType="Integer">
+		select count(*)
+		from rs_alert_list
+		where r_alert_object=#{rAlertObject} and r_alert_reason_object=#{rAlertReasonObject} and  r_alert_end_date is null
+	</select>
+
+	<select id="selectUseMap" resultType="com.furence.recsee.monitoring.model.UiInfoVO">
+		SELECT RM_MAP_FILENAME
+		FROM RM_MAP_INFO
+		WHERE RM_MAP_USE='Y'
+	</select>
+
+	<select id="selectMonitoringUseingItemList" resultMap="selectUsingTargetItemListMaP">
+		SELECT RM_MONITORING_TARGET_ID, RM_TARGET_IP, RM_ITEM_INDEX, RM_ITEM_NAME
+		FROM RM_USE_MONITORING_ITEM
+		LEFT JOIN RM_MONITORING_ITEM_LIST ON RM_MONITORING_ITEM_ID=RM_ITEM_INDEX
+		LEFT JOIN RM_MONITORING_TARGET_LIST ON RM_MONITORING_TARGET_ID=RM_TARGET_ID
+		ORDER BY RM_MONITORING_TARGET_ID::INTEGER, RM_MONITORING_ITEM_ID::INTEGER
+	</select>
+	<select id="selectMonitoringUseingItemList" databaseId="oracle" resultMap="selectUsingTargetItemListMaP">
+		SELECT RM_MONITORING_TARGET_ID, RM_TARGET_IP, RM_ITEM_INDEX, RM_ITEM_NAME
+		FROM RM_USE_MONITORING_ITEM
+		LEFT JOIN RM_MONITORING_ITEM_LIST ON RM_MONITORING_ITEM_ID=RM_ITEM_INDEX
+		LEFT JOIN RM_MONITORING_TARGET_LIST ON RM_MONITORING_TARGET_ID=RM_TARGET_ID
+		ORDER BY TO_NUMBER(RM_MONITORING_TARGET_ID), TO_NUMBER(RM_MONITORING_ITEM_ID)
+	</select>
+
+	<update id="updateAlertListBySolve" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.AlertList">
+		update rs_alert_list set r_alert_end_date=to_char(now(),'yyyymmdd'), r_alert_end_time=to_char(now(),'HH24miss')
+		where r_alert_object=#{rAlertObject} and r_alert_reason_object=#{rAlertReasonObject} and r_alert_end_date is null
+	</update>
+	<update id="updateAlertListBySolve" databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.AlertList">
+		update rs_alert_list set r_alert_end_date=CONVERT(varchar(8),GETDATE(),112), r_alert_end_time=(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		where r_alert_object=#{rAlertObject} and r_alert_reason_object=#{rAlertReasonObject} and r_alert_end_date is null
+	</update>
+	<update id="updateAlertListBySolve" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.AlertList">
+		update rs_alert_list set r_alert_end_date=to_char(CURRENT_TIMESTAMP,'yyyymmdd'), r_alert_end_time=to_char(CURRENT_TIMESTAMP,'HH24miss')
+		where r_alert_object=#{rAlertObject} and r_alert_reason_object=#{rAlertReasonObject} and r_alert_end_date is null
+	</update>
+	
+	<delete id="deleteAlert" parameterType="com.furence.recsee.monitoring.model.AlertList">
+		delete from rs_alert_list where r_alert_index=#{r_alert_index}
+	</delete>
+
+	<select id='selectAlertYn' parameterType="com.furence.recsee.monitoring.model.AlertList" resultType='String'>
+		SELECT RM_ITEM_LOG_YN
+		FROM RM_USE_MONITORING_ITEM A
+		LEFT JOIN RM_MONITORING_ITEM_LIST B ON A.RM_MONITORING_ITEM_ID=B.RM_ITEM_INDEX
+		WHERE RM_MONITORING_TARGET_ID=#{rAlertObject} AND RM_ITEM_NAME=#{rAlertReasonObject}
+	</select>
+	<delete id='deleteUseItem' parameterType="com.furence.recsee.monitoring.model.ControlTargetVO">
+		delete from rm_use_monitoring_item where rm_monitoring_target_id=#{rm_target_id}
+	</delete>
+
+	<select id='realTimeSettingSelect' parameterType="com.furence.recsee.monitoring.model.RealTimeSettingInfo" resultMap='realTimeSettingMap'>
+		SELECT *
+		FROM RS_REALTIME_SETTING
+		WHERE
+			<if test="rUserId != null">
+				R_USER_ID = #{rUserId}
+			</if>
+	</select>
+	<insert id='realTimeSettingInsert' databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.RealTimeSettingInfo">
+			WITH UPSERT AS (
+			UPDATE RS_REALTIME_SETTING
+			<if test="rSettingYn != null">
+				SET(R_SETTING_YN)= (#{rSettingYn})
+			</if>
+			<if test="rSettingNum != null">
+			SET(R_SETTING_NUM)= (#{rSettingNum})
+			</if>
+			<if test="rSettingType != null">
+			SET(R_SETTING_TYPE)= (#{rSettingType})
+			</if>
+				WHERE
+					R_USER_ID = #{rUserId}
+				RETURNING*
+			)
+
+		INSERT INTO RS_REALTIME_SETTING(
+				R_USER_ID
+			,	R_SETTING_YN
+			,	R_SETTING_TYPE
+			,	R_SETTING_NUM
+		) SELECT
+				#{rUserId}
+		 	,	#{rSettingYn}
+			,	#{rSettingType}
+			,	#{rSettingNum}
+		WHERE NOT EXISTS(
+			SELECT 1 FROM UPSERT WHERE UPSERT.R_USER_ID = #{rUserId}
+		)
+	</insert>
+	<insert id='realTimeSettingInsert' databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.RealTimeSettingInfo">
+	<!-- 수정이 필요해요.... -->
+
+
+					UPDATE RS_REALTIME_SETTING
+					<if test="rSettingYn != null">
+						SET R_SETTING_YN = #{rSettingYn}
+					</if>
+					<if test="rSettingNum != null">
+					SET R_SETTING_NUM = #{rSettingNum}
+					</if>
+					<if test="rSettingType != null">
+					SET R_SETTING_TYPE = #{rSettingType}
+					</if>
+
+					OUTPUT
+						inserted.r_user_id,
+						inserted.r_setting_num,
+						inserted.r_setting_type,
+						inserted.r_setting_yn
+
+					into rs_realtime_setting_idx(
+						r_user_id,
+						r_setting_num,
+						r_setting_type,
+						r_setting_yn
+						)
+
+						WHERE
+							R_USER_ID = #{rUserId};
+
+
+		INSERT INTO RS_REALTIME_SETTING(
+				R_USER_ID
+			,	R_SETTING_YN
+			,	R_SETTING_TYPE
+			,	R_SETTING_NUM
+		)  SELECT
+				#{rUserId}
+		 	,	#{rSettingYn}
+			,	#{rSettingType}
+			,	#{rSettingNum}
+		WHERE NOT EXISTS(
+			SELECT 1 FROM rs_realtime_setting_idx WHERE R_USER_ID = #{rUserId} and r_setting_idx = (select max(r_setting_idx) from rs_realtime_setting_idx)
+		)
+
+	</insert>
+	
+	<insert id='realTimeSettingInsert' databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.RealTimeSettingInfo">
+			DECLARE
+		  		row_id ROWID;
+			BEGIN
+			UPDATE RS_REALTIME_SETTING
+			<if test="rSettingYn != null">
+				SET(R_SETTING_YN)= (#{rSettingYn})
+			</if>
+			<if test="rSettingNum != null">
+				SET(R_SETTING_NUM)= (#{rSettingNum})
+			</if>
+			<if test="rSettingType != null">
+				SET(R_SETTING_TYPE)= (#{rSettingType})
+			</if>
+				WHERE
+					R_USER_ID = #{rUserId}
+				RETURNING ROWID INTO row_id;
+			
+
+			INSERT INTO RS_REALTIME_SETTING(
+					R_USER_ID
+				,	R_SETTING_YN
+				,	R_SETTING_TYPE
+				,	R_SETTING_NUM
+			) SELECT
+					#{rUserId, jdbcType=VARCHAR}
+			 	,	#{rSettingYn, jdbcType=VARCHAR}
+				,	#{rSettingType, jdbcType=VARCHAR}
+				,	#{rSettingNum, jdbcType=VARCHAR}
+			FROM DUAL
+			WHERE NOT EXISTS(
+				SELECT 1 FROM RS_REALTIME_SETTING WHERE ROWID=row_id 
+				AND R_USER_ID = #{rUserId, jdbcType=VARCHAR}
+			);
+			
+		END;
+	</insert>
+	
+	<!-- 도면 모니터링  -->
+	<select  id="selectBluePrint" parameterType="com.furence.recsee.monitoring.model.BluePrintInfo" resultMap="bluePrintMap">
+		SELECT *
+		FROM 
+			RS_BLUEPRINT
+		<where>
+			<trim prefixOverrides="OR">
+				<if test="rBlueprintjoinId != null">
+					R_BLUEPRINT_JOIN_ID = #{rBlueprintjoinId}
+				</if>
+				<if test="rBlueprintshareId != null">
+					OR R_BLUEPRINT_SHARE_ID = #{rBlueprintshareId}
+				</if>
+				<if test="rBlueprintSeq != null ">
+					 AND R_BLUEPRINT_SEQ = #{rBlueprintSeq}::Integer
+				</if>
+			</trim>
+		</where>
+		
+		ORDER BY R_BLUEPRINT_SEQ DESC
+	
+	</select>
+	
+	<insert id='createBluePrint' databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.BluePrintInfo">
+		INSERT INTO RS_BLUEPRINT(
+			    R_BLUEPRINT_SEQ
+			,	R_BLUEPRINT_NAME
+			,	R_BLUEPRINT_JOIN_ID
+			,	R_BLUEPRINT_SHARE_ID
+		)
+		VALUES
+		(
+			    R_BLUEPRINT_SEQ.nextval
+			,	#{rBlueprintname}
+			,	#{rBlueprintjoinId}
+			,	#{rBlueprintshareId}
+		);
+		
+	</insert>
+	
+	<insert id='createBluePrint' parameterType="com.furence.recsee.monitoring.model.BluePrintInfo">
+		INSERT INTO RS_BLUEPRINT(
+				R_BLUEPRINT_NAME
+			,	R_BLUEPRINT_JOIN_ID
+			,	R_BLUEPRINT_SHARE_ID
+		)
+		VALUES
+		(
+				#{rBlueprintname}
+			,	#{rBlueprintjoinId}
+			,	#{rBlueprintshareId}
+		);
+		
+	</insert>
+	
+	<update id="insertBluePrintPaint" parameterType="com.furence.recsee.monitoring.model.BluePrintInfo">
+	 	UPDATE RS_BLUEPRINT
+	 		SET
+	 	R_BLUEPRINT_PAINT = #{rBlueprintPaint}
+	 	WHERE
+	 		R_BLUEPRINT_SEQ = #{rBlueprintSeq}::Integer
+	</update>
+	
+	<select   id="selectLastSeq" parameterType="com.furence.recsee.monitoring.model.BluePrintInfo" resultType="Integer">
+		SELECT currval('rs_blueprint_rs_blueprint_seq_seq');
+	</select>
+	
+	<select   id="selectRecCount" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="SearchResultMap">
+		SELECT 
+				COUNT(*) CALL_COUNT
+			,	SUM(CASE WHEN R_CALL_TTIME != '' THEN R_CALL_TTIME::INT ELSE 0 END) CALL_TIME
+		FROM
+			RS_RECFILE
+		WHERE
+			R_REC_DATE = REPLACE(NOW()::DATE::TEXT , '-' ,'')
+		AND
+			R_EXT_NUM = #{extNum}
+		GROUP BY
+			R_REC_DATE
+	</select>
+	
+	<select   id="selectRecCount" databaseId="oracle" parameterType="com.furence.recsee.main.model.SearchListInfo" resultMap="SearchResultMap">
+		SELECT 
+				COUNT(*) CALL_COUNT
+			,	SUM(CASE WHEN R_CALL_TTIME != '' THEN TO_NUMBER(R_CALL_TTIME) ELSE 0 END) CALL_TIME
+		FROM
+			RS_RECFILE
+		WHERE
+			R_REC_DATE = TO_CHAR(CURRENT_DATE, 'yyyymmdd')
+		AND
+			R_EXT_NUM = #{extNum}
+		GROUP BY
+			R_REC_DATE
+	</select>
+	
+	<insert id="insertBluePrintShare" parameterType="com.furence.recsee.monitoring.model.BluePrintInfo">
+	 	INSERT INTO
+	 		RS_BLUEPRINT
+	 	(R_BLUEPRINT_NAME , R_BLUEPRINT_JOIN_ID , R_BLUEPRINT_SHARE_ID,R_BLUEPRINT_PAINT)
+	 	(
+	 		SELECT R_BLUEPRINT_NAME , R_BLUEPRINT_JOIN_ID , #{rBlueprintshareId} AS R_BLUEPRINT_SHARE_ID,R_BLUEPRINT_PAINT
+	 			FROM RS_BLUEPRINT
+	 		WHERE
+	 			R_BLUEPRINT_SEQ = #{rBlueprintSeq}::Integer
+	 	)
+	</insert>
+	
+	
+	<!-- selectSystemRealtimeInfo -->
+	<select  id="selectSystemRealtimeInfo" parameterType="com.furence.recsee.monitoring.model.SystemRealtimeInfo" resultMap="SystemRealtimeInfoMap">
+		SELECT *
+		FROM rs_system_realtime_setting
+		<where>
+			r_use_yn = 'Y'
+			<if test="rSysGroupCode != null">
+				AND r_sys_group_code = #{rSysGroupCode}
+			</if>
+		</where>
+	</select>
+	
+</mapper>

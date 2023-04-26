@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.SystemInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.SystemInfo">
+		<result column="R_SYS_ID" jdbcType="VARCHAR" property="sysId" />
+		<result column="R_SYS_NAME" jdbcType="VARCHAR" property="sysName" />
+		<result column="R_SYS_IP" jdbcType="VARCHAR" property="sysIp" />
+		<result column="R_PBX_ID" jdbcType="VARCHAR" property="pbxId" />
+		<result column="R_STORAGE_PATH" jdbcType="VARCHAR" property="storagePath" />
+		<result column="R_CHANNEL_UPDATE_FLAG" jdbcType="VARCHAR" property="channelUpdateFlag" />
+		<result column="R_SWITCH_SYS_YN" jdbcType="VARCHAR" property="switchSysYn" />
+		<result column="R_SWITCH_SYS_CODE" jdbcType="VARCHAR" property="switchSysCode" />
+		<result column="R_SWITCH_SYS_NAME" jdbcType="VARCHAR" property="switchSysName" />
+		<result column="R_SWITCH_CH_NUM" jdbcType="VARCHAR" property="switchChNum" />
+		<result column="R_SYS_DELETE_SIZE" jdbcType="VARCHAR" property="sysDeleteSize" />
+		<result column="R_SYS_DELETE_PATH" jdbcType="VARCHAR" property="sysDeletePath" />
+	</resultMap>
+		
+	<resultMap id="LicenceResultMap" type="com.furence.recsee.common.model.SystemInfo">
+		<result column="R_LIC_ID" jdbcType="VARCHAR" property="sysId" />
+		<result column="R_SYS_NAME" jdbcType="VARCHAR" property="sysName" />
+		<result column="R_LIC_USE" jdbcType="VARCHAR" property="licUse" />
+		<result column="R_LIC_NOUSE" jdbcType="VARCHAR" property="licNouse" />
+		<result column="R_LIC_SUM" jdbcType="VARCHAR" property="sysLicence" />
+		<result column="R_LIC_SYSTEM_IP" jdbcType="VARCHAR" property="sysIp" />
+	</resultMap>
+	
+	
+	<select id="selectSystemInfo" parameterType="com.furence.recsee.common.model.SystemInfo" resultMap="BaseResultMap">
+		SELECT a.*, (select r_sys_name from rs_sys_info where a.r_switch_sys_code = rs_sys_info.r_sys_id) as r_switch_sys_name
+		<if test='sysDeleteYN != null and sysDeleteYN == "Y"'>
+			, CASE WHEN b.r_sys_id is not null THEN 'Y' ELSE 'N' END as sysDeleteYN, r_sys_delete_size, r_sys_delete_path 
+		</if>
+		FROM RS_SYS_INFO a
+		<if test='sysDeleteYN != null and sysDeleteYN == "Y"'>
+			LEFT JOIN rs_sys_file_delete b
+			ON a.r_sys_id = b.r_sys_id
+		</if>
+		<if test="sysId != null or sysIp != null">
+		WHERE
+		</if>
+		<if test="sysId != null">
+		 a.R_SYS_ID = #{sysId}
+		</if>
+		<if test="sysId != null and sysIp != null">
+		AND
+		</if>
+		<if test="sysIp != null">
+		 a.R_SYS_IP = #{sysIp}
+		</if>
+		<!-- ORDER BY a.R_SYS_NAME -->
+		ORDER BY CASE WHEN a.R_SYS_ID LIKE 'A%'  THEN '1' WHEN a.R_SYS_ID like 'B%' THEN '1' ELSE a.R_SYS_ID END, a.R_SYS_NAME
+	</select>
+
+	<insert id="insertSystemInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.SystemInfo">
+				INSERT INTO RS_SYS_INFO (
+				  	R_SYS_ID 
+				, 	R_SYS_NAME 
+				, 	R_SYS_IP 
+				, 	R_PBX_ID 
+				, 	R_STORAGE_PATH 
+				, 	R_CHANNEL_UPDATE_FLAG 
+				, 	R_CHANNEL_UPDATE_REQ_TIME 
+			)
+			VALUES ( 
+				  	#{sysId} 
+				, 	#{sysName} 
+				, 	#{sysIp} 
+				, 	#{pbxId} 
+				, 	#{storagePath} 
+				, 	'1' 
+				, 	to_char(now(), 'yyyyMMddHH24miss') 
+			)		
+	</insert>
+
+
+	<update id="updateSystemInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.SystemInfo">
+			UPDATE RS_SYS_INFO
+			<set>
+			<if test="sysName != null"> R_SYS_NAME = #{sysName,jdbcType=VARCHAR}, </if>
+			<if test="sysIp != null"> R_SYS_IP = #{sysIp,jdbcType=VARCHAR}, </if>
+			<if test="pbxId != null"> R_PBX_ID = #{pbxId,jdbcType=VARCHAR}, </if>
+			<if test="storagePath != null"> R_STORAGE_PATH = #{storagePath,jdbcType=VARCHAR}, </if>
+			<if test="channelUpdateFlag != null"> R_CHANNEL_UPDATE_FLAG = #{channelUpdateFlag,jdbcType=VARCHAR}, </if>
+			<if test="switchSysYn != null"> R_SWITCH_SYS_YN = #{switchSysYn,jdbcType=VARCHAR}, </if>
+			<if test="switchSysCode != null"> R_SWITCH_SYS_CODE = #{switchSysCode,jdbcType=VARCHAR}, </if>
+			<if test="switchChNum != null"> R_SWITCH_CH_NUM = NULL, </if>
+			 R_CHANNEL_UPDATE_REQ_TIME = to_char(now(), 'yyyyMMddHH24miss')
+			</set>
+			<where>
+			<if test="sysId != null"> R_SYS_ID = #{sysId,jdbcType=VARCHAR} </if>
+			</where>		
+	</update>
+	
+	<insert id="insertSystemInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.SystemInfo">
+		INSERT INTO RS_SYS_INFO (
+				R_SYS_ID
+			,	R_SYS_NAME
+			, 	R_SYS_IP
+			,	R_PBX_ID
+			,	R_STORAGE_PATH
+
+			,	R_CHANNEL_UPDATE_FLAG
+			,	R_CHANNEL_UPDATE_REQ_TIME
+		) VALUES (
+				#{sysId}
+			, 	#{sysName}
+			, 	#{sysIp}
+			,	#{pbxId}
+			, 	#{storagePath}
+
+			,	'1'
+			<!-- ,	to_char(now(), 'yyyyMMddHH24miss') -->
+			,	replace(replace(replace(CONVERT(varchar(30),getdate(), 120),':',''),'-',''),' ','')
+		)
+	</insert>
+
+	<update id="updateSystemInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.SystemInfo">
+		UPDATE RS_SYS_INFO
+		<set>
+			<if test="sysName != null">
+			R_SYS_NAME = #{sysName,jdbcType=VARCHAR},
+			</if>
+			<if test="sysIp != null">
+			R_SYS_IP = #{sysIp,jdbcType=VARCHAR},
+			</if>
+			<if test="pbxId != null">
+			R_PBX_ID = #{pbxId,jdbcType=VARCHAR},
+			</if>
+			<if test="storagePath != null">
+			R_STORAGE_PATH = #{storagePath,jdbcType=VARCHAR},
+			</if>
+			<if test="channelUpdateFlag != null">
+			R_CHANNEL_UPDATE_FLAG = #{channelUpdateFlag,jdbcType=VARCHAR},
+			</if>
+			R_CHANNEL_UPDATE_REQ_TIME = replace(replace(replace(CONVERT(varchar(30),getdate(), 120),':',''),'-',''),' ','')
+		</set>
+		<where>
+			<if test = "sysId != null">
+			R_SYS_ID = #{sysId,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</update>
+	
+	<insert id="insertSystemInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.SystemInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			INSERT INTO RS_SYS_INFO (
+				  	R_SYS_ID 
+				, 	R_SYS_NAME 
+				, 	R_SYS_IP 
+				, 	R_PBX_ID 
+				, 	R_STORAGE_PATH 
+				, 	R_CHANNEL_UPDATE_FLAG 
+				, 	R_CHANNEL_UPDATE_REQ_TIME 
+			)
+			VALUES ( 
+				  	#{sysId} 
+				, 	#{sysName} 
+				, 	#{sysIp} 
+				, 	#{pbxId} 
+				, 	#{storagePath} 
+				, 	'1' 
+				, 	to_char(CURRENT_TIMESTAMP, 'yyyyMMddHH24miss') 
+			)
+		 	RETURNING ROWID INTO row_id;
+		 	
+		 
+			  INSERT INTO RS_SYNC_DATA (
+				    	R_SYNC_DATE 
+				  ,		R_SYNC_TIME 
+				  , 	R_SYNC_TYPE 
+				  , 	R_SYNC_TABLENAME 
+				  , 	R_SYNC_CULUMN1 
+				  , 	R_SYNC_CULUMN2 
+				  , 	R_SYNC_CULUMN3 
+				  , 	R_SYNC_CULUMN4 
+				  , 	R_SYNC_CULUMN5 
+				  , 	R_SYNC_CULUMN6 
+				  , 	R_SYNC_CULUMN7 
+				  , 	R_SYNC_CULUMN8 
+			  ) 
+			  SELECT 
+				    	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD') 
+				  ,	 	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS') 
+				  , 	'C' 
+				  , 	'rs_sys_info' 
+				  , 	SI.R_SYS_ID 
+				  , 	SI.R_SYS_NAME 
+				  , 	SI.R_SYS_IP 
+				  , 	SI.R_PBX_ID 
+				  , 	SI.R_STORAGE_PATH 
+				  , 	SI.R_CHANNEL_UPDATE_FLAG 
+				  , 	SI.R_CHANNEL_UPDATE_REQ_TIME 
+				  , 	SI.R_CHANNEL_UPDATE_PROC_TIME 
+			  FROM DUAL, RS_SYS_INFO SI
+	          WHERE SI.ROWID = row_id;
+		END; -->
+		INSERT INTO RS_SYS_INFO (
+				  	R_SYS_ID 
+				, 	R_SYS_NAME 
+				, 	R_SYS_IP 
+				, 	R_PBX_ID 
+				, 	R_STORAGE_PATH 
+				, 	R_CHANNEL_UPDATE_FLAG 
+				, 	R_CHANNEL_UPDATE_REQ_TIME 
+			)
+			VALUES ( 
+				  	#{sysId} 
+				, 	#{sysName} 
+				, 	#{sysIp} 
+				, 	#{pbxId} 
+				, 	#{storagePath} 
+				, 	'1' 
+				, 	to_char(CURRENT_TIMESTAMP, 'yyyyMMddHH24miss') 
+			)
+	</insert>
+
+
+	<update id="updateSystemInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.SystemInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_SYS_INFO
+			<set>
+			<if test="sysName != null"> R_SYS_NAME = #{sysName,jdbcType=VARCHAR}, </if>
+			<if test="sysIp != null"> R_SYS_IP = #{sysIp,jdbcType=VARCHAR}, </if>
+			<if test="pbxId != null"> R_PBX_ID = #{pbxId,jdbcType=VARCHAR}, </if>
+			<if test="storagePath != null"> R_STORAGE_PATH = #{storagePath,jdbcType=VARCHAR}, </if>
+			<if test="channelUpdateFlag != null"> R_CHANNEL_UPDATE_FLAG = #{channelUpdateFlag,jdbcType=VARCHAR}, </if>
+			 R_CHANNEL_UPDATE_REQ_TIME = to_char(CURRENT_TIMESTAMP, 'yyyyMMddHH24miss')
+			</set>
+			<where>
+			<if test="sysId != null"> R_SYS_ID = #{sysId,jdbcType=VARCHAR} </if>
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+			INSERT INTO RS_SYNC_DATA ( 
+					R_SYNC_DATE 
+				,	R_SYNC_TIME 
+				,	R_SYNC_TYPE 
+				, 	R_SYNC_TABLENAME 
+				, 	R_SYNC_CULUMN1 
+				, 	R_SYNC_CULUMN2 
+				, 	R_SYNC_CULUMN3 
+				, 	R_SYNC_CULUMN4 
+				, 	R_SYNC_CULUMN5 
+				, 	R_SYNC_CULUMN6 
+				, 	R_SYNC_CULUMN7 
+				, 	R_SYNC_CULUMN8 
+			) 
+			SELECT 
+					TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD') 
+				, 	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS') 
+				, 	'U' 
+				, 	'rs_sys_info' 
+				, 	SI.R_SYS_ID 
+				, 	SI.R_SYS_NAME 
+				, 	SI.R_SYS_IP 
+				, 	SI.R_PBX_ID 
+				, 	SI.R_STORAGE_PATH 
+				, 	SI.R_CHANNEL_UPDATE_FLAG 
+				, 	SI.R_CHANNEL_UPDATE_REQ_TIME 
+				, 	SI.R_CHANNEL_UPDATE_PROC_TIME 
+			FROM DUAL, RS_SYS_INFO SI
+       	    WHERE SI.ROWID = row_id;
+
+		END; -->
+		UPDATE RS_SYS_INFO
+			<set>
+			<if test="sysName != null"> R_SYS_NAME = #{sysName,jdbcType=VARCHAR}, </if>
+			<if test="sysIp != null"> R_SYS_IP = #{sysIp,jdbcType=VARCHAR}, </if>
+			<if test="pbxId != null"> R_PBX_ID = #{pbxId,jdbcType=VARCHAR}, </if>
+			<if test="storagePath != null"> R_STORAGE_PATH = #{storagePath,jdbcType=VARCHAR}, </if>
+			<if test="channelUpdateFlag != null"> R_CHANNEL_UPDATE_FLAG = #{channelUpdateFlag,jdbcType=VARCHAR}, </if>
+			 R_CHANNEL_UPDATE_REQ_TIME = to_char(CURRENT_TIMESTAMP, 'yyyyMMddHH24miss')
+			</set>
+			<where>
+			<if test="sysId != null"> R_SYS_ID = #{sysId,jdbcType=VARCHAR} </if>
+			</where>
+	</update>
+
+	<delete id="deleteSystemInfo" parameterType="com.furence.recsee.common.model.SystemInfo">
+		DELETE FROM RS_SYS_INFO
+		WHERE R_SYS_ID = #{sysId,jdbcType=VARCHAR}
+	</delete>
+	
+	<select id="selectLicenceInfo" parameterType="com.furence.recsee.common.model.SystemInfo" resultMap="LicenceResultMap">
+		SELECT 
+			R_LIC_ID,
+			R_LIC_USE,
+			R_LIC_NOUSE,
+			<if test='licEnc != null and licEnc == "Y"'>
+				<!-- R_LIC_SUM --> CONVERT_FROM(DECRYPT(DECODE(R_LIC_SUM, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'rijndael'), 'utf8') AS R_LIC_SUM,
+			</if>
+			<if test='licEnc != null and licEnc == "N"'>
+				R_LIC_SUM, <!-- CONVERT_FROM(DECRYPT(DECODE(R_LIC_SUM, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'rijndael'), 'utf8') AS R_LIC_SUM, -->
+			</if>
+			R_LIC_SYSTEM_IP,
+			(
+				SELECT
+					R_SYS_NAME
+				FROM RS_SYS_INFO
+				WHERE
+					R_SYS_ID = A.R_LIC_ID
+			) AS R_SYS_NAME
+		FROM RS_LIC_MANAGE A
+		<if test="sysId != null or sysIp != null">
+		WHERE
+		</if>
+		<if test="sysId != null">
+		 R_LIC_ID = #{sysId}
+		</if>
+		<if test="sysId != null and sysIp != null">
+		AND
+		</if>
+		<if test="sysIp != null">
+		 R_LIC_SYSTEM_IP = #{sysIp}
+		</if>
+		ORDER BY R_SYS_NAME
+	</select>
+	
+	<insert id="insertLicenceInfo" parameterType="com.furence.recsee.common.model.SystemInfo">
+		INSERT INTO RS_LIC_MANAGE (
+				R_LIC_ID,
+				R_LIC_SYSTEM_IP
+		) VALUES (
+				#{sysId}
+			, 	#{sysIp}
+		)
+	</insert>
+	
+	<update id="updateLicenceInfo" parameterType="com.furence.recsee.common.model.SystemInfo">
+		UPDATE RS_LIC_MANAGE
+		<set>
+			<if test="sysIp != null">
+			R_LIC_SYSTEM_IP = #{sysIp},
+			</if>
+			<if test="licUse != null">
+			R_LIC_USE = #{licUse},
+			<if test='licEnc != null and licEnc == "Y"'>
+				R_LIC_NOUSE = (SELECT <!-- R_LIC_SUM --> CONVERT_FROM(DECRYPT(DECODE(R_LIC_SUM, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'rijndael'), 'utf8') AS R_SYS_LICENCE FROM RS_LIC_MANAGE WHERE R_LIC_ID='A001')::INT-#{licUse}::INT,
+			</if>
+			<if test='licEnc != null and licEnc == "N"'>
+				R_LIC_NOUSE = (SELECT R_LIC_SUM <!-- CONVERT_FROM(DECRYPT(DECODE(R_LIC_SUM, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'rijndael'), 'utf8') --> AS R_SYS_LICENCE FROM RS_LIC_MANAGE WHERE R_LIC_ID='A001')::INT-#{licUse}::INT,
+			</if>
+			
+			</if>
+		</set>
+		<where>
+			R_LIC_ID = #{sysId}
+		</where>
+	</update>		
+	<delete id="deleteLicenceInfo" parameterType="com.furence.recsee.common.model.SystemInfo">
+		DELETE FROM RS_LIC_MANAGE
+		WHERE R_LIC_ID = #{sysId}
+	</delete>
+<!-- 
+	<select id="selectLicenceInfo" parameterType="com.furence.recsee.common.model.SystemInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_LIC_MANAGE
+		<if test="sysId != null or sysIp != null">
+		WHERE
+		</if>
+		<if test="sysId != null">
+		 R_LIC_ID = #{sysId}
+		</if>
+		<if test="sysId != null and sysIp != null">
+		AND
+		</if>
+		<if test="sysIp != null">
+		 R_LIC_SYSTEM_IP = #{sysIp}
+		</if>
+	</select> -->
+	
+	<insert id="insertSysDeleteInfo" parameterType="com.furence.recsee.common.model.SystemInfo">
+		WITH UPSERT AS (
+				UPDATE rs_sys_file_delete
+					SET
+						r_sys_delete_size=#{sysDeleteSize},
+						r_sys_delete_path=#{sysDeletePath}
+					WHERE
+						r_sys_id=#{sysId}
+					RETURNING*	
+			)
+			INSERT INTO rs_sys_file_delete
+				(
+					r_sys_id,
+					r_sys_delete_size,
+					r_sys_delete_path
+				)
+			SELECT
+				#{sysId}
+				,	#{sysDeleteSize}
+				, 	#{sysDeletePath}
+			WHERE NOT EXISTS(
+				SELECT
+					r_sys_id,
+					r_sys_delete_size,
+					r_sys_delete_path
+				FROM
+					UPSERT
+			)
+		
+	</insert>
+	
+	<delete id="deleteSysDeleteInfo" parameterType="com.furence.recsee.common.model.SystemInfo">
+		DELETE FROM rs_sys_file_delete
+		WHERE r_sys_id = #{sysId}
+	</delete>
+</mapper>
+
+
+

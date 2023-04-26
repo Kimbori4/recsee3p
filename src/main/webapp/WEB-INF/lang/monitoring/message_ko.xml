@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>모니터링(monitoring) 화면용 메세지 정의</comment>
+
+	<entry key="monitoring.display.selectedSystem">현재 조회 중인 시스템</entry>
+	<entry key="monitoring.display.system">시스템</entry>
+	<entry key="monitoring.display.group">선택할 그룹</entry>
+	<entry key="monitoring.display.searchAll">전체 조회</entry>
+	<entry key="monitoring.display.search">조회</entry>
+	<entry key="monitoring.display.monitoringOption">모니터링 설정</entry>
+	<entry key="monitoring.display.timerOption">타이머 설정</entry>
+	<entry key="monitoring.display.listenAlways">지속 감청</entry>
+	<entry key="monitoring.display.officeView">오피스 뷰</entry>
+	<entry key="monitoring.display.cardView">카드 뷰</entry>
+	<entry key="monitoring.display.gridView">그리드 뷰</entry>
+	<entry key="monitoring.display.systemHardware">System Hardware</entry>
+	<entry key="monitoring.display.CPU">CPU</entry>
+	<entry key="monitoring.display.MEMORY">MEMORY</entry>
+	<entry key="monitoring.display.HDD">HDD</entry>
+	<entry key="monitoring.display.statusViewOptions">상태 옵션</entry>
+	<entry key="monitoring.display.displayOptions">화면 옵션</entry>
+	<entry key="monitoring.display.cookieSaveOptions">저장</entry>
+	<entry key="monitoring.display.icon">아이콘 표시</entry>
+	<entry key="monitoring.display.agentId">사용자ID 표시</entry>
+	<entry key="monitoring.display.number">전화번호 표시</entry>
+	<entry key="monitoring.display.callTime">통화시간 표시</entry>
+	<entry key="monitoring.display.realtimeListen">REALTIME LISTEN</entry>
+	<entry key="monitoring.display.setCount">인원 수</entry>
+
+	<entry key="monitoring.state.save">상태 저장</entry>
+	<entry key="monitoring.state.login">로그인</entry>
+	<entry key="monitoring.state.ready">대기</entry>
+	<entry key="monitoring.state.calling">전화중</entry>
+	<entry key="monitoring.state.ACW">후처리</entry>
+	<entry key="monitoring.state.logout">로그아웃</entry>
+	<entry key="monitoring.state.away">이석</entry>
+
+	<entry key="monitoring.display.viewby16">16명씩 보기</entry>
+	<entry key="monitoring.display.viewby32">32명씩 보기</entry>
+	<entry key="monitoring.display.viewby100">100명씩 보기</entry>
+	<entry key="monitoring.display.officerealtimeinfo">지속 감청 중인 내선</entry>
+	<entry key="monitoring.display.officerealtimeinfo2">현재 내선 계속 감청</entry>
+	<entry key="monitoring.display.officeRealtimeExt">없음</entry>
+
+	<entry key="monitoring.grid.title.status">상태</entry>
+
+	<entry key="monitoring.grid.title.listen">청취하기</entry>
+	<entry key="monitoring.grid.title.staylisten">감청 유지</entry>
+	<entry key="monitoring.grid.title.setCount">인원 설정</entry>
+	<entry key="monitoring.display.filterByAgent">상담사명으로 필터</entry>
+	<entry key="monitoring.display.filterByNum">아이디로 필터</entry>
+	<entry key="monitoring.display.filterByExt">내선번호로 필터</entry>
+
+	<entry key="monitoring.display.showNew">새 창에서 보기</entry>
+	<entry key="monitoring.display.officerealtime">지속 감청</entry>
+	<entry key="monitoring.display.empListen">내선번호 지속 감청</entry>
+	<entry key="monitoring.display.custNumListen">고객번호로 지속 감청</entry>
+	<entry key="monitoring.display.custNumOrEmp">고객번호 또는 내선번호</entry>
+
+	<entry key="monitoring.display.editTarget">위치 편집</entry>
+	<entry key="monitoring.display.recServer">녹취 서버</entry>
+	<entry key="monitoring.display.recService">녹취 서비스</entry>
+	<entry key="monitoring.display.use">사용률</entry>
+	
+	<!-- 18-09-05 -pilip monitoring kor lang add -->
+	<entry key="monitoring.menu.continueTapping">지속 감청</entry>
+	<entry key="monitoring.menu.numberContinueTapping">내선번호 지속 감청</entry>
+	<entry key="monitoring.menu.custNumberContinueTapping">고객전화번호로 지속 감청</entry>
+	<entry key="monitoring.menu.custNumberOrNumber">고객번호 또는 내선번호</entry>
+	<entry key="monitoring.menu.memo">메모</entry>
+	<entry key="monitoring.menu.save">저장</entry>
+	<entry key="monitoring.grid.headerSetting">내선번호,상담사 ID,상담사 이름,상태,상태 지속 시간,전화 번호,청취하기,대분류,중분류,소분류,listening,감청 유지,rtpCode,stime</entry>
+	<entry key="monitoring.alert.msg1">조회</entry>
+	<entry key="monitoring.alert.msg2">조회 조건을 입력해 주세요.</entry>
+	<entry key="monitoring.alert.msg3">조회된 값이 없습니다.</entry>
+	<entry key="monitoring.alert.msg4">대상 그룹을 선택 해 주세요</entry>
+	<entry key="monitoring.alert.msg5">상담사명을 입력해주세요</entry>
+	<entry key="monitoring.alert.msg6">사원번호를 입력해주세요</entry>
+	<entry key="monitoring.alert.msg7">내선번호를 입력해주세요</entry>
+	<entry key="monitoring.alert.msg8">로그인</entry>
+	<entry key="monitoring.alert.msg9">로그아웃</entry>
+	<entry key="monitoring.alert.msg10">통화중</entry>
+	<entry key="monitoring.alert.msg11">후처리</entry>
+	<entry key="monitoring.alert.msg12">준비</entry>
+	<entry key="monitoring.alert.msg13">연결중</entry>
+	<entry key="monitoring.alert.msg14">이석</entry>
+	<entry key="monitoring.alert.msg15">현재 상담사</entry>
+	<entry key="monitoring.alert.msg16">내선번호</entry>
+	<entry key="monitoring.alert.msg17">지속 감청 중입니다.</entry>
+	<entry key="monitoring.alert.msg18">메모 저장</entry>
+	<entry key="monitoring.alert.msg19">메모 저장이 완료 되었습니다.</entry>
+	<entry key="monitoring.alert.msg20">조회결과가 없습니다.</entry>
+	<entry key="monitoring.alert.msg21">지속 감청할 타입을 선택해주세요.</entry>
+	<entry key="monitoring.alert.msg22">번호를 입력해주세요.</entry>
+	<entry key="monitoring.alert.msg23">상담사 ID를 입력해주세요</entry>
+	
+	
+	
+	<entry key="monitoring.alert.sameName">이미 등록된 이름입니다.</entry>
+	
+	<entry key="views.monitoring.bgName">대분류</entry>
+	<entry key="views.monitoring.mgName">중분류</entry>
+	<entry key="views.monitoring.sgName">소분류</entry>
+	
+	<entry key="monitoring.alert.noDrawing.selected">선택된 도면이 없습니다.</entry>
+	<entry key="monitoring.alert.noUser.selected">선택된 사용자가 없습니다.</entry>
+	<entry key="monitoring.alert.Drawing.completed">도면 수정이 완료 되었습니다.</entry>
+	<entry key="monitoring.alert.afterRegistering">상담사의 내선 등록후 이용해주세요.</entry>
+	<entry key="monitoring.alert.Enter.drawingName">도면명을 입력해주세요</entry>
+	<entry key="monitoring.alert.addDrawing.complete">도면 추가가 완료 되었습니다.</entry>
+	<entry key="monitoring.alert.addDrawing.problem">도면을 추가하는데 문제가 생겼습니다. \\n 다시 입력해주세요.</entry>
+	<entry key="monitoring.alert.counselor.notOnTheLine">해당 상담사가 통화중이 아닙니다.</entry>
+	<entry key="monitoring.alert.getInfo.problems">상담사 정보를 가져오는데 문제가 생겼습니다. \\n 잠시후 다시 이용해 주시기 바랍니다.</entry>
+	<entry key="monitoring.alert.architect.notBusy">선택한 설계사가 통화중이 아닙니다.</entry>
+	<entry key="monitoring.alert.counselor.notOnTheLine">해당 상담사가 통화중이 아닙니다.</entry>
+	
+	
+</properties>

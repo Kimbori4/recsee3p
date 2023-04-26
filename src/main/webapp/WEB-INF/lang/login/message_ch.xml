@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>로그인 화면용 메세지 정의</comment>
+
+	<entry key="login.login.title.rememberMe">保存用戶名</entry>
+	<!-- <entry key="login.login.title.login">Log in</entry> -->
+
+	<entry key="login.login.placeholder.code">代码</entry>
+	<entry key="login.login.placeholder.id">账号</entry>
+	<entry key="login.login.placeholder.password">密码</entry>
+	<entry key="login.login.placeholder.extension">内线</entry>
+
+	<entry key="login.login.alert.not.input.code">请输入系统代码</entry>
+	<entry key="login.login.alert.not.input.id">请输入Username</entry>
+	<entry key="login.login.alert.not.input.pw">请输入密码</entry>
+	<entry key="login.login.alert.not.input.ext">请输入内线号码</entry>
+	<entry key="login.login.alert.not.input.lang">选择你的语言。</entry>
+
+	<entry key="login.login.alert.fail.login">登入失败</entry>
+</properties>

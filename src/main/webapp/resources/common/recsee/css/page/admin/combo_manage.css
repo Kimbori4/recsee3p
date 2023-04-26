@@ -1,0 +1,16 @@
+.combo_tabbar{
+	width:300px;
+	float : left;
+	margin : 0px 0px 0px 15px;
+}
+
+#changeCodeInput{
+	padding : 0px 0 !important;
+	text-align : center;
+	border : 0px;
+}
+
+#detailManageGrid button{
+	height : 28px;
+	line-height : 22px;	
+}

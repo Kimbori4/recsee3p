@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 53.169 50.105">
+  <defs>
+    <style>
+      .cls-1, .cls-4, .cls-6 {
+        fill: none;
+      }
+
+      .cls-1, .cls-4 {
+        stroke: #086ebc;
+      }
+
+      .cls-2 {
+        fill: #086ebc;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        stroke-width: 4px;
+      }
+
+      .cls-5 {
+        stroke: none;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_29" data-name="Rectangle 29" class="cls-1" width="36.269" height="27.468" transform="translate(0 0)"/>
+    </clipPath>
+  </defs>
+  <g id="Group_149" data-name="Group 149" transform="translate(-4111.998 -1304.871)">
+    <rect id="Rectangle_24" data-name="Rectangle 24" class="cls-2" width="30.978" height="28.118" rx="4" transform="translate(4123.093 1304.871)"/>
+    <rect id="Rectangle_25" data-name="Rectangle 25" class="cls-2" width="36.385" height="8.448" rx="4" transform="translate(4120.39 1334.679)"/>
+    <rect id="Rectangle_26" data-name="Rectangle 26" class="cls-2" width="6.759" height="15.648" rx="3" transform="translate(4158.408 1323.875)"/>
+    <rect id="Rectangle_27" data-name="Rectangle 27" class="cls-2" width="6.759" height="15.648" rx="3" transform="translate(4111.998 1323.875)"/>
+    <rect id="Rectangle_28" data-name="Rectangle 28" class="cls-2" width="4.224" height="11.828" transform="translate(4136.499 1343.127)"/>
+    <g id="Mask_Group_1" data-name="Mask Group 1" class="cls-3" transform="translate(4120.446 1327.508)">
+      <g id="Ellipse_9" data-name="Ellipse 9" class="cls-4" transform="translate(0 17.721)">
+        <ellipse class="cls-5" cx="18.164" cy="18.164" rx="18.164" ry="18.164"/>
+        <ellipse class="cls-6" cx="18.164" cy="18.164" rx="16.164" ry="16.164"/>
+      </g>
+    </g>
+  </g>
+</svg>

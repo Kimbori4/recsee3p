@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>통계 화면용 메세지 정의</comment>
+
+	<entry key="statistics.title.allCount">All recording count</entry>
+	<entry key="statistics.title.allHour">All recording hours</entry>
+	<entry key="statistics.title.outbound">Number of outgoing calls</entry>
+	<entry key="statistics.title.inbound">Number of Receive</entry>
+
+	<entry key="statistics.unit.time">Time</entry>
+
+	<entry key="statistics.callStatistics.graph.axisTitle">The number of recording by date</entry>
+
+
+	<entry key="statistics.userStatistics.grid.title.inboundTime">Receive Record Time</entry>
+	<entry key="statistics.selectbox.bgFilter">Filter into large Classification</entry>
+	<entry key="statistics.selectbox.mgFilter">Filter into middle Classification</entry>
+	<entry key="statistics.selectbox.sgFilter">Filter into small Classification</entry>
+	<entry key="statistics.selectbox.peopleFilter">Filter by employee</entry>
+	<entry key="statistics.selectbox.extFilter">Filter by extension number</entry>
+	<entry key="statistics.selectbox.channelFilter">Filter by channel number</entry>
+
+	<entry key="statistics.callStatistics.grid.title.date">Date</entry>
+	<entry key="statistics.callStatistics.grid.title.time">Time</entry>
+	<entry key="statistics.callStatistics.grid.title.group">Group</entry>
+	<entry key="statistics.callStatistics.grid.title.calls">Number of REC</entry>
+	<entry key="statistics.callStatistics.grid.title.talkTime">REC time</entry>
+	<entry key="statistics.callStatistics.grid.title.inbound">Number of received</entry>
+	<entry key="statistics.callStatistics.grid.title.inboundTime">Receive REC Time</entry>
+	<entry key="statistics.callStatistics.grid.title.outbound">Number of outgoing</entry>
+	<entry key="statistics.callStatistics.grid.title.outboundTime">Outgoing REC time</entry>
+	<entry key="statistics.callStatistics.grid.title.transfer">Number of call transfer</entry>
+	<entry key="statistics.callStatistics.grid.title.transferTime">Call transfer REC time</entry>
+	<entry key="statistics.callStatistics.grid.title.conference">Number of conference call</entry>
+	<entry key="statistics.callStatistics.grid.title.conferenceTime">Conference call REC time</entry>
+	<entry key="statistics.callStatistics.grid.title.internal">Number of extension call</entry>
+	<entry key="statistics.callStatistics.grid.title.internalTime">Extension call REC time</entry>
+	<entry key="statistics.callStatistics.grid.title.noRecodingCount">Number of REC canceled</entry>
+	<entry key="statistics.callStatistics.grid.title.realCalls">Number of effective call</entry>
+	<entry key="statistics.callStatistics.grid.title.realCallTime">Effective Call Time</entry>
+	<entry key="statistics.callStatistics.grid.title.Total">Total</entry>
+	<entry key="statistics.callStatistics.grid.title.division">Division</entry>
+	<entry key="statistics.callStatistics.grid.title.connTry">Connection attempt</entry>
+	<entry key="statistics.callStatistics.grid.title.connSuccess">Connection successful</entry>
+	<entry key="statistics.callStatistics.grid.title.connFail">Give up connection</entry>
+	<entry key="statistics.callStatistics.grid.title.connMiss">Missed</entry>
+	<entry key="statistics.callStatistics.grid.title.calling">Calling</entry>
+	<entry key="statistics.callStatistics.grid.title.bgName">LargeGroup</entry>
+	<entry key="statistics.callStatistics.grid.title.bgName">MiddleGroup</entry>
+	<entry key="statistics.callStatistics.grid.title.bgName">SmallGroup</entry>
+	<entry key="statistics.callStatistics.grid.title.totalcalls">Number of attempts</entry>
+	<entry key="statistics.callStatistics.grid.title.realcalling">Number of calls</entry>
+	<entry key="statistics.callStatistics.grid.title.totalTimeCalls">Total calls</entry>
+	<entry key="statistics.callStatistics.grid.title.avgTimeCalls">Avg calls</entry>
+	<entry key="statistics.callStatistics.grid.title.groupUsers">Users</entry>
+	<entry key="statistics.callStatistics.grid.title.id">UserID</entry>
+	<entry key="statistics.callStatistics.grid.title.name">Name</entry>
+	<entry key="statistics.callStatistics.grid.title.totalDial">totalDial</entry>
+	<entry key="statistics.callStatistics.grid.title.no">No</entry>
+	<entry key="statistics.callStatistics.grid.title.groupName">GroupName</entry>
+	<entry key="statistics.callStatistics.grid.title.nameAndId">Name(Id)</entry>
+	<entry key="statistics.callStatistics.grid.title.freeBeforeCust">Free former member</entry>
+	<entry key="statistics.callStatistics.grid.title.freeCust">Free member</entry>
+	<entry key="statistics.callStatistics.grid.title.expirationCust">Expired member</entry>
+	<entry key="statistics.callStatistics.grid.title.RegularCust">Regular member</entry>
+	<entry key="statistics.callStatistics.grid.title.CancelMember">Cancel member</entry>
+	<entry key="statistics.callStatistics.grid.title.AdjournedMember">Adjourned member</entry>
+	<entry key="statistics.callStatistics.grid.title.AdjournedExpectedMember">Adjourned Expected Member</entry>
+	<entry key="statistics.callStatistics.grid.title.OtherMembers">Other members</entry>
+	<entry key="statistics.callStatistics.grid.title.totalCallsTime">TotalCallTime</entry>
+	<entry key="statistics.callStatistics.grid.title.callingTime">CallingTime</entry>
+	<entry key="statistics.callStatistics.grid.title.TryAndConn">(Try | Conn)</entry>
+	<entry key="statistics.callStatistics.grid.title.sumConnAndsumTime">(ConnSum | TimeSum)</entry>
+	<entry key="statistics.callStatistics.grid.title.regularMemAndCancelMem">(RMem | CMem)</entry>
+
+
+	<entry key="statistics.dashboard.title.daily">Daily REC statistics</entry>
+	<entry key="statistics.dashboard.title.week">Weekly REC Statistics</entry>
+	<entry key="statistics.dashboard.title.callPerFile">Call vs REC File Statistics</entry>
+	<entry key="statistics.dashboard.title.server">Call Time by Server</entry>
+
+	<entry key="statistics.dashboard.title.axisInbound">Incoming call</entry>
+	<entry key="statistics.dashboard.title.axisOutbound">Outgoing call</entry>
+	<entry key="statistics.dashboard.title.axisCall">Number of call</entry>
+	<entry key="statistics.dashboard.title.axisFile">Number of REC file</entry>
+	<entry key="statistics.dashboard.title.axisTime">REC time(time)</entry>
+
+	<entry key="statistics.userStatistics.graph.axisTitle">Number of REC</entry>
+
+	<entry key="statistics.userStatistics.grid.title.time">Time</entry>
+	<entry key="statistics.userStatistics.grid.title.userName">User Name</entry>
+	<entry key="statistics.userStatistics.grid.title.userId">ID</entry>
+	<entry key="statistics.userStatistics.grid.title.extNo">Extension</entry>
+	<entry key="statistics.userStatistics.grid.title.bgName">large Classification</entry>
+	<entry key="statistics.userStatistics.grid.title.mgName">middle Classification</entry>
+	<entry key="statistics.userStatistics.grid.title.sgName">small Classification</entry>
+	<entry key="statistics.userStatistics.grid.title.calls">Number of REC</entry>
+	<entry key="statistics.userStatistics.grid.title.talkTime">Time of REC</entry>
+	<entry key="statistics.userStatistics.grid.title.inbound">Number of received</entry>
+	<entry key="statistics.userStatistics.grid.title.inboundTime">Receive REC Time</entry>
+	<entry key="statistics.userStatistics.grid.title.outbound">Number of outgoing</entry>
+	<entry key="statistics.userStatistics.grid.title.outboundTime">Outgoing REC time</entry>
+	<entry key="statistics.userStatistics.grid.title.transfer">Number of call transfer</entry>
+	<entry key="statistics.userStatistics.grid.title.transferTime">Call transfer REC time</entry>
+	<entry key="statistics.userStatistics.grid.title.conference">Number of conference call</entry>
+	<entry key="statistics.userStatistics.grid.title.conferenceTime">Conference call REC time</entry>
+	<entry key="statistics.userStatistics.grid.title.internal">Number of extension call</entry>
+	<entry key="statistics.userStatistics.grid.title.internalTime">Extension call REC time</entry>
+	<entry key="statistics.userStatistics.grid.title.noRecodingCount">Number of REC canceled</entry>
+	<entry key="statistics.userStatistics.grid.title.Total">Total</entry>
+	<entry key="statistics.userStatistics.grid.title.rBgCode">large Classification</entry>
+	<entry key="statistics.userStatistics.grid.title.rMgCode">middle Classification</entry>
+	<entry key="statistics.userStatistics.grid.title.rSgCode">small Classification</entry>
+	<entry key="statistics.userStatistics.grid.title.rRecDate">Date</entry>
+	<entry key="statistics.userStatistics.grid.title.rRecRtime">Time</entry>
+	<entry key="statistics.userStatistics.grid.title.realCalls">Number of effective outgoing call</entry>
+	<entry key="statistics.userStatistics.grid.title.realCallTime">Valid Outgoing Call Time</entry>
+
+	<entry key="statistics.userStatistics.excel.title.r_user_name">User name</entry>
+	<entry key="statistics.userStatistics.excel.title.r_bg_code">large Classification</entry>
+	<entry key="statistics.userStatistics.excel.title.r_mg_code">middle Classification</entry>
+	<entry key="statistics.userStatistics.excel.title.r_sg_code">small Classification</entry>
+	<entry key="statistics.userStatistics.excel.title.r_user_id">ID</entry>
+	<entry key="statistics.userStatistics.excel.title.r_ext_no">Extension number</entry>
+	<entry key="statistics.userStatistics.excel.title.total_calls">Number of REC</entry>
+	<entry key="statistics.userStatistics.excel.title.total_time">Time of REC</entry>
+	<entry key="statistics.userStatistics.excel.title.inbound_time">Number of received</entry>
+	<entry key="statistics.userStatistics.excel.title.inbound_calls">Number of received</entry>
+	<entry key="statistics.userStatistics.excel.title.outbound_calls">Outgoing time</entry>
+	<entry key="statistics.userStatistics.excel.title.outbound_time">Outgoing time</entry>
+	<entry key="statistics.userStatistics.excel.title.transfer_calls">Call transfer time</entry>
+	<entry key="statistics.userStatistics.excel.title.transfer_time">Call transfer time</entry>
+	<entry key="statistics.userStatistics.excel.title.conference_calls">Number of conference call</entry>
+	<entry key="statistics.userStatistics.excel.title.conference_time">Conference call time</entry>
+	<entry key="statistics.userStatistics.excel.title.internal_calls">Number of extension call</entry>
+	<entry key="statistics.userStatistics.excel.title.internal_time">Time of extension calls</entry>
+	<entry key="statistics.userStatistics.excel.title.real_calls">Number of effective call</entry>
+	<entry key="statistics.userStatistics.excel.title.real_time">Time of effective call</entry>
+	<entry key="statistics.userStatistics.excel.title.R_REC_RTIME">Time</entry>
+	<entry key="statistics.userStatistics.excel.title.R_REC_DATE">Date</entry>
+	<entry key="statistics.userStatistics.excel.title.dayOfWeek">Day of week</entry>
+	<entry key="statistics.userStatistics.excel.title.totalCallbytime">Total</entry>
+	<entry key="statistics.userStatistics.excel.title.sec30">Less than 30 seconds</entry>
+	<entry key="statistics.userStatistics.excel.title.sec60">Less than 1 minute</entry>
+	<entry key="statistics.userStatistics.excel.title.sec120">Less than 2 minutes</entry>
+	<entry key="statistics.userStatistics.excel.title.sec180">Less than 3 minutes</entry>
+	<entry key="statistics.userStatistics.excel.title.sec240">Less than 4 minutes</entry>
+	<entry key="statistics.userStatistics.excel.title.sec300">Less than 5 minutes</entry>
+	<entry key="statistics.userStatistics.excel.title.sec420">Less than 7 minutes</entry>
+	<entry key="statistics.userStatistics.excel.title.sec600">Less than 10 minutes</entry>
+	<entry key="statistics.userStatistics.excel.title.moresec600">more than 10 minutes</entry>
+	<entry key="statistics.userStatistics.grid.title.groupStatistics">Statistics by Group</entry>
+	<entry key="statistics.userStatistics.grid.title.byDate">By Date</entry>
+	<entry key="statistics.userStatistics.grid.title.byTime">By Time</entry>
+	<entry key="statistics.userStatistics.grid.title.byWeek">By Week</entry>
+	<entry key="statistics.userStatistics.grid.title.byDayWeek">By Day of Week</entry>
+	<entry key="statistics.userStatistics.grid.title.byMonth">By Month</entry>
+	<entry key="statistics.userStatistics.grid.title.byGroup">By Group</entry>
+	<entry key="statistics.userStatistics.grid.title.byUser">By User</entry>
+	<entry key="statistics.userStatistics.grid.title.byDetail">Detail to</entry>
+	<entry key="statistics.userStatistics.grid.title.statisticsType">Statistics type</entry>
+	<entry key="statistics.userStatistics.grid.title.peopleStatistics">Statistics by User</entry>
+	<entry key="statistics.userStatistics.grid.title.mobileStatistics">Statistics by Mobile</entry>
+
+	<!-- 18-09-05 -pilip statistics kor lang add -->
+	<entry key="statistics.js.alert.msg1">Please select a employee</entry>
+	<entry key="statistics.js.alert.msg2">Total</entry>
+	<entry key="statistics.js.alert.msg3">Select people</entry>
+	<entry key="statistics.js.alert.msg4">Select target group</entry>
+	<entry key="statistics.js.alert.msg5">Please enter both start and end dates</entry>
+	<entry key="statistics.js.alert.msg6">Total</entry>
+	<entry key="statistics.js.alert.msg7">Number of REC</entry>
+	<entry key="statistics.js.alert.msg8"></entry>
+	<entry key="statistics.js.alert.msg9">Out</entry>
+	<entry key="statistics.js.alert.msg10">Out time</entry>
+	<entry key="statistics.js.alert.msg11">Switch</entry>
+	<entry key="statistics.js.alert.msg12">Switch time</entry>
+	<entry key="statistics.js.alert.msg13">conference</entry>
+	<entry key="statistics.js.alert.msg14">conference time</entry>
+	<entry key="statistics.js.alert.msg15">Extension</entry>
+	<entry key="statistics.js.alert.msg16">Extension time</entry>
+	<entry key="statistics.js.alert.msg17">Total</entry>
+	<entry key="statistics.js.alert.msg18">Time1</entry>
+	<entry key="statistics.js.alert.msg19">Time2 sum</entry>
+	<entry key="statistics.js.alert.msg20">Time3 sum</entry>
+	<entry key="statistics.js.alert.msg21">Time4</entry>
+	<entry key="statistics.js.alert.msg22">Time5</entry>
+	<entry key="statistics.js.alert.msg23">Time6</entry>
+	<entry key="statistics.js.alert.msg24">Time7</entry>
+	<entry key="statistics.js.alert.msg25">Time8</entry>
+	<entry key="statistics.js.alert.msg26">Time9</entry>
+	<entry key="statistics.js.alert.msg27">Real</entry>
+	<entry key="statistics.js.alert.msg28">Real Time</entry>
+	<entry key="statistics.js.alert.msg29">Excel download cannot be performed because no result has been inquired.</entry>
+	<entry key="statistics.js.alert.msg30">Less than 30 seconds</entry>
+	<entry key="statistics.js.alert.msg31">Less than 1 minute</entry>
+	<entry key="statistics.js.alert.msg32">Less than 2 minutes</entry>
+	<entry key="statistics.js.alert.msg33">Less than 3 minutes</entry>
+	<entry key="statistics.js.alert.msg34">Less than 4 minutes</entry>
+	<entry key="statistics.js.alert.msg35">Less than 5 minutes</entry>
+	<entry key="statistics.js.alert.msg36">Less than 7 minutes</entry>
+	<entry key="statistics.js.alert.msg37">Less than 10 minutes</entry>
+	<entry key="statistics.js.alert.msg38">more than 10 minutes</entry>
+	<entry key="statistics.js.alert.msg39">REC time</entry>
+	<entry key="statistics.js.alert.msg40">Average REC time</entry>
+	<entry key="statistics.js.alert.msg41">Minute</entry>
+	
+	
+	<entry key="statistics.title.callRate">Rate by call type</entry>
+	<entry key="statistics.title.callTrends">Call trends by call time</entry>
+	<entry key="statistics.title.selectEmployee">Please select an employee</entry>
+	<entry key="statistics.title.total">Select a total of</entry>
+	<entry key="statistics.title.selectPeople">people</entry>
+	<entry key="statistics.title.callTrends2">Call trends</entry>
+	<entry key="statistics.title.cases"> cases</entry>
+	<entry key="statistics.title.monthly">Monthly Call Trends</entry>
+
+
+
+	<entry key="statistics.title.callTransfer">Transfer a call</entry>
+	<entry key="statistics.title.extension">an extension line</entry>
+	<entry key="statistics.title.meeting">Meeting</entry>
+	<entry key="statistics.title.timeOfTheDay">Statistics by recording type according to the time of the day</entry>
+	<entry key="statistics.title.callCount">Number of Calls</entry>
+	<entry key="statistics.title.time">Time</entry>
+	<entry key="statistics.title.weekly">Statistics by Weekly Record Type</entry>
+	<entry key="statistics.title.date">Date</entry>
+	<entry key="statistics.title.hourOfTheDay">Recorded statistics by the hour of the day</entry>
+
+	<entry key="statistics.title.dayOfWeek.1">Monday</entry>	
+	<entry key="statistics.title.dayOfWeek.2">Tuesday</entry>	
+	<entry key="statistics.title.dayOfWeek.3">Wednesday</entry>	
+	<entry key="statistics.title.dayOfWeek.4">Thursday</entry>	
+	<entry key="statistics.title.dayOfWeek.5">Friday</entry>	
+	<entry key="statistics.title.dayOfWeek.6">Saturday</entry>	
+	<entry key="statistics.title.dayOfWeek.7">Sunday</entry>	
+</properties>

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.EtcConfigInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.EtcConfigInfo">
+		<result column="R_GROUP_KEY" 		jdbcType="VARCHAR" property="groupKey" />
+		<result column="R_CONFIG_KEY" 		jdbcType="VARCHAR" property="configKey" />
+		<result column="R_CONFIG_VALUE" 	jdbcType="VARCHAR" property="configValue" />
+		<result column="R_CONFIG_OPTION" 	jdbcType="VARCHAR" property="configOption" />
+		<result column="DESC" 	jdbcType="VARCHAR" property="desc" />
+	</resultMap>
+
+	<resultMap id="templateKeyMap" type="com.furence.recsee.common.model.TemplateKeyInfo">
+		<result column="R_TEMPLATE_KEY" 	jdbcType="VARCHAR" property="templateKey"/>
+		<result column="R_COLOR_KEY" 		jdbcType="VARCHAR" property="colorKey"/>
+		<result column="R_COLOR_VALUE" 		jdbcType="VARCHAR" property="colorValue"/>
+	</resultMap>
+
+	<select id="selectEtcConfigInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap" databaseId="postgres">
+		SELECT *
+		FROM RS_ETC_CONFIG
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="groupKey != null">
+				R_GROUP_KEY = #{groupKey} AND
+				</if>
+				<if test="configKey != null">
+				R_CONFIG_KEY = #{configKey} AND
+				</if>
+				<if test="configValue != null">
+				(R_GROUP_KEY LIKE '%'||#{configValue}||'%' OR R_CONFIG_KEY LIKE '%'||#{configValue}||'%' OR R_CONFIG_VALUE LIKE '%'||#{configValue}||'%' OR R_CONFIG_OPTION LIKE '%'||#{configValue}||'%' OR RS_ETC_CONFIG.DESC LIKE '%'||#{configValue}||'%')
+				</if>
+			</trim>
+		</where>
+		ORDER BY R_GROUP_KEY, R_CONFIG_KEY
+	</select>
+	<select id="selectEtcConfigInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap" databaseId="sqlserver">
+		SELECT *
+		FROM RS_ETC_CONFIG
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="groupKey != null">
+				R_GROUP_KEY = #{groupKey} AND
+				</if>
+				<if test="configKey != null">
+				R_CONFIG_KEY = #{configKey} AND
+				</if>
+				<if test="configValue != null">
+				(R_GROUP_KEY LIKE '%' || #{configValue} || '%' OR R_CONFIG_KEY LIKE '%' || #{configValue} || '%' OR R_CONFIG_VALUE LIKE '%' || #{configValue} || '%' OR R_CONFIG_OPTION LIKE '%' || #{configValue} || '%' OR RS_ETC_CONFIG.DESC LIKE '%' || #{configValue} || '%')
+				</if>
+			</trim>
+		</where>
+		ORDER BY R_GROUP_KEY, R_CONFIG_KEY
+	</select>
+	<select id="selectEtcConfigInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap" databaseId="oracle">
+		SELECT *
+		FROM RS_ETC_CONFIG
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="groupKey != null">
+				R_GROUP_KEY = #{groupKey} AND
+				</if>
+				<if test="configKey != null">
+				R_CONFIG_KEY = #{configKey} AND
+				</if>
+				<if test="configValue != null">
+				(R_GROUP_KEY LIKE '%' || #{configValue} || '%' OR R_CONFIG_KEY LIKE '%' || #{configValue} || '%' OR R_CONFIG_VALUE LIKE '%' || #{configValue} || '%' OR R_CONFIG_OPTION LIKE '%' || #{configValue} || '%' OR RS_ETC_CONFIG.DESC LIKE '%' || #{configValue} || '%')
+				</if>
+			</trim>
+		</where>
+		ORDER BY R_GROUP_KEY, R_CONFIG_KEY
+	</select>
+
+	<select id="selectEtcConfigKey" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap">
+		SELECT
+
+		<if test="groupKey == null">
+		DISTINCT(R_GROUP_KEY) AS R_GROUP_KEY
+		</if>
+		<if test="groupKey != null">
+		*
+		</if>
+
+		FROM RS_ETC_CONFIG
+		<where>
+			<trim suffixOverrides="AND">
+				RS_ETC_CONFIG.DESC IS NOT NULL AND
+				<if test="groupKey != null">
+				R_GROUP_KEY = #{groupKey}
+				</if>
+				<if test="configKey != null">
+				AND R_CONFIG_KEY = #{configKey}
+				</if>
+			</trim>
+		</where>
+		ORDER BY R_GROUP_KEY
+			<if test="groupKey != null">
+				, R_CONFIG_KEY
+			</if>
+	</select>
+	
+	<select id="selectEtcConfigKey" databaseId="oracle" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap">
+		SELECT
+
+		<if test="groupKey == null">
+		DISTINCT(R_GROUP_KEY) AS R_GROUP_KEY
+		</if>
+		<if test="groupKey != null">
+		*
+		</if>
+
+		FROM RS_ETC_CONFIG
+		<where>
+			<trim suffixOverrides="AND">
+				RS_ETC_CONFIG."desc" IS NOT NULL AND
+				<if test="groupKey != null">
+				R_GROUP_KEY = #{groupKey}
+				</if>
+				<if test="configKey != null">
+				AND R_CONFIG_KEY = #{configKey}
+				</if>
+			</trim>
+		</where>
+		ORDER BY R_GROUP_KEY
+			<if test="groupKey != null">
+				, R_CONFIG_KEY
+			</if>
+	</select>
+
+	<insert id="insertEtcConfigInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+		INSERT INTO RS_ETC_CONFIG (
+			R_GROUP_KEY, 
+			R_CONFIG_KEY, 
+			R_CONFIG_VALUE
+			<if test="desc != null">
+			,"desc"
+			</if>
+			<if test="configOption != null">
+			,R_CONFIG_OPTION
+			</if>
+		)
+		VALUES (
+			#{groupKey},
+			#{configKey},
+			#{configValue}
+			<if test="desc != null">
+			,#{desc}
+			</if>
+			<if test="configOption != null">
+			,#{configOption}
+			</if>
+		)
+	</insert>
+
+	<update id="updateEtcConfigInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+		UPDATE RS_ETC_CONFIG
+			<set>
+				<if test="mGroupKey != null">
+				R_GROUP_KEY = #{mGroupKey},
+				</if>
+				<if test="mConfigKey != null">
+				R_CONFIG_KEY = #{mConfigKey},
+				</if>
+				R_CONFIG_VALUE = #{configValue},
+			</set>
+			WHERE
+						R_GROUP_KEY = #{groupKey}
+					AND R_CONFIG_KEY = #{configKey}
+		
+	</update>
+	<update id="updateEtcConfigInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+
+			UPDATE RS_ETC_CONFIG
+			<set>
+				<if test="mGroupKey != null">
+				R_GROUP_KEY = #{mGroupKey},
+				</if>
+				<if test="mConfigKey != null">
+				R_CONFIG_KEY = #{mConfigKey},
+				</if>
+				R_CONFIG_VALUE = #{configValue}
+			</set>
+			OUTPUT
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_etc_config'
+		 	,	INSERTED.R_GROUP_KEY
+			,	INSERTED.R_CONFIG_KEY
+			,	SUBSTRING(INSERTED.R_CONFIG_VALUE,1,500)
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			)
+
+			WHERE
+						R_GROUP_KEY = #{groupKey}
+					AND R_CONFIG_KEY = #{configKey}
+
+
+	</update>
+	<update id="updateEtcConfigInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_ETC_CONFIG
+			<set>
+				<if test="mGroupKey != null">
+				R_GROUP_KEY = #{mGroupKey},
+				</if>
+				<if test="mConfigKey != null">
+				R_CONFIG_KEY = #{mConfigKey},
+				</if>
+				R_CONFIG_VALUE = #{configValue},
+			</set>
+			WHERE
+						R_GROUP_KEY = #{groupKey}
+					AND R_CONFIG_KEY = #{configKey}
+			RETURNING ROWID INTO row_id;
+			
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			)
+			 SELECT
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'U'
+			 	,	'rs_etc_config'
+			 	,	EC.R_GROUP_KEY
+				,	EC.R_CONFIG_KEY
+				,	SUBSTR(EC.R_CONFIG_VALUE,1,500)
+			FROM DUAL, RS_ETC_CONFIG EC
+	        WHERE EC.ROWID = row_id;
+
+		END; -->
+		UPDATE RS_ETC_CONFIG
+			<set>
+				<if test="mGroupKey != null">
+				R_GROUP_KEY = #{mGroupKey},
+				</if>
+				<if test="mConfigKey != null">
+				R_CONFIG_KEY = #{mConfigKey},
+				</if>
+				R_CONFIG_VALUE = #{configValue},
+			</set>
+			WHERE
+						R_GROUP_KEY = #{groupKey}
+					AND R_CONFIG_KEY = #{configKey}
+	</update>
+	
+	<delete id="deleteEtcConfigInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+		DELETE FROM RS_ETC_CONFIG
+		WHERE
+					R_GROUP_KEY = #{groupKey}
+				AND R_CONFIG_KEY = #{configKey}
+	</delete>
+
+	<select id="selectTemplateKeyInfo" parameterType="com.furence.recsee.common.model.TemplateKeyInfo" resultMap="templateKeyMap">
+		SELECT * FROM RS_TEMPLATE_COLOR
+		WHERE r_template_key = #{templateKey}
+	</select>
+	<!-- 통계의 호전환 숨기기 -->
+	<select id="selectHideTransfer" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultType="String">
+		SELECT R_CONFIG_VALUE
+		FROM RS_ETC_CONFIG
+		WHERE R_GROUP_KEY='statistics' AND R_CONFIG_KEY='HIDE_TRANSFER'
+	</select>
+	<!-- 통계의 회의통화 숨기기 -->
+	<select id="selectHideConference" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultType="String">
+		SELECT R_CONFIG_VALUE
+		FROM RS_ETC_CONFIG
+		WHERE R_GROUP_KEY='statistics' AND R_CONFIG_KEY='HIDE_CONFERENCE'
+	</select>
+	
+	
+	
+	
+	<!-- 20200120 김다빈 수정 -->
+	<select id="selectOptionInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_ETC_CONFIG
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="groupKey != null">
+				R_GROUP_KEY = #{groupKey} AND
+				</if>
+				<if test="configKey != null">
+				R_CONFIG_KEY = #{configKey} AND
+				</if>
+			</trim>
+		</where>
+	</select>
+	
+	<insert id="insertPrefixInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+		INSERT INTO RS_ETC_CONFIG (
+			R_GROUP_KEY, R_CONFIG_KEY, R_CONFIG_VALUE
+		)
+		VALUES (
+			#{groupKey}, #{configKey}, #{configValue}
+		)
+	</insert>
+	
+	
+	<update id="updatePrefixInfo" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+			UPDATE RS_ETC_CONFIG
+			<set>
+				R_CONFIG_VALUE = #{configValue}
+			</set>
+			WHERE R_GROUP_KEY  = 'Prefix'
+			  AND R_CONFIG_KEY = 'Prefix'
+	</update>
+	
+	
+	
+	
+	<update id="updateOptionValue" parameterType="com.furence.recsee.common.model.EtcConfigInfo">
+			UPDATE RS_ETC_CONFIG
+			<set>
+				R_CONFIG_VALUE = #{configValue}
+			</set>
+			WHERE R_GROUP_KEY  = #{groupKey}
+			  AND R_CONFIG_KEY = #{configKey}
+	</update>
+	
+	<select id="selectOptionYN" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_ETC_CONFIG
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="groupKey != null">
+				R_GROUP_KEY = #{groupKey} AND
+				</if>
+				<if test="configKey != null">
+				R_CONFIG_KEY = #{configKey} AND
+				</if>
+			</trim>
+		</where>
+	</select>
+	
+	<select id="selectEtcConfigInfoLike" parameterType="com.furence.recsee.common.model.EtcConfigInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_ETC_CONFIG
+		<where>
+			<if test="groupKey != null">
+			R_GROUP_KEY = #{groupKey}
+			</if>
+			<if test="configKey != null">
+			AND R_CONFIG_KEY LIKE '%' || #{configKey} || '%'
+			</if>
+		</where>
+		ORDER BY R_GROUP_KEY, R_CONFIG_KEY
+	</select>
+</mapper>

@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.ChannelInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.ChannelInfo">
+		<result column="R_CH_NUM" jdbcType="INTEGER" property="chNum" />
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="sysCode" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="extNum" />
+		<result column="R_EXT_KIND" jdbcType="VARCHAR" property="extKind" />
+		<result column="R_EXT_IP" jdbcType="VARCHAR" property="extIp" />
+		<result column="R_EXT_MAC" jdbcType="VARCHAR" property="extMac" />
+		<result column="R_RX_AMP" jdbcType="REAL" property="rxAmp" />
+		<result column="R_EXT_KEY" jdbcType="VARCHAR" property="extKey" />
+		<result column="R_EXT_AGT_IP" jdbcType="VARCHAR" property="extAgtIp" />
+		<result column="R_TX_AMP" jdbcType="REAL" property="txAmp" />
+		<result column="R_VOLUME" jdbcType="REAL" property="volume" />
+		<result column="R_AGC" jdbcType="REAL" property="agc" />
+		<result column="R_REC_YN" jdbcType="VARCHAR" property="recYn" />
+		<result column="R_LOG_YN" jdbcType="VARCHAR" property="logYn" />
+		<result column="R_SCREEN_YN" jdbcType="VARCHAR" property="screenYn" />
+		<result column="R_CH_TENANT" jdbcType="VARCHAR" property="chTenant" />
+		<result column="R_REC_TYPE" jdbcType="VARCHAR" property="recType" />
+		<result column="R_RECFILE_SIZE" jdbcType="VARCHAR" property="recSize" />
+		<result column="R_RECFILE_SUM" jdbcType="VARCHAR" property="recSum" />
+		<result column="R_RECFILE_COUNT" jdbcType="VARCHAR" property="recCount" />
+		<result column="R_CALL_KEY_AP" jdbcType="VARCHAR" property="recApkey" />
+		<result column="R_CALL_KEY_AP_SIZE" jdbcType="VARCHAR" property="recApkeySize" />
+		<result column="R_DATE" jdbcType="VARCHAR" property="recDate" />
+		<result column="R_EXT_NO" jdbcType="VARCHAR" property="extNo" />
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="userId" />
+		<result column="R_USER_NAME" jdbcType="VARCHAR" property="userName" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="mgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="sgCode" />
+		
+		<result column="R_SWITCH_CH_NUM" jdbcType="VARCHAR" property="switchChNum" />
+	</resultMap>
+
+	<resultMap id="GroupResultMap" type="com.furence.recsee.admin.model.ChannelInfo">
+		<result column="R_CH_NUM" jdbcType="INTEGER" property="chNum" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="extNum" />
+		<result column="R_DATE" jdbcType="VARCHAR" property="recDate" />
+	</resultMap>
+
+	<select id="selectChannelInfo" parameterType="com.furence.recsee.admin.model.ChannelInfo" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_CH_INFO
+		WHERE true
+		<if test="chNum != null">
+		AND R_CH_NUM = #{chNum}
+		</if>
+		<if test="sysCode != null">
+		AND R_SYS_CODE = #{sysCode}
+		</if>
+		<if test="extNum != null">
+		AND R_EXT_NUM = #{extNum}
+		</if>
+		<if test="extIp != null">
+		AND R_EXT_IP LIKE '%' || #{extIp} || '%'
+		</if>
+		<if test="extKind != null">
+		AND R_EXT_KIND = #{extKind}
+		</if>
+		<if test="recYn != null">
+		AND R_REC_YN = #{recYn}
+		</if>
+		<if test="recType != null">
+		AND R_REC_TYPE = #{recType}
+		</if>
+		<if test="screenYn != null">
+		AND R_SCREEN_YN = #{screenYn}
+		</if>
+		<if test="grpFlag != null">
+		GROUP BY R_CH_NUM
+		</if>
+		ORDER BY R_SYS_CODE, R_CH_NUM
+	</select>
+
+	<select id="selectChannelInfo" parameterType="com.furence.recsee.admin.model.ChannelInfo" databaseId="sqlserver" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_CH_INFO
+		WHERE 1=1
+		<if test="chNum != null">
+		AND R_CH_NUM = #{chNum}
+		</if>
+		<if test="sysCode != null">
+		AND R_SYS_CODE = #{sysCode}
+		</if>
+		<if test="extNum != null">
+		AND R_EXT_NUM = #{extNum}
+		</if>
+		<if test="extIp != null">
+		AND R_EXT_IP LIKE '%' || #{extIp} || '%'
+		</if>
+		<if test="extKind != null">
+		AND R_EXT_KIND = #{extKind}
+		</if>
+		<if test="recYn != null">
+		AND R_REC_YN = #{recYn}
+		</if>
+		<if test="recType != null">
+		AND R_REC_TYPE = #{recType}
+		</if>
+		<if test="screenYn != null">
+		AND R_SCREEN_YN = #{screenYn}
+		</if>
+		<if test="grpFlag != null">
+		GROUP BY R_CH_NUM
+		</if>
+		ORDER BY R_SYS_CODE, R_CH_NUM
+	</select>
+	
+	<select id="selectChannelInfo" parameterType="com.furence.recsee.admin.model.ChannelInfo" databaseId="oracle" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_CH_INFO
+		WHERE 1=1
+		<if test="chNum != null">
+		AND R_CH_NUM = #{chNum}
+		</if>
+		<if test="sysCode != null">
+		AND R_SYS_CODE = #{sysCode}
+		</if>
+		<if test="extNum != null">
+		AND R_EXT_NUM = #{extNum}
+		</if>
+		<if test="extIp != null">
+		AND R_EXT_IP LIKE '%' || #{extIp} || '%' 
+		</if>
+		<if test="extKind != null">
+		AND R_EXT_KIND = #{extKind}
+		</if>
+		<if test="recYn != null">
+		AND R_REC_YN = #{recYn}
+		</if>
+		<if test="recType != null">
+		AND R_REC_TYPE = #{recType}
+		</if>
+		<if test="screenYn != null">
+		AND R_SCREEN_YN = #{screenYn}
+		</if>
+		<if test="grpFlag != null">
+		GROUP BY R_CH_NUM
+		</if>
+		ORDER BY R_SYS_CODE, R_CH_NUM
+	</select>
+
+	<select id="selectChannelInfoGet" parameterType="com.furence.recsee.admin.model.ChannelInfo" databaseId="postgres" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_CH_INFO
+		WHERE true
+		<if test="chNum != null">
+		AND R_CH_NUM = #{chNum}
+		</if>
+		<if test="sysCode != null">
+		AND R_SYS_CODE = #{sysCode}
+		</if>
+		<if test="extNum != null">
+		AND R_EXT_NUM = #{extNum}
+		</if>
+		<if test="extIp != null">
+		AND R_EXT_IP LIKE '%' || #{extIp} || '%'
+		</if>
+		<if test="extKind != null">
+		AND R_EXT_KIND = #{extKind}
+		</if>
+		<if test="recYn != null">
+		AND R_REC_YN = #{recYn}
+		</if>
+		<if test="recType != null">
+		AND R_REC_TYPE = #{recType}
+		</if>
+		<if test="screenYn != null">
+		AND R_SCREEN_YN = #{screenYn}
+		</if>
+		<if test="grpFlag != null">
+		GROUP BY R_CH_NUM
+		</if>
+		ORDER BY R_SYS_CODE, R_CH_NUM
+	</select>
+
+	<select id="selectChannelInfoGet" parameterType="com.furence.recsee.admin.model.ChannelInfo" databaseId="sqlserver" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_CH_INFO
+		WHERE 1=1
+		<if test="chNum != null">
+		AND R_CH_NUM = #{chNum}
+		</if>
+		<if test="sysCode != null">
+		AND R_SYS_CODE = #{sysCode}
+		</if>
+		<if test="extNum != null">
+		AND R_EXT_NUM = #{extNum}
+		</if>
+		<if test="extIp != null">
+		AND R_EXT_IP LIKE '%' || #{extIp} || '%'
+		</if>
+		<if test="extKind != null">
+		AND R_EXT_KIND = #{extKind}
+		</if>
+		<if test="recYn != null">
+		AND R_REC_YN = #{recYn}
+		</if>
+		<if test="recType != null">
+		AND R_REC_TYPE = #{recType}
+		</if>
+		<if test="screenYn != null">
+		AND R_SCREEN_YN = #{screenYn}
+		</if>
+		<if test="grpFlag != null">
+		GROUP BY R_CH_NUM
+		</if>
+		ORDER BY R_SYS_CODE, R_CH_NUM
+	</select>
+	
+	<select id="selectChannelInfoGet" parameterType="com.furence.recsee.admin.model.ChannelInfo" databaseId="oracle" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_CH_INFO
+		WHERE 1=1
+		<if test="chNum != null">
+		AND R_CH_NUM = #{chNum}
+		</if>
+		<if test="sysCode != null">
+		AND R_SYS_CODE = #{sysCode}
+		</if>
+		<if test="extNum != null">
+		AND R_EXT_NUM = #{extNum}
+		</if>
+		<if test="extIp != null">
+		AND R_EXT_IP LIKE '%' || #{extIp} || '%'
+		</if>
+		<if test="extKind != null">
+		AND R_EXT_KIND = #{extKind}
+		</if>
+		<if test="recYn != null">
+		AND R_REC_YN = #{recYn}
+		</if>
+		<if test="recType != null">
+		AND R_REC_TYPE = #{recType}
+		</if>
+		<if test="screenYn != null">
+		AND R_SCREEN_YN = #{screenYn}
+		</if>
+		<if test="grpFlag != null">
+		GROUP BY R_CH_NUM
+		</if>
+		ORDER BY R_SYS_CODE, R_CH_NUM
+	</select>
+
+	<select id="groupChannelInfo" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultMap="GroupResultMap">
+		SELECT R_CH_NUM, R_EXT_NUM <!-- MAX(R_EXT_NUM) AS R_EXT_NUM -->
+		FROM RS_CH_INFO
+		<!-- GROUP BY R_CH_NUM -->
+		ORDER BY R_CH_NUM
+	</select>
+
+	<insert id="insertChannelInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+			INSERT INTO RS_CH_INFO (
+					R_CH_NUM
+				, 	R_SYS_CODE
+				, 	R_EXT_NUM
+				, 	R_EXT_KIND
+				, 	R_EXT_IP
+				, 	R_EXT_AGT_IP
+				, 	R_REC_YN
+				, 	R_REC_TYPE
+				,	R_SCREEN_YN
+			) VALUES (
+					(select coalesce(max(R_CH_NUM::integer),0)+1 as chNum from RS_CH_INFO where R_SYS_CODE = #{sysCode})
+				, 	#{sysCode}
+				, 	#{extNum}
+				, 	#{extKind}
+				, 	#{extIp}
+				, 	#{extAgtIp}
+				, 	#{recYn}
+				, 	#{recType}
+				, 	#{screenYn}
+			)
+		
+	</insert>
+
+
+	<!-- 덜했음 ㅎ -->
+	<insert id="insertChannelInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+
+		<selectKey keyProperty="chNum" resultType="Integer" order="BEFORE">
+			select coalesce(max(convert(integer,R_CH_NUM)),0)+1 as chNum from RS_CH_INFO
+		</selectKey>
+
+			INSERT INTO RS_CH_INFO (
+					R_CH_NUM
+				, 	R_SYS_CODE
+				, 	R_EXT_NUM
+				, 	R_EXT_KIND
+				, 	R_EXT_IP
+				, 	R_REC_YN
+				, 	R_REC_TYPE
+				,	R_SCREEN_YN
+			) output
+
+					CONVERT(varchar(8),GETDATE(),112)
+			 	,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+			 	,	'C'
+			 	,	'rs_ch_info'
+			 	,	INSERTED.R_CH_NUM
+				,	INSERTED.R_SYS_CODE
+				,	INSERTED.R_EXT_NUM
+				,	INSERTED.R_EXT_KIND
+				,	INSERTED.R_EXT_IP
+				,	INSERTED.R_EXT_MAC
+				,	INSERTED.R_RX_AMP
+				,	INSERTED.R_EXT_KEY
+				,	INSERTED.R_EXT_AGT_IP
+				,	INSERTED.R_TX_AMP
+				,	INSERTED.R_VOLUME
+				,	INSERTED.R_AGC
+				,	INSERTED.R_REC_YN
+				,	INSERTED.R_LOG_YN
+				,	INSERTED.R_SCREEN_YN
+				,	INSERTED.R_CH_TENANT
+				,	INSERTED.R_REC_TYPE
+
+
+			into RS_SYNC_DATA(
+
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				  , R_SYNC_CULUMN6
+				  , R_SYNC_CULUMN7
+				  , R_SYNC_CULUMN8
+				  , R_SYNC_CULUMN9
+				  , R_SYNC_CULUMN10
+				  , R_SYNC_CULUMN11
+				  , R_SYNC_CULUMN12
+				  , R_SYNC_CULUMN13
+				  , R_SYNC_CULUMN14
+				  , R_SYNC_CULUMN15
+				  , R_SYNC_CULUMN16
+				  , R_SYNC_CULUMN17)
+
+			VALUES (
+					#{chNum}
+				, 	#{sysCode}
+				, 	#{extNum}
+				, 	#{extKind}
+				, 	#{extIp}
+				, 	#{recYn}
+				, 	#{recType}
+				, 	#{screenYn}
+			)
+
+	</insert>
+
+	<insert id="insertChannelInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+		<selectKey keyProperty="chNum" resultType="Integer" order="BEFORE">
+			select coalesce(max(TO_NUMBER(R_CH_NUM)),0)+1 as chNum from RS_CH_INFO
+		</selectKey>
+			<!-- DECLARE
+	 		 	row_id ROWID;
+			BEGIN
+				INSERT INTO RS_CH_INFO (
+						R_CH_NUM
+					, 	R_SYS_CODE
+					, 	R_EXT_NUM
+					, 	R_EXT_KIND
+					, 	R_EXT_IP
+					, 	R_REC_YN
+					, 	R_REC_TYPE
+					,	R_SCREEN_YN
+				) VALUES (
+						#{chNum}
+					, 	#{sysCode}
+					, 	#{extNum}
+					, 	#{extKind}
+					, 	#{extIp}
+					, 	#{recYn}
+					, 	#{recType}
+					, 	#{screenYn}
+				)
+				RETURNING ROWID INTO row_id;
+			
+	      INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			)
+	    SELECT 
+	        TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+	        ,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+	        ,	'C'
+	        ,	'rs_ch_info'
+	        ,	ch.R_CH_NUM
+	        ,	ch.R_SYS_CODE
+	        ,	ch.R_EXT_NUM
+	        ,	ch.R_EXT_KIND
+	        ,	ch.R_EXT_IP
+	        ,	ch.R_EXT_MAC
+	        ,	ch.R_RX_AMP
+	        ,	ch.R_EXT_KEY
+	        ,	ch.R_EXT_AGT_IP
+	        ,	ch.R_TX_AMP
+	        ,	ch.R_VOLUME
+	        ,	ch.R_AGC
+	        ,	ch.R_REC_YN
+	        ,	ch.R_LOG_YN
+	        ,	ch.R_SCREEN_YN
+	        ,	ch.R_CH_TENANT
+	        ,	ch.R_REC_TYPE
+	    
+	        FROM DUAL, RS_CH_INFO ch
+	        WHERE ch.ROWID = row_id;
+	
+			END; -->
+			INSERT INTO RS_CH_INFO (
+						R_CH_NUM
+					, 	R_SYS_CODE
+					, 	R_EXT_NUM
+					, 	R_EXT_KIND
+					, 	R_EXT_IP
+					, 	R_EXT_AGT_IP
+					, 	R_REC_YN
+					, 	R_REC_TYPE
+					,	R_SCREEN_YN
+				) VALUES (
+						#{chNum}
+					, 	#{sysCode}
+					, 	#{extNum}
+					, 	#{extKind}
+					, 	#{extIp}
+					, 	#{extAgtIp}
+					, 	#{recYn}
+					, 	#{recType}
+					, 	#{screenYn}
+				)
+			
+	</insert>
+	
+	<update id="updateChannelInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+			UPDATE RS_CH_INFO
+			<set>
+				<if test="sysCode != null">
+				R_SYS_CODE = #{sysCode},
+				</if>
+				<if test="extNum != null">
+				R_EXT_NUM = #{extNum},
+				</if>
+				<if test="extKind != null">
+				R_EXT_KIND = #{extKind},
+				</if>
+				<if test="extIp != null">
+				R_EXT_IP = #{extIp},
+				</if>
+				<if test="extAgtIp != null">
+				R_EXT_AGT_IP = #{extAgtIp},
+				</if>
+				<if test="recYn != null">
+				R_REC_YN = #{recYn},
+				</if>
+				<if test="recType != null">
+				R_REC_TYPE = #{recType},
+				</if>
+				<if test="screenYn != null">
+				R_SCREEN_YN = #{screenYn}
+				</if>
+				<if test="chTenant != null">
+				R_CH_TENANT = #{chTenant}
+				</if>
+			</set>
+			WHERE R_CH_NUM = #{chNum,jdbcType=VARCHAR}
+			AND R_SYS_CODE = #{oldSysCode,jdbcType=VARCHAR}
+
+	</update>
+
+
+	<update id="updateChannelInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+
+			UPDATE RS_CH_INFO
+			<set>
+				<if test="sysCode != null">
+				R_SYS_CODE = #{sysCode},
+				</if>
+				<if test="extNum != null">
+				R_EXT_NUM = #{extNum},
+				</if>
+				<if test="extKind != null">
+				R_EXT_KIND = #{extKind},
+				</if>
+				<if test="extIp != null">
+				R_EXT_IP = #{extIp},
+				</if>
+				<if test="extAgtIp != null">
+				R_EXT_AGT_IP = #{extAgtIp},
+				</if>
+				<if test="recYn != null">
+				R_REC_YN = #{recYn},
+				</if>
+				<if test="recType != null">
+				R_REC_TYPE = #{recType},
+				</if>
+				<if test="screenYn != null">
+				R_SCREEN_YN = #{screenYn}
+				</if>
+			</set>
+
+			output
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_ch_info'
+		 	,	INSERTED.R_CH_NUM
+			,	INSERTED.R_SYS_CODE
+			,	INSERTED.R_EXT_NUM
+			,	INSERTED.R_EXT_KIND
+			,	INSERTED.R_EXT_IP
+			,	INSERTED.R_EXT_MAC
+			,	INSERTED.R_RX_AMP
+			,	INSERTED.R_EXT_KEY
+			,	INSERTED.R_EXT_AGT_IP
+			,	INSERTED.R_TX_AMP
+			,	INSERTED.R_VOLUME
+			,	INSERTED.R_AGC
+			,	INSERTED.R_REC_YN
+			,	INSERTED.R_LOG_YN
+			,	INSERTED.R_SCREEN_YN
+			,	INSERTED.R_CH_TENANT
+			,	INSERTED.R_REC_TYPE
+
+			INTO RS_SYNC_DATA (
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			)
+
+			WHERE R_CH_NUM = #{chNum,jdbcType=VARCHAR}
+			AND R_SYS_CODE = #{oldSysCode,jdbcType=VARCHAR}
+
+	</update>
+	
+	<update id="updateChannelInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+		<!-- DECLARE
+	 		 row_id ROWID;
+		BEGIN
+			UPDATE RS_CH_INFO
+				<set>
+					<if test="sysCode != null">
+					R_SYS_CODE = #{sysCode},
+					</if>
+					<if test="extNum != null">
+					R_EXT_NUM = #{extNum},
+					</if>
+					<if test="extKind != null">
+					R_EXT_KIND = #{extKind},
+					</if>
+					<if test="extIp != null">
+					R_EXT_IP = #{extIp},
+					</if>
+					<if test="recYn != null">
+					R_REC_YN = #{recYn},
+					</if>
+					<if test="recType != null">
+					R_REC_TYPE = #{recType},
+					</if>
+					<if test="screenYn != null">
+					R_SCREEN_YN = #{screenYn}
+					</if>
+	
+				</set>
+				WHERE R_CH_NUM = #{chNum,jdbcType=VARCHAR}
+				AND R_SYS_CODE = #{oldSysCode,jdbcType=VARCHAR}
+	
+				RETURNING ROWID INTO row_id;
+		
+				INSERT INTO RS_SYNC_DATA (
+						R_SYNC_DATE
+					  , R_SYNC_TIME
+					  , R_SYNC_TYPE
+					  , R_SYNC_TABLENAME
+					  , R_SYNC_CULUMN1
+					  , R_SYNC_CULUMN2
+					  , R_SYNC_CULUMN3
+					  , R_SYNC_CULUMN4
+					  , R_SYNC_CULUMN5
+					  , R_SYNC_CULUMN6
+					  , R_SYNC_CULUMN7
+					  , R_SYNC_CULUMN8
+					  , R_SYNC_CULUMN9
+					  , R_SYNC_CULUMN10
+					  , R_SYNC_CULUMN11
+					  , R_SYNC_CULUMN12
+					  , R_SYNC_CULUMN13
+					  , R_SYNC_CULUMN14
+					  , R_SYNC_CULUMN15
+					  , R_SYNC_CULUMN16
+					  , R_SYNC_CULUMN17
+					)
+				 SELECT 
+			        	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			        ,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			        ,	'C'
+			        ,	'rs_ch_info'
+			        ,	ch.R_CH_NUM
+			        ,	ch.R_SYS_CODE
+			        ,	ch.R_EXT_NUM
+			        ,	ch.R_EXT_KIND
+			        ,	ch.R_EXT_IP
+			        ,	ch.R_EXT_MAC
+			        ,	ch.R_RX_AMP
+			        ,	ch.R_EXT_KEY
+			        ,	ch.R_EXT_AGT_IP
+			        ,	ch.R_TX_AMP
+			        ,	ch.R_VOLUME
+			        ,	ch.R_AGC
+			        ,	ch.R_REC_YN
+			        ,	ch.R_LOG_YN
+			        ,	ch.R_SCREEN_YN
+			        ,	ch.R_CH_TENANT
+			        ,	ch.R_REC_TYPE
+			    
+			        FROM DUAL, RS_CH_INFO ch
+			        WHERE ch.ROWID = row_id;
+        
+       	 END; -->
+       	 UPDATE RS_CH_INFO
+				<set>
+					<if test="sysCode != null">
+					R_SYS_CODE = #{sysCode},
+					</if>
+					<if test="extNum != null">
+					R_EXT_NUM = #{extNum},
+					</if>
+					<if test="extKind != null">
+					R_EXT_KIND = #{extKind},
+					</if>
+					<if test="extIp != null">
+					R_EXT_IP = #{extIp},
+					</if>
+					<if test="extAgtIp != null">
+					R_EXT_AGT_IP = #{extAgtIp},
+					</if>
+					<if test="recYn != null">
+					R_REC_YN = #{recYn},
+					</if>
+					<if test="recType != null">
+					R_REC_TYPE = #{recType},
+					</if>
+					<if test="screenYn != null">
+					R_SCREEN_YN = #{screenYn}
+					</if>
+	
+				</set>
+				WHERE R_CH_NUM = #{chNum,jdbcType=VARCHAR}
+				AND R_SYS_CODE = #{oldSysCode,jdbcType=VARCHAR}
+	</update>
+
+	<delete id="deleteChannelInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+		DELETE FROM RS_CH_INFO
+			<where>
+				<if test="chNum != null">
+				R_CH_NUM = #{chNum}
+				</if>
+				<if test="sysCode != null">
+				AND R_SYS_CODE = #{sysCode}
+				</if>
+			</where>			
+	</delete>
+
+	<delete id="deleteChannelInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+
+			DELETE FROM RS_CH_INFO
+
+			OUTPUT
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'D'
+		 	,	'rs_ch_info'
+		 	,	DELETED.R_CH_NUM
+			,	DELETED.R_SYS_CODE
+			,	DELETED.R_EXT_NUM
+			,	DELETED.R_EXT_KIND
+			,	DELETED.R_EXT_IP
+			,	DELETED.R_EXT_MAC
+			,	DELETED.R_RX_AMP
+			,	DELETED.R_EXT_KEY
+			,	DELETED.R_EXT_AGT_IP
+			,	DELETED.R_TX_AMP
+			,	DELETED.R_VOLUME
+			,	DELETED.R_AGC
+			,	DELETED.R_REC_YN
+			,	DELETED.R_LOG_YN
+			,	DELETED.R_SCREEN_YN
+			,	DELETED.R_CH_TENANT
+			,	DELETED.R_REC_TYPE
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			)
+
+			<where>
+				<if test="chNum != null">
+				R_CH_NUM = #{chNum}
+				</if>
+				<if test="sysCode != null">
+				AND R_SYS_CODE = #{sysCode}
+				</if>
+			</where>
+	</delete>
+	<!-- <select id="deleteChannelInfo" databaseId="oracle" resultType="integer" parameterType="com.furence.recsee.admin.model.ChannelInfo"> -->
+	<delete id="deleteChannelInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+		<!-- {
+		CALL
+		DECLARE
+		 	row_id ROWID;
+		BEGIN
+			DELETE FROM RS_CH_INFO
+			<where>
+				<if test="chNum != null">
+				R_CH_NUM = #{chNum}
+				</if>
+				<if test="sysCode != null">
+				AND R_SYS_CODE = #{sysCode}
+				</if>
+			</where>
+			RETURNING ROWID INTO row_id;
+			
+			SYS.DBMS_OUTPUT.PUT_LINE(SQL%ROWCOUNT);
+			
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			)
+		    SELECT 
+		        TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		        ,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		        ,	'C'
+		        ,	'rs_ch_info'
+		        ,	ch.R_CH_NUM
+		        ,	ch.R_SYS_CODE
+		        ,	ch.R_EXT_NUM
+		        ,	ch.R_EXT_KIND
+		        ,	ch.R_EXT_IP
+		        ,	ch.R_EXT_MAC
+		        ,	ch.R_RX_AMP
+		        ,	ch.R_EXT_KEY
+		        ,	ch.R_EXT_AGT_IP
+		        ,	ch.R_TX_AMP
+		        ,	ch.R_VOLUME
+		        ,	ch.R_AGC
+		        ,	ch.R_REC_YN
+		        ,	ch.R_LOG_YN
+		        ,	ch.R_SCREEN_YN
+		        ,	ch.R_CH_TENANT
+		        ,	ch.R_REC_TYPE
+		    
+		        FROM DUAL, RS_CH_INFO ch
+		        WHERE ch.ROWID = row_id;
+	
+			END
+		} -->
+			DELETE FROM RS_CH_INFO
+			<where>
+				<if test="chNum != null">
+				R_CH_NUM = #{chNum}
+				</if>
+				<if test="sysCode != null">
+				AND R_SYS_CODE = #{sysCode}
+				</if>
+			</where>
+
+	</delete>
+	<!-- </select> -->
+	<select id="selectChannelMonitoringInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultMap="BaseResultMap">
+		select
+			u.r_user_id,
+			u.r_user_name,
+			u.r_mg_code,
+			u.r_sg_code,
+			ch.r_ch_num,
+			ch.r_sys_code,
+			ch.r_ext_num,
+			ch.r_rec_yn,
+			ch.r_call_key_ap,
+			ch.r_recfile_size
+		from
+			rs_ruser_info as u
+			right join
+			(select
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num,
+				c.r_rec_yn,
+				r.r_call_key_ap,
+				coalesce(r_recfile_size::Integer-288 , 0) as r_recfile_size
+			from
+				rs_ch_info as c
+				<choose>
+				<when test="recDate != null">
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=#{recDate}) as r
+				</when>
+				<otherwise>
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=to_char(now(),'yyyymmdd')) as r
+				</otherwise>
+				</choose>
+				on c.r_ext_num=r.r_ext_num
+		 	 <where>
+				<if test="sysCode != null">
+					c.r_sys_code = #{sysCode}
+				</if>
+				<if test="extNum != null">
+					and c.r_ext_num = #{extNum}
+				</if>
+				<if test="chNum != null">
+					and c.r_ch_num = #{chNum}
+				</if>
+			</where>) as ch
+			on u.r_ext_no=ch.r_ext_num
+			<where>
+				<if test="userName != null">
+					u.r_user_name like '%' || #{userName} || '%'
+				</if>
+				<if test="userId != null">
+					and u.r_user_id like '%' || #{userId} || '%'
+				</if>
+					<if test="mgCode != null">
+					and u.r_mg_code = #{mgCode}
+				</if>
+				<if test="sgCode != null">
+					and u.r_sg_code = #{sgCode}
+				</if>
+			</where>
+		order by
+			ch.r_ch_num
+	</select>
+
+	<select id="selectChannelMonitoringInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultMap="BaseResultMap">
+		select
+			u.r_user_id,
+			u.r_user_name,
+			u.r_mg_code,
+			u.r_sg_code,
+			ch.r_ch_num,
+			ch.r_sys_code,
+			ch.r_ext_num,
+			ch.r_rec_yn,
+			ch.r_call_key_ap,
+			ch.r_recfile_size
+		from
+			rs_ruser_info as u
+			right join
+			(select
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num,
+				c.r_rec_yn,
+				r.r_call_key_ap,
+				coalesce(convert(integer,r_recfile_size)-288 , 0) as r_recfile_size
+			from
+				rs_ch_info as c
+				<choose>
+				<when test="recDate != null">
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=#{recDate}) as r
+				</when>
+				<otherwise>
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date= CONVERT(varchar(8),GETDATE(),112)) as r
+				</otherwise>
+				</choose>
+				on c.r_ext_num=r.r_ext_num
+		 	 <where>
+				<if test="sysCode != null">
+					c.r_sys_code = #{sysCode}
+				</if>
+				<if test="extNum != null">
+					and c.r_ext_num = #{extNum}
+				</if>
+				<if test="chNum != null">
+					and c.r_ch_num = #{chNum}
+				</if>
+			</where>) as ch
+			on u.r_ext_no=ch.r_ext_num
+			<where>
+				<if test="userName != null">
+					u.r_user_name like '%' || #{userName} || '%'
+				</if>
+				<if test="userId != null">
+					and u.r_user_id like '%' || #{userId} || '%'
+				</if>
+					<if test="mgCode != null">
+					and u.r_mg_code = #{mgCode}
+				</if>
+				<if test="sgCode != null">
+					and u.r_sg_code = #{sgCode}
+				</if>
+			</where>
+		order by
+			ch.r_ch_num
+	</select>
+	
+	<select id="selectChannelMonitoringInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultMap="BaseResultMap">
+		select
+			u.r_user_id,
+			u.r_user_name,
+			u.r_mg_code,
+			u.r_sg_code,
+			ch.r_ch_num,
+			ch.r_sys_code,
+			ch.r_ext_num,
+			ch.r_rec_yn,
+			ch.r_call_key_ap,
+			ch.r_recfile_size
+		from
+			rs_ruser_info u
+			right join
+			(select
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num,
+				c.r_rec_yn,
+				r.r_call_key_ap,
+				coalesce(TO_NUMBER(r_recfile_size)-288 , 0) r_recfile_size
+			from
+				rs_ch_info c
+				<choose>
+				<when test="recDate != null">
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=#{recDate}) r
+				</when>
+				<otherwise>
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=to_char(CURRENT_TIMESTAMP,'yyyymmdd')) r
+				</otherwise>
+				</choose>
+				on c.r_ext_num=r.r_ext_num
+		 	 <where>
+				<if test="sysCode != null">
+					c.r_sys_code = #{sysCode}
+				</if>
+				<if test="extNum != null">
+					and c.r_ext_num = #{extNum}
+				</if>
+				<if test="chNum != null">
+					and c.r_ch_num = #{chNum}
+				</if>
+			</where>) ch
+			on u.r_ext_no=ch.r_ext_num
+			<where>
+				<if test="userName != null">
+					u.r_user_name like '%' || #{userName} || '%'
+				</if>
+				<if test="userId != null">
+					and u.r_user_id like '%' || #{userId} || '%'
+				</if>
+					<if test="mgCode != null">
+					and u.r_mg_code = #{mgCode}
+				</if>
+				<if test="sgCode != null">
+					and u.r_sg_code = #{sgCode}
+				</if>
+			</where>
+		order by
+			ch.r_ch_num
+	</select>
+
+	<select id="selectChannelMonitoringExtInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultMap="BaseResultMap">
+		select
+			u.r_user_id,
+			u.r_user_name,
+			u.r_mg_code,
+			u.r_sg_code,
+			ch.r_ext_num,
+			ch.r_ch_num,
+			ch.r_sys_code,
+			ch.r_rec_yn,
+			ch.r_call_key_ap_size,
+			ch.r_recfile_count,
+			ch.r_recfile_sum
+		from
+			rs_ruser_info as u
+			right join
+			(select
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num,
+				c.r_rec_yn,
+				coalesce(count(r.r_call_key_ap), 0)::character varying as r_call_key_ap_size,
+				count(r.r_recfile_size)::character varying as r_recfile_count,
+				coalesce(sum(r_recfile_size::Integer-288) , 0)::character varying as r_recfile_sum
+			from
+				rs_ch_info as c
+				<choose>
+				<when test="recDate != null">
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=#{recDate}) as r
+				</when>
+				<otherwise>
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=to_char(now(),'yyyymmdd')) as r
+				</otherwise>
+				</choose>
+				on c.r_ext_num=r.r_ext_num
+			<where>
+				<if test="sysCode != null">
+					c.r_sys_code = #{sysCode}
+				</if>
+				<if test="extNum != null">
+					and c.r_ext_num = #{extNum}
+				</if>
+				<if test="chNum != null">
+					and c.r_ch_num = #{chNum}
+				</if>
+			</where>
+			group by
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num) as ch
+			on u.r_ext_no=ch.r_ext_num
+			<where>
+				<if test="userName != null">
+					u.r_user_name like '%' || #{userName} || '%'
+				</if>
+				<if test="userId != null">
+					and u.r_user_id like '%' || #{userId} || '%'
+				</if>
+				<if test="mgCode != null">
+					and u.r_mg_code = #{mgCode}::character varying
+				</if>
+				<if test="sgCode != null">
+					and u.r_sg_code = #{sgCode}::character varying
+				</if>
+			</where>
+		order by
+			ch.r_ch_num
+	</select>
+	<select id="selectChannelMonitoringExtInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultMap="BaseResultMap">
+		select
+			u.r_user_id,
+			u.r_user_name,
+			u.r_mg_code,
+			u.r_sg_code,
+			ch.r_ext_num,
+			ch.r_ch_num,
+			ch.r_sys_code,
+			ch.r_rec_yn,
+			ch.r_call_key_ap_size,
+			ch.r_recfile_count,
+			ch.r_recfile_sum
+		from
+			rs_ruser_info as u
+			right join
+			(select
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num,
+				c.r_rec_yn,
+				convert(varchar(max),coalesce(count(r.r_call_key_ap), 0)) as r_call_key_ap_size,
+				convert(varchar(max),count(r.r_recfile_size)) as r_recfile_count,
+				coalesce(convert(varchar,(sum(convert(integer,r_recfile_size)-288))), 0) as r_recfile_sum
+			from
+				rs_ch_info as c
+				<choose>
+				<when test="recDate != null">
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=#{recDate}) as r
+				</when>
+				<otherwise>
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=CONVERT(varchar(8),GETDATE(),112)) as r
+				</otherwise>
+				</choose>
+				on c.r_ext_num=r.r_ext_num
+			<where>
+				<if test="sysCode != null">
+					c.r_sys_code = #{sysCode}
+				</if>
+				<if test="extNum != null">
+					and c.r_ext_num = #{extNum}
+				</if>
+				<if test="chNum != null">
+					and c.r_ch_num = #{chNum}
+				</if>
+			</where>
+			group by
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num,
+				 c.r_rec_yn) as ch
+			on u.r_ext_no=ch.r_ext_num
+			<where>
+				<if test="userName != null">
+					u.r_user_name like '%' || #{userName} || '%'
+				</if>
+				<if test="userId != null">
+					and u.r_user_id like '%' || #{userId} || '%'
+				</if>
+				<if test="mgCode != null">
+					and u.r_mg_code = convert(varchar,#{mgCode})
+				</if>
+				<if test="sgCode != null">
+					and u.r_sg_code = convert(varchar,#{sgCode})
+				</if>
+			</where>
+		order by
+			ch.r_ch_num
+	</select>
+	
+	<select id="selectChannelMonitoringExtInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultMap="BaseResultMap">
+		select
+			u.r_user_id,
+			u.r_user_name,
+			u.r_mg_code,
+			u.r_sg_code,
+			ch.r_ext_num,
+			ch.r_ch_num,
+			ch.r_sys_code,
+			ch.r_rec_yn,
+			ch.r_call_key_ap_size,
+			ch.r_recfile_count,
+			ch.r_recfile_sum
+		from
+			rs_ruser_info u
+			right join
+			(select
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num,
+				c.r_rec_yn,
+				TO_CHAR(coalesce(count(r.r_call_key_ap), 0)) as r_call_key_ap_size,
+				TO_CHAR(count(r.r_recfile_size)) as r_recfile_count,
+				TO_CHAR(coalesce(sum(TO_NUMBER(r_recfile_size)-288) , 0)) r_recfile_sum
+			from
+				rs_ch_info c
+				<choose>
+				<when test="recDate != null">
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=#{recDate}) r
+				</when>
+				<otherwise>
+					left join (select r_recfile_size,r_ext_num,r_call_key_ap from rs_recfile where r_rec_date=to_char(CURRENT_TIMESTAMP,'yyyymmdd')) r
+				</otherwise>
+				</choose>
+				on c.r_ext_num=r.r_ext_num
+			<where>
+				<if test="sysCode != null">
+					c.r_sys_code = #{sysCode}
+				</if>
+				<if test="extNum != null">
+					and c.r_ext_num = #{extNum}
+				</if>
+				<if test="chNum != null">
+					and c.r_ch_num = #{chNum}
+				</if>
+			</where>
+			group by
+				c.r_ch_num,
+				c.r_sys_code,
+				c.r_ext_num, 
+				c.r_rec_yn) ch
+			on u.r_ext_no=ch.r_ext_num
+			<where>
+				<if test="userName != null">
+					u.r_user_name like '%' || #{userName} || '%'
+				</if>
+				<if test="userId != null">
+					and u.r_user_id like '%' || #{userId} || '%'
+				</if>
+				<if test="mgCode != null">
+					and u.r_mg_code = TO_CHAR(#{mgCode})
+				</if>
+				<if test="sgCode != null">
+					and u.r_sg_code = TO_CHAR(#{sgCode})
+				</if>
+			</where>
+		order by
+			ch.r_ch_num
+	</select>
+	
+	<!-- 원래는 채널등록할때 ip 중복인지 체크하는 용도인데 현재 채널 사용현황 확인하는거에서도 같이씀...왜냐면 같은쿼리인데 두개만들기 싫어서 -->
+	<select id="checkIpOverlap" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultType="Integer">
+		SELECT COUNT(*)
+		FROM RS_CH_INFO
+		WHERE 
+			R_SYS_CODE=#{sysCode}
+			<if test="extIp != null">
+			AND (R_EXT_IP=#{extIp} OR R_EXT_AGT_IP=#{extIp})
+			</if>
+			<if test="extAgtIp != null">
+			AND (R_EXT_IP=#{extAgtIp} OR R_EXT_AGT_IP=#{extAgtIp})
+			</if>
+	</select>
+	
+	<select id="checkExtOverlap" parameterType="com.furence.recsee.admin.model.ChannelInfo" resultType="Integer">
+		SELECT COUNT(*)
+		FROM RS_CH_INFO
+		WHERE 
+			R_SYS_CODE=#{sysCode}
+			AND R_EXT_NUM=#{extNum}
+	</select>
+	
+	<update id="updateSwitchChannelInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+		WITH UPSERT_NEW AS(
+				UPDATE RS_SYS_INFO 
+				SET R_SWITCH_CH_NUM = (1000 * (SELECT count(*)+1 FROM rs_sys_info WHERE r_switch_sys_code = #{sysCode}))
+				WHERE R_SYS_ID = #{oldSysCode,jdbcType=VARCHAR} 
+				RETURNING *
+			)
+			
+			UPDATE RS_CH_INFO
+			<set>
+				R_CH_NUM = (R_CH_NUM + (SELECT R_SWITCH_CH_NUM FROM UPSERT_NEW))
+				<if test="sysCode != null">
+				,R_SYS_CODE = #{sysCode}
+				</if>
+				<if test="oldSysCode != null">
+				,R_SWITCH_SYS_CODE = #{oldSysCode,jdbcType=VARCHAR}
+				</if>
+			</set>
+			WHERE R_SYS_CODE = #{oldSysCode,jdbcType=VARCHAR}
+			AND (R_SWITCH_SYS_CODE is null OR R_SWITCH_SYS_CODE = '')
+	</update>
+	<update id="updateReturningSwitchChannelInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ChannelInfo">
+			UPDATE RS_CH_INFO
+			<set>
+				R_CH_NUM = (R_CH_NUM - (SELECT r_switch_ch_num FROM rs_sys_info WHERE r_sys_id = #{sysCode}))
+				,R_SYS_CODE = R_SWITCH_SYS_CODE
+				,R_SWITCH_SYS_CODE = ''
+			</set>
+			WHERE R_SWITCH_SYS_CODE = #{sysCode}
+	</update>
+</mapper>

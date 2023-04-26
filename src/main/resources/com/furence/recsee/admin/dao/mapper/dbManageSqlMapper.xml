@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.DBManageDao">
+	<resultMap id="DBResultMap" type="com.furence.recsee.admin.model.DBManage">
+		<result column="DBNAME" jdbcType="VARCHAR" property="dbName" />
+		<result column="DBSERVER" jdbcType="VARCHAR" property="dbServer" />
+		<result column="URL" jdbcType="VARCHAR" property="url" />
+		<result column="ID" jdbcType="VARCHAR" property="id" />
+		<result column="PW" jdbcType="VARCHAR" property="pw" />
+		<result column="TIMEOUT" jdbcType="VARCHAR" property="timeout" />
+	</resultMap>
+
+	<select id="selectDBManage" parameterType="com.furence.recsee.admin.model.DBManage" resultMap="DBResultMap">
+		SELECT * FROM SCHEDULER_DB_MANAGE ORDER BY DBNAME
+	</select>
+	
+	<select id="selectOneDBManage" parameterType="com.furence.recsee.admin.model.DBManage" resultMap="DBResultMap">
+		SELECT * FROM SCHEDULER_DB_MANAGE WHERE DBNAME=#{dbName}
+	</select>
+	
+	<insert id="insertDBManage" parameterType="com.furence.recsee.admin.model.DBManage">
+			INSERT INTO SCHEDULER_DB_MANAGE (
+				DBNAME,
+				DBSERVER,
+				URL,
+				ID,
+				PW,
+				TIMEOUT
+			) VALUES (
+				#{dbName},
+				#{dbServer},
+				#{url},
+				#{id},
+				#{pw},
+				#{timeout}
+			)
+	</insert>
+	
+	<update id="updateDBManage" parameterType="com.furence.recsee.admin.model.DBManage">
+		UPDATE SCHEDULER_DB_MANAGE SET
+			DBSERVER=#{dbServer},
+			URL=#{url},
+			ID=#{id},
+			PW=#{pw},
+			TIMEOUT=#{timeout}
+		WHERE
+			DBNAME=#{dbName}
+	</update>
+	
+	<delete id="deleteDBManage" parameterType="com.furence.recsee.admin.model.DBManage">
+		DELETE FROM SCHEDULER_DB_MANAGE WHERE DBNAME=#{dbName}
+	</delete>
+	
+</mapper>

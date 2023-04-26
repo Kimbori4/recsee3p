@@ -1,0 +1,1215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>관리자(admin) 화면용 메세지 정의</comment>
+
+	<entry key="admin.menu.systemOption">System Option</entry>
+	<entry key="admin.menu.systemManage">System Manage</entry>
+	<entry key="admin.menu.userManage">Application User Management</entry>
+	<entry key="admin.menu.systemMonitoring">System Monitoring Management</entry>
+	<entry key="admin.menu.backupProcess">Backup Process</entry>
+	<entry key="admin.menu.schedulerManage">scheduler Manage</entry>
+	<entry key="admin.menu.li.systemOption.channel">Channel Management</entry>
+	<entry key="admin.menu.li.systemOption.channelMonitoring">Monitoring Management by channel</entry>
+	<entry key="admin.menu.li.systemOption.server">Server Management</entry>
+	<entry key="admin.menu.li.systemOption.switchboard">Switchboard Interlink Info</entry>
+	<entry key="admin.menu.li.systemOption.subNumber">SubNumber Management</entry>
+	<entry key="admin.menu.li.systemOption.phoneMapping">PhoneNumber Mapping</entry>
+	<entry key="admin.menu.li.systemOption.publicIp">Public IP Management</entry>
+	<entry key="admin.menu.li.systemOption.logoSetting">Logo Management</entry>
+	<entry key="admin.menu.li.systemOption.packetSetting">Packet Error Setting</entry>	
+	<entry key="admin.menu.li.systemOption.sttServer">STT Server Management</entry>
+	<entry key="admin.menu.li.systemManage.group">Group Manage</entry>
+	<entry key="admin.menu.li.systemManage.details">Details</entry>
+	<entry key="admin.menu.li.systemManage.log">Log Manage</entry>
+	<entry key="admin.menu.li.systemManage.logView">Log View</entry>
+	<entry key="admin.menu.li.systemManage.queue">Que Manage</entry>
+	<entry key="admin.menu.li.systemManage.backupSearch">Backup Manage</entry>
+	<entry key="admin.menu.li.systemManage.userInterface">User Interface</entry>
+	<entry key="admin.menu.li.systemManage.packetLogManage">Packet Error Log</entry>
+	<entry key="admin.menu.li.systemManage.fileRecoverManage">File Recover Manage</entry>
+	<entry key="admin.menu.li.schedulerManage.deleteRecfile">Delete Recfile Manage</entry>
+	<entry key="admin.menu.li.schedulerManage.backupRecfile">Backup Recfile Manage</entry>
+	<entry key="admin.menu.li.schedulerManage.dbManage">DBSync Manage</entry>
+	<entry key="admin.menu.li.schedulerManage.userDBInterface">UserDB Interface</entry>
+	<entry key="admin.menu.li.userManage.userManage"><![CDATA[User Manage]]></entry>
+	<entry key="admin.menu.li.userManage.userManageRec"><![CDATA[User Manage Rec]]></entry>
+	<entry key="admin.menu.li.userManage.authyManage"><![CDATA[Authy Manage]]></entry>
+	<entry key="admin.menu.li.userManage.allowableRangeManage"><![CDATA[Allowable Range Manage]]></entry>
+	<entry key="admin.menu.li.userManage.usageScreen">Usage Screen Manage</entry>
+	<entry key="admin.menu.li.userManage.userDefinition">User Definition</entry>
+	<entry key="admin.menu.li.userManage.approveList">Management of listening/Download Request</entry>
+	<entry key="admin.menu.li.userManage.comboList">Code Management</entry>
+	<entry key="admin.menu.li.userManage.mobileManage">Mobile Management</entry>
+	<entry key="admin.menu.li.backupProcess.rec">Back up Rec Files</entry>
+	<entry key="admin.menu.li.backupProcess.ftp">FTP Backup</entry>
+	<entry key="admin.menu.li.systemMonitoring.targetSetting">Control Target Management</entry>
+	<entry key="admin.menu.li.systemMonitoring.targetItemSetting">Control Item Management</entry>
+	<entry key="admin.menu.li.systemMonitoring.attrSetting">Control Indicator Management</entry>
+	<entry key="admin.menu.li.systemMonitoring.UISetting">Control UI setting</entry>
+	<entry key="admin.menu.li.systemMonitoring.alertList">Manage Notification History</entry>
+	<entry key="admin.menu.placeholder.group">Please enter the authority name.</entry>
+	<entry key="admin.channel.title.createChannel">Add channel</entry>
+	<entry key="admin.channel.title.autoCreateChannel">Add Auto Channel</entry>
+	<entry key="admin.channel.label.screen">Use Screen</entry>
+	<entry key="admin.channel.label.channelNo">Channel Number</entry>
+	<entry key="admin.channel.label.system">System</entry>
+	<entry key="admin.channel.label.ext">extension number</entry>
+	<entry key="admin.channel.label.ip">IP</entry>
+	<entry key="admin.channel.label.backupIP">backup IP</entry>
+	<entry key="admin.channel.label.backupIPTime">IP Sync Time</entry>
+	<entry key="admin.channel.label.ctiConnect">CTI conntect</entry>
+	<entry key="admin.channel.label.usageRec">Usage Rec</entry>
+	<entry key="admin.channel.label.recKind">Rec Kind</entry>
+	<entry key="admin.channel.label.recType">Rec Type</entry>
+	<entry key="admin.channel.label.removeChannel2">Delete Channel</entry>
+	<entry key="admin.channel.label.removeChannel">Delete Existing Channel</entry>
+	<entry key="admin.channel.placeholder.ip">IP</entry>
+	<entry key="admin.channel.alert.serverWorking">Operation is in progress. Please try again in a few minutes.</entry>
+	
+	<entry key="admin.subNumber.title.addSubNumber">Add subNumber</entry>
+	<entry key="admin.subNumber.title.modifySubNumber">Modify subNumber</entry>
+	<entry key="admin.subNumber.label.telNo">Phone Number</entry>
+	<entry key="admin.subNumber.label.nickName">NickName</entry>
+	<entry key="admin.subNumber.label.use">Use</entry>
+	<entry key="admin.subNumber.label.selY">Use</entry>
+	<entry key="admin.subNumber.label.selN">Unused</entry>
+	
+	<entry key="admin.logo.label.Logo">Logo</entry>
+	<entry key="admin.subNumber.label.logoType">Logo Type</entry>
+	<entry key="admin.subNumber.label.logoChangeUse">Logo Change Use</entry>
+	<entry key="admin.subNumber.label.logoPath">Logo Name</entry>
+	
+	<entry key="admin.logo.label.N">Default</entry>
+	<entry key="admin.logo.label.Y">Change</entry>
+	
+	<entry key="admin.subNumber.label.logoSize">Logo Size</entry>
+	<entry key="admin.subNumber.label.logoType">Type</entry>
+	<entry key="admin.subNumber.label.logoChangeUse">Change Logo</entry>
+	<entry key="admin.subNumber.label.logoPath">File name</entry>	
+	
+	<entry key="admin.subNumber.label.logoRegister">Logo Register</entry>
+	<entry key="admin.subNumber.label.loginLogo">Change login page Logo</entry>	
+	<entry key="admin.subNumber.label.mainLogo">Change main page Logo</entry>	
+	
+	<entry key="admin.subNumber.confirm.changeLogo">Would you like to change the logo?</entry>	
+	<entry key="admin.subNumber.alert.registerLogo">Please register the logo image to be changed.</entry>	
+	<entry key="admin.subNumber.alert.logo.onlyPng">File upload is only available in png format.</entry>	
+	<entry key="admin.subNumber.alert.SelectLogo">Please select a file.</entry>	
+	<entry key="admin.subNumber.alert.success.registerLogo">The logo has been registered.</entry>	
+	<entry key="admin.subNumber.alert.fail.registerLogo">Logo registration failed.</entry>	
+	
+	<entry key="admin.systemOption.label.custCode">Cust Code</entry>
+	<entry key="admin.systemOption.label.phoneSetting">Phone Setting</entry>
+	<entry key="admin.systemOption.label.returnMsg">Return Message</entry>
+	<entry key="admin.systemOption.label.returnUrl">Return URL</entry>
+	
+	<entry key="admin.systemOption.label.settingAdd">Setting Add</entry>
+	<entry key="admin.systemOption.label.settingModi">Setting Modify</entry>
+	
+	<entry key="admin.phoneMapping.title.addPhoneMapping">Add phoneMapping</entry>
+	<entry key="admin.phoneMapping.title.modifyPhoneMapping">Modify phoneMapping</entry>
+	<entry key="admin.phoneMapping.label.custPhone">Phone Number</entry>
+	<entry key="admin.phoneMapping.label.custNickName">NickName</entry>
+	<entry key="admin.phoneMapping.label.useNickName">Use</entry>
+	<entry key="admin.phoneMapping.label.selY">Use</entry>
+	<entry key="admin.phoneMapping.label.selN">Unused</entry>
+	<entry key="admin.detail.title.recordingEngine">Rec Engine</entry>
+	<entry key="admin.detail.title.etcSetting">Other Setting</entry>
+	<entry key="admin.detail.title.uploadRecordingFiles">Upload Recording File</entry>
+	<entry key="admin.detail.title.uploadUpdateFile">Upload Update File</entry>
+	<entry key="admin.detail.title.mailServerData">Mail Server Data</entry>
+	<entry key="admin.detail.title.serverTimezoneManage">Server Timezone Manage</entry>
+	<entry key="admin.detail.label.ipktsAliveCheck">IPKTS Alive check</entry>
+	<entry key="admin.detail.label.sipLog">SIP Log</entry>
+	<entry key="admin.detail.label.lanCard">Lan Card</entry>
+	<entry key="admin.detail.label.encodedFileDonwload">Encoded file Download</entry>
+	<entry key="admin.detail.label.agentIdView">Agent ID View</entry>
+	<entry key="admin.detail.label.haName">HA Name</entry>
+	<entry key="admin.detail.label.fileExtension">Download file extension</entry>
+	<entry key="admin.detail.label.guideSpeechRecording">Recording a guide comment</entry>
+	<entry key="admin.detail.label.filenamePattern">File Name Pattern</entry>
+	<entry key="admin.detail.label.uploadFile">Voice file</entry>
+	<entry key="admin.detail.label.upload">Upload</entry>
+	<entry key="admin.detail.label.memo">Memo</entry>
+	<entry key="admin.detail.label.updateFile">Update File</entry>
+	<entry key="admin.detail.label.maxFileSize">Maximum File Size</entry>
+	<entry key="admin.detail.label.mailServerAddress">Mail server address</entry>
+	<entry key="admin.detail.label.mailSendPort">Mail Send Port</entry>
+	<entry key="admin.detail.label.mailSendId">Mail Send ID</entry>
+	<entry key="admin.detail.label.mailSendPw">Mail Send Password</entry>
+	<entry key="admin.detail.label.mailSenderAddress">Sender mail address</entry>
+	<entry key="admin.detail.label.mailReceiverAddress">Receiver Mail Address</entry>
+	<entry key="admin.detail.label.nowTimezone">Current Time Zone</entry>
+	<entry key="admin.detail.label.changeServerTimezone">Server Time Zone/Time Change</entry>
+	<entry key="admin.detail.option.use">use</entry>
+	<entry key="admin.detail.option.notUse">unused</entry>
+	<entry key="admin.detail.option.choose">Choice</entry>
+	<entry key="admin.detail.option.mp3">mp3</entry>
+	<entry key="admin.detail.option.wav">wav</entry>
+	<entry key="admin.detail.option.cid">CID</entry>
+	<entry key="admin.detail.option.callType">Call type</entry>
+	<entry key="admin.detail.placeholder.selectFile">Select a file.</entry>
+	<entry key="admin.group.add">Add Group</entry>
+	<entry key="admin.button.addGroup">Add Authority Group</entry>
+	<entry key="admin.button.addModi">Modify Group</entry>
+	<entry key="admin.button.modify">Apply Changes</entry>
+	<entry key="admin.button.autoCreateChannel">Auto Generate Channel</entry>
+	<entry key="admin.button.createChannel">Add Channel</entry>
+	<entry key="admin.button.create">Create</entry>
+	<entry key="admin.button.addSubNumber">Add SubNumber</entry>
+	<entry key="admin.button.modifySubNumber">Modify</entry>
+	<entry key="admin.button.addPhoneMapping">Add PhoneMapping</entry>
+	<entry key="admin.button.modifyPhoneMapping">Modify</entry>
+	<entry key="admin.button.restart">Restart recording engine</entry>
+	<entry key="admin.button.save">Save</entry>
+	<entry key="admin.button.sendTestMail">Send Test Mail</entry>
+	<entry key="admin.alert.restartMessage">*Recording may not be recorded while the engine is restarting.</entry>
+	<entry key="admin.alert.fileUploadMessage">* After the file is uploaded, you must reboot the server to complete the update.</entry>
+
+	<entry key="admin.approve.label.req_Id">Request ID</entry>
+	<entry key="admin.approve.label.req_date">Request date</entry>
+	<entry key="admin.approve.label.req_time">Request time</entry>
+	<entry key="admin.approve.label.req_fileName">Requested file name</entry>
+	<entry key="admin.approve.label.approve_Id">Approved ID</entry>
+	<entry key="admin.approve.label.approve_date">Approve date</entry>
+	<entry key="admin.approve.label.approve_time">Approve time</entry>
+	<entry key="admin.approve.label.approve_YN">Approve status</entry>
+	<entry key="admin.button.chkApprove">Approve</entry>
+
+
+	<entry key="admin.channel.monitoring.chTotal">Total number of recording files</entry>
+	<entry key="admin.channel.monitoring.recSizeNone">Number of non-recording files</entry>
+	<entry key="admin.channel.monitoring.chExtTotal">Total Channels</entry>
+	<entry key="admin.channel.monitoring.recExtYn">Number of channel unused recording </entry>
+	<entry key="admin.channel.monitoring.recExtSizezero">Number of channels not to be recorded</entry>
+
+
+	<entry key="admin.approve.label.req_dateFrom">From request time</entry>
+	<entry key="admin.approve.label.req_dateTo">Until request time</entry>
+	<entry key="admin.approve.label.req_emp">Requestor ID</entry>
+	<entry key="admin.approve.label.req_name">Requestor Name</entry>
+	<entry key="admin.approve.label.req_type">Requestor Type</entry>
+	<entry key="admin.approve.label.req_reason">Request Reason</entry>
+	<entry key="admin.approve.label.req_team">Requestor team</entry>
+	<entry key="admin.approve.label.req_day">Request period</entry>
+	<entry key="admin.approve.label.status">Progress</entry>
+	<entry key="admin.approve.label.fileSetting">File Name Setting</entry>
+	<entry key="admin.button.chkNo">Return</entry>
+	<entry key="admin.button.listenAndDown">Listen/Download Application</entry>
+	<entry key="admin.button.approve">Approve</entry>
+	<entry key="admin.button.type">Type</entry>
+	<entry key="admin.label.attr">Observation item</entry>
+	<entry key="admin.label.essenType">Critical value type</entry>
+	<entry key="admin.label.server">Server</entry>
+	<entry key="admin.label.job">Job</entry>
+	<entry key="admin.label.percent">Percent</entry>
+	<entry key="admin.label.input">Entry</entry>
+	<entry key="admin.label.logHistory">log History</entry>
+	<entry key="admin.label.alert">Notification threshold</entry>
+	<entry key="admin.label.multi">Multi</entry>
+	<entry key="admin.label.extBy">By extension</entry>
+	<entry key="admin.label.userBy">By User</entry>
+	<entry key="admin.label.groupBy">By organization</entry>
+	<entry key="admin.label.callBy">By call</entry>
+	<entry key="admin.label.searchKind">Search Criteria</entry>
+	<entry key="admin.label.searchNum">Search extension</entry>
+	<entry key="admin.label.searchEmp">Search employee number</entry>
+	<entry key="admin.label.searchUser">Search user</entry>
+	<entry key="admin.label.notInResignation">Exclude Retired Person</entry>
+	<entry key="admin.label.addCode">Add code</entry>
+	<entry key="admin.label.code">Code</entry>
+	<entry key="admin.label.codeName">Code Name</entry>
+	<entry key="admin.label.bgCode">Large category code</entry>
+	<entry key="admin.label.bgName">Large category name</entry>
+	<entry key="admin.label.mgCode">Middle category code</entry>
+	<entry key="admin.label.mgName">Middle category name</entry>
+	<entry key="admin.label.sgCode">small category code</entry>
+	<entry key="admin.label.useYn">Whether to use</entry>
+	<entry key="admin.label.selectGroupKey">Select Group Key</entry>
+	<entry key="admin.label.selectEtcKey">Select Settings Key</entry>
+	<entry key="admin.label.search">Search</entry>
+	<entry key="admin.label.manageEtc">Manage Settings Value</entry>
+	<entry key="admin.label.manageEtc.delRecfile">Modify delete recording file setting info </entry>
+	<entry key="admin.label.manageEtc.backRecfile">Modify backup recording file setting info</entry>
+	<entry key="admin.label.groupKey">Group Key</entry>
+	<entry key="admin.label.etcKey">Setting key</entry>
+	<entry key="admin.label.etcValue">Setting Value</entry>
+	<entry key="admin.label.addGroup">Add Gr</entry>
+	<entry key="admin.label.modiGroup">Modify Gr</entry>
+	<entry key="admin.label.addGroupPeo">Add Group Member</entry>
+	<entry key="admin.label.removeGroupPeo">Remove group member</entry>
+	<entry key="admin.label.complete">Complete</entry>
+	<entry key="admin.label.selectSearchDate">Check period inquiry</entry>
+	<entry key="admin.label.today">Today</entry>
+	<entry key="admin.label.week">Week</entry>
+	<entry key="admin.label.month">Month</entry>
+	<entry key="admin.label.userCustom">User Custom</entry>
+	<entry key="admin.label.content">Detail</entry>
+	<entry key="admin.label.searchWord">Search Word</entry>
+	<entry key="admin.label.TargetAdd">Target Add</entry>
+	<entry key="admin.label.TargetName">Target Name</entry>
+	<entry key="admin.label.TargetType">Target Type</entry>
+	<entry key="admin.label.TargetYn">Presence of Target</entry>
+	<entry key="admin.label.explain">Explanation</entry>
+	<entry key="admin.label.size">Size</entry>
+	<entry key="admin.label.logIp">Log IP</entry>
+	<entry key="admin.label.serverIp">Server IP</entry>
+	<entry key="admin.label.userId">User ID</entry>
+	<entry key="admin.label.targetModi">Modify target sequence</entry>
+	<entry key="admin.label.targetUiSet">Target UI Settings</entry>
+	<entry key="admin.label.name">Name</entry>
+	<entry key="admin.label.extNo">Extension Number</entry>
+	<entry key="admin.label.authy">User Level</entry>
+	<entry key="admin.label.all">All</entry>
+	<entry key="admin.label.noAuthy">No Access</entry>
+	<entry key="admin.label.TargetContents">Target Description</entry>
+	<entry key="admin.label.UIwatchTime">Target Time</entry>
+	<entry key="admin.label.object">Object</entry>
+	<entry key="admin.label.mapContents">Control Map Detail</entry>
+	<entry key="admin.label.useThisMap">Use this map</entry>
+	<entry key="admin.label.addQue">Add Que</entry>
+	<entry key="admin.label.queNum">Que number</entry>
+	<entry key="admin.label.queName">Que name</entry>
+	<entry key="admin.label.saveModify">Save Modify</entry>
+	<entry key="admin.label.authyList">Authority List</entry>
+	<entry key="admin.label.addServer">Add Server</entry>
+	<entry key="admin.label.modiServer">Modify Server</entry>
+	<entry key="admin.label.systemId">System ID</entry>
+	<entry key="admin.label.systemName">System Name</entry>
+	<entry key="admin.label.systemIp">System IP</entry>
+	<entry key="admin.label.addPbx">Add Pbx information</entry>
+	<entry key="admin.label.modiPbx">Modify Pbx information</entry>
+	<entry key="admin.label.pbxID">Pbx ID</entry>
+	<entry key="admin.label.pbxName">Pbx Name</entry>
+	<entry key="admin.label.pbxIp">Pbx IP</entry>
+	<entry key="admin.label.counselB">Counsel Code</entry>
+	<entry key="admin.label.shareMemo">Share Call Memo</entry>
+	<entry key="admin.label.shareModi">Share Modify</entry>
+	<entry key="admin.label.status">State</entry>
+	<entry key="admin.label.code">Code</entry>
+	<entry key="admin.label.recDate">Rec Date</entry>
+	<entry key="admin.label.perDay">Daily</entry>
+	<entry key="admin.label.perMonth">Monthly</entry>
+	<entry key="admin.label.group">Group</entry>
+	<entry key="admin.label.realtime">Real time</entry>
+	<entry key="admin.label.batch">Deployment</entry>
+	<entry key="admin.label.selectTargetGroup">Select target group</entry>
+	<entry key="admin.label.addUser">Add User</entry>
+	<entry key="admin.label.MultiModiGroup">Modify Group</entry>
+	<entry key="admin.label.modiUser">Modify User</entry>
+	<entry key="admin.label.pwPolicy">PW policy</entry>
+	<entry key="admin.label.groupName">Group name</entry>
+	<entry key="admin.label.formDownload">Download Form</entry>
+	<entry key="admin.label.groupUnit">Group Unit</entry>
+	<entry key="admin.label.policySet1">Apply Policy Setting</entry>
+	<entry key="admin.label.enterNum">Please enter number </entry>
+	<entry key="admin.label.skinCode">신규 녹취 사용</entry>
+
+	<entry key="admin.label.passwordPolicySetting">Password Policy Setting</entry>
+	<entry key="admin.label.pwModiTerm">PW change cycle</entry>
+	<entry key="admin.label.setModiTerm">Set change Cycle</entry>
+	<entry key="admin.label.cycleDateD">Change daily</entry>
+	<entry key="admin.label.cycleDateW">Change weekly</entry>
+	<entry key="admin.label.cycleDateM">Change monthly</entry>
+	<entry key="admin.label.cycleDateY">Change yearly</entry>
+	<entry key="admin.label.lastPw">Previous PW</entry>
+	<entry key="admin.label.pastPolicyY">Allow</entry>
+	<entry key="admin.label.pastPolicyC">Limit number of times</entry>
+	<entry key="admin.label.pastPolicyB">Cut off</entry>
+	<entry key="admin.label.policySubGroup">PW hold count</entry>
+	<entry key="admin.label.tryPolicy">Try limit</entry>
+	<entry key="admin.label.tryNumPolicy">Try limit times</entry>
+	<entry key="admin.label.lockPolicy">Lock account</entry>
+	<entry key="admin.label.lockNumTerm">Lock Cycle Setting</entry>
+	<entry key="admin.label.lockDateD">If unused for days</entry>
+	<entry key="admin.label.lockDateW">If unused for Weeks</entry>
+	<entry key="admin.label.lockDateM">If unused for months</entry>
+	<entry key="admin.label.lockDateY">If unused for years</entry>
+	<entry key="admin.label.policyF">(force)</entry>
+	<entry key="admin.label.policyY">(Recommendation)</entry>
+	<entry key="admin.label.menuName1">Exist menu name</entry>
+	<entry key="admin.label.menuName2">Current menu name</entry>
+	<entry key="admin.label.menuName3">Change Manual</entry>
+	<entry key="admin.label.modiCode">Modify Code</entry>
+
+	<entry key="admin.grid.expirationDay1">Current Expiration Period</entry>
+	<entry key="admin.grid.expirationDay2">Expiration period to change</entry>
+	<entry key="admin.grid.recStartType">Rec Start time</entry>
+	<entry key="admin.grid.recStartTypeCode">Rec start time code</entry>
+	<entry key="admin.grid.useCallcenterYn">Call center use status</entry>
+	<entry key="admin.grid.maskingColumn">Masking Column</entry>
+	<entry key="admin.grid.columnCode">Column Code</entry>
+
+	<entry key="admin.grid.date">Date</entry>
+	<entry key="admin.grid.time">Time</entry>
+	<entry key="admin.grid.logIp">log Ip</entry>
+	<entry key="admin.grid.serverIp">Server IP</entry>
+	<entry key="admin.grid.userId">User ID</entry>
+	<entry key="admin.grid.logType">log Type</entry>
+	<entry key="admin.grid.logContent">log Content</entry>
+	<entry key="admin.grid.contents">Content</entry>
+	<entry key="admin.grid.num">Number</entry>
+	<entry key="admin.grid.center">Center</entry>
+	<entry key="admin.grid.sg">실</entry>
+	<entry key="admin.grid.skill">Skill</entry>
+	<entry key="admin.grid.apYn">AP existence</entry>
+	<entry key="admin.grid.fileSize">File Size</entry>
+	<entry key="admin.grid.recApkeySize">AP Registration Count</entry>
+	<entry key="admin.grid.recCount">AP History Count</entry>
+	<entry key="admin.grid.saveLocation">Save Location</entry>
+	<entry key="admin.grid.logInfoReset">Initialize login information</entry>
+	<entry key="admin.grid.emp">employee number</entry>
+	<entry key="admin.grid.user">User</entry>
+    <entry key="admin.grid.clientIp">Client ip</entry>
+
+	<!-- 로그 관리 언어팩 -->
+	<entry key="admin.log.name.AUTH">AUTH</entry>
+	<entry key="admin.log.name.BESTCALL">BESTCALL</entry>
+	<entry key="admin.log.name.CHANNEL">CHANNEL</entry>
+	<entry key="admin.log.name.CONFIG">CONFIG</entry>
+	<entry key="admin.log.name.LOGIN">LOGIN</entry>
+	<entry key="admin.log.name.ETCCONFIG">ETCCONFIG</entry>
+	<entry key="admin.log.name.EXCELDOWN">EXCELDOWN</entry>
+	<entry key="admin.log.name.FILEDOWN">FILEDOWN</entry>
+	<entry key="admin.log.name.LISTEN">LISTEN</entry>
+	<entry key="admin.log.name.LOG">LOG</entry>
+	<entry key="admin.log.name.MONITORING">MONITORING</entry>
+	<entry key="admin.log.name.RECSEARCH">RECSEARCH</entry>
+	<entry key="admin.log.name.REPOSEARCH">REPOSEARCH</entry>
+	<entry key="admin.log.name.SERVER">SERVER</entry>
+	<entry key="admin.log.name.TAPPING">TAPPING</entry>
+	<entry key="admin.log.name.USER">USER</entry>
+	<entry key="admin.log.name.USER_REC">USER_REC</entry>
+	<entry key="admin.log.name.PLAYER">PLAYER</entry>
+	<entry key="admin.log.name.REC_DELETE">DELETE_REC</entry>
+	<entry key="admin.log.name.REC_BACKUP">BACKUP_REC</entry>
+	<entry key="admin.log.name.SUBNUMBER">SUBNUMBER</entry>
+	<entry key="admin.log.name.PHONEMAPPING">PHONE_MAPPING</entry>
+	
+	<!-- 로그 디테일 언어팩 -->
+	
+	<entry key="admin.log.contents.AUTHORITY-CHANGE-FAIL">AUTHORITY CHANGE FAIL</entry>
+	<entry key="admin.log.contents.AUTHORITY-CHANGE-SUCCESS">AUTHORITY CHANGE SUCCESS</entry>
+	<entry key="admin.log.contents.AUTHORITY-CREATE-FAIL">AUTHORITY CREATE FAIL</entry>
+	<entry key="admin.log.contents.AUTHORITY-CREATE-SUCCESS">AUTHORITY CREATE SUCCESS</entry>
+	<entry key="admin.log.contents.AUTHORITY-DELETE-FAIL">AUTHORITY DELETE FAIL</entry>
+	<entry key="admin.log.contents.AUTHORITY-DELETE-SUCCESS">AUTHORITY DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.BESTCALL-APPROVE">BESTCALL APPROVE</entry>
+	<entry key="admin.log.contents.BESTCALL-LISTEN">BESTCALL LISTEN</entry>
+	<entry key="admin.log.contents.BESTCALL-REQUEST">BESTCALL REQUEST</entry>
+	<entry key="admin.log.contents.BESTCALL-SHARE">BESTCALL SHARE</entry>
+	
+	<entry key="admin.log.contents.CHANNEL-DELETE-FAIL">CHANNEL DELETE FAIL</entry>
+	<entry key="admin.log.contents.CHANNEL-DELETE-SUCCESS">CHANNEL DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.CHANNEL-EXCEPTION">CHANNEL EXCEPTION</entry>
+	<entry key="admin.log.contents.CHANNEL-INSERT-FAIL">CHANNEL INSERT FAIL</entry>
+	<entry key="admin.log.contents.CHANNEL-INSERT-SUCCESS">CHANNEL INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.CHANNEL-UPDATE-FAIL">CHANNEL UPDATE FAIL</entry>
+	<entry key="admin.log.contents.CHANNEL-UPDATE-SUCCESS">CHANNEL UPDATE SUCCESS</entry>
+	<entry key="admin.log.contents.CONNECT-FAIL">CONNECT FAIL</entry>
+	<entry key="admin.log.contents.CONNECT-LOGOUT">CONNECT LOGOUT</entry>
+	<entry key="admin.log.contents.CONNECT-SESSION">CONNECT SESSION</entry>
+	<entry key="admin.log.contents.CONNECT-SUCCESS">CONNECT SUCCESS</entry>
+	
+	<entry key="admin.log.contents.ETCCONFIG-COMMAND-FAIL">ETCCONFIG COMMAND FAIL</entry>
+	<entry key="admin.log.contents.ETCCONFIG-DELETE-FAIL">ETCCONFIG DELETE FAIL</entry>
+	<entry key="admin.log.contents.ETCCONFIG-DELETE-SUCCESS">ETCCONFIG DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.ETCCONFIG-EXCEPTION">ETCCONFIG EXCEPTION</entry>
+	<entry key="admin.log.contents.ETCCONFIG-INSERT-FAIL">ETCCONFIG INSERT FAIL</entry>
+	<entry key="admin.log.contents.ETCCONFIG-INSERT-SUCCESS">ETCCONFIG INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.ETCCONFIG-UPDATE-FAIL">ETCCONFIG UPDATE FAIL</entry>
+	<entry key="admin.log.contents.ETCCONFIG-UPDATE-SUCCESS">ETCCONFIG UPDATE SUCCESS</entry>
+	
+	<entry key="admin.log.contents.EXCELDOWN">EXCELDOWN</entry>
+	<entry key="admin.log.contents.FILEDOWN">FILEDOWN</entry>
+	<entry key="admin.log.contents.LISTEN">LISTEN</entry>
+	
+	<entry key="admin.log.contents.LOG-COMMAND-FAIL">LOG COMMAND FAIL</entry>
+	<entry key="admin.log.contents.LOG-DELETE-FAIL">LOG DELETE FAIL</entry>
+	<entry key="admin.log.contents.LOG-DELETE-SUCCESS">LOG DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.LOG-EXCEPTION">LOG EXCEPTION</entry>
+	<entry key="admin.log.contents.LOG-SEARCH">LOG SEARCH</entry>
+	<entry key="admin.log.contents.RECSEARCH">RECSEARCH</entry>
+	
+	<entry key="admin.log.contents.SERVER-COMMAND-FAIL">SERVER COMMAND FAIL</entry>
+	<entry key="admin.log.contents.SERVER-DELETE-FAIL">SERVER DELETE FAIL</entry>
+	<entry key="admin.log.contents.SERVER-DELETE-SUCCESS">SERVER DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.SERVER-EXCEPTION">SERVER EXCEPTION</entry>
+	<entry key="admin.log.contents.SERVER-INSERT-FAIL">SERVER INSERT FAIL</entry>
+	<entry key="admin.log.contents.SERVER-INSERT-SUCCESS">SERVER INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.SERVER-UPDATE-FAIL">SERVER UPDATE FAIL</entry>
+	<entry key="admin.log.contents.SERVER-UPDATE-SUCCESS">SERVER UPDATE SUCCESS</entry>
+	
+	<entry key="admin.log.contents.TAPPING-LISTEN-END">MONITORING LISTEN END</entry>
+	<entry key="admin.log.contents.TAPPING-LISTEN-START">MONITORING LISTEN START</entry>
+	
+	<entry key="admin.log.contents.USER-AUTHY-UPDATE-FAIL">USER AUTHY UPDATE FAIL</entry>
+	<entry key="admin.log.contents.USER-AUTHY-UPDATE-SUCCESS">USER AUTHY UPDATE SUCCESS</entry>
+	<entry key="admin.log.contents.USER-DELETE-FAIL">USER DELETE FAIL</entry>
+	<entry key="admin.log.contents.USER-DELETE-SUCCESS">USER DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.USER-INSERT-FAIL">USER INSERT FAIL</entry>
+	<entry key="admin.log.contents.USER-INSERT-SUCCESS">USER INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.USER-UPDATE-FAIL">USER UPDATE FAIL</entry>
+	<entry key="admin.log.contents.USER-UPDATE-SUCCESS">USER UPDATE SUCCESS</entry>
+	
+	<entry key="admin.log.contents.USER_REC-DELETE-FAIL">USER_REC DELETE FAIL</entry>
+	<entry key="admin.log.contents.USER_REC-DELETE-SUCCESS">USER_REC DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.USER_REC-INSERT-FAIL">USER_REC INSERT FAIL</entry>
+	<entry key="admin.log.contents.USER_REC-INSERT-SUCCESS">USER_REC INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.USER_REC-UPDATE-FAIL">USER_REC UPDATE FAIL</entry>
+	<entry key="admin.log.contents.USER_REC-UPDATE-SUCCESS">USER_REC UPDATE SUCCESS</entry>
+	
+	<entry key="admin.log.contents.PLAYER-LISTEN">PLAYER LISTEN</entry>
+	<entry key="admin.log.contents.PLAYER-MOBILE-LISTEN">MOBILE LISTEN</entry>
+	<entry key="admin.log.contents.PLAYER-FILEDOWN-SUCCESS">PLAYER FILE DOWNLOAD SUCCESS</entry>
+	<entry key="admin.log.contents.PLAYER-FILEDOWN-FAIL">PLAYER FILE DOWNLOAD FAIL</entry>
+	<entry key="admin.log.contents.DELETE-RECFILE">DELETE RECFILE</entry>
+	
+	<entry key="admin.log.contents.REC_BACKUP-SUCCESS">BACKUP RECFILE SUCCESS</entry>
+	<entry key="admin.log.contents.REC_BACKUP-FAIL">BACKUP RECFILE FAIL</entry>
+	<entry key="admin.log.contents.REC_BACKUP-SCHEDULE-SUCCESS">BACKUP RECFILE SCHEDULE SUCCESS</entry>
+	<entry key="admin.log.contents.REC_BACKUP-SCHEDULE-FAIL">BACKUP RECFILE SCHEDULE FAIL</entry>
+	
+	<entry key="admin.log.contents.SUBNUMBER-COMMAND-FAIL">SUBNUMBER COMMAND FAIL</entry>
+	<entry key="admin.log.contents.SUBNUMBER-DELETE-FAIL">SUBNUMBER DELETE FAIL</entry>
+	<entry key="admin.log.contents.SUBNUMBER-DELETE-SUCCESS">SUBNUMBER DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.SUBNUMBER-EXCEPTION">SUBNUMBER EXCEPTION</entry>
+	<entry key="admin.log.contents.SUBNUMBER-INSERT-FAIL">SUBNUMBER INSERT FAIL</entry>
+	<entry key="admin.log.contents.SUBNUMBER-INSERT-SUCCESS">SUBNUMBER INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.SUBNUMBER-UPDATE-FAIL">SUBNUMBER UPDATE FAIL</entry>
+	<entry key="admin.log.contents.SUBNUMBER-UPDATE-SUCCESS">SUBNUMBER UPDATE SUCCESS</entry>
+
+	<entry key="admin.log.contents.PHONEMAPPING-COMMAND-FAIL">PHONE MAPPING COMMAND FAIL</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-DELETE-FAIL">PHONE MAPPING DELETE FAIL</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-DELETE-SUCCESS">PHONE MAPPING DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-EXCEPTION">PHONE MAPPING EXCEPTION</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-INSERT-FAIL">PHONE MAPPING INSERT FAIL</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-INSERT-SUCCESS">PHONE MAPPING INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-UPDATE-FAIL">PHONE MAPPING UPDATE FAIL</entry>
+	<entry key="admin.log.contents.PHONEMAPPING-UPDATE-SUCCESS">PHONE MAPPING UPDATE SUCCESS</entry>
+	
+	<entry key="admin.log.contents.DELETE-SCHEDULER-INSERT-SUCCESS">DELETE RECFILE SCHEDULE INSERT SUCCESS</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-INSERT-FAIL">DELETE RECFILE SCHEDULE INSERT FAIL</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-UPDATE-SUCCESS">DELETE RECFILE SCHEDULE UPDATE SUCCESS</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-UPDATE-FAIL">DELETE RECFILE SCHEDULE UPDATE FAIL</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-DELETE-SUCCESS">DELETE RECFILE SCHEDULE DELETE SUCCESS</entry>
+	<entry key="admin.log.contents.DELETE-SCHEDULER-DELETE-FAIL">DELETE RECFILE SCHEDULE DELETE FAIL</entry>
+	
+	<entry key="admin.alert.successDelete">Successfully deleted notification history</entry>
+	<entry key="admin.alert.failDelete">Delete Fail</entry>
+	<entry key="admin.alert.selectDeleteServer">Please select a server to delete</entry>
+
+	<entry key="admin.alert.approveManage1">Request type is not a download</entry>
+	<entry key="admin.alert.approveManage2">Unauthorized request</entry>
+	<entry key="admin.alert.approveManage3">Don't have permission</entry>
+	<entry key="admin.alert.approveManage4">Download period has expired</entry>
+	<entry key="admin.alert.approveManage5">Request type is not listening</entry>
+	<entry key="admin.alert.approveManage6">Unauthorized request</entry>
+	<entry key="admin.alert.approveManage7">The listening period has ended</entry>
+	<entry key="admin.alert.approveManage8">Please enter the request date according to the following format</entry>
+	<entry key="admin.alert.approveManage9">It's already been processed</entry>
+	<entry key="admin.alert.approveManage10">The category you selected is the category whose progress is the branch applicant.</entry>
+	<entry key="admin.alert.approveManage11">Users who do not have the privilege of approval of a spot cannot reflect the current request</entry>
+	<entry key="admin.alert.approveManage12">The selected category is a category whose progress is a call center applicant.</entry>
+	<entry key="admin.alert.approveManage13">Users who do not have access to a call center cannot reflect their current request.</entry>
+	<entry key="admin.alert.approveManage14">The selected category is the category for which progress is approved by the department.</entry>
+	<entry key="admin.alert.approveManage15">Users who do not have access to a call center cannot reflect their current request.</entry>
+	<entry key="admin.alert.approveManage16">The category you have selected is the category whose status is Call Center</entry>
+	<entry key="admin.alert.approveManage17">Users without call center approval rights can't reflect current requests</entry>
+	<entry key="admin.alert.approveManage18">It's been handled normally</entry>
+	<entry key="admin.alert.approveManage19">There is no device on computer that can play voice files</entry>
+	<entry key="admin.alert.approveManage20">Please connect a playable device to computer first and then try listening</entry>
+	<entry key="admin.alert.approveManage21">Failed to request</entry>
+
+	<entry key="admin.alert.attrManage1">Add control Indicator</entry>
+	<entry key="admin.alert.attrManage2">Delete succeeded</entry>
+	<entry key="admin.alert.attrManage3">Delete failed</entry>
+	<entry key="admin.alert.attrManage4">Please select a control target to delete</entry>
+	<entry key="admin.alert.attrManage5">Enter observation category name</entry>
+	<entry key="admin.alert.attrManage6">Enter notification threshold</entry>
+	<entry key="admin.alert.attrManage7">This observation is already registered</entry>
+	<entry key="admin.alert.attrManage8">Control indicator modification succeeded</entry>
+	<entry key="admin.alert.attrManage9">Control indicator modification failed</entry>
+	<entry key="admin.alert.attrManage10">Enter observation category name</entry>
+	<entry key="admin.alert.attrManage11">Enter notification threshold</entry>
+	<entry key="admin.alert.attrManage12">Add control Indicator succeeded</entry>
+	<entry key="admin.alert.attrManage13">Add control Indicator failed</entry>
+	<entry key="admin.alert.attrManage14">Threshold is incorrectly defined</entry>
+	<entry key="admin.alert.attrManage15">Save of control indicator completed</entry>
+	<entry key="admin.alert.attrManage16">Save of control indicator failed</entry>
+
+	<entry key="admin.alert.authyManage1">Whether to use</entry>
+	<entry key="admin.alert.authyManage2">Playback point section designation</entry>
+	<entry key="admin.alert.authyManage3">User section designation</entry>
+	<entry key="admin.alert.authyManage4">Mouse section designation</entry>
+	<entry key="admin.alert.authyManage5">Delete memo</entry>
+	<entry key="admin.alert.authyManage6">Upload</entry>
+	<entry key="admin.alert.authyManage7">Download</entry>
+	<entry key="admin.alert.authyManage8">Add Permission Group</entry>
+	<entry key="admin.alert.authyManage9">Modify Permission Group</entry>
+	<entry key="admin.alert.authyManage10">Please select the right to delete first!</entry>
+	<entry key="admin.alert.authyManage11">Administrator rights can't be deleted!</entry>
+	<entry key="admin.alert.authyManage12">Permission deleted successfully</entry>
+	<entry key="admin.alert.authyManage13">Permission deletion failed</entry>
+	<entry key="admin.alert.authyManage14">Are you sure you want to delete the selected authority?</entry>
+	<entry key="admin.alert.authyManage15">Enter authority name!</entry>
+	<entry key="admin.alert.authyManage16">Please select the authority to modify first!</entry>
+	<entry key="admin.alert.authyManage17">Permission modified successfully</entry>
+	<entry key="admin.alert.authyManage18">Permission modified failed</entry>
+	<entry key="admin.alert.authyManage19">An error occurred while processing the job</entry>
+	<entry key="admin.alert.authyManage20">Please try again!</entry>
+
+	<entry key="admin.alert.chennelManage1">IP rule violation.Please try again!</entry>
+	<entry key="admin.alert.chennelManage2">Extension number can't be entered for more than 6 digits</entry>
+	<entry key="admin.alert.chennelManage3">You can't modify it with an empty value!</entry>
+	<entry key="admin.alert.chennelManage4">IP already registered on the same system</entry>
+	<entry key="admin.alert.chennelManage5">Failed to modify channel</entry>
+	<entry key="admin.alert.chennelManage6">Are you sure you want to delete the selected channel?</entry>
+	<entry key="admin.alert.chennelManage7">Select channel to delete</entry>
+	<entry key="admin.alert.chennelManage8">Please select a system.</entry>
+	<entry key="admin.alert.chennelManage9">Please enter an extension number</entry>
+	<entry key="admin.alert.chennelManage10">Please enter the start extension number.</entry>
+	<entry key="admin.alert.chennelManage11">Please enter the end extension number.</entry>
+	<entry key="admin.alert.chennelManage12">Start extension number can't be the same or greater as end extension number</entry>
+	<entry key="admin.alert.chennelManage13">Please enter the IP.</entry>
+	<entry key="admin.alert.chennelManage14">Please enter start IP.</entry>
+	<entry key="admin.alert.chennelManage15">Please select the use of recording.</entry>
+	<entry key="admin.alert.chennelManage16">Please select a recording type.</entry>
+	<entry key="admin.alert.chennelManage17">IP rule violation. Please enter again.</entry>
+	<entry key="admin.alert.chennelManage18">Please select Use Screen.</entry>
+	<entry key="admin.alert.chennelManage19">IP already registered on the same system.</entry>
+	<entry key="admin.alert.chennelManage20">Channel modification completed.</entry>
+	<entry key="admin.alert.chennelManage21">The ip band is</entry>
+	<entry key="admin.alert.chennelManage22"> ~ Can be set to 255. Please reset the extension range.</entry>
+	<entry key="admin.alert.chennelManage23">There is already a number registered between the start and end extensions of the same system. Registered Number : </entry>
+	<entry key="admin.alert.chennelManage24">IP already registered on the same system. Registered IP : </entry>
+	<entry key="admin.alert.chennelManage25">Adding channels completed.</entry>
+	<entry key="admin.alert.chennelManage26">Adding channel failed.</entry>
+	<entry key="admin.alert.chennelManage27">Please enter the channel number.</entry>
+	<entry key="admin.alert.chennelManage28">Channel number already registered.</entry>
+	<entry key="admin.alert.chennelManage29">Extension number already registered.</entry>
+	<entry key="admin.alert.chennelManage30">Insufficient channel licenses.</entry>
+
+	<entry key="admin.alert.comboManage1">Code added successfully.</entry>
+	<entry key="admin.alert.comboManage2">Adding code failed.</entry>
+	<entry key="admin.alert.comboManage3">Change completed.</entry>
+	<entry key="admin.alert.comboManage4">Code change failed.</entry>
+	<entry key="admin.alert.comboManage5">Change of code usage failed.</entry>
+	<entry key="admin.alert.comboManage6">The minimum expiration date is 1 day.</entry>
+	<entry key="admin.alert.comboManage7">The maximum expiration date is 30 days.</entry>
+
+	<entry key="admin.alert.etcConfig1">Are you sure you want to delete the settings?</entry>
+	<entry key="admin.alert.etcConfig2">CAUTION!!! Please delete the settings carefully as they affect the system environment.</entry>
+	<entry key="admin.alert.etcConfig3">Do you want to change the setting value?</entry>
+	<entry key="admin.alert.etcConfig4">CAUTION!!! Please change the settings carefully as they affect the system environment.</entry>
+	<entry key="admin.alert.etcConfig5">Group key value is required</entry>
+	<entry key="admin.alert.etcConfig6">The setting key value is required</entry>
+	<entry key="admin.alert.etcConfig7">No setting value entered. Do you want to proceed?</entry>
+	<entry key="admin.alert.etcConfig8">Duplicate key value exists.</entry>
+	<entry key="admin.alert.etcConfig9">Save succeeded!</entry>
+	<entry key="admin.alert.etcConfig10">Modified successfully</entry>
+	<entry key="admin.alert.etcConfig11">Delete Successful</entry>
+	<entry key="admin.alert.etcConfig12">Please select the informations to delete.</entry>
+	
+
+	<entry key="admin.alert.itemManage1">Control target already registered.</entry>
+	<entry key="admin.alert.itemManage2">There are no category to save</entry>
+	<entry key="admin.alert.itemManage3">There are no more control category to add.</entry>
+	<entry key="admin.alert.itemManage4">Failed to add control category.</entry>
+	<entry key="admin.alert.itemManage5">Control category was added successfully.</entry>
+	<entry key="admin.alert.itemManage6">Failed to delete control category.</entry>
+	<entry key="admin.alert.itemManage7">Control category deletion succeeded.</entry>
+	<entry key="admin.alert.itemManage8">Are you sure you want to delete it?</entry>
+	<entry key="admin.alert.itemManage9">Are you sure you want to start it?</entry>
+
+	<entry key="admin.alert.logManage1">IP rule violation. Please enter again.</entry>
+	<entry key="admin.alert.logManage2">Are you sure you want to delete the logs of the current condition?</entry>
+
+	<entry key="admin.alert.monitoringManage1">Modify Control Target</entry>
+	<entry key="admin.alert.monitoringManage2">Add Control Target</entry>
+	<entry key="admin.alert.monitoringManage3">Enter control target name.</entry>
+	<entry key="admin.alert.monitoringManage4">Select a control target type.</entry>
+	<entry key="admin.alert.monitoringManage5">Enter control target IP.</entry>
+	<entry key="admin.alert.monitoringManage6">Please enter the presence or absence of control.</entry>
+	<entry key="admin.alert.monitoringManage7">IP rule violation. Please enter again.</entry>
+	<entry key="admin.alert.monitoringManage8">The IP is already registered.</entry>
+	<entry key="admin.alert.monitoringManage9">Control target modification completed.</entry>
+	<entry key="admin.alert.monitoringManage10">Control target modification failed.</entry>
+	<entry key="admin.alert.monitoringManage11">Add Control Target completed.</entry>
+	<entry key="admin.alert.monitoringManage12">Failed to add control targets.</entry>
+
+	<entry key="admin.alert.queManage1">Que number already exists.</entry>
+	<entry key="admin.alert.queManage2">Please enter the que number.</entry>
+	<entry key="admin.alert.queManage3">Please enter a que name.</entry>
+	<entry key="admin.alert.queManage4">Do you want to add a que?</entry>
+	<entry key="admin.alert.queManage5">Que added successfully.</entry>
+	<entry key="admin.alert.queManage6">Failed to add que.</entry>
+	<entry key="admin.alert.queManage7">que information has been deleted.</entry>
+	<entry key="admin.alert.queManage8">Failed to delete que information.</entry>
+	<entry key="admin.alert.queManage9">Select que number to delete</entry>
+
+	<entry key="admin.alert.searchManage1">Duplicate column found.</entry>
+	<entry key="admin.alert.searchManage2"> \"Counsel code small\" in the search category must exist in the \"Counsel code medium\"</entry>
+	<entry key="admin.alert.searchManage3"> \"Counsel code medium\" in the search category must exist in the \"Counsel code large\"</entry>
+	<entry key="admin.alert.searchManage4">An error occurred during application.</entry>
+	<entry key="admin.alert.searchManage5">Applied.</entry>
+	<entry key="admin.alert.searchManage6">No data to apply.</entry>
+
+	<entry key="admin.alert.serverManage1">Add Server</entry>
+	<entry key="admin.alert.serverManage2">Modify Server</entry>
+	<entry key="admin.alert.serverManage3">Enter system ID.</entry>
+	<entry key="admin.alert.serverManage4">Enter system ID more than 2 characters.</entry>
+	<entry key="admin.alert.serverManage5">Please enter up to 5 characters for the system ID.</entry>
+	<entry key="admin.alert.serverManage6">Enter system name.</entry>
+	<entry key="admin.alert.serverManage7">Enter system name more than two characters.</entry>
+	<entry key="admin.alert.serverManage8">Special characters are not allowed.</entry>
+	<entry key="admin.alert.serverManage9">Enter system IP.</entry>
+	<entry key="admin.alert.serverManage10">IP rule violation. Please enter again.</entry>
+	<entry key="admin.alert.serverManage11">The system ID is already registered.</entry>
+	<entry key="admin.alert.serverManage12">System name already registered.</entry>
+	<entry key="admin.alert.serverManage13">SystemIP already registered.</entry>
+	<entry key="admin.alert.serverManage14">Server modification completed.</entry>
+	<entry key="admin.alert.serverManage15">Modification failed.</entry>
+	<entry key="admin.alert.serverManage16">Are you sure you want to delete the selected server?</entry>
+	<entry key="admin.alert.serverManage17">Server information has been deleted.</entry>
+	<entry key="admin.alert.serverManage18">Failed to delete server information.</entry>
+	<entry key="admin.alert.serverManage19">Please select a server to delete</entry>
+	<entry key="admin.alert.serverManage20">Add Server completed.</entry>
+	<entry key="admin.alert.serverManage21">Save failed.</entry>
+
+	<entry key="admin.alert.switchManage1">Add Pbx Information</entry>
+	<entry key="admin.alert.switchManage2">Modify Pbx Information</entry>
+	<entry key="admin.alert.switchManage3">Enter Pbx ID.</entry>
+	<entry key="admin.alert.switchManage4">Enter Pbx ID more than 2 characters.</entry>
+	<entry key="admin.alert.switchManage5">Please enter up to 5 Pbx ID characters.</entry>
+	<entry key="admin.alert.switchManage6">Enter Pbx name.</entry>
+	<entry key="admin.alert.switchManage7">Enter Pbx name more than 2 characters.</entry>
+	<entry key="admin.alert.switchManage8">Special characters are not allowed.</entry>
+	<entry key="admin.alert.switchManage9">Enter Pbx IP.</entry>
+	<entry key="admin.alert.switchManage10">Enter SIP ID.</entry>
+	<entry key="admin.alert.switchManage11">Please enter your SIP password.</entry>
+	<entry key="admin.alert.switchManage12">The PBX ID is already registered.</entry>
+	<entry key="admin.alert.switchManage13">The PBX name is already registered.</entry>
+	<entry key="admin.alert.switchManage14">The PBX IP is already registered.</entry>
+	<entry key="admin.alert.switchManage15">Added PBX information is complete.</entry>
+	<entry key="admin.alert.switchManage16">Adding PBX information failed.</entry>
+	<entry key="admin.alert.switchManage17">PBX information has been deleted.</entry>
+	<entry key="admin.alert.switchManage18">Failed to delete PBX information.</entry>
+	<entry key="admin.alert.switchManage19">Select PBX information to delete</entry>
+
+	<entry key="admin.alert.subNumberManage1">Enter PhoneNumber.</entry>
+	<entry key="admin.alert.subNumberManage2">Please enter numeric only.</entry>
+	<entry key="admin.alert.subNumberManage3">Enter NickName.</entry>
+	<entry key="admin.alert.subNumberManage4">Choose whether or not to use this PhoneNumber.</entry>
+	<entry key="admin.alert.subNumberManage5">PhoneNumber already registered.</entry>
+	<entry key="admin.alert.subNumberManage6">Added SubNumber information is complete.</entry>
+	<entry key="admin.alert.subNumberManage7">Adding SubNumber information failed.</entry>
+	<entry key="admin.alert.subNumberManage8">Are you sure you want to delete the selected SubNumber information?</entry>
+	<entry key="admin.alert.subNumberManage9">SubNumber information has been deleted.</entry>
+	<entry key="admin.alert.subNumberManage10">Failed to delete SubNumber information.</entry>
+	<entry key="admin.alert.subNumberManage11">Select SubNumber information to delete</entry>
+	<entry key="admin.alert.subNumberManage12">Modification completed.</entry>
+	<entry key="admin.alert.subNumberManage13">Modification failed.</entry>
+
+	<entry key="admin.alert.phoneMapping1">Enter PhoneNumber.</entry>
+	<entry key="admin.alert.phoneMapping2">Please enter numeric only.</entry>
+	<entry key="admin.alert.phoneMapping3">Enter NickName.</entry>
+	<entry key="admin.alert.phoneMapping4">Choose whether or not to use this PhoneNumber.</entry>
+	<entry key="admin.alert.phoneMapping5">PhoneNumber already registered.</entry>
+	<entry key="admin.alert.phoneMapping6">Added PhoneMapping information is complete.</entry>
+	<entry key="admin.alert.phoneMapping7">Adding PhoneMapping information failed.</entry>
+	<entry key="admin.alert.phoneMapping8">Are you sure you want to delete the selected PhoneMapping information?</entry>
+	<entry key="admin.alert.phoneMapping9">PhoneMapping information has been deleted.</entry>
+	<entry key="admin.alert.phoneMapping10">Failed to delete PhoneMapping information.</entry>
+	<entry key="admin.alert.phoneMapping11">Select PhoneMapping information to delete</entry>
+	<entry key="admin.alert.phoneMapping12">Modification completed.</entry>
+	<entry key="admin.alert.phoneMapping13">Modification failed.</entry>
+
+	<entry key="admin.alert.uiManage1">Control Object Map Settings</entry>
+	<entry key="admin.alert.uiManage2">Control UI Management</entry>
+	<entry key="admin.alert.uiManage3">Control Object Icon Settings</entry>
+	<entry key="admin.alert.uiManage4">Failed to retrieve list.</entry>
+	<entry key="admin.alert.uiManage5">Modification of control target UI settings succeeded.</entry>
+	<entry key="admin.alert.uiManage6">Observation sequence modified successfully.</entry>
+	<entry key="admin.alert.uiManage7">Failed to modify observation sequence</entry>
+	<entry key="admin.alert.uiManage8">Map name modification succeeded</entry>
+	<entry key="admin.alert.uiManage9">Failed to modify Map name.</entry>
+	<entry key="admin.alert.uiManage10">Map usage decision succeeded.</entry>
+	<entry key="admin.alert.uiManage11">Failed to determine Map use.</entry>
+	<entry key="admin.alert.uiManage12">Select Object Image</entry>
+	<entry key="admin.alert.uiManage13">Select target to reset UI settings</entry>
+	<entry key="admin.alert.uiManage14">The UI settings for the selected control target have been initialized.</entry>
+	<entry key="admin.alert.uiManage15">Initialization failed</entry>
+
+	<entry key="admin.alert.recUser1">Modify Group</entry>
+	<entry key="admin.alert.recUser2">Add Permission Group</entry>
+	<entry key="admin.alert.recUser3">Modify Permission Group</entry>
+	<entry key="admin.alert.recUser4">Please select the right to modify first!</entry>
+	<entry key="admin.alert.recUser5">Are you sure you want to delete the selected permissions?</entry>
+	<entry key="admin.alert.recUser6">Permission deleted successfully.</entry>
+	<entry key="admin.alert.recUser7">Failed to delete permission.</entry>
+	<entry key="admin.alert.recUser8">Please enter your ID</entry>
+	<entry key="admin.alert.recUser9">Please enter your name!</entry>
+	<entry key="admin.alert.recUser10">Enter ID!</entry>
+	<entry key="admin.alert.recUser11">Please select a privilege rating!</entry>
+	<entry key="admin.alert.recUser12">Please select a large division.</entry>
+	<entry key="admin.alert.recUser13">Please check your email format!</entry>
+	<entry key="admin.alert.recUser14">This ID is already registered.</entry>
+	<entry key="admin.alert.recUser15">Adding user succeeded.</entry>
+	<entry key="admin.alert.recUser16">This is already in use employee number.</entry>
+	<entry key="admin.alert.recUser17">Failed to add user.</entry>
+	<entry key="admin.alert.recUser18">Group proc succeeded.</entry>
+	<entry key="admin.alert.recUser19">Are you sure you want to delete the selected user?</entry>
+	<entry key="admin.alert.recUser20">Delete succeeded.</entry>
+	<entry key="admin.alert.recUser21">Please select the user to delete first!</entry>
+	<entry key="admin.alert.recUser22">Please enter at least 1 change period!</entry>
+	<entry key="admin.alert.recUser23">Enter Try limit times.(at least 1)</entry>
+	<entry key="admin.alert.rec23">Enter PW hold count. (at least 1) </entry>
+	<entry key="admin.alert.recUser24">Set the lock cycle.</entry>
+	<entry key="admin.alert.recUser25">Settings have not been changed</entry>
+	<entry key="admin.alert.recUser26">Login information initialization succeeded.</entry>
+	<entry key="admin.alert.recUser27">Password is in violation of previous PW usage policy. Please change your password!</entry>
+	<entry key="admin.alert.recUser28">Failed to modify user information.</entry>
+	<entry key="admin.alert.recUser29">Password confirmation does not match. Enter again!</entry>
+	<entry key="admin.alert.recUser30">Modify User</entry>
+	<entry key="admin.alert.recUser31">Add User</entry>
+	<entry key="admin.alert.recUser32">Add Group</entry>
+	<entry key="admin.alert.recUser33">Enter password confirmation!</entry>
+	<entry key="admin.alert.recUser34">User information modification succeeded.</entry>
+	<entry key="admin.alert.recUser35">Group was added successfully.</entry>
+	<entry key="admin.alert.recUser36">Group edit succeeded.</entry>
+	<entry key="admin.alert.recUser37">Group deleted successfully.</entry>
+	<entry key="admin.alert.recUser38">Please select a group to edit.</entry>
+	<entry key="admin.alert.recUser39">Are you sure you want to delete the selected group?</entry>
+	<entry key="admin.alert.recUser40">Please select a group to delete.</entry>
+	<entry key="admin.alert.recUser41">Password policy settings</entry>
+	<entry key="admin.alert.recUser42">Your password policy has been saved.</entry>
+	<entry key="admin.alert.recUser43">Please select user to modify.</entry>
+	<entry key="admin.alert.recUser44">Please select Large category to modify.</entry>
+	<entry key="admin.alert.recUser47">Please enter the password!</entry>
+
+	<entry key="admin.alert.userManage1">Please select the organizational chart first.</entry>
+	<entry key="admin.alert.userManage2">Add User</entry>
+	<entry key="admin.alert.userManage3">Modify Group</entry>
+	<entry key="admin.alert.userManage4">Add Permission Group</entry>
+	<entry key="admin.alert.userManage5">Modify Permission Group</entry>
+	<entry key="admin.alert.userManage6">Please enter at least 2 password maintenance times!</entry>
+	<entry key="admin.alert.userManage7">Failed to modify user information.</entry>
+	<entry key="admin.alert.userManage8">No information has changed.</entry>
+
+
+	<!-- 18-09-05 -pilip admin kor lang add -->
+	<entry key="admin.alert.authyManage21">Add Permission completed.</entry>
+	<entry key="admin.alert.authyManage22">Failed to add permissions.</entry>
+	<entry key="admin.alert.authyManage23">Player Download</entry>
+
+	<entry key="admin.channel.title.multiChannelAdd">Add Multiple Channels</entry>
+	<entry key="admin.label.phone">Contact</entry>
+	<entry key="admin.label.men">Men</entry>
+	<entry key="admin.label.women">Women</entry>
+	<entry key="admin.label.add">Add</entry>
+	<entry key="admin.label.update">Modify</entry>
+	<entry key="admin.label.day">per Day</entry>
+	<entry key="admin.label.week">per Week</entry>
+	<entry key="admin.label.month">per Month</entry>
+	<entry key="admin.label.userCustom">user Custom</entry>
+	<entry key="admin.label.notUse">Not Use</entry>
+	
+	<entry key="admin.grid.listenDownloadEnd">Listen download request expiration</entry>
+	<entry key="admin.grid.passwordPolicy">Password Policy</entry>
+	
+	<!-- 19-04-03 -recsee_m -->
+	<entry key="admin.label.mobileUsage">mobile Usage</entry>
+	<entry key="admin.alert.recUser45">New number registration is not possible. Please check your mobile usage!</entry>
+	<entry key="admin.alert.recUser46">NThe IP you entered is in use.</entry>
+	
+	
+	<!-- 19-05-15 -allowableRange -->
+	<entry key="admin.allowableRange.button.rangeAdd">Add Range</entry>
+	<entry key="admin.allowableRange.button.rangeModi">Modify Range</entry>
+	<entry key="admin.allowableRange.button.groupAdd">Add Selected Group</entry>
+	
+	<entry key="admin.alert.allowableRangeManage1">Are you sure you want to delete the selected allowable range?</entry>
+	<entry key="admin.alert.allowableRangeManage2">Please select an allowable range to delete first!</entry>
+	<entry key="admin.alert.allowableRangeManage3">Allowable Range deletion is complete.</entry>
+	<entry key="admin.alert.allowableRangeManage4">Failed to delete allowable range.</entry>
+	<entry key="admin.alert.allowableRangeManage5">Please enter an allowable range name.</entry>
+	<entry key="admin.alert.allowableRangeManage6">Adding allowable range is complete.</entry>
+	<entry key="admin.alert.allowableRangeManage7">Failed to add allowable range.</entry>
+	<entry key="admin.alert.allowableRangeManage8">Please select an allowable range to edit first!</entry>
+	<entry key="admin.alert.allowableRangeManage10">Modification of allowable range is complete.</entry>
+	<entry key="admin.alert.allowableRangeManage11">Modification of allowable range failed.</entry>
+	<entry key="admin.alert.allowableRangeManage12">This group has already been added.</entry>
+	<entry key="admin.alert.allowableRangeManage13">Please select an group.</entry>
+	<entry key="admin.alert.allowableRangeManage14">Please check your group for removal.</entry>
+	<entry key="admin.alert.allowableRangeManage15">Group change complete.</entry>
+	<entry key="admin.alert.allowableRangeManage16">Group change failed.</entry>
+	
+	<!-- 19-08-13 -11번가 보안관련 -->
+	<entry key="admin.grid.unlockBtn">unlock</entry>
+	<entry key="admin.alert.unlockSuccess">Successful unlock.</entry>
+	<entry key="admin.alert.unlockFail">Failed to unlock.</entry>
+	<entry key="admin.alert.unlockConfirm">Do you want to unlock the selected User?</entry>
+	
+	<entry key="admin.confirm.deletingMemo">Are you sure you want to delete the memo?</entry>
+	<entry key="admin.confirm.chkPlayingMemo">There is no file currently playing or it is different from the file being played. \\n Do you want to play the file of the selected memo?</entry>
+	
+	
+	<entry key="admin.alert.delType">Please select deletion type.</entry>
+	<entry key="admin.alert.delFileType">Please select deletion file type.</entry>
+	<entry key="admin.alert.delFilePathType">Please select deletion file path type.</entry>
+	<entry key="admin.alert.backType">Please select backup type.</entry>
+	<entry key="admin.alert.indexType">Please select whether or not to create an index.</entry>
+	<entry key="admin.alert.logType">Please select log type.</entry>
+	<entry key="admin.alert.decType">Please select decode type.</entry>
+	<entry key="admin.alert.overWriteType">Please select overWrite type.</entry>
+	<entry key="admin.alert.urlUpdateType">Please select FilePath Update type.</entry>
+	<entry key="admin.alert.conformityType">Please select Conformity Update type.</entry>
+	<entry key="admin.alert.dualBackupType">Please select Dual Backup type.</entry>
+	<entry key="admin.alert.scheTime">Please input backup time</entry>
+	<entry key="admin.alert.scheDate">Please input backup date</entry>
+	<entry key="admin.alert.scheDayWeek">Please input backup day of week</entry>
+	<entry key="admin.alert.delPeriod">Please enter a deletion period.</entry>
+	<entry key="admin.alert.delPreriod.under11">Only less than 11 months of deletion period can be entered.</entry>
+	<entry key="admin.alert.backupScheCreate">Would you like to register a backup schedule?</entry>
+	<entry key="admin.alert.urlCheck">Please do PATH CHECK.</entry>
+	
+	<entry key="admin.alert.del.scheTime">Please input deletion schedule time</entry>
+	<entry key="admin.alert.del.scheDate">Please input deletion schedule date</entry>
+	<entry key="admin.alert.del.scheDayWeek">Please input deletion schedule day of week</entry>
+
+	<entry key="admin.title.delPeriod">Deletion period</entry>
+	<entry key="admin.title.delPeriod">Deletion period limit</entry>
+	<entry key="admin.title.backPeriod">Backup period</entry>
+	<entry key="admin.title.backPeriodCnt">Remaining Backup period</entry>	
+	<entry key="admin.title.backNowStart">Now Start</entry>	
+	<entry key="admin.title.backDown">Download</entry>	
+	<entry key="admin.title.backDate">Backup Month</entry>
+	<entry key="admin.title.delType">Deletion type</entry>
+	<entry key="admin.title.delFileType">Deletion file type</entry>
+	<entry key="admin.title.delFilePathType">Deletion file path type</entry>
+	<entry key="admin.title.backType">Backup type</entry>
+	<entry key="admin.title.backPath">Backup Path</entry>	
+	<entry key="admin.title.logType">log type</entry>
+	<entry key="admin.title.delSearchType">Deletion Search Type</entry>
+	
+	<entry key="admin.title.decType">Decode Type</entry>
+	<entry key="admin.title.urlUpdateType">FilePath Update Type</entry>
+	<entry key="admin.title.overWriteType">OverWrite Type</entry>
+	<entry key="admin.title.conformityType">Conformity Type</entry>
+	<entry key="admin.title.dualBackupType">Dual Backup Type</entry>
+	
+	<entry key="admin.title.indexType">Index creation</entry>	
+	
+	<entry key="admin.select.title.delSelect">Delete Select Type</entry>
+	
+	<entry key="admin.select.title.backPath">Backup Path</entry>
+	<entry key="admin.select.title.selectGroup">Select Group</entry>
+	<entry key="admin.select.title.useDelOption">Select option use</entry>
+	<entry key="admin.select.title.delType">delete type</entry>
+	<entry key="admin.select.title.delFilePathType">Deletion file path type</entry>
+	<entry key="admin.select.title.logType">log type</entry>
+	<entry key="admin.select.title.delPeriod">Period</entry>
+	<entry key="admin.select.title.delPeriodOffset">Limit</entry>
+	<entry key="admin.select.title.delYear">Year</entry>
+	<entry key="admin.select.title.delMonth">Months</entry>
+	<entry key="admin.select.title.delDay">Day</entry>
+	<entry key="admin.select.title.delFileType">delete file type</entry>
+	<entry key="admin.select.value.selectType">Select type</entry>
+	<entry key="admin.select.value.indexType">Index Create type</entry>
+	<entry key="admin.select.value.decType">Decode Type</entry>
+	<entry key="admin.select.value.conformityType">Conformity check Type</entry>
+	<entry key="admin.select.value.dualBackupType">Dual Backup check Type</entry>
+	<entry key="admin.select.value.urlUpdateType">FilePath Update Type</entry>
+	<entry key="admin.select.value.overWriteType">Duplicate file overwrite Type</entry>
+	<entry key="admin.select.value.delType.H">Hide recording file list</entry>
+	<entry key="admin.select.value.delType.D">Delete recording file list</entry>
+	<entry key="admin.select.value.delType.F">Delete recording file</entry>
+	<entry key="admin.select.value.delType.A">Delete recording file and list</entry>
+	<entry key="admin.select.value.delType.B">File Backup</entry>
+	<entry key="admin.select.value.delType.M">File Move</entry>
+	<entry key="admin.select.value.logType.A">detailed record</entry>
+	<entry key="admin.select.value.logType.M">simply record</entry>
+	<entry key="admin.select.value.logType.Y">Y</entry>
+	<entry key="admin.select.value.logType.N">N</entry>
+	<entry key="admin.select.value.delFileType.M">Mix</entry>
+	<entry key="admin.select.value.delFileType.R">RX/TX</entry>
+	<entry key="admin.select.value.delFileType.A">ALL</entry>
+	<entry key="admin.select.value.delFilePathType.R">Recfile Server</entry>
+	<entry key="admin.select.value.delFilePathType.S">Storage</entry>
+	<entry key="admin.select.value.delFilePathType.A">ALL</entry>
+	<entry key="admin.select.value.delSelect.D">DATE</entry>
+	<entry key="admin.select.value.delSelect.S">FileSize</entry>	
+	
+	<entry key="admin.select.value.delSearchType.D">DB</entry>
+	<entry key="admin.select.value.delSearchType.F">File</entry>	
+	
+	
+	
+	<entry key="admin.delRecfileInfo.saveSuccess">setting info saved</entry>
+	<entry key="admin.delRecfileInfo.saveFail">setting info save failed.</entry>
+	
+	<entry key="admin.delRecfileInfo.deleteSuccess">setting info deleted.</entry>
+	<entry key="admin.delRecfileInfo.deleteFail">setting info delete failed.</entry>
+	
+	<entry key="admin.delRecfileInfo.modify">Do you want to modify the recording deletion information?</entry>
+	
+	<entry key="admin.delRecfileInfo.modifySuccess">setting info modified</entry>
+	<entry key="admin.delRecfileInfo.modifyFail">setting info modify failed.</entry>
+	
+	<entry key="admin.backRecfileInfo.saveSuccess">setting info saved</entry>
+	<entry key="admin.backRecfileInfo.saveFail">setting info save failed.</entry>
+	
+	<entry key="admin.backRecfileInfo.deleteSuccess">setting info deleted.</entry>
+	<entry key="admin.backRecfileInfo.deleteFail">setting info delete failed.</entry>
+	
+	<entry key="admin.backRecfileInfo.modify">Do you want to modify the recording backup schedule information?</entry>
+	
+	<entry key="admin.backRecfileInfo.modifySuccess">setting info modified</entry>
+	<entry key="admin.backRecfileInfo.modifyFail">setting info modify failed.</entry>
+	
+	<entry key="admin.etcConfig.label.prefix">Remove prefix</entry>
+	<entry key="admin.etcConfig.option.use">Use</entry>
+	<entry key="admin.etcConfig.option.nouse">Unuse</entry>	
+	<entry key="admin.etcConfig.alert.prefix.emptyNum">Please enter number.</entry>
+	<entry key="admin.etcConfig.alert.prefix.useNum">This number is already registered.</entry>
+	<entry key="admin.etcConfig.alert.prefix.chkDelNum">Please select a number to delete.</entry>
+	
+	<entry key="admin.etcConfig.label.masking">Phone number masking</entry>
+	<entry key="admin.etcConfig.label.masking.from">from</entry>
+	<entry key="admin.etcConfig.label.masking.count">count</entry>	
+	<entry key="admin.etcConfig.alert.masking.emptyFrom">Please enter start position to mask.</entry>
+	<entry key="admin.etcConfig.alert.masking.emptyCount">Please enter the number of masking.</entry>	
+	
+	<entry key="admin.etcConfig.label.hyphen">Phone number notation(-)</entry>
+	<entry key="admin.etcConfig.option.hyphen.val2">2 digits</entry>
+	<entry key="admin.etcConfig.option.hyphen.val3">3 digits</entry>
+	<entry key="admin.etcConfig.option.hyphen.val4">4 digits</entry>
+	<entry key="admin.etcConfig.option.direct">Direct input</entry>
+	<entry key="admin.etcConfig.option.nouse">Unuse</entry>
+	<entry key="admin.etcConfig.alert.hyphen.emptyNum">Please enter the count of the first number notation.</entry>
+	<entry key="admin.etcConfig.alert.hyphen.under10">Please enter the first number below 10.</entry>
+	
+	<entry key="admin.etcConfig.alert.addSuccess">Additional success</entry>
+	<entry key="admin.etcConfig.alert.addFail">Additional failed</entry>
+	<entry key="admin.etcConfig.alert.delSuccess">Remove success</entry>
+	<entry key="admin.etcConfig.alert.delFail">Remove failed</entry>
+	<entry key="admin.etcConfig.alert.modifySuccess">Modification success</entry>
+	<entry key="admin.etcConfig.alert.modifyFail">Modification failed</entry>
+	
+<entry key="admin.etcConfig.btn.add">Add</entry>
+	<entry key="admin.etcConfig.btn.del">Delete</entry>
+	<entry key="admin.etcConfig.btn.set">Save</entry>
+	<entry key="admin.etcConfig.confirm.delRecfile1">Files older than</entry>
+    	<entry key="admin.etcConfig.confirm.delRecfile2">for the selected group will be deleted.</entry>
+    	<entry key="admin.etcConfig.confirm.delRecfile3">Are you sure you want to delete it?</entry>
+    
+    	<entry key="admin.etcConfig.confirm.backRecfile1">Files older than</entry>
+    	<entry key="admin.etcConfig.confirm.backRecfile2">The file was backed up.</entry>
+    	<entry key="admin.etcConfig.confirm.backRecfile3">Are you sure you want to backup it?</entry>
+    
+	<entry key="admin.detail.label.week.sunday">Sunday</entry>
+	<entry key="admin.detail.label.week.monday">Monday</entry>
+	<entry key="admin.detail.label.week.tuesday">Tuesday</entry>
+	<entry key="admin.detail.label.week.wednesday">Wednesday</entry>
+	<entry key="admin.detail.label.week.thursday">Thursday</entry>
+	<entry key="admin.detail.label.week.friday">Friday</entry>
+	<entry key="admin.detail.label.week.saturday">Saturday</entry>	
+			
+	<entry key="admin.detail.view.week.1">Sunday</entry>
+	<entry key="admin.detail.view.week.2">Monday</entry>
+	<entry key="admin.detail.view.week.3">Tuesday</entry>
+	<entry key="admin.detail.view.week.4">Wednesday</entry>
+	<entry key="admin.detail.view.week.5">Thursday</entry>
+	<entry key="admin.detail.view.week.6">Friday</entry>
+	<entry key="admin.detail.view.week.7">Saturday</entry>	
+	
+	<entry key="admin.etcConfig.btn.add">Add</entry>
+	<entry key="admin.etcConfig.btn.del">Delete</entry>
+	<entry key="admin.etcConfig.btn.set">Save</entry>
+	
+	<entry key="admin.etcConfig.confirm.delRecfile1">Files older than</entry>
+    <entry key="admin.etcConfig.confirm.delRecfile2">for the selected group will be deleted.</entry>
+    <entry key="admin.etcConfig.confirm.delRecfile3">Are you sure you want to delete it?</entry>
+    
+    <entry key="admin.etcConfig.confirm.backRecfile1">Files older than</entry>
+    <entry key="admin.etcConfig.confirm.backRecfile2">The file was backed up.</entry>
+    <entry key="admin.etcConfig.confirm.backRecfile3">Are you sure you want to backup it?</entry>
+    
+    <entry key="admin.button.addIp">Add</entry>
+	<entry key="admin.button.modifyIp">Modify</entry>
+	<entry key="admin.publicIp.title.addIp">Add IP</entry>
+	<entry key="admin.publicIp.title.modifyIp">Modify IP</entry>
+	<entry key="admin.publicIp.label.rIntranetIp">IP</entry>
+	<entry key="admin.alert.publicIpManage1">Please enter the IP.</entry>
+	<entry key="admin.alert.publicIpManage2">This IP is already registered.</entry>
+	<entry key="admin.alert.publicIpManage3">Adding IP completed.</entry>
+	<entry key="admin.alert.publicIpManage4">Adding IP failed.</entry>
+	<entry key="admin.alert.publicIpManage5">Modifying IP completed.</entry>
+	<entry key="admin.alert.publicIpManage6">Modifying IP failed.</entry>
+	<entry key="admin.alert.publicIpManage7">Are you sure to delete selected IP?</entry>
+	<entry key="admin.alert.publicIpManage8">Deleting IP completed.</entry>
+	<entry key="admin.alert.publicIpManage9">Deleting IP failed.</entry>
+	<entry key="admin.alert.publicIpManage10">Please select IP to delete.</entry>
+    
+    <entry key="admin.backup.label.backupSchedule">Backup Schedule</entry>
+    <entry key="admin.backup.label.backupSelect">Backup Date Set</entry>
+    <entry key="admin.backup.label.backupData">Backup Data</entry>
+    <entry key="admin.backup.label.backupStartTime">Start Time</entry>
+	<entry key="admin.backup.label.backupRunTime">Running Time</entry>
+	<entry key="admin.backup.label.backupEndTime">Complete Time</entry>
+	<entry key="admin.backup.label.backupState">Backup State</entry>
+    <entry key="admin.detail.option.daily">Daily</entry>
+    <entry key="admin.detail.option.weekly">Weekly</entry>
+	<entry key="admin.detail.option.monthly">Monthly</entry>
+	<entry key="admin.detail.option.noSche">No Schedule</entry>
+	<entry key="admin.detail.view.D">Daily</entry>
+    <entry key="admin.detail.view.W">Weekly</entry>
+	<entry key="admin.detail.view.M">Monthly</entry>
+	<entry key="admin.backup.label.mon">Month</entry>
+	<entry key="admin.backup.label.week">Week</entry>
+	<entry key="admin.backup.label.day">Day</entry>
+	<entry key="admin.backup.label.time">Time</entry>
+	<entry key="admin.backup.label.min">Minute</entry>
+	<entry key="admin.backup.label.hour">Hour</entry>
+	<entry key="admin.backup.label.fromTo">From~To</entry>
+	<entry key="admin.detail.view.D">Daily</entry>
+    <entry key="admin.detail.view.W">Weekly</entry>
+	<entry key="admin.detail.view.M">Monthly</entry>
+	<entry key="admin.detail.view.N">No Schedule</entry>
+	<entry key="admin.dbManage.label.dbName">DB Name</entry>
+	<entry key="admin.dbManage.label.dbServer">Server</entry>
+	<entry key="admin.dbManage.label.url">URL</entry>
+	<entry key="admin.dbManage.label.id">ID</entry>
+	<entry key="admin.dbManage.label.pw">PW</entry>
+	<entry key="admin.dbManage.label.timeout">Timeout</entry>
+	<entry key="admin.dbManage.label.dbConnectionTest">Connection Test</entry>
+	<entry key="admin.dbManage.label.sqlName">SQL Name</entry>
+	<entry key="admin.dbManage.label.sql">SQL</entry>
+	<entry key="admin.dbManage.label.jobName">Job Name</entry>
+	<entry key="admin.dbManage.label.executeName">Schedule Name</entry>
+	<entry key="admin.dbManage.label.rSchedulerSelect">Schedule</entry>
+	<entry key="admin.dbManage.label.rSchedulerWeek">Day</entry>
+	<entry key="admin.dbManage.label.rSchedulerDay">Date</entry>
+	<entry key="admin.dbManage.label.rSchedulerHour">Hour</entry>
+	<entry key="admin.dbManage.label.rExecuteDate">Execute Date</entry>
+	<entry key="admin.dbManage.label.rExecuteTime">Execute Time</entry>
+	<entry key="admin.dbManage.label.rCompleteDate">Complete Date</entry>
+	<entry key="admin.dbManage.label.rCompleteTime">Complete Time</entry>
+	<entry key="admin.dbManage.label.rErrorMessage">Error</entry>
+	<entry key="admin.dbManage.label.executeQuery">Execute</entry>
+	
+	<entry key="admin.dbManage.tab.db">DB</entry>
+	<entry key="admin.dbManage.tab.query">SQL</entry>
+	<entry key="admin.dbManage.tab.job">Job</entry>
+	<entry key="admin.dbManage.tab.execute">Schedule</entry>
+	
+	<entry key="admin.dbManage.button.addList">Add</entry>
+	<entry key="admin.dbManage.button.delList">Remove</entry>
+	<entry key="admin.dbManage.button.addSQL">Add SQL</entry>
+	<entry key="admin.dbManage.button.addJob">Add Job</entry>
+	<entry key="admin.dbManage.button.addExecute">Add Schedule</entry>
+	<entry key="admin.dbManage.button.addDB">Add DB</entry>
+	<entry key="admin.dbManage.button.modify">Modify</entry>
+	
+	<entry key="admin.dbManage.alert.message1">Please enter DB Name.</entry>
+	<entry key="admin.dbManage.alert.message2">Please select Server.</entry>
+	<entry key="admin.dbManage.alert.message3">Please enter URL.</entry>
+	<entry key="admin.dbManage.alert.message4">Please enter ID.</entry>
+	<entry key="admin.dbManage.alert.message5">Please enter Password.</entry>
+	<entry key="admin.dbManage.alert.message6">Please enter Timeout.</entry>
+	<entry key="admin.dbManage.alert.message7">This DB Name is already registered.</entry>
+	<entry key="admin.dbManage.alert.message8">DB Data was added successfully.</entry>
+	<entry key="admin.dbManage.alert.message9">Adding DB Data failed.</entry>
+	<entry key="admin.dbManage.alert.message10">Please enter SQL Name.</entry>
+	<entry key="admin.dbManage.alert.message11">Please enter SQL.</entry>
+	<entry key="admin.dbManage.alert.message12">This SQL Name is already registered.</entry>
+	<entry key="admin.dbManage.alert.message13">SQL Data was added successfully.</entry>
+	<entry key="admin.dbManage.alert.message14">Adding SQL Data failed.</entry>
+	<entry key="admin.dbManage.alert.message15">Please enter Job Name.</entry>
+	<entry key="admin.dbManage.alert.message16">Please add DB/SQL set.</entry>
+	<entry key="admin.dbManage.alert.message17">This Job Name is already registered.</entry>
+	<entry key="admin.dbManage.alert.message18">Job Data was added successfully.</entry>
+	<entry key="admin.dbManage.alert.message19">Adding Job Data failed.</entry>
+	<entry key="admin.dbManage.alert.message20">Please enter Schedule Name.</entry>
+	<entry key="admin.dbManage.alert.message21">Please select Schedule.</entry>
+	<entry key="admin.dbManage.alert.message22">Please select week of day.</entry>
+	<entry key="admin.dbManage.alert.message23">Please select date.</entry>
+	<entry key="admin.dbManage.alert.message24">Please select hour.</entry>
+	<entry key="admin.dbManage.alert.message25">This Schedule Name is already registered.</entry>
+	<entry key="admin.dbManage.alert.message26">Schedule was added successfully.</entry>
+	<entry key="admin.dbManage.alert.message27">Adding Schedule failed.</entry>
+	<entry key="admin.dbManage.alert.message28">DB Data was modified successfully.</entry>
+	<entry key="admin.dbManage.alert.message29">Modifying DB failed.</entry>
+	<entry key="admin.dbManage.alert.message30">SQL Data was modified successfully.</entry>
+	<entry key="admin.dbManage.alert.message31">Modifying SQL failed.</entry>
+	<entry key="admin.dbManage.alert.message32">Job Data was modified successfully.</entry>
+	<entry key="admin.dbManage.alert.message33">Modifying Job Data failed.</entry>
+	<entry key="admin.dbManage.alert.message34">Schedule was modified successfully.</entry>
+	<entry key="admin.dbManage.alert.message35">Modifying Schedule failed.</entry>
+	<entry key="admin.dbManage.alert.message36">Data was deleted successfully.</entry>
+	<entry key="admin.dbManage.alert.message37">Deleting Data failed.</entry>
+	<entry key="admin.dbManage.alert.message38">Please select Data to delete.</entry>
+	<entry key="admin.dbManage.alert.message39">Connected successfully.</entry>
+	<entry key="admin.dbManage.alert.message40">Invalid DB information.</entry>
+	<entry key="admin.dbManage.alert.message41">Please select a DB Name to add.</entry>
+	<entry key="admin.dbManage.alert.message42">Please select a SQL Name to add.</entry>
+	<entry key="admin.dbManage.alert.message43">Please select DB/SQL set to remove.</entry>
+	<entry key="admin.dbManage.alert.message44">The run is complete.</entry>
+	<entry key="admin.dbManage.alert.message45">The run failed.</entry>
+	
+	<entry key="admin.dbManage.confirm.message1">Schedule and Job Data that contain the selected DB is also deleted.\\nAre you sure to delete?</entry>
+	<entry key="admin.dbManage.confirm.message2">Schedule and Job Data that contain the selected SQL is also deleted.\\nAre you sure to delete?</entry>
+	<entry key="admin.dbManage.confirm.message3">Schedule that contains the selected Job is also deleted.\\nAre you sure to delete?</entry>
+	<entry key="admin.dbManage.confirm.message4">Are you sure to delete the selected Schedule?</entry>
+	
+	<entry key="admin.userDBInterface.title.modify">Modify</entry>
+	
+	<entry key="admin.userDBInterface.label.rDbIp">IP</entry>
+	<entry key="admin.userDBInterface.label.rDbUser">DB USER</entry>
+	<entry key="admin.userDBInterface.label.rDbPwd">DB PWD</entry>
+	<entry key="admin.userDBInterface.label.rDbPort">PORT</entry>
+	<entry key="admin.userDBInterface.label.rDbName">DB NAME</entry>
+	<entry key="admin.userDBInterface.label.rTeamCode">Team Code</entry>
+	<entry key="admin.userDBInterface.label.rTeamName">Team Name</entry>
+	<entry key="admin.userDBInterface.label.rHh">Process Time</entry>
+	<entry key="admin.userDBInterface.label.rCompleteDate">Completed Date</entry>
+	<entry key="admin.userDBInterface.label.rCompleteTime">Completed Time</entry>
+	<entry key="admin.userDBInterface.label.rQuickExcution">Excute</entry>
+	
+	<entry key="admin.userDBInterface.button.rQuickExcution">QUick Excute</entry>
+	<entry key="admin.userDBInterface.button.add">Add</entry>
+	<entry key="admin.userDBInterface.button.modify">Modify</entry>
+	
+	<entry key="admin.userDBInterface.alert.message1">Please Enter IP.</entry>
+	<entry key="admin.userDBInterface.alert.message2">Please Enter DB USER.</entry>
+	<entry key="admin.userDBInterface.alert.message3">Please Enter DB PWD.</entry>
+	<entry key="admin.userDBInterface.alert.message4">Please Enter PORT.</entry>
+	<entry key="admin.userDBInterface.alert.message5">Please Enter DB NAME.</entry>
+	<entry key="admin.userDBInterface.alert.message6">Please Enter Team Code.</entry>
+	<entry key="admin.userDBInterface.alert.message7">Please Enter Team Name.</entry>
+	<entry key="admin.userDBInterface.alert.message8">Please Enter Process Time.</entry>
+	<entry key="admin.userDBInterface.alert.message9">This DB NAME is already registered.</entry>
+	<entry key="admin.userDBInterface.alert.message10">Data was added successfully.</entry>
+	<entry key="admin.userDBInterface.alert.message11">Adding Data failed.</entry>
+	<entry key="admin.userDBInterface.alert.message12">Data was modified successfully.</entry>
+	<entry key="admin.userDBInterface.alert.message13">Modifying Data failed.</entry>
+	<entry key="admin.userDBInterface.alert.message14">Data was deleted successfully.</entry>
+	<entry key="admin.userDBInterface.alert.message15">Deleting Data failed.</entry>
+	<entry key="admin.userDBInterface.alert.message16">Please select Data to delete.</entry>
+	
+	<entry key="admin.userDBInterface.confirm.message1">Are you sure to delete the selected Data?</entry>
+	
+	<entry key="admin.publicIp.label.rPublicIp">IP</entry>
+	
+	<!-- 3차 백업 관리 언어팩 -->
+	<!-- 파일 복구 상태 -->
+	<entry key="admin.fileRecover.state.AS">Auto Recovery Success</entry>
+	<entry key="admin.fileRecover.state.AF">Auto Recovery Fail</entry>
+	<entry key="admin.fileRecover.state.AW">Auto Recovery Waiting</entry>
+	<entry key="admin.fileRecover.state.MS">Manual Recovery Success</entry>
+	<entry key="admin.fileRecover.state.MF">Manual Recovery Fail</entry>
+	<entry key="admin.fileRecover.state.MW">Manual Recovery Waiting</entry>
+	<entry key="admin.fileRecover.state.N">-</entry>
+</properties>

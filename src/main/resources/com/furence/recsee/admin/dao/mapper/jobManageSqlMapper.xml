@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.JobManageDao">
+	<resultMap id="JobResultMap" type="com.furence.recsee.admin.model.JobManage">
+		<result column="JOBNAME" jdbcType="VARCHAR" property="jobName" />
+		<result column="DBNAME" jdbcType="VARCHAR" property="dbName" />
+		<result column="SQLNAME" jdbcType="VARCHAR" property="sqlName" />
+	</resultMap>
+
+	<select id="selectJobManage" parameterType="com.furence.recsee.admin.model.JobManage" resultMap="JobResultMap">
+		SELECT * FROM SCHEDULER_JOB_MANAGE ORDER BY JOBNAME
+	</select>
+	
+	<select id="selectOneJobManage" parameterType="com.furence.recsee.admin.model.JobManage" resultMap="JobResultMap">
+		SELECT * FROM SCHEDULER_JOB_MANAGE WHERE JOBNAME=#{jobName}
+	</select>
+	
+	<insert id="insertJobManage" parameterType="com.furence.recsee.admin.model.JobManage">
+			INSERT INTO SCHEDULER_JOB_MANAGE (
+				JOBNAME,
+				DBNAME,
+				SQLNAME
+			) VALUES (
+				#{jobName},
+				#{dbName},
+				#{sqlName}
+			)
+	</insert>
+	
+	<update id="updateJobManage" parameterType="com.furence.recsee.admin.model.JobManage">
+		UPDATE SCHEDULER_JOB_MANAGE SET
+			DBNAME=#{dbName},
+			SQLNAME=#{sqlName}
+		WHERE
+			JOBNAME=#{jobName}
+	</update>
+	
+	<delete id="deleteJobManage" parameterType="com.furence.recsee.admin.model.JobManage">
+		DELETE FROM SCHEDULER_JOB_MANAGE WHERE JOBNAME=#{jobName}
+	</delete>
+	
+</mapper>

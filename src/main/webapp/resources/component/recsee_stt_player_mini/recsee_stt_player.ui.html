@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RecSeePlayer UI</title>
+</head>
+<body>
+  <div id="recsee_player_object">
+    <div class="rplayer">
+      <!-- Header -->
+      <div class="player_header theme_default_main">
+      	<div class="header_txt">
+      		RecSee STT
+      	</div>
+      	<div class="search_bar_wrap">
+      		<div class="header_search_bar">
+     			<div id="searchBtn">
+     			검색
+     			</div>
+      			<input class="theme_default_color1" type="text" name="searchText" id="searchText" value="" autocomplete="off"/>
+      			<!-- <div class="search_up_btn">
+					<p></p>					      				
+      			</div>
+     			<div class="search_down_btn">
+     				<p></p>
+     			</div> -->
+      		</div>
+      	</div>
+      </div>
+      <!-- Body -->
+      <div class="play_base_wrap theme_default_sub">
+      	  <!-- Player Btn  -->
+      	  <div class="play_btn_group">
+      	  	<!-- <div id="playerFix" class="player_fix btn theme_default_color1"></div> -->
+      	  	<div id="procTime" class="player_proc_time theme_default_text">00:00:00</div>
+      	  	<div id="Start" class="player_playing btn"></div>
+      	  	<div id="stepBackward" class="player_step_backward btn"></div>
+      	  	<div id="backward" class="player_backward btn"></div>
+      	  	<div id="forward" class="player_forward btn"></div>
+      	  	<div id="stepForward" class="player_step_forward btn"></div>
+      	  	<div id="reload" class="player_reload btn"></div>
+      	  	<div class="volume_icon"></div>
+      	  	<!-- 플레이어 전체 사운드 조절 -->
+      	  	<div class="sound_bar_wrap">
+      	  		<div id="playSoundBar" class="player_all_sound">
+      	  			<div class="progress"></div>
+      	  		</div>
+      	  	</div>
+      	  	
+      	  </div>
+      	  <!-- LEFT BAR  -->
+	      <div class="play_control_wrap theme_default_main">
+	        <!-- rx_wrap -->
+	        <div class="rx_wrap wave_wrap">
+	          <div class="rxWaveObj">
+	          </div>
+	        </div>
+	        <!-- tx wrap -->
+	        <div class="tx_wrap wave_wrap">
+	          <div class="txWaveObj">
+	          </div>
+	        </div>
+	        <div class="stt_playing_wrap">
+	        	<div class="stt_rx_view"></div>
+	        	<div class="stt_tx_view"></div>
+	        	<div class="stt_right_view theme_default_color1">
+	        		<div class="stt_play_map">
+	        			<div style="height:100%;position:absolute;">
+	        				<img id="rxMiniMap" style="height:100%;width:50px;margin-left:9px;"  src="resources/component/recsee_stt_player_mini/images/icons/waveSttMini.svg"  />
+	        				<div id="rxMiniMapInner" style="height:100%;position:absolute;transform:scaleX(-1);margin-left:16px;">
+	        				</div>
+	        			</div>
+	        			<div class="stt_play_current_wrap" id="currentWrap">
+	        				<div class="current_box"></div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+	      </div>
+     	  <div class="player_header_content theme_default_color2">
+	      		<!-- 고객 -->
+	      		<span class="rx_audio_sound">
+	      			<div class="rx_circle"></div>
+	      			<p class="rx_text">고객</p>
+	      			<div class="volume_icon"></div>
+      				<div class="rx_audio_sound_wrap">
+  						<div id="rxPlaySoundBar" class="player_rx_sound">
+  							<div class="progress"></div>
+  						</div>
+      				</div>
+	      		</span>
+	      		<!-- 상담사 -->
+  				<span class="tx_audio_sound">
+  					<div class="tx_circle"></div>
+  					<p class="tx_text">상담사</p>
+	      			<div class="volume_icon"></div>
+      				<div class="tx_audio_sound_wrap">
+  						<div id="txPlaySoundBar" class="player_tx_sound">
+  							<div class="progress"></div>
+  						</div>
+      				</div>
+	      		</span>
+	      	</div>
+	      <!-- Player 전체 텍스트 구간  -->
+      	  <div class="play_wrap_all_text theme_default_scroll theme_default_main">
+	      </div>
+	  </div>
+	  <!-- 오른 쪽 Wrap  -->
+<!--       <div class="play_search_wrap theme_default_sub">
+	  검색 란
+      	<div class="play_play_search_wrap theme_default_main">
+      		<div class="header theme_default_color2"><p class="menu_bar"></p>검색</div>
+      		<div class="body theme_default_scroll">
+      		</div>
+      	</div>
+      </div> -->
+      <div>
+      
+      </div>
+      <!-- Audio Object -->
+      <!-- RX Player -->
+      <div class="player_audio audio_rx">
+        <audio style="display:none;" controls>
+          <source type="audio/mp3">
+        </audio>
+      </div>
+      <!-- TX Player  -->
+      <div class="player_audio audio_tx">
+        <audio style="display:none;" controls>
+          <source type="audio/mp3">
+        </audio>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

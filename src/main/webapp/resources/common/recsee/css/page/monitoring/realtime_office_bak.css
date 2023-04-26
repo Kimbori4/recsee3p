@@ -1,0 +1,357 @@
+
+/************
+
+office view
+
+************/
+
+#viewOfficeMode{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+.office_view_pannel{
+	width: 100%;
+	height: auto;
+	background-color: #326e8a;
+	background-image: url(../../../images/project/office-view/office_bg_pattern.png);
+	position: relative;
+	top: -1px;
+}
+.office_view_pannel_bg{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #326e8a;
+	background-image: url(../../../images/project/office-view/office_bg_pattern.png);
+}
+.office_obj_wrap{
+	position: relative;
+	float: left;
+	width: auto;
+	height: auto;
+}
+
+
+
+
+/************
+
+Room Object Class
+
+************/
+
+.office_obj_room{
+	position: relative;
+	float: left;
+	width: 532px;
+	height: 460px;
+	background-image: url(../../../images/project/office-view/theme-room/office_room_theme_type_01.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 10px;
+    margin-bottom: -160px;
+}
+.office_obj_room.room_position_type_01{/*위치 초기화*/}
+.office_obj_room.room_position_type_02{left: 276px;}
+
+
+/************
+
+Common Object Class
+
+************/
+
+/* 상담원 Group 공통 설정 */
+.office_obj_agent_wrap{
+	float: left;
+	celar: both;
+}
+/* 상담원 Object 공통 설정 */
+.office_obj_agent{
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+/* 상담원 Object Size */
+.office_obj_agent_woman_back_right,
+.office_obj_agent_man_back_right,
+.office_obj_agent_woman_back_left,
+.office_obj_agent_man_back_left{
+	width: 76px;
+	height: 83px;
+}
+.office_obj_agent_woman_front_right,
+.office_obj_agent_man_front_right,
+.office_obj_agent_woman_front_left,
+.office_obj_agent_man_front_left{
+	width: 70px;
+	height: 95px;
+}
+
+
+/************
+
+Basics Right View
+
+************/
+
+/* 상담원 상태 표출 위치 - 우측 View*/
+.office_obj_agent_woman_back_right .agent_stauts,
+.office_obj_agent_man_back_right .agent_stauts{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: 77px;
+    left: -10px;
+}
+.office_obj_agent_woman_front_right .agent_stauts,
+.office_obj_agent_man_front_right .agent_stauts{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+   	bottom: 91px;
+    left: 21px;
+}
+/* 상담원 상태 표출 위치 - 좌측 View*/
+.office_obj_agent_woman_back_left .agent_stauts,
+.office_obj_agent_man_back_left .agent_stauts{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+    bottom: 79px;
+    left: 30px;
+}
+.office_obj_agent_woman_front_left .agent_stauts,
+.office_obj_agent_man_front_left .agent_stauts{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+    bottom: 91px;
+    left: -10px;
+}
+/* 상담원 상태 Class */
+.agent_stauts {
+	pointer-events: none;
+}
+.office_obj_agent .obj_login{
+	background-image: url(../../../images/project/office-view/status/login.png);
+}
+.office_obj_agent .obj_logout{
+	background-image: url(../../../images/project/office-view/status/logout.png);
+}
+.office_obj_agent .obj_calling{
+	background-image: url(../../../images/project/office-view/status/calling.png);
+}
+.office_obj_agent .obj_ready{
+	background-image: url(../../../images/project/office-view/status/ready.png);
+}
+.office_obj_agent .obj_acw{
+	background-image: url(../../../images/project/office-view/status/acw.png);
+}
+/* 상담원 Object Image : 우측 View */
+.office_obj_agent_woman_back_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_right.png);
+}
+.office_obj_agent_man_back_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_right.png);
+}
+.office_obj_agent_woman_front_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_right.png);
+}
+.office_obj_agent_man_front_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_right.png);
+}
+
+.office_obj_agent_woman_back_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_right_active.png);
+}
+.office_obj_agent_man_back_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_right_active.png);
+}
+.office_obj_agent_woman_front_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_right_active.png);
+}
+.office_obj_agent_man_front_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_right_active.png);
+}
+/* 우측 view - 4인 묶음 그룹 위치 : 생성 순으로 클래스 적용 */
+.office_agent_group_four_right{
+	position: absolute;
+}
+.office_agent_group_four_right.group_num_01{
+	left: 196px;
+    bottom: 40px;
+    z-index: 99999999;
+}
+.office_agent_group_four_right.group_num_02{
+   	left: 66px;
+    bottom: 112px;
+    z-index: 99999998;
+}
+.office_agent_group_four_right.group_num_03{
+	left: 310px;
+    bottom: 108px;
+    z-index: 99999997;
+}
+.office_agent_group_four_right.group_num_04{
+    left: 187px;
+    bottom: 181px;
+    z-index: 99999996;
+}
+/* 우측 view - 4인 묶음 그룹 안 상담원별 위치 : 생성 순으로 클래스 적용 */
+.office_agent_group_four_right .agent_num_01{
+	position: absolute;
+    bottom: -4px;
+    left: 44px;
+    z-index: 99999999;
+}
+.office_agent_group_four_right .agent_num_02{
+	position: absolute;
+    bottom: 22px;
+    left: -2px;
+    z-index: 99999998;
+}
+.office_agent_group_four_right .agent_num_03{
+	position: absolute;
+    bottom: 18px;
+    left: 81px;
+    z-index: 99999997;
+}
+.office_agent_group_four_right .agent_num_04{
+	position: absolute;
+    bottom: 44px;
+    left: 36px;
+    z-index: 99999996;
+}
+/* 우측 view - 2인 묶음 그룹 위치 : 생성 순으로 클래스 적용 */
+.office_agent_group_two_right{
+	position: absolute;
+}
+.office_agent_group_two_right.group_num_01{
+	left: 196px;
+    bottom: 40px;
+    z-index: 99999999;
+}
+.office_agent_group_two_right.group_num_02{
+   	left: 66px;
+    bottom: 112px;
+    z-index: 99999998;
+}
+.office_agent_group_two_right.group_num_03{
+	left: 310px;
+    bottom: 108px;
+    z-index: 99999997;
+}
+.office_agent_group_two_right.group_num_04{
+    left: 187px;
+    bottom: 181px;
+    z-index: 99999996;
+}
+/* 우측 view - 2인 묶음 그룹 안 상담원별 위치 : 생성 순으로 클래스 적용 */
+.office_agent_group_two_right .agent_num_01{
+	position: absolute;
+    bottom: 22px;
+    left: -2px;
+    z-index: 99999998;
+}
+.office_agent_group_two_right .agent_num_02{
+	position: absolute;
+    bottom: 44px;
+    left: 36px;
+    z-index: 99999996;
+}
+
+
+
+/************
+
+Basics Left View
+
+************/
+
+/* 상담원 Object Image : 좌측 View */
+.office_obj_agent_woman_back_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_left.png);
+}
+.office_obj_agent_man_back_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_left.png);
+}
+.office_obj_agent_woman_front_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_left.png);
+}
+.office_obj_agent_man_front_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_left.png);
+}
+
+.office_obj_agent_woman_back_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_left_active.png);
+}
+.office_obj_agent_man_back_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_left_active.png);
+}
+.office_obj_agent_woman_front_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_left_active.png);
+}
+.office_obj_agent_man_front_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_left_active.png);
+}
+
+/* 좌측 view - 4인 묶음 그룹 안 상담원별 위치 : 생성 순으로 클래스 적용 */
+.office_agent_group_four_left{
+	position: absolute;
+}
+.office_agent_group_four_left.group_num_01{
+    left: 182px;
+    bottom: 40px;
+    z-index: 99999999;
+}
+.office_agent_group_four_left.group_num_02{
+    left: 43px;
+    bottom: 122px;
+    z-index: 99999998;
+}
+.office_agent_group_four_left.group_num_03{
+    left: 299px;
+    bottom: 108px;
+    z-index: 99999997;
+}
+.office_agent_group_four_left.group_num_04{
+    left: 158px;
+    bottom: 189px;
+    z-index: 99999996;
+}
+/* 좌측 view - 4인 묶음 그룹 안 상담원별 위치 : 생성 순으로 클래스 적용 */
+.office_agent_group_four_left .agent_num_01{
+	position: absolute;
+    bottom: -4px;
+    left: 44px;
+    z-index: 99999999;
+}
+.office_agent_group_four_left .agent_num_02{
+    position: absolute;
+    bottom: 19px;
+    left: 10px;
+    z-index: 99999998;
+}
+.office_agent_group_four_left .agent_num_03{
+	position: absolute;
+    bottom: 24px;
+    left: 89px;
+    z-index: 99999997;
+}
+.office_agent_group_four_left .agent_num_04{
+	position: absolute;
+    bottom: 45px;
+    left: 55px;
+    z-index: 99999996;
+}

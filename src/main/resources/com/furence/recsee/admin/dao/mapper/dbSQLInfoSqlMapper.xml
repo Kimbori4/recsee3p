@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.DBSQLInfoDao">
+	<resultMap id="SQLResultMap" type="com.furence.recsee.admin.model.DBSQLInfo">
+		<result column="DB_SQL_NAME" jdbcType="VARCHAR" property="dbSQLName" />
+		<result column="DB_SQL_DESCRIPTION" jdbcType="VARCHAR" property="dbSQLDescription" />
+		<result column="DB_SQL_CONTENT" jdbcType="VARCHAR" property="dbSQLContent" />
+		<result column="DB_SQL_TYPE" jdbcType="VARCHAR" property="dbSQLType" />
+		<result column="DB_NAME" jdbcType="VARCHAR" property="dbName" />
+		<result column="DB_SQL_COLUMN" jdbcType="VARCHAR" property="dbSQLColumn" />
+	</resultMap>
+
+	<insert id="insertDBSQLInfo" parameterType="com.furence.recsee.admin.model.DBSQLInfo">
+			INSERT INTO DB_SQL_INFO (
+				DB_SQL_NAME,
+				DB_SQL_DESCRIPTION,
+				DB_SQL_CONTENT,
+				DB_SQL_TYPE,
+				DB_NAME
+				DB_SQL_COLUMN
+			) VALUES (
+				#{dbSQLName},
+				#{dbSQLDescription},
+				#{dbSQLContent},
+				#{dbSQLType},
+				#{dbName},
+				#{dbSQLColumn}
+			)
+	</insert>
+
+	<select id="selectDBSQLInfo" parameterType="com.furence.recsee.admin.model.DBSQLInfo" resultMap="SQLResultMap">
+		SELECT * FROM DB_SQL_INFO WHERE DB_SQL_TYPE = 'select'
+	</select>
+	
+	<select id="selectDBSQLInfo2" parameterType="com.furence.recsee.admin.model.DBSQLInfo" resultMap="SQLResultMap">
+		SELECT * FROM DB_SQL_INFO WHERE DB_SQL_TYPE = 'upsert'
+	</select>
+	
+	<select id="selectOneDBSQLInfo" parameterType="com.furence.recsee.admin.model.DBSQLInfo" resultMap="SQLResultMap">
+		SELECT * FROM DB_SQL_INFO WHERE DB_SQL_NAME = #{dbSQLName}
+	</select>
+	
+	
+</mapper>

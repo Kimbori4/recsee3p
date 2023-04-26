@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>DB Information for dataSource</comment>
+
+	<!-- postgresql -->
+ 	<entry key="dataSource.driverClassName">org.postgresql.Driver</entry>
+ 	
+ 	<!-- Test DB -->	
+	<entry key="dataSource.url">jdbc:postgresql://10.190.234.118:64435/recsee3p_snapshot_2022_02_12?escapeSyntaxCallMode=call</entry>
+	<entry key="dataSource.username">postgres</entry>
+	<entry key="dataSource.password">ppi/39r57QVsZsMMOePMuA==</entry>
+	<entry key="dataSource.defaultAutoCommit">false</entry>
+	<!-- <entry key="dataSource.validationQuery">select 1</entry>
+	<entry key="dataSource.validationQueryTimeout">10</entry>-->
+	
+	<!-- 넥서스 -->
+	<entry key="oracle.driverClassName">oracle.jdbc.driver.OracleDriver</entry>
+	<entry key="oracle.url">jdbc:oracle:thin:@192.168.1.54:1521/cti</entry>
+	<entry key="oracle.username">cube</entry>
+	<entry key="oracle.password">cube123</entry>
+	<entry key="oracle.defaultAutoCommit">false</entry>
+</properties>

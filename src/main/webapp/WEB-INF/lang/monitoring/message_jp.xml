@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>モニタリング(monitoring)画面用メッセージ定義</comment>
+
+	<entry key="monitoring.display.selectedSystem">現在照会中のシステム</entry>
+	<entry key="monitoring.display.system">システム</entry>
+	<entry key="monitoring.display.group">選択グループ</entry>
+	<entry key="monitoring.display.searchAll">全体照会</entry>
+	<entry key="monitoring.display.search">照会</entry>
+	<entry key="monitoring.display.monitoringOption">モニタリング設定</entry>
+	<entry key="monitoring.display.timerOption">タイマーオプション</entry>	
+	<entry key="monitoring.display.listenAlways">持続傍受</entry>
+	<entry key="monitoring.display.officeView">オフィス·ビュー</entry>
+	<entry key="monitoring.display.cardView">カードビュー</entry>
+	<entry key="monitoring.display.gridView">グリッドビュー</entry>
+	<entry key="monitoring.display.systemHardware">System Hardware</entry>
+	<entry key="monitoring.display.CPU">CPU</entry>
+	<entry key="monitoring.display.MEMORY">MEMORY</entry>
+	<entry key="monitoring.display.HDD">HDD</entry>
+	<entry key="monitoring.display.statusViewOptions">ステータス·オプション</entry>
+	<entry key="monitoring.display.displayOptions">画面オプション</entry>
+	<entry key="monitoring.display.cookieSaveOptions">貯蔵</entry>
+	<entry key="monitoring.display.icon">アイコン表示</entry>
+	<entry key="monitoring.display.agentId">ユーザーID表示</entry>
+	<entry key="monitoring.display.number">電話番号表示</entry>
+	<entry key="monitoring.display.callTime">通話時間表示</entry>
+	<entry key="monitoring.display.realtimeListen">REALTIME LISTEN</entry>
+	<entry key="monitoring.display.setCount">人数</entry>
+
+	<entry key="monitoring.state.save">ステータス保存</entry>
+	<entry key="monitoring.state.login">ログイン</entry>
+	<entry key="monitoring.state.ready">大気</entry>
+	<entry key="monitoring.state.calling">電話中</entry>
+	<entry key="monitoring.state.ACW">後処理</entry>
+	<entry key="monitoring.state.logout">ログアウト</entry>
+	<entry key="monitoring.state.away">李石</entry>
+		
+	<entry key="monitoring.display.viewby16">16人ずつ見る。</entry>
+	<entry key="monitoring.display.viewby32">32人ずつ見る。</entry>
+	<entry key="monitoring.display.viewby100">100人ずつ見る。</entry>
+	<entry key="monitoring.display.officerealtimeinfo">持続傍受中の内線</entry>
+	<entry key="monitoring.display.officerealtimeinfo2">現在内線継続傍受</entry>
+	<entry key="monitoring.display.officeRealtimeExt">なし</entry>
+		
+	<entry key="monitoring.grid.title.status">状態</entry>
+		
+	<entry key="monitoring.grid.title.listen">聞き取り</entry>
+	<entry key="monitoring.grid.title.staylisten">紺青油脂</entry>
+	<entry key="monitoring.grid.title.setCount">人員設定</entry>
+	<entry key="monitoring.display.filterByAgent">登録者でフィルター</entry>
+	<entry key="monitoring.display.filterByNum">IDでフィルター</entry>
+	<entry key="monitoring.display.filterByExt">内線番号でフィルター</entry>
+		
+	<entry key="monitoring.display.showNew">新しいウィンドウで見る</entry>
+	<entry key="monitoring.display.officerealtime">持続傍受</entry>
+	<entry key="monitoring.display.empListen">内線番号持続傍受</entry>
+	<entry key="monitoring.display.custNumListen">顧客番号による持続的な通信傍受</entry>
+	<entry key="monitoring.display.custNumOrEmp">顧客番号または内線番号</entry>
+		
+	<entry key="monitoring.display.editTarget">位置編集</entry>
+	<entry key="monitoring.display.recServer">録音サーバ</entry>
+	<entry key="monitoring.display.recService">録取サービス</entry>
+	<entry key="monitoring.display.use">使用率</entry>
+
+	<!-- 18-09-05 -pilip monitoring kor lang add -->
+	<entry key="monitoring.menu.continueTapping">持続傍受</entry>
+	<entry key="monitoring.menu.numberContinueTapping">内線番号持続傍受</entry>
+	<entry key="monitoring.menu.custNumberContinueTapping">顧客の電話番号で連続傍受</entry>
+	<entry key="monitoring.menu.custNumberOrNumber">顧客番号または内線番号</entry>
+	<entry key="monitoring.menu.memo">メモ</entry>
+	<entry key="monitoring.menu.save">貯蔵</entry>
+	<entry key="monitoring.grid.headerSetting">内線番号、カウンセラーID、登録者、状態、状態持続時間、電話番号、聞き取り、大分類、中分類、小分類、listening、傍受維持、rtpCode、stime</entry>
+	<entry key="monitoring.alert.msg1">照会</entry>
+	<entry key="monitoring.alert.msg2">モニタリングアイコン表示されない。</entry>
+	<entry key="monitoring.alert.msg3">照会された値がありません。</entry>
+	<entry key="monitoring.alert.msg4">対象グループを選択してください。</entry>
+	<entry key="monitoring.alert.msg5">相談士名を入力してください。</entry>
+	<entry key="monitoring.alert.msg6">社員番号を入力してください。</entry>
+	<entry key="monitoring.alert.msg7">内線番号を入力してください。</entry>
+	<entry key="monitoring.alert.msg8">ログイン</entry>
+	<entry key="monitoring.alert.msg9">ログアウト</entry>
+	<entry key="monitoring.alert.msg10">電話中</entry>
+	<entry key="monitoring.alert.msg11">後処理</entry>
+	<entry key="monitoring.alert.msg12">準備</entry>
+	<entry key="monitoring.alert.msg13">連結中</entry>
+	<entry key="monitoring.alert.msg14">李石</entry>
+	<entry key="monitoring.alert.msg15">現在カウンセラー</entry>
+	<entry key="monitoring.alert.msg16">内線番号</entry>
+	<entry key="monitoring.alert.msg17">モニタリング中です。</entry>
+	<entry key="monitoring.alert.msg18">メモ保存</entry>
+	<entry key="monitoring.alert.msg19">メモの保存が完了しました。</entry>
+	<entry key="monitoring.alert.msg20">照会結果がありません。</entry>
+	<entry key="monitoring.alert.msg21">連続傍受するタイプを選択してください。</entry>
+	<entry key="monitoring.alert.msg22">番号を入力してください。</entry>
+		
+	<entry key="monitoring.alert.sameName">登録済みの名前です。</entry>
+		
+	<entry key="views.monitoring.bgName">大分類</entry>
+	<entry key="views.monitoring.mgName">中分類</entry>
+	<entry key="views.monitoring.sgName">小分類</entry>
+	
+	<entry key="monitoring.alert.noDrawing.selected">選択された図面がありません。</entry>
+	<entry key="monitoring.alert.noUser.selected">選択されたユーザーがいません。</entry>
+	<entry key="monitoring.alert.Drawing.completed">図面修正が完了しました。</entry>
+	<entry key="monitoring.alert.afterRegistering">カウンセラーの内線登録後、ご利用ください。</entry>
+	<entry key="monitoring.alert.Enter.drawingName">図面名を入力してください</entry>
+	<entry key="monitoring.alert.addDrawing.complete">図面追加が完了しました。</entry>
+	<entry key="monitoring.alert.addDrawing.problem">図面を追加するのに問題が生じました。 \\n再入力してください。</entry>
+	<entry key="monitoring.alert.counselor.notOnTheLine">このカウンセラーが電話中ではありません。</entry>
+	<entry key="monitoring.alert.getInfo.problems">カウンセラーの情報を持ってくるのに問題が生じました。 \\n後ほどもう一度ご利用ください。</entry>
+	<entry key="monitoring.alert.architect.notBusy">選択した設計士が通話中ではありません。</entry>
+	<entry key="monitoring.alert.counselor.notOnTheLine">このカウンセラーが電話中ではありません。</entry>
+
+	
+</properties>

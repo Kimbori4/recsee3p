@@ -1,0 +1,58 @@
+.ui_article {
+	text-align : center;
+}
+
+.one_box {
+	display: inline-block;
+    width: 48%;
+    border: 1px solid #ccc;
+    height: 390px;
+    margin-top: 0.8rem;
+    margin: 0.8rem;
+}
+
+.multi_box {
+	display: inline-block;
+    width: 98%;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    margin: 1rem;
+}
+
+.one_box .title, .multi_box .title{
+	text-align: left;
+    display: block;
+    background: #60b3dc;
+    color: #fff;
+    padding: 0.6rem;
+    font-size: 19px;
+}
+
+.one_box .chart-wrap .box {
+    width: 620px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+/*     margin: 2rem 4rem; */
+}
+
+.multi_box .all-count {
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    text-align: left;
+    font-size: 24px;
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.multi_box .all-count span:first-child {
+	margin-left : 20px;
+}
+
+.multi_box .all-count .count {
+	font-size : 32px;
+}
+

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.RecStatusInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.monitoring.model.DashboardInfo">
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="rExtNum" />
+		<result column="R_REC_DATE" jdbcType="VARCHAR" property="rRecDate" />
+		<result column="R_REC_HH24" jdbcType="VARCHAR" property="rRecHh24" />
+		<result column="R_REC_MI" jdbcType="VARCHAR" property="rRecMi" />
+		<result column="R_REC_SS" jdbcType="VARCHAR" property="rRecSs" />
+		<result column="R_REC_CNT" jdbcType="INTEGER" property="rRecCnt" />
+		<result column="R_CALL_ETIME" jdbcType="VARCHAR" property="rCallEtime" />
+	</resultMap>
+
+	<select id="selectFirstRecfileInfo" databaseId="postgres" parameterType="com.furence.recsee.monitoring.model.DashboardInfo" resultMap="BaseResultMap">
+		SELECT R_EXT_NUM, R_REC_DATE, HH24 AS R_REC_HH24, MI AS R_REC_MI,COUNT(R_EXT_NUM) AS R_REC_CNT, R_CALL_ETIME
+		FROM
+		(
+			SELECT R_EXT_NUM, R_REC_DATE, SUBSTRING(R_CALL_STIME,1,2)AS HH24, SUBSTRING(R_CALL_STIME,3,2) AS MI, R_CALL_ETIME
+			FROM RS_RECFILE
+			WHERE
+					R_REC_DATE <![CDATA[<=]]> #{rRecDate}
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTRING(R_CALL_ETIME,1,2)||SUBSTRING(R_CALL_ETIME,3,2)||SUBSTRING(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[<=]]>
+					TO_TIMESTAMP(#{rRecDate}||' '||#{rRecHh24}||#{rRecMi}||#{rRecSs},'YYYYMMDD HH24MISS') AND R_CALL_KIND1 IN ('I','O')
+		) A
+		GROUP BY R_EXT_NUM, R_REC_DATE, R_REC_HH24, R_REC_MI ,R_CALL_ETIME
+		ORDER BY R_REC_DATE DESC, R_REC_HH24 DESC, R_REC_MI DESC, R_EXT_NUM DESC
+	</select>
+	<select id="selectFirstRecfileInfo" databaseId="sqlserver" parameterType="com.furence.recsee.monitoring.model.DashboardInfo" resultMap="BaseResultMap">
+		SELECT R_EXT_NUM, R_REC_DATE, HH24 AS R_REC_HH24, MI AS R_REC_MI,COUNT(R_EXT_NUM) AS R_REC_CNT, R_CALL_ETIME
+		FROM
+		(
+			SELECT R_EXT_NUM, R_REC_DATE, SUBSTRING(R_CALL_STIME,1,2)AS HH24, SUBSTRING(R_CALL_STIME,3,2) AS MI, R_CALL_ETIME
+			FROM RS_RECFILE
+			WHERE
+					R_REC_DATE <![CDATA[<=]]> #{rRecDate}
+				AND TO_TIMESTAMP(R_REC_DATE+' '+SUBSTRING(R_CALL_ETIME,1,2)+SUBSTRING(R_CALL_ETIME,3,2)+SUBSTRING(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[<=]]>
+					TO_TIMESTAMP(#{rRecDate}+' '+#{rRecHh24}+#{rRecMi}+#{rRecSs},'YYYYMMDD HH24MISS') 
+				AND R_CALL_KIND1 IN ('I','O')
+		) A
+		GROUP BY R_EXT_NUM, R_REC_DATE, R_REC_HH24, R_REC_MI ,R_CALL_ETIME
+		ORDER BY R_REC_DATE DESC, R_REC_HH24 DESC, R_REC_MI DESC, R_EXT_NUM DESC
+	</select>
+	<select id="selectFirstRecfileInfo" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.DashboardInfo" resultMap="BaseResultMap">
+		SELECT R_EXT_NUM, R_REC_DATE, HH24 AS R_REC_HH24, MI AS R_REC_MI,COUNT(R_EXT_NUM) AS R_REC_CNT, R_CALL_ETIME
+		FROM
+		(
+			SELECT R_EXT_NUM, R_REC_DATE, SUBSTR(R_CALL_STIME,1,2)AS HH24, SUBSTR(R_CALL_STIME,3,2) AS MI, R_CALL_ETIME
+			FROM RS_RECFILE
+			WHERE
+					R_REC_DATE <![CDATA[<=]]> #{rRecDate}
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTR(R_CALL_ETIME,1,2)||SUBSTR(R_CALL_ETIME,3,2)||SUBSTR(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[<=]]>
+					TO_TIMESTAMP(#{rRecDate}||' '||#{rRecHh24}||#{rRecMi}||#{rRecSs},'YYYYMMDD HH24MISS') AND R_CALL_KIND1 IN ('I','O')
+		) A
+		<!-- GROUP BY R_EXT_NUM, R_REC_DATE, R_REC_HH24, R_REC_MI ,R_CALL_ETIME -->
+		GROUP BY R_EXT_NUM, R_REC_DATE, HH24, MI ,R_CALL_ETIME
+		ORDER BY R_REC_DATE DESC, R_REC_HH24 DESC, R_REC_MI DESC, R_EXT_NUM DESC
+	</select>
+
+	<insert id='insertRecStatus' parameterType="com.furence.recsee.monitoring.model.DashboardInfo">
+		INSERT INTO RS_REC_STATUS VALUES(#{rExtNum},#{rRecDate},#{rRecHh24},#{rRecMi},#{rRecCnt}::integer);
+	</insert>
+	<insert id='insertRecStatus' databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.DashboardInfo">
+		INSERT INTO RS_REC_STATUS VALUES(#{rExtNum},#{rRecDate},#{rRecHh24},#{rRecMi},TO_NUMBER(#{rRecCnt}))
+	</insert>
+
+	<select id="selectRecfileInfo" parameterType="com.furence.recsee.monitoring.model.DashboardInfo" resultMap="BaseResultMap">
+		<!-- SELECT R_EXT_NUM, R_REC_DATE, HH24 AS R_REC_HH24, MI AS R_REC_MI,COUNT(R_EXT_NUM) AS R_REC_CNT, R_CALL_ETIME
+		FROM
+		(
+			SELECT R_EXT_NUM, R_REC_DATE, SUBSTRING(R_CALL_STIME,1,2)AS HH24, SUBSTRING(R_CALL_STIME,3,2) AS MI, R_CALL_ETIME
+			FROM RS_RECFILE
+			WHERE R_REC_DATE <![CDATA[<=]]> '${rRecDate}'
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTRING(R_CALL_ETIME,1,2)||SUBSTRING(R_CALL_ETIME,3,2)||SUBSTRING(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[>=]]>
+					TO_TIMESTAMP('${rRecDate}'||' '||'${rRecHh24}'||'${rRecMi}'||'${rRecSs}','YYYYMMDD HH24MISS')	etc_config에 등록된 마지막 update dateTime
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTRING(R_CALL_ETIME,1,2)||SUBSTRING(R_CALL_ETIME,3,2)||SUBSTRING(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[<=]]>
+					TO_TIMESTAMP('${rCallEtime}', 'YYYYMMDD HH24MISS')	업데이트 되는 시간
+				AND R_CALL_KIND1 IN ('I','O')
+		) A
+		GROUP BY R_EXT_NUM, R_REC_DATE, R_REC_HH24, R_REC_MI ,R_CALL_ETIME
+		ORDER BY R_REC_DATE DESC, R_REC_HH24 DESC, R_REC_MI DESC, R_EXT_NUM DESC -->
+		SELECT R_EXT_NUM, R_REC_DATE, HH24 AS R_REC_HH24, MI AS R_REC_MI,COUNT(R_EXT_NUM) AS R_REC_CNT, R_CALL_ETIME
+		FROM
+		(
+			SELECT R_EXT_NUM, R_REC_DATE, SUBSTRING(R_CALL_STIME,1,2)AS HH24, SUBSTRING(R_CALL_STIME,3,2) AS MI, R_CALL_ETIME
+			FROM RS_RECFILE
+			WHERE R_REC_DATE between #{rRecDate} and substring(#{rCallEtime},1,8)
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTRING(R_CALL_ETIME,1,2)||SUBSTRING(R_CALL_ETIME,3,2)||SUBSTRING(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[>=]]>
+					TO_TIMESTAMP(#{rRecDate}||' '||#{rRecHh24}||#{rRecMi}||#{rRecSs},'YYYYMMDD HH24MISS')
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTRING(R_CALL_ETIME,1,2)||SUBSTRING(R_CALL_ETIME,3,2)||SUBSTRING(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[<=]]>
+					TO_TIMESTAMP(#{rCallEtime}, 'YYYYMMDD HH24MISS')
+				AND R_CALL_KIND1 IN ('I','O')
+		) A
+		GROUP BY R_EXT_NUM, R_REC_DATE, R_REC_HH24, R_REC_MI ,R_CALL_ETIME
+		ORDER BY R_REC_DATE DESC, R_REC_HH24 DESC, R_REC_MI DESC, R_EXT_NUM DESC
+	</select>
+	<select id="selectRecfileInfo" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.DashboardInfo" resultMap="BaseResultMap">
+		
+		SELECT R_EXT_NUM, R_REC_DATE, HH24 AS R_REC_HH24, MI AS R_REC_MI,COUNT(R_EXT_NUM) AS R_REC_CNT, R_CALL_ETIME
+		FROM
+		(
+			SELECT R_EXT_NUM, R_REC_DATE, SUBSTR(R_CALL_STIME,1,2)AS HH24, SUBSTR(R_CALL_STIME,3,2) AS MI, R_CALL_ETIME
+			FROM RS_RECFILE
+			WHERE R_REC_DATE between #{rRecDate} and substring(#{rCallEtime},1,8)
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTR(R_CALL_ETIME,1,2)||SUBSTR(R_CALL_ETIME,3,2)||SUBSTR(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[>=]]>
+					TO_TIMESTAMP(#{rRecDate}||' '||#{rRecHh24}||#{rRecMi}||#{rRecSs},'YYYYMMDD HH24MISS')
+				AND TO_TIMESTAMP(R_REC_DATE||' '||SUBSTR(R_CALL_ETIME,1,2)||SUBSTR(R_CALL_ETIME,3,2)||SUBSTR(R_CALL_ETIME,5,2),'YYYYMMDD HH24MISS') <![CDATA[<=]]>
+					TO_TIMESTAMP(#{rCallEtime}, 'YYYYMMDD HH24MISS')
+				AND R_CALL_KIND1 IN ('I','O')
+		) A
+		<!-- GROUP BY R_EXT_NUM, R_REC_DATE, R_REC_HH24, R_REC_MI ,R_CALL_ETIME -->
+		GROUP BY R_EXT_NUM, R_REC_DATE, HH24, MI ,R_CALL_ETIME
+		ORDER BY R_REC_DATE DESC, R_REC_HH24 DESC, R_REC_MI DESC, R_EXT_NUM DESC
+	</select>
+
+	<update id="updateRecStatus" parameterType="com.furence.recsee.monitoring.model.DashboardInfo">
+		UPDATE
+			RS_REC_STATUS
+		SET R_REC_CNT=R_REC_CNT+(#{rRecCnt}::integer)
+		WHERE
+				R_EXT_NUM=#{rExtNum}
+			AND R_REC_DATE=#{rRecDate}
+			AND R_REC_HH24=#{rRecHh24}
+			AND R_REC_MI=#{rRecMi}
+	</update>
+	
+	<update id="updateRecStatus" databaseId="oracle" parameterType="com.furence.recsee.monitoring.model.DashboardInfo">
+		UPDATE
+			RS_REC_STATUS
+		SET R_REC_CNT=R_REC_CNT+(TO_NUMBER(#{rRecCnt}))
+		WHERE
+				R_EXT_NUM=#{rExtNum}
+			AND R_REC_DATE=#{rRecDate}
+			AND R_REC_HH24=#{rRecHh24}
+			AND R_REC_MI=#{rRecMi}
+	</update>
+
+	<update id="updateEtcConfigTime" parameterType="String">
+		UPDATE
+			RS_ETC_CONFIG
+		SET
+			R_CONFIG_VALUE=#{value}
+		WHERE R_GROUP_KEY='MONITORING' AND R_CONFIG_KEY='LATELY_DATETIME'
+	</update>
+
+	<select id="selectRecStatus"  resultType="Integer">
+		SELECT
+			COUNT(*)
+		FROM RS_REC_STATUS
+	</select>
+
+
+	<select id="selectEtcConfigTime" resultType="String">
+		SELECT
+			R_CONFIG_VALUE
+		FROM RS_ETC_CONFIG
+		WHERE
+				R_GROUP_KEY='MONITORING'
+			AND R_CONFIG_KEY='LATELY_DATETIME'
+	</select>
+
+	<select id="selectCompRecData" resultMap="BaseResultMap" parameterType="com.furence.recsee.monitoring.model.DashboardInfo">
+		SELECT
+			*
+		FROM RS_REC_STATUS
+		WHERE
+				R_EXT_NUM=#{rExtNum}
+			AND R_REC_DATE=#{rRecDate}
+			AND R_REC_HH24=#{rRecHh24}
+			AND R_REC_MI=#{rRecMi}
+	</select>
+	
+	<select id="insertSttList" databaseId="postgres" parameterType="String" resultType="Integer">
+		SELECT sp_add_stt_list(to_char(now(),'YYYYMMDD'), #{value})
+	</select>
+	
+	<select id="insertSttList" databaseId="sqlserver" parameterType="String" resultType="Integer">
+		DECLARE @today varchar(8)
+		SET @today =  CONVERT(varchar, GetDate(),112)
+		EXEC sp_add_stt_list @ar_rec_date=@today, @ar_v_sys_code=#{value}
+	</select>
+	<select id="insertSttList" databaseId="oracle" parameterType="String" resultType="Integer">
+		SELECT sp_add_stt_list(to_char(CURRENT_DATE,'YYYYMMDD'), #{value})
+	</select>
+</mapper>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.wooribank.script.repository.dao.ScriptCommonDao" >
+	
+	<parameterMap id="paramScriptCommonApply" type="java.util.Map">
+		<parameter property="scriptEditId" 		mode="IN" 			jdbcType="INTEGER" javaType="Integer"/>
+		<parameter property="code" 				mode="INOUT" 		jdbcType="INTEGER" javaType="Integer"/>
+		<parameter property="message"	 		mode="INOUT" 		jdbcType="VARCHAR" javaType="String"/>
+	</parameterMap>
+	
+	<resultMap id="resultBase" 
+			   type="com.furence.recsee.wooribank.script.param.response.ResultBase">
+				
+		<result column="code"			jdbcType="INTEGER"		property="code" />
+		<result column="msg"			jdbcType="VARCHAR"		property="message" />				
+		
+	</resultMap>
+	
+	<!-- 공통 스크립트 상신취소 pgsql 함수 호출 -->
+	<select id="dropScriptEditApprovemnet" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptApproveParam" 
+			resultMap = "resultBase">
+		
+		select 	code, 
+				msg
+		from 	fn_delete_script_common_edit_info(
+					${scriptEditId},
+					${commonScriptPk},
+					#{approvementStatus}
+				)
+				
+	</select>
+	
+	<!-- 공통스크립트 pk에 대한 결재대기건 확인(수정,삭제의 경우) -->
+	<select id="selectCountForAlreadyRegisteredScriptCommon"
+			parameterType="String" 
+			resultType="Integer">
+	
+		select 	count(*) as count 
+		from	rs_script_common_edit_info 
+		where	rs_script_common_pk = #{commonScriptPk}::integer 
+				and ( 
+					rs_approvement_status = 'APRV01' or 
+				 	( rs_approvement_status = 'APRV04' and rs_script_common_apply_yn != 'Y')
+				 )
+				 
+	</select>
+	
+	<!-- 공통스크립트 추가/수정/삭제  결재 상신건 등록 -->
+	<insert id="insertApprovalDataForScriptCommon" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Common" 
+			useGeneratedKeys="true" 
+			keyProperty="commonScriptEditId" 
+			keyColumn="rs_script_common_edit_id">
+			
+		insert into rs_script_common_edit_info 
+			(
+				rs_script_common_pk,
+				rs_script_current_version,
+				rs_script_common_edit_type,
+				rs_script_common_type,
+				rs_script_common_name,
+				rs_script_common_desc,
+				rs_script_common_text,
+				rs_script_common_realtime_tts,
+				rs_script_common_edit_user,
+				rs_script_common_edit_user_level,
+				rs_script_common_apply_type,
+				rs_script_common_apply_date
+			) 
+		select	
+				#{commonScriptPk}::integer,
+				coalesce(rs_script_version,1) ,
+				#{editType.value},
+				#{commonScriptType},
+				#{commonScriptName},
+				#{commonScriptDesc},
+				#{commonScriptText},
+				#{commonScriptRealtimeTTS},
+				#{commonScriptEditUser},
+				coalesce(
+					(select b.r_access_level
+							from 	rs_ruser_info a,
+									rs_access_list b
+							where 	a.r_user_level = b.r_level_code
+									and r_user_id = #{commonScriptEditUser}
+									and r_program_code = 'P20007'),
+					(select b.r_access_level
+							from 	rs_auser_info a,
+									rs_access_list b
+							where 	a.r_user_level = b.r_level_code
+									and r_user_id = #{commonScriptEditUser}
+									and r_program_code = 'P20007')
+				),
+				#{commonScriptApplyType.value},
+				#{commonScriptApplyDate}
+		from 	(
+					select 	coalesce( max(rs_script_version) , 1) rs_script_version 
+					from 	rs_script_common common 
+					where 	rs_script_common_pk = #{commonScriptPk}::integer 
+				)a
+	</insert>
+	
+	<!-- 공통스크립트 추가/수정/삭제  상신 취소/반려/승인 처리 -->
+	<update id="updateApproveStatusForScriptCommon"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptApproveParam">
+			
+		update 	rs_script_common_edit_info
+		set		rs_approvement_status = #{approveStatus.value} ,
+				rs_approvement_date = now(),
+				rs_approvement_user = #{approveUser}
+		where	rs_script_common_edit_id = #{scriptEditId}::integer
+		
+	</update>
+	
+	
+	<!-- 공통스크립트 추가/수정/삭제건  즉시 반영 -->
+	<update id="updateScriptCommonApplyImmediately" 
+			statementType="CALLABLE"
+			parameterMap="paramScriptCommonApply">
+		
+		{ call public.sp_script_common_edit_apply (?,?,?) }
+		
+	</update>
+	
+	<select id="selectCountForUsedAsDetail" parameterType="String" resultType="Integer">
+		
+		select 	count(*) as count 
+		from	rs_script_step_detail
+		where	rs_script_step_detail_common_fk = #{commonScriptPk}::integer
+				and rs_use_yn = 'Y'
+		
+	</select>
+	
+	
+</mapper> 

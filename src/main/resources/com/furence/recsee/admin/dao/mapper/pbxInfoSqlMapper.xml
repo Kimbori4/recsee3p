@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.PbxInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.PbxInfo">
+		<result column="R_PBX_ID" jdbcType="VARCHAR" property="rPbxId" />
+		<result column="R_PBX_NAME" jdbcType="VARCHAR" property="rPbxName" />
+		<result column="R_PBX_IP" jdbcType="VARCHAR" property="rPbxIp" />
+		<result column="R_PBX_LICENSE" jdbcType="VARCHAR" property="rPbxLicense" />
+		<result column="R_PBX_SIP_ID" jdbcType="VARCHAR" property="rPbxSipId" />
+		<result column="R_PBX_SIP_PASSWORD" jdbcType="VARCHAR" property="rPbxSipPassword" />
+	</resultMap>
+
+	<select id="selectPbxInfo" parameterType="com.furence.recsee.admin.model.PbxInfo" resultMap="BaseResultMap">
+<!-- 	SELECT * FROM RS_PBX_INFO
+	<where>
+		<trim suffixOverrides="AND">
+			<if test="rPbxId != null">R_PBX_ID = #{rPbxId} AND</if>
+			<if test="rPbxName != null">R_PBX_NAME LIEK '%'||#{rPbxName}||'%' AND</if>
+			<if test="rPbxIp != null">R_PBX_IP LIKE '%s${rPbxIp}%s' AND</if>
+			<if test="rPbxSipId != null">R_PBX_SIP_ID LIKE '%'||#{rPbxSipId}||'%' AND</if>
+		</trim>
+	</where>
+	ORDER BY R_PBX_ID -->
+	</select>
+
+	<insert id="insertPbxInfo" parameterType="com.furence.recsee.admin.model.PbxInfo">
+	INSERT INTO RS_PBX_INFO (
+		<trim suffixOverrides=",">
+			<if test="rPbxId != null">R_PBX_ID,</if>
+			<if test="rPbxName != null">R_PBX_NAME,</if>
+			<if test="rPbxIp != null">R_PBX_IP,</if>
+			<if test="rPbxLicense != null">R_PBX_LICENSE,</if>
+			<if test="rPbxSipId != null">R_PBX_SIP_ID,</if>
+			<if test="rPbxSipPassword != null">R_PBX_SIP_PASSWORD,</if>
+		</trim>
+	) VALUES (
+		<trim suffixOverrides=",">
+			<if test="rPbxId != null">#{rPbxId},</if>
+			<if test="rPbxName != null">#{rPbxName},</if>
+			<if test="rPbxIp != null">#{rPbxIp},</if>
+			<if test="rPbxLicense != null">#{rPbxLicense},</if>
+			<if test="rPbxSipId != null">#{rPbxSipId},</if>
+			<if test="rPbxSipPassword != null">#{rPbxSipPassword},</if>
+		</trim>
+	)
+	</insert>
+
+	<update id="updatePbxInfo" parameterType="com.furence.recsee.admin.model.PbxInfo">
+	UPDATE RS_PBX_INFO
+	<set>
+		<trim suffixOverrides=",">
+			<if test="rPbxId != null">R_PBX_ID = #{rPbxId},</if>
+			<if test="rPbxName != null">R_PBX_Name = #{rPbxName},</if>
+			<if test="rPbxIp != null">R_PBX_IP = #{rPbxIp},</if>
+			<if test="rPbxLicense != null">R_PBX_LICENSE = #{rPbxLicense},</if>
+			<if test="rPbxSipId != null">R_PBX_SIP_ID = #{rPbxSipId},</if>
+			<if test="rPbxSipPassword != null">R_PBX_SIP_PASSWORD = #{rPbxSipPassword},</if>
+		</trim>
+	</set>
+	<where>
+		R_PBX_ID = #{rPbxId}
+	</where>
+	</update>
+
+	<delete id="deletePbxInfo" parameterType="com.furence.recsee.admin.model.PbxInfo">
+	DELETE FROM RS_PBX_INFO
+	<where>
+		R_PBX_ID = #{rPbxId}
+	</where>
+	</delete>
+</mapper>

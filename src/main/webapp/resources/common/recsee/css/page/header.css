@@ -1,0 +1,236 @@
+/**** Header ****/
+.headerWrap{
+	position: relative;
+	width: 100%;
+}
+.main_header{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+}
+ .main_header .site_logo{
+    float: left;
+    width: 500px;
+    height: 30px;
+    margin-top: 5px;
+    color :  #1ea74a;
+/*     color :  #39c; */
+    font-size: 15pt;
+/*     background-image: url(../../images/project/main/logo/recsee_bi_blue_78x30.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 15px;
+} 
+.main_header .site_logo{
+    float: left;
+    width: 500px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80px;
+}
+.main_header .user_info{
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+.main_header .user_info .user_id{
+    float: left;
+    margin-right: 20px;
+}
+.main_header .user_info .user_id p{
+    font-weight: bold;
+    color: #555555;
+}
+.main_header .user_info .user_id span{
+    font-weight: 400;
+    color: #999999;
+}
+.main_header .user_info button{
+    float: left;
+    width: 50px;
+    height: 40px;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-left: 1px solid #dddddd;
+    transition: background ease 0.4s;
+    margin-right: -1px;
+}
+.main_header .user_info button:last-child{
+    margin-right: 0px;
+}
+.main_header .user_info button:hover{
+    background-color: #f1f1f1;
+}
+.main_header .user_info .btn_user{
+    background-image: url(../../images/project/main/icon/icon_user_user_dis.png);
+}
+.main_header .user_info .btn_user_qa{
+    background-image: url(../../images/project/main/icon/icon_user_user_qa_dis.png);
+}
+.main_header .user_info .btn_gear{
+    background-image: url(../../images/project/main/icon/icon_user_gear_dis.png);
+}
+.main_header .user_info .btn_logout{
+    background-image: url(../../images/project/main/icon/icon_user_logout_dis.png);
+}
+
+/**** Local Navigation Bar ****/
+/* �뜝�럩逾х뛾�룊�삕 嶺뚮∥��占쎈� */
+.main_lnb{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 16px;
+    border-bottom: 4px solid #f1f1f1;
+    min-width: 1230px;
+}
+
+@media (min-width:0) and (max-width:1591px) {
+	.main_lnb{
+		font-size: 14px;
+	}
+}
+@media (min-width: 1592px) and (max-width:1646px) {
+	.main_lnb{
+		font-size: 15px;
+	}
+}
+.top_menu ul{
+	position: relative;
+    float: left;
+}
+.top_menu ul li{
+	position: relative;
+    display: inline-block;
+    background-color: transparent;
+    padding: 0 12px 0 46px;
+    /* padding: 0 40px 0 40px; css for jp */
+    margin-left: -3px;
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+.top_menu ul li:hover{
+    background-color: rgba(0,0,0,0.6);
+}
+.top_menu .menu_agent_active{
+    background-color: rgba(0,0,0,0.2) !important;
+}
+.top_menu ul li:first-child{
+    margin-left: 0px;
+    border-left: 0px;
+}
+.top_menu ul li:last-child {
+    margin-right: 0px;
+    border-right: 0px;
+}
+
+/* Sub Menu */
+.top_menu ul li:hover ul{
+	display: block;
+}
+.top_menu ul ul{
+	display: none;
+	position: absolute;
+    width: 100%;
+	left: 0;
+	color: #ffffff;
+	background-color: #444444;
+	padding: 0px;
+	z-index: 99999999;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+}
+.top_menu ul ul li:nth-of-type(2n){
+	background-color: #393939;
+}
+.top_menu ul ul li:first-of-type{
+	border-top: 2px solid #ddd;
+}
+.top_menu ul ul li{
+    display: block;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-indent: 0px;
+    text-align: center;
+    font-size: 14px;
+    border: 0px;
+    border-top: 1px solid rgba(150,150,150,0.2);
+    transition: all ease 0.4s;
+}
+.top_menu ul ul li:hover{
+/* 	background-color: #1e88cf; */
+/* 	border-color: #1e88cf; */
+	background-color: #29c05a;
+	border-color: #29c05a;
+	color: #ffffff;
+}
+
+/* 占쎄슈�뜝�뜾逾놂옙�봿�겱 嶺뚮∥��占쎈� */
+.top_menu .menu_admin{
+    /* float: right !important; */
+    /* background-color: #1e88cf; */
+    height: 45px;
+    line-height: 45px;
+}
+.top_menu .menu_admin li{
+	/* padding: 0 30px; */
+	text-indent: 0px;
+	text-align: center;
+}
+
+/* �뜝�럡�맋占쎈눀�뜝占� 嶺뚮∥��占쎈� */
+/* .sub_lnb{
+    float: left;
+    width: 100%;
+    clear: both;
+    height: 35px;
+    line-height: 35px;
+    color: #333333;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+.sub_lnb ul{
+}
+.sub_lnb li{
+    display: inline-block;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    padding: 0 20px;
+}
+.sub_lnb a:last-child li{
+    margin-right: 0px;
+    border-right: 0px;
+} */
+
+/* �룊媛� �뙘�뾽 */
+.float_left_full_size{
+	width: calc(100% - 5px);
+}
+.comment_form{
+	width: calc(100% - 4px);
+}
+
+.comment_form textarea{
+	float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    height: auto;
+    margin-top: 4px;
+    font-size: 14px;
+    resize: none;
+}
+
+#UserInfoBtn {
+	display:none;
+}

@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.MMenuAccessInfoDao">
+
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.MMenuAccessInfo">
+	    <result column="R_PROGRAM_CODE" 		jdbcType="VARCHAR" property="programCode" />
+	    <result column="R_LEVEL_CODE" 			jdbcType="VARCHAR" property="levelCode" />
+	    <result column="R_PROGRAM_SRC" 			jdbcType="VARCHAR" property="programSrc" />
+	    <result column="R_PROGRAM_NAME" 		jdbcType="VARCHAR" property="programName" />
+	    <result column="R_ACCESS_LEVEL" 		jdbcType="VARCHAR" property="accessLevel" />
+	    <result column="R_READ_YN" 				jdbcType="VARCHAR" property="readYn" />
+	    <result column="R_WRITE_YN" 			jdbcType="VARCHAR" property="writeYn" />
+	    <result column="R_MODI_YN" 				jdbcType="VARCHAR" property="modiYn" />
+	    <result column="R_DEL_YN" 				jdbcType="VARCHAR" property="delYn" />
+	    <result column="R_LISTEN_YN" 			jdbcType="VARCHAR" property="listenYn" />
+	    <result column="R_DOWNLOAD_YN" 			jdbcType="VARCHAR" property="downloadYn" />
+	    <result column="R_EXCEL_YN" 			jdbcType="VARCHAR" property="excelYn" />
+	    <result column="R_MASKING_YN" 			jdbcType="VARCHAR" property="maskingYn" />
+	    <result column="R_PRERECIPT_YN" 		jdbcType="VARCHAR" property="prereciptYn" />
+	    <result column="R_RECIPT_YN" 			jdbcType="VARCHAR" property="reciptYn" />
+	    <result column="R_APPROVE_YN" 			jdbcType="VARCHAR" property="approveYn" />
+	    <result column="R_DOWNLOAD_APPROVE_YN" 	jdbcType="VARCHAR" property="downloadApprove" />
+	    <result column="R_ENC_YN" 				jdbcType="VARCHAR" property="encYn" />
+	    <result column="R_UPLOAD_YN" 			jdbcType="VARCHAR" property="uploadYn" />
+	    <result column="R_BESTCALL_YN" 			jdbcType="VARCHAR" property="bestcallYn" />
+	    
+	    <result column="R_FEEDBACK_MODIFY_YN" 			jdbcType="VARCHAR" property="feedbackModifyYn" />
+	    
+	    <result column="R_PROGRAM_TOP" 			jdbcType="VARCHAR" property="programTop" />
+	    <result column="R_PROGRAM_PATH" 		jdbcType="VARCHAR" property="programPath" />
+	    <result column="R_DISPLAY_LEVEL" 		jdbcType="INTEGER" property="displayLevel" />
+	    <result column="R_TOP_PRIORITY" 		jdbcType="INTEGER" property="topPriority" />
+	    
+	    <result column="R_LEVEL_NAME" 			jdbcType="VARCHAR" property="levelName" />
+	    
+	</resultMap>
+
+	<!-- Menu 접근  조회 -->
+    <select id="selectMenuAccessInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.MMenuAccessInfo" resultMap="BaseResultMap">
+    	SELECT *
+		FROM RS_ACCESS_LIST
+		WHERE R_LEVEL_CODE = #{levelCode}
+		AND R_READ_YN = 'Y'
+		<if test="displayLevel != null and displayLevel &lt; 10">
+			AND R_DISPLAY_LEVEL &lt;= #{displayLevel}::integer
+		</if>
+		<if test="displayLevel != null and displayLevel &gt;= 100">
+			AND R_DISPLAY_LEVEL &gt; (#{displayLevel}::integer - 100)
+		</if>
+		<if test="programTop != null">
+		AND UPPER(REPLACE(R_PROGRAM_TOP,' ','')) = UPPER(#{programTop})
+		</if>
+		<if test="programSrc != null">
+		AND UPPER(R_PROGRAM_SRC) &gt; UPPER(#{programSrc})
+		</if>
+		ORDER BY R_DISPLAY_LEVEL, R_TOP_PRIORITY, R_PROGRAM_SRC
+    </select>
+
+	<!-- Menu 접근  조회 -->
+    <select id="selectMenuAccessInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MMenuAccessInfo" resultMap="BaseResultMap">
+    	SELECT *
+		FROM RS_ACCESS_LIST
+		WHERE R_LEVEL_CODE = #{levelCode}
+		AND R_READ_YN = 'Y'
+		<if test="displayLevel != null and displayLevel &lt; 10">
+			AND R_DISPLAY_LEVEL <![CDATA[<=]]> convert(integer,#{displayLevel})
+		</if>
+		<if test="displayLevel != null and displayLevel &gt;= 100">
+			AND R_DISPLAY_LEVEL <![CDATA[>]]> (convert(integer,#{displayLevel}) - 100)
+		</if>
+		<if test="programTop != null">
+		AND UPPER(REPLACE(R_PROGRAM_TOP,' ','')) = UPPER(#{programTop})
+		</if>
+		<if test="programSrc != null">
+		AND UPPER(R_PROGRAM_SRC) <![CDATA[>]]> UPPER(#{programSrc})
+		</if>
+		ORDER BY R_DISPLAY_LEVEL, R_TOP_PRIORITY, R_PROGRAM_SRC
+    </select>
+    
+    <!-- Menu 접근  조회 -->
+    <select id="selectMenuAccessInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.MMenuAccessInfo" resultMap="BaseResultMap">
+    	SELECT *
+		FROM RS_ACCESS_LIST
+		WHERE R_LEVEL_CODE = #{levelCode}
+		AND R_READ_YN = 'Y'
+		<if test="displayLevel != null and displayLevel &lt; 10">
+			AND R_DISPLAY_LEVEL &lt;= TO_NUMBER(#{displayLevel})
+		</if>
+		<if test="displayLevel != null and displayLevel &gt;= 100">
+			AND R_DISPLAY_LEVEL &gt; (TO_NUMBER(#{displayLevel}) - 100)
+		</if>
+		<if test="programTop != null">
+		AND UPPER(REPLACE(R_PROGRAM_TOP,' ','')) = UPPER(#{programTop})
+		</if>
+		<if test="programSrc != null">
+		AND UPPER(R_PROGRAM_SRC) &gt; UPPER(#{programSrc})
+		</if>
+		ORDER BY R_DISPLAY_LEVEL, R_TOP_PRIORITY, R_PROGRAM_SRC
+    </select>
+
+    <select id="checkAccessInfo" parameterType="com.furence.recsee.common.model.MMenuAccessInfo" resultMap="BaseResultMap">
+    	SELECT *
+		<if test="getLevelName != null and getLevelName eq 'Y'.toString() and levelCode != null">
+		, RS_ACCESS_LEVEL.r_level_name
+		</if>
+		FROM RS_ACCESS_LIST		
+		<if test="getLevelName != null and getLevelName eq 'Y'.toString() and levelCode != null">
+		LEFT JOIN RS_ACCESS_LEVEL ON RS_ACCESS_LIST.R_LEVEL_CODE = RS_ACCESS_LEVEL.R_LEVEL_CODE
+		</if>
+		WHERE 1=1
+		<if test="levelCode != null">
+			AND RS_ACCESS_LIST.R_LEVEL_CODE = #{levelCode}
+		</if>
+		<if test="programCode != null">
+			AND RS_ACCESS_LIST.R_PROGRAM_CODE = #{programCode}
+		</if>
+    </select>
+
+	<!-- Sub Menu 접근  조회 -->
+    <select id="selectSubMenuAccessInfo" parameterType="com.furence.recsee.common.model.MMenuAccessInfo" resultMap="BaseResultMap">
+    	SELECT *
+		FROM RS_ACCESS_LIST
+		WHERE R_LEVEL_CODE = #{levelCode}
+		AND R_READ_YN = 'Y'
+		AND UPPER(REPLACE(R_PROGRAM_TOP,' ', '')) = #{programTop}
+		ORDER BY R_TOP_PRIORITY, R_PROGRAM_SRC
+    </select>
+    
+    <select id="selectHideMenuAccessInfo" parameterType="com.furence.recsee.common.model.MMenuAccessInfo" resultMap="BaseResultMap">
+   		SELECT R_PROGRAM_CODE 
+   		FROM RS_ACCESS_LIST 
+   		WHERE R_LEVEL_CODE='E1001' AND R_READ_YN='N' 
+   		ORDER BY R_PROGRAM_CODE
+    </select>
+
+	<update id="updateMenuAccessInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+				UPDATE RS_ACCESS_LIST
+			<set>
+				<if test="accessLevel != null">R_ACCESS_LEVEL = #{accessLevel}</if>
+				<if test="readYn != null">R_READ_YN = #{readYn}</if>
+				<if test="writeYn != null">R_WRITE_YN = #{writeYn}</if>
+				<if test="modiYn != null">R_MODI_YN = #{modiYn}</if>
+				<if test="delYn != null">R_DEL_YN = #{delYn}</if>
+				<if test="listenYn != null">R_LISTEN_YN = #{listenYn}</if>
+				<if test="downloadYn != null">R_DOWNLOAD_YN = #{downloadYn}</if>
+				<if test="excelYn != null">R_EXCEL_YN = #{excelYn}</if>
+				<if test="maskingYn != null">R_MASKING_YN = #{maskingYn}</if>
+				<if test="prereciptYn != null">R_PRERECIPT_YN = #{prereciptYn}</if>
+				<if test="reciptYn != null">R_RECIPT_YN = #{reciptYn}</if>
+				<if test="approveYn != null">R_APPROVE_YN = #{approveYn}</if>
+				<if test="downloadApprove != null">R_DOWNLOAD_APPROVE_YN = #{downloadApprove}</if>
+				<if test="encYn != null">R_ENC_YN = #{encYn}</if>
+				<if test="uploadYn != null">R_UPLOAD_YN = #{uploadYn}</if>
+				<if test="bestcallYn != null">R_BESTCALL_YN = #{bestcallYn}</if>
+				
+				<if test="feedbackModifyYn != null">R_FEEDBACK_MODIFY_YN = #{feedbackModifyYn}</if>
+			</set>
+			<where>
+				<choose>
+					<when test='levelCode == "E1001"'>
+						R_PROGRAM_CODE = #{programCode}
+					</when>
+					<otherwise>
+						R_PROGRAM_CODE = #{programCode} AND R_LEVEL_CODE = #{levelCode}
+					</otherwise>
+				</choose>
+			</where>
+	</update>
+
+	<update id="updateMenuAccessInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+		UPDATE RS_ACCESS_LIST
+		<set>
+			<if test="accessLevel != null">R_ACCESS_LEVEL = #{accessLevel}</if>
+			<if test="readYn != null">R_READ_YN = #{readYn}</if>
+			<if test="writeYn != null">R_WRITE_YN = #{writeYn}</if>
+			<if test="modiYn != null">R_MODI_YN = #{modiYn}</if>
+			<if test="delYn != null">R_DEL_YN = #{delYn}</if>
+			<if test="listenYn != null">R_LISTEN_YN = #{listenYn}</if>
+			<if test="downloadYn != null">R_DOWNLOAD_YN = #{downloadYn}</if>
+			<if test="excelYn != null">R_EXCEL_YN = #{excelYn}</if>
+			<if test="maskingYn != null">R_MASKING_YN = #{maskingYn}</if>
+			<if test="prereciptYn != null">R_PRERECIPT_YN = #{prereciptYn}</if>
+			<if test="reciptYn != null">R_RECIPT_YN = #{reciptYn}</if>
+			<if test="approveYn != null">R_APPROVE_YN = #{approveYn}</if>
+			<if test="downloadApprove != null">R_DOWNLOAD_APPROVE_YN = #{downloadApprove}</if>
+			<if test="encYn != null">R_ENC_YN = #{encYn}</if>
+			<if test="uploadYn != null">R_UPLOAD_YN = #{uploadYn}</if>
+			<if test="bestcallYn != null">R_BESTCALL_YN = #{bestcallYn}</if>
+				
+			<if test="feedbackModifyYn != null">R_FEEDBACK_MODIFY_YN = #{feedbackModifyYn}</if>
+		</set>
+
+	    OUTPUT
+		 	  CONVERT(VARCHAR(8), GETDATE(), 112)
+		 	, CONVERT(VARCHAR(8), GETDATE(), 114)
+		 	,	'U'
+		 	,	'rs_access_list'
+		 	,	INSERTED.R_PROGRAM_CODE
+			,	INSERTED.R_LEVEL_CODE
+			,	INSERTED.R_PROGRAM_SRC
+			,	INSERTED.R_PROGRAM_NAME
+			,	INSERTED.R_ACCESS_LEVEL
+			,	INSERTED.R_READ_YN
+			,	INSERTED.R_WRITE_YN
+			,	INSERTED.R_MODI_YN
+			,	INSERTED.R_DEL_YN
+			,	INSERTED.R_LISTEN_YN
+			,	INSERTED.R_DOWNLOAD_YN
+			,	INSERTED.R_EXCEL_YN
+			,	INSERTED.R_MASKING_YN
+			,	INSERTED.R_RECIPT_YN
+			,	INSERTED.R_APPROVE_YN
+			,	INSERTED.R_PROGRAM_TOP
+			,	INSERTED.R_PROGRAM_PATH
+			,	INSERTED.R_DISPLAY_LEVEL
+			,	INSERTED.R_TOP_PRIORITY
+			,	INSERTED.R_PRERECIPT_YN
+			,	INSERTED.R_ENC_YN
+			,	INSERTED.R_DOWNLOAD_APPROVE_YN
+			,	INSERTED.R_UPLOAD_YN
+			,	INSERTED.R_BESTCALL_YN
+
+		INTO RS_SYNC_DATA
+		(
+		  	R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		  , R_SYNC_CULUMN11
+		  , R_SYNC_CULUMN12
+		  , R_SYNC_CULUMN13
+		  , R_SYNC_CULUMN14
+		  , R_SYNC_CULUMN15
+		  , R_SYNC_CULUMN16
+		  , R_SYNC_CULUMN17
+		  , R_SYNC_CULUMN18
+		  , R_SYNC_CULUMN19
+		  , R_SYNC_CULUMN20
+		  , R_SYNC_CULUMN21
+		  , R_SYNC_CULUMN22
+		  , R_SYNC_CULUMN23
+		  , R_SYNC_CULUMN24
+		)
+	    <where>
+			R_PROGRAM_CODE = #{programCode} AND R_LEVEL_CODE = #{levelCode}
+		</where>
+
+	</update>
+	<update id="updateMenuAccessInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_ACCESS_LIST
+			<set>
+				<if test="accessLevel != null">R_ACCESS_LEVEL = #{accessLevel}</if>
+				<if test="readYn != null">R_READ_YN = #{readYn}</if>
+				<if test="writeYn != null">R_WRITE_YN = #{writeYn}</if>
+				<if test="modiYn != null">R_MODI_YN = #{modiYn}</if>
+				<if test="delYn != null">R_DEL_YN = #{delYn}</if>
+				<if test="listenYn != null">R_LISTEN_YN = #{listenYn}</if>
+				<if test="downloadYn != null">R_DOWNLOAD_YN = #{downloadYn}</if>
+				<if test="excelYn != null">R_EXCEL_YN = #{excelYn}</if>
+				<if test="maskingYn != null">R_MASKING_YN = #{maskingYn}</if>
+				<if test="prereciptYn != null">R_PRERECIPT_YN = #{prereciptYn}</if>
+				<if test="reciptYn != null">R_RECIPT_YN = #{reciptYn}</if>
+				<if test="approveYn != null">R_APPROVE_YN = #{approveYn}</if>
+				<if test="downloadApprove != null">R_DOWNLOAD_APPROVE_YN = #{downloadApprove}</if>
+				<if test="encYn != null">R_ENC_YN = #{encYn}</if>
+				<if test="uploadYn != null">R_UPLOAD_YN = #{uploadYn}</if>
+				<if test="bestcallYn != null">R_BESTCALL_YN = #{bestcallYn}</if>
+			</set>
+			<where>
+				<choose>
+					<when test='levelCode == "E1001"'>
+						R_PROGRAM_CODE = #{programCode}
+					</when>
+					<otherwise>
+						R_PROGRAM_CODE = #{programCode} AND R_LEVEL_CODE = #{levelCode}
+					</otherwise>
+				</choose>
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'U'
+		 	,	'rs_access_list'
+		 	,	AL.R_PROGRAM_CODE
+			,	AL.R_LEVEL_CODE
+			,	AL.R_PROGRAM_SRC
+			,	AL.R_PROGRAM_NAME
+			,	AL.R_ACCESS_LEVEL
+			,	AL.R_READ_YN
+			,	AL.R_WRITE_YN
+			,	AL.R_MODI_YN
+			,	AL.R_DEL_YN
+			,	AL.R_LISTEN_YN
+			,	AL.R_DOWNLOAD_YN
+			,	AL.R_EXCEL_YN
+			,	AL.R_MASKING_YN
+			,	AL.R_RECIPT_YN
+			,	AL.R_APPROVE_YN
+			,	AL.R_PROGRAM_TOP
+			,	AL.R_PROGRAM_PATH
+			,	AL.R_DISPLAY_LEVEL
+			,	AL.R_TOP_PRIORITY
+			,	AL.R_PRERECIPT_YN
+			,	AL.R_ENC_YN
+			,	AL.R_DOWNLOAD_APPROVE_YN
+			,	AL.R_UPLOAD_YN
+			,	AL.R_BESTCALL_YN
+			FROM DUAL, RS_ACCESS_LIST AL
+        	WHERE AL.ROWID = row_id;
+
+		END; -->
+		UPDATE RS_ACCESS_LIST
+			<set>
+				<if test="accessLevel != null">R_ACCESS_LEVEL = #{accessLevel}</if>
+				<if test="readYn != null">R_READ_YN = #{readYn}</if>
+				<if test="writeYn != null">R_WRITE_YN = #{writeYn}</if>
+				<if test="modiYn != null">R_MODI_YN = #{modiYn}</if>
+				<if test="delYn != null">R_DEL_YN = #{delYn}</if>
+				<if test="listenYn != null">R_LISTEN_YN = #{listenYn}</if>
+				<if test="downloadYn != null">R_DOWNLOAD_YN = #{downloadYn}</if>
+				<if test="excelYn != null">R_EXCEL_YN = #{excelYn}</if>
+				<if test="maskingYn != null">R_MASKING_YN = #{maskingYn}</if>
+				<if test="prereciptYn != null">R_PRERECIPT_YN = #{prereciptYn}</if>
+				<if test="reciptYn != null">R_RECIPT_YN = #{reciptYn}</if>
+				<if test="approveYn != null">R_APPROVE_YN = #{approveYn}</if>
+				<if test="downloadApprove != null">R_DOWNLOAD_APPROVE_YN = #{downloadApprove}</if>
+				<if test="encYn != null">R_ENC_YN = #{encYn}</if>
+				<if test="uploadYn != null">R_UPLOAD_YN = #{uploadYn}</if>
+				<if test="bestcallYn != null">R_BESTCALL_YN = #{bestcallYn}</if>
+				
+				<if test="feedbackModifyYn != null">R_FEEDBACK_MODIFY_YN = #{feedbackModifyYn}</if>
+			</set>
+			<where>
+				<choose>
+					<when test='levelCode == "E1001"'>
+						R_PROGRAM_CODE = #{programCode}
+					</when>
+					<otherwise>
+						R_PROGRAM_CODE = #{programCode} AND R_LEVEL_CODE = #{levelCode}
+					</otherwise>
+				</choose>
+			</where>
+	</update>
+	
+	<update id="updatecAccessInfo" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">		
+		UPDATE RS_ACCESS_LIST
+			<set>
+				<if test="accessLevel != null">R_ACCESS_LEVEL = #{accessLevel}</if>
+				<if test="readYn != null">R_READ_YN = #{readYn}</if>
+				<if test="writeYn != null">R_WRITE_YN = #{writeYn}</if>
+				<if test="modiYn != null">R_MODI_YN = #{modiYn}</if>
+				<if test="delYn != null">R_DEL_YN = #{delYn}</if>
+				<if test="listenYn != null">R_LISTEN_YN = #{listenYn}</if>
+				<if test="downloadYn != null">R_DOWNLOAD_YN = #{downloadYn}</if>
+				<if test="excelYn != null">R_EXCEL_YN = #{excelYn}</if>
+				<if test="maskingYn != null">R_MASKING_YN = #{maskingYn}</if>
+				<if test="prereciptYn != null">R_PRERECIPT_YN = #{prereciptYn}</if>
+				<if test="reciptYn != null">R_RECIPT_YN = #{reciptYn}</if>
+				<if test="approveYn != null">R_APPROVE_YN = #{approveYn}</if>
+				<if test="downloadApprove != null">R_DOWNLOAD_APPROVE_YN = #{downloadApprove}</if>
+				<if test="encYn != null">R_ENC_YN = #{encYn}</if>
+				<if test="uploadYn != null">R_UPLOAD_YN = #{uploadYn}</if>
+				<if test="bestcallYn != null">R_BESTCALL_YN = #{bestcallYn}</if>
+				<if test="topPriority != null">R_TOP_PRIORITY = #{topPriority}</if>
+				<if test="feedbackModifyYn != null">R_FEEDBACK_MODIFY_YN = #{feedbackModifyYn}</if>
+			</set>
+			<where>
+				<choose>
+					<when test='levelCode == "E1001"'>
+						R_PROGRAM_CODE = #{programCode}
+					</when>
+					<otherwise>
+						R_PROGRAM_CODE = #{programCode} AND R_LEVEL_CODE = #{levelCode}
+					</otherwise>
+				</choose>
+			</where>
+	</update>
+
+	<delete id="deleteMenuAccessInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+	
+			DELETE FROM RS_ACCESS_LIST
+			<where>
+				R_LEVEL_CODE = #{levelCode}
+				<if test="programCode != null">
+				R_PROGRAM_CODE = #{programCode}
+				</if>
+			</where>
+	</delete>
+	<delete id="deleteMenuAccessInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+		DELETE FROM RS_ACCESS_LIST
+	    OUTPUT
+		 	    CONVERT(VARCHAR(8), GETDATE(), 112)
+		 	  , CONVERT(VARCHAR(8), GETDATE(), 114)
+	  	 	,	'D'
+	  	 	,	'rs_access_list'
+	  	 	,	DELETED.R_PROGRAM_CODE
+	  		,	DELETED.R_LEVEL_CODE
+	  		,	DELETED.R_PROGRAM_SRC
+	  		,	DELETED.R_PROGRAM_NAME
+	  		,	DELETED.R_ACCESS_LEVEL
+	  		,	DELETED.R_READ_YN
+	  		,	DELETED.R_WRITE_YN
+	  		,	DELETED.R_MODI_YN
+	  		,	DELETED.R_DEL_YN
+	  		,	DELETED.R_LISTEN_YN
+	  		,	DELETED.R_DOWNLOAD_YN
+	  		,	DELETED.R_EXCEL_YN
+	  		,	DELETED.R_MASKING_YN
+	  		,	DELETED.R_RECIPT_YN
+	  		,	DELETED.R_APPROVE_YN
+	  		,	DELETED.R_PROGRAM_TOP
+	  		,	DELETED.R_PROGRAM_PATH
+	  		,	DELETED.R_DISPLAY_LEVEL
+	  		,	DELETED.R_TOP_PRIORITY
+	  		,	DELETED.R_PRERECIPT_YN
+	  		,	DELETED.R_ENC_YN
+	  		,	DELETED.R_DOWNLOAD_APPROVE_YN
+	  		,	DELETED.R_UPLOAD_YN
+	  		,	DELETED.R_BESTCALL_YN
+	    INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			)
+
+		<where>
+			R_LEVEL_CODE = #{levelCode}
+			<if test="programCode != null">
+			R_PROGRAM_CODE = #{programCode}
+			</if>
+		</where>
+
+	</delete>
+	<delete id="deleteMenuAccessInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			DELETE FROM RS_ACCESS_LIST
+			<where>
+				R_LEVEL_CODE = #{levelCode}
+				<if test="programCode != null">
+				R_PROGRAM_CODE = #{programCode}
+				</if>
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'D'
+		 	,	'rs_access_list'
+		 	,	AL.R_PROGRAM_CODE
+			,	AL.R_LEVEL_CODE
+			,	AL.R_PROGRAM_SRC
+			,	AL.R_PROGRAM_NAME
+			,	AL.R_ACCESS_LEVEL
+			,	AL.R_READ_YN
+			,	AL.R_WRITE_YN
+			,	AL.R_MODI_YN
+			,	AL.R_DEL_YN
+			,	AL.R_LISTEN_YN
+			,	AL.R_DOWNLOAD_YN
+			,	AL.R_EXCEL_YN
+			,	AL.R_MASKING_YN
+			,	AL.R_RECIPT_YN
+			,	AL.R_APPROVE_YN
+			,	AL.R_PROGRAM_TOP
+			,	AL.R_PROGRAM_PATH
+			,	AL.R_DISPLAY_LEVEL
+			,	AL.R_TOP_PRIORITY
+			,	AL.R_PRERECIPT_YN
+			,	AL.R_ENC_YN
+			,	AL.R_DOWNLOAD_APPROVE_YN
+			,	AL.R_UPLOAD_YN
+			,	AL.R_BESTCALL_YN
+			FROM DUAL, RS_ACCESS_LIST AL
+       		WHERE AL.ROWID = row_id;
+
+		END; -->
+		DELETE FROM RS_ACCESS_LIST
+			<where>
+				R_LEVEL_CODE = #{levelCode}
+				<if test="programCode != null">
+				R_PROGRAM_CODE = #{programCode}
+				</if>
+			</where>
+
+	</delete>
+
+
+	<insert id="insertMenuAccessInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+			INSERT INTO RS_ACCESS_LIST (
+					R_PROGRAM_CODE
+				,	R_LEVEL_CODE
+				, 	R_PROGRAM_SRC
+				, 	R_PROGRAM_NAME
+				, 	R_ACCESS_LEVEL
+				,	R_READ_YN
+				, 	R_WRITE_YN
+				, 	R_MODI_YN
+				, 	R_DEL_YN
+				, 	R_LISTEN_YN
+				, 	R_DOWNLOAD_YN
+				, 	R_EXCEL_YN
+				, 	R_MASKING_YN
+				, 	R_PRERECIPT_YN
+				, 	R_RECIPT_YN
+				, 	R_APPROVE_YN
+				, 	R_ENC_YN
+				,	R_DOWNLOAD_APPROVE_YN
+				, 	R_UPLOAD_YN
+				, 	R_BESTCALL_YN
+				
+				,	R_FEEDBACK_MODIFY_YN
+		
+				,	R_PROGRAM_TOP
+				, 	R_PROGRAM_PATH
+				, 	R_DISPLAY_LEVEL
+				, 	R_TOP_PRIORITY
+			) (SELECT
+
+					R_PROGRAM_CODE
+				, 	#{levelCode}
+				, 	R_PROGRAM_SRC
+				, 	R_PROGRAM_NAME
+				, 	'A'
+				,	CASE WHEN R_DISPLAY_LEVEL = 0 THEN 'Y'
+						 WHEN R_PROGRAM_TOP = 'Search' THEN 'Y'
+						 WHEN R_DISPLAY_LEVEL = 1 AND R_PROGRAM_TOP LIKE 'Management|%' THEN 'Y'
+					     ELSE 'N'
+					END 
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				,	R_PROGRAM_TOP
+				, 	R_PROGRAM_PATH
+				, 	R_DISPLAY_LEVEL
+				, 	R_TOP_PRIORITY
+
+				FROM RS_ACCESS_LIST
+			WHERE
+				R_LEVEL_CODE = 'E1001')
+		
+	</insert>
+
+	<insert id="insertMenuAccessInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+	INSERT INTO RS_ACCESS_LIST(
+  					R_PROGRAM_CODE
+				,	R_LEVEL_CODE
+				, 	R_PROGRAM_SRC
+				, 	R_PROGRAM_NAME
+				, 	R_ACCESS_LEVEL
+				,	R_READ_YN
+				, 	R_WRITE_YN
+				, 	R_MODI_YN
+				, 	R_DEL_YN
+				, 	R_LISTEN_YN
+				, 	R_DOWNLOAD_YN
+				, 	R_EXCEL_YN
+				, 	R_MASKING_YN
+				, 	R_PRERECIPT_YN
+				, 	R_RECIPT_YN
+				, 	R_APPROVE_YN
+				, 	R_ENC_YN
+				,	R_DOWNLOAD_APPROVE_YN
+				, 	R_UPLOAD_YN
+				, 	R_BESTCALL_YN
+				
+				,	R_FEEDBACK_MODIFY_YN
+			
+				,	R_PROGRAM_TOP
+				, 	R_PROGRAM_PATH
+				, 	R_DISPLAY_LEVEL
+				, 	R_TOP_PRIORITY
+		  )
+		 OUTPUT
+
+ 	    	CONVERT(VARCHAR(8), GETDATE(), 112)
+ 	    , 	CONVERT(VARCHAR(8), GETDATE(), 114)
+	 	,	'C'
+	 	,	'rs_access_list'
+	 	,	INSERTED.R_PROGRAM_CODE
+		,	INSERTED.R_LEVEL_CODE
+		,	INSERTED.R_PROGRAM_SRC
+		,	INSERTED.R_PROGRAM_NAME
+		,	INSERTED.R_ACCESS_LEVEL
+		,	INSERTED.R_READ_YN
+		,	INSERTED.R_WRITE_YN
+		,	INSERTED.R_MODI_YN
+		,	INSERTED.R_DEL_YN
+		,	INSERTED.R_LISTEN_YN
+		,	INSERTED.R_DOWNLOAD_YN
+		,	INSERTED.R_EXCEL_YN
+		,	INSERTED.R_MASKING_YN
+		,	INSERTED.R_RECIPT_YN
+		,	INSERTED.R_APPROVE_YN
+		,	INSERTED.R_UPLOAD_YN
+		,	INSERTED.R_BESTCALL_YN		
+		,	INSERTED.R_PROGRAM_TOP
+		,	INSERTED.R_PROGRAM_PATH
+		,	INSERTED.R_DISPLAY_LEVEL
+		,	INSERTED.R_TOP_PRIORITY
+		,	INSERTED.R_PRERECIPT_YN
+		,	INSERTED.R_ENC_YN
+		,	INSERTED.R_DOWNLOAD_APPROVE_YN
+
+		INTO RS_SYNC_DATA (
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		  , R_SYNC_CULUMN11
+		  , R_SYNC_CULUMN12
+		  , R_SYNC_CULUMN13
+		  , R_SYNC_CULUMN14
+		  , R_SYNC_CULUMN15
+		  , R_SYNC_CULUMN16
+		  , R_SYNC_CULUMN17
+		  , R_SYNC_CULUMN18
+		  , R_SYNC_CULUMN19
+		  , R_SYNC_CULUMN20
+		  , R_SYNC_CULUMN21
+		  , R_SYNC_CULUMN22
+		  , R_SYNC_CULUMN23
+		  , R_SYNC_CULUMN24
+		)
+		
+		
+		SELECT
+			R_PROGRAM_CODE
+		, 	#{levelCode}
+		, 	R_PROGRAM_SRC
+		, 	R_PROGRAM_NAME
+		<!-- , 	#{accessLevel}
+		,	#{readYn} -->
+		, 	'A'
+		,	CASE WHEN R_DISPLAY_LEVEL = 0 THEN 'Y'
+				 WHEN R_PROGRAM_TOP = 'Search' THEN 'Y'
+				 WHEN R_DISPLAY_LEVEL = 1 AND R_PROGRAM_TOP LIKE 'Management|%' THEN 'Y'
+			     ELSE 'N'
+			END 
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		, 	'N'
+		,	R_PROGRAM_TOP
+		, 	R_PROGRAM_PATH
+		, 	R_DISPLAY_LEVEL
+		, 	R_TOP_PRIORITY
+
+		FROM RS_ACCESS_LIST
+		WHERE
+		<!-- R_PROGRAM_CODE = #{programCode} AND --> 
+		R_LEVEL_CODE = 'E1001'
+	</insert>
+	<insert id="insertMenuAccessInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.MMenuAccessInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			INSERT INTO RS_ACCESS_LIST (
+					R_PROGRAM_CODE
+				,	R_LEVEL_CODE
+				, 	R_PROGRAM_SRC
+				, 	R_PROGRAM_NAME
+				, 	R_ACCESS_LEVEL
+				,	R_READ_YN
+				, 	R_WRITE_YN
+				, 	R_MODI_YN
+				, 	R_DEL_YN
+				, 	R_LISTEN_YN
+				, 	R_DOWNLOAD_YN
+				, 	R_EXCEL_YN
+				, 	R_MASKING_YN
+				, 	R_PRERECIPT_YN
+				, 	R_RECIPT_YN
+				, 	R_APPROVE_YN
+				, 	R_ENC_YN
+				,	R_DOWNLOAD_APPROVE_YN
+				, 	R_UPLOAD_YN
+				, 	R_BESTCALL_YN
+				,	R_PROGRAM_TOP
+				, 	R_PROGRAM_PATH
+				, 	R_DISPLAY_LEVEL
+				, 	R_TOP_PRIORITY
+			) (SELECT
+
+					R_PROGRAM_CODE
+				, 	#{levelCode}
+				, 	R_PROGRAM_SRC
+				, 	R_PROGRAM_NAME
+				, 	'A'
+				,	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				,	R_PROGRAM_TOP
+				, 	R_PROGRAM_PATH
+				, 	R_DISPLAY_LEVEL
+				, 	R_TOP_PRIORITY
+
+				FROM RS_ACCESS_LIST
+			WHERE
+				R_LEVEL_CODE = 'E1001')
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'C'
+		 	,	'rs_access_list'
+		 	,	AL.R_PROGRAM_CODE
+			,	AL.R_LEVEL_CODE
+			,	AL.R_PROGRAM_SRC
+			,	AL.R_PROGRAM_NAME
+			,	AL.R_ACCESS_LEVEL
+			,	AL.R_READ_YN
+			,	AL.R_WRITE_YN
+			,	AL.R_MODI_YN
+			,	AL.R_DEL_YN
+			,	AL.R_LISTEN_YN
+			,	AL.R_DOWNLOAD_YN
+			,	AL.R_EXCEL_YN
+			,	AL.R_MASKING_YN
+			,	AL.R_RECIPT_YN
+			,	AL.R_APPROVE_YN
+			,	AL.R_PROGRAM_TOP
+			,	AL.R_PROGRAM_PATH
+			,	AL.R_DISPLAY_LEVEL
+			,	AL.R_TOP_PRIORITY
+			,	AL.R_PRERECIPT_YN
+			,	AL.R_ENC_YN
+			,	AL.R_DOWNLOAD_APPROVE_YN
+			,	AL.R_UPLOAD_YN
+			,	AL.R_BESTCALL_YN
+			FROM DUAL, RS_ACCESS_LIST AL
+        	WHERE AL.ROWID = row_id;
+
+		END; -->
+		INSERT INTO RS_ACCESS_LIST (
+					R_PROGRAM_CODE
+				,	R_LEVEL_CODE
+				, 	R_PROGRAM_SRC
+				, 	R_PROGRAM_NAME
+				, 	R_ACCESS_LEVEL
+				,	R_READ_YN
+				, 	R_WRITE_YN
+				, 	R_MODI_YN
+				, 	R_DEL_YN
+				, 	R_LISTEN_YN
+				, 	R_DOWNLOAD_YN
+				, 	R_EXCEL_YN
+				, 	R_MASKING_YN
+				, 	R_PRERECIPT_YN
+				, 	R_RECIPT_YN
+				, 	R_APPROVE_YN
+				, 	R_ENC_YN
+				,	R_DOWNLOAD_APPROVE_YN
+				, 	R_UPLOAD_YN
+				, 	R_BESTCALL_YN
+				,	R_PROGRAM_TOP
+				, 	R_PROGRAM_PATH
+				, 	R_DISPLAY_LEVEL
+				, 	R_TOP_PRIORITY
+			) (SELECT
+
+					R_PROGRAM_CODE
+				, 	#{levelCode}
+				, 	R_PROGRAM_SRC
+				, 	R_PROGRAM_NAME
+				, 	'A'
+				,	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				, 	'N'
+				,	R_PROGRAM_TOP
+				, 	R_PROGRAM_PATH
+				, 	R_DISPLAY_LEVEL
+				, 	R_TOP_PRIORITY
+
+				FROM RS_ACCESS_LIST
+			WHERE
+				R_LEVEL_CODE = 'E1001')
+	</insert>
+	
+	<!-- 허용 범위 삭제시 초기화 -->
+	<update id="accessLevelEmpty" parameterType="com.furence.recsee.admin.model.RUserInfo">
+		UPDATE RS_ACCESS_LIST
+		<set>
+		R_ACCESS_LEVEL = ''
+		</set>
+		<where>
+		R_ACCESS_LEVEL = #{accessLevel};
+		</where>
+	</update>
+</mapper>

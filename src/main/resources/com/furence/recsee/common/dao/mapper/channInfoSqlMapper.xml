@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.furence.recsee.common.dao.ChannInfoDao">
+
+	<resultMap id="ChannInfoMap" type="com.furence.recsee.common.model.ChannInfo">
+		<result column="R_CH_NUM" jdbcType="INTEGER" property="rChNum" />
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="rSysCode" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="rExtNum" />
+		<result column="R_EXT_KIND" jdbcType="VARCHAR" property="rExtKind" />
+		<result column="R_EXT_IP" jdbcType="VARCHAR" property="rExtIp" />
+		<result column="R_EXT_MAC" jdbcType="VARCHAR" property="rExtMac" />
+		<result column="R_RX_AMP" jdbcType="DOUBLE" property="rRxAmp" />
+		<result column="R_EXT_KEY" jdbcType="VARCHAR" property="rExtKey" />
+		<result column="R_EXT_AGT_IP" jdbcType="VARCHAR" property="rExtAgtIp" />
+		<result column="R_TX_AMP" jdbcType="DOUBLE" property="rTxAmp" />
+		<result column="R_VOLUME" jdbcType="DOUBLE" property="rVolume" />
+		<result column="R_AGC" jdbcType="DOUBLE" property="rAgc" />
+		<result column="R_REC_YN" jdbcType="VARCHAR" property="rRecYn" />
+		<result column="R_LOG_YN" jdbcType="VARCHAR" property="rLogYn" />
+		<result column="R_SCREEN_YN" jdbcType="VARCHAR" property="rScreenYn" />
+		<result column="R_CH_TENANT" jdbcType="VARCHAR" property="rChTenant" />
+		<result column="R_REC_TYPE" jdbcType="VARCHAR" property="rRecType" />
+	</resultMap>
+
+	<select id="selectChennelInfo" resultMap="ChannInfoMap" parameterType="String">
+		select * from rs_ch_info where r_sys_code=#{value}
+	</select>
+
+	<select id="checkChInfo" parameterType="com.furence.recsee.common.model.ChannInfo" resultType="Integer">
+		select count(r_ch_num) from rs_ch_info where r_ext_num=#{rChNum} and r_sys_code=#{rSysCode}
+	</select>
+
+	<update id="updateChInfo" parameterType="com.furence.recsee.common.model.ChannInfo">
+		update rs_ch_info set <!-- r_ext_ip=#{rExtIp}, --> r_rec_yn=#{rRecYn} where r_ext_num=#{rChNum} and r_sys_code=#{rSysCode}
+	</update>
+
+	<delete id="deleteChInfo" parameterType="com.furence.recsee.common.model.ChannInfo">
+		delete from rs_ch_info where
+		<if test="rChNum != null">
+			R_CH_NUM=#{rChNum} and
+		</if>
+		r_sys_code=#{rSysCode}
+	</delete>
+
+	<insert id="insertChInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.ChannInfo">
+		<!-- insert into rs_ch_info(r_ch_num,r_ext_num, r_ext_ip,r_rec_yn, r_ext_kind,r_sys_code)
+		values(nextval('r_ch_info_seq'),'${rChNum}','${rExtIp}','${rRecYn}','A','${rSysCode}') -->
+		insert into rs_ch_info(r_ch_num,r_ext_num, r_ext_ip, r_rec_yn, r_ext_kind,r_sys_code, r_rec_type)
+		values(nextval('r_ch_info_seq'),#{rChNum},#{rExtIp},#{rRecYn},'A',#{rSysCode},'')
+	</insert>
+	<insert id="insertChInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.ChannInfo">
+		<!-- 해당  Table sequence identity 아니오-> 예  수정 -->
+		insert into rs_ch_info(r_ext_num, r_ext_ip, r_rec_yn, r_ext_kind,r_sys_code, r_rec_type)
+		values(#{rChNum},#{rExtIp},#{rRecYn},'A',#{rSysCode},'')
+	</insert>
+	<insert id="insertChInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.ChannInfo">
+		<!-- 받은 ms나 post에 시퀀스 존재하지않아 ms버전 참고하여 구현하였습니다 -->
+		<!-- insert into rs_ch_info(r_ch_num,r_ext_num, r_ext_ip, r_rec_yn, r_ext_kind,r_sys_code, r_rec_type)
+		values(r_ch_info_seq.NEXTVAL,#{rChNum},#{rExtIp},#{rRecYn},'A',#{rSysCode},'') -->
+		
+		insert into rs_ch_info(r_ext_num, r_ext_ip, r_rec_yn, r_ext_kind,r_sys_code, r_rec_type)
+		values(#{rChNum},#{rExtIp},#{rRecYn},'A',#{rSysCode},'')
+	</insert>
+
+
+	<select id="selectSysCode" resultMap="ChannInfoMap">
+		select r_sys_id as r_sys_code from rs_sys_info
+	</select>
+
+	<select id="selectCompSysCode" resultType="Integer" parameterType="String">
+		select count(r_sys_id) from rs_sys_info where r_sys_id=#{value}
+	</select>
+
+	<select id="selectChSysCode" resultMap="ChannInfoMap">
+		select DISTINCT r_sys_code from rs_ch_info
+	</select>
+</mapper>

@@ -1,0 +1,2608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.CustomizeInfoDao">
+	<resultMap id="ListResultMap" type="com.furence.recsee.admin.model.CustomizeListInfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_LIST1" jdbcType="VARCHAR" property="rList1" />
+		<result column="R_LIST2" jdbcType="VARCHAR" property="rList2" />
+		<result column="R_LIST3" jdbcType="VARCHAR" property="rList3" />
+		<result column="R_LIST4" jdbcType="VARCHAR" property="rList4" />
+		<result column="R_LIST5" jdbcType="VARCHAR" property="rList5" />
+		<result column="R_LIST6" jdbcType="VARCHAR" property="rList6" />
+		<result column="R_LIST7" jdbcType="VARCHAR" property="rList7" />
+		<result column="R_LIST8" jdbcType="VARCHAR" property="rList8" />
+		<result column="R_LIST9" jdbcType="VARCHAR" property="rList9" />
+		<result column="R_LIST10" jdbcType="VARCHAR" property="rList10" />
+		<result column="R_LIST11" jdbcType="VARCHAR" property="rList11" />
+		<result column="R_LIST12" jdbcType="VARCHAR" property="rList12" />
+		<result column="R_LIST13" jdbcType="VARCHAR" property="rList13" />
+		<result column="R_LIST14" jdbcType="VARCHAR" property="rList14" />
+		<result column="R_LIST15" jdbcType="VARCHAR" property="rList15" />
+		<result column="R_LIST16" jdbcType="VARCHAR" property="rList16" />
+		<result column="R_LIST17" jdbcType="VARCHAR" property="rList17" />
+		<result column="R_LIST18" jdbcType="VARCHAR" property="rList18" />
+		<result column="R_LIST19" jdbcType="VARCHAR" property="rList19" />
+		<result column="R_LIST20" jdbcType="VARCHAR" property="rList20" />
+		<result column="R_LIST21" jdbcType="VARCHAR" property="rList21" />
+		<result column="R_LIST22" jdbcType="VARCHAR" property="rList22" />
+		<result column="R_LIST23" jdbcType="VARCHAR" property="rList23" />
+		<result column="R_LIST24" jdbcType="VARCHAR" property="rList24" />
+		<result column="R_LIST25" jdbcType="VARCHAR" property="rList25" />
+		<result column="R_LIST26" jdbcType="VARCHAR" property="rList26" />
+		<result column="R_LIST27" jdbcType="VARCHAR" property="rList27" />
+		<result column="R_LIST28" jdbcType="VARCHAR" property="rList28" />
+		<result column="R_LIST29" jdbcType="VARCHAR" property="rList29" />
+		<result column="R_LIST30" jdbcType="VARCHAR" property="rList30" />
+		<result column="R_LIST31" jdbcType="VARCHAR" property="rList31" />
+		<result column="R_LIST32" jdbcType="VARCHAR" property="rList32" />
+		<result column="R_LIST33" jdbcType="VARCHAR" property="rList33" />
+		<result column="R_LIST34" jdbcType="VARCHAR" property="rList34" />
+		<result column="R_LIST35" jdbcType="VARCHAR" property="rList35" />
+	</resultMap>
+	<resultMap id="CopyListResultMap" type="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_COPYLIST1" jdbcType="VARCHAR" property="rCopyList1" />
+		<result column="R_COPYLIST2" jdbcType="VARCHAR" property="rCopyList2" />
+		<result column="R_COPYLIST3" jdbcType="VARCHAR" property="rCopyList3" />
+		<result column="R_COPYLIST4" jdbcType="VARCHAR" property="rCopyList4" />
+		<result column="R_COPYLIST5" jdbcType="VARCHAR" property="rCopyList5" />
+		<result column="R_COPYLIST6" jdbcType="VARCHAR" property="rCopyList6" />
+		<result column="R_COPYLIST7" jdbcType="VARCHAR" property="rCopyList7" />
+		<result column="R_COPYLIST8" jdbcType="VARCHAR" property="rCopyList8" />
+		<result column="R_COPYLIST9" jdbcType="VARCHAR" property="rCopyList9" />
+		<result column="R_COPYLIST10" jdbcType="VARCHAR" property="rCopyList10" />
+		<result column="R_COPYLIST11" jdbcType="VARCHAR" property="rCopyList11" />
+		<result column="R_COPYLIST12" jdbcType="VARCHAR" property="rCopyList12" />
+		<result column="R_COPYLIST13" jdbcType="VARCHAR" property="rCopyList13" />
+		<result column="R_COPYLIST14" jdbcType="VARCHAR" property="rCopyList14" />
+		<result column="R_COPYLIST15" jdbcType="VARCHAR" property="rCopyList15" />
+		<result column="R_COPYLIST16" jdbcType="VARCHAR" property="rCopyList16" />
+		<result column="R_COPYLIST17" jdbcType="VARCHAR" property="rCopyList17" />
+		<result column="R_COPYLIST18" jdbcType="VARCHAR" property="rCopyList18" />
+		<result column="R_COPYLIST19" jdbcType="VARCHAR" property="rCopyList19" />
+		<result column="R_COPYLIST20" jdbcType="VARCHAR" property="rCopyList20" />
+		<result column="R_COPYLIST21" jdbcType="VARCHAR" property="rCopyList21" />
+		<result column="R_COPYLIST22" jdbcType="VARCHAR" property="rCopyList22" />
+		<result column="R_COPYLIST23" jdbcType="VARCHAR" property="rCopyList23" />
+		<result column="R_COPYLIST24" jdbcType="VARCHAR" property="rCopyList24" />
+		<result column="R_COPYLIST25" jdbcType="VARCHAR" property="rCopyList25" />
+		<result column="R_COPYLIST26" jdbcType="VARCHAR" property="rCopyList26" />
+		<result column="R_COPYLIST27" jdbcType="VARCHAR" property="rCopyList27" />
+		<result column="R_COPYLIST28" jdbcType="VARCHAR" property="rCopyList28" />
+		<result column="R_COPYLIST29" jdbcType="VARCHAR" property="rCopyList29" />
+		<result column="R_COPYLIST30" jdbcType="VARCHAR" property="rCopyList30" />
+		<result column="R_COPYLIST31" jdbcType="VARCHAR" property="rCopyList31" />
+		<result column="R_COPYLIST32" jdbcType="VARCHAR" property="rCopyList32" />
+		<result column="R_COPYLIST33" jdbcType="VARCHAR" property="rCopyList33" />
+		<result column="R_COPYLIST34" jdbcType="VARCHAR" property="rCopyList34" />
+		<result column="R_COPYLIST35" jdbcType="VARCHAR" property="rCopyList35" />
+	</resultMap>
+	<resultMap id="SearchResultMap" type="com.furence.recsee.admin.model.CustomizeItemInfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_SEARCH1" jdbcType="VARCHAR" property="rSearch1" />
+		<result column="R_SEARCH2" jdbcType="VARCHAR" property="rSearch2" />
+		<result column="R_SEARCH3" jdbcType="VARCHAR" property="rSearch3" />
+		<result column="R_SEARCH4" jdbcType="VARCHAR" property="rSearch4" />
+		<result column="R_SEARCH5" jdbcType="VARCHAR" property="rSearch5" />
+		<result column="R_SEARCH6" jdbcType="VARCHAR" property="rSearch6" />
+		<result column="R_SEARCH7" jdbcType="VARCHAR" property="rSearch7" />
+		<result column="R_SEARCH8" jdbcType="VARCHAR" property="rSearch8" />
+		<result column="R_SEARCH9" jdbcType="VARCHAR" property="rSearch9" />
+		<result column="R_SEARCH10" jdbcType="VARCHAR" property="rSearch10" />
+		<result column="R_SEARCH11" jdbcType="VARCHAR" property="rSearch11" />
+		<result column="R_SEARCH12" jdbcType="VARCHAR" property="rSearch12" />
+		<result column="R_SEARCH13" jdbcType="VARCHAR" property="rSearch13" />
+		<result column="R_SEARCH14" jdbcType="VARCHAR" property="rSearch14" />
+		<result column="R_SEARCH15" jdbcType="VARCHAR" property="rSearch15" />
+		<result column="R_SEARCH16" jdbcType="VARCHAR" property="rSearch16" />
+		<result column="R_SEARCH17" jdbcType="VARCHAR" property="rSearch17" />
+		<result column="R_SEARCH18" jdbcType="VARCHAR" property="rSearch18" />
+		<result column="R_SEARCH19" jdbcType="VARCHAR" property="rSearch19" />
+		<result column="R_SEARCH20" jdbcType="VARCHAR" property="rSearch20" />
+		<result column="R_SEARCH21" jdbcType="VARCHAR" property="rSearch21" />
+		<result column="R_SEARCH22" jdbcType="VARCHAR" property="rSearch22" />
+		<result column="R_SEARCH23" jdbcType="VARCHAR" property="rSearch23" />
+		<result column="R_SEARCH24" jdbcType="VARCHAR" property="rSearch24" />
+		<result column="R_SEARCH25" jdbcType="VARCHAR" property="rSearch25" />
+		<result column="R_SEARCH26" jdbcType="VARCHAR" property="rSearch26" />
+		<result column="R_SEARCH27" jdbcType="VARCHAR" property="rSearch27" />
+		<result column="R_SEARCH28" jdbcType="VARCHAR" property="rSearch28" />
+		<result column="R_SEARCH29" jdbcType="VARCHAR" property="rSearch29" />
+		<result column="R_SEARCH30" jdbcType="VARCHAR" property="rSearch30" />
+		<result column="R_SEARCH31" jdbcType="VARCHAR" property="rSearch31" />
+		<result column="R_SEARCH32" jdbcType="VARCHAR" property="rSearch32" />
+		<result column="R_SEARCH33" jdbcType="VARCHAR" property="rSearch33" />
+		<result column="R_SEARCH34" jdbcType="VARCHAR" property="rSearch34" />
+		<result column="R_SEARCH35" jdbcType="VARCHAR" property="rSearch35" />
+	</resultMap>
+
+
+	<select id="selectCustomizeListInfo" parameterType="com.furence.recsee.admin.model.CustomizeListInfo"  resultMap="ListResultMap">
+		SELECT * FROM RS_LIST_SETTING
+		<where>
+			R_USER_ID = #{rUserId}
+		</where>
+	</select>
+	
+	<insert id="insertCustomizeListInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+			INSERT INTO RS_LIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rList1 != null">R_LIST1,</if>
+					<if test="rList2 != null">R_LIST2,</if>
+					<if test="rList3 != null">R_LIST3,</if>
+					<if test="rList4 != null">R_LIST4,</if>
+					<if test="rList5 != null">R_LIST5,</if>
+					<if test="rList6 != null">R_LIST6,</if>
+					<if test="rList7 != null">R_LIST7,</if>
+					<if test="rList8 != null">R_LIST8,</if>
+					<if test="rList9 != null">R_LIST9,</if>
+					<if test="rList10 != null">R_LIST10,</if>
+					<if test="rList11 != null">R_LIST11,</if>
+					<if test="rList12 != null">R_LIST12,</if>
+					<if test="rList13 != null">R_LIST13,</if>
+					<if test="rList14 != null">R_LIST14,</if>
+					<if test="rList15 != null">R_LIST15,</if>
+					<if test="rList16 != null">R_LIST16,</if>
+					<if test="rList17 != null">R_LIST17,</if>
+					<if test="rList18 != null">R_LIST18,</if>
+					<if test="rList19 != null">R_LIST19,</if>
+					<if test="rList20 != null">R_LIST20,</if>
+					<if test="rList21 != null">R_LIST21,</if>
+					<if test="rList22 != null">R_LIST22,</if>
+					<if test="rList23 != null">R_LIST23,</if>
+					<if test="rList24 != null">R_LIST24,</if>
+					<if test="rList25 != null">R_LIST25,</if>
+					<if test="rList26 != null">R_LIST26,</if>
+					<if test="rList27 != null">R_LIST27,</if>
+					<if test="rList28 != null">R_LIST28,</if>
+					<if test="rList29 != null">R_LIST29,</if>
+					<if test="rList30 != null">R_LIST30,</if>
+					<if test="rList31 != null">R_LIST31,</if>
+					<if test="rList32 != null">R_LIST32,</if>
+					<if test="rList33 != null">R_LIST33,</if>
+					<if test="rList34 != null">R_LIST34,</if>
+					<if test="rList35 != null">R_LIST35</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rList1 != null">#{rList1},</if>
+					<if test="rList2 != null">#{rList2},</if>
+					<if test="rList3 != null">#{rList3},</if>
+					<if test="rList4 != null">#{rList4},</if>
+					<if test="rList5 != null">#{rList5},</if>
+					<if test="rList6 != null">#{rList6},</if>
+					<if test="rList7 != null">#{rList7},</if>
+					<if test="rList8 != null">#{rList8},</if>
+					<if test="rList9 != null">#{rList9},</if>
+					<if test="rList10 != null">#{rList10},</if>
+					<if test="rList11 != null">#{rList11},</if>
+					<if test="rList12 != null">#{rList12},</if>
+					<if test="rList13 != null">#{rList13},</if>
+					<if test="rList14 != null">#{rList14},</if>
+					<if test="rList15 != null">#{rList15},</if>
+					<if test="rList16 != null">#{rList16},</if>
+					<if test="rList17 != null">#{rList17},</if>
+					<if test="rList18 != null">#{rList18},</if>
+					<if test="rList19 != null">#{rList19},</if>
+					<if test="rList20 != null">#{rList20},</if>
+					<if test="rList21 != null">#{rList21},</if>
+					<if test="rList22 != null">#{rList22},</if>
+					<if test="rList23 != null">#{rList23},</if>
+					<if test="rList24 != null">#{rList24},</if>
+					<if test="rList25 != null">#{rList25},</if>
+					<if test="rList26 != null">#{rList26},</if>
+					<if test="rList27 != null">#{rList27},</if>
+					<if test="rList28 != null">#{rList28},</if>
+					<if test="rList29 != null">#{rList29},</if>
+					<if test="rList30 != null">#{rList30},</if>
+					<if test="rList31 != null">#{rList31},</if>
+					<if test="rList32 != null">#{rList32},</if>
+					<if test="rList33 != null">#{rList33},</if>
+					<if test="rList34 != null">#{rList34},</if>
+					<if test="rList35 != null">#{rList35}</if>
+				</trim>
+			)
+	
+	</insert>
+	
+	<insert id="insertCustomizeListInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+			INSERT INTO RS_LIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rList1 != null">R_LIST1,</if>
+					<if test="rList2 != null">R_LIST2,</if>
+					<if test="rList3 != null">R_LIST3,</if>
+					<if test="rList4 != null">R_LIST4,</if>
+					<if test="rList5 != null">R_LIST5,</if>
+					<if test="rList6 != null">R_LIST6,</if>
+					<if test="rList7 != null">R_LIST7,</if>
+					<if test="rList8 != null">R_LIST8,</if>
+					<if test="rList9 != null">R_LIST9,</if>
+					<if test="rList10 != null">R_LIST10,</if>
+					<if test="rList11 != null">R_LIST11,</if>
+					<if test="rList12 != null">R_LIST12,</if>
+					<if test="rList13 != null">R_LIST13,</if>
+					<if test="rList14 != null">R_LIST14,</if>
+					<if test="rList15 != null">R_LIST15,</if>
+					<if test="rList16 != null">R_LIST16,</if>
+					<if test="rList17 != null">R_LIST17,</if>
+					<if test="rList18 != null">R_LIST18,</if>
+					<if test="rList19 != null">R_LIST19,</if>
+					<if test="rList20 != null">R_LIST20,</if>
+					<if test="rList21 != null">R_LIST21,</if>
+					<if test="rList22 != null">R_LIST22,</if>
+					<if test="rList23 != null">R_LIST23,</if>
+					<if test="rList24 != null">R_LIST24,</if>
+					<if test="rList25 != null">R_LIST25,</if>
+					<if test="rList26 != null">R_LIST26,</if>
+					<if test="rList27 != null">R_LIST27,</if>
+					<if test="rList28 != null">R_LIST28,</if>
+					<if test="rList29 != null">R_LIST29,</if>
+					<if test="rList30 != null">R_LIST30,</if>
+					<if test="rList26 != null">R_LIST31,</if>
+					<if test="rList27 != null">R_LIST32,</if>
+					<if test="rList28 != null">R_LIST33,</if>
+					<if test="rList29 != null">R_LIST34,</if>
+					<if test="rList30 != null">R_LIST35,</if>
+				</trim>
+			)
+
+				OUTPUT
+					CONVERT(varchar(8),GETDATE(),112)
+				,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+				,	'C'
+			 	,	'rs_list_setting'
+			 	,	INSERTED.R_USER_ID
+				,	INSERTED.R_LIST1
+				,	INSERTED.R_LIST2
+				,	INSERTED.R_LIST3
+				,	INSERTED.R_LIST4
+				,	INSERTED.R_LIST5
+				,	INSERTED.R_LIST6
+				,	INSERTED.R_LIST7
+				,	INSERTED.R_LIST8
+				,	INSERTED.R_LIST9
+				,	INSERTED.R_LIST10
+				,	INSERTED.R_LIST11
+				,	INSERTED.R_LIST12
+				,	INSERTED.R_LIST13
+				,	INSERTED.R_LIST14
+				,	INSERTED.R_LIST15
+				,	INSERTED.R_LIST16
+				,	INSERTED.R_LIST17
+				,	INSERTED.R_LIST18
+				,	INSERTED.R_LIST19
+				,	INSERTED.R_LIST20
+				,	INSERTED.R_LIST21
+				,	INSERTED.R_LIST22
+				,	INSERTED.R_LIST23
+				,	INSERTED.R_LIST24
+				,	INSERTED.R_LIST25
+				,	INSERTED.R_LIST26
+				,	INSERTED.R_LIST27
+				,	INSERTED.R_LIST28
+				,	INSERTED.R_LIST29
+				,	INSERTED.R_LIST30
+				,	INSERTED.R_LIST31
+				,	INSERTED.R_LIST32
+				,	INSERTED.R_LIST33
+				,	INSERTED.R_LIST34
+				,	INSERTED.R_LIST35
+
+				INTO RS_SYNC_DATA
+				(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				  , R_SYNC_CULUMN6
+				  , R_SYNC_CULUMN7
+				  , R_SYNC_CULUMN8
+				  , R_SYNC_CULUMN9
+				  , R_SYNC_CULUMN10
+				  , R_SYNC_CULUMN11
+				  , R_SYNC_CULUMN12
+				  , R_SYNC_CULUMN13
+				  , R_SYNC_CULUMN14
+				  , R_SYNC_CULUMN15
+				  , R_SYNC_CULUMN16
+				  , R_SYNC_CULUMN17
+				  , R_SYNC_CULUMN18
+				  , R_SYNC_CULUMN19
+				  , R_SYNC_CULUMN20
+				  , R_SYNC_CULUMN21
+				  , R_SYNC_CULUMN22
+				  , R_SYNC_CULUMN23
+				  , R_SYNC_CULUMN24
+				  , R_SYNC_CULUMN25
+				  , R_SYNC_CULUMN26
+				  , R_SYNC_CULUMN27
+				  , R_SYNC_CULUMN28
+				  , R_SYNC_CULUMN29
+				  , R_SYNC_CULUMN30
+				  , R_SYNC_CULUMN31
+				  , R_SYNC_CULUMN32
+				  , R_SYNC_CULUMN33
+				  , R_SYNC_CULUMN34
+				  , R_SYNC_CULUMN35
+				  , R_SYNC_CULUMN36
+				)
+
+			VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rList1 != null">#{rList1},</if>
+					<if test="rList2 != null">#{rList2},</if>
+					<if test="rList3 != null">#{rList3},</if>
+					<if test="rList4 != null">#{rList4},</if>
+					<if test="rList5 != null">#{rList5},</if>
+					<if test="rList6 != null">#{rList6},</if>
+					<if test="rList7 != null">#{rList7},</if>
+					<if test="rList8 != null">#{rList8},</if>
+					<if test="rList9 != null">#{rList9},</if>
+					<if test="rList10 != null">#{rList10},</if>
+					<if test="rList11 != null">#{rList11},</if>
+					<if test="rList12 != null">#{rList12},</if>
+					<if test="rList13 != null">#{rList13},</if>
+					<if test="rList14 != null">#{rList14},</if>
+					<if test="rList15 != null">#{rList15},</if>
+					<if test="rList16 != null">#{rList16},</if>
+					<if test="rList17 != null">#{rList17},</if>
+					<if test="rList18 != null">#{rList18},</if>
+					<if test="rList19 != null">#{rList19},</if>
+					<if test="rList20 != null">#{rList20},</if>
+					<if test="rList21 != null">#{rList21},</if>
+					<if test="rList22 != null">#{rList22},</if>
+					<if test="rList23 != null">#{rList23},</if>
+					<if test="rList24 != null">#{rList24},</if>
+					<if test="rList25 != null">#{rList25},</if>
+					<if test="rList26 != null">#{rList26},</if>
+					<if test="rList27 != null">#{rList27},</if>
+					<if test="rList28 != null">#{rList28},</if>
+					<if test="rList29 != null">#{rList29},</if>
+					<if test="rList30 != null">#{rList30},</if>
+					<if test="rList26 != null">#{rList31},</if>
+					<if test="rList27 != null">#{rList32},</if>
+					<if test="rList28 != null">#{rList33},</if>
+					<if test="rList29 != null">#{rList34},</if>
+					<if test="rList30 != null">#{rList35},</if>
+				</trim>
+			)
+
+	</insert>
+	<insert id="insertCustomizeListInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+	
+		<!-- DECLARE
+  			row_id ROWID;
+		BEGIN
+			INSERT INTO RS_LIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rList1 != null">R_LIST1,</if>
+					<if test="rList2 != null">R_LIST2,</if>
+					<if test="rList3 != null">R_LIST3,</if>
+					<if test="rList4 != null">R_LIST4,</if>
+					<if test="rList5 != null">R_LIST5,</if>
+					<if test="rList6 != null">R_LIST6,</if>
+					<if test="rList7 != null">R_LIST7,</if>
+					<if test="rList8 != null">R_LIST8,</if>
+					<if test="rList9 != null">R_LIST9,</if>
+					<if test="rList10 != null">R_LIST10,</if>
+					<if test="rList11 != null">R_LIST11,</if>
+					<if test="rList12 != null">R_LIST12,</if>
+					<if test="rList13 != null">R_LIST13,</if>
+					<if test="rList14 != null">R_LIST14,</if>
+					<if test="rList15 != null">R_LIST15,</if>
+					<if test="rList16 != null">R_LIST16,</if>
+					<if test="rList17 != null">R_LIST17,</if>
+					<if test="rList18 != null">R_LIST18,</if>
+					<if test="rList19 != null">R_LIST19,</if>
+					<if test="rList20 != null">R_LIST20,</if>
+					<if test="rList21 != null">R_LIST21,</if>
+					<if test="rList22 != null">R_LIST22,</if>
+					<if test="rList23 != null">R_LIST23,</if>
+					<if test="rList24 != null">R_LIST24,</if>
+					<if test="rList25 != null">R_LIST25,</if>
+					<if test="rList26 != null">R_LIST26,</if>
+					<if test="rList27 != null">R_LIST27,</if>
+					<if test="rList28 != null">R_LIST28,</if>
+					<if test="rList29 != null">R_LIST29,</if>
+					<if test="rList30 != null">R_LIST30,</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rList1 != null">#{rList1},</if>
+					<if test="rList2 != null">#{rList2},</if>
+					<if test="rList3 != null">#{rList3},</if>
+					<if test="rList4 != null">#{rList4},</if>
+					<if test="rList5 != null">#{rList5},</if>
+					<if test="rList6 != null">#{rList6},</if>
+					<if test="rList7 != null">#{rList7},</if>
+					<if test="rList8 != null">#{rList8},</if>
+					<if test="rList9 != null">#{rList9},</if>
+					<if test="rList10 != null">#{rList10},</if>
+					<if test="rList11 != null">#{rList11},</if>
+					<if test="rList12 != null">#{rList12},</if>
+					<if test="rList13 != null">#{rList13},</if>
+					<if test="rList14 != null">#{rList14},</if>
+					<if test="rList15 != null">#{rList15},</if>
+					<if test="rList16 != null">#{rList16},</if>
+					<if test="rList17 != null">#{rList17},</if>
+					<if test="rList18 != null">#{rList18},</if>
+					<if test="rList19 != null">#{rList19},</if>
+					<if test="rList20 != null">#{rList20},</if>
+					<if test="rList21 != null">#{rList21},</if>
+					<if test="rList22 != null">#{rList22},</if>
+					<if test="rList23 != null">#{rList23},</if>
+					<if test="rList24 != null">#{rList24},</if>
+					<if test="rList25 != null">#{rList25},</if>
+					<if test="rList26 != null">#{rList26},</if>
+					<if test="rList27 != null">#{rList27},</if>
+					<if test="rList28 != null">#{rList28},</if>
+					<if test="rList29 != null">#{rList29},</if>
+					<if test="rList30 != null">#{rList30},</if>
+				</trim>
+			)
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			    <if test="rUserId != null">	  , R_SYNC_CULUMN1		</if>
+	            <if test="rList1  != null">	  , R_SYNC_CULUMN2		</if>
+	            <if test="rList2  != null">	  , R_SYNC_CULUMN3		</if>
+	            <if test="rList3  != null">	  , R_SYNC_CULUMN4		</if>
+	            <if test="rList4  != null">	  , R_SYNC_CULUMN5		</if>
+	            <if test="rList5  != null">	  , R_SYNC_CULUMN6		</if>
+	            <if test="rList6  != null">	  , R_SYNC_CULUMN7		</if>
+	            <if test="rList7  != null">	  , R_SYNC_CULUMN8		</if>
+	            <if test="rList8  != null">	  , R_SYNC_CULUMN9		</if>
+	            <if test="rList9  != null">	  , R_SYNC_CULUMN10		</if>
+	            <if test="rList10 != null">	  , R_SYNC_CULUMN11		</if>
+	            <if test="rList11 != null">	  , R_SYNC_CULUMN12		</if>
+	            <if test="rList12 != null">	  , R_SYNC_CULUMN13		</if>
+	            <if test="rList13 != null">	  , R_SYNC_CULUMN14		</if>
+	            <if test="rList14 != null">	  , R_SYNC_CULUMN15		</if>
+	            <if test="rList15 != null">	  , R_SYNC_CULUMN16		</if>
+	            <if test="rList16 != null">	  , R_SYNC_CULUMN17		</if>
+	            <if test="rList17 != null">	  , R_SYNC_CULUMN18		</if>
+	            <if test="rList18 != null">	  , R_SYNC_CULUMN19		</if>
+	            <if test="rList19 != null">	  , R_SYNC_CULUMN20		</if>
+	            <if test="rList20 != null">	  , R_SYNC_CULUMN21		</if>
+	            <if test="rList21 != null">	  , R_SYNC_CULUMN22		</if>
+	            <if test="rList22 != null">	  , R_SYNC_CULUMN23		</if>
+	            <if test="rList23 != null">	  , R_SYNC_CULUMN24		</if>
+	            <if test="rList24 != null">	  , R_SYNC_CULUMN25		</if>
+	            <if test="rList25 != null">	  , R_SYNC_CULUMN26		</if>
+	            <if test="rList26 != null">	  , R_SYNC_CULUMN27		</if>
+	            <if test="rList27 != null">	  , R_SYNC_CULUMN28		</if>
+	            <if test="rList28 != null">	  , R_SYNC_CULUMN29		</if>
+	            <if test="rList29 != null">	  , R_SYNC_CULUMN30		</if>
+	
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'C'
+		 	,	'rs_list_setting'
+		 	<if test="rUserId != null">	,	LS.R_USER_ID</if>
+	        <if test="rList1  != null">	,	LS.R_LIST1	</if>
+	        <if test="rList2  != null">	,	LS.R_LIST2	</if>
+	        <if test="rList3  != null">	,	LS.R_LIST3	</if>
+	        <if test="rList4  != null">	,	LS.R_LIST4	</if>
+	        <if test="rList5  != null">	,	LS.R_LIST5	</if>
+	        <if test="rList6  != null">	,	LS.R_LIST6	</if>
+	        <if test="rList7  != null">	,	LS.R_LIST7	</if>
+	        <if test="rList8  != null">	,	LS.R_LIST8	</if>
+	        <if test="rList9  != null">	,	LS.R_LIST9	</if>
+	        <if test="rList10 != null">	,	LS.R_LIST10	</if>
+	        <if test="rList11 != null">	,	LS.R_LIST11	</if>
+	        <if test="rList12 != null">	,	LS.R_LIST12	</if>
+	        <if test="rList13 != null">	,	LS.R_LIST13	</if>
+	        <if test="rList14 != null">	,	LS.R_LIST14	</if>
+	        <if test="rList15 != null">	,	LS.R_LIST15	</if>
+	        <if test="rList16 != null">	,	LS.R_LIST16	</if>
+	        <if test="rList17 != null">	,	LS.R_LIST17	</if>
+	        <if test="rList18 != null">	,	LS.R_LIST18	</if>
+	        <if test="rList19 != null">	,	LS.R_LIST19	</if>
+	        <if test="rList20 != null">	,	LS.R_LIST20	</if>
+	        <if test="rList21 != null">	,	LS.R_LIST21	</if>
+	        <if test="rList22 != null">	,	LS.R_LIST22	</if>
+	        <if test="rList23 != null">	,	LS.R_LIST23	</if>
+	        <if test="rList24 != null">	,	LS.R_LIST24	</if>
+	        <if test="rList25 != null">	,	LS.R_LIST25	</if>
+	        <if test="rList26 != null">	,	LS.R_LIST26	</if>
+	        <if test="rList27 != null">	,	LS.R_LIST27	</if>
+	        <if test="rList28 != null">	,	LS.R_LIST28	</if>
+	        <if test="rList29 != null">	,	LS.R_LIST29	</if>
+	        <if test="rList30 != null">	,	LS.R_LIST30	</if>
+			
+			FROM DUAL, RS_LIST_SETTING LS
+	        WHERE LS.ROWID = row_id;
+        
+        END; -->
+        INSERT INTO RS_LIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rList1 != null">R_LIST1,</if>
+					<if test="rList2 != null">R_LIST2,</if>
+					<if test="rList3 != null">R_LIST3,</if>
+					<if test="rList4 != null">R_LIST4,</if>
+					<if test="rList5 != null">R_LIST5,</if>
+					<if test="rList6 != null">R_LIST6,</if>
+					<if test="rList7 != null">R_LIST7,</if>
+					<if test="rList8 != null">R_LIST8,</if>
+					<if test="rList9 != null">R_LIST9,</if>
+					<if test="rList10 != null">R_LIST10,</if>
+					<if test="rList11 != null">R_LIST11,</if>
+					<if test="rList12 != null">R_LIST12,</if>
+					<if test="rList13 != null">R_LIST13,</if>
+					<if test="rList14 != null">R_LIST14,</if>
+					<if test="rList15 != null">R_LIST15,</if>
+					<if test="rList16 != null">R_LIST16,</if>
+					<if test="rList17 != null">R_LIST17,</if>
+					<if test="rList18 != null">R_LIST18,</if>
+					<if test="rList19 != null">R_LIST19,</if>
+					<if test="rList20 != null">R_LIST20,</if>
+					<if test="rList21 != null">R_LIST21,</if>
+					<if test="rList22 != null">R_LIST22,</if>
+					<if test="rList23 != null">R_LIST23,</if>
+					<if test="rList24 != null">R_LIST24,</if>
+					<if test="rList25 != null">R_LIST25,</if>
+					<if test="rList26 != null">R_LIST26,</if>
+					<if test="rList27 != null">R_LIST27,</if>
+					<if test="rList28 != null">R_LIST28,</if>
+					<if test="rList29 != null">R_LIST29,</if>
+					<if test="rList30 != null">R_LIST30,</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rList1 != null">#{rList1},</if>
+					<if test="rList2 != null">#{rList2},</if>
+					<if test="rList3 != null">#{rList3},</if>
+					<if test="rList4 != null">#{rList4},</if>
+					<if test="rList5 != null">#{rList5},</if>
+					<if test="rList6 != null">#{rList6},</if>
+					<if test="rList7 != null">#{rList7},</if>
+					<if test="rList8 != null">#{rList8},</if>
+					<if test="rList9 != null">#{rList9},</if>
+					<if test="rList10 != null">#{rList10},</if>
+					<if test="rList11 != null">#{rList11},</if>
+					<if test="rList12 != null">#{rList12},</if>
+					<if test="rList13 != null">#{rList13},</if>
+					<if test="rList14 != null">#{rList14},</if>
+					<if test="rList15 != null">#{rList15},</if>
+					<if test="rList16 != null">#{rList16},</if>
+					<if test="rList17 != null">#{rList17},</if>
+					<if test="rList18 != null">#{rList18},</if>
+					<if test="rList19 != null">#{rList19},</if>
+					<if test="rList20 != null">#{rList20},</if>
+					<if test="rList21 != null">#{rList21},</if>
+					<if test="rList22 != null">#{rList22},</if>
+					<if test="rList23 != null">#{rList23},</if>
+					<if test="rList24 != null">#{rList24},</if>
+					<if test="rList25 != null">#{rList25},</if>
+					<if test="rList26 != null">#{rList26},</if>
+					<if test="rList27 != null">#{rList27},</if>
+					<if test="rList28 != null">#{rList28},</if>
+					<if test="rList29 != null">#{rList29},</if>
+					<if test="rList30 != null">#{rList30},</if>
+				</trim>
+			)
+	</insert>
+	
+	<update id="updateCustomizeListInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+			UPDATE RS_LIST_SETTING
+			<set>
+				<if test="rList1 != null">R_LIST1 = #{rList1},</if>
+				<if test="rList2 != null">R_LIST2 = #{rList2},</if>
+				<if test="rList3 != null">R_LIST3 = #{rList3},</if>
+				<if test="rList4 != null">R_LIST4 = #{rList4},</if>
+				<if test="rList5 != null">R_LIST5 = #{rList5},</if>
+				<if test="rList6 != null">R_LIST6 = #{rList6},</if>
+				<if test="rList7 != null">R_LIST7 = #{rList7},</if>
+				<if test="rList8 != null">R_LIST8 = #{rList8},</if>
+				<if test="rList9 != null">R_LIST9 = #{rList9},</if>
+				<if test="rList10 != null">R_LIST10 = #{rList10},</if>
+				<if test="rList11 != null">R_LIST11 = #{rList11},</if>
+				<if test="rList12 != null">R_LIST12 = #{rList12},</if>
+				<if test="rList13 != null">R_LIST13 = #{rList13},</if>
+				<if test="rList14 != null">R_LIST14 = #{rList14},</if>
+				<if test="rList15 != null">R_LIST15 = #{rList15},</if>
+				<if test="rList16 != null">R_LIST16 = #{rList16},</if>
+				<if test="rList17 != null">R_LIST17 = #{rList17},</if>
+				<if test="rList18 != null">R_LIST18 = #{rList18},</if>
+				<if test="rList19 != null">R_LIST19 = #{rList19},</if>
+				<if test="rList20 != null">R_LIST20 = #{rList20},</if>
+				<if test="rList21 != null">R_LIST21 = #{rList21},</if>
+				<if test="rList22 != null">R_LIST22 = #{rList22},</if>
+				<if test="rList23 != null">R_LIST23 = #{rList23},</if>
+				<if test="rList24 != null">R_LIST24 = #{rList24},</if>
+				<if test="rList25 != null">R_LIST25 = #{rList25},</if>
+				<if test="rList26 != null">R_LIST26 = #{rList26},</if>
+				<if test="rList27 != null">R_LIST27 = #{rList27},</if>
+				<if test="rList28 != null">R_LIST28 = #{rList28},</if>
+				<if test="rList29 != null">R_LIST29 = #{rList29},</if>
+				<if test="rList30 != null">R_LIST30 = #{rList30},</if>
+				<if test="rList31 != null">R_LIST31 = #{rList31},</if>
+				<if test="rList32 != null">R_LIST32 = #{rList32},</if>
+				<if test="rList33 != null">R_LIST33 = #{rList33},</if>
+				<if test="rList34 != null">R_LIST34 = #{rList34},</if>
+				<if test="rList35 != null">R_LIST35 = #{rList35},</if>
+			</set>
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>	
+	</update>
+	<update id="updateCustomizeListInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+
+			UPDATE RS_LIST_SETTING
+			<set>
+				<if test="rList1 != null">R_LIST1 = #{rList1},</if>
+				<if test="rList2 != null">R_LIST2 = #{rList2},</if>
+				<if test="rList3 != null">R_LIST3 = #{rList3},</if>
+				<if test="rList4 != null">R_LIST4 = #{rList4},</if>
+				<if test="rList5 != null">R_LIST5 = #{rList5},</if>
+				<if test="rList6 != null">R_LIST6 = #{rList6},</if>
+				<if test="rList7 != null">R_LIST7 = #{rList7},</if>
+				<if test="rList8 != null">R_LIST8 = #{rList8},</if>
+				<if test="rList9 != null">R_LIST9 = #{rList9},</if>
+				<if test="rList10 != null">R_LIST10 = #{rList10},</if>
+				<if test="rList11 != null">R_LIST11 = #{rList11},</if>
+				<if test="rList12 != null">R_LIST12 = #{rList12},</if>
+				<if test="rList13 != null">R_LIST13 = #{rList13},</if>
+				<if test="rList14 != null">R_LIST14 = #{rList14},</if>
+				<if test="rList15 != null">R_LIST15 = #{rList15},</if>
+				<if test="rList16 != null">R_LIST16 = #{rList16},</if>
+				<if test="rList17 != null">R_LIST17 = #{rList17},</if>
+				<if test="rList18 != null">R_LIST18 = #{rList18},</if>
+				<if test="rList19 != null">R_LIST19 = #{rList19},</if>
+				<if test="rList20 != null">R_LIST20 = #{rList20},</if>
+				<if test="rList21 != null">R_LIST21 = #{rList21},</if>
+				<if test="rList22 != null">R_LIST22 = #{rList22},</if>
+				<if test="rList23 != null">R_LIST23 = #{rList23},</if>
+				<if test="rList24 != null">R_LIST24 = #{rList24},</if>
+				<if test="rList25 != null">R_LIST25 = #{rList25},</if>
+				<if test="rList26 != null">R_LIST26 = #{rList26},</if>
+				<if test="rList27 != null">R_LIST27 = #{rList27},</if>
+				<if test="rList28 != null">R_LIST28 = #{rList28},</if>
+				<if test="rList29 != null">R_LIST29 = #{rList29},</if>
+				<if test="rList30 != null">R_LIST30 = #{rList30},</if>
+				<if test="rList26 != null">R_LIST31 = #{rList31},</if>
+				<if test="rList27 != null">R_LIST32 = #{rList32},</if>
+				<if test="rList28 != null">R_LIST33 = #{rList33},</if>
+				<if test="rList29 != null">R_LIST34 = #{rList34},</if>
+				<if test="rList30 != null">R_LIST35 = #{rList35},</if>
+			</set>
+
+			OUTPUT
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_list_setting'
+		 	,	INSERTED.R_USER_ID
+			,	INSERTED.R_LIST1
+			,	INSERTED.R_LIST2
+			,	INSERTED.R_LIST3
+			,	INSERTED.R_LIST4
+			,	INSERTED.R_LIST5
+			,	INSERTED.R_LIST6
+			,	INSERTED.R_LIST7
+			,	INSERTED.R_LIST8
+			,	INSERTED.R_LIST9
+			,	INSERTED.R_LIST10
+			,	INSERTED.R_LIST11
+			,	INSERTED.R_LIST12
+			,	INSERTED.R_LIST13
+			,	INSERTED.R_LIST14
+			,	INSERTED.R_LIST15
+			,	INSERTED.R_LIST16
+			,	INSERTED.R_LIST17
+			,	INSERTED.R_LIST18
+			,	INSERTED.R_LIST19
+			,	INSERTED.R_LIST20
+			,	INSERTED.R_LIST21
+			,	INSERTED.R_LIST22
+			,	INSERTED.R_LIST23
+			,	INSERTED.R_LIST24
+			,	INSERTED.R_LIST25
+			,	INSERTED.R_LIST26
+			,	INSERTED.R_LIST27
+			,	INSERTED.R_LIST28
+			,	INSERTED.R_LIST29
+			,	INSERTED.R_LIST30
+			,	INSERTED.R_LIST31
+			,	INSERTED.R_LIST32
+			,	INSERTED.R_LIST33
+			,	INSERTED.R_LIST34
+			,	INSERTED.R_LIST35
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			  , R_SYNC_CULUMN35
+			  , R_SYNC_CULUMN36
+			)
+
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+
+	</update>
+	<update id="updateCustomizeListInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+		<!-- DECLARE
+ 		 row_id ROWID;
+		BEGIN
+			UPDATE RS_LIST_SETTING
+			<set>
+				<if test="rList1 != null">R_LIST1 = #{rList1},</if>
+				<if test="rList2 != null">R_LIST2 = #{rList2},</if>
+				<if test="rList3 != null">R_LIST3 = #{rList3},</if>
+				<if test="rList4 != null">R_LIST4 = #{rList4},</if>
+				<if test="rList5 != null">R_LIST5 = #{rList5},</if>
+				<if test="rList6 != null">R_LIST6 = #{rList6},</if>
+				<if test="rList7 != null">R_LIST7 = #{rList7},</if>
+				<if test="rList8 != null">R_LIST8 = #{rList8},</if>
+				<if test="rList9 != null">R_LIST9 = #{rList9},</if>
+				<if test="rList10 != null">R_LIST10 = #{rList10},</if>
+				<if test="rList11 != null">R_LIST11 = #{rList11},</if>
+				<if test="rList12 != null">R_LIST12 = #{rList12},</if>
+				<if test="rList13 != null">R_LIST13 = #{rList13},</if>
+				<if test="rList14 != null">R_LIST14 = #{rList14},</if>
+				<if test="rList15 != null">R_LIST15 = #{rList15},</if>
+				<if test="rList16 != null">R_LIST16 = #{rList16},</if>
+				<if test="rList17 != null">R_LIST17 = #{rList17},</if>
+				<if test="rList18 != null">R_LIST18 = #{rList18},</if>
+				<if test="rList19 != null">R_LIST19 = #{rList19},</if>
+				<if test="rList20 != null">R_LIST20 = #{rList20},</if>
+				<if test="rList21 != null">R_LIST21 = #{rList21},</if>
+				<if test="rList22 != null">R_LIST22 = #{rList22},</if>
+				<if test="rList23 != null">R_LIST23 = #{rList23},</if>
+				<if test="rList24 != null">R_LIST24 = #{rList24},</if>
+				<if test="rList25 != null">R_LIST25 = #{rList25},</if>
+				<if test="rList26 != null">R_LIST26 = #{rList26},</if>
+				<if test="rList27 != null">R_LIST27 = #{rList27},</if>
+				<if test="rList28 != null">R_LIST28 = #{rList28},</if>
+				<if test="rList29 != null">R_LIST29 = #{rList29},</if>
+				<if test="rList30 != null">R_LIST30 = #{rList30},</if>
+			</set>
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			  , R_SYNC_CULUMN35
+			  , R_SYNC_CULUMN36
+			)
+			  SELECT 
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'U'
+			 	,	'rs_list_setting'
+			 	,	LS.R_USER_ID
+				,	LS.R_LIST1
+				,	LS.R_LIST2
+				,	LS.R_LIST3
+				,	LS.R_LIST4
+				,	LS.R_LIST5
+				,	LS.R_LIST6
+				,	LS.R_LIST7
+				,	LS.R_LIST8
+				,	LS.R_LIST9
+				,	LS.R_LIST10
+				,	LS.R_LIST11
+				,	LS.R_LIST12
+				,	LS.R_LIST13
+				,	LS.R_LIST14
+				,	LS.R_LIST15
+				,	LS.R_LIST16
+				,	LS.R_LIST17
+				,	LS.R_LIST18
+				,	LS.R_LIST19
+				,	LS.R_LIST20
+				,	LS.R_LIST21
+				,	LS.R_LIST22
+				,	LS.R_LIST23
+				,	LS.R_LIST24
+				,	LS.R_LIST25
+				,	LS.R_LIST26
+				,	LS.R_LIST27
+				,	LS.R_LIST28
+				,	LS.R_LIST29
+				,	LS.R_LIST30
+				,	LS.R_LIST31
+				,	LS.R_LIST32
+				,	LS.R_LIST33
+				,	LS.R_LIST34
+				,	LS.R_LIST35
+		    
+		        FROM DUAL, RS_LIST_SETTING LS
+		        WHERE LS.ROWID = row_id;
+		        
+		    END; -->
+	</update>
+	
+	<delete id="deleteCustomizeListInfo" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+		DELETE FROM RS_LIST_SETTING
+		<where>
+			<if test="rUserId != null">R_USER_ID = #{rUserId}</if>
+		</where>
+	</delete>
+	
+	<select id="selectCustomizeItemInfo" parameterType="com.furence.recsee.admin.model.CustomizeListInfo"  resultMap="SearchResultMap">
+		SELECT * FROM RS_SEARCH_SETTING
+		<where>
+			R_USER_ID = #{rUserId}
+		</where>
+	</select>
+	<insert id="insertCustomizeItemInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+			INSERT INTO RS_SEARCH_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rSearch1 != null">R_SEARCH1,</if>
+					<if test="rSearch2 != null">R_SEARCH2,</if>
+					<if test="rSearch3 != null">R_SEARCH3,</if>
+					<if test="rSearch4 != null">R_SEARCH4,</if>
+					<if test="rSearch5 != null">R_SEARCH5,</if>
+					<if test="rSearch6 != null">R_SEARCH6,</if>
+					<if test="rSearch7 != null">R_SEARCH7,</if>
+					<if test="rSearch8 != null">R_SEARCH8,</if>
+					<if test="rSearch9 != null">R_SEARCH9,</if>
+					<if test="rSearch10 != null">R_SEARCH10,</if>
+					<if test="rSearch11 != null">R_SEARCH11,</if>
+					<if test="rSearch12 != null">R_SEARCH12,</if>
+					<if test="rSearch13 != null">R_SEARCH13,</if>
+					<if test="rSearch14 != null">R_SEARCH14,</if>
+					<if test="rSearch15 != null">R_SEARCH15,</if>
+					<if test="rSearch16 != null">R_SEARCH16,</if>
+					<if test="rSearch17 != null">R_SEARCH17,</if>
+					<if test="rSearch18 != null">R_SEARCH18,</if>
+					<if test="rSearch19 != null">R_SEARCH19,</if>
+					<if test="rSearch20 != null">R_SEARCH20,</if>
+					<if test="rSearch21 != null">R_SEARCH21,</if>
+					<if test="rSearch22 != null">R_SEARCH22,</if>
+					<if test="rSearch23 != null">R_SEARCH23,</if>
+					<if test="rSearch24 != null">R_SEARCH24,</if>
+					<if test="rSearch25 != null">R_SEARCH25,</if>
+					<if test="rSearch26 != null">R_SEARCH26,</if>
+					<if test="rSearch27 != null">R_SEARCH27,</if>
+					<if test="rSearch28 != null">R_SEARCH28,</if>
+					<if test="rSearch29 != null">R_SEARCH29,</if>
+					<if test="rSearch30 != null">R_SEARCH30,</if>
+					<if test="rSearch31 != null">R_SEARCH31,</if>
+					<if test="rSearch32 != null">R_SEARCH32,</if>
+					<if test="rSearch33 != null">R_SEARCH33,</if>
+					<if test="rSearch34 != null">R_SEARCH34,</if>
+					<if test="rSearch35 != null">R_SEARCH35,</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rSearch1 != null">#{rSearch1},</if>
+					<if test="rSearch2 != null">#{rSearch2},</if>
+					<if test="rSearch3 != null">#{rSearch3},</if>
+					<if test="rSearch4 != null">#{rSearch4},</if>
+					<if test="rSearch5 != null">#{rSearch5},</if>
+					<if test="rSearch6 != null">#{rSearch6},</if>
+					<if test="rSearch7 != null">#{rSearch7},</if>
+					<if test="rSearch8 != null">#{rSearch8},</if>
+					<if test="rSearch9 != null">#{rSearch9},</if>
+					<if test="rSearch10 != null">#{rSearch10},</if>
+					<if test="rSearch11 != null">#{rSearch11},</if>
+					<if test="rSearch12 != null">#{rSearch12},</if>
+					<if test="rSearch13 != null">#{rSearch13},</if>
+					<if test="rSearch14 != null">#{rSearch14},</if>
+					<if test="rSearch15 != null">#{rSearch15},</if>
+					<if test="rSearch16 != null">#{rSearch16},</if>
+					<if test="rSearch17 != null">#{rSearch17},</if>
+					<if test="rSearch18 != null">#{rSearch18},</if>
+					<if test="rSearch19 != null">#{rSearch19},</if>
+					<if test="rSearch20 != null">#{rSearch20},</if>
+					<if test="rSearch21 != null">#{rSearch21},</if>
+					<if test="rSearch22 != null">#{rSearch22},</if>
+					<if test="rSearch23 != null">#{rSearch23},</if>
+					<if test="rSearch24 != null">#{rSearch24},</if>
+					<if test="rSearch25 != null">#{rSearch25},</if>
+					<if test="rSearch26 != null">#{rSearch26},</if>
+					<if test="rSearch27 != null">#{rSearch27},</if>
+					<if test="rSearch28 != null">#{rSearch28},</if>
+					<if test="rSearch29 != null">#{rSearch29},</if>
+					<if test="rSearch30 != null">#{rSearch30},</if>
+					<if test="rSearch31 != null">#{rSearch31},</if>
+					<if test="rSearch32 != null">#{rSearch32},</if>
+					<if test="rSearch33 != null">#{rSearch33},</if>
+					<if test="rSearch34 != null">#{rSearch34},</if>
+					<if test="rSearch35 != null">#{rSearch35},</if>
+				</trim>
+			)			
+
+	</insert>
+	<insert id="insertCustomizeItemInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+
+			INSERT INTO RS_SEARCH_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rSearch1 != null">R_SEARCH1,</if>
+					<if test="rSearch2 != null">R_SEARCH2,</if>
+					<if test="rSearch3 != null">R_SEARCH3,</if>
+					<if test="rSearch4 != null">R_SEARCH4,</if>
+					<if test="rSearch5 != null">R_SEARCH5,</if>
+					<if test="rSearch6 != null">R_SEARCH6,</if>
+					<if test="rSearch7 != null">R_SEARCH7,</if>
+					<if test="rSearch8 != null">R_SEARCH8,</if>
+					<if test="rSearch9 != null">R_SEARCH9,</if>
+					<if test="rSearch10 != null">R_SEARCH10,</if>
+					<if test="rSearch11 != null">R_SEARCH11,</if>
+					<if test="rSearch12 != null">R_SEARCH12,</if>
+					<if test="rSearch13 != null">R_SEARCH13,</if>
+					<if test="rSearch14 != null">R_SEARCH14,</if>
+					<if test="rSearch15 != null">R_SEARCH15,</if>
+					<if test="rSearch16 != null">R_SEARCH16,</if>
+					<if test="rSearch17 != null">R_SEARCH17,</if>
+					<if test="rSearch18 != null">R_SEARCH18,</if>
+					<if test="rSearch19 != null">R_SEARCH19,</if>
+					<if test="rSearch20 != null">R_SEARCH20,</if>
+					<if test="rSearch21 != null">R_SEARCH21,</if>
+					<if test="rSearch22 != null">R_SEARCH22,</if>
+					<if test="rSearch23 != null">R_SEARCH23,</if>
+					<if test="rSearch24 != null">R_SEARCH24,</if>
+					<if test="rSearch25 != null">R_SEARCH25,</if>
+					<if test="rSearch26 != null">R_SEARCH26,</if>
+					<if test="rSearch27 != null">R_SEARCH27,</if>
+					<if test="rSearch28 != null">R_SEARCH28,</if>
+					<if test="rSearch29 != null">R_SEARCH29,</if>
+					<if test="rSearch30 != null">R_SEARCH30,</if>
+					<if test="rSearch31 != null">R_SEARCH31,</if>
+					<if test="rSearch32 != null">R_SEARCH32,</if>
+					<if test="rSearch33 != null">R_SEARCH33,</if>
+					<if test="rSearch34 != null">R_SEARCH34,</if>
+					<if test="rSearch35 != null">R_SEARCH35,</if>
+				</trim>
+			)
+
+			OUTPUT
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'C'
+		 	,	'rs_search_setting'
+		 	,	INSERTED.R_USER_ID
+			,	INSERTED.R_SEARCH1
+			,	INSERTED.R_SEARCH2
+			,	INSERTED.R_SEARCH3
+			,	INSERTED.R_SEARCH4
+			,	INSERTED.R_SEARCH5
+			,	INSERTED.R_SEARCH6
+			,	INSERTED.R_SEARCH7
+			,	INSERTED.R_SEARCH8
+			,	INSERTED.R_SEARCH9
+			,	INSERTED.R_SEARCH10
+			,	INSERTED.R_SEARCH11
+			,	INSERTED.R_SEARCH12
+			,	INSERTED.R_SEARCH13
+			,	INSERTED.R_SEARCH14
+			,	INSERTED.R_SEARCH15
+			,	INSERTED.R_SEARCH16
+			,	INSERTED.R_SEARCH17
+			,	INSERTED.R_SEARCH18
+			,	INSERTED.R_SEARCH19
+			,	INSERTED.R_SEARCH20
+			,	INSERTED.R_SEARCH21
+			,	INSERTED.R_SEARCH22
+			,	INSERTED.R_SEARCH23
+			,	INSERTED.R_SEARCH24
+			,	INSERTED.R_SEARCH25
+			,	INSERTED.R_SEARCH26
+			,	INSERTED.R_SEARCH27
+			,	INSERTED.R_SEARCH28
+			,	INSERTED.R_SEARCH29
+			,	INSERTED.R_SEARCH30
+			,	INSERTED.R_SEARCH31
+			,	INSERTED.R_SEARCH32
+			,	INSERTED.R_SEARCH33
+			,	INSERTED.R_SEARCH34
+			,	INSERTED.R_SEARCH35
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			  , R_SYNC_CULUMN35
+			  , R_SYNC_CULUMN36
+			)
+			VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rSearch1 != null">#{rSearch1},</if>
+					<if test="rSearch2 != null">#{rSearch2},</if>
+					<if test="rSearch3 != null">#{rSearch3},</if>
+					<if test="rSearch4 != null">#{rSearch4},</if>
+					<if test="rSearch5 != null">#{rSearch5},</if>
+					<if test="rSearch6 != null">#{rSearch6},</if>
+					<if test="rSearch7 != null">#{rSearch7},</if>
+					<if test="rSearch8 != null">#{rSearch8},</if>
+					<if test="rSearch9 != null">#{rSearch9},</if>
+					<if test="rSearch10 != null">#{rSearch10},</if>
+					<if test="rSearch11 != null">#{rSearch11},</if>
+					<if test="rSearch12 != null">#{rSearch12},</if>
+					<if test="rSearch13 != null">#{rSearch13},</if>
+					<if test="rSearch14 != null">#{rSearch14},</if>
+					<if test="rSearch15 != null">#{rSearch15},</if>
+					<if test="rSearch16 != null">#{rSearch16},</if>
+					<if test="rSearch17 != null">#{rSearch17},</if>
+					<if test="rSearch18 != null">#{rSearch18},</if>
+					<if test="rSearch19 != null">#{rSearch19},</if>
+					<if test="rSearch20 != null">#{rSearch20},</if>
+					<if test="rSearch21 != null">#{rSearch21},</if>
+					<if test="rSearch22 != null">#{rSearch22},</if>
+					<if test="rSearch23 != null">#{rSearch23},</if>
+					<if test="rSearch24 != null">#{rSearch24},</if>
+					<if test="rSearch25 != null">#{rSearch25},</if>
+					<if test="rSearch26 != null">#{rSearch26},</if>
+					<if test="rSearch27 != null">#{rSearch27},</if>
+					<if test="rSearch28 != null">#{rSearch28},</if>
+					<if test="rSearch29 != null">#{rSearch29},</if>
+					<if test="rSearch30 != null">#{rSearch30},</if>
+					<if test="rSearch31 != null">#{rSearch31},</if>
+					<if test="rSearch32 != null">#{rSearch32},</if>
+					<if test="rSearch33 != null">#{rSearch33},</if>
+					<if test="rSearch34 != null">#{rSearch34},</if>
+					<if test="rSearch35 != null">#{rSearch35},</if>
+				</trim>
+			)
+	</insert>
+	<insert id="insertCustomizeItemInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.CustomizeListInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			INSERT INTO RS_SEARCH_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rSearch1 != null">R_SEARCH1,</if>
+					<if test="rSearch2 != null">R_SEARCH2,</if>
+					<if test="rSearch3 != null">R_SEARCH3,</if>
+					<if test="rSearch4 != null">R_SEARCH4,</if>
+					<if test="rSearch5 != null">R_SEARCH5,</if>
+					<if test="rSearch6 != null">R_SEARCH6,</if>
+					<if test="rSearch7 != null">R_SEARCH7,</if>
+					<if test="rSearch8 != null">R_SEARCH8,</if>
+					<if test="rSearch9 != null">R_SEARCH9,</if>
+					<if test="rSearch10 != null">R_SEARCH10,</if>
+					<if test="rSearch11 != null">R_SEARCH11,</if>
+					<if test="rSearch12 != null">R_SEARCH12,</if>
+					<if test="rSearch13 != null">R_SEARCH13,</if>
+					<if test="rSearch14 != null">R_SEARCH14,</if>
+					<if test="rSearch15 != null">R_SEARCH15,</if>
+					<if test="rSearch16 != null">R_SEARCH16,</if>
+					<if test="rSearch17 != null">R_SEARCH17,</if>
+					<if test="rSearch18 != null">R_SEARCH18,</if>
+					<if test="rSearch19 != null">R_SEARCH19,</if>
+					<if test="rSearch20 != null">R_SEARCH20,</if>
+					<if test="rSearch21 != null">R_SEARCH21,</if>
+					<if test="rSearch22 != null">R_SEARCH22,</if>
+					<if test="rSearch23 != null">R_SEARCH23,</if>
+					<if test="rSearch24 != null">R_SEARCH24,</if>
+					<if test="rSearch25 != null">R_SEARCH25,</if>
+					<if test="rSearch26 != null">R_SEARCH26,</if>
+					<if test="rSearch27 != null">R_SEARCH27,</if>
+					<if test="rSearch28 != null">R_SEARCH28,</if>
+					<if test="rSearch29 != null">R_SEARCH29,</if>
+					<if test="rSearch30 != null">R_SEARCH30,</if>
+					<if test="rSearch31 != null">R_SEARCH31,</if>
+					<if test="rSearch32 != null">R_SEARCH32,</if>
+					<if test="rSearch33 != null">R_SEARCH33,</if>
+					<if test="rSearch34 != null">R_SEARCH34,</if>
+					<if test="rSearch35 != null">R_SEARCH35,</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rSearch1 != null">#{rSearch1},</if>
+					<if test="rSearch2 != null">#{rSearch2},</if>
+					<if test="rSearch3 != null">#{rSearch3},</if>
+					<if test="rSearch4 != null">#{rSearch4},</if>
+					<if test="rSearch5 != null">#{rSearch5},</if>
+					<if test="rSearch6 != null">#{rSearch6},</if>
+					<if test="rSearch7 != null">#{rSearch7},</if>
+					<if test="rSearch8 != null">#{rSearch8},</if>
+					<if test="rSearch9 != null">#{rSearch9},</if>
+					<if test="rSearch10 != null">#{rSearch10},</if>
+					<if test="rSearch11 != null">#{rSearch11},</if>
+					<if test="rSearch12 != null">#{rSearch12},</if>
+					<if test="rSearch13 != null">#{rSearch13},</if>
+					<if test="rSearch14 != null">#{rSearch14},</if>
+					<if test="rSearch15 != null">#{rSearch15},</if>
+					<if test="rSearch16 != null">#{rSearch16},</if>
+					<if test="rSearch17 != null">#{rSearch17},</if>
+					<if test="rSearch18 != null">#{rSearch18},</if>
+					<if test="rSearch19 != null">#{rSearch19},</if>
+					<if test="rSearch20 != null">#{rSearch20},</if>
+					<if test="rSearch21 != null">#{rSearch21},</if>
+					<if test="rSearch22 != null">#{rSearch22},</if>
+					<if test="rSearch23 != null">#{rSearch23},</if>
+					<if test="rSearch24 != null">#{rSearch24},</if>
+					<if test="rSearch25 != null">#{rSearch25},</if>
+					<if test="rSearch26 != null">#{rSearch26},</if>
+					<if test="rSearch27 != null">#{rSearch27},</if>
+					<if test="rSearch28 != null">#{rSearch28},</if>
+					<if test="rSearch29 != null">#{rSearch29},</if>
+					<if test="rSearch30 != null">#{rSearch30},</if>
+					<if test="rSearch31 != null">#{rSearch31},</if>
+					<if test="rSearch32 != null">#{rSearch32},</if>
+					<if test="rSearch33 != null">#{rSearch33},</if>
+					<if test="rSearch34 != null">#{rSearch34},</if>
+					<if test="rSearch35 != null">#{rSearch35},</if>
+				</trim>
+			)
+			RETURNING ROWID INTO row_id;
+		
+        
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			    <if test="rUserId   != null">			  , R_SYNC_CULUMN1	</if>
+	            <if test="rSearch1  != null">			  , R_SYNC_CULUMN2	</if>
+	            <if test="rSearch2  != null">			  , R_SYNC_CULUMN3	</if>
+	            <if test="rSearch3  != null">			  , R_SYNC_CULUMN4	</if>
+	            <if test="rSearch4  != null">			  , R_SYNC_CULUMN5	</if>
+	            <if test="rSearch5  != null">			  , R_SYNC_CULUMN6	</if>
+	            <if test="rSearch6  != null">			  , R_SYNC_CULUMN7	</if>
+	            <if test="rSearch7  != null">			  , R_SYNC_CULUMN8	</if>
+	            <if test="rSearch8  != null">			  , R_SYNC_CULUMN9	</if>
+	            <if test="rSearch9  != null">			  , R_SYNC_CULUMN10	</if>
+	            <if test="rSearch10 != null">			  , R_SYNC_CULUMN11	</if>
+	            <if test="rSearch11 != null">			  , R_SYNC_CULUMN12	</if>
+	            <if test="rSearch12 != null">			  , R_SYNC_CULUMN13	</if>
+	            <if test="rSearch13 != null">			  , R_SYNC_CULUMN14	</if>
+	            <if test="rSearch14 != null">			  , R_SYNC_CULUMN15	</if>
+	            <if test="rSearch15 != null">			  , R_SYNC_CULUMN16	</if>
+	            <if test="rSearch16 != null">			  , R_SYNC_CULUMN17	</if>
+	            <if test="rSearch17 != null">			  , R_SYNC_CULUMN18	</if>
+	            <if test="rSearch18 != null">			  , R_SYNC_CULUMN19	</if>
+	            <if test="rSearch19 != null">			  , R_SYNC_CULUMN20	</if>
+	            <if test="rSearch20 != null">			  , R_SYNC_CULUMN21	</if>
+	            <if test="rSearch21 != null">			  , R_SYNC_CULUMN22	</if>
+	            <if test="rSearch22 != null">			  , R_SYNC_CULUMN23	</if>
+	            <if test="rSearch23 != null">			  , R_SYNC_CULUMN24	</if>
+	            <if test="rSearch24 != null">			  , R_SYNC_CULUMN25	</if>
+	            <if test="rSearch25 != null">			  , R_SYNC_CULUMN26	</if>
+	            <if test="rSearch26 != null">			  , R_SYNC_CULUMN27	</if>
+	            <if test="rSearch27 != null">			  , R_SYNC_CULUMN28	</if>
+	            <if test="rSearch28 != null">			  , R_SYNC_CULUMN29	</if>
+	            <if test="rSearch29 != null">			  , R_SYNC_CULUMN30	</if>
+	            <if test="rSearch30 != null">			  , R_SYNC_CULUMN31	</if>
+	            <if test="rSearch31 != null">			  , R_SYNC_CULUMN32	</if>
+	            <if test="rSearch32 != null">			  , R_SYNC_CULUMN33	</if>
+	            <if test="rSearch33 != null">			  , R_SYNC_CULUMN34	</if>
+	            <if test="rSearch34 != null">			  , R_SYNC_CULUMN35	</if>
+	            <if test="rSearch35 != null">			  , R_SYNC_CULUMN36	</if>
+	
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'C'
+		 	,	'rs_search_setting'
+		 	<if test="rUserId   != null">	,	SS.R_USER_ID	</if>
+	        <if test="rSearch1  != null">	,	SS.R_SEARCH1	</if>
+	        <if test="rSearch2  != null">	,	SS.R_SEARCH2	</if>
+	        <if test="rSearch3  != null">	,	SS.R_SEARCH3	</if>
+	        <if test="rSearch4  != null">	,	SS.R_SEARCH4	</if>
+	        <if test="rSearch5  != null">	,	SS.R_SEARCH5	</if>
+	        <if test="rSearch6  != null">	,	SS.R_SEARCH6	</if>
+	        <if test="rSearch7  != null">	,	SS.R_SEARCH7	</if>
+	        <if test="rSearch8  != null">	,	SS.R_SEARCH8	</if>
+	        <if test="rSearch9  != null">	,	SS.R_SEARCH9	</if>
+	        <if test="rSearch10 != null">	,	SS.R_SEARCH10	</if>
+	        <if test="rSearch11 != null">	,	SS.R_SEARCH11	</if>
+	        <if test="rSearch12 != null">	,	SS.R_SEARCH12	</if>
+	        <if test="rSearch13 != null">	,	SS.R_SEARCH13	</if>
+	        <if test="rSearch14 != null">	,	SS.R_SEARCH14	</if>
+	        <if test="rSearch15 != null">	,	SS.R_SEARCH15	</if>
+	        <if test="rSearch16 != null">	,	SS.R_SEARCH16	</if>
+	        <if test="rSearch17 != null">	,	SS.R_SEARCH17	</if>
+	        <if test="rSearch18 != null">	,	SS.R_SEARCH18	</if>
+	        <if test="rSearch19 != null">	,	SS.R_SEARCH19	</if>
+	        <if test="rSearch20 != null">	,	SS.R_SEARCH20	</if>
+	        <if test="rSearch21 != null">	,	SS.R_SEARCH21	</if>
+	        <if test="rSearch22 != null">	,	SS.R_SEARCH22	</if>
+	        <if test="rSearch23 != null">	,	SS.R_SEARCH23	</if>
+	        <if test="rSearch24 != null">	,	SS.R_SEARCH24	</if>
+	        <if test="rSearch25 != null">	,	SS.R_SEARCH25	</if>
+	        <if test="rSearch26 != null">	,	SS.R_SEARCH26	</if>
+	        <if test="rSearch27 != null">	,	SS.R_SEARCH27	</if>
+	        <if test="rSearch28 != null">	,	SS.R_SEARCH28	</if>
+	        <if test="rSearch29 != null">	,	SS.R_SEARCH29	</if>
+	        <if test="rSearch30 != null">	,	SS.R_SEARCH30	</if>
+	        <if test="rSearch31 != null">	,	SS.R_SEARCH31	</if>
+	        <if test="rSearch32 != null">	,	SS.R_SEARCH32	</if>
+	        <if test="rSearch33 != null">	,	SS.R_SEARCH33	</if>
+	        <if test="rSearch34 != null">	,	SS.R_SEARCH34	</if>
+	        <if test="rSearch35 != null">	,	SS.R_SEARCH35	</if>
+			FROM DUAL, RS_SEARCH_SETTING SS
+	        WHERE SS.ROWID = row_id;
+        
+        END; -->
+        INSERT INTO RS_SEARCH_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rSearch1 != null">R_SEARCH1,</if>
+					<if test="rSearch2 != null">R_SEARCH2,</if>
+					<if test="rSearch3 != null">R_SEARCH3,</if>
+					<if test="rSearch4 != null">R_SEARCH4,</if>
+					<if test="rSearch5 != null">R_SEARCH5,</if>
+					<if test="rSearch6 != null">R_SEARCH6,</if>
+					<if test="rSearch7 != null">R_SEARCH7,</if>
+					<if test="rSearch8 != null">R_SEARCH8,</if>
+					<if test="rSearch9 != null">R_SEARCH9,</if>
+					<if test="rSearch10 != null">R_SEARCH10,</if>
+					<if test="rSearch11 != null">R_SEARCH11,</if>
+					<if test="rSearch12 != null">R_SEARCH12,</if>
+					<if test="rSearch13 != null">R_SEARCH13,</if>
+					<if test="rSearch14 != null">R_SEARCH14,</if>
+					<if test="rSearch15 != null">R_SEARCH15,</if>
+					<if test="rSearch16 != null">R_SEARCH16,</if>
+					<if test="rSearch17 != null">R_SEARCH17,</if>
+					<if test="rSearch18 != null">R_SEARCH18,</if>
+					<if test="rSearch19 != null">R_SEARCH19,</if>
+					<if test="rSearch20 != null">R_SEARCH20,</if>
+					<if test="rSearch21 != null">R_SEARCH21,</if>
+					<if test="rSearch22 != null">R_SEARCH22,</if>
+					<if test="rSearch23 != null">R_SEARCH23,</if>
+					<if test="rSearch24 != null">R_SEARCH24,</if>
+					<if test="rSearch25 != null">R_SEARCH25,</if>
+					<if test="rSearch26 != null">R_SEARCH26,</if>
+					<if test="rSearch27 != null">R_SEARCH27,</if>
+					<if test="rSearch28 != null">R_SEARCH28,</if>
+					<if test="rSearch29 != null">R_SEARCH29,</if>
+					<if test="rSearch30 != null">R_SEARCH30,</if>
+					<if test="rSearch31 != null">R_SEARCH31,</if>
+					<if test="rSearch32 != null">R_SEARCH32,</if>
+					<if test="rSearch33 != null">R_SEARCH33,</if>
+					<if test="rSearch34 != null">R_SEARCH34,</if>
+					<if test="rSearch35 != null">R_SEARCH35,</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rSearch1 != null">#{rSearch1},</if>
+					<if test="rSearch2 != null">#{rSearch2},</if>
+					<if test="rSearch3 != null">#{rSearch3},</if>
+					<if test="rSearch4 != null">#{rSearch4},</if>
+					<if test="rSearch5 != null">#{rSearch5},</if>
+					<if test="rSearch6 != null">#{rSearch6},</if>
+					<if test="rSearch7 != null">#{rSearch7},</if>
+					<if test="rSearch8 != null">#{rSearch8},</if>
+					<if test="rSearch9 != null">#{rSearch9},</if>
+					<if test="rSearch10 != null">#{rSearch10},</if>
+					<if test="rSearch11 != null">#{rSearch11},</if>
+					<if test="rSearch12 != null">#{rSearch12},</if>
+					<if test="rSearch13 != null">#{rSearch13},</if>
+					<if test="rSearch14 != null">#{rSearch14},</if>
+					<if test="rSearch15 != null">#{rSearch15},</if>
+					<if test="rSearch16 != null">#{rSearch16},</if>
+					<if test="rSearch17 != null">#{rSearch17},</if>
+					<if test="rSearch18 != null">#{rSearch18},</if>
+					<if test="rSearch19 != null">#{rSearch19},</if>
+					<if test="rSearch20 != null">#{rSearch20},</if>
+					<if test="rSearch21 != null">#{rSearch21},</if>
+					<if test="rSearch22 != null">#{rSearch22},</if>
+					<if test="rSearch23 != null">#{rSearch23},</if>
+					<if test="rSearch24 != null">#{rSearch24},</if>
+					<if test="rSearch25 != null">#{rSearch25},</if>
+					<if test="rSearch26 != null">#{rSearch26},</if>
+					<if test="rSearch27 != null">#{rSearch27},</if>
+					<if test="rSearch28 != null">#{rSearch28},</if>
+					<if test="rSearch29 != null">#{rSearch29},</if>
+					<if test="rSearch30 != null">#{rSearch30},</if>
+					<if test="rSearch31 != null">#{rSearch31},</if>
+					<if test="rSearch32 != null">#{rSearch32},</if>
+					<if test="rSearch33 != null">#{rSearch33},</if>
+					<if test="rSearch34 != null">#{rSearch34},</if>
+					<if test="rSearch35 != null">#{rSearch35},</if>
+				</trim>
+			)
+
+	</insert>
+	<update id="updateCustomizeItemInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.CustomizeItemInfo">
+		UPDATE RS_SEARCH_SETTING
+			<set>
+				<if test="rSearch1 != null">R_SEARCH1 = #{rSearch1},</if>
+				<if test="rSearch2 != null">R_SEARCH2 = #{rSearch2},</if>
+				<if test="rSearch3 != null">R_SEARCH3 = #{rSearch3},</if>
+				<if test="rSearch4 != null">R_SEARCH4 = #{rSearch4},</if>
+				<if test="rSearch5 != null">R_SEARCH5 = #{rSearch5},</if>
+				<if test="rSearch6 != null">R_SEARCH6 = #{rSearch6},</if>
+				<if test="rSearch7 != null">R_SEARCH7 = #{rSearch7},</if>
+				<if test="rSearch8 != null">R_SEARCH8 = #{rSearch8},</if>
+				<if test="rSearch9 != null">R_SEARCH9 = #{rSearch9},</if>
+				<if test="rSearch10 != null">R_SEARCH10 = #{rSearch10},</if>
+				<if test="rSearch11 != null">R_SEARCH11 = #{rSearch11},</if>
+				<if test="rSearch12 != null">R_SEARCH12 = #{rSearch12},</if>
+				<if test="rSearch13 != null">R_SEARCH13 = #{rSearch13},</if>
+				<if test="rSearch14 != null">R_SEARCH14 = #{rSearch14},</if>
+				<if test="rSearch15 != null">R_SEARCH15 = #{rSearch15},</if>
+				<if test="rSearch16 != null">R_SEARCH16 = #{rSearch16},</if>
+				<if test="rSearch17 != null">R_SEARCH17 = #{rSearch17},</if>
+				<if test="rSearch18 != null">R_SEARCH18 = #{rSearch18},</if>
+				<if test="rSearch19 != null">R_SEARCH19 = #{rSearch19},</if>
+				<if test="rSearch20 != null">R_SEARCH20 = #{rSearch20},</if>
+				<if test="rSearch21 != null">R_SEARCH21 = #{rSearch21},</if>
+				<if test="rSearch22 != null">R_SEARCH22 = #{rSearch22},</if>
+				<if test="rSearch23 != null">R_SEARCH23 = #{rSearch23},</if>
+				<if test="rSearch24 != null">R_SEARCH24 = #{rSearch24},</if>
+				<if test="rSearch25 != null">R_SEARCH25 = #{rSearch25},</if>
+				<if test="rSearch26 != null">R_SEARCH26 = #{rSearch26},</if>
+				<if test="rSearch27 != null">R_SEARCH27 = #{rSearch27},</if>
+				<if test="rSearch28 != null">R_SEARCH28 = #{rSearch28},</if>
+				<if test="rSearch29 != null">R_SEARCH29 = #{rSearch29},</if>
+				<if test="rSearch30 != null">R_SEARCH30 = #{rSearch30},</if>
+				<if test="rSearch31 != null">R_SEARCH26 = #{rSearch31},</if>
+				<if test="rSearch32 != null">R_SEARCH27 = #{rSearch32},</if>
+				<if test="rSearch33 != null">R_SEARCH28 = #{rSearch33},</if>
+				<if test="rSearch34 != null">R_SEARCH29 = #{rSearch34},</if>
+				<if test="rSearch35 != null">R_SEARCH30 = #{rSearch35},</if>
+			</set>
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+		
+	</update>
+	<update id="updateCustomizeItemInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.CustomizeItemInfo">
+		UPDATE RS_SEARCH_SETTING
+			<set>
+				<if test="rSearch1 != null">R_SEARCH1 = #{rSearch1},</if>
+				<if test="rSearch2 != null">R_SEARCH2 = #{rSearch2},</if>
+				<if test="rSearch3 != null">R_SEARCH3 = #{rSearch3},</if>
+				<if test="rSearch4 != null">R_SEARCH4 = #{rSearch4},</if>
+				<if test="rSearch5 != null">R_SEARCH5 = #{rSearch5},</if>
+				<if test="rSearch6 != null">R_SEARCH6 = #{rSearch6},</if>
+				<if test="rSearch7 != null">R_SEARCH7 = #{rSearch7},</if>
+				<if test="rSearch8 != null">R_SEARCH8 = #{rSearch8},</if>
+				<if test="rSearch9 != null">R_SEARCH9 = #{rSearch9},</if>
+				<if test="rSearch10 != null">R_SEARCH10 = #{rSearch10},</if>
+				<if test="rSearch11 != null">R_SEARCH11 = #{rSearch11},</if>
+				<if test="rSearch12 != null">R_SEARCH12 = #{rSearch12},</if>
+				<if test="rSearch13 != null">R_SEARCH13 = #{rSearch13},</if>
+				<if test="rSearch14 != null">R_SEARCH14 = #{rSearch14},</if>
+				<if test="rSearch15 != null">R_SEARCH15 = #{rSearch15},</if>
+				<if test="rSearch16 != null">R_SEARCH16 = #{rSearch16},</if>
+				<if test="rSearch17 != null">R_SEARCH17 = #{rSearch17},</if>
+				<if test="rSearch18 != null">R_SEARCH18 = #{rSearch18},</if>
+				<if test="rSearch19 != null">R_SEARCH19 = #{rSearch19},</if>
+				<if test="rSearch20 != null">R_SEARCH20 = #{rSearch20},</if>
+				<if test="rSearch21 != null">R_SEARCH21 = #{rSearch21},</if>
+				<if test="rSearch22 != null">R_SEARCH22 = #{rSearch22},</if>
+				<if test="rSearch23 != null">R_SEARCH23 = #{rSearch23},</if>
+				<if test="rSearch24 != null">R_SEARCH24 = #{rSearch24},</if>
+				<if test="rSearch25 != null">R_SEARCH25 = #{rSearch25},</if>
+				<if test="rSearch26 != null">R_SEARCH26 = #{rSearch26},</if>
+				<if test="rSearch27 != null">R_SEARCH27 = #{rSearch27},</if>
+				<if test="rSearch28 != null">R_SEARCH28 = #{rSearch28},</if>
+				<if test="rSearch29 != null">R_SEARCH29 = #{rSearch29},</if>
+				<if test="rSearch30 != null">R_SEARCH30 = #{rSearch30},</if>
+				<if test="rSearch31 != null">R_SEARCH31 = #{rSearch31},</if>
+				<if test="rSearch32 != null">R_SEARCH32 = #{rSearch32},</if>
+				<if test="rSearch33 != null">R_SEARCH33 = #{rSearch33},</if>
+				<if test="rSearch34 != null">R_SEARCH34 = #{rSearch34},</if>
+				<if test="rSearch35 != null">R_SEARCH35 = #{rSearch35},</if>
+			</set>
+			OUTPUT
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_search_setting'
+		 	,	INSERTED.R_USER_ID
+			,	INSERTED.R_SEARCH1
+			,	INSERTED.R_SEARCH2
+			,	INSERTED.R_SEARCH3
+			,	INSERTED.R_SEARCH4
+			,	INSERTED.R_SEARCH5
+			,	INSERTED.R_SEARCH6
+			,	INSERTED.R_SEARCH7
+			,	INSERTED.R_SEARCH8
+			,	INSERTED.R_SEARCH9
+			,	INSERTED.R_SEARCH10
+			,	INSERTED.R_SEARCH11
+			,	INSERTED.R_SEARCH12
+			,	INSERTED.R_SEARCH13
+			,	INSERTED.R_SEARCH14
+			,	INSERTED.R_SEARCH15
+			,	INSERTED.R_SEARCH16
+			,	INSERTED.R_SEARCH17
+			,	INSERTED.R_SEARCH18
+			,	INSERTED.R_SEARCH19
+			,	INSERTED.R_SEARCH20
+			,	INSERTED.R_SEARCH21
+			,	INSERTED.R_SEARCH22
+			,	INSERTED.R_SEARCH23
+			,	INSERTED.R_SEARCH24
+			,	INSERTED.R_SEARCH25
+			,	INSERTED.R_SEARCH26
+			,	INSERTED.R_SEARCH27
+			,	INSERTED.R_SEARCH28
+			,	INSERTED.R_SEARCH29
+			,	INSERTED.R_SEARCH30
+			,	INSERTED.R_SEARCH31
+			,	INSERTED.R_SEARCH32
+			,	INSERTED.R_SEARCH33
+			,	INSERTED.R_SEARCH34
+			,	INSERTED.R_SEARCH35
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			  , R_SYNC_CULUMN35
+			  , R_SYNC_CULUMN36
+			)
+
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+
+	</update>
+	<update id="updateCustomizeItemInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.CustomizeItemInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_SEARCH_SETTING
+			<set>
+				<if test="rSearch1 != null">R_SEARCH1 = #{rSearch1},</if>
+				<if test="rSearch2 != null">R_SEARCH2 = #{rSearch2},</if>
+				<if test="rSearch3 != null">R_SEARCH3 = #{rSearch3},</if>
+				<if test="rSearch4 != null">R_SEARCH4 = #{rSearch4},</if>
+				<if test="rSearch5 != null">R_SEARCH5 = #{rSearch5},</if>
+				<if test="rSearch6 != null">R_SEARCH6 = #{rSearch6},</if>
+				<if test="rSearch7 != null">R_SEARCH7 = #{rSearch7},</if>
+				<if test="rSearch8 != null">R_SEARCH8 = #{rSearch8},</if>
+				<if test="rSearch9 != null">R_SEARCH9 = #{rSearch9},</if>
+				<if test="rSearch10 != null">R_SEARCH10 = #{rSearch10},</if>
+				<if test="rSearch11 != null">R_SEARCH11 = #{rSearch11},</if>
+				<if test="rSearch12 != null">R_SEARCH12 = #{rSearch12},</if>
+				<if test="rSearch13 != null">R_SEARCH13 = #{rSearch13},</if>
+				<if test="rSearch14 != null">R_SEARCH14 = #{rSearch14},</if>
+				<if test="rSearch15 != null">R_SEARCH15 = #{rSearch15},</if>
+				<if test="rSearch16 != null">R_SEARCH16 = #{rSearch16},</if>
+				<if test="rSearch17 != null">R_SEARCH17 = #{rSearch17},</if>
+				<if test="rSearch18 != null">R_SEARCH18 = #{rSearch18},</if>
+				<if test="rSearch19 != null">R_SEARCH19 = #{rSearch19},</if>
+				<if test="rSearch20 != null">R_SEARCH20 = #{rSearch20},</if>
+				<if test="rSearch21 != null">R_SEARCH21 = #{rSearch21},</if>
+				<if test="rSearch22 != null">R_SEARCH22 = #{rSearch22},</if>
+				<if test="rSearch23 != null">R_SEARCH23 = #{rSearch23},</if>
+				<if test="rSearch24 != null">R_SEARCH24 = #{rSearch24},</if>
+				<if test="rSearch25 != null">R_SEARCH25 = #{rSearch25},</if>
+				<if test="rSearch26 != null">R_SEARCH26 = #{rSearch26},</if>
+				<if test="rSearch27 != null">R_SEARCH27 = #{rSearch27},</if>
+				<if test="rSearch28 != null">R_SEARCH28 = #{rSearch28},</if>
+				<if test="rSearch29 != null">R_SEARCH29 = #{rSearch29},</if>
+				<if test="rSearch30 != null">R_SEARCH30 = #{rSearch30},</if>
+				<if test="rSearch31 != null">R_SEARCH26 = #{rSearch31},</if>
+				<if test="rSearch32 != null">R_SEARCH27 = #{rSearch32},</if>
+				<if test="rSearch33 != null">R_SEARCH28 = #{rSearch33},</if>
+				<if test="rSearch34 != null">R_SEARCH29 = #{rSearch34},</if>
+				<if test="rSearch35 != null">R_SEARCH30 = #{rSearch35},</if>
+			</set>
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			  , R_SYNC_CULUMN35
+			  , R_SYNC_CULUMN36
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'U'
+		 	,	'rs_search_setting'
+		 	,	SS.R_USER_ID
+			,	SS.R_SEARCH1
+			,	SS.R_SEARCH2
+			,	SS.R_SEARCH3
+			,	SS.R_SEARCH4
+			,	SS.R_SEARCH5
+			,	SS.R_SEARCH6
+			,	SS.R_SEARCH7
+			,	SS.R_SEARCH8
+			,	SS.R_SEARCH9
+			,	SS.R_SEARCH10
+			,	SS.R_SEARCH11
+			,	SS.R_SEARCH12
+			,	SS.R_SEARCH13
+			,	SS.R_SEARCH14
+			,	SS.R_SEARCH15
+			,	SS.R_SEARCH16
+			,	SS.R_SEARCH17
+			,	SS.R_SEARCH18
+			,	SS.R_SEARCH19
+			,	SS.R_SEARCH20
+			,	SS.R_SEARCH21
+			,	SS.R_SEARCH22
+			,	SS.R_SEARCH23
+			,	SS.R_SEARCH24
+			,	SS.R_SEARCH25
+			,	SS.R_SEARCH26
+			,	SS.R_SEARCH27
+			,	SS.R_SEARCH28
+			,	SS.R_SEARCH29
+			,	SS.R_SEARCH30
+			,	SS.R_SEARCH31
+			,	SS.R_SEARCH32
+			,	SS.R_SEARCH33
+			,	SS.R_SEARCH34
+			,	SS.R_SEARCH35
+			 FROM DUAL, RS_SEARCH_SETTING SS
+	        WHERE SS.ROWID = row_id;
+
+		END; -->
+		UPDATE RS_SEARCH_SETTING
+			<set>
+				<if test="rSearch1 != null">R_SEARCH1 = #{rSearch1},</if>
+				<if test="rSearch2 != null">R_SEARCH2 = #{rSearch2},</if>
+				<if test="rSearch3 != null">R_SEARCH3 = #{rSearch3},</if>
+				<if test="rSearch4 != null">R_SEARCH4 = #{rSearch4},</if>
+				<if test="rSearch5 != null">R_SEARCH5 = #{rSearch5},</if>
+				<if test="rSearch6 != null">R_SEARCH6 = #{rSearch6},</if>
+				<if test="rSearch7 != null">R_SEARCH7 = #{rSearch7},</if>
+				<if test="rSearch8 != null">R_SEARCH8 = #{rSearch8},</if>
+				<if test="rSearch9 != null">R_SEARCH9 = #{rSearch9},</if>
+				<if test="rSearch10 != null">R_SEARCH10 = #{rSearch10},</if>
+				<if test="rSearch11 != null">R_SEARCH11 = #{rSearch11},</if>
+				<if test="rSearch12 != null">R_SEARCH12 = #{rSearch12},</if>
+				<if test="rSearch13 != null">R_SEARCH13 = #{rSearch13},</if>
+				<if test="rSearch14 != null">R_SEARCH14 = #{rSearch14},</if>
+				<if test="rSearch15 != null">R_SEARCH15 = #{rSearch15},</if>
+				<if test="rSearch16 != null">R_SEARCH16 = #{rSearch16},</if>
+				<if test="rSearch17 != null">R_SEARCH17 = #{rSearch17},</if>
+				<if test="rSearch18 != null">R_SEARCH18 = #{rSearch18},</if>
+				<if test="rSearch19 != null">R_SEARCH19 = #{rSearch19},</if>
+				<if test="rSearch20 != null">R_SEARCH20 = #{rSearch20},</if>
+				<if test="rSearch21 != null">R_SEARCH21 = #{rSearch21},</if>
+				<if test="rSearch22 != null">R_SEARCH22 = #{rSearch22},</if>
+				<if test="rSearch23 != null">R_SEARCH23 = #{rSearch23},</if>
+				<if test="rSearch24 != null">R_SEARCH24 = #{rSearch24},</if>
+				<if test="rSearch25 != null">R_SEARCH25 = #{rSearch25},</if>
+				<if test="rSearch26 != null">R_SEARCH26 = #{rSearch26},</if>
+				<if test="rSearch27 != null">R_SEARCH27 = #{rSearch27},</if>
+				<if test="rSearch28 != null">R_SEARCH28 = #{rSearch28},</if>
+				<if test="rSearch29 != null">R_SEARCH29 = #{rSearch29},</if>
+				<if test="rSearch30 != null">R_SEARCH30 = #{rSearch30},</if>
+				<if test="rSearch31 != null">R_SEARCH26 = #{rSearch31},</if>
+				<if test="rSearch32 != null">R_SEARCH27 = #{rSearch32},</if>
+				<if test="rSearch33 != null">R_SEARCH28 = #{rSearch33},</if>
+				<if test="rSearch34 != null">R_SEARCH29 = #{rSearch34},</if>
+				<if test="rSearch35 != null">R_SEARCH30 = #{rSearch35},</if>
+			</set>
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+	</update>
+	<delete id="deleteCustomizeItemInfo" parameterType="com.furence.recsee.admin.model.CustomizeItemInfo">
+		DELETE FROM RS_SEARCH_SETTING
+		<where>
+			<if test="rUserId != null">R_USER_ID = #{rUserId}</if>
+		</where>
+	</delete>
+
+
+	<select id="selectCustomizeCopyListInfo" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo"  resultMap="CopyListResultMap">
+		SELECT * FROM RS_COPYLIST_SETTING
+		<where>
+			R_USER_ID = #{rUserId}
+		</where>
+	</select>
+
+	<insert id="insertCustomizeCopyListInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+			INSERT INTO RS_COPYLIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rCopyList1 != null">R_COPYLIST1,</if>
+					<if test="rCopyList2 != null">R_COPYLIST2,</if>
+					<if test="rCopyList3 != null">R_COPYLIST3,</if>
+					<if test="rCopyList4 != null">R_COPYLIST4,</if>
+					<if test="rCopyList5 != null">R_COPYLIST5,</if>
+					<if test="rCopyList6 != null">R_COPYLIST6,</if>
+					<if test="rCopyList7 != null">R_COPYLIST7,</if>
+					<if test="rCopyList8 != null">R_COPYLIST8,</if>
+					<if test="rCopyList9 != null">R_COPYLIST9,</if>
+					<if test="rCopyList10 != null">R_COPYLIST10,</if>
+					<if test="rCopyList11 != null">R_COPYLIST11,</if>
+					<if test="rCopyList12 != null">R_COPYLIST12,</if>
+					<if test="rCopyList13 != null">R_COPYLIST13,</if>
+					<if test="rCopyList14 != null">R_COPYLIST14,</if>
+					<if test="rCopyList15 != null">R_COPYLIST15,</if>
+					<if test="rCopyList16 != null">R_COPYLIST16,</if>
+					<if test="rCopyList17 != null">R_COPYLIST17,</if>
+					<if test="rCopyList18 != null">R_COPYLIST18,</if>
+					<if test="rCopyList19 != null">R_COPYLIST19,</if>
+					<if test="rCopyList20 != null">R_COPYLIST20,</if>
+					<if test="rCopyList21 != null">R_COPYLIST21,</if>
+					<if test="rCopyList22 != null">R_COPYLIST22,</if>
+					<if test="rCopyList23 != null">R_COPYLIST23,</if>
+					<if test="rCopyList24 != null">R_COPYLIST24,</if>
+					<if test="rCopyList25 != null">R_COPYLIST25,</if>
+					<if test="rCopyList26 != null">R_COPYLIST26,</if>
+					<if test="rCopyList27 != null">R_COPYLIST27,</if>
+					<if test="rCopyList28 != null">R_COPYLIST28,</if>
+					<if test="rCopyList29 != null">R_COPYLIST29,</if>
+					<if test="rCopyList30 != null">R_COPYLIST30,</if>
+					<if test="rCopyList31 != null">R_COPYLIST31,</if>
+					<if test="rCopyList32 != null">R_COPYLIST32,</if>
+					<if test="rCopyList33 != null">R_COPYLIST33,</if>
+					<if test="rCopyList34 != null">R_COPYLIST34,</if>
+					<if test="rCopyList35 != null">R_COPYLIST35</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rCopyList1 != null">#{rCopyList1},</if>
+					<if test="rCopyList2 != null">#{rCopyList2},</if>
+					<if test="rCopyList3 != null">#{rCopyList3},</if>
+					<if test="rCopyList4 != null">#{rCopyList4},</if>
+					<if test="rCopyList5 != null">#{rCopyList5},</if>
+					<if test="rCopyList6 != null">#{rCopyList6},</if>
+					<if test="rCopyList7 != null">#{rCopyList7},</if>
+					<if test="rCopyList8 != null">#{rCopyList8},</if>
+					<if test="rCopyList9 != null">#{rCopyList9},</if>
+					<if test="rCopyList10 != null">#{rCopyList10},</if>
+					<if test="rCopyList11 != null">#{rCopyList11},</if>
+					<if test="rCopyList12 != null">#{rCopyList12},</if>
+					<if test="rCopyList13 != null">#{rCopyList13},</if>
+					<if test="rCopyList14 != null">#{rCopyList14},</if>
+					<if test="rCopyList15 != null">#{rCopyList15},</if>
+					<if test="rCopyList16 != null">#{rCopyList16},</if>
+					<if test="rCopyList17 != null">#{rCopyList17},</if>
+					<if test="rCopyList18 != null">#{rCopyList18},</if>
+					<if test="rCopyList19 != null">#{rCopyList19},</if>
+					<if test="rCopyList20 != null">#{rCopyList20},</if>
+					<if test="rCopyList21 != null">#{rCopyList21},</if>
+					<if test="rCopyList22 != null">#{rCopyList22},</if>
+					<if test="rCopyList23 != null">#{rCopyList23},</if>
+					<if test="rCopyList24 != null">#{rCopyList24},</if>
+					<if test="rCopyList25 != null">#{rCopyList25},</if>
+					<if test="rCopyList26 != null">#{rCopyList26},</if>
+					<if test="rCopyList27 != null">#{rCopyList27},</if>
+					<if test="rCopyList28 != null">#{rCopyList28},</if>
+					<if test="rCopyList29 != null">#{rCopyList29},</if>
+					<if test="rCopyList30 != null">#{rCopyList30},</if>
+					<if test="rCopyList31 != null">#{rCopyList31},</if>
+					<if test="rCopyList32 != null">#{rCopyList32},</if>
+					<if test="rCopyList33 != null">#{rCopyList33},</if>
+					<if test="rCopyList34 != null">#{rCopyList34},</if>
+					<if test="rCopyList35 != null">#{rCopyList35}</if>
+				</trim>
+			)			
+	</insert>
+	
+	<insert id="insertCustomizeCopyListInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+			INSERT INTO RS_COPYLIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rCopyList1 != null">R_COPYLIST1,</if>
+					<if test="rCopyList2 != null">R_COPYLIST2,</if>
+					<if test="rCopyList3 != null">R_COPYLIST3,</if>
+					<if test="rCopyList4 != null">R_COPYLIST4,</if>
+					<if test="rCopyList5 != null">R_COPYLIST5,</if>
+					<if test="rCopyList6 != null">R_COPYLIST6,</if>
+					<if test="rCopyList7 != null">R_COPYLIST7,</if>
+					<if test="rCopyList8 != null">R_COPYLIST8,</if>
+					<if test="rCopyList9 != null">R_COPYLIST9,</if>
+					<if test="rCopyList10 != null">R_COPYLIST10,</if>
+					<if test="rCopyList11 != null">R_COPYLIST11,</if>
+					<if test="rCopyList12 != null">R_COPYLIST12,</if>
+					<if test="rCopyList13 != null">R_COPYLIST13,</if>
+					<if test="rCopyList14 != null">R_COPYLIST14,</if>
+					<if test="rCopyList15 != null">R_COPYLIST15,</if>
+					<if test="rCopyList16 != null">R_COPYLIST16,</if>
+					<if test="rCopyList17 != null">R_COPYLIST17,</if>
+					<if test="rCopyList18 != null">R_COPYLIST18,</if>
+					<if test="rCopyList19 != null">R_COPYLIST19,</if>
+					<if test="rCopyList20 != null">R_COPYLIST20,</if>
+					<if test="rCopyList21 != null">R_COPYLIST21,</if>
+					<if test="rCopyList22 != null">R_COPYLIST22,</if>
+					<if test="rCopyList23 != null">R_COPYLIST23,</if>
+					<if test="rCopyList24 != null">R_COPYLIST24,</if>
+					<if test="rCopyList25 != null">R_COPYLIST25,</if>
+					<if test="rCopyList26 != null">R_COPYLIST26,</if>
+					<if test="rCopyList27 != null">R_COPYLIST27,</if>
+					<if test="rCopyList28 != null">R_COPYLIST28,</if>
+					<if test="rCopyList29 != null">R_COPYLIST29,</if>
+					<if test="rCopyList30 != null">R_COPYLIST30,</if>
+					<if test="rCopyList26 != null">R_COPYLIST31,</if>
+					<if test="rCopyList27 != null">R_COPYLIST32,</if>
+					<if test="rCopyList28 != null">R_COPYLIST33,</if>
+					<if test="rCopyList29 != null">R_COPYLIST34,</if>
+					<if test="rCopyList30 != null">R_COPYLIST35,</if>
+				</trim>
+			)
+
+				OUTPUT
+					CONVERT(varchar(8),GETDATE(),112)
+				,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+				,	'C'
+			 	,	'rs_copyList_setting'
+			 	,	INSERTED.R_USER_ID
+				,	INSERTED.R_COPYLIST1
+				,	INSERTED.R_COPYLIST2
+				,	INSERTED.R_COPYLIST3
+				,	INSERTED.R_COPYLIST4
+				,	INSERTED.R_COPYLIST5
+				,	INSERTED.R_COPYLIST6
+				,	INSERTED.R_COPYLIST7
+				,	INSERTED.R_COPYLIST8
+				,	INSERTED.R_COPYLIST9
+				,	INSERTED.R_COPYLIST10
+				,	INSERTED.R_COPYLIST11
+				,	INSERTED.R_COPYLIST12
+				,	INSERTED.R_COPYLIST13
+				,	INSERTED.R_COPYLIST14
+				,	INSERTED.R_COPYLIST15
+				,	INSERTED.R_COPYLIST16
+				,	INSERTED.R_COPYLIST17
+				,	INSERTED.R_COPYLIST18
+				,	INSERTED.R_COPYLIST19
+				,	INSERTED.R_COPYLIST20
+				,	INSERTED.R_COPYLIST21
+				,	INSERTED.R_COPYLIST22
+				,	INSERTED.R_COPYLIST23
+				,	INSERTED.R_COPYLIST24
+				,	INSERTED.R_COPYLIST25
+				,	INSERTED.R_COPYLIST26
+				,	INSERTED.R_COPYLIST27
+				,	INSERTED.R_COPYLIST28
+				,	INSERTED.R_COPYLIST29
+				,	INSERTED.R_COPYLIST30
+				,	INSERTED.R_COPYLIST31
+				,	INSERTED.R_COPYLIST32
+				,	INSERTED.R_COPYLIST33
+				,	INSERTED.R_COPYLIST34
+				,	INSERTED.R_COPYLIST35
+
+				INTO RS_SYNC_DATA
+				(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				  , R_SYNC_CULUMN6
+				  , R_SYNC_CULUMN7
+				  , R_SYNC_CULUMN8
+				  , R_SYNC_CULUMN9
+				  , R_SYNC_CULUMN10
+				  , R_SYNC_CULUMN11
+				  , R_SYNC_CULUMN12
+				  , R_SYNC_CULUMN13
+				  , R_SYNC_CULUMN14
+				  , R_SYNC_CULUMN15
+				  , R_SYNC_CULUMN16
+				  , R_SYNC_CULUMN17
+				  , R_SYNC_CULUMN18
+				  , R_SYNC_CULUMN19
+				  , R_SYNC_CULUMN20
+				  , R_SYNC_CULUMN21
+				  , R_SYNC_CULUMN22
+				  , R_SYNC_CULUMN23
+				  , R_SYNC_CULUMN24
+				  , R_SYNC_CULUMN25
+				  , R_SYNC_CULUMN26
+				  , R_SYNC_CULUMN27
+				  , R_SYNC_CULUMN28
+				  , R_SYNC_CULUMN29
+				  , R_SYNC_CULUMN30
+				  , R_SYNC_CULUMN31
+				  , R_SYNC_CULUMN32
+				  , R_SYNC_CULUMN33
+				  , R_SYNC_CULUMN34
+				  , R_SYNC_CULUMN35
+				)
+
+			VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rCopyList1 != null">#{rCopyList1},</if>
+					<if test="rCopyList2 != null">#{rCopyList2},</if>
+					<if test="rCopyList3 != null">#{rCopyList3},</if>
+					<if test="rCopyList4 != null">#{rCopyList4},</if>
+					<if test="rCopyList5 != null">#{rCopyList5},</if>
+					<if test="rCopyList6 != null">#{rCopyList6},</if>
+					<if test="rCopyList7 != null">#{rCopyList7},</if>
+					<if test="rCopyList8 != null">#{rCopyList8},</if>
+					<if test="rCopyList9 != null">#{rCopyList9},</if>
+					<if test="rCopyList10 != null">#{rCopyList10},</if>
+					<if test="rCopyList11 != null">#{rCopyList11},</if>
+					<if test="rCopyList12 != null">#{rCopyList12},</if>
+					<if test="rCopyList13 != null">#{rCopyList13},</if>
+					<if test="rCopyList14 != null">#{rCopyList14},</if>
+					<if test="rCopyList15 != null">#{rCopyList15},</if>
+					<if test="rCopyList16 != null">#{rCopyList16},</if>
+					<if test="rCopyList17 != null">#{rCopyList17},</if>
+					<if test="rCopyList18 != null">#{rCopyList18},</if>
+					<if test="rCopyList19 != null">#{rCopyList19},</if>
+					<if test="rCopyList20 != null">#{rCopyList20},</if>
+					<if test="rCopyList21 != null">#{rCopyList21},</if>
+					<if test="rCopyList22 != null">#{rCopyList22},</if>
+					<if test="rCopyList23 != null">#{rCopyList23},</if>
+					<if test="rCopyList24 != null">#{rCopyList24},</if>
+					<if test="rCopyList25 != null">#{rCopyList25},</if>
+					<if test="rCopyList26 != null">#{rCopyList26},</if>
+					<if test="rCopyList27 != null">#{rCopyList27},</if>
+					<if test="rCopyList28 != null">#{rCopyList28},</if>
+					<if test="rCopyList29 != null">#{rCopyList29},</if>
+					<if test="rCopyList30 != null">#{rCopyList30},</if>
+					<if test="rCopyList26 != null">#{rCopyList31},</if>
+					<if test="rCopyList27 != null">#{rCopyList32},</if>
+					<if test="rCopyList28 != null">#{rCopyList33},</if>
+					<if test="rCopyList29 != null">#{rCopyList34},</if>
+					<if test="rCopyList30 != null">#{rCopyList35},</if>
+				</trim>
+			)
+
+	</insert>
+	<insert id="insertCustomizeCopyListInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+	
+		<!-- DECLARE
+  			row_id ROWID;
+		BEGIN
+			INSERT INTO RS_LIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rCopyList1 != null">R_COPYLIST1,</if>
+					<if test="rCopyList2 != null">R_COPYLIST2,</if>
+					<if test="rCopyList3 != null">R_COPYLIST3,</if>
+					<if test="rCopyList4 != null">R_COPYLIST4,</if>
+					<if test="rCopyList5 != null">R_COPYLIST5,</if>
+					<if test="rCopyList6 != null">R_COPYLIST6,</if>
+					<if test="rCopyList7 != null">R_COPYLIST7,</if>
+					<if test="rCopyList8 != null">R_COPYLIST8,</if>
+					<if test="rCopyList9 != null">R_COPYLIST9,</if>
+					<if test="rCopyList10 != null">R_COPYLIST10,</if>
+					<if test="rCopyList11 != null">R_COPYLIST11,</if>
+					<if test="rCopyList12 != null">R_COPYLIST12,</if>
+					<if test="rCopyList13 != null">R_COPYLIST13,</if>
+					<if test="rCopyList14 != null">R_COPYLIST14,</if>
+					<if test="rCopyList15 != null">R_COPYLIST15,</if>
+					<if test="rCopyList16 != null">R_COPYLIST16,</if>
+					<if test="rCopyList17 != null">R_COPYLIST17,</if>
+					<if test="rCopyList18 != null">R_COPYLIST18,</if>
+					<if test="rCopyList19 != null">R_COPYLIST19,</if>
+					<if test="rCopyList20 != null">R_COPYLIST20,</if>
+					<if test="rCopyList21 != null">R_COPYLIST21,</if>
+					<if test="rCopyList22 != null">R_COPYLIST22,</if>
+					<if test="rCopyList23 != null">R_COPYLIST23,</if>
+					<if test="rCopyList24 != null">R_COPYLIST24,</if>
+					<if test="rCopyList25 != null">R_COPYLIST25,</if>
+					<if test="rCopyList26 != null">R_COPYLIST26,</if>
+					<if test="rCopyList27 != null">R_COPYLIST27,</if>
+					<if test="rCopyList28 != null">R_COPYLIST28,</if>
+					<if test="rCopyList29 != null">R_COPYLIST29,</if>
+					<if test="rCopyList30 != null">R_COPYLIST30,</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rCopyList1 != null">#{rCopyList1},</if>
+					<if test="rCopyList2 != null">#{rCopyList2},</if>
+					<if test="rCopyList3 != null">#{rCopyList3},</if>
+					<if test="rCopyList4 != null">#{rCopyList4},</if>
+					<if test="rCopyList5 != null">#{rCopyList5},</if>
+					<if test="rCopyList6 != null">#{rCopyList6},</if>
+					<if test="rCopyList7 != null">#{rCopyList7},</if>
+					<if test="rCopyList8 != null">#{rCopyList8},</if>
+					<if test="rCopyList9 != null">#{rCopyList9},</if>
+					<if test="rCopyList10 != null">#{rCopyList10},</if>
+					<if test="rCopyList11 != null">#{rCopyList11},</if>
+					<if test="rCopyList12 != null">#{rCopyList12},</if>
+					<if test="rCopyList13 != null">#{rCopyList13},</if>
+					<if test="rCopyList14 != null">#{rCopyList14},</if>
+					<if test="rCopyList15 != null">#{rCopyList15},</if>
+					<if test="rCopyList16 != null">#{rCopyList16},</if>
+					<if test="rCopyList17 != null">#{rCopyList17},</if>
+					<if test="rCopyList18 != null">#{rCopyList18},</if>
+					<if test="rCopyList19 != null">#{rCopyList19},</if>
+					<if test="rCopyList20 != null">#{rCopyList20},</if>
+					<if test="rCopyList21 != null">#{rCopyList21},</if>
+					<if test="rCopyList22 != null">#{rCopyList22},</if>
+					<if test="rCopyList23 != null">#{rCopyList23},</if>
+					<if test="rCopyList24 != null">#{rCopyList24},</if>
+					<if test="rCopyList25 != null">#{rCopyList25},</if>
+					<if test="rCopyList26 != null">#{rCopyList26},</if>
+					<if test="rCopyList27 != null">#{rCopyList27},</if>
+					<if test="rCopyList28 != null">#{rCopyList28},</if>
+					<if test="rCopyList29 != null">#{rCopyList29},</if>
+					<if test="rCopyList30 != null">#{rCopyList30},</if>
+				</trim>
+			)
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			    <if test="rUserId != null">	  , R_SYNC_CULUMN1		</if>
+	            <if test="rCopyList1  != null">	  , R_SYNC_CULUMN2		</if>
+	            <if test="rCopyList2  != null">	  , R_SYNC_CULUMN3		</if>
+	            <if test="rCopyList3  != null">	  , R_SYNC_CULUMN4		</if>
+	            <if test="rCopyList4  != null">	  , R_SYNC_CULUMN5		</if>
+	            <if test="rCopyList5  != null">	  , R_SYNC_CULUMN6		</if>
+	            <if test="rCopyList6  != null">	  , R_SYNC_CULUMN7		</if>
+	            <if test="rCopyList7  != null">	  , R_SYNC_CULUMN8		</if>
+	            <if test="rCopyList8  != null">	  , R_SYNC_CULUMN9		</if>
+	            <if test="rCopyList9  != null">	  , R_SYNC_CULUMN10		</if>
+	            <if test="rCopyList10 != null">	  , R_SYNC_CULUMN11		</if>
+	            <if test="rCopyList11 != null">	  , R_SYNC_CULUMN12		</if>
+	            <if test="rCopyList12 != null">	  , R_SYNC_CULUMN13		</if>
+	            <if test="rCopyList13 != null">	  , R_SYNC_CULUMN14		</if>
+	            <if test="rCopyList14 != null">	  , R_SYNC_CULUMN15		</if>
+	            <if test="rCopyList15 != null">	  , R_SYNC_CULUMN16		</if>
+	            <if test="rCopyList16 != null">	  , R_SYNC_CULUMN17		</if>
+	            <if test="rCopyList17 != null">	  , R_SYNC_CULUMN18		</if>
+	            <if test="rCopyList18 != null">	  , R_SYNC_CULUMN19		</if>
+	            <if test="rCopyList19 != null">	  , R_SYNC_CULUMN20		</if>
+	            <if test="rCopyList20 != null">	  , R_SYNC_CULUMN21		</if>
+	            <if test="rCopyList21 != null">	  , R_SYNC_CULUMN22		</if>
+	            <if test="rCopyList22 != null">	  , R_SYNC_CULUMN23		</if>
+	            <if test="rCopyList23 != null">	  , R_SYNC_CULUMN24		</if>
+	            <if test="rCopyList24 != null">	  , R_SYNC_CULUMN25		</if>
+	            <if test="rCopyList25 != null">	  , R_SYNC_CULUMN26		</if>
+	            <if test="rCopyList26 != null">	  , R_SYNC_CULUMN27		</if>
+	            <if test="rCopyList27 != null">	  , R_SYNC_CULUMN28		</if>
+	            <if test="rCopyList28 != null">	  , R_SYNC_CULUMN29		</if>
+	            <if test="rCopyList29 != null">	  , R_SYNC_CULUMN30		</if>
+	
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'C'
+		 	,	'rs_list_setting'
+		 	<if test="rUserId != null">	,	LS.R_USER_ID</if>
+	        <if test="rCopyList1  != null">	,	LS.R_COPYLIST1	</if>
+	        <if test="rCopyList2  != null">	,	LS.R_COPYLIST2	</if>
+	        <if test="rCopyList3  != null">	,	LS.R_COPYLIST3	</if>
+	        <if test="rCopyList4  != null">	,	LS.R_COPYLIST4	</if>
+	        <if test="rCopyList5  != null">	,	LS.R_COPYLIST5	</if>
+	        <if test="rCopyList6  != null">	,	LS.R_COPYLIST6	</if>
+	        <if test="rCopyList7  != null">	,	LS.R_COPYLIST7	</if>
+	        <if test="rCopyList8  != null">	,	LS.R_COPYLIST8	</if>
+	        <if test="rCopyList9  != null">	,	LS.R_COPYLIST9	</if>
+	        <if test="rCopyList10 != null">	,	LS.R_COPYLIST10	</if>
+	        <if test="rCopyList11 != null">	,	LS.R_COPYLIST11	</if>
+	        <if test="rCopyList12 != null">	,	LS.R_COPYLIST12	</if>
+	        <if test="rCopyList13 != null">	,	LS.R_COPYLIST13	</if>
+	        <if test="rCopyList14 != null">	,	LS.R_COPYLIST14	</if>
+	        <if test="rCopyList15 != null">	,	LS.R_COPYLIST15	</if>
+	        <if test="rCopyList16 != null">	,	LS.R_COPYLIST16	</if>
+	        <if test="rCopyList17 != null">	,	LS.R_COPYLIST17	</if>
+	        <if test="rCopyList18 != null">	,	LS.R_COPYLIST18	</if>
+	        <if test="rCopyList19 != null">	,	LS.R_COPYLIST19	</if>
+	        <if test="rCopyList20 != null">	,	LS.R_COPYLIST20	</if>
+	        <if test="rCopyList21 != null">	,	LS.R_COPYLIST21	</if>
+	        <if test="rCopyList22 != null">	,	LS.R_COPYLIST22	</if>
+	        <if test="rCopyList23 != null">	,	LS.R_COPYLIST23	</if>
+	        <if test="rCopyList24 != null">	,	LS.R_COPYLIST24	</if>
+	        <if test="rCopyList25 != null">	,	LS.R_COPYLIST25	</if>
+	        <if test="rCopyList26 != null">	,	LS.R_COPYLIST26	</if>
+	        <if test="rCopyList27 != null">	,	LS.R_COPYLIST27	</if>
+	        <if test="rCopyList28 != null">	,	LS.R_COPYLIST28	</if>
+	        <if test="rCopyList29 != null">	,	LS.R_COPYLIST29	</if>
+	        <if test="rCopyList30 != null">	,	LS.R_COPYLIST30	</if>
+			
+			FROM DUAL, RS_LIST_SETTING LS
+	        WHERE LS.ROWID = row_id;
+        
+        END; -->
+        INSERT INTO RS_COPYLIST_SETTING (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">R_USER_ID,</if>
+					<if test="rCopyList1 != null">R_COPYLIST1,</if>
+					<if test="rCopyList2 != null">R_COPYLIST2,</if>
+					<if test="rCopyList3 != null">R_COPYLIST3,</if>
+					<if test="rCopyList4 != null">R_COPYLIST4,</if>
+					<if test="rCopyList5 != null">R_COPYLIST5,</if>
+					<if test="rCopyList6 != null">R_COPYLIST6,</if>
+					<if test="rCopyList7 != null">R_COPYLIST7,</if>
+					<if test="rCopyList8 != null">R_COPYLIST8,</if>
+					<if test="rCopyList9 != null">R_COPYLIST9,</if>
+					<if test="rCopyList10 != null">R_COPYLIST10,</if>
+					<if test="rCopyList11 != null">R_COPYLIST11,</if>
+					<if test="rCopyList12 != null">R_COPYLIST12,</if>
+					<if test="rCopyList13 != null">R_COPYLIST13,</if>
+					<if test="rCopyList14 != null">R_COPYLIST14,</if>
+					<if test="rCopyList15 != null">R_COPYLIST15,</if>
+					<if test="rCopyList16 != null">R_COPYLIST16,</if>
+					<if test="rCopyList17 != null">R_COPYLIST17,</if>
+					<if test="rCopyList18 != null">R_COPYLIST18,</if>
+					<if test="rCopyList19 != null">R_COPYLIST19,</if>
+					<if test="rCopyList20 != null">R_COPYLIST20,</if>
+					<if test="rCopyList21 != null">R_COPYLIST21,</if>
+					<if test="rCopyList22 != null">R_COPYLIST22,</if>
+					<if test="rCopyList23 != null">R_COPYLIST23,</if>
+					<if test="rCopyList24 != null">R_COPYLIST24,</if>
+					<if test="rCopyList25 != null">R_COPYLIST25,</if>
+					<if test="rCopyList26 != null">R_COPYLIST26,</if>
+					<if test="rCopyList27 != null">R_COPYLIST27,</if>
+					<if test="rCopyList28 != null">R_COPYLIST28,</if>
+					<if test="rCopyList29 != null">R_COPYLIST29,</if>
+					<if test="rCopyList30 != null">R_COPYLIST30,</if>
+					<if test="rCopyList31 != null">R_COPYLIST31,</if>
+					<if test="rCopyList32 != null">R_COPYLIST32,</if>
+					<if test="rCopyList33 != null">R_COPYLIST33,</if>
+					<if test="rCopyList34 != null">R_COPYLIST34,</if>
+					<if test="rCopyList35 != null">R_COPYLIST35,</if>
+				</trim>
+			) VALUES (
+				<trim suffixOverrides=",">
+					<if test="rUserId != null">#{rUserId},</if>
+					<if test="rCopyList1 != null">#{rCopyList1},</if>
+					<if test="rCopyList2 != null">#{rCopyList2},</if>
+					<if test="rCopyList3 != null">#{rCopyList3},</if>
+					<if test="rCopyList4 != null">#{rCopyList4},</if>
+					<if test="rCopyList5 != null">#{rCopyList5},</if>
+					<if test="rCopyList6 != null">#{rCopyList6},</if>
+					<if test="rCopyList7 != null">#{rCopyList7},</if>
+					<if test="rCopyList8 != null">#{rCopyList8},</if>
+					<if test="rCopyList9 != null">#{rCopyList9},</if>
+					<if test="rCopyList10 != null">#{rCopyList10},</if>
+					<if test="rCopyList11 != null">#{rCopyList11},</if>
+					<if test="rCopyList12 != null">#{rCopyList12},</if>
+					<if test="rCopyList13 != null">#{rCopyList13},</if>
+					<if test="rCopyList14 != null">#{rCopyList14},</if>
+					<if test="rCopyList15 != null">#{rCopyList15},</if>
+					<if test="rCopyList16 != null">#{rCopyList16},</if>
+					<if test="rCopyList17 != null">#{rCopyList17},</if>
+					<if test="rCopyList18 != null">#{rCopyList18},</if>
+					<if test="rCopyList19 != null">#{rCopyList19},</if>
+					<if test="rCopyList20 != null">#{rCopyList20},</if>
+					<if test="rCopyList21 != null">#{rCopyList21},</if>
+					<if test="rCopyList22 != null">#{rCopyList22},</if>
+					<if test="rCopyList23 != null">#{rCopyList23},</if>
+					<if test="rCopyList24 != null">#{rCopyList24},</if>
+					<if test="rCopyList25 != null">#{rCopyList25},</if>
+					<if test="rCopyList26 != null">#{rCopyList26},</if>
+					<if test="rCopyList27 != null">#{rCopyList27},</if>
+					<if test="rCopyList28 != null">#{rCopyList28},</if>
+					<if test="rCopyList29 != null">#{rCopyList29},</if>
+					<if test="rCopyList30 != null">#{rCopyList30},</if>
+					<if test="rCopyList31 != null">#{rCopyList31},</if>
+					<if test="rCopyList32 != null">#{rCopyList32},</if>
+					<if test="rCopyList33 != null">#{rCopyList33},</if>
+					<if test="rCopyList34 != null">#{rCopyList34},</if>
+					<if test="rCopyList35 != null">#{rCopyList35},</if>
+				</trim>
+			)
+	</insert>
+	
+	<update id="updateCustomizeCopyListInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+			UPDATE RS_COPYLIST_SETTING
+			<set>
+				<if test="rCopyList1 != null">R_COPYLIST1 = #{rCopyList1},</if>
+				<if test="rCopyList2 != null">R_COPYLIST2 = #{rCopyList2},</if>
+				<if test="rCopyList3 != null">R_COPYLIST3 = #{rCopyList3},</if>
+				<if test="rCopyList4 != null">R_COPYLIST4 = #{rCopyList4},</if>
+				<if test="rCopyList5 != null">R_COPYLIST5 = #{rCopyList5},</if>
+				<if test="rCopyList6 != null">R_COPYLIST6 = #{rCopyList6},</if>
+				<if test="rCopyList7 != null">R_COPYLIST7 = #{rCopyList7},</if>
+				<if test="rCopyList8 != null">R_COPYLIST8 = #{rCopyList8},</if>
+				<if test="rCopyList9 != null">R_COPYLIST9 = #{rCopyList9},</if>
+				<if test="rCopyList10 != null">R_COPYLIST10 = #{rCopyList10},</if>
+				<if test="rCopyList11 != null">R_COPYLIST11 = #{rCopyList11},</if>
+				<if test="rCopyList12 != null">R_COPYLIST12 = #{rCopyList12},</if>
+				<if test="rCopyList13 != null">R_COPYLIST13 = #{rCopyList13},</if>
+				<if test="rCopyList14 != null">R_COPYLIST14 = #{rCopyList14},</if>
+				<if test="rCopyList15 != null">R_COPYLIST15 = #{rCopyList15},</if>
+				<if test="rCopyList16 != null">R_COPYLIST16 = #{rCopyList16},</if>
+				<if test="rCopyList17 != null">R_COPYLIST17 = #{rCopyList17},</if>
+				<if test="rCopyList18 != null">R_COPYLIST18 = #{rCopyList18},</if>
+				<if test="rCopyList19 != null">R_COPYLIST19 = #{rCopyList19},</if>
+				<if test="rCopyList20 != null">R_COPYLIST20 = #{rCopyList20},</if>
+				<if test="rCopyList21 != null">R_COPYLIST21 = #{rCopyList21},</if>
+				<if test="rCopyList22 != null">R_COPYLIST22 = #{rCopyList22},</if>
+				<if test="rCopyList23 != null">R_COPYLIST23 = #{rCopyList23},</if>
+				<if test="rCopyList24 != null">R_COPYLIST24 = #{rCopyList24},</if>
+				<if test="rCopyList25 != null">R_COPYLIST25 = #{rCopyList25},</if>
+				<if test="rCopyList26 != null">R_COPYLIST26 = #{rCopyList26},</if>
+				<if test="rCopyList27 != null">R_COPYLIST27 = #{rCopyList27},</if>
+				<if test="rCopyList28 != null">R_COPYLIST28 = #{rCopyList28},</if>
+				<if test="rCopyList29 != null">R_COPYLIST29 = #{rCopyList29},</if>
+				<if test="rCopyList30 != null">R_COPYLIST30 = #{rCopyList30},</if>
+				<if test="rCopyList31 != null">R_COPYLIST31 = #{rCopyList31},</if>
+				<if test="rCopyList32 != null">R_COPYLIST32 = #{rCopyList32},</if>
+				<if test="rCopyList33 != null">R_COPYLIST33 = #{rCopyList33},</if>
+				<if test="rCopyList34 != null">R_COPYLIST34 = #{rCopyList34},</if>
+				<if test="rCopyList35 != null">R_COPYLIST35 = #{rCopyList35},</if>
+			</set>
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>		
+	</update>
+	<update id="updateCustomizeCopyListInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+
+			UPDATE RS_COPYLIST_SETTING
+			<set>
+				<if test="rCopyList1 != null">R_COPYLIST1 = #{rCopyList1},</if>
+				<if test="rCopyList2 != null">R_COPYLIST2 = #{rCopyList2},</if>
+				<if test="rCopyList3 != null">R_COPYLIST3 = #{rCopyList3},</if>
+				<if test="rCopyList4 != null">R_COPYLIST4 = #{rCopyList4},</if>
+				<if test="rCopyList5 != null">R_COPYLIST5 = #{rCopyList5},</if>
+				<if test="rCopyList6 != null">R_COPYLIST6 = #{rCopyList6},</if>
+				<if test="rCopyList7 != null">R_COPYLIST7 = #{rCopyList7},</if>
+				<if test="rCopyList8 != null">R_COPYLIST8 = #{rCopyList8},</if>
+				<if test="rCopyList9 != null">R_COPYLIST9 = #{rCopyList9},</if>
+				<if test="rCopyList10 != null">R_COPYLIST10 = #{rCopyList10},</if>
+				<if test="rCopyList11 != null">R_COPYLIST11 = #{rCopyList11},</if>
+				<if test="rCopyList12 != null">R_COPYLIST12 = #{rCopyList12},</if>
+				<if test="rCopyList13 != null">R_COPYLIST13 = #{rCopyList13},</if>
+				<if test="rCopyList14 != null">R_COPYLIST14 = #{rCopyList14},</if>
+				<if test="rCopyList15 != null">R_COPYLIST15 = #{rCopyList15},</if>
+				<if test="rCopyList16 != null">R_COPYLIST16 = #{rCopyList16},</if>
+				<if test="rCopyList17 != null">R_COPYLIST17 = #{rCopyList17},</if>
+				<if test="rCopyList18 != null">R_COPYLIST18 = #{rCopyList18},</if>
+				<if test="rCopyList19 != null">R_COPYLIST19 = #{rCopyList19},</if>
+				<if test="rCopyList20 != null">R_COPYLIST20 = #{rCopyList20},</if>
+				<if test="rCopyList21 != null">R_COPYLIST21 = #{rCopyList21},</if>
+				<if test="rCopyList22 != null">R_COPYLIST22 = #{rCopyList22},</if>
+				<if test="rCopyList23 != null">R_COPYLIST23 = #{rCopyList23},</if>
+				<if test="rCopyList24 != null">R_COPYLIST24 = #{rCopyList24},</if>
+				<if test="rCopyList25 != null">R_COPYLIST25 = #{rCopyList25},</if>
+				<if test="rCopyList26 != null">R_COPYLIST26 = #{rCopyList26},</if>
+				<if test="rCopyList27 != null">R_COPYLIST27 = #{rCopyList27},</if>
+				<if test="rCopyList28 != null">R_COPYLIST28 = #{rCopyList28},</if>
+				<if test="rCopyList29 != null">R_COPYLIST29 = #{rCopyList29},</if>
+				<if test="rCopyList30 != null">R_COPYLIST30 = #{rCopyList30},</if>
+				<if test="rCopyList26 != null">R_COPYLIST31 = #{rCopyList31},</if>
+				<if test="rCopyList27 != null">R_COPYLIST32 = #{rCopyList32},</if>
+				<if test="rCopyList28 != null">R_COPYLIST33 = #{rCopyList33},</if>
+				<if test="rCopyList29 != null">R_COPYLIST34 = #{rCopyList34},</if>
+				<if test="rCopyList30 != null">R_COPYLIST35 = #{rCopyList35},</if>
+			</set>
+
+			OUTPUT
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_copylist_setting'
+		 	,	INSERTED.R_USER_ID
+			,	INSERTED.R_COPYLIST1
+			,	INSERTED.R_COPYLIST2
+			,	INSERTED.R_COPYLIST3
+			,	INSERTED.R_COPYLIST4
+			,	INSERTED.R_COPYLIST5
+			,	INSERTED.R_COPYLIST6
+			,	INSERTED.R_COPYLIST7
+			,	INSERTED.R_COPYLIST8
+			,	INSERTED.R_COPYLIST9
+			,	INSERTED.R_COPYLIST10
+			,	INSERTED.R_COPYLIST11
+			,	INSERTED.R_COPYLIST12
+			,	INSERTED.R_COPYLIST13
+			,	INSERTED.R_COPYLIST14
+			,	INSERTED.R_COPYLIST15
+			,	INSERTED.R_COPYLIST16
+			,	INSERTED.R_COPYLIST17
+			,	INSERTED.R_COPYLIST18
+			,	INSERTED.R_COPYLIST19
+			,	INSERTED.R_COPYLIST20
+			,	INSERTED.R_COPYLIST21
+			,	INSERTED.R_COPYLIST22
+			,	INSERTED.R_COPYLIST23
+			,	INSERTED.R_COPYLIST24
+			,	INSERTED.R_COPYLIST25
+			,	INSERTED.R_COPYLIST26
+			,	INSERTED.R_COPYLIST27
+			,	INSERTED.R_COPYLIST28
+			,	INSERTED.R_COPYLIST29
+			,	INSERTED.R_COPYLIST30
+			,	INSERTED.R_COPYLIST31
+			,	INSERTED.R_COPYLIST32
+			,	INSERTED.R_COPYLIST33
+			,	INSERTED.R_COPYLIST34
+			,	INSERTED.R_COPYLIST35
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			  , R_SYNC_CULUMN35
+			  , R_SYNC_CULUMN36
+			)
+
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+
+	</update>
+	<update id="updateCustomizeCopyListInfo" databaseId="oracle" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+		<!-- DECLARE
+ 		 row_id ROWID;
+		BEGIN
+			UPDATE RS_COPYLIST_SETTING
+			<set>
+				<if test="rCopyList1 != null">R_COPYLIST1 = #{rCopyList1},</if>
+				<if test="rCopyList2 != null">R_COPYLIST2 = #{rCopyList2},</if>
+				<if test="rCopyList3 != null">R_COPYLIST3 = #{rCopyList3},</if>
+				<if test="rCopyList4 != null">R_COPYLIST4 = #{rCopyList4},</if>
+				<if test="rCopyList5 != null">R_COPYLIST5 = #{rCopyList5},</if>
+				<if test="rCopyList6 != null">R_COPYLIST6 = #{rCopyList6},</if>
+				<if test="rCopyList7 != null">R_COPYLIST7 = #{rCopyList7},</if>
+				<if test="rCopyList8 != null">R_COPYLIST8 = #{rCopyList8},</if>
+				<if test="rCopyList9 != null">R_COPYLIST9 = #{rCopyList9},</if>
+				<if test="rCopyList10 != null">R_COPYLIST10 = #{rCopyList10},</if>
+				<if test="rCopyList11 != null">R_COPYLIST11 = #{rCopyList11},</if>
+				<if test="rCopyList12 != null">R_COPYLIST12 = #{rCopyList12},</if>
+				<if test="rCopyList13 != null">R_COPYLIST13 = #{rCopyList13},</if>
+				<if test="rCopyList14 != null">R_COPYLIST14 = #{rCopyList14},</if>
+				<if test="rCopyList15 != null">R_COPYLIST15 = #{rCopyList15},</if>
+				<if test="rCopyList16 != null">R_COPYLIST16 = #{rCopyList16},</if>
+				<if test="rCopyList17 != null">R_COPYLIST17 = #{rCopyList17},</if>
+				<if test="rCopyList18 != null">R_COPYLIST18 = #{rCopyList18},</if>
+				<if test="rCopyList19 != null">R_COPYLIST19 = #{rCopyList19},</if>
+				<if test="rCopyList20 != null">R_COPYLIST20 = #{rCopyList20},</if>
+				<if test="rCopyList21 != null">R_COPYLIST21 = #{rCopyList21},</if>
+				<if test="rCopyList22 != null">R_COPYLIST22 = #{rCopyList22},</if>
+				<if test="rCopyList23 != null">R_COPYLIST23 = #{rCopyList23},</if>
+				<if test="rCopyList24 != null">R_COPYLIST24 = #{rCopyList24},</if>
+				<if test="rCopyList25 != null">R_COPYLIST25 = #{rCopyList25},</if>
+				<if test="rCopyList26 != null">R_COPYLIST26 = #{rCopyList26},</if>
+				<if test="rCopyList27 != null">R_COPYLIST27 = #{rCopyList27},</if>
+				<if test="rCopyList28 != null">R_COPYLIST28 = #{rCopyList28},</if>
+				<if test="rCopyList29 != null">R_COPYLIST29 = #{rCopyList29},</if>
+				<if test="rCopyList30 != null">R_COPYLIST30 = #{rCopyList30},</if>
+			</set>
+			<where>
+				R_USER_ID = #{rUserId}
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			  , R_SYNC_CULUMN12
+			  , R_SYNC_CULUMN13
+			  , R_SYNC_CULUMN14
+			  , R_SYNC_CULUMN15
+			  , R_SYNC_CULUMN16
+			  , R_SYNC_CULUMN17
+			  , R_SYNC_CULUMN18
+			  , R_SYNC_CULUMN19
+			  , R_SYNC_CULUMN20
+			  , R_SYNC_CULUMN21
+			  , R_SYNC_CULUMN22
+			  , R_SYNC_CULUMN23
+			  , R_SYNC_CULUMN24
+			  , R_SYNC_CULUMN25
+			  , R_SYNC_CULUMN26
+			  , R_SYNC_CULUMN27
+			  , R_SYNC_CULUMN28
+			  , R_SYNC_CULUMN29
+			  , R_SYNC_CULUMN30
+			  , R_SYNC_CULUMN31
+			  , R_SYNC_CULUMN32
+			  , R_SYNC_CULUMN33
+			  , R_SYNC_CULUMN34
+			  , R_SYNC_CULUMN35
+			  , R_SYNC_CULUMN36
+			)
+			  SELECT 
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'U'
+			 	,	'rs_copylist_setting'
+			 	,	LS.R_USER_ID
+				,	LS.R_COPYLIST1
+				,	LS.R_COPYLIST2
+				,	LS.R_COPYLIST3
+				,	LS.R_COPYLIST4
+				,	LS.R_COPYLIST5
+				,	LS.R_COPYLIST6
+				,	LS.R_COPYLIST7
+				,	LS.R_COPYLIST8
+				,	LS.R_COPYLIST9
+				,	LS.R_COPYLIST10
+				,	LS.R_COPYLIST11
+				,	LS.R_COPYLIST12
+				,	LS.R_COPYLIST13
+				,	LS.R_COPYLIST14
+				,	LS.R_COPYLIST15
+				,	LS.R_COPYLIST16
+				,	LS.R_COPYLIST17
+				,	LS.R_COPYLIST18
+				,	LS.R_COPYLIST19
+				,	LS.R_COPYLIST20
+				,	LS.R_COPYLIST21
+				,	LS.R_COPYLIST22
+				,	LS.R_COPYLIST23
+				,	LS.R_COPYLIST24
+				,	LS.R_COPYLIST25
+				,	LS.R_COPYLIST26
+				,	LS.R_COPYLIST27
+				,	LS.R_COPYLIST28
+				,	LS.R_COPYLIST29
+				,	LS.R_COPYLIST30
+				,	LS.R_COPYLIST31
+				,	LS.R_COPYLIST32
+				,	LS.R_COPYLIST33
+				,	LS.R_COPYLIST34
+				,	LS.R_COPYLIST35
+		    
+		        FROM DUAL, RS_COPYLIST_SETTING LS
+		        WHERE LS.ROWID = row_id;
+		        
+		    END; -->
+	</update>
+	
+	<delete id="deleteCustomizeCopyListInfo" parameterType="com.furence.recsee.admin.model.CustomizeCopyListInfo">
+		DELETE FROM RS_COPYLIST_SETTING
+		<where>
+			<if test="rUserId != null">R_USER_ID = #{rUserId}</if>
+		</where>
+	</delete>
+	
+</mapper>

@@ -1,0 +1,119 @@
+/* 공통 사용 */
+.info_txt{
+	font-size: 13px;
+	color: #d0006f;
+	clear: both;
+	margin-top: 5px;
+	margin-right: 24px;
+	margin-bottom: 10px;
+	margin-left: 10px !important;
+}
+.info_txt.ui_float_right{
+	margin-right: 20px;
+}
+.detail_manage_tit{
+    float: left;
+    clear: both;
+	width: 100%;
+    height: auto;
+    background-color: #ccd0d4;
+    padding: 10px 0;
+    color: #666666;
+    text-indent: 10px;
+}
+.detail_manage_pannel{
+	float:left;
+	clear:both;
+	margin-bottom: 20px;
+}
+.detail_manage_form{
+	float: left;
+	clear: both;
+}
+.detail_manage_form label{
+	float: left;
+    width: 150px;
+    font-size: 14px;
+    color: #666666;
+	margin: 10px 5px;
+    padding: 5px 0;
+    padding-left: 20px;
+    background-image: url(../../../images/project/icon/label_icon/icon_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+.detail_manage_form input{
+	float: left;
+	width: 200px;
+	margin: 10px 0;
+	margin-right: 20px;
+}
+.detail_manage_form select{
+	float: left;
+	width: 200px;
+	margin: 10px 0;
+	margin-right: 20px;
+}
+.detail_manage_pannel button{
+	float: right;
+	margin-right: 20px;
+}
+
+/* 녹취 엔진 */
+.detail_engine_pannel .btn_restart{
+	float: left !important;
+	clear: both;
+	margin: 10px !important;
+}
+
+/* 음성 파일 업로드 */
+.detail_voicefile_pannel .label_meno{
+	width: 35px !important
+}
+
+/* 업데이트 파일 업로드 */
+.detail_updatefile_pannel .label_meno{
+	width: 35px !important
+}
+
+/* 파일 업로드 커스터마이징 css : 추후 common으로 이동 */
+
+/* 기타 관리 */
+.detail_etc_pannel .select_file_pattern{
+	width: 196.5px !important;
+	margin-right: 5px !important
+}
+.detail_etc_pannel .file_name_sample{
+	font-size: 13px;
+	color: #999999;
+	float: right;
+	clear: both;
+	margin-right: 24px;
+	margin-top: 10px;
+}
+
+
+/* 서버 타임존 관리 */
+.detail_timezone_pannel .timezone_sample{
+	font-size: 13px;
+	color: #999999;
+	float: right;
+	clear: both;
+	margin-right: 8px;
+	margin-top: 10px;
+}
+.detail_timezone_pannel .select_timezone{
+	width: 196.5px !important;
+	margin-right: 5px !important
+}
+.detail_timezone_pannel button{
+	margin-right: 5px !important
+}
+
+#delRecfileInfoModify input {
+	width:55px;
+}
+
+#delRecfileInfoModify label {
+	clear:both;
+}

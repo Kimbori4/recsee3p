@@ -1,0 +1,286 @@
+.search_main_pannel{
+	float: left;
+	clear: both;
+	width: 100%;
+}
+.player_pannel{
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	bottom: 0px;
+	z-index: 50;
+}
+
+/* search pannel css */
+.ui_pannel_tit{
+	margin-bottom : 8px;
+	margin-right : 20px;	
+}
+.player_pannel{
+	border-top: 1px solid #dddddd;
+}
+#screenPopup{
+	min-width: 926px;
+	width: 926px;
+	height: 500px;
+	min-height: 300px;
+}
+#screenPopup .play_control_header{
+	display: none !important;
+}
+
+#searchListPopup{
+	min-width : 700px;
+	width : 700px;
+	height : 500px;
+	min-height : 500px;
+}
+
+@media screen and (min-width : 1920px){
+	#gridSearch .gridbox{
+		max-width : 1715px !important;
+	}
+
+	#gridSearch .gridbox .xhdr{
+		max-width : 1715px !important;
+	}
+
+	#gridSearch .gridbox .objbox{
+		max-width : 1715px !important;
+	}
+}
+
+@media screen and (min-width : 1250px){
+	#gridSearch .gridbox{
+		max-width : 1115px;
+	}
+
+	#gridSearch .gridbox .xhdr{
+		max-width : 1115px;
+	}
+
+	#gridSearch .gridbox .objbox{
+		max-width : 1115px;
+	}
+}
+ 
+
+
+/*search Form*/
+.search_fieldset{
+	background-color: #f2f9ff;
+	display:block;
+	float:left;
+	margin : 2px;
+	border: 1px solid #5596d6 !important;
+	position : relative;
+	transition : transform 1s;
+	padding-left: 80px !important;
+}
+
+.search_fieldset legend{
+	font-size : 12px;
+	width : 80px;
+	height : 40px;
+	margin-left : -79px;
+	position : absolute;
+	text-align : center;
+	padding-top : 10px;
+	color: #3da0e3;
+}
+
+#searchBtn{
+	border-radius: 2px;
+	float: left;
+	height: 35px;
+	margin-top: 2px;
+}
+
+.search_fieldset_move{
+	position : absolute;
+	right : 3px;
+	transform : scale(1.1);
+	cursor : pointer;
+}
+
+.delete-item{
+	right : -4px;
+	position : absolute;
+	top : 2px;
+	transform : scale(1.2);
+	border : 1px solid #999;
+	border-radius : 15px;
+	background-color: #999;
+	cursor : pointer;
+}
+
+
+/* #sDate, #eDate{
+	border:2px solid #d99103
+}
+
+#sDate:-ms-input-placeholder, #eDate:-ms-input-placeholder{
+	color: #d99103 !important
+}
+
+
+
+#sTime, #sTimeS, #eTime, #eTimeS{
+	border:2px solid #2d71c4
+}
+
+#sTime:-ms-input-placeholder, #sTimeS:-ms-input-placeholder, #eTime:-ms-input-placeholder, #eTimeS:-ms-input-placeholder{
+	color: #2d71c4 !important
+}
+
+
+
+
+
+#sTtime, #sTtimeS, #eTtime, #eTtimeS{
+	border:2px solid #d99103
+}
+#sTtime:-ms-input-placeholder, #sTtimeS:-ms-input-placeholder, #eTtime:-ms-input-placeholder, #eTtimeS:-ms-input-placeholder{
+	color: #d99103 !important
+}
+
+
+#userName, #extNum{
+	border:2px solid #2d71c4
+}
+
+#userName:-ms-input-placeholder, #extNum:-ms-input-placeholder{
+	color: #2d71c4 !important
+}
+
+
+#custName, #custPhone1{
+	border:2px solid #d99103
+}
+
+#custName:-ms-input-placeholder, #custPhone1:-ms-input-placeholder{
+	color: #d99103 !important
+} */
+
+/* context menu */
+.context-menus{
+	position : absolute;
+	display : none;
+	border : 1px solid #555;
+	border-radius : 2px;
+	color: #777;
+	box-shadow : 0 5px 15px 1px rgba(0, 0 , 0 , 0.6),
+					 0 0 200px 1px rgba(255, 255, 255, 0.5);
+	text-align : center;
+}
+
+.context-menus.active{
+	display : block;
+	background-color:white;
+	z-index:100;
+}
+
+.context-menus.active>ul>li{
+	list-style:none;
+	color : #777;
+	font-size : 11px;
+	line-height : 23px;
+	padding : 0px 15px; 
+	cursor:pointer;
+}
+
+.context-menus.active>ul>li:hover{
+	background-color : #ccc;
+	color:white;
+}
+
+
+
+
+/******************************************************/
+.main_contents{
+	min-width : 1260px;
+}
+
+#chart{
+	width : 100%;
+	height : 400px;
+	position : absolute;
+	margin-top : 48px;
+}
+#uploadStatusGrid{
+	height:100%;
+	margin-top:20px;
+}
+#gridUploadManage{
+  	position: relative;
+    float: left;
+    clear: both;
+	width : 100% !important;
+	margin-top:15px;
+}
+
+#gridGroupUpload{
+	width : 100% !important;
+}
+
+#chart_lable{
+	display : table;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 519px;
+    color : #666666;
+}
+
+.chart_legend_wrap {
+	text-align: center;
+	font-size : 11px;
+	width : 100%;
+	position : absolute;
+	top : 55px;
+}
+
+.chart_legend_box {
+	display : inline-block;
+	margin : 0 15px; 
+	width : 95px;
+}
+
+.chart_legend_box.success span{
+	position : absolute;
+	width : 10px;
+	height : 10px;
+	background : #00b3a3;
+	margin-top: 2px;
+}
+
+.chart_legend_box.fail span{
+	position : absolute;
+	width : 10px;
+	height : 10px;
+	background : #fe2e2e;
+	margin-top: 2px;
+}
+
+.chart_legend_box.ready span{
+	position : absolute;
+	width : 10px;
+	height : 10px;
+	background : #bbbbbb;
+	margin-top: 2px;
+}
+
+.chart_cell{
+	display : table-cell;
+	font-size : 9px;
+	text-align : center;
+	padding-left : 45px;
+}
+
+.chart_cell p{
+	display : inline-block;
+	width : 10%;
+	margin : 0 2.5%;
+}

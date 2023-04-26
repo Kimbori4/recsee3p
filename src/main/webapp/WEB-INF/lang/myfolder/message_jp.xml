@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>マイフォルダ(MyFolder)画面用メッセージ定義</comment>
+
+	<!-- 마이폴더 -->
+	<entry key="myfolder.alert.inputName">フォルダ名を入力してください。</entry>
+	<entry key="myfolder.alert.completingAdd">フォルダの追加が完了しました。</entry>
+	<entry key="myfolder.alert.existSameFolder">同一のフォルダが存在します。\\n再入力してください。</entry>
+	<entry key="myfolder.alert.selectFolder">フォルダを選択してください。</entry>
+	<entry key="myfolder.alert.editingFolder">フォルダの修正が完了しました。</entry>
+	<entry key="myfolder.alert.deletingFolder">本当に削除しますか?</entry>
+	<entry key="myfolder.alert.notExistFile">選択した録音ファイルが存在しません。</entry>
+	<entry key="myfolder.alert.alreadyRecorded">該当フォルダにすでに録音ファイルがあります。</entry>
+		
+	<entry key="myfolder.button.editFolder">フォルダ修正</entry>
+	<entry key="myfolder.button.deleteFolder">フォルダ削除</entry>
+	<entry key="myfolder.button.addFolder">フォルダー追加</entry>
+	<entry key="myfolder.button.addFile">選択ファイルリストに追加</entry>
+	<entry key="myfolder.button.moveFile">選択ファイル移動</entry>
+	<entry key="myfolder.button.removeFile">選択ファイルをマイフォルダから削除</entry>
+
+
+</properties>

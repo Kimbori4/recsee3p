@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.SQLManageDao">
+	<resultMap id="SQLResultMap" type="com.furence.recsee.admin.model.SQLManage">
+		<result column="SQLNAME" jdbcType="VARCHAR" property="sqlName" />
+		<result column="SQL" jdbcType="VARCHAR" property="sql" />
+	</resultMap>
+
+	<select id="selectSQLManage" parameterType="com.furence.recsee.admin.model.SQLManage" databaseId="postgres" resultMap="SQLResultMap">
+		SELECT * FROM SCHEDULER_SQL_MANAGE ORDER BY SQLNAME
+	</select>
+	
+	<select id="selectOneSQLManage" parameterType="com.furence.recsee.admin.model.SQLManage" databaseId="postgres" resultMap="SQLResultMap">
+		SELECT * FROM SCHEDULER_SQL_MANAGE WHERE SQLNAME=#{sqlName}
+	</select>
+	
+	<insert id="insertSQLManage" databaseId="postgres" parameterType="com.furence.recsee.admin.model.SQLManage">
+			INSERT INTO SCHEDULER_SQL_MANAGE (
+				SQLNAME,
+				SQL
+			) VALUES (
+				#{sqlName},
+				#{sql}
+			)
+	</insert>
+	
+	<update id="updateSQLManage" databaseId="postgres" parameterType="com.furence.recsee.admin.model.SQLManage">
+		UPDATE SCHEDULER_SQL_MANAGE SET
+			SQL=#{sql}
+		WHERE
+			SQLNAME=#{sqlName}
+	</update>
+	
+	<delete id="deleteSQLManage" databaseId="postgres" parameterType="com.furence.recsee.admin.model.SQLManage">
+		DELETE FROM SCHEDULER_SQL_MANAGE WHERE SQLNAME=#{sqlName}
+	</delete>
+	
+</mapper>

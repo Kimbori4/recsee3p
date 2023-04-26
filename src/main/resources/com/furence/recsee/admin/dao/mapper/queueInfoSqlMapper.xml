@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.QueueInfoDao">
+	<resultMap id="QueueResultMap" type="com.furence.recsee.admin.model.QueueInfo">
+		<result column="R_QUEUE_NUM" jdbcType="VARCHAR" property="rQueueNum" />
+		<result column="R_QUEUE_NAME" jdbcType="VARCHAR" property="rQueueName"/>
+	</resultMap>
+
+	<select id="selectQueueInfo" parameterType="com.furence.recsee.admin.model.QueueInfo" databaseId="postgres" resultMap="QueueResultMap">
+	SELECT
+		R_QUEUE_NUM,
+		R_QUEUE_NAME
+	FROM
+		RS_QUEUE_INFO
+	<where>
+		<trim suffixOverrides="AND">
+			<if test="rQueueNum != null">
+			R_QUEUE_NUM = #{rQueueNum} AND
+			</if>
+			<if test="rQueueName != null">
+			R_QUEUE_NAME LIKE '%'||#{rQueueName}||'%' AND
+			</if>
+		</trim>
+	</where>
+	ORDER BY R_QUEUE_NUM
+	</select>
+	
+	<select id="selectQueueInfo" parameterType="com.furence.recsee.admin.model.QueueInfo" databaseId="sqlserver" resultMap="QueueResultMap">
+	SELECT
+		R_QUEUE_NUM,
+		R_QUEUE_NAME
+	FROM
+		RS_QUEUE_INFO
+	<where>
+		<trim suffixOverrides="AND">
+			<if test="rQueueNum != null">
+			R_QUEUE_NUM = #{rQueueNum} AND
+			</if>
+			<if test="rQueueName != null">
+			R_QUEUE_NAME LIKE '%'||#{rQueueName}||'%' AND 
+			</if>
+		</trim>
+	</where>
+	ORDER BY R_QUEUE_NUM
+	</select>
+	
+	<select id="selectQueueInfo" parameterType="com.furence.recsee.admin.model.QueueInfo" databaseId="oracle" resultMap="QueueResultMap">
+	SELECT
+		R_QUEUE_NUM,
+		R_QUEUE_NAME
+	FROM
+		RS_QUEUE_INFO
+	<where>
+		<trim suffixOverrides="AND">
+			<if test="rQueueNum != null">
+			R_QUEUE_NUM = #{rQueueNum} AND
+			</if>
+			<if test="rQueueName != null">
+			R_QUEUE_NAME LIKE '%'||#{rQueueName}||'%' AND
+			</if>
+		</trim>
+	</where>
+	ORDER BY R_QUEUE_NUM
+	</select>
+	
+	<insert id="insertQueueInfo" parameterType="com.furence.recsee.admin.model.QueueInfo">
+	INSERT INTO RS_QUEUE_INFO
+	(
+		R_QUEUE_NUM,
+		R_QUEUE_NAME
+	) VALUES (
+		#{rQueueNum},
+		#{rQueueName}
+	)
+	</insert>
+
+	<update id="updateQueueInfo" parameterType="com.furence.recsee.admin.model.QueueInfo">
+	UPDATE RS_QUEUE_INFO
+	<set>
+		<trim suffixOverrides=",">
+			<if test="rQueueNum != null">
+			R_QUEUE_NUM = #{rQueueNum},
+			</if>
+			<if test="rQueueName != null">
+			R_QUEUE_NAME = #{rQueueName},
+			</if>
+		</trim>
+	</set>
+	<where>
+		<if test="rQueueNum != null">
+		R_QUEUE_NUM = #{rQueueNum}
+		</if>
+	</where>
+	</update>
+
+	<delete id="deleteQueueInfo" parameterType="com.furence.recsee.admin.model.QueueInfo">
+	DELETE FROM RS_QUEUE_INFO
+	<where>
+		<if test="rQueueNum != null">
+		R_QUEUE_NUM = #{rQueueNum}
+		</if>
+	</where>
+	</delete>
+</mapper>

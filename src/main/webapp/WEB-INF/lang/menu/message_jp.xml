@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>メニュー画面用メッセージ定義</comment>
+
+	<entry key="menu.top.search">照会</entry>
+	<entry key="menu.top.search_listen"><![CDATA[照会＆聴取]]></entry>
+
+	<entry key="menu.top.statistics">統計</entry>
+	<entry key="menu.top.statistics_dashboard">ダッシュボード</entry>
+	<entry key="menu.top.statistics_call">全体コール数統計</entry>
+	<entry key="menu.top.statistics_group">グループコール数統計</entry>
+	<entry key="menu.top.statistics_user">ユーザー・コール数統計</entry>
+	<entry key="menu.top.statistics_day_time_user">사용자 대시보드</entry>
+	
+	<entry key="menu.top.monitoring">モニターリング</entry>
+	<entry key="menu.top.monitoring_realtime">リアルタイムモニターリング</entry>
+	<entry key="menu.top.monitoring_system">システムモニターリング</entry>
+	<entry key="menu.top.monitoring_dashboard">ダッシュボード</entry>
+		
+	<entry key="menu.top.evaluation">評価</entry>
+	<entry key="menu.top.evaluation_register">評価管理</entry>
+	<entry key="menu.top.evaluation_result">評価結果</entry>
+	<entry key="menu.top.evaluate">評価下</entry>
+	<entry key="menu.top.evaluation_campaign">キャンペーン管理</entry>
+
+	<entry key="menu.top.management">管理</entry>
+	<entry key="menu.top.management_setting">システム設定</entry>
+	<entry key="menu.top.management_setting_backup">バックアップ管理</entry>
+	<entry key="menu.top.management_setting_channel">チャンネル管理</entry>
+	<entry key="menu.top.management_setting_callReportCustomize">コールレポーユーザー定義</entry>
+	<entry key="menu.top.management_setting_searchCustomize">検索ユーザー定義</entry>
+	<entry key="menu.top.management_setting_system">システム設定</entry>
+	<entry key="menu.top.management_setting_pbx">PBX関連情報</entry>
+
+	<entry key="menu.top.management_user">ユーザー管理</entry>
+	<entry key="menu.top.management_user_user">ユーザー情報管理</entry>
+	<entry key="menu.top.management_user_group">グループ管理</entry>
+	<entry key="menu.top.management_user_access">権限管理</entry>
+	<entry key="menu.top.management_user_category">カテゴリー管理</entry>
+	<entry key="menu.top.management_user_screenUser">画面のユーザー管理</entry>
+
+	<entry key="menu.top.management_system">システム管理</entry>
+	<entry key="menu.top.management_system_license">ライセンス</entry>
+	<entry key="menu.top.management_system_log">ログ管理</entry>
+	<entry key="menu.top.management_system_etc">その他、管理</entry>
+	<entry key="menu.top.management_system_queue">キュー管理</entry>
+
+	<entry key="menu.top.myinfo">プロフィール</entry>
+	<entry key="menu.top.myinfo_account">アカウント情報</entry>
+	<entry key="menu.top.myinfo_changePassword">パスワード変更</entry>
+	<entry key="menu.top.myinfo_logout">ログアウト</entry>
+
+
+</properties>

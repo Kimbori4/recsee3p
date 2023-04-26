@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>공통(common) 화면용 메세지 정의</comment>
+
+	<entry key="header.label.hello">안녕하세요</entry>
+	<entry key="header.title.settings">환경설정</entry>
+	<entry key="header.title.modifyUser">개인정보변경</entry>
+	<entry key="header.title.logout">로그아웃</entry>
+	<entry key="header.menu.label.searchNListen">녹취 관리</entry>
+	<entry key="header.menu.label.searchNListenCallType">콜타입 청취 관리</entry>
+	<entry key="header.menu.label.searchNDate">녹취 조회 기간 관리</entry>
+	<entry key="header.menu.label.playerSetting">플레이어 설정</entry>
+	<entry key="header.menu.label.playerUnderMenu">플레이어 하단 메뉴</entry>	
+	<entry key="header.menu.label.playersectionMenu">플레이어 구간 메뉴</entry>	
+	<entry key="header.menu.label.downloadApproveInit">다운로드 요청 권한</entry>
+	<entry key="header.menu.label.searchNListenMemo">메모</entry>
+	<entry key="header.menu.label.reportNDashboard">상세통계</entry>
+	<entry key="header.menu.label.dashboard">대시보드</entry>
+	<entry key="header.menu.label.callAll">그룹 콜 통계</entry>
+	<entry key="header.menu.label.callUser">사용자별 콜 통계</entry>
+	<entry key="header.menu.label.callMobile">모바일 콜 통계</entry>
+	<entry key="header.menu.label.callDayTimeUser">사용자 대시보드</entry>
+	<entry key="header.menu.label.monitoring">모니터링</entry>
+	<entry key="header.menu.label.realtimeMonitoring">카드뷰 모니터링</entry>
+	<entry key="header.menu.label.realtimeMonitoringGrid">그리드뷰 모니터링</entry>
+	<entry key="header.menu.label.realtimeMonitoringOffice">오피스뷰 모니터링</entry>
+	<entry key="header.menu.label.systemMonitoring">시스템 모니터링</entry>
+	<entry key="header.menu.label.BluePrintMonitoring">도면 모니터링</entry>
+	<entry key="header.menu.label.serverMonitoring">서버 모니터링</entry>
+	<entry key="header.menu.label.systemRealtimeMonitoring">시스템 모니터링</entry>
+	<entry key="header.menu.label.myFolderMenu">마이폴더</entry>
+	<entry key="header.menu.label.uploadStatus">업로드 현황</entry>
+	<entry key="header.menu.label.individualUploadstatus">개별 업로드 현황</entry>
+	<entry key="header.menu.label.uploadStatusSearch">그룹별 업로드 현황</entry>
+	<entry key="header.menu.label.BestCall">우수콜</entry>
+	<entry key="header.menu.label.BestCallManage">우수콜 관리</entry>
+	<entry key="header.menu.label.BestCallShare">우수콜 공유</entry>
+	<entry key="header.menu.label.approveList">청취 및 다운로드 요청 관리</entry>
+	<entry key="header.menu.label.evaluation">평가 관리</entry>
+	<entry key="header.menu.label.evaluationList">평가 조회</entry>
+	<entry key="header.menu.label.itemManage">평가항목 관리</entry>
+	<entry key="header.menu.label.sheetManage">평가지 관리</entry>
+	<entry key="header.menu.label.campaignManage">캠페인 관리</entry>
+	<entry key="header.menu.label.administer">시스템관리</entry>
+	<entry key="header.menu.label.evaluationStatistics">평가 통계</entry>
+	<entry key="header.menu.label.evaluating">평가하기</entry>
+	<entry key="header.menu.label.transcript">전사 관리</entry>
+	<entry key="header.menu.label.learningTranscript">전사 학습관리</entry>
+	<entry key="header.menu.label.sttModel">STT모델 관리</entry>
+	<entry key="header.menu.label.sttEnginState">STT적용모델 정보</entry>
+	<entry key="header.menu.label.sttResultManage">STT 조회</entry>
+	<entry key="header.menu.label.faceRecording">대면 녹취</entry>
+	<entry key="header.menu.label.recording">녹취</entry>
+	<entry key="header.menu.label.audioCalibration">음질 보정</entry>
+	<entry key="header.menu.label.scriptRegistration">스크립트 조회</entry>
+	<entry key="header.menu.label.scriptRegistrationApprove">결재목록</entry>
+	<entry key="header.menu.label.scriptRegistrationCommon">공용스크립트 관리</entry>
+	<entry key="header.menu.label.scriptRegistrationApproveReport">결재이력</entry>
+	
+	<entry key="header.popup.modifyUser.label.manageUserInfo">사용자 정보 관리</entry>
+	<entry key="header.popup.modifyUser.label.id">ID</entry>
+	<entry key="header.popup.modifyUser.label.userName">사용자 이름</entry>
+	<entry key="header.popup.modifyUser.label.userEmp">사용자 아이디</entry>
+	<entry key="header.popup.modifyUser.label.userId">아이디</entry>
+	<entry key="header.popup.modifyUser.label.password">비밀번호</entry>
+	<entry key="header.popup.modifyUser.label.passwordCheck">비밀번호 확인</entry>
+	<entry key="header.popup.modifyUser.label.ext">내선번호</entry>
+	<entry key="header.popup.modifyUser.label.phoneNo">연락처</entry>
+	<entry key="header.popup.modifyUser.label.sex">성별</entry>
+	<entry key="header.popup.modifyUser.option.male">남자</entry>
+	<entry key="header.popup.modifyUser.option.female">여자</entry>
+	<entry key="header.popup.modifyUser.label.userLevel">권한등급</entry>
+	<entry key="header.popup.modifyUser.label.level1">대분류</entry>
+	<entry key="header.popup.modifyUser.label.level2">중분류</entry>
+	<entry key="header.popup.modifyUser.label.level3">소분류</entry>
+	<entry key="header.popup.modifyUser.label.empNo">사원번호</entry>
+	<entry key="header.popup.modifyUser.label.email">이메일</entry>
+	<entry key="header.popup.modifyUser.label.ctiId">CTI ID</entry>
+	<entry key="header.popup.modifyUser.button.modify">개인 정보 수정</entry>
+	<entry key="header.popup.evaluation.label.evaluation">상담원 평가 </entry>
+	<entry key="header.popup.evaluation.option.selectCampaign">캠페인 선택</entry>
+	<entry key="header.popup.evaluation.option.selectSheet">평가지 선택</entry>
+	<entry key="header.popup.evaluation.input.notification">상담원 알림</entry>
+	<entry key="header.popup.evaluation.input.objection">이의제기</entry>
+	<entry key="header.popup.evaluation.input.revaluation">재평가 여부</entry>
+	<entry key="header.popup.evaluation.input.scoringSystem">채점방식</entry>
+	<entry key="header.popup.evaluation.label.evaluatorComment">평가자 종합 의견</entry>
+	<entry key="header.popup.evaluation.label.evaluatorComment2">2차 평가자 종합 의견</entry>
+	<entry key="header.popup.evaluation.label.appraiseeComment">상담원 종합 의견</entry>
+	<entry key="header.popup.evaluation.button.moveCampaign">캠페인 관리로 이동</entry>
+	<entry key="header.popup.evaluation.label.sheetScore">평가 총 점수</entry>
+	<entry key="header.popup.evaluation.label.totalScore">평가된 점수</entry>
+	<entry key="header.popup.evaluation.button.interimStorage">중간 저장</entry>
+	<entry key="header.popup.evaluation.button.done">평가 완료</entry>
+	<entry key="header.popup.evaluation.alert.noData">항목이 없습니다.</entry>
+	<entry key="header.popup.evaluation.alert.notAllSelected">선택하지 않은 항목이 있습니다.</entry>
+	<entry key="header.popup.evaluation.alert.updateEvaluationComplete">평가가 저장되었습니다.</entry>
+	<entry key="header.popup.evaluation.alert.updateEvaluationFailed">평가 저장에 실패했습니다.</entry>
+	<entry key="header.popup.modifyUser.label.userInfo">사용자 정보</entry>
+	<entry key="header.popup.modifyUser.label.custInfo">고객 정보</entry>
+
+	<entry key="tab.alert.exceeds">탭개수가 10개를 초과할 수 없습니다. 사용중인 탭을 종료해 주세요.</entry>
+
+	<entry key="recsee.title.version">버전</entry>
+	<entry key="recsee.version">v3.0</entry>
+
+	<entry key="message.title.alert">경고</entry>
+	<entry key="message.title.notifications">알림</entry>
+	<entry key="message.btn.ok">확인</entry>
+	<entry key="message.btn.cancel">취소</entry>
+	<entry key="message.btn.add">아이템 추가</entry>
+	<entry key="message.btn.memo">메모 추가</entry>
+	<entry key="message.btn.modify">수정</entry>
+	<entry key="message.btn.del">삭제</entry>
+	<entry key="message.btn.apply">적용</entry>
+	<entry key="message.btn.clear">조회 조건 초기화</entry>
+	<entry key="message.btn.csv">csv조회</entry>
+	<entry key="message.btn.excelDownload">엑셀 다운로드</entry>
+	<entry key="message.btn.testMailSend">테스트 메일 발송</entry>
+	<entry key="message.btn.save">저장</entry>
+	<entry key="message.btn.restart">재시작</entry>
+	<entry key="message.btn.upload">업로드</entry>
+	<entry key="message.btn.selectionType">선택형</entry>
+	<entry key="message.btn.inputType">입력형</entry>
+	<entry key="message.btn.checkType">체크형</entry>
+	<entry key="message.btn.answerType">답변형</entry>
+
+	<entry key="ws.message.not_support">사용 중인 브라우저는 WebSocket을 지원하지 않습니다.</entry>
+	<entry key="ws.message.exception">WebSocket 처리 중 에러가 발생하였습니다.</entry>
+	<entry key="ws.message.no_message">요청 메세지가 없습니다.</entry>
+	<entry key="ws.message.send_exception">요청 메세지 전달 중 오류가 발생하였습니다.</entry>
+	<entry key="ws.message.connect_fail"><![CDATA[서버가 응답하지 않습니다.<br>확인 후 다시 시도하십시요.]]></entry>
+	<entry key="ws.message.save_fail"><![CDATA[수정된 설정을 저장하지 못 했습니다.]]></entry>
+	<entry key="ws.message.regException">예외</entry>
+	<entry key="ws.message.isNaN">숫자만 입력하세요.</entry>
+	<entry key="ws.message.isCharacter">특수 문자는 사용할 수 없습니다.</entry>
+	<entry key="ws.message.isEng">영문자만 입력하세요.</entry>
+	<entry key="ws.message.isIDCheck"><![CDATA[아이디는 영문자, 숫자 조합으로 입력하세요.<br>영문자로 시작해야 합니다.]]></entry>
+	<entry key="ws.message.inputLength">입력 길이</entry>
+
+	<entry key="call.type.ALL">전체</entry>
+	<entry key="call.type.I">수신</entry>
+	<entry key="call.type.O">발신</entry>
+	<entry key="call.type.T">호전환</entry>
+	<entry key="call.type.TR">전환수신</entry>
+	<entry key="call.type.TS">전환송신</entry>
+	<entry key="call.type.C">회의</entry>
+	<entry key="call.type.Z">내선</entry>
+	<entry key="call.type.RNA">수신거부</entry>
+	<entry key="call.type.S">협의</entry>
+	<entry key="call.type.R">IVR</entry>
+	<entry key="call.type.T2">내선송신</entry>
+	<entry key="call.type.C2">회의함</entry>
+	<entry key="call.type.Z2">내선</entry>
+	<entry key="call.type.P">부분녹취</entry>
+	<entry key="call.type.X">대면녹취</entry>
+	<entry key="call.type.">UNKNOWN</entry>
+	<entry key="call.type.''">UNKNOWN</entry>
+	<entry key="call.type.'">UNKNOWN</entry>
+	
+	<entry key="call.buffer13.S">현장출동</entry>
+	<entry key="call.buffer13.E">긴급출동</entry>
+	<entry key="call.buffer13.A">사고접수</entry>
+
+	<entry key="call.buffer14.1">근속</entry>
+	<entry key="call.buffer14.2">신입</entry>
+
+	<entry key="use.yes">예</entry>
+	<entry key="use.no">아니오</entry>
+
+	<entry key="call.product.type.1">신탁</entry>
+	<entry key="call.product.type.2">펀드</entry>
+	<entry key="call.product.type.3">공통</entry>
+	<entry key="call.product.type.4">방카</entry>
+	<entry key="call.product.type.5">퇴직연금</entry>
+	
+	<entry key="call.rec.type.acr">전수녹취</entry>
+	<entry key="call.rec.type.odr">선택녹취</entry>
+	<entry key="call.rec.type.tacr">부분녹취</entry>
+	<entry key="call.rec.type.tcr">전체</entry>
+
+	<entry key="call.rec.startType.A">전수녹취</entry>
+	<entry key="call.rec.startType.S">선택녹취</entry>
+	<entry key="call.rec.startType.P">부분녹취</entry>
+	<entry key="call.rec.startType.T">전체녹취</entry>
+	<entry key="call.rec.startType.R">복구녹취</entry>
+
+	<entry key="call.type.startType.A">전수녹취</entry>
+	<entry key="call.type.startType.S">선택녹취</entry>
+	<entry key="call.type.startType.P">부분녹취</entry>
+	<entry key="call.type.startType.T">전체녹취</entry>
+	<entry key="call.type.startType.R">복구녹취</entry>
+	<entry key="call.type.OUT">OUT</entry>
+	<entry key="call.type.IN">IN</entry>
+
+	<entry key="access.grade.A">전체</entry>
+	<entry key="access.grade.B">대분류</entry>
+	<entry key="access.grade.M">중분류</entry>
+	<entry key="access.grade.S">소분류</entry>
+	<entry key="access.grade.U">본인</entry>
+	<entry key="access.grade.add">허용추가</entry>
+
+	<entry key="line.20">====================</entry>
+	<entry key="line.10">==========</entry>
+
+	<entry key="message.download.nofile">파일이 없습니다.</entry>
+	<entry key="message.download.logout">로그인 세션이 만료되었습니다.</entry>
+	<entry key="message.alert.noData">데이타가 없습니다.</entry>
+
+	<entry key="message.combo.select">선택</entry>
+
+	<entry key="message.combo.default">기본값</entry>
+
+	<entry key="common.sperater.1">/</entry>
+
+	<entry key="message.title.status">상태</entry>
+
+	<entry key="combo.ALL">전체</entry>
+
+	<entry key="contextMenu.allChecked"><![CDATA[전체 선택]]></entry>
+	<entry key="contextMenu.allUnChecked"><![CDATA[전체 해제]]></entry>
+
+	<entry key="combo.filePattern.a">CID</entry>
+	<entry key="combo.filePattern.b">콜타입</entry>
+	<entry key="combo.filePattern.c">사용자 ID</entry>
+
+
+	<entry key="common.date.start">시작날짜</entry>
+	<entry key="common.date.end">종료날짜</entry>
+	<entry key="common.label.start">시작</entry>
+	<entry key="common.label.end">끝</entry>
+	<entry key="common.label.move">이동</entry>
+	<entry key="common.label.selectFolder">폴더선택</entry>
+	<entry key="common.label.selectMoveFile">선택파일 이동</entry>
+	<entry key="common.label.folderName">폴더명</entry>
+	<entry key="common.label.editFolder">폴더 수정</entry>
+	<entry key="common.label.addFolder">폴더 추가</entry>
+	<entry key="common.label.manageSearchList">조회 리스트 관리</entry>
+	<entry key="common.label.download">다운로드</entry>
+	<entry key="common.label.fileName">파일명</entry>
+	<entry key="common.label.encYn">암호화 여부</entry>
+	<entry key="common.label.format">파일 포맷</entry>
+	<entry key="common.label.reason">다운로드 사유</entry>
+	<entry key="common.label.sir">님</entry>
+	<entry key="common.label.Noclassification">해당분류없음</entry>
+	
+	<entry key="common.excel.download">엑셀 다운로드</entry>
+	<entry key="views.player.html.text1">재생 중인 파일이 없습니다.</entry>
+	<entry key="views.player.html.text2">현재 재생 중인 파일 : </entry>
+	<entry key="views.player.html.text3">이동</entry>
+	<entry key="views.player.html.text4">일자</entry>
+	<entry key="views.player.html.text5">시간</entry>
+	<entry key="views.player.html.text6">상담사명</entry>
+	<entry key="views.player.html.text7">고객번호</entry>
+	<entry key="views.player.html.text8">내선번호</entry>
+	<entry key="views.player.html.text9">플레이어 태그</entry>
+	<entry key="views.player.html.text10">태그 내용</entry>
+	<entry key="views.player.html.text11">저장</entry>
+	<entry key="views.player.html.text12">구간 설정</entry>
+	<entry key="views.player.html.text13">시작 시간</entry>
+	<entry key="views.player.html.text14">종료 시간</entry>
+	<entry key="views.player.html.text15">생성</entry>
+	<entry key="views.player.html.text16">청취중 정보 - </entry>
+	<entry key="views.player.html.text17">반복</entry>
+	<entry key="views.player.html.text18">반복해제</entry>
+	<entry key="views.player.html.text19">다운</entry>
+	<entry key="views.player.html.text20">묵음</entry>
+	<entry key="views.player.html.text21">묵음해제</entry>
+	<entry key="views.player.html.text22">제거</entry>
+	<entry key="views.player.html.text23">제거해제</entry>
+	<entry key="views.player.html.text24">삭제</entry>
+	<entry key="views.player.html.text25">삭제하시겠습니까?</entry>
+	<entry key="views.player.html.text26">고객명</entry>
+	<entry key="views.player.html.text27">통화시작시간</entry>
+	<entry key="views.player.html.text28">공유 제목</entry>
+	<entry key="views.player.html.text29">삭제하실 항목을 먼저 체크 해 주세요.</entry>
+	<entry key="views.player.html.text30">태그 정보</entry>
+	
+	
+	<entry key="common.label.playerDownload">플레이어 다운로드</entry>
+	<entry key="common.label.playerPeriod">만료기간(일)</entry>
+	<entry key="common.label.playerPassword">2차 인증 암호</entry>
+	<entry key="common.label.playerRePassword">2차 인증 암호 확인</entry>
+	
+	<entry key="views.player.html.text31">플레이어 만료기간을 입력 해 주세요!</entry>
+	<entry key="views.player.html.text32">플레이어 만료기간은 최소 1일 입니다.</entry>
+	<entry key="views.player.html.text33">플레이어 만료기간은 최대 30일 입니다.</entry>
+	<entry key="views.player.html.text34">2차 인증 암호를 입력 해 주세요!</entry>
+	<entry key="views.player.html.text35">2차 인증 암호를 확인 해 주세요!</entry>
+	<entry key="views.player.html.text36">플레이어를 다운로드 받으시겠습니까?</entry>
+	
+	<entry key="views.player.html.text37">생성하시겠습니까?</entry>
+	<entry key="views.player.html.text38">수정하시겠습니까?</entry>
+	
+	
+	<entry key="common.alert.loginAgain">세션이 만료되어 로그인페이지로 이동합니다. \\n재 로그인 후 이용해 주세요.</entry>
+	<entry key="common.alert.PartialRec">부분녹취는 듀얼 플레이어로 청취 하실 수 없습니다.</entry>
+	<entry key="common.alert.noDevice">컴퓨터에 음성파일을 재생 가능한 장치가 없습니다.\\n컴퓨터에 재생 가능한 장치를 먼저 연결 후 청취 시도를 해주세요.</entry>
+	
+	<entry key="common.alert.savedMemo">메모 저장이 완료 되었습니다.</entry>
+	<entry key="common.alert.deletedMemo">메모 삭제가 완료 되었습니다.</entry>
+	<entry key="common.alert.savedPlayerTag">플레이어 태그 저장이 완료 되었습니다.</entry>
+	<entry key="common.alert.failUpdateTag">태그 정보가 정상적으로 갱신되지 못하였습니다. \\n재 조회를 해주시면 태그 정보가 정상적으로 갱신 됩니다.</entry>
+	<entry key="common.alert.inputTime">다음과 같이 시분 초를 입력 해 주세요!</entry>
+	<entry key="common.alert.ex">예</entry>
+	<entry key="common.alert.chkDrawing">도면을 먼저 조회해주세요.</entry>
+	<entry key="common.alert.searchWord">검색할 단어를 입력해주세요.</entry>
+	
+	
+	<entry key="common.alert.noPlayerTags">삭제할 플레이어 태그가 없습니다.</entry>
+	
+	
+		
+	<entry key="common.alert.noUserID">사용자 아이디 정보가 없습니다.\\n올바른 경로로 이용해 주세요!\\n확인을 누르시면, 로그인 페이지로 이동합니다.</entry>
+	<entry key="common.alert.extension.succeeded">비밀번호 변경주기 연장에 성공 하였습니다.\\n확인을 누르시면 로그인페이지로 이동합니다.\\n재 로그인 해주세요!</entry>
+	<entry key="common.alert.extend.Failed">비밀번호 변경주기 연장에 실패 하였습니다.</entry>
+	<entry key="common.alert.current.password">현재 비밀번호를 입력해주세요!</entry>
+	<entry key="common.alert.newPassword">새로운 비밀번호를 입력해주세요!</entry>
+	<entry key="common.alert.notMatch.password">새로운 비밀번호와 비밀번호 확인이 일치하지 않습니다!</entry>
+	<entry key="common.alert.change.succeeded">비밀번호 변경에 성공 하였습니다.\\n확인을 누르시면 로그인페이지로 이동합니다.\\n변경된 비밀번호로 로그인 해주세요!</entry>
+	<entry key="common.alert.wrong.password">현재 비밀번호가 일치 하지 않습니다. \\n 다시 입력해주세요!</entry>
+	<entry key="common.alert.passwords.inThePast">과거 비밀번호 재사용 허용 횟수가 넘었습니다.\\n 다른 비밀번호를 입력하여 주세요.</entry>
+	<entry key="common.alert.previous.password">이전에 사용하였던 비밀번호는 사용할 수 없습니다. \\n 다른 비밀번호를 입력하여 주세요.</entry>
+	<entry key="common.alert.change.failed">비밀번호 변경을 실패 하였습니다.</entry>
+		
+	<entry key="common.alert.noEvaluation">평가분배 받은 캠페인이 없습니다.</entry>
+	<entry key="common.alert.enter.validDateFormat">올바른 날짜 형식을 입력해주세요.</entry>
+	<entry key="common.alert.modification.completed">정보수정이 완료 되었습니다</entry>
+	
+	
+		
+	<entry key="common.alert.disconnected.ID">ID 중복 접속으로 기존에 접속된 세션이 해제 되었습니다.</entry>
+	<entry key="common.alert.disconnected.IP">IP 중복 접속으로 기존에 접속된 세션이 해제 되었습니다.</entry>
+	<entry key="common.alert.Unauthorized.IP">허가되지 않은 ip입니다. 관리자에게 문의해주세요.</entry>
+	<entry key="common.alert.notMatchPasswords">비밀번호가 일치하지 않습니다</entry>
+	<entry key="common.alert.expired.password">비밀번호 사용 기한이 만료되어 비밀번호 변경이 필요합니다. \\n 확인을 누르시면 비밀번호 변경 페이지로 이동합니다.</entry>
+	<entry key="common.alert.required.changePwd">비밀번호 변경이 필요합니다. \\n 확인을 누르시면 비밀번호 변경 페이지로 이동 합니다.</entry>
+	<entry key="common.alert.locked.account">오랫동안 미접속하거나 지속적인 로그인 실패로 계정이 잠긴 상태입니다. \\n 관리자에게 문의하여, 비밀번호를 수정 후 재 로그인 시도를 해 주세요.</entry>
+	<entry key="common.alert.noPages.accessible">접근 가능한 페이지가 없습니다. 권한을 확인해 주세요.</entry>
+	<entry key="common.alert.failedLogin.ID">ID 중복 접속으로 로그인에 실패 하였습니다.</entry>
+	<entry key="common.alert.failedLogin.IP">IP 중복 접속으로 로그인에 실패 하였습니다.</entry>
+	<entry key="common.alert.expired.session">세션이 만료되었습니다. 다시 로그인 해 주세요.</entry>
+	
+	<entry key="common.alert.notListening">청취중이 아닙니다.</entry>
+	<entry key="common.alert.saveDrawing">도면을 저장하시겠습니까?</entry>
+	<entry key="common.alert.changePwdNext">비밀번호를 다음에 변경 하시겠습니까?</entry>
+	<entry key="common.alert.deleteMemo.file">현재 파일에 저장된 메모가 모두 삭제됩니다. \\n 정말 삭제 하시겠습니까?</entry>
+	
+	<entry key="log.ChannelInfo.ChannelInfo">채널 정보</entry>
+	
+	<entry key="log.ChannelInfo.chNum">채널 번호</entry>
+	<entry key="log.ChannelInfo.oldSysCode">기존 시스템 코드</entry>
+	<entry key="log.ChannelInfo.sysCode">시스템 코드</entry>
+	<entry key="log.ChannelInfo.extNum">내선 번호</entry>
+	<entry key="log.ChannelInfo.extIp">IP</entry>
+	<entry key="log.ChannelInfo.recYn">녹취 사용</entry>
+	<entry key="log.ChannelInfo.extKind">녹취 종류</entry>
+	<entry key="log.ChannelInfo.recType">녹취 유형</entry>
+	<entry key="log.ChannelInfo.screenYn">스크린 사용</entry>
+	<entry key="log.DBManage.DBManage">DB 관리</entry>
+	<entry key="log.DBManage.dbName">DB명</entry>
+	<entry key="log.DBManage.dbServer">서버</entry>
+	<entry key="log.DBManage.url">URL</entry>
+	<entry key="log.DBManage.id">아이디</entry>
+	<entry key="log.DBManage.pw">비밀번호</entry>
+	<entry key="log.DBManage.timeout">타임아웃</entry>
+	<entry key="log.ExecuteManage.ExecuteManage">스케줄 관리</entry>
+	<entry key="log.ExecuteManage.executeName">스케줄명</entry>
+	<entry key="log.ExecuteManage.jobName">작업명</entry>
+	<entry key="log.ExecuteManage.rSchedulerSelect">스케줄선택</entry>
+	<entry key="log.ExecuteManage.rSchedulerWeek">주</entry>
+	<entry key="log.ExecuteManage.rSchedulerDay">일</entry>
+	<entry key="log.ExecuteManage.rSchedulerHour">시</entry>
+	<entry key="log.ExecuteManage.rExecuteFlag">실행여부</entry>
+	<entry key="log.ExecuteManage.rExecuteDate">실행날짜</entry>
+	<entry key="log.ExecuteManage.rExecuteTime">실행시간</entry>
+	<entry key="log.ExecuteManage.rCompleteDate">완료날짜</entry>
+	<entry key="log.ExecuteManage.rCompleteTime">완료시간</entry>
+	<entry key="log.ExecuteManage.rErrorMessage">error내용</entry>
+	<entry key="log.JobManage.JobManage">작업 관리</entry>
+	<entry key="log.JobManage.jobName">작업명</entry>
+	<entry key="log.JobManage.dbName">DB명</entry>
+	<entry key="log.JobManage.sqlName">SQL명</entry>
+	<entry key="log.RUserInfo.RUserInfo">사용자 정보</entry>
+	<entry key="log.RUserInfo.logContents">내용</entry>
+	<entry key="log.RUserInfo.userId">아이디</entry>
+	<entry key="log.RUserInfo.userName">이름</entry>
+	<entry key="log.RUserInfo.bgCode">대분류코드</entry>
+	<entry key="log.RUserInfo.mgCode">중분류코드</entry>
+	<entry key="log.RUserInfo.sgCode">소분류코드</entry>
+	<entry key="log.RUserInfo.bgName">대분류이름</entry>
+	<entry key="log.RUserInfo.mgName">중분류이름</entry>
+	<entry key="log.RUserInfo.sgName">소분류이름</entry>
+	<entry key="log.RUserInfo.userPhone">핸드폰</entry>
+	<entry key="log.RUserInfo.userLevel">권한정보</entry>
+	<entry key="log.RUserInfo.extNo">내선번호</entry>
+	<entry key="log.RUserInfo.userEmail">이메일</entry>
+	<entry key="log.RUserInfo.userSex">성별</entry>
+	<entry key="log.SQLManage.SQLManage">SQL 관리</entry>
+	<entry key="log.SQLManage.sqlName">SQL명</entry>
+	<entry key="log.SQLManage.sql">SQL</entry>
+	<entry key="log.UserDBInterface.UserDBInterface">사용자DB 인터페이스 </entry>
+	<entry key="log.UserDBInterface.seq">seq</entry>
+	<entry key="log.UserDBInterface.rDbIp">IP</entry>
+	<entry key="log.UserDBInterface.rDbUser">유저</entry>
+	<entry key="log.UserDBInterface.rDbPwd">비밀번호</entry>
+	<entry key="log.UserDBInterface.rDbPort">Port</entry>
+	<entry key="log.UserDBInterface.rDbName">DB명</entry>
+	<entry key="log.UserDBInterface.rTeamCode">팀코드</entry>
+	<entry key="log.UserDBInterface.rTeamName">팀명</entry>
+	<entry key="log.UserDBInterface.rHh">시</entry>
+	<entry key="log.UserDBInterface.rFlag">flag</entry>
+	<entry key="log.UserDBInterface.rDate">날짜</entry>
+	<entry key="log.UserDBInterface.rCompleteDate">완료날짜</entry>
+	<entry key="log.UserDBInterface.rCompleteTime">완료시간</entry>
+	<entry key="log.BestCallInfo.BestCallInfo">우수콜 파일 정보</entry>
+	<entry key="log.BestCallInfo.rShareDate">등록일</entry>
+	<entry key="log.BestCallInfo.rShareTime">등록시간</entry>
+	<entry key="log.BestCallInfo.rUserId">등록자 아이디</entry>
+	<entry key="log.BestCallInfo.rShareTitle">우수콜 제목</entry>
+	<entry key="log.BestCallInfo.rSharePath">파일명</entry>
+	<entry key="log.BestCallInfo.rShareDueDate">공유 기간</entry>
+	<entry key="log.BestCallInfo.rShareTarget">공유 범위</entry>
+	<entry key="log.CustConfigInfo.CustConfigInfo">고객사 설정</entry>
+	<entry key="log.CustConfigInfo.rCustCode">고객사 코드</entry>
+	<entry key="log.CustConfigInfo.rConfigKey">설정 키</entry>
+	<entry key="log.CustConfigInfo.rConfigValue">설정 값</entry>
+	<entry key="log.CustConfigInfo.desc">설정 설명</entry>
+	<entry key="log.EtcConfigInfo.EtcConfigInfo">설정 수정 정보</entry>
+	<entry key="log.EtcConfigInfo.groupKey">그룹 키</entry>
+	<entry key="log.EtcConfigInfo.mGroupKey">그룹 키(수정)</entry>
+	<entry key="log.EtcConfigInfo.configKey">설정 키</entry>
+	<entry key="log.EtcConfigInfo.mConfigKey">설정 키(수정)</entry>
+	<entry key="log.EtcConfigInfo.configValue">설정 값</entry>
+	<entry key="log.Log.Log">로그 정보</entry>
+	<entry key="log.Log.rLogDate">날짜</entry>
+	<entry key="log.Log.rLogTime">시간</entry>
+	<entry key="log.Log.rLogCode">로그 코드</entry>
+	<entry key="log.Log.rLogName">로그 분류</entry>
+	<entry key="log.Log.rLogContents">로그 내용</entry>
+	<entry key="log.Log.rLogDetailCode">로그 상세코드</entry>
+	<entry key="log.Log.rLogLevel">로그 레벨</entry>
+	<entry key="log.Log.rLogIp">로그IP</entry>
+	<entry key="log.Log.rLogServerIp">서버IP</entry>
+	<entry key="log.Log.rLogUserId">사용자ID</entry>
+	<entry key="log.Log.rLogEtc">기타</entry>
+	<entry key="log.Log.sDate">로그날짜[시작]</entry>
+	<entry key="log.Log.eDate">로그날짜[끝]</entry>
+	<entry key="log.Log.sTime">로그시간[시작]</entry>
+	<entry key="log.Log.eTime">로그시간[끝]</entry>
+	<entry key="log.LoginVO.LoginVO">로그인 정보</entry>
+	<entry key="log.LoginVO.failReason">내용</entry>
+	<entry key="log.LoginVO.userId">아이디</entry>
+	<entry key="log.LoginVO.clientIp">등록된IP</entry>
+	<entry key="log.LoginVO.userLevel">권한코드</entry>
+	<entry key="log.LoginVO.pwEditDate">비밀번호수정일</entry>
+	<entry key="log.LoginVO.tryCount">로그인실패횟수</entry>
+	<entry key="log.LoginVO.lastLoginDate">마지막로그인날짜</entry>
+	<entry key="log.LoginVO.lockYn">잠김유무</entry>
+	<entry key="log.LoginVO.userLevelName">권한명</entry>
+	<entry key="log.MAccessLevelInfo.MAccessLevelInfo">상세 내용 정보</entry>
+	<entry key="log.MAccessLevelInfo.levelCode">권한코드</entry>
+	<entry key="log.MAccessLevelInfo.levelName">권한명</entry>
+	<entry key="log.MMenuAccessInfo.MMenuAccessInfo">상세 내용 정보</entry>
+	<entry key="log.MMenuAccessInfo.programCode">programCode</entry>
+	<entry key="log.MMenuAccessInfo.levelCode">권한코드</entry>
+	<entry key="log.MMenuAccessInfo.accessLevel">허용범위</entry>
+	<entry key="log.MMenuAccessInfo.readYn">읽기</entry>
+	<entry key="log.MMenuAccessInfo.modiYn">수정</entry>
+	<entry key="log.MMenuAccessInfo.delYn">삭제</entry>
+	<entry key="log.MMenuAccessInfo.listenYn">청취</entry>
+	<entry key="log.MMenuAccessInfo.downloadYn">다운로드</entry>
+	<entry key="log.MMenuAccessInfo.excelYn">엑셀다운</entry>
+	<entry key="log.MMenuAccessInfo.maskingYn">마스킹여부</entry>
+	<entry key="log.MMenuAccessInfo.prereciptYn">지점승인</entry>
+	<entry key="log.MMenuAccessInfo.reciptYn">콜센터 접수</entry>
+	<entry key="log.MMenuAccessInfo.approveYn">콜센터 승인</entry>
+	<entry key="log.MMenuAccessInfo.encYn">암호화 여부</entry>
+	<entry key="log.MMenuAccessInfo.downloadApprove">다운로드 신청 권한</entry>
+	<entry key="log.MMenuAccessInfo.feedbackModifyYn">평가 의견 수정</entry>
+	<entry key="log.MMenuAccessInfo.programTop">programTop</entry>
+	<entry key="log.MMenuAccessInfo.programPath">programPath</entry>
+	<entry key="log.MMenuAccessInfo.displayLevel">displayLevel</entry>
+	<entry key="log.MMenuAccessInfo.topPriority">topPriority</entry>
+	<entry key="log.PhoneMappingInfo.PhoneMappingInfo">전화번호 맵핑 정보</entry>
+	<entry key="log.PhoneMappingInfo.custPhone">전화번호</entry>
+	<entry key="log.PhoneMappingInfo.custNickName">대체문자</entry>
+	<entry key="log.PhoneMappingInfo.useNickName">사용구분</entry>
+	<entry key="log.PhoneMappingInfo.custPhoneKey">전화번호key</entry>
+	<entry key="log.PhoneMappingInfo.procType">타입</entry>
+	<entry key="log.PhoneMappingInfo.procPosition">포지션</entry>
+	<entry key="log.SubNumberInfo.SubNumberInfo">자번호 정보</entry>
+	<entry key="log.SubNumberInfo.telNo">전화번호</entry>
+	<entry key="log.SubNumberInfo.nickName">대체문자</entry>
+	<entry key="log.SubNumberInfo.use">사용구분</entry>
+	<entry key="log.SubNumberInfo.idx">인덱스</entry>
+	<entry key="log.SystemInfo.SystemInfo">서버 정보</entry>
+	<entry key="log.SystemInfo.sysId">서버 아이디</entry>
+	<entry key="log.SystemInfo.sysName">서버 이름</entry>
+	<entry key="log.SystemInfo.sysIp">서버 아이피</entry>
+	<entry key="log.SystemInfo.pbxId">교환기 아이디</entry>
+	<entry key="log.SystemInfo.storagePath">저장 경로</entry>
+	<entry key="log.PublicIpInfo.PublicIpInfo">공인IP 정보</entry>
+	<entry key="log.PublicIpInfo.rPublicIp">IP</entry>
+	<entry key="log.PublicIpInfo.rPublicIpOld">기존 IP</entry>
+	
+	<entry key="log.etc.lockID">잠긴 ID</entry>
+	<entry key="log.etc.noEqualPw">비밀번호 불일치</entry>
+	<entry key="log.etc.rePw">비밀번호 재설정</entry>
+	<entry key="log.etc.noMatchIP">IP 불일치</entry>
+	<entry key="log.etc.expiredPw">비밀번호 사용기간 만료</entry>
+	<entry key="log.etc.nullID">미등록 ID</entry>
+	<entry key="log.etc.noEntryAuth">로그인이 불가능한 권한 입니다.</entry>
+	<entry key="log.etc.logout">로그아웃</entry>
+	<entry key="log.etc.pushBackChange">비밀번호 변경 연기</entry>
+	<entry key="log.etc.pushBackChangeFail">비밀번호 변경 연기 실패</entry>
+	<entry key="log.etc.cntOverPw">이전 비밀번호 사용횟수 초과</entry>
+	<entry key="log.etc.noPrePw">이전 비밀번호 사용불가</entry>
+	<entry key="log.etc.pwChange">비밀번호 변경</entry>
+	<entry key="log.etc.pwChangeFail">비밀번호 변경 실패</entry>
+	<entry key="log.etc.loginDup">중복 로그인</entry>
+	<entry key="log.etc.day90">90일간 사용 안함</entry>
+	<entry key="log.etc.loginFail">로그인 실패</entry>
+	<entry key="log.etc.loginSuccess">로그인 성공</entry>
+	<entry key="log.etc.dupID">ID 중복 로그인</entry>
+	<entry key="log.etc.dupIP">IP 중복 로그인</entry>
+	<entry key="log.etc.noAuthy">권한없음</entry>
+	<entry key="log.etc.IPDup">IP중복</entry>
+	<entry key="log.etc.IDDup">ID중복</entry>
+	<entry key="log.etc.regSuccess">사용자 등록 성공</entry>
+	<entry key="log.etc.regFail">사용자 등록 실패</entry>
+	<entry key="log.etc.userModi">사용자 정보 수정</entry>
+	<entry key="log.etc.userModiFail">사용자 정보 수정 실패</entry>
+	<entry key="log.etc.mobileLicenseExceed">모바일 라이센스 초과</entry>
+	<entry key="log.etc.man">남자</entry>
+	<entry key="log.etc.woman">여자</entry>
+	<entry key="log.etc.unlockUser">사용자 잠금 해제</entry>
+	<entry key="log.etc.detail">상세 내용 정보</entry>
+	<entry key="log.etc.dupAuthy">중복된 권한명</entry>
+	
+	<entry key="log.SttServerInfo.SttServerInfo">STT서버정보</entry>
+	<entry key="log.SttServerInfo.sysCode">시스템코드</entry>
+	<entry key="log.SttServerInfo.sysName">시스템명</entry>
+	<entry key="log.SttServerInfo.sysIp">시스템IP</entry>
+	
+	<entry key="log.DelRecfileInfo.bgCode">대분류</entry>
+	<entry key="log.DelRecfileInfo.mgCode">중분류</entry>
+	<entry key="log.DelRecfileInfo.sgCode">소분류</entry>
+	<entry key="log.DelRecfileInfo.delType">삭제 유형</entry>
+	<entry key="log.DelRecfileInfo.logType">로그 유형</entry>
+	<entry key="log.DelRecfileInfo.delYear">기간(년)</entry>
+	<entry key="log.DelRecfileInfo.delMonth">기간(개월)</entry>
+	<entry key="log.DelRecfileInfo.delFileType">삭제 파일 유형</entry>
+	<entry key="log.DelRecfileInfo.delFilePathType">삭제 파일 위치</entry>
+	<entry key="log.DelRecfileInfo.delSelect">삭제 방식</entry>
+	
+	<entry key="log.DelRecfileInfo.seq">번호</entry>
+	<entry key="log.DelRecfileInfo.delYearOffset">기간 제한(년)</entry>
+	<entry key="log.DelRecfileInfo.delMonthOffset">기간 제한(개월)</entry>
+	<entry key="log.DelRecfileInfo.delPath">삭제 경로</entry>
+	<entry key="log.DelRecfileInfo.schedulerSelect">삭제 일정</entry>
+	<entry key="log.DelRecfileInfo.schedulerWeek">삭제 일정(요일)</entry>
+	<entry key="log.DelRecfileInfo.schedulerDay">삭제 일정(일)</entry>
+	<entry key="log.DelRecfileInfo.schedulerHour">삭제 일정(시)</entry>
+	<entry key="log.DelRecfileInfo.delDay">기간(일)</entry>
+	<entry key="log.DelRecfileInfo.delDayOffset">기간 제한(일)</entry>
+	<entry key="log.DelRecfileInfo.delSearchType">삭제 기준</entry>
+	<entry key="log.DelRecfileInfo.delScheduleName">스케줄 이름</entry>
+	<entry key="log.DelRecfileInfo.storageSendChkYn">스토리지 전송 체크</entry>
+</properties>

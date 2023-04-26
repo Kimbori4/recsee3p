@@ -1,0 +1,1178 @@
+/* 수정 시작 */
+
+/* @media only screen and (max-width : 920px){ 
+	.rplayer .player_control {
+	    width: 150px !important;
+	}
+}
+@media only screen and (max-width : 670px){
+	.rplayer .player_control {
+	    width: 100px !important;
+	}
+	.rplayer .play_control_header .logo_pace{
+		display: none !important;
+	}
+} */
+/* 수정 끝 */
+
+/* Digital Font Include */
+@font-face {
+	font-family: 'DSDIGI';
+	/* src: url('fonts/DSDIGI/DSDIGI.eot'); */
+	src: 
+	/* 	local('DSDIGI') */
+	/* ,	url('fonts/DSDIGI/DSDIGI.woff') format('woff') */
+	 	url('fonts/DSDIGI/DSDIGI.txt') format('truetype');
+}
+.fontsforweb_fontid_1091 {
+	font-family: 'DSDIGI' !important;
+}
+
+
+/************
+
+Custom input[type="checkbox"], input[type="radio"]
+
+************/
+/* 커스텀 체크 박스 스타일 추가 */
+.onReplayCheckd .replay_check {
+    position: relative;
+    width: 45px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+}
+.onReplayCheckd .replay_check_input {
+    display: none;
+}
+.onReplayCheckd .replay_check_label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #dddddd;
+    border-radius: 36px;
+    height: 18px;
+    background-color: #333333;
+}
+.onReplayCheckd .replay_check_txt {
+    display: block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    margin: 0px;
+    background: #bbbbbb;
+    color: #666666;
+    position: absolute;
+    top: -3px;
+    bottom: 0;
+    font-size: 13px;
+    right: 25px;
+    border: 1px solid #999999;
+    border-radius: 36px;
+    transition: all 0.3s ease-in 0s;
+    text-align: center;
+}
+.onReplayCheckd .replay_check_txt.checked {
+    right: 0px !important;
+    text-align: center !important;
+    background: #1881c7 !important;
+    border: 1px solid #1881c7 !important;
+    color: #ffffff !important;
+    line-height: 18px;
+    top:-2px;
+}
+/* 추가 끝 */
+
+/**** Player Style ****/
+.rplayer{
+    position: relative;
+    float: left;
+    clear: both;
+    width: calc(100% - 14px);
+    min-width: 570px;
+    height: auto;
+    padding: 7px;
+    /* background-color: #ffffff; */
+    /* background: rgb(254,254,254); Old browsers
+	background: -moz-linear-gradient(top, rgba(254,254,254,1) 0%, rgba(222,235,242,1) 19%, rgba(255,255,255,1) 47%, rgba(230,235,247,1) 49%, rgba(179,199,211,1) 51%, rgba(222,235,242,1) 88%, rgba(254,254,254,1) 98%); FF3.6-15
+	background: -webkit-linear-gradient(top, rgba(254,254,254,1) 0%,rgba(222,235,242,1) 19%,rgba(255,255,255,1) 47%,rgba(230,235,247,1) 49%,rgba(179,199,211,1) 51%,rgba(222,235,242,1) 88%,rgba(254,254,254,1) 98%); Chrome10-25,Safari5.1-6
+	background: linear-gradient(to bottom, rgba(254,254,254,1) 0%,rgba(222,235,242,1) 19%,rgba(255,255,255,1) 47%,rgba(230,235,247,1) 49%,rgba(179,199,211,1) 51%,rgba(222,235,242,1) 88%,rgba(254,254,254,1) 98%); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#fefefe',GradientType=0 ); IE6-9 */
+}
+.rplayer * {
+    margin: 0;
+    padding: 0;
+}
+.rplayer .play_control_header{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 30px;
+    padding: 5px 0;
+}
+.rplayer .play_control_header .logo_pace{
+   float: left;
+   width: 150px;
+   height: 30px;
+   line-height: 30px;
+   background-repeat: no-repeat;
+   background-position: left center;
+   background-size: contain;
+   padding: 0 5px;
+}
+.rplayer .play_control_header .logo_pace .player_logo{
+   background-image: url();
+}
+.rplayer .play_control_header .logo_pace .player_logo p{
+    font-weight: bold;
+    font-size: 18px;
+    font-style: normal;
+    color: #1881c7;
+}
+.rplayer .play_control_header .header_toolkit{
+   float: right;
+   height: 100%;
+}
+.rplayer .play_control_header .header_toolkit .toolkit_btn_wrap{
+   float: left;
+   height: 100%;
+}
+.rplayer .play_control_header .header_toolkit .toolkit_btn_wrap button{
+    position: relative;
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #666666;
+    background-color: #ffffff;
+    border: 1px solid #bbbbbb;
+    transition: all ease 0.4s;
+}
+.rplayer .play_control_header .header_toolkit .toolkit_btn_wrap button.notAllowed{
+   background-color: #e1e1e1 !important;
+   border-color: #bbbbbb !important;
+   color: #999999;
+    cursor: not-allowed !important;
+}
+.rplayer .play_control_header .header_toolkit .toolkit_btn_wrap button:before{
+   content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -1px;
+    left: 0px;
+    z-index: -1px;
+    background-image: url(images/btn_pattern.png);
+    background-size: 110% 5px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.rplayer .play_control_header .header_toolkit .toolkit_btn_wrap button:hover{
+   background-color: #f1f1f1;
+}
+.rplayer .play_control_header .header_toolkit .toolkit_btn_wrap button.ui_btn_blue{
+   background-color: #60b3dc;
+   border-color: #60b3dc;
+   color: #ffffff;
+}
+.rplayer .play_control_header .header_toolkit .toolkit_btn_wrap button.ui_btn_blue:hover{
+   background-color: #2b94c8;
+   border-color: #2b94c8;
+}
+.rplayer .play_control_wrap{
+    float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    padding: 2px;
+    background-color: #001d2b;
+}
+.rplayer .player_info{
+	float: left;
+    clear: both;
+    width: calc(100% - 20px);
+    height: 30px;
+    padding: 0 10px;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    background-color: rgba(0,0,0,0.4);
+    position: relative;
+    top: 1px;
+}
+
+/**** Wave Layer ****/
+.rplayer .player_wave{
+   position: relative;
+   float: left;
+   clear: both;
+   width: 100%;
+   height: auto;
+   background-image: url(images/squre_bg_pattern.png);
+}
+.rplayer .player_wave .player_marking_wrap{
+   position: absolute;
+   top: 0px;
+   left: 0;
+   width: 0;
+   height: 100%;
+   background-color: transparent;
+   box-shadow: 0 0 2px rgba(0,0,0,0.8);
+   z-index: 9;
+}
+
+/* FIXME ul li 가로 정렬,,, */
+/* 기존 css 톱니바퀴 생성 */
+/* .rplayer .player_wave .player_marking_wrap .player_marking_obj{
+	display: none;
+	width: 30px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 500px;
+    right: 3px;
+    top: 3px;
+    position: absolute;
+    background-image: url(images/btn_gear_white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all ease 0.4s;
+    cursor: pointer;
+} */
+/* 수정 css 톱니바퀴 x */
+.rplayer .player_wave .player_marking_wrap .player_marking_obj{
+	display: none;
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+
+
+/* .rplayer .player_wave .player_marking_wrap .player_marking_obj:hover ul{
+	display: block;
+} */
+.rplayer .player_wave .player_marking_wrap .player_marking_obj ul{
+	display: none;
+    list-style: none;
+    position: absolute;
+    width: 65px;
+    height: auto;
+    float: left;
+    /* left: -19px;
+    bottom: 35px; */
+    background-color: #f1f1f1;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transition: all ease 0.4s;
+    border: 2px solid #ffffff;
+}
+.rplayer .player_wave .player_marking_wrap .player_marking_obj ul li{
+    display: block;
+    font-size: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+.rplayer .player_wave .player_marking_wrap .player_marking_obj ul li:hover{
+	background-color: #dddddd;
+}
+.rplayer .player_wave .player_marking_wrap .player_marking_obj ul li:last-child{
+	border-bottom: 0px;
+}
+
+.rplayer .player_wave .over_mask{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width:100%;
+   height: 100%;
+   z-index: 8;
+   background-color: rgba(0,0,0,0.4);
+}
+.rplayer .player_wave .over_line{
+   position: absolute;
+   top: 0px;
+   width: 0px;
+   height: 100%;
+   z-index: 9;
+   border-left: 1px solid #ff0000;
+}
+.rplayer .player_wave .over_line_mark{
+   position: absolute;
+   top: 0px;
+   width: 1px;
+   height: 100%;
+   z-index: 9;
+   border-left: 1px solid green;
+}
+.rplayer .waveObj{
+    position: relative;
+    float: left;
+    width: calc(100% - 110px);
+    height: 40px;
+    /* padding-top: 10px; */
+    /* padding-right: 5px; */
+    opacity:0;
+    transition:all ease 0.9s;
+}
+
+.rplayer .waveCanvasObj{
+	position: relative;
+    float: left;
+    width: calc(100% - 110px);
+    height: 40px;
+    /* padding-left: 5px;
+    padding-top: 10px;
+    padding-right: 5px; */
+}
+
+.rplayer .obj_key{
+    position: relative;
+    float: left;
+    width: calc(0.5% - 1px);
+    height: 100%;
+    margin-right: 1px;
+}
+.rplayer .obj_key:first-child{
+    margin-left: 1px;
+}
+.rplayer .obj_key:last-child{
+    margin-right: 0px;
+}
+.rplayer .obj_key_left,
+.rplayer .obj_key_right{
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.rplayer .obj_key_value{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #d4cfce;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+
+/**** 네모 웨이브 시작 ****/
+.rplayer .obj_key_value_now{
+    background-color: #3a9cd6 !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3a9cd6', EndColorStr='#1e6da1') !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#3a9cd6', endColorstr='#1e6da1')" !important;
+    background: -ms-linear-gradient(#3a9cd6, #1e6da1) !important;
+    background: -moz-linear-gradient(center top, #3a9cd6, #1e6da1) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3a9cd6), to(#1e6da1)) !important;
+    background: -o-linear-gradient(top, #3a9cd6, #1e6da1) !important;
+}
+.rplayer .obj_key_value_buffer{
+    background-color: #9fc9dc !important;
+}
+
+/**** 네모 웨이브 끝 ****/
+
+/**** 뾰족이 웨이브 시작 ****/
+/* .rplayer .obj_key_left .obj_key_value{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent !important;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    border-width: 2px;
+    border-color: #d4cfce;
+    border-style: solid;
+    border-top-color: transparent !important;
+    border-left-color: transparent !important;
+    border-bottom: 0px !important;
+    left: -4px;
+}
+.rplayer .obj_key_right .obj_key_value{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent !important;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    border-width: 2px;
+    border-color: #d4cfce;
+    border-style: solid;
+    border-top-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom: 0px !important;
+    right: -4px;
+}
+.rplayer .obj_key_value_buffer{
+    border-color: #9fc9dc !important;
+}
+.rplayer .obj_key_value_now{
+   border-color: #3a9cd6 !important;
+} */
+/**** 뾰족이 웨이브 끝 ****/
+
+
+/**** Wave Layer ****/
+.rplayer .player_memo{
+   position: relative;
+   float: left;
+   clear: both;
+   width: 100%;
+   height: 30px;
+   padding: 6px 0;
+   background-color: #111111;
+}
+.rplayer .player_memo .memoObj{
+   position: absolute;
+   left: 0%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+.rplayer .player_memo .memoObj .obj_memo{
+   position: absolute;
+   top: 5px;
+   left: 0px;
+   width: 20px;
+   height: 20px;
+   background-image: url();
+   background-color: #ffffff;
+}
+
+/**** Video Layer ****/
+.rplayer .player_video video{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 127.5px);
+    background-color: #333333;
+}
+
+/**** Control Layer ****/
+.rplayer .player_controller{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+    background-image: url(images/player_pattern.png);
+    background-repeat: no-repeat;
+    background-size: 105% 32px;
+    background-position: center 2px;
+}
+/* left */
+.rplayer .player_controller .left_contol{
+    float: left;
+}
+/* play btn */
+.rplayer .player_controller .btn_group{
+    float: left;
+    margin-right: 10px;
+}
+.rplayer .player_controller .btn_group .btn_style{
+    float: left;
+    width: 40px;
+    height: 30px;
+    background-color: transparent;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.rplayer .player_controller .btn_group .btn_prev{
+    background-image: url(images/btn_prev.png);
+}
+.rplayer .player_controller .btn_group .btn_start{
+    background-image: url(images/btn_start.png);
+}
+.rplayer .player_controller .btn_group .btn_stop{
+    background-image: url(images/btn_stop.png);
+}
+.rplayer .player_controller .btn_group .btn_next{
+    background-image: url(images/btn_next.png);
+}
+/* 수정 시작 */
+.rplayer .player_controller .btn_group .btn_speed{
+	position: relative;
+    width: 105px;
+    margin-left: 10px;
+    /* background-image: url(images/btn_speed_x1.png); */
+}
+.rplayer .player_controller .btn_group .btn_speed input,
+.rplayer .player_controller .btn_group .btn_speed button{
+	float: left;
+}
+.rplayer .player_controller .btn_group .btn_speed input{
+    width: 110px;
+	font-size: 21px;
+	font-weight: bold;
+	margin-top: 3px;
+    text-indent: 12px;
+    border-radius: 5px;
+    height : 21px;
+    line-height:21px;
+}
+.rplayer .player_controller .btn_group .btn_speed .speed_btn_wrap{
+	position: absolute;
+	top: 7px;
+	right: 0px;
+}
+.rplayer .player_controller .btn_group .btn_speed button{
+	width: 18px;
+	height: 18px;
+    line-height: 0px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+	border-radius: 500px;
+	font-weight: bold;
+    background-color: #f1f1f1;
+    margin-right: 3px;
+    padding-bottom: 4px;
+}
+/* 수정 끝 */
+
+/* center */
+.rplayer .center_control{ /* 수정 */
+	position: relative;
+    float: left;
+    /* padding: 0 30px; */
+    width: 100%;
+}
+/* play bar */
+/* .rplayer .player_control{
+    position: relative;
+    float: left;
+    width: 460px;
+    height: 7px;
+    background-color: #ffffff;
+    margin: 11px 10px 0 10px;
+} */
+.rplayer .player_control{ /* 수정 */
+    position: relative;
+    float: left;
+    width: calc(100% - 110px);
+    height: 7px;
+    background-color: #ffffff;
+    margin-left: 110px;
+    
+}
+.rplayer .player_control .play_bar{ /* 수정 */
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 7px;
+    background-color: #757575;
+    box-shadow: 0px -3px 7px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.rplayer .player_control .play_value{
+     display: block;
+     position: absolute;
+     width: 0%;
+     height: 7px;
+     background-color: #0684c2;
+     z-index: 2;
+}
+.rplayer .player_control .play_location{
+     display: block;
+     position: absolute;
+     width: 6px;
+     height: 15px;
+     margin-top: -4px;
+     margin-left: -3px;
+     left: 0%;
+     background-color: #333333;
+     box-shadow: 0 0 5px rgba(255,255,255,0.7);
+     cursor: pointer;
+     z-index: 3;
+}
+/* play time */
+/* .rplayer .play_time{
+    position: relative;
+    pointer-events: none; 뒷 객체에게 이벤트 전달
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    
+} */
+.rplayer .play_time{ /* 수정 */
+	position: absolute;
+    pointer-events: none;
+    /* float: left; */
+    /* height: 30px;
+    line-height: 30px; */
+    /* width: 50px; */
+    /* text-align: center; */
+    width: 100%;
+    top: -18px;
+}
+
+.rplayer .play_time.no_wave{
+    height: 20px;
+}
+/* .rplayer .play_time .play_now_time,
+.rplayer .play_time .play_total_time{
+    float: left;
+    font-size: 12px;
+} */
+.rplayer .play_time .play_now_time,
+.rplayer .play_time .play_total_time{ /* 수정 */
+    position: absolute;
+    font-size: 12px;
+    padding: 2px 5px;
+    background-color: rgba(0,0,0,0.7);
+}
+.rplayer .play_time .play_now_time{ /* 수정 */
+	left: 0px;
+    padding-right: 3px;
+    /* color: #0684c2; */
+    color: #ffffff;
+    margin-left: 110px;
+}
+.rplayer .play_time .play_total_time{ /* 수정 */
+	right: 0px;
+    color: #ffffff;
+}
+/* right */
+.rplayer .player_controller .right_control{
+    float: right;
+}
+/* 17.11.13 추가 main-btn */
+.rplayer .player_controller .onReplayCheckd{ /* 추가 */
+	float: left;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.rplayer .player_controller .player_main_btn{ /* 추가 */
+	float: left;
+	clear: none;
+	width: auto;
+	height: auto;
+}
+.rplayer .player_controller .player_main_btn ul{ /* 추가 */
+	float: left;
+	width: auto;
+	height: 100%;
+}
+.rplayer .player_controller .player_main_btn ul li{ /* 추가 */
+	float: left;
+	width: 30px;
+	height: 30px;
+	/* border-left: 1px solid #bbbbbb; */
+	cursor: pointer;
+	transition: all ease 0.4s;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 18px;
+	
+	
+	
+}
+
+.rplayer .player_controller .player_main_btn ul li.main_btn_time{ /* 사용자 입력 구간 */
+	background-image: url(images/icon_btn_clcok_gray.png);
+}	
+
+
+.rplayer .player_controller .player_main_btn ul li.main_btn_section{ /* 마우스로 구간 */
+	background-image: url(images/icon_btn_section_gray.png);
+}
+.rplayer .player_controller .player_main_btn ul li.main_btn_selector{ /* 재생 구간 */
+	background-image: url(images/icon_btn_selector_gray.png);
+}
+.rplayer .player_controller .player_main_btn ul li.main_btn_section_end{ /* 재생 구간 */
+	background-image: url(images/icon_btn_stopsel_gray.png);
+}
+.rplayer .player_controller .player_main_btn ul li.main_btn_fileupload{ /* 추가 */
+	background-image: url(images/icon_btn_upload_gray.png);
+}
+.rplayer .player_controller .player_main_btn ul li.main_btn_filedownload{ /* 추가 */
+	background-image: url(images/icon_btn_download_gray.png);
+}
+.rplayer .player_controller .player_main_btn ul li:hover{ /* 추가 */
+	background-color: rgba(0,0,0,0.15);
+}
+/* volume */
+.rplayer .player_controller .audio_volume_control{
+    position: relative;
+    float: left;
+    transition: all ease 0.4s;
+    /* border-left: 1px solid #bbbbbb; */
+}
+.rplayer .player_controller .icon_volume{
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-image: url(images/btn_volume.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.rplayer .player_controller .audio_volume{
+    display: none;
+    position: absolute;
+    top: -26px;
+    right: -10px;
+    float: left;
+    width: 100px;
+    height: 15px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 2px;
+    margin-right: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #bbbbbb;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    z-index: 4;
+    transition: all ease 0.4s;
+}
+.rplayer .player_controller .audio_volume .volume_bar{
+    position: relative;
+    float: left;
+    width: 100px;
+    max-width: 100px;
+    height: 5px;
+    background-color: #333333;
+    cursor: pointer;
+}
+.rplayer .player_controller .audio_volume .volume_value{
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background-color: #459ed7;
+    z-index: 2;
+}
+.rplayer .player_controller .audio_volume .volume_location{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin-top: -3px;
+    margin-left: -6px;
+    border-radius: 500px;
+    left: 50px;
+    background-color: #459ed7;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/**** List Layer ****/
+/* .rplayer .play_list{ 수정
+	position: relative;
+    float: left;
+    width: 100%;
+    height: 30px;
+    line-height: 29px;
+    background-color: #ffffff;
+    background-image: url(images/lnb_bg_pattern.png);
+    color: #333333;
+    font-size: 13px;
+} */
+.rplayer .play_list{ 수정
+	position: relative;
+    float: left;
+    width: 100%;
+    height: 23px;
+    line-height: 20px;
+    background-color: #ffffff;
+    background-image: url(images/lnb_bg_pattern.png);
+    color: #333333;
+    font-size: 13px;
+}
+.rplayer .play_list .play_info_img{
+    position: relative;
+    top: 6px;
+    float: left;
+    width: 18px;
+    margin-left: 10px;
+}
+.rplayer .play_list .play_info{ /* 수정 */
+	float: left;
+	padding: 0 10px;
+	color: #333333;
+}
+.rplayer .play_list .play_file_tit{ /* 수정 */
+   	float: left;
+    color: #333333;
+}
+.rplayer .play_list .play_file_info{ /* 수정 */
+   	float: left;
+    color: #333333;
+    padding: 0 5px;
+}
+.rplayer .play_list .play_file_none{ /* 수정 */
+    color: #333333 !important;
+}
+.rplayer .play_list .play_list_right{ /* 추가 */
+	float: right;
+	width: auto;
+	height: auto;
+}
+.rplayer .play_list .play_list_right .play_jump{ /* 추가 */
+	position: relative;
+	float: left;
+	margin-right: 5px;
+}
+.rplayer .play_list .play_list_right .play_jump input{ /* 추가 */
+	float: left;
+    width: 80px;
+    height: 17px;
+    margin-top: 2px;
+    line-height: 17px;
+}
+.rplayer .play_list .play_list_right .play_jump button{ /* 추가 */
+	position: absolute;
+	right: 0px;
+	top: 3px;
+	background-color: #004080;
+	border-color: #004080;
+	padding: 0px 5px;
+	color: #ffffff;
+    height: 18px;
+    line-height: 10px;
+    padding-bottom: 3px;
+}
+.play_list_menu{
+    float: left;
+    width: 25px;
+    height: 18px;
+    margin-top: 2.5px;
+    margin-right: 5px;
+    background-color: #444444;
+    background-image: url(images/btn_list_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+.play_list_menu:hover{
+    background-color: #222222;
+}
+/* .play_list_popup{
+	display: none;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    right: 5px;
+    bottom: 29px;
+    transition: all ease 0.4s;
+    border: 1px solid #256584;
+    z-index: 9999999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+} */
+.play_list_popup{
+	display: none;
+    position: absolute;
+    width: 200px;
+    height: 109px;
+    background-color: #ffffff;
+    right: 5px;
+    bottom: 40px;
+    transition: all ease 0.4s;
+    border: 1px solid #256584;
+    z-index: 9999999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+/* .list_header{
+	position: fixed;
+	float: left;
+	clear: both;
+	width: 200px;
+	height: 40px;
+	margin-bottom: 40px;
+	color: #333333;
+	background-color: #ffffff;
+	border-bottom: 2px solid #aaaaaa;
+    padding-bottom: 2px;
+    z-index: 2;
+} */
+.list_header{
+	position: fixed;
+	float: left;
+	clear: both;
+	width: 200px;
+	height: 20px;
+	margin-bottom: 40px;
+	color: #333333;
+	background-color: #ffffff;
+	border-bottom: 2px solid #aaaaaa;
+    padding-bottom: 2px;
+    z-index: 2;
+}
+/* .list_header .list_tit{
+	float: left;
+	color: #333333;
+	font-size: 15px;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 4px;
+	background-image: url(images/label_icon_list.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	padding-left: 30px !important;
+} */
+.list_header .list_tit{
+	float: left;
+	color: #333333;
+	font-size: 13px;
+	height: 20px;
+	line-height: 20px;
+	margin-left: 4px;
+	background-image: url(images/label_icon_list.png);
+	background-repeat: no-repeat;
+	background-position: 1px center;
+	background-size: 15px;
+	padding-left: 20px !important;
+}
+/* .list_header .list_toolbar{
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 6px;
+} */
+.list_header .list_toolbar{
+	float: right;
+	height: 20px;
+	line-height: 20px;
+	margin-right: 0px;
+}
+/* .btn_list_del{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    background-color: #333333;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    background-image: url(images/btn_trash_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+.btn_list_del{
+    float: left;
+    width: 24px;
+    height: 22px;
+    /* margin-top: 5px; */
+    background-color: #333333;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    background-image: url(images/btn_trash_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+}
+.btn_list_del:hover{
+    background-color: #222222;
+}
+.btn_list_del.active{
+    background-color: #2d71c4 !important;
+}
+/* .btn_list_modify{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    background-image: url(images/btn_gear_gray.png);
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+.btn_list_modify{
+    width: 20px;
+    height: 20px;
+    /* margin-top: 5px; */
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    background-image: url(images/btn_gear_gray.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+}
+.btn_list_modify:hover{
+	background-color: #f1f1f1
+}
+/* .btn_list_exit{
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    background-image: url(images/btn_exit_gray.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    margin-left: 5px;
+} */
+.btn_list_exit{
+    float: left;
+    width: 20px;
+    height: 20px;
+    /* margin-top: 5px; */
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    transition: all ease 0.4s;
+    background-image: url(images/btn_exit_gray.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+    margin-left: 1px;
+}
+.btn_list_exit:hover{
+    background-color: #f1f1f1;
+}
+/* .list_wrap{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    margin-top: 42px;
+    height: 158px;
+} */
+.list_wrap{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 85px;
+    overflow-y: auto;
+    margin-top: 24px;
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+.list_wrap::-webkit-scrollbar{
+	display:none;
+}
+.list_wrap ul li input{
+    position: relative;
+    top: 3px;
+	margin-right: 8px;
+}
+.list_wrap ul li{
+	float: left;
+	clear: both;
+	width: calc(100% - 2px);
+	color: #333333;
+	font-size: 11px;
+	background-color: #ffffff;
+	border-right: 2px solid #ffffff;
+	border-bottom: 1px solid #f1f1f1;
+	text-indent: 5px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	cursor: pointer;
+	transition: all ease 0.4s;
+}
+.list_wrap ul li:hover{
+	background-color: #fcf4c8 !important;
+}
+.list_wrap ul li.active{
+	background-color: #fcf4c8 !important;
+}
+.list_wrap ul li:nth-child(2n){
+	background-color: #f9f9f9;
+}
+.list_wrap ul li:last-child{
+	border-bottom: 0px
+}
+
+
+.select_none {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+.select_none *{
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+}
+.list_wrap ul li.nowPlay {
+    background-color: #abcfff;
+}
+
+
+
+.procTime{ /* 수정 */
+   	float: left;
+    font-size: 34px;
+    color: #ffffff;
+    width: 90px;
+    font-family: 'DSDIGI';
+    padding-left: 20px;
+    /* padding-top: 3px; */
+    background-image: url(images/player_time_pattern.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+
+/** 실시간 감청 add on 버튼
+ * 임시로 metal테마 스타일 삽입, flat 버전은 이 부분 작업 해야함
+ */
+.addon_btn_wrap{
+    float: left;
+    width: auto;
+    height: auto;
+    padding: 3px 5px;
+    border-radius: 5px;
+    margin-left: 6px;
+    background-color: transparent;
+    position: relative;
+    top: -1px;
+}
+.addon_btn_dot{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 500px;
+    background: rgb(220,225,229); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(220,225,229,1) 0%, rgba(87,86,94,1) 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(220,225,229,1) 0%,rgba(87,86,94,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, rgba(220,225,229,1) 0%,rgba(87,86,94,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dce1e5', endColorstr='#57565e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    z-index: 99999;
+    top: 7px;
+    left: 45px;
+    box-shadow: 0 0 3px rgba(255,255,255,0.9);
+}
+.addon_btn_wrap button{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 40px;
+    height: 25px;
+    font-size: 13px;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 9px;
+    border-radius: 500px;
+    box-shadow: inset 2px 6px 5px rgba(255,255,255,0.7), -2px -2px 0px rgba(0,0,30,0.6), 2px 2px 0px rgba(255,255,255,0.8);
+    background-color: #babcc1;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+.addon_btn_wrap button:last-child{
+	margin-bottom: 0px;
+}
+
+.markingMute{
+	background-color:rgba(170,5,10,0.83) !important;
+}
+.markingCutoff{
+	background-color:rgba(35,170,75,0.83) !important;
+}

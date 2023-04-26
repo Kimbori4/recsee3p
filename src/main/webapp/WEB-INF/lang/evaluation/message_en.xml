@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>평가(evaluation) 화면용 메세지 정의</comment>
+
+	<!-- 평가 결과 조회(evaluation_result) 페이지 -->
+	<entry key="evaluation.result.label.whole">Overall evaluation result.</entry>
+	<entry key="evaluation.result.label.closed">Completed evaluation</entry>
+	<entry key="evaluation.result.label.inProgress">Evaluating</entry>
+	<entry key="evaluation.result.placeholder.evalDateStart">Date of evaluation</entry>
+	<entry key="evaluation.result.placeholder.evalDateEnd">End date</entry>
+	<entry key="evaluation.result.placeholder.recDateStart">Recording date</entry>
+	<entry key="evaluation.result.placeholder.recDateEnd">End date</entry>
+	<entry key="evaluation.result.option.recTimeStart">Recording start time</entry>
+	<entry key="evaluation.result.option.recTimeEnd">Recording end time</entry>
+	<entry key="evaluation.result.button.search">Search</entry>
+	<entry key="evaluation.result.option.campaignTitle">Campaign Name</entry>
+	<entry key="evaluation.result.option.status">Evaluation status</entry>
+	<entry key="evaluation.result.option.all">All</entry>
+	<entry key="evaluation.result.option.status.C">complete</entry>
+	<entry key="evaluation.result.option.status.I">Incomplete</entry>
+	<entry key="evaluation.result.option.status.X">-</entry>
+	<entry key="evaluation.result.placeholder.evaluator">evaluator</entry>
+	<entry key="evaluation.result.placeholder.evaluatorId">evaluator ID</entry>
+	<entry key="evaluation.result.placeholder.evaluatorComment">Evaluator feedback</entry>
+	<entry key="evaluation.result.placeholder.appraiseeComment">Agent feedback</entry>
+	<entry key="evaluation.result.placeholder.agentId">Agent ID</entry>
+	<entry key="evaluation.result.placeholder.agentName">Agent Name</entry>
+	<entry key="evaluation.result.placeholder.callNumber">Customer number</entry>
+	<entry key="evaluation.result.placeholder.agreeStatus">Agree Status</entry>
+	<entry key="evaluation.result.placeholder.lastDate">Last Date</entry>
+	<entry key="evaluation.result.placeholder.delete">Delete</entry>
+	<entry key="evaluation.result.placeholder.rejectCount">Reject count</entry>
+	<entry key="evaluation.result.placeholder.rejectDate">Reject date</entry>
+
+	<entry key="evaluation.management.create.step1">Conduct an assessment using only the details of the assessment items regardless of the stage.</entry>
+	<entry key="evaluation.management.create.step2">Proceed with the evaluation by classifying the items in two stages, such as a large title - content</entry>
+	<entry key="evaluation.management.create.step3">Proceed with the assessment by classifying the items into three stages, for example, large titles - middle fields - and content.</entry>
+	<entry key="evaluation.management.create.step4">The assessment is conducted by categorizing the assessment items into large - middle - small categories</entry>
+	<entry key="evaluation.management.create.steptitle1">Step 1 Evaluation</entry>
+	<entry key="evaluation.management.create.steptitle2">Step 2 Evaluation</entry>
+	<entry key="evaluation.management.create.steptitle3">Step 3 Evaluation</entry>
+	<entry key="evaluation.management.create.steptitle4">Step 4 Evaluation</entry>
+	<entry key="evaluation.management.create.selectstep">Selection of evaluation stage</entry>
+
+	<entry key="evaluation.management.sheet.management">Evaluation Management</entry>
+	<entry key="evaluation.management.sheet.delete">Delete</entry>
+	<entry key="evaluation.management.sheet.create">Evaluation Create</entry>
+	<entry key="evaluation.management.sheet.createSheet">Evaluation to make</entry>
+	<entry key="evaluation.management.placeholder.name">Please enter an evaluation title.</entry>
+	<entry key="evaluation.management.placeholder.description">Please enter a description of the evaluation.</entry>
+	<entry key="evaluation.management.sheet.score">Evaluation score.</entry>
+	<entry key="evaluation.management.sheet.back">Back</entry>
+	<entry key="evaluation.management.sheet.deletion">Delete</entry>
+	<entry key="evaluation.management.sheet.add">Add</entry>
+	<entry key="evaluation.management.sheet.insertSheet">Evaluation save.</entry>
+
+	<entry key="evaluation.management.sheet.evaluation">evaluation</entry>
+	<entry key="evaluation.management.sheet.selectCampaign">Select campaign</entry>
+	<entry key="evaluation.management.sheet.score2">Score</entry>
+	<entry key="evaluation.management.sheet.refresh">Refresh</entry>
+	<entry key="evaluation.management.sheet.state">Evaluation status</entry>
+	<entry key="evaluation.management.sheet.begin">Start evaluation</entry>
+	<entry key="evaluation.management.sheet.end">End of evaluation</entry>
+	<entry key="evaluation.management.sheet.input">Input</entry>
+	<entry key="evaluation.management.sheet.transterence">Go to evaluation management</entry>
+	<entry key="evaluation.management.sheet.evalresult">Result</entry>
+	<entry key="evaluation.management.sheet.compleeval">Evaluation Complete</entry>
+	<entry key="evaluation.management.sheet.agreeleader">Team Leader Agree</entry>
+	<entry key="evaluation.management.sheet.objection">presenting an objection</entry>
+
+
+	<entry key="evaluation.management.sheet.totalScoreString">Total Score</entry>
+	<entry key="evaluation.management.sheet.evaluatorOp">Evaluator's opinion</entry>
+	<entry key="evaluation.management.sheet.counselorOp">Counselor's opinion</entry>
+	
+	<entry key="evaluation.management.sheet.details">Details</entry>
+	<entry key="evaluation.management.sheet.itemS">Item</entry>
+	<entry key="evaluation.management.sheet.big">Big Category</entry>
+	<entry key="evaluation.management.sheet.Middle">Middle Category</entry>
+	<entry key="evaluation.management.sheet.Small">Small Category</entry>
+	<entry key="evaluation.management.sheet.item">Details</entry>
+	<entry key="evaluation.management.sheet.subitem">List</entry>
+	<entry key="evaluation.management.sheet.modify">Modify</entry>
+	<entry key="evaluation.management.sheet.create2">Create</entry>
+	<entry key="evaluation.management.sheet.itemcreate">Create item</entry>
+	<entry key="evaluation.management.sheet.itemtitle">Please enter the item name.</entry>
+	<entry key="evaluation.management.sheet.itemdescrip">Please enter a description of the item.</entry>
+	<entry key="evaluation.management.sheet.selectsmall">Please select small Category</entry>
+	<entry key="evaluation.management.sheet.itemscore">Please enter the score of the item.</entry>	
+
+	<entry key="evaluation.management.sheet.check">Check</entry>
+	<entry key="evaluation.management.sheet.no">Number</entry>
+	<entry key="evaluation.management.sheet.bigname">Big Category Name</entry>
+	<entry key="evaluation.management.sheet.bigdesc">Big category explanation</entry>
+	<entry key="evaluation.management.sheet.createdate">Creation Date</entry>
+	<entry key="evaluation.management.sheet.modifydate">Modification Date</entry>
+	<entry key="evaluation.management.sheet.smallname">Small Category Name</entry>
+	<entry key="evaluation.management.sheet.smalldesc">Small Category Description</entry>
+	<entry key="evaluation.management.sheet.middlename">Middle Category Name</entry>
+	<entry key="evaluation.management.sheet.middledesc">Middle Category Description</entry>
+	<entry key="evaluation.management.sheet.itemname">Detailed item name</entry>
+	<entry key="evaluation.management.sheet.itemdesc">Detailed description</entry>
+	<entry key="evaluation.management.sheet.itemSelect">Score selection</entry>
+	
+
+	<entry key="evaluation.management.sheet.sheetname">Evaluation Sheet Title</entry>
+	<entry key="evaluation.management.sheet.sheetdesc">Evaluation Site Description</entry>
+	<entry key="evaluation.management.sheet.itemcount">Number of Items</entry>
+	<entry key="evaluation.management.sheet.stepofeval">Evaluation Phase</entry>
+	<entry key="evaluation.management.sheet.creator">Generator</entry>
+
+	<entry key="evaluation.management.sheet.tabtitleindividaul">Individual</entry>
+	<entry key="evaluation.management.sheet.tabtitlepart">By Part</entry>
+
+	<entry key="evaluation.management.sheet.totalpeople">Total number of people</entry>
+	<entry key="evaluation.management.sheet.totalscore">Total score</entry>
+	<entry key="evaluation.management.sheet.greeting">Greeting</entry>
+	<entry key="evaluation.management.sheet.jobperformance">Business ability</entry>
+	<entry key="evaluation.management.sheet.listening">Listening</entry>
+	<entry key="evaluation.management.sheet.attitude">Attitude</entry>
+	<entry key="evaluation.management.sheet.voice">voice</entry>
+	<entry key="evaluation.management.sheet.speed">Speed</entry>
+	<entry key="evaluation.management.sheet.response">Response</entry>
+	<entry key="evaluation.management.sheet.excuse">Excuse</entry>
+	<entry key="evaluation.management.sheet.advicetone">Consulting accent</entry>
+
+	<entry key="evaluation.management.sheet.recipient">Target</entry>
+	<entry key="evaluation.management.sheet.department">Sortation</entry>
+	<entry key="evaluation.management.sheet.part">Part</entry>
+	<entry key="evaluation.management.sheet.pic">Manager</entry>
+	<entry key="evaluation.management.sheet.level">Level</entry>
+	<entry key="evaluation.management.sheet.evaluationgrade">Evaluation score</entry>
+	<entry key="evaluation.management.sheet.greetingadjustment">personnel adjustment</entry>
+	<entry key="evaluation.management.sheet.imputationsubtraction">Imputation Decreased point</entry>
+	<entry key="evaluation.management.sheet.excellentpoint">Excellent point</entry>
+	<entry key="evaluation.management.sheet.finaltotalscore">Final total score</entry>
+	<entry key="evaluation.management.sheet.thismonth">Current month</entry>
+	<entry key="evaluation.management.sheet.lastmonth">Previous month</entry>
+	<entry key="evaluation.management.sheet.gap">GAP</entry>
+
+	<entry key="evaluation.campaign.ongoing.tabName">Ongoing Campaign</entry>
+	<entry key="evaluation.campaign.outOfDate.tabName">Last Campaign</entry>
+	<entry key="evaluation.campaign.ongoing.create">Create Campaign</entry>
+	<entry key="evaluation.campaign.outOfDate.reuse">Reuse</entry>
+	<entry key="evaluation.campaign.placeholder.campTitle">Please enter the campaign title.</entry>
+	<entry key="evaluation.campaign.placeholder.campContent">Please enter a description of the campaign.</entry>
+	<entry key="evaluation.campaign.ongoing.date">Evaluation period</entry>
+	<entry key="evaluation.campaign.ongoing.evalStart">Evaluation Begin</entry>
+	<entry key="evaluation.campaign.create.duration">Unspecified period</entry>
+	<entry key="evaluation.campaign.create.durationEnabled">Specify period</entry>
+	<entry key="evaluation.campaign.create.endEval">Evaluation completion</entry>
+	<entry key="evaluation.campaign.create.evalGroup">Evaluation target group</entry>
+	<entry key="evaluation.campaign.create.groupSelect">Specify group</entry>
+	<entry key="evaluation.campaign.create.permission">Permission</entry>
+	<entry key="evaluation.campaign.create.forbidden">Not allowed</entry>
+	<entry key="evaluation.campaign.create.disagree">Objection </entry>
+	<entry key="evaluation.campaign.create.reEval">Revaluation</entry>
+	<entry key="evaluation.campaign.create.feedback">feedback</entry>
+	<entry key="evaluation.campaign.create.socoring">scoring system</entry>
+	<entry key="evaluation.campaign.create.sheetSelect">Evaluation Sheet select</entry>
+	<entry key="evaluation.campaign.create.evaldescription">Evaluation description</entry>
+	<entry key="evaluation.campaign.create.step">Step</entry>
+	<entry key="evaluation.campaign.create.add">Add</entry>
+	<entry key="evaluation.campaign.sheetNumber">Evaluation Sheet Count</entry>
+	<entry key="evaluation.campaign.sumCampScore">Total Campaign Score</entry>
+	<entry key="evaluation.campaign.deleteSheet">Delete</entry>
+	<entry key="evaluation.campaign.evalGroupSelect">Select  an Evaluation Group</entry>
+	<entry key="evaluation.campaign.groupSelectPlaceholer">Please select the group you want.</entry>
+	<entry key="evaluation.campaign.all">Total</entry>
+	<entry key="evaluation.campaign.mgroup">Middle group</entry>
+	<entry key="evaluation.campaign.sgroup">small group</entry>
+	<entry key="evaluation.campaign.selectionCancle">Deselect</entry>
+	<entry key="evaluation.campaign.completionDesig">Unassigned</entry>
+	<entry key="evaluation.campaign.grid.check">Check</entry>
+	<entry key="evaluation.campaign.grid.num">Sequence number</entry>
+
+	<entry key="evaluation.campaign.grid.campTitle">Campaign Title</entry>
+	<entry key="evaluation.campaign.grid.campContent">Campaign description</entry>
+	<entry key="evaluation.campaign.grid.reEval">Revaluation</entry>
+	<entry key="evaluation.campaign.grid.evalTarget">Target to evaluation</entry>
+	<entry key="evaluation.campaign.grid.evalMethod">Scoring system</entry>
+	<entry key="evaluation.campaign.grid.createDate">Creation date</entry>
+	<entry key="evaluation.campaign.grid.updatedDate">Last modified date</entry>
+	<entry key="evaluation.campaign.grid.remnantDuration">Remaining evaluation period</entry>
+	<entry key="evaluation.campaign.grid.modification">Modified</entry>
+
+	<entry key="evaluation.campaign.grid.gruopName">Group Name</entry>
+	<entry key="evaluation.campaign.grid.groupMemberNum">Number of group members</entry>
+
+
+	<entry key="evaluation.management.sheet.evaltime">Evaluation time</entry>
+	<entry key="evaluation.result.placeholder.rectime">Recording time</entry>
+
+	<entry key="evaluation.management.sheet.detail">Detail</entry>
+	<entry key="evaluation.management.sheet.campaign">Campain</entry>
+	<entry key="evaluation.management.sheet.evaluationCount">Evaluation Count</entry>
+	<entry key="evaluation.management.sheet.evaluationCountManage">Evaluation Count manage</entry>
+	<entry key="evaluation.campaign.copyCampaign">Campaign Copy</entry>
+	<entry key="evaluation.campaign.grid.evalTargetSet">Specify evaluation target</entry>
+	<entry key="evaluation.campaign.grid.evalCount">Evaluation degree</entry>
+	<entry key="evaluation.campaign.grid.evalShare">Evaluation distribution</entry>
+	<entry key="evaluation.campaign.grid.evalShareSet">Specify Evaluation distribution </entry>
+	<entry key="evaluation.campaign.grid.evalsheet">Evaluation Sheet</entry>
+	<entry key="evaluation.campaign.grid.evalsheetTotalScore">Total score on evaluation</entry>
+	<entry key="evaluation.campaign.byGroup">Specify by group</entry>
+	<entry key="evaluation.campaign.bySkill">Specify by skill</entry>
+	<entry key="evaluation.campaign.byPerson">Specify Individuals</entry>
+	<entry key="evaluation.campaign.byAffilicate">Specify by affiliate</entry>
+	<entry key="evaluation.campaign.selectGroupType">Please specify evaluation group type.</entry>
+	<entry key="evaluation.campaign.selectComplete">Specified Complete</entry>
+	<entry key="evaluation.campaign.copySheet">Copy Evaluation Sheet</entry>
+	<entry key="evaluation.campaign.lastMonth">Previous month</entry>
+	<entry key="evaluation.campaign.thisMonth">Current month</entry>
+	<entry key="evaluation.campaign.selectType">Select type</entry>
+	<entry key="evaluation.month.1">January</entry>
+	<entry key="evaluation.month.2">February</entry>
+	<entry key="evaluation.month.3">March</entry>
+	<entry key="evaluation.month.4">April</entry>
+	<entry key="evaluation.month.5">May</entry>
+	<entry key="evaluation.month.6">June</entry>
+	<entry key="evaluation.month.7">July</entry>
+	<entry key="evaluation.month.8">August</entry>
+	<entry key="evaluation.month.9">September</entry>
+	<entry key="evaluation.month.10">October</entry>
+	<entry key="evaluation.month.11">November</entry>
+	<entry key="evaluation.month.12">December</entry>
+
+	<entry key="evaluation.querter.1">the first quarter</entry>
+	<entry key="evaluation.querter.2">the second quarter</entry>
+	<entry key="evaluation.querter.3">the third quarter</entry>
+	<entry key="evaluation.querter.4">the fourth quarter</entry>
+
+
+	<entry key="evaluation.selectPeriod.day">Daily</entry>
+	<entry key="evaluation.selectPeriod.month">Monthly</entry>
+	<entry key="evaluation.selectPeriod.querter">Quarterly</entry>
+	<entry key="evaluation.selectPeriod.year">Yearly</entry>
+	<entry key="evaluation.selectPeriod.evalEndDate">Evaluation end date</entry>
+	<entry key="evaluation.selectPeriod.evalScore">Points Evaluated</entry>
+	<entry key="evaluation.selectPeriod.reval">Objection</entry>
+	<entry key="evaluation.selectPeriod.evalScore">points</entry>
+
+
+	<!-- 18-09-05 -pilip evaluation kor lang add -->
+	<entry key="evaluation.label.next">Next</entry>
+	<entry key="evaluation.js.alert.msg1">Employee name</entry>
+	<entry key="evaluation.js.alert.msg2">Extension number</entry>
+	<entry key="evaluation.js.alert.msg3">the entire</entry>
+	<entry key="evaluation.js.alert.msg4">Middle Evaluation</entry>
+	<entry key="evaluation.js.alert.msg5">small Evaluation</entry>
+	<entry key="evaluation.js.alert.msg6">Please specify evaluation group type.</entry>
+	<entry key="evaluation.js.alert.msg7">Group Name</entry>
+	<entry key="evaluation.js.alert.msg8">Skill Name</entry>
+	<entry key="evaluation.js.alert.msg9">Name of affiliate</entry>
+	<entry key="evaluation.js.alert.msg10">Please specify a person to evaluate.</entry>
+	<entry key="evaluation.js.alert.msg11">The group designation is complete.</entry>
+	<entry key="evaluation.js.alert.msg12">Please re-designate the group.</entry>
+	<entry key="evaluation.js.alert.msg13">Please enter numbers only</entry>
+	<entry key="evaluation.js.alert.msg14">Please specify no more than 300.</entry>
+	<entry key="evaluation.js.alert.msg15">There are no evaluators distributed. Please rewrite it.</entry>
+	<entry key="evaluation.js.alert.msg16">Evaluation distribution designation is completed.</entry>
+	<entry key="evaluation.js.alert.msg17">Please re-designate the evaluator.</entry>
+	<entry key="evaluation.js.alert.msg18">Please select only one campaign to copy.</entry>
+	<entry key="evaluation.js.alert.msg19">Please enter the campaign title.</entry>
+	<entry key="evaluation.js.alert.msg20">It contains impossible characters. Under the title , please exclude .</entry>
+	<entry key="evaluation.js.alert.msg21">Please specify campaign period.</entry>
+	<entry key="evaluation.js.alert.msg22">Please specify a start date for the campaign.</entry>
+	<entry key="evaluation.js.alert.msg23">Please specify the end date of the campaign.</entry>
+	<entry key="evaluation.js.alert.msg24">Please specify the evaluation rating of the evaluator.</entry>
+	<entry key="evaluation.js.alert.msg25">Please select evaluation sheet</entry>
+	<entry key="evaluation.js.alert.msg26">Failed to save campaign. Please try again.</entry>
+	<entry key="evaluation.js.alert.msg27">Modify Campaign</entry>
+	<entry key="evaluation.js.alert.msg28">Copy Campaign</entry>
+	<entry key="evaluation.js.alert.msg29">Appointment completed</entry>
+	<entry key="evaluation.js.alert.msg30">Please specify a person to evaluate.</entry>
+	<entry key="evaluation.js.alert.msg31">Modification failed. Please try again.</entry>
+	<entry key="evaluation.js.alert.msg32">Do you want to clear the selected item?</entry>
+	<entry key="evaluation.js.alert.msg33">The campaign is deleted except for the campaign with the evaluation results.</entry>
+	<entry key="evaluation.js.alert.msg34">All selected campaigns have been deleted.</entry>
+	<entry key="evaluation.js.alert.msg35">Evaluation campaign exists and cannot be deleted. \\n Check and delete.</entry>
+	<entry key="evaluation.js.alert.msg36">Deletion failed.</entry>
+	<entry key="evaluation.js.alert.msg37">The end point is before the start point.</entry>
+	<entry key="evaluation.js.alert.msg38">The end point is the same or earlier than the start point.</entry>
+	<entry key="evaluation.js.alert.msg39">Choice</entry>
+	<entry key="evaluation.js.alert.msg40">Create Evaluation Sheet</entry>
+	<entry key="evaluation.js.alert.msg41">There is an evaluation code unselected. \\n Please select and try again.</entry>
+	<entry key="evaluation.js.alert.msg42">You can not delete it anymore.</entry>
+	<entry key="evaluation.js.alert.msg43">Please enter the title of the evaluation.</entry>
+	<entry key="evaluation.js.alert.msg44">Please enter an evaluation description.</entry>
+	<entry key="evaluation.js.alert.msg45">There is an evaluation code which is not selected. \\n Please select and try again.</entry>
+	<entry key="evaluation.js.alert.msg46">Your evaluation sheet has been saved.</entry>
+	<entry key="evaluation.js.alert.msg47">Duplicate items exist in the evaluation sheet.</entry>
+	<entry key="evaluation.js.alert.msg48">Evaluation sheet</entry>
+	<entry key="evaluation.js.alert.msg49">Would you like to copy the selected evaluation sheet?</entry>
+	<entry key="evaluation.js.alert.msg50">Please select only one evaluation sheet.</entry>
+	<entry key="evaluation.js.alert.msg51">Please select the evaluation sheet to copy.</entry>
+	<entry key="evaluation.js.alert.msg52">Are you sure delete the selected evaluation sheet?</entry>
+	<entry key="evaluation.js.alert.msg53">Evaluation sheets used in campaigns cannot be deleted.</entry>
+	<entry key="evaluation.js.alert.msg54">It was deleted except for the evaluation sheet used in the campaign in the delete list.</entry>
+	<entry key="evaluation.js.alert.msg55">Selected evaluation sheet has been deleted.</entry>
+	<entry key="evaluation.js.alert.msg56">Delete operation failed.\\n Please contact the administrator.</entry>
+	<entry key="evaluation.js.alert.msg57">Please select an evaluation sheet to delete.</entry>
+	<entry key="evaluation.js.alert.msg58">Are you sure delete this evaluation sheet?</entry>
+	<entry key="evaluation.js.alert.msg59">It can not be deleted that is being used in the campaign.</entry>
+	<entry key="evaluation.js.alert.msg60">The evaluation sheet has been deleted.</entry>
+	<entry key="evaluation.js.alert.msg61">Failed to get evaluation sheet information.</entry>
+	<entry key="evaluation.js.alert.msg62">There are already open evaluation sheet. Do you want to open a new selected evaluation sheet?</entry>
+	<entry key="evaluation.js.alert.msg63">Please write your opinion in the agent general comment box.</entry>
+	<entry key="evaluation.js.alert.msg64">Objection has been completed.</entry>
+	<entry key="evaluation.js.alert.msg65">Failed to save. Please try again.</entry>
+	<entry key="evaluation.js.alert.msg66">Select a evaluation sheet and proceed with the evaluation.</entry>
+	<entry key="evaluation.js.alert.msg67">An unselected item exists.</entry>
+	<entry key="evaluation.js.alert.msg68">Your evaluation has been saved.</entry>
+	<entry key="evaluation.js.alert.msg69">Please select a date.</entry>
+	<entry key="evaluation.js.alert.msg70">The ending point is earlier than the starting point.</entry>
+	<entry key="evaluation.js.alert.msg71">The ending point is equal to or earlier than the starting point.</entry>
+	<entry key="evaluation.js.alert.msg72">Already evaluated</entry>
+	<entry key="evaluation.js.alert.msg73">Are you sure delete the current evaluation result</entry>
+	<entry key="evaluation.js.alert.msg74">Please write your opinion in the agent general comment box.</entry>
+	<entry key="evaluation.js.alert.msg75">Revaluation is not possible due to exceeding the number of revaluation.</entry>
+	<entry key="evaluation.js.alert.msg76">Your evaluation has been edited.</entry>
+	<entry key="evaluation.js.alert.msg77">Your evaluation has been deleted.</entry>
+	<entry key="evaluation.js.alert.msg78">Target, Sortation, Part, manager, Level, Evaluation score, Imputation Decreased point, Final score, Current month, Previous month,GAP,</entry>
+	<entry key="evaluation.js.alert.msg79">daytime</entry>
+	<entry key="evaluation.js.alert.msg80">night time </entry>
+	<entry key="evaluation.js.alert.msg81">new employee</entry>
+	<entry key="evaluation.js.alert.msg82">continuous service</entry>
+	<entry key="evaluation.js.alert.msg83">There is no data to download in Excel.</entry>
+	<entry key="evaluation.js.alert.msg84">Please select the period.</entry>
+	<entry key="evaluation.js.alert.msg85">Please select the type.</entry>
+	<entry key="evaluation.js.alert.msg86">Please select the year.</entry>
+	<entry key="evaluation.js.alert.msg87">Please choose a month.</entry>
+	<entry key="evaluation.js.alert.msg88">Please select a date.</entry>
+	<entry key="evaluation.js.alert.msg89">Please choose a quarter.</entry>
+	<entry key="evaluation.js.alert.msg90">Please select a campaign..</entry>
+	<entry key="evaluation.js.alert.msg91">Please select the year.</entry>
+	<entry key="evaluation.js.alert.msg92">Please enter the name of the agent.</entry>
+	<entry key="evaluation.js.alert.msg93">,Rank of the month.</entry>
+	<entry key="evaluation.js.alert.msg94">,Last month's rank.</entry>
+	<entry key="evaluation.js.alert.msg95">,GAP</entry>
+	<entry key="evaluation.js.alert.msg96">Target, Sortation, Part, manager, Level, Evaluation score, Imputation Decreased point, Final score</entry>
+	<entry key="evaluation.js.alert.msg97">work, overall, #cspan,total score,#cspan,#cspan,greeting,#cspan,work ability ,#cspan,listening closely/attitude ,#cspan,voice/speed,#cspan,response/excuse,#cspan,a consulting accent,#cspan</entry>
+	<entry key="evaluation.js.alert.msg98">previous month</entry>
+	<entry key="evaluation.js.alert.msg99">Current month</entry>
+	<entry key="evaluation.js.alert.msg100">Target,Evaluation Category,manager,</entry>
+	<entry key="evaluation.js.alert.msg101">,Recording information,Customer Information,total score,</entry>
+	<entry key="evaluation.js.alert.msg102">January,February,March,April,May,June,July,August,September,October,Novmrber,December</entry>	
+
+	<!-- 18-09-07 -pilip evaluation kor lang add -->
+	<entry key="evaluation.js.alert.msg103">Please set the end period of the feedback while using the feedback.</entry>
+	<entry key="evaluation.js.alert.msg104">Feedback termination period cannot be set longer than campaign end period.</entry>
+
+
+	<entry key="evaluation.sheet.btn.revaluation">Revaluation</entry>
+	<entry key="evaluation.sheet.label.revaluation">(The protest period is over.)</entry>
+	<entry key="evaluation.sheet.label.agree">agree</entry>
+	<entry key="evaluation.sheet.label.disagree">disagree</entry>
+
+	<entry key="evaluation.js.alert.msg105">You can delete only your own assessment.</entry>
+	<entry key="agreeStatus.type.R">disagree</entry>
+	<entry key="agreeStatus.type.A">agree</entry>
+	<entry key="agreeStatus.type.F">f?</entry>
+	<entry key="evaluation.js.alert.msg106">Are you sure you want to delete it?</entry>
+
+
+	<entry key="evaluation.js.alert.msg107">Enter detail item name.</entry>
+	<entry key="evaluation.js.alert.msg108">Please enter the name of the subitem.</entry>
+	<entry key="evaluation.js.alert.msg109">Please enter the score of the subitem.</entry>
+	<entry key="evaluation.js.alert.msg110">Enter detail item name.</entry>
+	<entry key="evaluation.js.alert.msg111">Save failed. Please try again.</entry>
+	<entry key="evaluation.js.alert.msg112">Please select only one item to modify.</entry>
+	<entry key="evaluation.js.alert.msg113">Failed to fetch value.</entry>
+	<entry key="evaluation.js.alert.msg114">Please enter your name!</entry>
+	<entry key="evaluation.js.alert.msg115">There are no values to modify.</entry>
+	<entry key="evaluation.js.alert.msg116">You have modified that item.</entry>
+	<entry key="evaluation.js.alert.msg117">Failed to modify.</entry>
+	<entry key="evaluation.js.alert.msg118">The item is currently in use in the evaluation. \\n Please check and try again.</entry>
+	<entry key="evaluation.js.alert.msg119">The modifications have been completed.</entry>
+	<entry key="evaluation.js.alert.msg120">No item selected.</entry>
+	<entry key="evaluation.js.alert.msg121">Deletion of items other than those included in evaluation sheet is complete.</entry>
+	<entry key="evaluation.js.alert.msg122">All of the selected items have been deleted.</entry>
+	<entry key="evaluation.js.alert.msg123">Are you sure you want to clear the selected item?</entry>
+	<entry key="evaluation.js.alert.msg124">Items included in evaluation sheet exist and cannot be deleted. \\n Please check and delete.</entry>
+	<entry key="evaluation.js.alert.msg125">Deletion failed.</entry>
+	<entry key="evaluation.js.alert.msg126">There are no selected items. Items not selected are stored as minimum scores. \\n Do you want to save it?</entry>
+	<entry key="evaluation.js.alert.msg127">Please select a campaign.</entry>
+	<entry key="evaluation.js.alert.msg128">Please select large group.</entry>
+	<entry key="evaluation.js.alert.msg129">Please select middle group.</entry>
+	<entry key="evaluation.js.alert.msg130">Please select small group.</entry>	
+	<entry key="evaluation.js.alert.msg131">NoInput</entry>
+	<entry key="evaluation.js.alert.msg132">The evaluation sheet you set has been modified.</entry>
+	
+	<entry key="evaluation.statistics.evaluationListStatistics">Evaluation List Statistics</entry>
+	<entry key="evaluation.statistics.siteAndGrouptStatistics">Site and group-by-group criteria</entry>
+	<entry key="evaluation.statistics.referenceScoreStatistics">Benchmark score</entry>
+	<entry key="evaluation.statistics.teamCategory">Team category stats</entry>
+	<entry key="evaluation.statistics.point"></entry>
+
+	<entry key="evaluation.alert.select.evaluation">Please select an evaluation site to generate.</entry>
+
+	
+	<entry key="evaluation.result.title.first.evaluator">First Evaluator's</entry>
+	<entry key="evaluation.result.title.first.evaluatorOp">First Evaluator's Feedback</entry>
+	<entry key="evaluation.result.title.second.evaluator">Second Evaluator's</entry>
+	<entry key="evaluation.result.title.second.evaluatorOp">Second Evaluator's Feedback</entry>
+	<entry key="evaluation.result.title.agentOp">Agent Feedback</entry>
+</properties>

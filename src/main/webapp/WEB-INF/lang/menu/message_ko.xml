@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>메뉴 화면용 메세지 정의</comment>
+
+	<entry key="menu.top.search">조회</entry>
+	<entry key="menu.top.search_listen"><![CDATA[조회&청취]]></entry>
+
+	<entry key="menu.top.statistics">통계</entry>
+	<entry key="menu.top.statistics_dashboard">대시보드</entry>
+	<entry key="menu.top.statistics_call">전체 콜 통계</entry>
+	<entry key="menu.top.statistics_group">그룹 콜 통계</entry>
+	<entry key="menu.top.statistics_user">사용자 콜 통계</entry>
+	<entry key="menu.top.statistics_day_time_user">사용자 대시보드</entry>
+
+	<entry key="menu.top.monitoring">모니터링</entry>
+	<entry key="menu.top.monitoring_realtime">실시간 모니터링</entry>
+	<entry key="menu.top.monitoring_system">시스템 모니터링</entry>
+	<entry key="menu.top.monitoring_dashboard">대시보드</entry>
+
+	<entry key="menu.top.evaluation">평가</entry>
+	<entry key="menu.top.evaluation_register">평가 관리</entry>
+	<entry key="menu.top.evaluation_result">평가 결과</entry>
+	<entry key="menu.top.evaluate">평가 하기</entry>
+	<entry key="menu.top.evaluation_campaign">캠페인 관리</entry>
+
+	<entry key="menu.top.management">관리</entry>
+	<entry key="menu.top.management_setting">시스템 설정</entry>
+	<entry key="menu.top.management_setting_backup">백업 관리</entry>
+	<entry key="menu.top.management_setting_channel">채널 관리</entry>
+	<entry key="menu.top.management_setting_callReportCustomize">콜 레포트 사용자 정의</entry>
+	<entry key="menu.top.management_setting_searchCustomize">조회 사용자 정의</entry>
+	<entry key="menu.top.management_setting_system">서버 관리</entry>
+	<entry key="menu.top.management_setting_pbx">교환기 연동 정보</entry>
+
+	<entry key="menu.top.management_user">사용자 관리</entry>
+	<entry key="menu.top.management_user_user">사용자 정보 관리</entry>
+	<entry key="menu.top.management_user_group">그룹 관리</entry>
+	<entry key="menu.top.management_user_access">권한  관리</entry>
+	<entry key="menu.top.management_user_category">카테고리 관리</entry>
+	<entry key="menu.top.management_user_screenUser">스크린 사용자 관리</entry>
+
+	<entry key="menu.top.management_system">시스템 관리</entry>
+	<entry key="menu.top.management_system_license">라이선스</entry>
+	<entry key="menu.top.management_system_log">이력 관리</entry>
+	<entry key="menu.top.management_system_etc">기타 관리</entry>
+	<entry key="menu.top.management_system_queue">큐 관리</entry>
+
+	<entry key="menu.top.myinfo">내 정보</entry>
+	<entry key="menu.top.myinfo_account">계정 정보</entry>
+	<entry key="menu.top.myinfo_changePassword">비밀번호 변경</entry>
+	<entry key="menu.top.myinfo_logout">로그아웃</entry>
+
+
+</properties>

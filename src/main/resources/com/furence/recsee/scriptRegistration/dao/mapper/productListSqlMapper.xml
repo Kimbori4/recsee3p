@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.furence.recsee.scriptRegistration.dao.AdminProductInsertDAO">
+	<insert id="doInsertProduct">
+		INSERT INTO rs_product_list
+		 (rs_product_type, rs_product_code, rs_product_name, rs_use_yn, rs_group_yn, rs_group_code, rs_sysdis_type, rs_product_attributes,rs_update_time)
+		 	 VALUES(#{param1}, #{param2}, #{param3}, #{param4}, #{param5}, 	 #{param6},
+		 	 #{param7}, #{param8}::jsonb, NOW())
+	 	ON CONFLICT(RS_PRODUCT_TYPE, RS_PRODUCT_CODE, RS_SYSDIS_TYPE) 
+		DO UPDATE 
+		SET rs_group_code = #{param6}, 
+			rs_group_yn = #{param5}
+	</insert>
+	
+	<update id="executeProcdure">
+		call sp_script_edit_apply_daily()
+	</update>
+</mapper>
+

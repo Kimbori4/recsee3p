@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>통계 화면용 메세지 정의</comment>
+
+	<entry key="statistics.title.allCount">完整记录数</entry>
+	<entry key="statistics.title.allHour">完整记录时间</entry>
+
+	<entry key="statistics.unit.time">时刻</entry>
+
+	<entry key="statistics.callStatistics.graph.axisTitle">记录由日期的数</entry>
+
+	<entry key="statistics.callStatistics.grid.title.date">迄今</entry>
+	<entry key="statistics.callStatistics.grid.title.calls">面谈号码</entry>
+	<entry key="statistics.callStatistics.grid.title.talkTime">记录时间</entry>
+	<entry key="statistics.callStatistics.grid.title.inbound">入站数</entry>
+	<entry key="statistics.callStatistics.grid.title.inboundTime">入境记录时间</entry>
+	<entry key="statistics.callStatistics.grid.title.outbound">出站数</entry>
+	<entry key="statistics.callStatistics.grid.title.outboundTime">出站记录时间</entry>
+	<entry key="statistics.callStatistics.grid.title.internal">內部計數</entry>
+	<entry key="statistics.callStatistics.grid.title.internalTime">內部時間</entry>
+	<entry key="statistics.callStatistics.grid.title.noRecodingCount">記錄取消數量</entry>
+	<entry key="statistics.callStatistics.grid.title.Total">合计</entry>
+
+	<entry key="statistics.dashboard.title.daily">每日统计记录</entry>
+	<entry key="statistics.dashboard.title.week">周刊采访统计</entry>
+	<entry key="statistics.dashboard.title.callPerFile">呼叫成正比，录制的文件数量统计</entry>
+	<entry key="statistics.dashboard.title.server">通过服务器通话时间</entry>
+
+	<entry key="statistics.dashboard.title.axisInbound">入站</entry>
+	<entry key="statistics.dashboard.title.axisOutbound">出站</entry>
+	<entry key="statistics.dashboard.title.axisCall">电话号码</entry>
+	<entry key="statistics.dashboard.title.axisFile">录音文件数</entry>
+	<entry key="statistics.dashboard.title.axisTime">录音时间 (时刻)</entry>
+
+	<entry key="statistics.userStatistics.graph.axisTitle">记录号</entry>
+	
+	<entry key="statistics.userStatistics.grid.title.userName">用户名</entry>
+	<entry key="statistics.userStatistics.grid.title.userId">ID</entry>
+	<entry key="statistics.userStatistics.grid.title.extNo">内线号码</entry>
+	<entry key="statistics.userStatistics.grid.title.bgName">大分类</entry>
+	<entry key="statistics.userStatistics.grid.title.mgName">中分类</entry>
+	<entry key="statistics.userStatistics.grid.title.sgName">小分类</entry>
+	<entry key="statistics.userStatistics.grid.title.calls">记录号</entry>
+	<entry key="statistics.userStatistics.grid.title.talkTime">錄音時間</entry>
+	<entry key="statistics.userStatistics.grid.title.inbound">入站計數</entry>
+	<entry key="statistics.userStatistics.grid.title.inboundTime">入站時間</entry>
+	<entry key="statistics.userStatistics.grid.title.outbound">出站計數</entry>
+	<entry key="statistics.userStatistics.grid.title.outboundTime">出站時間</entry>
+	<entry key="statistics.userStatistics.grid.title.internal">內部計數</entry>
+	<entry key="statistics.userStatistics.grid.title.internalTime">內部時間</entry>
+	<entry key="statistics.userStatistics.grid.title.noRecodingCount">記錄取消數量</entry>
+	<entry key="statistics.userStatistics.grid.title.Total">合计</entry>
+</properties>

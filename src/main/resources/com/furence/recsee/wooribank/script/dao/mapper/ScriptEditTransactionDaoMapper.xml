@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.wooribank.script.repository.dao.ScriptEditTransactionDao" >
+	
+	<parameterMap id="paramScriptApply" type="java.util.Map">
+		<parameter property="scriptEditId" 			mode="IN" 			jdbcType="VARCHAR" 	javaType="String"/>
+		<parameter property="code" 					mode="INOUT" 		jdbcType="INTEGER"	javaType="Integer"/>
+		<parameter property="message"	 			mode="INOUT" 		jdbcType="VARCHAR" 	javaType="String"/>
+	</parameterMap>
+	
+	
+	<parameterMap id="paramScriptCopy" type="java.util.Map">
+		<parameter property="srcProductPk" 			mode="IN" 			jdbcType="INTEGER" 	javaType="INTEGER"/>
+		<parameter property="destProductPkList"		mode="IN" 			jdbcType="ARRAY" 	
+			typeHandler="com.furence.recsee.wooribank.script.repository.handler.IntegerArrayTypeHandler"/>
+		<parameter property="code" 					mode="INOUT" 		jdbcType="INTEGER" 	javaType="Integer"/>
+		<parameter property="message"	 			mode="INOUT" 		jdbcType="VARCHAR" 	javaType="String"/>
+	</parameterMap>
+	
+	
+	<!-- 트랜잭션 아이디의 상태 조회 -->
+	<select id="selectCountForOpenTransaction"
+			parameterType="String" 
+			resultType="Integer">
+		
+		select 	max(case when rs_approvement_status is null then 1 else 0 end ) as cnt  
+		from	rs_script_edit_info 
+		where	rs_script_edit_id = #{transactionId} 
+		
+		union all
+		
+		select	count(*)  
+		from	rs_script_step_edit_list 
+		where	rs_script_edit_id = #{transactionId} 
+		
+		union all
+		
+		select	count(*)  
+		from	rs_script_step_detail_edit_list 
+		where	rs_script_edit_id = #{transactionId} 
+					
+	</select>
+
+	<!-- 상품에 대한 스크립트 수정적용 대기건이 있는지 확인 -->
+	<select id="selectApproveRequestCountByProduct"
+			parameterType="String" 
+			resultType="Integer">
+		
+		select	count(*)
+		from	rs_script_edit_info
+		where	rs_script_product_pk = #{productPk}::integer
+				and ( 
+					rs_approvement_status = 'APRV01' or 
+				 	( rs_approvement_status = 'APRV04' and rs_script_apply_yn != 'Y')
+				 )
+		
+	</select>
+	
+	<!-- 스크립트 편집 테이블 입력  -->
+	<insert id="insertScriptEditBeginInfo"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+			
+		insert into rs_script_edit_info 
+		(
+			rs_script_edit_id, 			
+			rs_script_product_pk,
+			rs_script_current_version,
+			rs_script_edit_user,
+			rs_script_edit_user_level,
+			rs_approvement_status 
+		)
+		select #{transactionId},
+				rs_product_list_pk,
+				rs_script_version,
+				#{editUser} ,
+				coalesce(
+					(select b.r_access_level
+							from 	rs_ruser_info a,
+									rs_access_list b
+							where 	a.r_user_level = b.r_level_code
+									and r_user_id = #{editUser}
+									and r_program_code = 'P20005'),
+					(select b.r_access_level
+							from 	rs_auser_info a,
+									rs_access_list b
+							where 	a.r_user_level = b.r_level_code
+									and r_user_id = #{editUser}
+									and r_program_code = 'P20005')
+				),
+				null
+		from 	rs_product_script_info
+		where 	rs_product_list_pk = #{scriptKey}::integer	
+			
+	</insert>
+	
+	<!-- 스크립트 편집 테이블 업데이트-->
+	<update id="updateScriptEditEndInfo"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+		update 	rs_script_edit_info
+		set		rs_script_edit_completed = 'Y',
+				rs_approvement_status = #{approveStatus.value},
+				rs_approvement_regist_date = now(),
+				rs_script_edit_end_date = now(),
+				rs_script_apply_type = #{applyType.value},
+				rs_script_apply_date = #{applyDate}
+		where	rs_script_edit_id = #{transactionId}
+	</update>
+	
+	<!-- 스크립트 편집 데이터 삭제-->
+	<delete id="deleteScriptEditInfo"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+		delete	
+		from 	rs_script_edit_info
+		where	rs_script_edit_id = #{transactionId}
+	</delete>
+	
+	<!-- 스크립트 스텝 편집 임시 데이터 삭제-->
+	<delete id="deleteScriptStepEditList"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+		delete	
+		from 	rs_script_step_edit_list
+		where	rs_script_edit_id = #{transactionId}
+	</delete>
+	
+	<!-- 스크립트 디에틸 편집 임시 데이터 삭제-->
+	<delete id="deleteScriptStepDetailEditList"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+		delete	
+		from 	rs_script_step_detail_edit_list
+		where	rs_script_edit_id = #{transactionId}
+	</delete>
+		
+	<!-- 스크립트 추가/수정/삭제건  즉시 반영 -->
+	<update id="updateScriptApplyImmediately" 
+			statementType="CALLABLE"
+			parameterMap="paramScriptApply">
+		
+		{ call public.sp_script_edit_apply (
+				#{scriptEditId 	, mode = IN, 	jdbcType=VARCHAR, 	javaType=String},
+				#{code 			, mode = INOUT, jdbcType=INTEGER, 	javaType=Integer},
+				#{message 		, mode = INOUT, jdbcType=VARCHAR, 	javaType=String}
+			) }
+		
+	</update>	
+	
+	<!-- 스크립트 복사 -->
+	<update id="insertScriptFromRegistered" 
+			statementType="CALLABLE"
+			parameterMap="paramScriptCopy">
+		
+		{ call public.sp_script_copy (
+				#{srcProductPk 			, mode = IN, 	jdbcType=INTEGER, 	javaType=Integer},
+				#{destProductPkList 	, mode = IN, 	jdbcType=ARRAY, 	typeHandler=com.furence.recsee.wooribank.script.repository.handler.IntegerArrayTypeHandler},
+				#{code 					, mode = INOUT, jdbcType=INTEGER, 	javaType=Integer},
+				#{message 				, mode = INOUT, jdbcType=VARCHAR, 	javaType=String}
+			) }
+		
+	</update>		
+	
+	<!-- 스크립트 복사 결재의뢰 -->
+	<insert id="insertScriptEditDataFromRegistered" 
+			statementType="CALLABLE"
+			parameterType="java.util.HashMap">
+		
+		{ call public.sp_script_edit_for_copy (
+				#{transactionId 	, mode = IN, 	jdbcType=VARCHAR, 	javaType=String},
+				#{editUser 			, mode = IN, 	jdbcType=VARCHAR, 	javaType=String},
+				#{srcProductPk  	, mode = IN, 	jdbcType=INTEGER, 	javaType=Integer},
+				#{destProductPk		, mode = IN, 	jdbcType=INTEGER,	javaType=Integer},
+				#{applyType.value	, mode = IN, 	jdbcType=VARCHAR, 	javaType=String},
+				#{applyDate 		, mode = IN, 	jdbcType=VARCHAR, 	javaType=String},
+				#{code 				, mode = INOUT, jdbcType=INTEGER, 	javaType=Integer},
+				#{message 			, mode = INOUT, jdbcType=VARCHAR, 	javaType=String}
+			) }
+		
+	</insert>
+	
+	<!--  -->
+	<select id="selectApproveRequestCountByTransactionId"
+			parameterType="String" 
+			resultType="Integer">
+				
+		select	count(*)
+		from	rs_script_edit_info
+		where	rs_script_edit_id = #{transactionId} 
+				and ( 
+					rs_approvement_status = 'APRV01' or 
+				 	( rs_approvement_status = 'APRV04' and rs_script_apply_yn != 'Y')
+				 )
+		
+	</select>
+		
+	<!-- 재상신 편집 데이터 입력 -->
+	<insert id="insertRestartEditInfo"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+			
+		insert into rs_script_edit_info
+		(
+			rs_script_edit_id, 			
+			rs_script_product_pk,
+			rs_script_current_version,
+			rs_script_edit_user,
+			rs_script_edit_user_level,
+			rs_approvement_status 
+		)
+		select #{transactionId},
+			   rs_script_product_pk,
+			   rs_script_current_version,
+			   #{editUser},
+			   coalesce(
+					(select b.r_access_level
+							from 	rs_ruser_info a,
+									rs_access_list b
+							where 	a.r_user_level = b.r_level_code
+									and r_user_id = #{editUser}
+									and r_program_code = 'P20005'),
+					(select b.r_access_level
+							from 	rs_auser_info a,
+									rs_access_list b
+							where 	a.r_user_level = b.r_level_code
+									and r_user_id = #{editUser}
+									and r_program_code = 'P20005')
+				),
+				null
+		from rs_script_edit_info
+		where rs_script_edit_id=#{oldTransactionId}
+		
+	</insert>
+	
+	<insert id="insertRestartEditStep"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+			
+		insert into rs_script_step_edit_list
+		(
+			rs_script_edit_id, 			
+			rs_script_step_pk,
+			rs_script_step_temp_pk,
+			rs_script_step_edit_type,
+			rs_script_step_parent,
+			rs_script_step_name,
+			rs_script_step_type
+		)
+		select #{transactionId},
+				rs_script_step_pk,
+				rs_script_step_temp_pk,
+				rs_script_step_edit_type,
+				rs_script_step_parent,
+				rs_script_step_name,
+				rs_script_step_type
+		from rs_script_step_edit_list
+		where rs_script_edit_id=#{oldTransactionId}
+		
+	</insert>
+	
+	<insert id="insertRestartEditDetail"
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptEditParam$Transaction">
+			
+		insert into rs_script_step_detail_edit_list
+		(
+			rs_script_edit_id, 			
+			rs_script_step_pk,
+			rs_script_step_detail_pk,
+			rs_script_step_detail_temp_pk,
+			rs_script_step_detail_edit_type,
+			rs_script_step_detail_type,
+			rs_script_step_detail_common_kind,
+			rs_script_step_detail_common_fk,
+			rs_script_step_detail_text,
+			rs_script_step_detail_if_case,
+			rs_script_step_detail_if_case_code,
+			rs_script_step_detail_if_case_detail,
+			rs_script_step_detail_if_case_detail_code,
+			rs_script_step_detail_realtime_tts,
+			rs_product_attributes,
+			rs_product_attributes_ext,
+			rs_script_step_detail_elt_case,
+			rs_script_step_detail_case_attributes
+		)
+		select #{transactionId}, 			
+				rs_script_step_pk,
+				rs_script_step_detail_pk,
+				rs_script_step_detail_temp_pk,
+				rs_script_step_detail_edit_type,
+				rs_script_step_detail_type,
+				rs_script_step_detail_common_kind,
+				rs_script_step_detail_common_fk,
+				rs_script_step_detail_text,
+				rs_script_step_detail_if_case,
+				rs_script_step_detail_if_case_code,
+				rs_script_step_detail_if_case_detail,
+				rs_script_step_detail_if_case_detail_code,
+				rs_script_step_detail_realtime_tts,
+				rs_product_attributes,
+				rs_product_attributes_ext,
+				rs_script_step_detail_elt_case,
+				rs_script_step_detail_case_attributes
+		from rs_script_step_detail_edit_list
+		where rs_script_edit_id=#{oldTransactionId}
+		
+	</insert>
+			
+		
+</mapper> 

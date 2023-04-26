@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>전사 관리(transcript) 화면용 메세지 정의</comment>
+
+	<!-- 녹취 파일 분배 및 전사여부 -->
+	<entry key="views.search.title.TP">transcript planning</entry>
+	<entry key="views.search.title.TF">transcript finished</entry>
+	<entry key="views.search.title.LI">learning</entry>
+	<entry key="views.search.title.LF">learning finished</entry>
+	
+	<entry key="views.search.title.transcriber">transcriber</entry>
+	<entry key="views.search.title.transcript">transcript</entry>	
+	<entry key="views.search.title.all">All</entry>
+	<entry key="views.search.title.rDivision">complete</entry>
+	
+	<entry key="views.search.alert.select.agent">Please select a user to assign the recording file.</entry>
+	<entry key="views.transcript.alert.already.division">Among the selected files, there are already distributed recording files. Would you like to redistribute?</entry>
+	<entry key="views.search.alert.division.success">The selected recording file has been distributed.</entry>
+	<entry key="views.search.alert.division.fail">Failed to distribute the selected recording file.</entry>
+	<entry key="views.search.alert.recfile.division.success">The selected recording file has been added to the distribution list.</entry>
+	<entry key="views.search.alert.recfile.division.fail">Failed to add the selected recording file to the distribution list.</entry>
+	
+	<!-- 녹취 파일 분배 및 전사여부 -->
+	<entry key="views.transcript.alert.learning.success">The request to learn was successful.</entry>
+	<entry key="views.transcript.alert.learning.fail">Request to learn failed.</entry>
+	<entry key="views.transcript.confirm.learning">Would you like to train selected files?</entry>
+	<entry key="views.transcript.confirm.remove">Are you sure you want to remove the selected files from the list? In the case of transferred files, the contents of the transfer are deleted.</entry>
+	<entry key="views.transcript.alert.remove.success">The file was removed successfully.</entry>
+	<entry key="views.transcript.alert.remove.fail">File removal failed.</entry>
+	
+	<entry key="views.transcript.button.localFileUpload">Upload local files</entry>
+	<entry key="views.transcript.button.remove">Remove files</entry>
+	<entry key="views.transcript.button.division">Division</entry>
+	<entry key="views.transcript.button.dataset">Create Dataset</entry>
+	<entry key="views.transcript.button.transcript.save">Transcript save</entry>
+	<entry key="views.transcript.button.transcript.modify">Transcript modify</entry>
+	<entry key="views.transcript.button.transcript.del">Transcript delete</entry>
+	<entry key="views.transcript.button.close">Close</entry>
+	
+	<entry key="views.transcript.alert.noFile">There are no files.</entry>
+	<entry key="views.transcript.alert.noTranscript">No content has been transferred.</entry>
+	<entry key="views.transcript.alert.noTranscript.cust">전사 된 고객 대화 내용이 없습니다.</entry>
+	<entry key="views.transcript.alert.noTranscript.agent">전사 된 상담사 대화 내용이 없습니다.</entry>
+	
+	<entry key="views.transcript.alert.transcript.save.success">Transcription has been saved.</entry>
+	<entry key="views.transcript.alert.transcript.save.fail">Failed to save transcription contents.</entry>
+	
+	<entry key="views.transcript.alert.transcript.modify.success">Transcription content has been modified.</entry>
+	<entry key="views.transcript.alert.transcript.modify.fail">Transcription content modify failed.</entry>
+	
+	<entry key="views.transcript.alert.transcript.del.success">Transcription has been deleted.</entry>
+	<entry key="views.transcript.alert.transcript.del.fail">Failed to delete the transcript.</entry>
+	<entry key="views.stt.alert.del.success">Dataset has been deleted.</entry>
+	<entry key="views.stt.alert.del.fail">Failed to delete the dataset.</entry>
+	
+	<entry key="views.transcript.confirm.transcript.save">Do you want to save the transcription of the current file?</entry>
+	<entry key="views.transcript.confirm.transcript.modify">Do you want to modify the transcription of the current file?</entry>
+	<entry key="views.transcript.confirm.transcript.del">Do you want to delete the transcription of the current file?</entry>
+	
+	<entry key="views.transcript.alert.noTranscriptFile">Among the requested files, there are untransferred files.</entry>
+	
+	<entry key="views.transcript.title.list">Transcript File List</entry>
+	<entry key="views.transcript.label.modelStatus">Status</entry>
+	
+	<entry key="views.transcript.label.msg1">Upload local files</entry>
+	<entry key="views.transcript.label.msg2">Please select files.</entry>
+	<entry key="views.transcript.label.msg3">Find files</entry>
+	<entry key="views.transcript.label.msg4">Upload</entry>
+	<entry key="views.transcript.alert.msg1">There's no file</entry>
+	<entry key="views.transcript.alert.msg2">Only mp3/mp4/wav</entry>
+	<entry key="views.transcript.alert.msg3">Only txt</entry>
+	
+	<entry key="views.transcript.search.rLearningModel">User Name</entry>
+	
+	<entry key="views.search.form.fieldset.fDataset">Dataset</entry>
+	<entry key="views.search.form.fieldset.fModelName">Model Information</entry>
+	<entry key="views.search.form.fieldset.fLDate">Request Date</entry>
+	<entry key="views.search.form.fieldset.fLTime">Request Time</entry>
+	<entry key="views.search.form.fieldset.fCDate">Create Date</entry>
+	<entry key="views.search.form.fieldset.fCTime">Create Time</entry>
+	<entry key="views.search.form.fieldset.fADate">Date Applied</entry>
+	<entry key="views.search.form.fieldset.fATime">Time Applied</entry>
+	<entry key="views.search.form.fieldset.fSysInfo">System Information</entry>
+	<entry key="views.search.form.fieldset.fModelInfo">Model Information</entry>
+	<entry key="views.search.form.fieldset.fStatusInfo">Status Information</entry>
+	
+	<entry key="views.sttDataset.title.dataset">Create Dataset</entry>
+	
+	<entry key="views.sttDataset.label.rDatasetName">Dataset Name</entry>
+	<entry key="views.sttDataset.label.rDatasetDate">Date</entry>
+	<entry key="views.sttDataset.label.rDatasetTime">Time</entry>
+	<entry key="views.sttDataset.label.rDatasetSize">Data Count</entry>
+	
+	<entry key="views.sttResult.label.rRecDate">Record Date</entry>
+	<entry key="views.sttResult.label.rRecTime">Record Time</entry>
+	<entry key="views.sttResult.label.rExtNum">Extension number</entry>
+	<entry key="views.sttResult.label.rVSysCode">System Code</entry>
+	<entry key="views.sttResult.label.rRegDatetime">STT Process Request Time</entry>
+	<entry key="views.sttResult.label.rProcStartDatetime">STT Process Start Time</entry>
+	<entry key="views.sttResult.label.rProcEndDatetime">STT Process End Time</entry>
+	<entry key="views.sttResult.label.rResult">STT Status</entry>
+	<entry key="views.sttResult.label.rResultReason">STT Result Reason</entry>
+	
+	<entry key="views.sttResult.type.R">Ready</entry>
+	<entry key="views.sttResult.type.CP">PCM Converting Processing</entry>
+	<entry key="views.sttResult.type.CC">PCM Converting Complete</entry>
+	<entry key="views.sttResult.type.SP">STT Processing</entry>
+	<entry key="views.sttResult.type.S">STT Success</entry>
+	<entry key="views.sttResult.type.F">STT Fail</entry>
+	<entry key="views.sttResult.label.all">All</entry>
+	
+	<entry key="views.search.form.fieldset.fRInfo">Record Info</entry>
+	<entry key="views.search.form.fieldset.fSttResult">STT Result</entry>	
+	
+	<entry key="views.sttDataset.button.learn">Learn</entry>
+	<entry key="views.sttDataset.button.delete">Delete</entry>
+	<entry key="views.sttDataset.button.dataset">Create</entry>
+	
+	<entry key="views.sttDataset.search.R_DATASET_NAME">Dataset Name</entry>
+	
+	<entry key="views.sttDataset.alert.msg1">Please Enter Dataset Name</entry>
+	<entry key="views.sttDataset.alert.msg2">Dataset Name already registered.</entry>
+	<entry key="views.sttDataset.alert.msg3">The request to create dataset was successful.</entry>
+	<entry key="views.sttDataset.alert.msg4">The request to create dataset was failed.</entry>
+
+	<entry key="views.sttModel.title.model">Create Model</entry>
+	
+	<entry key="views.sttModel.label.rCteateDate">Request Date</entry>
+	<entry key="views.sttModel.label.rCteateTime">Request Time</entry>
+	<entry key="views.sttModel.label.rStartDate">Start Date</entry>
+	<entry key="views.sttModel.label.rStartTime">Start Time</entry>
+	<entry key="views.sttModel.label.rEndDate">End Date</entry>
+	<entry key="views.sttModel.label.rEndTime">End Time</entry>
+	<entry key="views.sttModel.label.rType">Type</entry>
+	<entry key="views.sttModel.label.rModelName">Model Name</entry>
+	<entry key="views.sttModel.label.rBaseModel">Model Base</entry>
+	<entry key="views.sttModel.label.rDataTotalCount">Data Count</entry>
+	<entry key="views.sttModel.label.rDataTotalTime">Data Total Time</entry>
+	<entry key="views.sttModel.label.rWorkStatus">Status</entry>
+	<entry key="views.sttModel.label.rWorkStatusMsg">Status Message</entry>
+	<entry key="views.sttModel.label.rRecogRate">Recognition Rate</entry>
+	<entry key="views.sttModel.label.rRecogRateMsg">Recognition Rate Message</entry>
+	<entry key="views.sttModel.label.rDatasetName">Dataset Name</entry>
+	<entry key="views.sttModel.label.all">All</entry>
+	<entry key="views.sttModel.label.am">Acoustic Model</entry>
+	<entry key="views.sttModel.label.lm">Language Model</entry>
+	<entry key="views.sttModel.label.recog">Recognition Rate Test</entry>
+	<entry key="views.sttModel.label.f">Finish</entry>
+	<entry key="views.sttModel.label.w">Wait</entry>
+	<entry key="views.sttModel.label.r">Run</entry>
+	<entry key="views.sttModel.label.e">Fail</entry>
+	<entry key="views.sttModel.label.rApply">Apply</entry>
+	<entry key="views.sttModel.label.rApplyN">Application Request</entry>
+	<entry key="views.sttModel.label.rApplyY">Application Model</entry>
+	<entry key="views.sttModel.label.server">Server</entry>
+	<entry key="views.sttModel.label.applyServer">Apply to server</entry>
+	<entry key="views.sttModel.label.allServer">All Server</entry>
+	
+	<entry key="views.sttModel.search.R_MODEL_NAME">Model Name</entry>
+	<entry key="views.sttModel.search.R_TYPE">Model Type</entry>
+	<entry key="views.sttModel.search.R_WORK_STATUS">Status</entry>
+	
+	<entry key="views.sttModel.alert.msg1">Please enter the date according to the following format!\\nex)yyyy-mm-dd</entry>
+	<entry key="views.sttModel.alert.msg2">Select models to remove.</entry>
+	<entry key="views.sttModel.alert.msg3">Please enter model name.</entry>
+	<entry key="views.sttModel.alert.msg4">Please select model type.</entry>
+	<entry key="views.sttModel.alert.msg5">Model Name already registered.</entry>
+	<entry key="views.sttModel.alert.msg6">The request to learn was successful.</entry>
+	<entry key="views.sttModel.alert.msg7">The request to learn was failed.</entry>
+	<entry key="views.sttModel.alert.msg8">Completed the application request.</entry>
+	<entry key="views.sttModel.alert.msg9">The application request failed.</entry>
+	<entry key="views.sttModel.alert.msg10">Completed the release request.</entry>
+	<entry key="views.sttModel.alert.msg11">Release request failed.</entry>
+	<entry key="views.sttModel.alert.msg12">Please enter a different model name.</entry>
+	<entry key="views.sttModel.alert.msg13">Please select servers to apply.</entry>
+	
+	<entry key="views.sttModel.confirm.remove">Are you sure you want to remove the selected model?\\nAll models referencing the model are deleted.</entry>
+	<entry key="views.sttModel.confirm.msg1">If there is a model that has already been applied, the application model will change.</entry>
+	<entry key="views.sttModel.confirm.msg2">Are you sure to release the Model?</entry>
+	
+	<entry key="views.sttModel.button.modelRemove">Remove Models</entry>
+	
+	<entry key="views.sttEnginState.label.rSysCode">System Code</entry>
+	<entry key="views.sttEnginState.label.rSysName">System Name</entry>
+	<entry key="views.sttEnginState.label.rSysIp">IP</entry>
+	<entry key="views.sttEnginState.label.rUpdateReqDate">Request Date</entry>
+	<entry key="views.sttEnginState.label.rUpdateReqTime">Request Time</entry>
+	<entry key="views.sttEnginState.label.rUpdateProcDate">Date Applied</entry>
+	<entry key="views.sttEnginState.label.rUpdateProcTime">Time Applied</entry>
+	<entry key="views.sttEnginState.label.rModelName">Model Name</entry>
+	<entry key="views.sttEnginState.label.rType">Model Type</entry>
+	<entry key="views.sttEnginState.label.rWorkState">State</entry>
+	<entry key="views.sttEnginState.label.r">Run</entry>
+	<entry key="views.sttEnginState.label.u">Update</entry>
+	<entry key="views.sttEnginState.label.e">Error</entry>
+	<entry key="views.sttEnginState.label.am">Acoustic Model</entry>
+	<entry key="views.sttEnginState.label.lm">Language Model</entry>
+	
+	<entry key="views.sttEnginState.search.R_SYS_CODE">System Code</entry>
+	<entry key="views.sttEnginState.search.R_SYS_IP">IP</entry>
+	<entry key="views.sttEnginState.search.R_MODEL_NAME">Model Name</entry>
+	<entry key="views.sttEnginState.search.R_TYPE">Model Type</entry>
+	<entry key="views.sttEnginState.search.R_WORK_STATUS">Status</entry>
+	
+</properties>

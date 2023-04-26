@@ -1,0 +1,325 @@
+.ui_layout_pannel{
+	display : inline;
+}
+
+.search_main_pannel{
+	float: left;
+	clear: both;
+	width: 100%;
+	height : 100%;
+	max-height: 690px;
+}
+.player_pannel{
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	bottom: 0px;
+	z-index: 50;
+}
+
+/* search pannel css */
+.player_pannel{
+	border-top: 1px solid #dddddd;
+}
+#screenPopup{
+	min-width: 926px;
+	width: 926px;
+	height: 500px;
+	min-height: 300px;
+}
+#screenPopup .play_control_header{
+	display: none !important;
+}
+
+#searchListPopup{
+	min-width : 700px;
+	width : 700px;
+	height : 500px;
+	min-height : 500px;
+}
+
+#addMyfolderPopup{
+	min-width : 300px;
+	width : 300px;
+	height : 140px;
+	min-height : 140px;
+}
+
+@media screen and (min-width : 1920px){
+	#gridSearch .gridbox{
+		max-width : 1715px !important;
+	}
+
+	#gridSearch .gridbox .xhdr{
+		max-width : 1715px !important;
+	}
+
+	#gridSearch .gridbox .objbox{
+		max-width : 1715px !important;
+	}
+}
+
+@media screen and (min-width : 1250px){
+
+
+	#gridSearch .gridbox{
+		max-width : 1115px;
+	}
+
+	#gridSearch .gridbox .xhdr{
+		max-width : 1115px;
+	}
+
+	#gridSearch .gridbox .objbox{
+		max-width : 1115px;
+	}
+}
+
+/*search Form*/
+.search_fieldset{
+	display:block;
+	float:left;
+	border: 1px solid #2d71c4 !important;
+	position : relative;
+	transition : transform 1s;
+}
+
+.search_fieldset legend{
+	font-size : 12px;
+	margin-left : 5px;
+	color: #3da0e3;
+}
+
+#searchBtn{
+	float: left;
+	height: 35px;
+	margin-top: 10px;
+}
+
+.search_fieldset_move{
+	position : absolute;
+	right : 3px;
+	transform : scale(1.1);
+	cursor : pointer;
+}
+
+.delete-item{
+	right : -4px;
+	position : absolute;
+	top : 2px;
+	transform : scale(1.2);
+	border : 1px solid #999;
+	border-radius : 15px;
+	background-color: #999;
+	cursor : pointer;
+}
+
+.stt_player{
+    width: 25%;
+    border: none;
+    height: calc(100% - 7px);
+}
+
+
+/* context menu */
+.context-menus{
+	position : absolute;
+	display : none;
+	border : 1px solid #555;
+	border-radius : 2px;
+	color: #777;
+	box-shadow : 0 5px 15px 1px rgba(0, 0 , 0 , 0.6),
+					 0 0 200px 1px rgba(255, 255, 255, 0.5);
+	text-align : center;
+}
+
+.context-menus.active{
+	display : block;
+	background-color:white;
+	z-index:100;
+}
+
+.context-menus.active>ul>li{
+	list-style:none;
+	color : #777;
+	font-size : 11px;
+	line-height : 23px;
+	padding : 0px 15px; 
+	cursor:pointer;
+}
+
+.context-menus.active>ul>li:hover{
+	background-color : #ccc;
+	color:white;
+}
+
+#gridEvaluation.gridbox input[type="radio"]{
+	width: 15px !important;
+}
+.subRadioBox{
+	widht: 40px !important;
+}
+.itemTitle{
+	width: 100%;
+	min-height: 20px;
+	/* height: 20px; */
+	height: auto;
+	line-height: 20px;
+	border-bottom: 2px solid #BDBDBD;
+	background-color: #F9F9F9;
+	padding-left: 5px;
+}
+.subItemTitle{
+	width: 100%;
+	min-height: 20px;
+	/* height: 20px; */
+	height: auto;
+	border-bottom: 2px solid #BDBDBD;
+	background-color: #F9F9F9;
+	
+}
+.bottomLiner{
+	min-height: 16px;
+	height: 22px;
+	line-height: 22px;
+	border-bottom: 1px solid #ddd;
+	background-color: #FCFCFC;
+}
+#gridEvaluation .obj tr td{
+	vertical-align: middle;
+}
+#gridEvaluation.gridbox_dhx_web.gridbox table.obj tr td{
+	padding: 0px !important;
+}
+#gridEvaluation.gridbox_dhx_web.gridbox .odd_dhx_web{
+	background-color: #fff;
+}
+#gridEvaluation.gridbox_dhx_web.gridbox table.obj tr td{
+	border-bottom: 2px solid #BDBDBD;
+	/* border-right: 0px; */
+}
+
+/* 선택했을때의 row 색상 없애기 병합때문에 이상함... default 스타일로 강제 변경 */
+#gridEvaluation.gridbox.gridbox_dhx_web table.obj tr td.cellselected{
+	background-color: #fff !important;
+	border-right: 1px solid #ededed !important;
+}
+#gridEvaluation.gridbox.gridbox_dhx_web table.obj tr.rowselected td{
+	background-color: #fff !important;
+	border-right: 1px solid #ededed !important;
+}
+
+#fEtc span{
+	float: left;
+    margin-top: 4px;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+#fEtc span:first-child{
+	margin-right: 3px !important;
+	color: red;
+}
+#fEtc span div{
+	height: 26px;
+    line-height: 26px;
+}
+#fEtc span div .dhxcombo_input{
+	margin-top: 2px;
+	text-align: left;
+	margin-left: 0px !important;
+	font-size: 14px;
+}
+.dhxcombo_select_button {
+    background-color: transparent !important;
+}
+.dhxcombo_select_img {
+    background-image: url(../../../images/project/main/icon/arrow.png) !important;
+}
+
+
+@media screen and (min-width : 1000px){
+	.main_contents {
+		width : 55%;
+	}
+	.stt_player{
+		min-width: auto;
+	    width: 45%
+	}
+}
+
+@media screen and (min-width : 1100px){
+	.main_contents {
+		width : 60%;
+	}
+	.stt_player{
+	    min-width: auto;
+	    width: 40%;
+	}
+}
+
+@media screen and (min-width : 1200px){
+	.main_contents {
+	    width: 62%;
+	}
+	
+	.stt_player{
+	    min-width: auto;
+	    width: 38%;
+	}
+}
+
+@media screen and (min-width : 1300px){
+	.main_contents {
+		width : 64%;
+	}
+	
+	.stt_player{
+	    min-width: auto;
+	    width: 36%;
+	}
+}
+
+@media screen and (min-width : 1400px){
+	.main_contents {
+		width : 67.5%;
+	}
+	
+	.stt_player{
+		width: 32%;
+	    min-width: auto;
+	}
+}
+
+@media screen and (min-width : 1500px){
+	.main_contents {
+		width : 68%;
+	}
+	
+	.stt_player{
+		width: 31.5%;
+	    min-width: auto;
+	}
+}
+
+@media screen and (min-width : 1550px){
+	.main_contents {
+		width : 72%;
+	}
+	
+	.stt_player{
+		width: 28%;
+	    min-width: auto;
+	}
+}
+
+@media screen and (min-width : 1850px){
+	.main_contents {
+		width : 75%;
+	}
+	
+	.stt_player{
+		width: 25%;
+	    min-width: auto;
+	}
+}

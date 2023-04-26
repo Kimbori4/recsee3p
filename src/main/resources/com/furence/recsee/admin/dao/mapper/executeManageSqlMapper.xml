@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.ExecuteManageDao">
+	<resultMap id="ExecuteResultMap" type="com.furence.recsee.admin.model.ExecuteManage">
+		<result column="EXECUTENAME" jdbcType="VARCHAR" property="executeName" />
+		<result column="JOBNAME" jdbcType="VARCHAR" property="jobName" />
+		<result column="R_SCHEDULER_SELECT" jdbcType="VARCHAR" property="rSchedulerSelect" />
+		<result column="R_SCHEDULER_WEEK" jdbcType="VARCHAR" property="rSchedulerWeek" />
+		<result column="R_SCHEDULER_DAY" jdbcType="VARCHAR" property="rSchedulerDay" />
+		<result column="R_SCHEDULER_HOUR" jdbcType="VARCHAR" property="rSchedulerHour" />
+		<result column="R_EXECUTE_FLAG" jdbcType="VARCHAR" property="rExecuteFlag" />
+		<result column="R_EXECUTE_DATE" jdbcType="VARCHAR" property="rExecuteDate" />
+		<result column="R_EXECUTE_TIME" jdbcType="VARCHAR" property="rExecuteTime" />
+		<result column="R_COMPLETE_DATE" jdbcType="VARCHAR" property="rCompleteDate" />
+		<result column="R_COMPLETE_TIME" jdbcType="VARCHAR" property="rCompleteTime" />
+		<result column="R_ERROR_MESSAGE" jdbcType="VARCHAR" property="rErrorMessage" />
+	</resultMap>
+
+	<select id="selectExecuteManage" parameterType="com.furence.recsee.admin.model.ExecuteManage" resultMap="ExecuteResultMap">
+		SELECT 
+			*
+			<!-- EXECUTENAME,
+			JOBNAME,
+			R_SCHEDULER_SELECT,
+			R_SCHEDULER_WEEK,
+			R_SCHEDULER_DAY,
+			R_SCHEDULER_HOUR,
+			R_EXECUTE_FLAG,
+			SUBSTRING(R_EXECUTE_DATE, 1, 4)||'-'||SUBSTRING(R_EXECUTE_DATE, 5, 2)||'-'||SUBSTRING(R_EXECUTE_DATE, 7, 2) AS R_EXECUTE_DATE,
+			SUBSTRING(R_EXECUTE_TIME, 1, 2)||':'||SUBSTRING(R_EXECUTE_TIME, 3, 2)||':'||SUBSTRING(R_EXECUTE_TIME, 5, 2) AS R_EXECUTE_TIME,
+			SUBSTRING(R_COMPLETE_DATE, 1, 4)||'-'||SUBSTRING(R_COMPLETE_DATE, 5, 2)||'-'||SUBSTRING(R_COMPLETE_DATE, 7, 2) AS R_COMPLETE_DATE,
+			SUBSTRING(R_COMPLETE_TIME, 1, 2)||':'||SUBSTRING(R_COMPLETE_TIME, 3, 2)||':'||SUBSTRING(R_COMPLETE_TIME, 5, 2) AS R_COMPLETE_TIME,
+			R_ERROR_MESSAGE -->
+		FROM
+			SCHEDULER_EXECUTE_MANAGE
+		ORDER BY EXECUTENAME
+	</select>
+	<select id="selectOneExecuteManage" parameterType="com.furence.recsee.admin.model.ExecuteManage" resultMap="ExecuteResultMap">
+		SELECT * FROM SCHEDULER_EXECUTE_MANAGE WHERE EXECUTENAME=#{executeName}
+	</select>
+	
+	<insert id="insertExecuteManage" parameterType="com.furence.recsee.admin.model.ExecuteManage">
+			INSERT INTO SCHEDULER_EXECUTE_MANAGE (
+				EXECUTENAME,
+				JOBNAME,
+				R_SCHEDULER_SELECT,
+				R_SCHEDULER_WEEK,
+				R_SCHEDULER_DAY,
+				R_SCHEDULER_HOUR
+			) VALUES (
+				#{executeName},
+				#{jobName},
+				#{rSchedulerSelect},
+				#{rSchedulerWeek},
+				#{rSchedulerDay},
+				#{rSchedulerHour}
+			)
+	</insert>
+	
+	<update id="updateExecuteManage" parameterType="com.furence.recsee.admin.model.ExecuteManage">
+		UPDATE SCHEDULER_EXECUTE_MANAGE SET
+			JOBNAME=#{jobName},
+			R_SCHEDULER_SELECT=#{rSchedulerSelect},
+			R_SCHEDULER_WEEK=#{rSchedulerWeek},
+			R_SCHEDULER_DAY=#{rSchedulerDay},
+			R_SCHEDULER_HOUR=#{rSchedulerHour}
+		WHERE
+			EXECUTENAME=#{executeName}
+	</update>
+	
+	<update id="updateStatusExecuteManage" databaseId="postgres" parameterType="com.furence.recsee.admin.model.ExecuteManage">
+		UPDATE SCHEDULER_EXECUTE_MANAGE SET
+			R_EXECUTE_FLAG=#{rExecuteFlag},
+			R_EXECUTE_DATE=#{rExecuteDate},
+			R_EXECUTE_TIME=#{rExecuteTime},
+			R_COMPLETE_DATE=TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD'),
+			R_COMPLETE_TIME=TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS'),
+			R_ERROR_MESSAGE=''
+		WHERE
+			EXECUTENAME=#{executeName}
+	</update>
+	
+	
+	<update id="updateStatusExecuteManage" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.ExecuteManage">
+		UPDATE SCHEDULER_EXECUTE_MANAGE SET
+			R_EXECUTE_FLAG=#{rExecuteFlag},
+			R_EXECUTE_DATE=#{rExecuteDate},
+			R_EXECUTE_TIME=#{rExecuteTime},
+			R_COMPLETE_DATE=Convert(varchar(10),Getdate(),112),
+			R_COMPLETE_TIME=Replace(Convert(varchar(8),Getdate(),108),':',''),
+			R_ERROR_MESSAGE=''
+		WHERE
+			EXECUTENAME=#{executeName}
+	</update>
+	
+	<update id="updateFlagExecuteManage" parameterType="com.furence.recsee.admin.model.ExecuteManage">
+		UPDATE SCHEDULER_EXECUTE_MANAGE SET
+			R_EXECUTE_FLAG=#{rExecuteFlag}
+		WHERE
+			EXECUTENAME=#{executeName}
+	</update>
+	
+	<delete id="deleteExecuteManage" parameterType="com.furence.recsee.admin.model.ExecuteManage">
+		DELETE FROM SCHEDULER_EXECUTE_MANAGE WHERE EXECUTENAME=#{executeName}
+	</delete>
+	
+	<delete id="deleteContainExecuteManage" parameterType="com.furence.recsee.admin.model.ExecuteManage">
+		DELETE FROM SCHEDULER_EXECUTE_MANAGE WHERE JOBNAME=#{jobName}
+	</delete>
+	
+</mapper>

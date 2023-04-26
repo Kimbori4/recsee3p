@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+@font-face{
+    font-family: sh;
+/*     src : url('./font/KoPub Dotum Light.ttf'); */
+/*      src : url('./font/OneShinhanLight.ttf');  */
+/*     src : url('./font/BMDOHYEON_ttf.ttf'); */
+/*    src : url('./font/MaruBuri-Regular.ttf'); */
+/*    src : url('./font/MaruBuri-SemiBold.ttf'); */
+   src : url('./font/NanumGothic.ttf');
+/*    src : url('./font/MaruBuri-Regular.ttf'); */
+}
+/* :not(.site_lgo){  */
+
+/* *{ */
+/*     font-family: sh !important; */
+/* }  */
+
+/*그리드 헤더  */
+div.gridbox_dhx_web.gridbox table.hdr td {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+/*     border-color: #eaeaea !important; */
+/*     background-color: #dad7d7 !important; */
+    font-size: 14px !important;
+/*     color: #666666; */
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*스크롤  */
+/* .objbox::-webkit-scrollbar{ */
+/* 	width:10px; */
+
+/* } */
+
+/*그리드 내역  */
+/* div.gridbox_dhx_web.gridbox .xhdr { */
+/*     text-align: center !important; */
+/*     font-size: 14px !important; */
+/*     background-color: #ffffff !important; */
+/*     border-bottom-width: 0px !important; */
+/*     border-bottom-style: 0px solid !important; */
+/*      border-bottom-color: white !important; */
+/* } */
+
+/* 그리드 내역 색상 지정 */
+div.gridbox_dhx_web.gridbox table.obj.row20px tr.rowselected td {
+    background-color: #ffffffbf !important;
+   border-right: 0px !important;
+}
+
+/* player 하드코팅*/
+.rplayer .player_wave .audioWave  {
+
+    display: none !important;
+    }
+    
+  /* paging toolbar */  
+    .dhx_toolbar_dhx_web{
+    width: 100% !important;
+/*     width: 85% !important; */
+    }
+    
+    
+   input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #f7f7f7 inset !important;
+} 
+
+    

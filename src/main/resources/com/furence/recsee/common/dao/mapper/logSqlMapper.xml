@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.LogDao">
+	<resultMap id="ListResultMap" type="com.furence.recsee.common.model.Log">
+		<result column="R_LOG_DATE" 		jdbcType="VARCHAR" property="rLogDate" />
+		<result column="R_LOG_TIME" 		jdbcType="VARCHAR" property="rLogTime" />
+		<result column="R_LOG_CODE" 		jdbcType="VARCHAR" property="rLogCode" />
+		<result column="R_LOG_NAME" 		jdbcType="VARCHAR" property="rLogName" />
+		<result column="R_LOG_DETAIL_CODE" 	jdbcType="VARCHAR" property="rLogDetailCode" />
+		<result column="R_LOG_CONTENTS" 	jdbcType="VARCHAR" property="rLogContents" />
+		<result column="R_LOG_IP" 			jdbcType="VARCHAR" property="rLogIp" />
+		<result column="R_LOG_SERVER_IP" 	jdbcType="VARCHAR" property="rLogServerIp" />
+		<result column="R_LOG_USER_ID" 		jdbcType="VARCHAR" property="rLogUserId" />
+		<result column="R_LOG_ETC" 			jdbcType="VARCHAR" property="rLogEtc" />
+
+	</resultMap>
+
+	<sql id="commonWhere" databaseId="postgres"><!-- pg 사용시 해당 where절로 변경 -->
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="rLogDate != null">
+				R_LOG_DATE = #{rLogDate} AND
+				</if>
+				<if test="rLogTime != null">
+				R_LOG_TIME = #{rLogTime} AND
+				</if>
+				<if test="sDate != null and eDate != null">
+				R_LOG_DATE BETWEEN #{sDate} AND #{eDate} AND
+				</if>
+				<if test="sTime != null and eTime != null">
+				R_LOG_TIME BETWEEN #{sTime} AND #{eTime} AND
+				</if>
+				<if test="rLogIp != null">
+				R_LOG_IP LIKE '%'||#{rLogIp}||'%' AND
+				</if>
+				<if test="rLogServerIp != null">
+				R_LOG_SERVER_IP LIKE '%'||#{rLogServerIp}||'%' AND
+				</if>
+				<if test="rLogUserId != null">
+				R_LOG_USER_ID LIKE '%'||#{rLogUserId}||'%' AND
+				</if>
+				<if test="rLogDetailCode != null">
+				A.R_LOG_DETAIL_CODE = #{rLogDetailCode} AND
+				</if>
+				<if test="rLogCode != null">
+				A.R_LOG_CODE = #{rLogCode} AND
+				</if>
+				<if test="rLogEtc != null">
+				R_LOG_ETC LIKE '%'||#{rLogEtc}||'%' AND
+				</if>
+			</trim>
+		</where>
+	</sql>
+	
+	<sql id="commonWhere" databaseId="oracle">
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="rLogDate != null">
+				R_LOG_DATE = #{rLogDate} AND
+				</if>
+				<if test="rLogTime != null">
+				R_LOG_TIME = #{rLogTime} AND
+				</if>
+				<if test="sDate != null and eDate != null">
+				R_LOG_DATE BETWEEN #{sDate} AND #{eDate} AND
+				</if>
+				<if test="sTime != null and eTime != null">
+				R_LOG_TIME BETWEEN #{sTime} AND #{eTime} AND
+				</if>
+				<if test="rLogIp != null">
+				R_LOG_IP LIKE '%'||#{rLogIp}||'%' AND
+				</if>
+				<if test="rLogServerIp != null">
+				R_LOG_SERVER_IP LIKE '%'||#{rLogServerIp}||'%' AND
+				</if>
+				<if test="rLogUserId != null">
+				R_LOG_USER_ID LIKE '%'||#{rLogUserId}||'%' AND
+				</if>
+				<if test="rLogDetailCode != null">
+				A.R_LOG_DETAIL_CODE = #{rLogDetailCode} AND
+				</if>
+				<if test="rLogCode != null">
+				A.R_LOG_CODE = #{rLogCode} AND
+				</if>
+				<if test="rLogEtc != null">
+				R_LOG_ETC LIKE '%'||#{rLogEtc}||'%' AND
+				</if>
+			</trim>
+		</where>
+	</sql>
+	
+	<sql id="commonWhere" databaseId='sqlserver'>
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="rLogDate != null">
+				R_LOG_DATE = #{rLogDate} AND
+				</if>
+				<if test="rLogTime != null">
+				R_LOG_TIME = #{rLogTime} AND
+				</if>
+				<if test="sDate != null and eDate != null">
+				R_LOG_DATE BETWEEN #{sDate} AND #{eDate} AND
+				</if>
+				<if test="sTime != null and eTime != null">
+				R_LOG_TIME BETWEEN #{sTime} AND #{eTime} AND
+				</if>
+				<if test="rLogIp != null">
+				R_LOG_IP LIKE '%' || #{rLogIp} || '%' AND 
+				</if>
+				<if test="rLogServerIp != null">
+				R_LOG_SERVER_IP LIKE  '%' || #{rLogServerIp} || '%' AND
+				</if>
+				<if test="rLogUserId != null">
+				R_LOG_USER_ID LIKE '%' || #{rLogUserId} || '%'AND
+				</if>
+				<if test="rLogDetailCode != null">
+				A.R_LOG_DETAIL_CODE = #{rLogDetailCode} AND
+				</if>
+				<if test="rLogCode != null">
+				A.R_LOG_CODE = #{rLogCode} AND
+				</if>
+				<if test="rLogEtc != null">
+				R_LOG_ETC LIKE '%' || #{rLogEtc} || '%' AND
+				</if>
+			</trim>
+		</where>
+	</sql>
+
+	<select id ="selectLogName" parameterType="com.furence.recsee.common.model.Log"  resultMap="ListResultMap">
+		SELECT
+			*
+		FROM
+			RS_LOG_CODE
+	</select>
+
+	<select id ="selectLogContents" parameterType="com.furence.recsee.common.model.Log"  resultMap="ListResultMap">
+		SELECT
+				R_LOG_DETAIL_CODE
+			,	R_LOG_CONTENTS
+		FROM
+			RS_LOG_DETAIL
+
+		<where>
+			<if test = "rLogCode != null">
+				R_LOG_CODE = #{rLogCode}
+			</if>
+		</where>
+	</select>
+	<select id="selectLog" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.Log"  resultMap="ListResultMap">
+		SELECT * FROM (
+		SELECT
+			ROW_NUMBER() OVER(order by
+				<choose>
+				<when test="orderBy !=null and direction != null">
+					<if test="orderBy =='R_LOG_DATE'">
+						R_LOG_DATE
+					</if>
+					<if test="orderBy =='R_LOG_TIME'">
+						R_LOG_TIME
+					</if>
+					<if test="orderBy =='R_LOG_IP'">
+						R_LOG_IP
+					</if>
+					<if test="orderBy =='R_LOG_SERVER_IP'">
+						R_LOG_SERVER_IP
+					</if>
+					<if test="orderBy =='R_LOG_USER_ID'">
+						R_LOG_USER_ID
+					</if>
+					<if test="orderBy =='R_LOG_NAME'">
+						R_LOG_NAME
+					</if>
+					<if test="orderBy =='R_LOG_CONTENTS'">
+						R_LOG_CONTENTS
+					</if>
+					<if test="orderBy =='R_LOG_ETC'">
+						R_LOG_ETC
+					</if>
+
+				<!-- 정렬 -->
+				<if test="direction == 'desc'">
+					DESC
+				</if>
+				<if test="direction == 'asc'">
+					ASC
+				</if>
+				</when>
+				<otherwise>
+				R_LOG_DATE + R_LOG_TIME + R_LOG_MILLISECONDS DESC
+				</otherwise>
+			</choose>
+			) AS ROWNUMBER
+			,	R_LOG_DATE
+			,	R_LOG_TIME
+			,	R_LOG_NAME
+			,	R_LOG_CONTENTS
+			,	R_LOG_IP
+			,	R_LOG_SERVER_IP
+			,	R_LOG_USER_ID
+			,	R_LOG_ETC
+
+		FROM
+
+		RS_LOG A
+
+		LEFT JOIN
+		RS_LOG_CODE B
+
+		ON A.R_LOG_CODE = B.R_LOG_CODE
+
+		LEFT JOIN
+		RS_LOG_DETAIL C
+
+		ON A.R_LOG_CODE = C.R_LOG_CODE
+		AND A.R_LOG_DETAIL_CODE = C.R_LOG_DETAIL_CODE
+
+		<include refid="commonWhere"></include> ) AS A
+		WHERE
+		<if test="topCount != null">
+		ROWNUMBER <![CDATA[<=]]> #{topCount}
+		</if>
+		<if test="limitUse eq 'Y'.toString()">
+			<choose>
+				<when test="count != null and posStart != null">
+				ROWNUMBER <![CDATA[>]]> #{posStart} and ROWNUMBER<![CDATA[<=]]>  convert(integer,#{posStart}+#{count})
+				</when>
+				<otherwise>
+				ROWNUMBER <![CDATA[>]]> 0 and ROWNUMBER<![CDATA[<=]]>30
+				</otherwise>
+			</choose>
+		</if>
+	</select>
+	<select id="selectLog" databaseId="postgres" parameterType="com.furence.recsee.common.model.Log"  resultMap="ListResultMap">
+		SELECT
+
+				R_LOG_DATE
+			,	R_LOG_TIME
+			,	R_LOG_NAME
+			,	R_LOG_CONTENTS
+			,	R_LOG_IP
+			,	R_LOG_SERVER_IP
+			,	R_LOG_USER_ID
+			,	R_LOG_ETC
+
+		FROM
+
+		RS_LOG A
+
+		LEFT JOIN
+		RS_LOG_CODE B
+
+		ON A.R_LOG_CODE = B.R_LOG_CODE
+
+		LEFT JOIN
+		RS_LOG_DETAIL C
+
+		ON A.R_LOG_CODE = C.R_LOG_CODE
+		AND A.R_LOG_DETAIL_CODE = C.R_LOG_DETAIL_CODE
+
+		<include refid="commonWhere"></include>
+		ORDER BY
+		<choose>
+			<when test="orderBy !=null and direction != null">
+				<if test="orderBy =='R_LOG_DATE'">
+					R_LOG_DATE
+				</if>
+				<if test="orderBy =='R_LOG_TIME'">
+					R_LOG_TIME
+				</if>
+				<if test="orderBy =='R_LOG_IP'">
+					R_LOG_IP
+				</if>
+				<if test="orderBy =='R_LOG_SERVER_IP'">
+					R_LOG_SERVER_IP
+				</if>
+				<if test="orderBy =='R_LOG_USER_ID'">
+					R_LOG_USER_ID
+				</if>
+				<if test="orderBy =='R_LOG_NAME'">
+					R_LOG_NAME
+				</if>
+				<if test="orderBy =='R_LOG_CONTENTS'">
+					R_LOG_CONTENTS
+				</if>
+				<if test="orderBy =='R_LOG_ETC'">
+					R_LOG_ETC
+				</if>
+
+			<!-- 정렬 -->
+			<if test="direction == 'desc'">
+				DESC
+			</if>
+			<if test="direction == 'asc'">
+				ASC
+			</if>
+			</when>
+			<otherwise>
+			R_LOG_DATE || R_LOG_TIME || R_LOG_MILLISECONDS DESC
+			</otherwise>
+		</choose>
+		<if test="topCount != null">
+		LIMIT #{topCount}
+		</if>
+		<if test="limitUse eq 'Y'.toString()">
+			<choose>
+				<when test="count != null and posStart != null">
+				LIMIT #{count} OFFSET #{posStart}
+				</when>
+				<otherwise>
+				LIMIT 30 OFFSET 0
+				</otherwise>
+			</choose>
+		</if>
+	</select>
+	<select id="selectLog" databaseId="oracle" parameterType="com.furence.recsee.common.model.Log"  resultMap="ListResultMap">
+	
+	SELECT *
+	FROM (
+    	SELECT PAGE.*, ROWNUM AS RNUM
+	    FROM (
+			SELECT
+	
+					R_LOG_DATE
+				,	R_LOG_TIME
+				,	R_LOG_NAME
+				,	R_LOG_CONTENTS
+				,	R_LOG_IP
+				,	R_LOG_SERVER_IP
+				,	R_LOG_USER_ID
+				,	R_LOG_ETC
+	
+			FROM
+	
+			RS_LOG A
+	
+			LEFT JOIN
+			RS_LOG_CODE B
+	
+			ON A.R_LOG_CODE = B.R_LOG_CODE
+	
+			LEFT JOIN
+			RS_LOG_DETAIL C
+	
+			ON A.R_LOG_CODE = C.R_LOG_CODE
+			AND A.R_LOG_DETAIL_CODE = C.R_LOG_DETAIL_CODE
+	
+			<include refid="commonWhere"></include>
+			ORDER BY
+			<choose>
+				<when test="orderBy !=null and direction != null">
+					<if test="orderBy =='R_LOG_DATE'">
+						R_LOG_DATE
+					</if>
+					<if test="orderBy =='R_LOG_TIME'">
+						R_LOG_TIME
+					</if>
+					<if test="orderBy =='R_LOG_IP'">
+						R_LOG_IP
+					</if>
+					<if test="orderBy =='R_LOG_SERVER_IP'">
+						R_LOG_SERVER_IP
+					</if>
+					<if test="orderBy =='R_LOG_USER_ID'">
+						R_LOG_USER_ID
+					</if>
+					<if test="orderBy =='R_LOG_NAME'">
+						R_LOG_NAME
+					</if>
+					<if test="orderBy =='R_LOG_CONTENTS'">
+						R_LOG_CONTENTS
+					</if>
+					<if test="orderBy =='R_LOG_ETC'">
+						R_LOG_ETC
+					</if>
+	
+				<!-- 정렬 -->
+				<if test="direction == 'desc'">
+					DESC
+				</if>
+				<if test="direction == 'asc'">
+					ASC
+				</if>
+				</when>
+				<otherwise>
+				R_LOG_DATE || R_LOG_TIME || R_LOG_MILLISECONDS DESC
+				</otherwise>
+			</choose>
+			<choose>
+				<when test="topCount != null">
+					<!-- LIMIT #{topCount} -->
+						 ) PAGE
+						WHERE ROWNUM <![CDATA[<=]]> #{topCount}
+					) PAGE
+					WHERE RNUM <![CDATA[>]]> 0
+				</when>
+				<when test="limitUse eq 'Y'.toString()">
+					<choose>
+						<when test="count != null and posStart != null">
+						<!-- LIMIT #{count} OFFSET #{posStart} -->
+							 ) PAGE
+							WHERE ROWNUM <![CDATA[<=]]> #{count}+#{posStart}
+						) PAGE
+						WHERE RNUM <![CDATA[>]]> #{posStart}
+						</when>
+						<otherwise>
+						<!-- LIMIT 30 OFFSET 0 -->
+						 ) PAGE
+						WHERE ROWNUM <![CDATA[<=]]> 30
+					) PAGE
+					WHERE RNUM <![CDATA[>]]> 0
+						</otherwise>
+					</choose>
+				</when>
+				<otherwise>
+						) PAGE
+					 )PAGE
+				</otherwise>
+			</choose>
+	</select>
+
+	<select id="totalLog" parameterType="com.furence.recsee.common.model.Log"  resultType="Integer">
+
+		SELECT
+
+			COUNT(*) AS TOTAL_COUNT
+
+		FROM
+
+		RS_LOG A
+
+		LEFT JOIN
+		RS_LOG_CODE B
+
+		ON A.R_LOG_CODE = B.R_LOG_CODE
+
+		LEFT JOIN
+		RS_LOG_DETAIL C
+
+		ON A.R_LOG_CODE = C.R_LOG_CODE
+		AND A.R_LOG_DETAIL_CODE = C.R_LOG_DETAIL_CODE
+
+
+		<include refid="commonWhere"></include>
+	</select>
+
+	<insert id="insertLog" databaseId="postgres" parameterType="com.furence.recsee.common.model.Log">
+	INSERT INTO RS_LOG
+		(
+				R_LOG_DATE
+			,	R_LOG_TIME
+			, 	R_LOG_MILLISECONDS
+			, 	R_LOG_CODE
+			, 	R_LOG_DETAIL_CODE
+		<if test="rLogIp != null">
+			,	R_LOG_IP
+		</if>
+		<if test="rLogServerIp != null">
+			,	R_LOG_SERVER_IP
+		</if>
+		<if test="rLogUserId != null">
+			,	R_LOG_USER_ID
+		</if>
+		<if test="rLogEtc != null">
+			,	R_LOG_ETC
+		</if>
+
+		)
+	VALUES
+		(
+				TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			, 	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			, 	TO_CHAR(CURRENT_TIMESTAMP, 'MS')
+			,	#{rLogCode}
+			,	#{rLogDetailCode}
+
+		<if test="rLogIp != null">
+			,	#{rLogIp}
+		</if>
+		<if test="rLogServerIp != null">
+			,	#{rLogServerIp}
+		</if>
+		<if test="rLogUserId != null">
+			,	#{rLogUserId}
+		</if>
+		<if test="rLogEtc != null">
+			,	#{rLogEtc}
+		</if>
+		)
+	</insert>
+	<insert id="insertLog" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.Log">
+	INSERT INTO RS_LOG
+		(
+				R_LOG_DATE
+			,	R_LOG_TIME
+			, 	R_LOG_MILLISECONDS
+			, 	R_LOG_CODE
+			, 	R_LOG_DETAIL_CODE
+		<if test="rLogIp != null">
+			,	R_LOG_IP
+		</if>
+		<if test="rLogServerIp != null">
+			,	R_LOG_SERVER_IP
+		</if>
+		<if test="rLogUserId != null">
+			,	R_LOG_USER_ID
+		</if>
+		<if test="rLogEtc != null">
+			,	R_LOG_ETC
+		</if>
+
+		)
+	VALUES
+		(
+		 	    CONVERT(VARCHAR(8), GETDATE(), 112)
+		 	  , (REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+			,	DATEPART(MILLISECOND,GETDATE())
+			,	#{rLogCode}
+			,	#{rLogDetailCode}
+
+		<if test="rLogIp != null">
+			,	#{rLogIp}
+		</if>
+		<if test="rLogServerIp != null">
+			,	#{rLogServerIp}
+		</if>
+		<if test="rLogUserId != null">
+			,	#{rLogUserId}
+		</if>
+		<if test="rLogEtc != null">
+			,	#{rLogEtc}
+		</if>
+		)
+
+
+		;
+
+		INSERT INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		)
+		 VALUES
+		 (
+		 	  CONVERT(VARCHAR(8), GETDATE(), 112)
+		 	, (REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	, 'C'
+		 	, 'rs_log'
+		 	, CONVERT(VARCHAR(8), GETDATE(), 112)
+		 	, (REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+			,	DATEPART(MILLISECOND,GETDATE())
+			, #{rLogCode}
+			, #{rLogDetailCode}
+			, coalesce(#{rLogIp},'')
+			, coalesce(#{rLogServerIp},'')
+			, coalesce(#{rLogUserId},'')
+			, SUBSTRING(coalesce(#{rLogEtc},''),1,500)
+		 )
+	</insert>
+	<insert id="insertLog" databaseId="oracle" parameterType="com.furence.recsee.common.model.Log">
+	<!-- INSERT ALL
+		INTO RS_LOG
+		(
+				R_LOG_DATE
+			,	R_LOG_TIME
+			, 	R_LOG_MILLISECONDS
+			, 	R_LOG_CODE
+			, 	R_LOG_DETAIL_CODE
+		<if test="rLogIp != null">
+			,	R_LOG_IP
+		</if>
+		<if test="rLogServerIp != null">
+			,	R_LOG_SERVER_IP
+		</if>
+		<if test="rLogUserId != null">
+			,	R_LOG_USER_ID
+		</if>
+		<if test="rLogEtc != null">
+			,	R_LOG_ETC
+		</if>
+
+		)
+	VALUES
+		(
+				TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			, 	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			, 	TO_CHAR(CURRENT_TIMESTAMP, 'FF')
+			,	#{rLogCode}
+			,	#{rLogDetailCode}
+
+		<if test="rLogIp != null">
+			,	#{rLogIp}
+		</if>
+		<if test="rLogServerIp != null">
+			,	#{rLogServerIp}
+		</if>
+		<if test="rLogUserId != null">
+			,	#{rLogUserId}
+		</if>
+		<if test="rLogEtc != null">
+			,	#{rLogEtc}
+		</if>
+		)
+		
+
+		INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		)
+		 VALUES
+		 (
+		 	  TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	, TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	, 'C'
+		 	, 'rs_log'
+		 	, TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			, TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			, TO_CHAR(CURRENT_TIMESTAMP, 'FF')
+			, #{rLogCode}
+			, #{rLogDetailCode}
+			, coalesce(#{rLogIp},'')
+			, coalesce(#{rLogServerIp},'')
+			, coalesce(#{rLogUserId},'')
+			, SUBSTR(coalesce(#{rLogEtc},''),1,500)
+		 )
+		SELECT * FROM DUAL -->
+		
+		INSERT INTO RS_LOG
+		(
+				R_LOG_DATE
+			,	R_LOG_TIME
+			, 	R_LOG_MILLISECONDS
+			, 	R_LOG_CODE
+			, 	R_LOG_DETAIL_CODE
+		<if test="rLogIp != null">
+			,	R_LOG_IP
+		</if>
+		<if test="rLogServerIp != null">
+			,	R_LOG_SERVER_IP
+		</if>
+		<if test="rLogUserId != null">
+			,	R_LOG_USER_ID
+		</if>
+		<if test="rLogEtc != null">
+			,	R_LOG_ETC
+		</if>
+
+		)
+	VALUES
+		(
+				TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			, 	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			, 	TO_CHAR(CURRENT_TIMESTAMP, 'FF')
+			,	#{rLogCode}
+			,	#{rLogDetailCode}
+
+		<if test="rLogIp != null">
+			,	#{rLogIp}
+		</if>
+		<if test="rLogServerIp != null">
+			,	#{rLogServerIp}
+		</if>
+		<if test="rLogUserId != null">
+			,	#{rLogUserId}
+		</if>
+		<if test="rLogEtc != null">
+			,	#{rLogEtc}
+		</if>
+		)
+	</insert>
+	
+
+	<delete id="deleteLog" parameterType="com.furence.recsee.common.model.Log">
+	DELETE FROM RS_LOG
+		<include refid="commonWhere"></include>
+	</delete>
+</mapper>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.PhoneMappingInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.PhoneMappingInfo">
+		<result column="R_CUST_PHONE" jdbcType="VARCHAR" property="custPhone" />
+		<result column="R_CUST_NICKNAME" jdbcType="VARCHAR" property="custNickName" />
+		<result column="R_USE_NICKNAME" jdbcType="VARCHAR" property="useNickName" />
+		<result column="R_PROC_TYPE" jdbcType="VARCHAR" property="procType" />
+		<result column="R_PROC_POSITION" jdbcType="VARCHAR" property="procPosition" />
+	</resultMap>
+		
+	<select id="selectPhoneMappingInfo" parameterType="com.furence.recsee.common.model.PhoneMappingInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_PHONE_MAPPING
+		ORDER BY R_CUST_PHONE
+	</select>
+
+	<insert id="insertPhoneMappingInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.PhoneMappingInfo">
+		INSERT INTO RS_PHONE_MAPPING (R_CUST_PHONE, R_CUST_NICKNAME, R_USE_NICKNAME, R_PROC_TYPE, R_PROC_POSITION)
+		VALUES(#{custPhone}, #{custNickName}, #{useNickName}, #{procType}, #{procPosition})
+	</insert>
+
+	<update id="updatePhoneMappingInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.PhoneMappingInfo">
+		UPDATE RS_PHONE_MAPPING SET R_CUST_PHONE = #{custPhone}, R_CUST_NICKNAME = #{custNickName}, R_USE_NICKNAME = #{useNickName}
+		<!-- , R_PROC_TYPE = #{procType}, R_PROC_POSITION = #{procPosition} --> where R_CUST_PHONE = #{custPhoneKey}
+	</update>
+	
+	<insert id="insertPhoneMappingInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PhoneMappingInfo">
+		INSERT INTO RS_PHONE_MAPPING (R_CUST_PHONE, R_CUST_NICKNAME, R_USE_NICKNAME, R_PROC_TYPE, R_PROC_POSITION)
+		VALUES(#{custPhone}, #{custNickName}, #{useNickName}, #{procType}, #{procPosition})
+	</insert>
+
+	<update id="updatePhoneMappingInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PhoneMappingInfo">
+		UPDATE RS_PHONE_MAPPING SET R_CUST_PHONE = #{custPhone}, R_CUST_NICKNAME = #{custNickName}, R_USE_NICKNAME = #{useNickName}
+		<!-- , R_PROC_TYPE = #{procType}, R_PROC_POSITION = #{procPosition} --> where R_CUST_PHONE = #{custPhone}
+	</update>
+	
+	<insert id="insertPhoneMappingInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.PhoneMappingInfo">
+		INSERT INTO RS_PHONE_MAPPING (R_CUST_PHONE, R_CUST_NICKNAME, R_USE_NICKNAME, R_PROC_TYPE, R_PROC_POSITION)
+		VALUES(#{custPhone}, #{custNickName}, #{useNickName}, #{procType}, #{procPosition})
+	</insert>
+
+	<update id="updatePhoneMappingInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.PhoneMappingInfo">
+		UPDATE RS_PHONE_MAPPING SET R_CUST_PHONE = #{custPhone}, R_CUST_NICKNAME = #{custNickName}, R_USE_NICKNAME = #{useNickName}
+		<!-- , R_PROC_TYPE = #{procType}, R_PROC_POSITION = #{procPosition} --> where R_CUST_PHONE = #{custPhone}
+	</update>
+
+	<delete id="deletePhoneMappingInfo" parameterType="com.furence.recsee.common.model.PhoneMappingInfo">
+		DELETE FROM RS_PHONE_MAPPING
+		WHERE R_CUST_PHONE = #{custPhone}
+	</delete>
+	
+</mapper>
+
+
+

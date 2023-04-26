@@ -1,0 +1,926 @@
+.office_realtime_info{
+	position: fixed;
+    right: 14px;
+    bottom: 8%;
+    color: #ffffff;
+    z-index: 99999;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.7);
+}
+.office_realtime_info p{
+	color: #ffffff;
+	float: left;
+	clear: both;
+    font-size: 18px;
+    font-weight: bold;
+}
+.office_realtime_info p span{
+	color: #ffffff;
+}
+.stay_check_wrap{
+	float: left;
+	clear: both;
+	margin-top: 5px;
+}
+.stay_check_wrap .office_stay_check{
+	width: 16px;
+    height: 16px;
+    position: relative;
+    top: 2px;
+    float: left;
+    clear: both;
+}
+.stay_check_wrap label{
+	float: left;
+	padding-left: 3px;
+}
+
+/************
+
+office view
+
+************/
+#viewOfficeMode{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+.office_view_pannel{
+	width: 100%;
+	height: auto;
+	background-color: #326e8a;
+	background-image: url(../../../images/project/office-view/office_bg_pattern.png);
+	position: relative;
+	top: -1px;
+	transition: all ease 0.9s;
+}
+.office_view_pannel_bg{
+	position: absolute;
+	width: 100%;
+	height: 107%;
+	background-color: #1c477b;
+	background-image: url(../../../images/project/office-view/office_bg_pattern.png);
+}
+.office_obj_wrap{
+	position: relative;
+	float: left;
+	width: auto;
+	height: auto;
+}
+
+#officeMonitoringWindow{
+	padding-left:30px !important;
+}
+
+
+/************
+
+Room Object Class
+
+************/
+.office_obj_room{
+	position: relative;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 10px;
+}
+.office_obj_room_type_01{
+	width: 532px;
+	height: 460px;
+	background-image: url(../../../images/project/office-view/theme-room/office_room_theme_type_01.png); 
+}
+.office_obj_room_type_02{
+	width: 928px;
+	height: 860px;
+	background-image: url(../../../images/project/office-view/theme-room/office_room_theme_type_02.png);
+}
+.office_obj_room_type_03{
+    width: 1600px;
+    height: 1060px;
+	background-image: url(../../../images/project/office-view/theme-room/office_room_theme_type_03.png);
+    margin-left: calc(50% - 800px);
+}
+
+/* �뜝�럥�돵�뜝�럡留믣뜝�럥利� �솻洹��뫊餓ο옙 �뜝�럩留꾤뇖�궪�삕 �뜝�럩�궃�뼨�먯삕 js�뜝�럥�뱺�뜝�럡�맋 class add/remove 嶺뚳퐣瑗띰옙遊� */
+.office_obj_room_type_01.room_position_type_01{/*�뜝�럩留꾤뇖�궪�삕 占쎈／占쎈쐝�뵳怨ㅼ삕占쎈꼨*/}
+.office_obj_room_type_01.room_position_type_02{left: 276px;}
+.office_obj_room_type_02.room_position_type_01{/*�뜝�럩留꾤뇖�궪�삕 占쎈／占쎈쐝�뵳怨ㅼ삕占쎈꼨*/}
+.office_obj_room_type_02.room_position_type_02{left: 466px;}
+
+/* �뜝�룞�삕�뜝�럩逾졾뜝�룞�삕 �뜝�럥裕욃뜝�룞�삕�뜝�럩逾� 嶺뚯쉻�삕�뜝�럩�젧 : �뜝�룞�삕�뜝�럩肉�嶺뚮씭�쐞占쎈펲 �뜝�럩留꾤뇖�궡瑗듣�뚣굩�삕占쎈굵 �솻洹⑥삕�뇦猿뗰옙�뜮癒㏓뭄占쎄섭�뜮占� �뜝�럥由썲뜝�럥堉�. */
+.office_wrap_tit{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 130px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 7px;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 999;
+}
+.office_obj_room_type_01 .office_wrap_tit{
+    margin: -177px 0 0 -80px;
+}
+.office_obj_room_type_02 .office_wrap_tit{
+    margin: -280px 0 0 -80px;
+}
+
+.office_obj_room_type_03 .office_wrap_tit{
+    margin: -460px 0 0 -80px
+}
+
+/************
+
+Common Object Class
+
+************/
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 Group 占썩뫀踰륅옙苑� �뜝�럡�맟�뜝�럩�젧 */
+.office_obj_agent_wrap{
+	float: left;
+	celar: both;
+}
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 Object 占썩뫀踰륅옙苑� �뜝�럡�맟�뜝�럩�젧 */
+.office_obj_agent{
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+.office_agent_group_left{
+	position: absolute;
+}
+.office_agent_group_right{
+	position: absolute;
+}
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 Object Size */
+.office_obj_agent_woman_back_right,
+.office_obj_agent_man_back_right,
+.office_obj_agent_woman_back_left,
+.office_obj_agent_man_back_left{
+	width: 76px;
+	height: 83px;
+}
+.office_obj_agent_woman_front_right,
+.office_obj_agent_man_front_right,
+.office_obj_agent_woman_front_left,
+.office_obj_agent_man_front_left{
+	width: 70px;
+	height: 95px;
+}
+
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �뜝�럩逾좑옙逾녑뜝占� Class */
+.agent_name{
+    padding: 5px 10px;
+    background-color: rgba(0,0,0,0.8);
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    border-radius: 5px;
+}
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �뜝�럩逾좑옙逾녑뜝占� �뜝�럥�걫占쎈퉲�뜝占� �뜝�럩留꾤뇖�궪�삕 - �뜝�럩�뮡嶺뚋우삕 View*/
+.office_obj_agent_woman_back_right .agent_name,
+.office_obj_agent_man_back_right .agent_name{
+    top: -8px;
+    left: -10px;
+}
+.office_obj_agent_woman_front_right .agent_name,
+.office_obj_agent_man_front_right .agent_name{
+    top: -13px;
+    right: -11px;
+}
+
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �뜝�럩逾좑옙逾녑뜝占� �뜝�럥�걫占쎈퉲�뜝占� �뜝�럩留꾤뇖�궪�삕 - 占쎈꽞占쎌뒩�몴占� View*/
+.office_obj_agent_woman_back_left .agent_name,
+.office_obj_agent_man_back_left .agent_name{
+    top: -8px;
+    right: -23px;
+}
+.office_obj_agent_woman_front_left .agent_name,
+.office_obj_agent_man_front_left .agent_name{
+    top: -8px;
+    left: 12px;
+}
+
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �뜝�럡留믣뜝�럡臾� �뜝�럥�걫占쎈퉲�뜝占� �뜝�럩留꾤뇖�궪�삕 - �뜝�럩�뮡嶺뚋우삕 View*/
+.office_obj_agent_woman_back_right .agent_status,
+.office_obj_agent_man_back_right .agent_status{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: 69px;
+    left: -13px;
+}
+.office_obj_agent_woman_front_right .agent_status,
+.office_obj_agent_man_front_right .agent_status{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+   	bottom: 75px;
+    left: 21px;
+}
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �뜝�럡留믣뜝�럡臾� �뜝�럥�걫占쎈퉲�뜝占� �뜝�럩留꾤뇖�궪�삕 - 占쎈꽞占쎌뒩�몴占� View*/
+.office_obj_agent_woman_back_left .agent_status,
+.office_obj_agent_man_back_left .agent_status{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+    bottom: 65px;
+    left: 30px;
+}
+.office_obj_agent_woman_front_left .agent_status,
+.office_obj_agent_man_front_left .agent_status{
+	position: absolute;
+	width: 55px;
+	height: 55px;
+	background-repeat: no-repeat;
+	background-position: center;
+    bottom: 100px;
+    left: -10px;
+}
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �뜝�럡留믣뜝�럡臾� Class */
+.agent_stauts {
+	pointer-events: none;
+	z-index: 3;
+}
+.office_obj_agent .obj_login{
+	background-image: url(../../../images/project/office-view/status/login.png);
+}
+.office_obj_agent .obj_logout{
+	background-image: url(../../../images/project/office-view/status/logout.png);
+}
+.office_obj_agent .obj_calling{
+	background-image: url(../../../images/project/office-view/status/calling.png);
+}
+.office_obj_agent .obj_ready{
+	background-image: url(../../../images/project/office-view/status/ready.png);
+}
+.office_obj_agent .obj_aftercallwork{
+	background-image: url(../../../images/project/office-view/status/acw.png);
+}
+
+.office_obj_agent .obj_notready{
+	background-image: url(../../../images/project/office-view/status/notready.png);
+}
+
+.office_obj_agent .obj_ringing{
+	background-image: url(../../../images/project/office-view/status/ringing.png);
+}
+
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 Object Image : �뜝�럩�뮡嶺뚋우삕 View */
+.office_obj_agent_woman_back_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_right.png);
+}
+.office_obj_agent_man_back_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_right.png);
+}
+.office_obj_agent_woman_front_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_right.png);
+}
+.office_obj_agent_man_front_right{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_right.png);
+}
+
+.office_obj_agent_woman_back_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_right_active.png);
+}
+.office_obj_agent_woman_back_right:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+.office_obj_agent_man_back_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_right_active.png);
+}
+.office_obj_agent_man_back_right:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+.office_obj_agent_woman_front_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_right_active.png);
+}
+.office_obj_agent_woman_front_right:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+.office_obj_agent_man_front_right:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_right_active.png);
+}
+.office_obj_agent_man_front_right:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+/*�뜝�럥堉꾣뤆�룊�삕 繞벿살탳占쎈데 �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �솻洹⑥삕�뇦猿볦삕 占쎈쉸�맩�몠 �뛾�룆�뼺占쎈쾴�썒�슣�닔�땻占썲뜝�럩�뭺!!!*/
+.office_obj_agent_man_back_right.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_right_active.png) !important ;
+}
+.office_obj_agent_man_back_right.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+.office_obj_agent_woman_back_right.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_right_active.png) !important ;
+}
+.office_obj_agent_woman_back_right.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+.office_obj_agent_man_front_right.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_right_active.png) !important ;
+}
+.office_obj_agent_man_front_right.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+.office_obj_agent_woman_front_right.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_right_active.png) !important ;
+}
+.office_obj_agent_woman_front_right.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+
+
+
+
+
+
+
+/* �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 Object Image : 占쎈꽞占쎌뒩�몴占� View */
+.office_obj_agent_woman_back_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_left.png);
+}
+.office_obj_agent_man_back_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_left.png);
+}
+.office_obj_agent_woman_front_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_left.png);
+}
+.office_obj_agent_man_front_left{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_left.png);
+}
+.office_obj_agent_woman_back_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_left_active.png);
+}
+.office_obj_agent_woman_back_left:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+.office_obj_agent_man_back_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_left_active.png);
+}
+.office_obj_agent_man_back_left:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+.office_obj_agent_woman_front_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_left_active.png);
+}
+.office_obj_agent_woman_front_left:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+.office_obj_agent_man_front_left:hover{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_left_active.png);
+}
+.office_obj_agent_man_front_left:hover .agent_name{
+    background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+/*�뜝�럥堉꾣뤆�룊�삕 繞벿살탳占쎈데 �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸 �솻洹⑥삕�뇦猿볦삕 占쎈쉸�맩�몠 �뛾�룆�뼺占쎈쾴�썒�슣�닔�땻占썲뜝�럩�뭺!!!*/
+.office_obj_agent_man_back_left.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_back_left_active.png) !important ;
+}
+.office_obj_agent_man_back_left.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+.office_obj_agent_woman_back_left.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_back_left_active.png) !important ;
+}
+.office_obj_agent_woman_back_left.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+.office_obj_agent_man_front_left.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_man_front_left_active.png) !important ;
+}
+.office_obj_agent_man_front_left.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+.office_obj_agent_woman_front_left.officeListening{
+	background-image: url(../../../images/project/office-view/agent/office_obj_woman_front_left_active.png) !important ;
+}
+.office_obj_agent_woman_front_left.officeListening .agent_name{
+	background-color: rgba(68, 147, 47, 0.8);
+	pointer-events: none;
+}
+
+
+/* �뜝�럩�뮡嶺뚋우삕 view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럥�닱 �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸�솻洹⑥삕 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+/* .office_agent_group_right .agent_num_01{
+	position: absolute;
+    bottom: -4px;
+    left: 44px;
+    z-index: 99;
+}
+.office_agent_group_right .agent_num_02{
+	position: absolute;
+    bottom: 22px;
+    left: -2px;
+    z-index: 98;
+}
+.office_agent_group_right .agent_num_03{
+	position: absolute;
+    bottom: 18px;
+    left: 81px;
+    z-index: 97;
+}
+.office_agent_group_right .agent_num_04{
+	position: absolute;
+    bottom: 44px;
+    left: 36px;
+    z-index: 96;
+}
+/* 占쎈꽞占쎌뒩�몴占� view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럥�닱 �뜝�럡留믣뜝�럥堉뽩뜝�럩�쐸�솻洹⑥삕 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+.office_agent_group_left .agent_num_01{
+	position: absolute;
+    bottom: -4px;
+    left: 44px;
+    z-index: 99;
+}
+.office_agent_group_left .agent_num_02{
+    position: absolute;
+    bottom: 19px;
+    left: 10px;
+    z-index: 98;
+}
+.office_agent_group_left .agent_num_03{
+	position: absolute;
+    bottom: 24px;
+    left: 89px;
+    z-index: 97;
+}
+.office_agent_group_left .agent_num_04{
+	position: absolute;
+    bottom: 45px;
+    left: 55px;
+    z-index: 96;
+}
+
+/************
+
+16 View
+
+************/
+/* �뜝�럩�뮡嶺뚋우삕 view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+.office_obj_room_type_01 .office_agent_group_right.group_num_01{
+	left: 196px;
+    bottom: 40px;
+    z-index: 99;
+}
+.office_obj_room_type_01 .office_agent_group_right.group_num_02{
+   	left: 66px;
+    bottom: 112px;
+    z-index: 98;
+}
+.office_obj_room_type_01 .office_agent_group_right.group_num_03{
+	left: 310px;
+    bottom: 108px;
+    z-index: 97;
+}
+.office_obj_room_type_01 .office_agent_group_right.group_num_04{
+    left: 187px;
+    bottom: 181px;
+    z-index: 96;
+}
+/* 占쎈꽞占쎌뒩�몴占� view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+.office_agent_group_left{
+	position: absolute;
+}
+.office_obj_room_type_01 .office_agent_group_left.group_num_01{
+    left: 182px;
+    bottom: 40px;
+    z-index: 99;
+}
+.office_obj_room_type_01 .office_agent_group_left.group_num_02{
+    left: 43px;
+    bottom: 122px;
+    z-index: 98;
+}
+.office_obj_room_type_01 .office_agent_group_left.group_num_03{
+    left: 299px;
+    bottom: 108px;
+    z-index: 97;
+}
+.office_obj_room_type_01 .office_agent_group_left.group_num_04{
+    left: 158px;
+    bottom: 189px;
+    z-index: 96;
+}
+
+
+
+/************
+
+36 View
+
+************/
+/* �뜝�럩�뮡嶺뚋우삕 view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+.office_obj_room_type_02 .office_agent_group_right.group_num_01{
+	left: 396px;
+    bottom: 143px;
+    z-index: 99;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_02{
+   	left: 264px;
+    bottom: 225px;
+    z-index: 98;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_03{
+	left: 130px;
+    bottom: 304px;
+    z-index: 97;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_04{
+    left: 534px;
+    bottom: 232px;
+    z-index: 96;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_05{
+    left: 387px;
+    bottom: 312px;
+    z-index: 95;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_06{
+    left: 258px;
+    bottom: 395px;
+    z-index: 94;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_07{
+    left: 665px;
+    bottom: 317px;
+    z-index: 93;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_08{
+    left: 520px;
+    bottom: 404px;
+    z-index: 92;
+}
+.office_obj_room_type_02 .office_agent_group_right.group_num_09{
+    left: 387px;
+    bottom: 486px;
+    z-index: 91;
+}
+/* 占쎈꽞占쎌뒩�몴占� view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+.office_obj_room_type_02 .office_agent_group_left.group_num_01{
+	left: 386px;
+    bottom: 143px;
+    z-index: 99;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_02{
+   	left: 243px;
+    bottom: 230px;
+    z-index: 98;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_03{
+    left: 130px;
+    bottom: 304px;
+    z-index: 97;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_04{
+    left: 524px;
+    bottom: 232px;
+    z-index: 96;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_05{
+    left: 377px;
+    bottom: 312px;
+    z-index: 95;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_06{
+    left: 248px;
+    bottom: 395px;
+    z-index: 94;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_07{
+    left: 655px;
+    bottom: 317px;
+    z-index: 93;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_08{
+    left: 510px;
+    bottom: 404px;
+    z-index: 92;
+}
+.office_obj_room_type_02 .office_agent_group_left.group_num_09{
+    left: 377px;
+    bottom: 486px;
+    z-index: 91;
+}
+
+
+
+
+/************
+
+120 View
+
+************/
+/* �뜝�럩�뮡嶺뚋우삕 view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+.office_obj_room_type_03 .office_agent_group_right.group_num_01{
+	left: 722px;
+    bottom: 75px;
+    z-index: 99;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_02{
+    left: 571px;
+    bottom: 165px;
+    z-index: 98;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_03{
+    left: 428px;
+    bottom: 248px;
+    z-index: 97;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_04{
+    left: 290px;
+    bottom: 327px;
+    z-index: 96;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_05{
+    left: 157px;
+    bottom: 401px;
+    z-index: 95;
+}
+/* �뜝�럩�뮆 �뜝�럥堉� �뜝�럩留�(5�뤆�룇裕녶퐲瑜낆삕占쎈펲)�슖�댙�삕 �뤆�룇�듌�뜝占� �뜝�럥���뜝�럥�뱺 �뜝�럩肉녑뜝�럥裕� �뜝�럩沅롳옙�눀占쎌뒩占쎌젾�뜝�럥諭쒎뜝�룞�삕 占쎈쑏熬곥룊爰띶뜝�럥由��뜝�럥�뿰 +left 145 , +bottom 95占쎈ご�뜝占� �뜝�럥�돵�썒�슣�닑占쎈듆 �뜝�럥彛녶뜝�럥堉�. */
+.office_obj_room_type_03 .office_agent_group_right.group_num_06{
+	left: 867px;
+    bottom: 165px;
+    z-index: 94;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_07{
+    left: 716px;
+    bottom: 255px;
+    z-index: 93;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_08{
+    left: 573px;
+    bottom: 338px;
+    z-index: 92;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_09{
+    left: 425px;
+    bottom: 417px;
+    z-index: 91;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_10{
+    left: 302px;
+    bottom: 491px;
+    z-index: 90;
+}
+/* �뜝�럩�뮆 �뜝�럥堉� �뜝�럩留�(5�뤆�룇裕녶퐲瑜낆삕占쎈펲)�슖�댙�삕 �뤆�룇�듌�뜝占� �뜝�럥���뜝�럥�뱺 �뜝�럩肉녑뜝�럥裕� �뜝�럩沅롳옙�눀占쎌뒩占쎌젾�뜝�럥諭쒎뜝�룞�삕 占쎈쑏熬곥룊爰띶뜝�럥由��뜝�럥�뿰 +left 145 , +bottom 95占쎈ご�뜝占� �뜝�럥�돵�썒�슣�닑占쎈듆 �뜝�럥彛녶뜝�럥堉�. */
+.office_obj_room_type_03 .office_agent_group_right.group_num_11{
+	left: 1012px;
+    bottom: 255px;
+    z-index: 89;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_12{
+    left: 861px;
+    bottom: 345px;
+    z-index: 88;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_13{
+    left: 718px;
+    bottom: 428px;
+    z-index: 87;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_14{
+    left: 570px;
+    bottom: 507px;
+    z-index: 86;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_15{
+    left: 447px;
+    bottom: 581px;
+    z-index: 85;
+}
+/* �뜝�럩�뮆 �뜝�럥堉� �뜝�럩留�(5�뤆�룇裕녶퐲瑜낆삕占쎈펲)�슖�댙�삕 �뤆�룇�듌�뜝占� �뜝�럥���뜝�럥�뱺 �뜝�럩肉녑뜝�럥裕� �뜝�럩沅롳옙�눀占쎌뒩占쎌젾�뜝�럥諭쒎뜝�룞�삕 占쎈쑏熬곥룊爰띶뜝�럥由��뜝�럥�뿰 +left 145 , +bottom 95占쎈ご�뜝占� �뜝�럥�돵�썒�슣�닑占쎈듆 �뜝�럥彛녶뜝�럥堉�. */
+.office_obj_room_type_03 .office_agent_group_right.group_num_16{
+	left: 1157px;
+    bottom: 345px;
+    z-index: 84;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_17{
+    left: 1005px;
+    bottom: 435px;
+    z-index: 83;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_18{
+    left: 863px;
+    bottom: 518px;
+    z-index: 82;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_19{
+    left: 715px;
+    bottom: 597px;
+    z-index: 81;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_20{
+    left: 592px;
+    bottom: 671px;
+    z-index: 80;
+}
+/* �뜝�럩�뮆 �뜝�럥堉� �뜝�럩留�(5�뤆�룇裕녶퐲瑜낆삕占쎈펲)�슖�댙�삕 �뤆�룇�듌�뜝占� �뜝�럥���뜝�럥�뱺 �뜝�럩肉녑뜝�럥裕� �뜝�럩沅롳옙�눀占쎌뒩占쎌젾�뜝�럥諭쒎뜝�룞�삕 占쎈쑏熬곥룊爰띶뜝�럥由��뜝�럥�뿰 +left 145 , +bottom 95占쎈ご�뜝占� �뜝�럥�돵�썒�슣�닑占쎈듆 �뜝�럥彛녶뜝�럥堉�. */
+.office_obj_room_type_03 .office_agent_group_right.group_num_21{
+	left: 1304px;
+    bottom: 435px;
+    z-index: 79;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_22{
+    left: 1150px;
+    bottom: 525px;
+    z-index: 78;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_23{
+    left: 1008px;
+    bottom: 608px;
+    z-index: 77;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_24{
+    left: 860px;
+    bottom: 687px;
+    z-index: 76;
+}
+.office_obj_room_type_03 .office_agent_group_right.group_num_25{
+    left: 737px;
+    bottom: 761px;
+    z-index: 75;
+}
+/* 占쎈꽞占쎌뒩�몴占� view - 4�뜝�럩逾� 占쎈닱占쎌뵂占쎈쾳 �윜諛몄굡塋딉옙 �뜝�럩留꾤뇖�궪�삕 : �뜝�럡臾멨뜝�럡�뎽 �뜝�럥�뻹�뜝�럩紐드슖�댙�삕 �뜝�럡源삣뜝�럩�굥�뜝�럥裕� �뜝�럩�쓤�뜝�럩�뮔 */
+.office_obj_room_type_03 .office_agent_group_left.group_num_01{
+	left: 717px;
+    bottom: 82px;
+    z-index: 99;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_02{
+    left: 571px;
+    bottom: 165px;
+    z-index: 98;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_03{
+    left: 428px;
+    bottom: 248px;
+    z-index: 97;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_04{
+    left: 290px;
+    bottom: 327px;
+    z-index: 96;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_05{
+    left: 157px;
+    bottom: 401px;
+    z-index: 95;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_06{
+	left: 717px;
+    bottom: 82px;
+    z-index: 99;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_07{
+    left: 571px;
+    bottom: 165px;
+    z-index: 98;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_08{
+    left: 428px;
+    bottom: 248px;
+    z-index: 97;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_09{
+    left: 290px;
+    bottom: 327px;
+    z-index: 96;
+}
+.office_obj_room_type_03 .office_agent_group_left.group_num_10{
+    left: 157px;
+    bottom: 401px;
+    z-index: 95;
+}
+
+/* 獄쏉옙 域밸챶竊� 占쎄퐬占쎌젟*/
+.office_room_in_obj_01{
+	position : absolute;
+	width: 60px;
+	height : 70px;
+	bottom : 1px;
+	left: 44px;
+ 	z-index: 99;
+}
+.office_room_in_obj_02{
+	position : absolute;
+	width: 60px;
+	height : 70px;
+	bottom : 34px;
+	left: 80px;
+ 	z-index: 98; 
+}
+.office_room_in_obj_03{
+	position : absolute;
+	width: 60px;
+	height : 70px;
+	bottom : 28px;
+	left: 6px;
+	z-index: 97;
+}
+.office_room_in_obj_04{
+	position : absolute;
+	width: 60px;
+	height : 70px;
+	bottom : 60px;
+	left: 35px;
+ 	z-index: 96;
+}
+
+.agent_num_01{
+    z-index: 99;
+}
+.agent_num_02{
+    z-index: 98;
+}
+.agent_num_03{
+    z-index: 97;
+}
+.agent_num_04{
+    z-index: 96;
+}
+
+.office_view_code{
+	height: 100%;
+	width: 100px;
+	position : fixed;
+	right:0px;
+	overflow-y : auto;
+}
+
+
+/*
+=========================================
+오피스  와이드 모니터 일때
+=========================================
+*/
+@media screen and (max-width:1300px){
+	.office_view_pannel{
+		transform : scale(0.78);
+	}
+
+	.office_view_pannel_bg{
+		width : 100%;
+	}	
+	
+	html{
+		overflow-x : hidden;
+	}
+}
+
+
+
+/*
+=========================================
+오피스 일반 모니터 일때
+=========================================
+*/
+
+
+
+/* 오피스뷰 모니터링에서 배경때문에 글색 흰색으로 변경  */
+.monitoring_legend {
+    border-spacing: 7px;
+    display: block;
+    position: fixed;
+    z-index: 2147483647;
+    right: 15px;
+    bottom: 10px;
+    color: white;
+    /* color: black; */
+}

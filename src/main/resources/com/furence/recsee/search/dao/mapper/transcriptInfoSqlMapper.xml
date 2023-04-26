@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.transcript.dao.TranscriptDao">
+
+	<resultMap id="TranscriptResultMap" type="com.furence.recsee.transcript.model.TranscriptListInfo">
+		<result column="R_USER_ID" jdbcType="VARCHAR" property="rUserId" />
+		<result column="R_REC_DATE" jdbcType="VARCHAR" property="rRecDate" />
+		<result column="R_REC_TIME" jdbcType="VARCHAR" property="rRecTime" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="R_REC_ID" jdbcType="VARCHAR" property="rRecId" />
+		<result column="R_REC_NAME" jdbcType="VARCHAR" property="rRecName" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="rExtNum" />
+		<result column="R_CUST_NAME" jdbcType="VARCHAR" property="rCustName" />
+		<result column="R_CUST_PHONE" jdbcType="VARCHAR" property="rCustPhone" />
+		<result column="R_TEXT" jdbcType="VARCHAR" property="rText" />
+		<result column="R_TRANSCRIPT_YN" jdbcType="VARCHAR" property="rTranscriptYn" />
+		<result column="R_TRANSCRIPT_STATUS" jdbcType="VARCHAR" property="rTranscriptStatus" />		
+		<result column="R_TRANSCRIPT_SERIAL" jdbcType="VARCHAR" property="rTranscriptSerial" />		
+		<result column="R_LOCAL_FILE" jdbcType="VARCHAR" property="rLocalFile" />		
+		
+		<result column="R_LISTEN_URL" jdbcType="VARCHAR" property="listenUrl" />	
+		<result column="R_TRANSCRIPT_FILENAME" jdbcType="VARCHAR" property="rFilename" />	
+		
+		<result column="R_FILE_AUDIO_TYPE" jdbcType="VARCHAR" property="fileAudioType" />
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="rSysCode" />
+	</resultMap>
+	
+	<select id="selectTranscriptList" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT 
+		u.R_USER_NAME AS R_USER_ID,
+		SUBSTRING(t.R_REC_DATE, 1, 4)||'-'||SUBSTRING(t.R_REC_DATE, 5, 2)||'-'||SUBSTRING(t.R_REC_DATE, 7, 2) AS R_REC_DATE, <!-- 날짜 형태로 변환 -->
+		SUBSTRING(t.R_REC_TIME, 1, 2)||':'||SUBSTRING(t.R_REC_TIME, 3, 2)||':'||SUBSTRING(t.R_REC_TIME, 5, 2) AS R_REC_TIME,
+		t.R_BG_CODE,
+		t.R_MG_CODE,
+		t.R_SG_CODE,
+		t.R_REC_ID,
+		t.R_REC_NAME,
+		t.R_EXT_NUM,
+		t.R_CUST_NAME,
+		t.R_CUST_PHONE,
+		t.R_TRANSCRIPT_YN,
+		t.R_TRANSCRIPT_STATUS,
+		t.R_TRANSCRIPT_SERIAL,
+		t.R_LOCAL_FILE,		
+		t.R_SYS_CODE,
+		r.R_LISTEN_URL
+	  FROM RS_TRANSCRIPT_LIST as t
+	  
+	  <!-- 녹취 파일의 r_listen_url 조회하기 위해 -->
+	  LEFT JOIN RS_RECFILE as r
+	  ON t.R_REC_DATE = r.R_REC_DATE
+	  AND t.R_REC_TIME = r.R_REC_TIME
+	  AND t.R_EXT_NUM = r.R_EXT_NUM
+	  AND t.R_SYS_CODE = r.R_V_SYS_CODE
+	  
+	  LEFT JOIN RS_RUSER_INFO as u
+	  ON u.R_USER_ID = t.R_USER_ID
+	  WHERE 1=1 
+	  		<!-- <if test="rUserId != null">
+			AND t.R_USER_ID = #{rUserId};
+			</if> -->
+			<if test="sDate != null and eDate !=null">
+			AND t.R_REC_DATE BETWEEN #{sDate} AND #{eDate}
+			</if>
+			<choose>
+				<when test="sTime != null and eTime != null">
+				AND t.R_REC_TIME BETWEEN #{sTime} AND #{eTime}
+				</when>
+				<when test="sTime != null and eTime eq null">
+				AND t.R_REC_TIME &gt;= #{sTime}
+				</when>
+				<when test="sTime eq null and eTime != null">
+				AND t.R_REC_TIME &lt;= #{eTime}
+				</when>
+			</choose>
+			<if test="bgCode != null">
+			AND t.R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null">
+			AND t.R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCodeArray==null">
+			AND t.R_SG_CODE = #{sgCode}
+			</if>
+			<if test="userId != null">
+			AND t.R_REC_ID = #{userId}
+			</if>
+			<if test="extNum != null">
+			AND t.R_EXT_NUM LIKE '%'||#{extNum}||'%'
+			</if>
+			<if test="userName != null">
+			AND t.R_REC_NAME = #{userName}
+			</if>
+			<if test="transcriber != null">
+			AND t.R_USER_ID = #{transcriber}
+			</if>
+			<if test="transcript != null">
+			AND t.R_TRANSCRIPT_STATUS = #{transcript}
+			</if>
+			ORDER BY t.R_REC_DATE DESC, t.R_REC_TIME DESC
+	</select>
+	
+	<select id="selectTranscriptList" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT 
+		u.R_USER_NAME AS R_USER_ID,
+		SUBSTRING(t.R_REC_DATE, 1, 4)+'-'+SUBSTRING(t.R_REC_DATE, 5, 2)+'-'+SUBSTRING(t.R_REC_DATE, 7, 2) AS R_REC_DATE, <!-- 날짜 형태로 변환 -->
+		SUBSTRING(t.R_REC_TIME, 1, 2)+':'+SUBSTRING(t.R_REC_TIME, 3, 2)+':'+SUBSTRING(t.R_REC_TIME, 5, 2) AS R_REC_TIME,
+		t.R_BG_CODE,
+		t.R_MG_CODE,
+		t.R_SG_CODE,
+		t.R_REC_ID,
+		t.R_REC_NAME,
+		t.R_EXT_NUM,
+		t.R_CUST_NAME,
+		t.R_CUST_PHONE,
+		t.R_TRANSCRIPT_YN,
+		t.R_TRANSCRIPT_STATUS,
+		t.R_TRANSCRIPT_SERIAL,
+		t.R_LOCAL_FILE,
+		t.R_SYS_CODE,
+		r.R_LISTEN_URL
+		
+	  FROM RS_TRANSCRIPT_LIST as t
+	  
+	  <!-- 녹취 파일의 r_listen_url 조회하기 위해 -->
+	  LEFT JOIN RS_RECFILE as r
+	  ON t.R_REC_DATE = r.R_REC_DATE
+	  AND t.R_REC_TIME = r.R_REC_TIME
+	  AND t.R_EXT_NUM = r.R_EXT_NUM
+	  AND t.R_SYS_CODE = r.R_V_SYS_CODE
+	  
+	  LEFT JOIN RS_RUSER_INFO as u
+	  ON u.R_USER_ID = t.R_USER_ID
+	  WHERE 1=1 
+	  		<!-- <if test="rUserId != null">
+			AND t.R_USER_ID = #{rUserId};
+			</if> -->
+			<if test="sDate != null and eDate !=null">
+			AND t.R_REC_DATE BETWEEN #{sDate} AND #{eDate}
+			</if>
+			<choose>
+				<when test="sTime != null and eTime != null">
+				AND t.R_REC_TIME BETWEEN #{sTime} AND #{eTime}
+				</when>
+				<when test="sTime != null and eTime eq null">
+				AND t.R_REC_TIME &gt;= #{sTime}
+				</when>
+				<when test="sTime eq null and eTime != null">
+				AND t.R_REC_TIME &lt;= #{eTime}
+				</when>
+			</choose>
+			<if test="bgCode != null">
+			AND t.R_BG_CODE = #{bgCode}
+			</if>
+			<if test="mgCode != null">
+			AND t.R_MG_CODE = #{mgCode}
+			</if>
+			<if test="sgCode != null and sgCodeArray==null">
+			AND t.R_SG_CODE = #{sgCode}
+			</if>
+			<if test="userId != null">
+			AND t.R_REC_ID = #{userId}
+			</if>
+			<if test="extNum != null">
+			AND t.R_EXT_NUM LIKE '%'+#{extNum}+'%'
+			</if>
+			<if test="userName != null">
+			AND t.R_REC_NAME = #{userName}
+			</if>			
+			<if test="transcriber != null">
+			AND t.R_USER_ID = #{transcriber}
+			</if>
+			<if test="transcript != null">
+			AND t.R_TRANSCRIPT_STATUS = #{transcript}
+			</if>
+			ORDER BY t.R_REC_DATE DESC, t.R_REC_TIME DESC
+	</select>
+	
+	<select id="selectLocalFile" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT * 
+	  FROM RS_TRANSCRIPT_LIST
+	 WHERE 
+	   R_LOCAL_FILE = #{rLocalFile}
+	</select>
+		
+	<select id="selectTranscriptInfo" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT * 
+	  FROM RS_TRANSCRIPT_INFO
+	 WHERE R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}::integer
+	</select>
+	
+	<select id="selectTranscriptInfo" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT * 
+	  FROM RS_TRANSCRIPT_INFO
+	 WHERE R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}
+	</select>
+	
+	<!-- 학습요청시 DB에 저장된 전사 된 내용으로  txt파일 만들기 위해 조회-->
+	<select id="selectTranscriptLearningInfo" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT INFO.* 
+	  FROM RS_TRANSCRIPT_INFO INFO
+	  
+	  INNER JOIN (
+	  	SELECT R_REC_DATE, R_REC_TIME, R_EXT_NUM, R_TRANSCRIPT_SERIAL
+	  	FROM RS_TRANSCRIPT_LIST
+	  	WHERE R_TRANSCRIPT_SERIAL = ${rTranscriptSerial}::integer
+	  ) LIST
+	  ON 
+  	  INFO.R_TRANSCRIPT_SERIAL = LIST.R_TRANSCRIPT_SERIAL
+  	</select>
+  	<select id="selectTranscriptLearningInfo" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT INFO.* 
+	  FROM RS_TRANSCRIPT_INFO INFO
+	  
+	  INNER JOIN (
+	  	SELECT R_REC_DATE, R_REC_TIME, R_EXT_NUM, R_TRANSCRIPT_SERIAL
+	  	FROM RS_TRANSCRIPT_LIST
+	  	WHERE R_TRANSCRIPT_SERIAL = ${rTranscriptSerial}
+	  ) LIST
+	  ON 
+  	  INFO.R_TRANSCRIPT_SERIAL = LIST.R_TRANSCRIPT_SERIAL
+  	</select>
+  	
+  	<select id="selectFileListenUrl" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+  	select r_listen_url from rs_recfile where r_v_filename in (select r_transcript_filename from rs_transcript_info where r_transcript_serial = ${rTranscriptSerial}::integer)
+  	</select>
+  	
+  	<select id="selectFileListenUrl" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+  	select r_listen_url from rs_recfile where r_v_filename in (select r_transcript_filename from rs_transcript_info where r_transcript_serial = ${rTranscriptSerial})
+  	</select>
+	
+	<insert id="insertTranscriptList"  databaseId="postgres"	parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		INSERT INTO RS_TRANSCRIPT_LIST (r_user_id, r_rec_date, r_rec_time, r_bg_code, r_mg_code, r_sg_code, r_rec_id, r_rec_name, r_ext_num, r_cust_name, r_cust_phone, r_sys_code)
+			SELECT
+				#{rUserId},
+				R_REC_DATE,
+				R_REC_TIME,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_USER_ID,
+				R_USER_NAME,
+				R_EXT_NUM,
+				R_CUST_NAME,
+				R_CUST_PHONE1,
+				R_V_SYS_CODE
+			FROM RS_RECFILE
+			WHERE
+					 R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  R_EXT_NUM = #{rExtNum}
+				AND  R_V_SYS_CODE = #{rSysCode}
+	</insert>
+	
+	<insert id="insertTranscriptListLocal"  databaseId="postgres"	parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		INSERT INTO RS_TRANSCRIPT_LIST (
+			R_USER_ID, 
+			R_REC_DATE, 
+			R_REC_TIME,
+			R_EXT_NUM,
+			R_REC_ID,
+			R_REC_NAME,
+			R_TRANSCRIPT_YN,
+			R_LOCAL_FILE
+		) VALUES (
+			#{rUserId},
+			#{rRecDate},
+			#{rRecTime},
+			#{rExtNum},
+			#{rRecId},
+			#{rRecName},
+			#{rTranscriptYn},
+			#{rLocalFile}
+		)
+	</insert>
+	
+	<insert id="insertTranscriptInfo" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		INSERT INTO RS_TRANSCRIPT_INFO (
+			R_USER_ID, 
+			R_REC_DATE, 
+			R_REC_TIME, 
+			R_EXT_NUM, 
+			R_TRANSCRIPT_STATUS,
+			R_TEXT,
+			R_TRANSCRIPT_DATE,
+			R_TRANSCRIPT_FILENAME,
+			R_FILE_AUDIO_TYPE,
+			R_TRANSCRIPT_SERIAL,
+			R_SYS_CODE
+		) VALUES (
+			#{rUserId},
+			REPLACE(#{rRecDate},'-',''),
+			REPLACE(#{rRecTime},':',''),
+			#{rExtNum},
+			'TF',
+			#{rText},
+			TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDDHH24MISS'),
+			#{rFilename},
+			#{fileAudioType},
+			#{rTranscriptSerial}::integer,
+			#{rSysCode}
+		)
+	</insert>
+	
+	<update id="updateTranscriptList" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		UPDATE RS_TRANSCRIPT_LIST 
+		   SET
+			   R_TRANSCRIPT_YN = #{rTranscriptYn},
+			   R_TRANSCRIPT_STATUS = #{rTranscriptStatus}
+		 WHERE R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}::integer
+	</update>
+	
+	<update id="updateTranscriber" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		UPDATE RS_TRANSCRIPT_LIST 
+		   SET
+			   r_user_id = #{rUserId}
+		 WHERE R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}::integer
+	</update>
+	
+	
+	<update id="updateTranscriptInfo" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		UPDATE RS_TRANSCRIPT_INFO 
+		   SET
+			   R_TEXT = #{rText},
+			   R_TRANSCRIPT_DATE = TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDDHH24MISS')
+		 WHERE R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}::integer
+	</update>
+	
+	<delete id="deleteTranscriptInfo" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		DELETE 
+		  FROM RS_TRANSCRIPT_INFO
+		 WHERE R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}::integer
+		   	  
+	</delete>
+	<delete id="deleteTranscriptList" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		WITH DELETED AS(
+			DELETE FROM RS_TRANSCRIPT_LIST AS LIST
+			WHERE LIST.R_TRANSCRIPT_SERIAL = ${rTranscriptSerial}
+			
+			RETURNING *
+		)
+		
+		DELETE FROM RS_TRANSCRIPT_INFO AS INFO
+			  USING DELETED
+		WHERE DELETED.R_TRANSCRIPT_SERIAL = INFO.R_TRANSCRIPT_SERIAL
+	</delete>
+	
+	<select id="selectTranscriptListPop"  databaseId="postgres"	parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+  		SELECT 
+  		t.R_USER_ID,
+		SUBSTRING(t.R_REC_DATE, 1, 4)||'-'||SUBSTRING(t.R_REC_DATE, 5, 2)||'-'||SUBSTRING(t.R_REC_DATE, 7, 2) AS R_REC_DATE, <!-- 날짜 형태로 변환 -->
+		SUBSTRING(t.R_REC_TIME, 1, 2)||':'||SUBSTRING(t.R_REC_TIME, 3, 2)||':'||SUBSTRING(t.R_REC_TIME, 5, 2) AS R_REC_TIME,
+		t.R_BG_CODE,
+		t.R_MG_CODE,
+		t.R_SG_CODE,
+		t.R_REC_ID,
+		t.R_REC_NAME,
+		t.R_EXT_NUM,
+		t.R_CUST_NAME,
+		t.R_CUST_PHONE,
+		t.R_TRANSCRIPT_YN,
+		t.R_TRANSCRIPT_STATUS,
+		t.R_TRANSCRIPT_SERIAL,
+		t.R_SYS_CODE,		
+		r.R_LISTEN_URL
+	  FROM RS_TRANSCRIPT_LIST as t
+	  
+	  <!-- 녹취 파일의 r_listen_url 조회하기 위해 -->
+	  LEFT JOIN RS_RECFILE as r
+	  ON t.R_REC_DATE = r.R_REC_DATE
+	  AND t.R_REC_TIME = r.R_REC_TIME
+	  AND t.R_EXT_NUM = r.R_EXT_NUM	
+	  AND t.R_SYS_CODE = r.R_V_SYS_CODE	
+	  WHERE R_TRANSCRIPT_SERIAL in
+	  <foreach collection="rTranscriptSerialList" item = "rTranscriptSerialItem" index="index" separator="," open = "(" close=")">
+    	#{rTranscriptSerialItem}::integer
+	  </foreach>
+  	</select>
+	
+<select id="selectTranscriptListDup" databaseId="postgres" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+	SELECT  *
+	FROM	rs_transcript_list
+	WHERE	1=1
+			<if test="rUserId != null">
+			AND R_USER_ID = #{rUserId}
+			</if>
+			<if test="rRecDate != null">
+			AND R_REC_DATE = #{rRecDate}
+			</if>
+			<if test="rRecTime != null">
+			AND R_REC_TIME = #{rRecTime}
+			</if>
+			<if test="rExtNum != null">
+			AND R_EXT_NUM = #{rExtNum}
+			</if>
+			<if test="rCustPhone != null">
+			AND R_CUST_PHONE = #{rCustPhone}
+			</if>
+			<if test="rSysCode != null">
+			AND R_SYS_CODE = #{rSysCode}
+			</if>
+	</select>
+	
+	
+	<insert id="insertTranscriptList"  databaseId="sqlserver"	parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		INSERT INTO RS_TRANSCRIPT_LIST ( 
+			r_user_id, 
+			r_rec_date, 
+			r_rec_time, 
+			r_bg_code, 
+			r_mg_code, 
+			r_sg_code, 
+            r_rec_id, 
+			r_rec_name, 
+			r_ext_num, 
+			r_cust_name, 
+			r_cust_phone,
+			r_sys_code)
+			SELECT
+				#{rUserId},
+				R_REC_DATE,
+				R_REC_TIME,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_USER_ID,
+				R_USER_NAME,
+				R_EXT_NUM,
+				R_CUST_NAME,
+				R_CUST_PHONE1,
+				R_V_SYS_CODE
+			FROM RS_RECFILE
+			WHERE
+					 R_REC_DATE = REPLACE(#{rRecDate},'-','')
+				AND  R_REC_TIME = REPLACE(#{rRecTime},':','')
+				AND  R_EXT_NUM = #{rExtNum}
+				AND  R_V_SYS_CODE = #{rSysCode}
+	</insert>
+	
+	<insert id="insertTranscriptListLocal"  databaseId="sqlserver"	parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		INSERT INTO RS_TRANSCRIPT_LIST (
+			R_USER_ID, 
+			R_REC_DATE, 
+			R_REC_TIME,
+			R_EXT_NUM,
+			R_REC_ID,
+			R_REC_NAME,
+			R_TRANSCRIPT_YN,
+			R_LOCAL_FILE
+		) VALUES (
+			#{rUserId},
+			#{rRecDate},
+			#{rRecTime},
+			#{rExtNum},
+			#{rRecId},
+			#{rRecName},
+			#{rTranscriptYn},
+			#{rLocalFile}
+		)
+	</insert>
+	
+	<insert id="insertTranscriptInfo" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		INSERT INTO RS_TRANSCRIPT_INFO (
+			R_USER_ID, 
+			R_REC_DATE, 
+			R_REC_TIME, 
+			R_EXT_NUM, 
+			R_TRANSCRIPT_STATUS,
+			R_TEXT,
+			R_TRANSCRIPT_DATE,
+			R_TRANSCRIPT_FILENAME,
+			R_FILE_AUDIO_TYPE,
+			R_TRANSCRIPT_SERIAL
+		) VALUES (
+			#{rUserId},
+			REPLACE(#{rRecDate},'-',''),
+			REPLACE(#{rRecTime},':',''),
+			#{rExtNum},
+			'TF',
+			#{rText},
+			Convert(varchar(10),Getdate(),112) + Replace(Convert(varchar(8),Getdate(),108),':',''),
+			#{rFilename},
+			#{fileAudioType},
+			#{rTranscriptSerial}
+		);
+	</insert>
+	
+	<update id="updateTranscriptList" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		UPDATE RS_TRANSCRIPT_LIST 
+		   SET
+			   R_TRANSCRIPT_YN = #{rTranscriptYn},
+			   R_TRANSCRIPT_STATUS = #{rTranscriptStatus}
+		 WHERE 
+		 	   R_REC_DATE = REPLACE(#{rRecDate},'-','')
+		   AND R_REC_TIME = REPLACE(#{rRecTime},':','')
+		   AND R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}
+	</update>
+	
+	<update id="updateTranscriber" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		UPDATE RS_TRANSCRIPT_LIST 
+		   SET
+			   r_user_id = #{rUserId}
+		 WHERE 
+		 	   R_REC_DATE = REPLACE(#{rRecDate},'-','')
+		   AND R_REC_TIME = REPLACE(#{rRecTime},':','')
+		   AND R_EXT_NUM  = #{rExtNum}
+		   AND R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}
+	</update>
+	
+	
+	<update id="updateTranscriptInfo" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		UPDATE RS_TRANSCRIPT_INFO 
+		   SET
+			   R_TEXT = #{rText},
+			   R_TRANSCRIPT_DATE = Convert(varchar(10),Getdate(),112) + Replace(Convert(varchar(8),Getdate(),108),':','')
+		 WHERE 
+		 	   R_REC_DATE = REPLACE(#{rRecDate},'-','')
+		   AND R_REC_TIME = REPLACE(#{rRecTime},':','')
+		   AND R_EXT_NUM  = #{rExtNum}
+		   AND R_FILE_AUDIO_TYPE = #{fileAudioType}
+		   AND R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}
+	</update>
+	
+	<delete id="deleteTranscriptInfo" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		DELETE 
+		  FROM RS_TRANSCRIPT_INFO
+		 WHERE 
+		 	   R_REC_DATE = REPLACE(#{rRecDate},'-','')
+		   AND R_REC_TIME = REPLACE(#{rRecTime},':','')
+		   AND R_EXT_NUM  = #{rExtNum}
+		   AND R_TRANSCRIPT_SERIAL = #{rTranscriptSerial}
+		   	  
+	</delete>
+	<delete id="deleteTranscriptList" databaseId="sqlserver" parameterType="com.furence.recsee.transcript.model.TranscriptListInfo">
+		delete from rs_transcript_list where r_transcript_serial = #{rTranscriptSerial};
+		delete from rs_transcript_info where r_transcript_serial = #{rTranscriptSerial};
+	</delete>
+	
+	<select id="selectTranscriptListPop"  databaseId="sqlserver"	parameterType="com.furence.recsee.transcript.model.TranscriptListInfo" resultMap="TranscriptResultMap">
+  		SELECT 
+  		t.R_USER_ID,
+		SUBSTRING(t.R_REC_DATE, 1, 4)+'-'+SUBSTRING(t.R_REC_DATE, 5, 2)+'-'+SUBSTRING(t.R_REC_DATE, 7, 2) AS R_REC_DATE, <!-- 날짜 형태로 변환 -->
+		SUBSTRING(t.R_REC_TIME, 1, 2)+':'+SUBSTRING(t.R_REC_TIME, 3, 2)+':'+SUBSTRING(t.R_REC_TIME, 5, 2) AS R_REC_TIME,
+		t.R_BG_CODE,
+		t.R_MG_CODE,
+		t.R_SG_CODE,
+		t.R_REC_ID,
+		t.R_REC_NAME,
+		t.R_EXT_NUM,
+		t.R_CUST_NAME,
+		t.R_CUST_PHONE,
+		t.R_TRANSCRIPT_YN,
+		t.R_TRANSCRIPT_STATUS,
+		t.R_TRANSCRIPT_SERIAL,		
+		r.R_LISTEN_URL
+	  FROM RS_TRANSCRIPT_LIST as t
+	  
+	  <!-- 녹취 파일의 r_listen_url 조회하기 위해 -->
+	  LEFT JOIN RS_RECFILE as r
+	  ON t.R_REC_DATE = r.R_REC_DATE
+	  AND t.R_REC_TIME = r.R_REC_TIME
+	  AND t.R_EXT_NUM = r.R_EXT_NUM	
+	  WHERE R_TRANSCRIPT_SERIAL in
+	  <foreach collection="rTranscriptSerialList" item = "rTranscriptSerialItem" index="index" separator="," open = "(" close=")">
+    	#{rTranscriptSerialItem}
+	  </foreach>
+  	</select>
+</mapper>

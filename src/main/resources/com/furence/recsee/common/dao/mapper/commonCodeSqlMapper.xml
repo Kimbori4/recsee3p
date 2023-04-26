@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.CommonCodeDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.CommonCodeVO">
+		<result column="R_PARENT_CODE" 	jdbcType="VARCHAR" property="parentCode" />
+		<result column="R_CODE_VALUE" 	jdbcType="VARCHAR" property="codeValue" />
+		<result column="R_CODE_NAME"	jdbcType="VARCHAR" property="codeName" />
+	</resultMap>
+
+	<select id="selectCommonCode" databaseId="postgres" parameterType="com.furence.recsee.common.model.CommonCodeVO" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_COMMON_CODE
+		<where>
+			<choose>
+				<when test="parentCode == 'mgCode'">
+				LENGTH(R_PARENT_CODE) = 1
+				</when>
+				<when test="parentCode == 'sgCode'">
+				LENGTH(R_PARENT_CODE) = 2
+				</when>
+				<otherwise>
+				R_PARENT_CODE = #{parentCode}
+				</otherwise>
+			</choose>
+		</where>
+		<if test="parentCode=='player'">
+			ORDER BY R_CODE_VALUE
+		</if>
+		<if test="parentCode!='player'">
+			ORDER BY R_CODE_NAME
+		</if>
+	</select>
+
+	<select id="selectCommonCode" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.CommonCodeVO" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_COMMON_CODE
+		<where>
+			<choose>
+				<when test="parentCode == 'mgCode'">
+				LEN(R_PARENT_CODE) = 1
+				</when>
+				<when test="parentCode == 'sgCode'">
+				LEN(R_PARENT_CODE) = 2
+				</when>
+				<otherwise>
+				R_PARENT_CODE = #{parentCode}
+				</otherwise>
+			</choose>
+		</where>
+		<if test="parentCode=='player'">
+			ORDER BY R_CODE_VALUE
+		</if>
+		<if test="parentCode!='player'">
+			ORDER BY convert(varchar(1000),R_CODE_NAME)
+		</if>
+	</select>
+	
+	<select id="selectCommonName" parameterType="com.furence.recsee.common.model.CommonCodeVO" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_COMMON_CODE
+		<where>			
+				R_PARENT_CODE = #{parentCode}
+			AND R_CODE_VALUE = #{codeValue}
+		</where>
+	</select>
+	
+	<select id="selectCommonCode" databaseId="oracle" parameterType="com.furence.recsee.common.model.CommonCodeVO" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_COMMON_CODE
+		<where>
+			<choose>
+				<when test="parentCode == 'mgCode'">
+				LENGTH(R_PARENT_CODE) = 1
+				</when>
+				<when test="parentCode == 'sgCode'">
+				LENGTH(R_PARENT_CODE) = 2
+				</when>
+				<otherwise>
+				R_PARENT_CODE = #{parentCode}
+				</otherwise>
+			</choose>
+		</where>
+		<if test="parentCode=='player'">
+			ORDER BY R_CODE_VALUE
+		</if>
+		<if test="parentCode!='player'">
+			ORDER BY R_CODE_NAME
+		</if>
+	</select>
+	
+
+	<update id="updateCommonCode" databaseId="postgres" parameterType="com.furence.recsee.common.model.CommonCodeVO">
+			UPDATE
+				RS_COMMON_CODE
+			SET
+				R_CODE_NAME = #{codeName}
+			WHERE
+				R_PARENT_CODE = #{parentCode} AND R_CODE_VALUE = #{codeValue}
+		
+	</update>
+	<update id="updateCommonCode" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.CommonCodeVO">
+
+			UPDATE
+				RS_COMMON_CODE
+			SET
+				R_CODE_NAME = #{codeName}
+
+				output
+					CONVERT(varchar(8),GETDATE(),112)
+				,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+			 	,	'U'
+			 	,	'rs_common_code'
+			 	,	INSERTED.R_PARENT_CODE
+				,	INSERTED.R_CODE_VALUE
+				,	SUBSTRING(INSERTED.R_CODE_NAME,1,500)
+
+					INTO RS_SYNC_DATA
+				(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				)
+			WHERE
+				R_PARENT_CODE = #{parentCode} AND R_CODE_VALUE = #{codeValue}
+
+
+	</update>
+	<update id="updateCommonCode" databaseId="oracle" parameterType="com.furence.recsee.common.model.CommonCodeVO">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE
+				RS_COMMON_CODE
+			SET
+				R_CODE_NAME = #{codeName}
+			WHERE
+				R_PARENT_CODE = #{parentCode} AND R_CODE_VALUE = #{codeValue}
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			)
+			 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'U'
+		 	,	'rs_common_code'
+		 	,	CC.R_PARENT_CODE
+			,	CC.R_CODE_VALUE
+			,	SUBSTR(CC.R_CODE_NAME,1,500)
+			FROM DUAL, RS_COMMON_CODE CC
+	        WHERE CC.ROWID = row_id;
+		END; -->
+		UPDATE
+				RS_COMMON_CODE
+			SET
+				R_CODE_NAME = #{codeName}
+			WHERE
+				R_PARENT_CODE = #{parentCode} AND R_CODE_VALUE = #{codeValue}
+	</update>
+</mapper>

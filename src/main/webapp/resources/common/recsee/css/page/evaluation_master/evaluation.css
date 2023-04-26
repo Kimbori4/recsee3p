@@ -1,0 +1,999 @@
+#playerObj{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+#gridEvaluation table.obj.row20px tr td{
+	word-break: break-all !important;
+    table-layout: fixed !important;
+    white-space: pre-line !important;
+}
+
+/**** 평가 단계 선택 ****/
+.evaluation_create{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 250px;
+    border-bottom: 1px solid #bbbbbb;
+    box-shadow: 0px 3px 3px #bbbbbb;
+}
+.evaluation_create .create_step{
+    float: left;
+    width: calc(25% - 1px);
+    height: 100%;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-right: 1px solid #dddddd;
+}
+.evaluation_create .create_step:nth-child(2n){
+    background-color: #f1f1f1;
+}
+.evaluation_create .create_step:last-child{
+    border-right: 0px;
+}
+.evaluation_create .create_step .step_tit{
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 7px;
+}
+.evaluation_create .create_step .step_img{
+    width: 99%;
+    height: 130px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #bbbbbb;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.evaluation_create .create_step .step_img_01{
+    background-image: url(../../../images/project/main/etc/1step_info.png);
+}
+.evaluation_create .create_step .step_img_02{
+    background-image: url(../../../images/project/main/etc/2step_info.png);
+}
+.evaluation_create .create_step .step_img_03{
+    background-image: url(../../../images/project/main/etc/3step_info.png);
+}
+.evaluation_create .create_step .step_img_04{
+    background-image: url(../../../images/project/main/etc/4step_info.png);
+}
+.evaluation_create .create_step .step_txt{
+    font-size: 13px;
+    text-align: justify;
+    line-height: 1.5em;
+    color: #676767;
+}
+
+.create_step::hover{
+    background-color: #fcf3d0 !important;
+}
+.create_step_active{
+    background-color: #fcf3d0 !important;
+}
+
+
+/**** 평가 만들기 ****/
+.evaluation_tit_pannel{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+}
+.input_eval_tit, .input_eval_info{
+    width: calc(100% - 10px);
+    padding: 10px 0 !important;
+    margin: 0 2.5px 3px 2.5px;
+}
+/* .evaluation_tit_pannel input:last-child{
+    margin-bottom: 0px;
+} */
+.category_choice_form select{
+    width: 130px !important;
+    padding: 1px 0;
+}
+.category_choice_form input{
+    padding: 2px 0;
+    -webkit-padding-before: 6px;
+    -webkit-padding-after: 6px;
+    line-height: 0px;
+}
+
+
+/**** 캠페인 만들기 ****/
+ .campagin_option_form input{
+	/* width: 205.8px !important; */
+
+}
+.campagin_option_form select{
+	/* width: 207.8px !important; */
+}/*
+.campagin_choice_form .campagin_select,
+.campagin_choice_form .campagin_info{
+	width: 364px !important;
+}
+.campagin_choice_form .campagin_step{
+	width: 51px !important;
+}*/
+
+/* Init */
+*{margin:0; padding:0; /* font-family: Noto Sans, sans-serif !important; */ font-stretch: ultra-expanded; letter-spacing: -0.8px;}
+a{color: inherit; text-decoration: none;}
+a:hover{color: inherit;}
+li{list-style: none;}
+body, html{width: 100%; height: 100%;}
+
+.select_none {
+   -ms-user-select: none;
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+ }
+
+/* Select Init */
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(../../../images/project/main/icon/arrow.png) no-repeat 99% 50% #fff; cursor: pointer;
+}
+select::-ms-expand {display: none;}
+
+/* Button Init */
+button{
+	cursor: pointer;
+	border: 0px;
+}
+input:focus,
+textarea:focus,
+button:focus,
+select:focus {
+	outline: none;
+}
+/* input,select,textarea{
+    border: 1px solid #aaaaaa;
+    font-size: 14px;
+} */
+input{
+    text-indent: 5px;
+    padding: 4px 0;
+}
+textarea{
+    padding: 4px 0;
+}
+select{
+    text-indent: 5px;
+    padding: 3px 0;
+    -webkit-padding-before: 4px;
+    -webkit-padding-after: 4px;
+}
+button{
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    color: inherit;
+}
+
+/**** TODO: 추후 Common으로 이동 예정 ****/
+/**** Site UI Common ****/
+.ui_padding{
+    padding: 10px;
+}
+.ui_form_group{
+    float: left;
+    clear: both;
+}
+.ui_form_group form:last-child{
+    margin-right: 0px;
+}
+.ui_input_hasinfo{
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+}
+.ui_float_left{
+    float: left;
+    margin-left: 5px;
+}
+.ui_float_right{
+    float: right;
+    margin-right: 5px;
+}
+.ui_pannel_tit{
+    position: relative;
+    float: left;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 6px 16px;
+    padding-left: 35px;
+    /* background-image:  url(../../../images/project/main/pattern/btn_pattern.png); */
+    background-size: 16px, 110% 20px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 10px 5px, center bottom;
+    margin: 0 3px;
+    margin-top: 3px;
+    -webkit-margin-before: 1.5px;
+    -webkit-margin-after: 3px;
+    background-color: #555555;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.icon_btn_trash_gray{
+    background-image: url(../../../images/project/icon/btn_icon/icon_btn_trash_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_trash_gray:after{
+    content: "\00a0";
+}
+.ui_pannel_tit:before{
+    /* content: url(../../../images/project/icon/icon_tit_dot.png); */
+    position: relative;
+    top: 3px;
+    margin-right: 5px;
+}
+.ui_pannel_sub_tit{
+    padding: 7px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+.ui_pannel_sub_tit::before{
+    width: 14px;
+    height: 14px;
+    content: url(../../../images/project/icon/icon_tit_sub_dot.png);
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+    background-repeat: no-repeat;
+}
+.ui_pannel_row{
+    width: 100%;
+    float: left;
+    clear: both;
+    background-color: #eceff2;
+    padding: 5px 0;
+}
+.ui_pannel_row button{
+    float: left;
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666;
+    background-color: #ffffff;
+    /* background-image: url(../../../images/project/icon/btn_pattern.png); */
+    /* background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 23px; */
+    border: 1px solid #bbbbbb;
+    /* border-radius: 5px; */
+    margin-right: 5px;
+}
+.ui_pannel_row button:last-child{
+    margin-right: 0px;
+}
+/* .icon_btn_exit_gray{
+    background-image: url(../../images/project/icon/btn_icon/icon_btn_exit_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_exit_gray:after{
+    content: "\00a0";
+} */
+/* .icon_btn_exit_gray::before{
+	 background-image: url(../../../images/project/icon/btn_icon/icon_btn_exit_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+} */
+/* .icon_btn_exit_gray{
+    background-image: url(../../../images/project/icon/btn_icon/icon_btn_exit_gray.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 4px center;
+    padding-left: 14px !important;
+}
+.icon_btn_exit_gray::after{
+    content: "\00a0";
+} *//*
+.ui_btn_white{
+    font-size: 14px;
+    padding: 7px 10px;
+    color: #666666;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+.ui_btn_white::hover{
+    background-color: #f1f1f1;
+} */
+.ui_btn_white{
+    font-size: 14px;
+    padding: 7px 10px;
+    color: #666666;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    transition: all ease 0.4s;
+    cursor: pointer;
+
+}
+.ui_btn_white:before{
+	content: "";
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    bottom: -1px;
+    left: 0px;
+    z-index: -1px;
+    background-image: url(../../../images/project/main/pattern/btn_pattern.png);
+    background-size: 110% 5px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.ui_btn_white:hover{
+    background-color: #f1f1f1;
+}
+.ui_btn_blue{
+    font-size: 14px;
+    padding: 7px 10px;
+    color: #ffffff !important;
+    background-color: #1e88cf !important;
+    border: 1px solid #1e88cf !important;
+    /* border-radius: 5px; */
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+.ui_btn_blue::hover{
+    background-color: #3da0e3;
+    border: 1px solid #3da0e3;
+}
+
+
+/**** TODO: 추후 Common으로 이동 예정 ****/
+/**** DHTMLX UI CSS Costomize ****/
+div.gridbox_dhx_web.gridbox{
+    border: 0px !important;
+}
+div.gridbox_dhx_web.gridbox .xhdr{
+    /* border: 0px !important; */
+    /* background-color: #1e88cf !important; */
+    color: #ffffff !important;
+    text-align: center !important;
+    font-size: 14px !important;
+}
+/* dhx_grid - 헤더 Style */
+div.gridbox_dhx_web.gridbox table.hdr td{
+    /* border: 0px !important;
+    background-color: #1e88cf !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    font-size: 14px !important; */
+}
+/* dhx_grid - 헤더컬럼 우측 버튼 */
+.dhxgrid_sort_asc{
+    top: 13px !important;
+}
+.dhxgrid_sort_desc{
+    top: 13px !important;
+}
+/* dhx_grid - 헤더 세로 중앙 정렬, 선 style */
+div.gridbox.gridbox_dhx_web table.hdr td{
+    vertical-align: middle !important;
+    /* border-right: 1px solid #3da0e3 !important; */
+    border-right: 1px solid #eeeeee !important;
+}
+div.gridbox.gridbox_dhx_web table.hdr td:last-child{
+    border-right: 0px !important;
+}
+/* dhx_grid - 그리드 바디 Style */
+div.gridbox_dhx_web.gridbox table.obj tr td{
+    border: 0px !important;
+    font-size: 14px !important;
+    padding: 5px 0 !important;
+    border-right: 1px solid #dddddd !important;
+}
+div.gridbox_dhx_web.gridbox table.obj tr td:last-child{
+    border-right: 0px !important;
+}
+/* dhx_grid - 내용 선택시 배경 */
+div.gridbox_dhx_web.gridbox table.obj.row20px tr.rowselected td{
+    background-color: #cfd1d6 !important;
+    border-right: 0px; !important;
+}
+div.gridbox_dhx_web.gridbox table.hdr td div.hdrcell{
+    padding-left: 0px !important;
+}
+/* dhx_toolbar 배경컬러 지정 */
+.dhx_toolbar_dhx_web{
+    background-color: #ffffff !important;
+    color: #333333 !important;
+    border-top: 2px solid #1e88cf !important;
+}
+.dhx_toolbar_dhx_web div.dhx_toolbar_text{
+    padding: 3px 0px !important;
+}
+/* dhx_toolbar 메뉴 마우스오버 컬러 지정 */
+.dhx_toolbar_dhx_web div.dhx_toolbar_btn.dhxtoolbar_btn_over, .dhx_toolbar_dhx_web div.dhx_toolbar_arw.dhxtoolbar_btn_over{
+    background-color: transparent !important;
+}
+/* dhx_toolbar 마우스오버시 커서 변경 */
+.dhx_toolbar_dhx_web div.dhx_toolbar_btn, .dhx_toolbar_dhx_web div.dhx_toolbar_arw, .dhx_toolbar_dhx_web div.dhx_toolbar_btn img, .dhx_toolbar_dhx_web div.dhx_toolbar_btn div.dhxtoolbar_text, .dhx_toolbar_dhx_web div.dhx_toolbar_arw div.arwimg{
+    cursor: pointer !important;
+}
+/* dhx_toolbar 메뉴 셀렉트 컬러 지정 */
+.dhx_toolbar_dhx_web div.dhx_toolbar_btn.dhxtoolbar_btn_pres, .dhx_toolbar_dhx_web div.dhx_toolbar_arw.dhxtoolbar_btn_pres{
+    background-color: transparent !important;
+}
+/* dhx_toolbar_paging - 텍스트 길이 지정 */
+.dhx_toolbar_text{
+    width: 130px !important;
+}
+/* dhx_toolbar_paging - 메뉴 컨텐츠 마우스오버 컬러 지정 */
+div.dhx_toolbar_poly_dhx_web .tr_btn_over td, div.dhx_toolbar_poly_dhx_web .tr_btn_selected td{
+    background-color: #cfd1d6 !important;
+}
+
+
+
+/**** Page Style - 평가지 관리 ****/
+body, html{
+    background-color: #cfd1d6;
+    min-width: 930px;
+}
+.evaluationManageWrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.evaluation_manage_header{
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.evaluation_manage_grid{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+
+/* Popup Style */
+/* #mask{
+    display: block;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: 2;
+} */
+
+/* .popup_obj {
+    display: none;
+    position: absolute;
+    background-color: #cfd1d6;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(134, 213, 255, 0.62);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+    z-index: 10000;
+    dhtmlx color picker가 가려져요..ㅠㅠ....
+    z-index:104;
+}
+.popup_header{
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+} */
+
+
+/**** Page Style - 평가하기 ****/
+.ui_icon_exit{
+    width: 30px !important;
+    height: 30px !important;
+    background-image: url(../../../images/project/icon/btn_icon/icon_btn_exit_gray.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 50% !important;
+    margin-top: 2px;
+}
+.evaluationWrap fieldset{
+    float: left;
+    clear: both;
+    border: 0px solid #ffffff;
+    background-color: #fafbfc;
+    padding: 12px;
+    margin-left: 0px;
+}
+.evaluationWrap form{
+    float: left;
+    margin-right: 9px;
+}
+.evaluationWrap form input{
+    float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.evaluationWrap form textarea{
+    float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    height: auto;
+    margin-top: 4px;
+    font-size: 14px;
+    resize: none;
+}
+.evaluationWrap form select{
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.evaluationWrap{
+    width: 100%;
+    height: 100%;
+}
+#rcpObj{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.evaluation_header{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.evaluation_header .comp_choice_txt{
+    float: left;
+    line-height: 33px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #333333;
+}
+.evaluation_header .camp_choice{
+    float: left;
+    width: 620px;
+}
+.evaluation_header .score_result_txt{
+    float: left;
+    line-height: 33px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #333333;
+}
+.evaluation_header .score_result{
+    float: left;
+    width: 134px;
+}
+.evaluation_header .score_result input{
+    text-indent: 0px;
+    text-align: center;
+}
+.evaluation_sheet{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.evaluation_admin_comment{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.evaluation_admin_comment .comment_tit{
+    float: left;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    padding-top: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #555555;
+}
+.evaluation_admin_comment .comment_form{
+    float: left;
+    width: calc(100% - 110px);
+    font-size: 13px;
+}
+
+.comment_form_boxSizing{
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	boxsizing: border-box !important;
+}
+.evaluation_footer{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+}
+.evaluation_footer .score_result_txt{
+    float: left;
+    line-height: 33px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #333333;
+}
+.evaluation_footer .score_result{
+    float: left;
+    width: 134px;
+}
+.evaluation_footer .score_result input{
+    text-indent: 0px;
+    text-align: center;
+}
+
+
+/**** Page Style - 평가만들기 1단계 ****/
+.ui_icon_exit{
+    width: 30px !important;
+    height: 30px !important;
+    background-image: url(../../../images/project/icon/btn_icon/icon_btn_exit_gray.png) !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 50% !important;
+    margin-top: 2px;
+}
+.evaluationCreateWrap fieldset{
+    float: left;
+    clear: both;
+    border: 0px solid #ffffff;
+    background-color: #fafbfc;
+    padding: 12px;
+    margin-left: 0px;
+}
+.evaluationCreateWrap form{
+    float: left;
+    margin-right: 9px;
+}
+.evaluationCreateWrap form input{
+    float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.evaluationCreateWrap form textarea{
+    float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    height: auto;
+    margin-top: 4px;
+    font-size: 14px;
+    resize: none;
+}
+.evaluationCreateWrap form select{
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.evaluationCreateWrap{
+    width: 100%;
+    height: 100%;
+}
+.evaluation_create_content{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.evaluation_create_footer{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+}
+.eval_sample{
+    float: left;
+    width: calc(25% - 10px);
+    height: 220px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.eval_sample:last-child{
+    width: 25%;
+    margin-right: 0px;
+}
+.eval_sample::hover{
+    background-color: #fcf3d0;
+}
+.eval_sample_active{
+    background-color: #fcf3d0 !important;
+}
+.eval_sample .sample_img{
+    margin: 0 auto;
+    width: 90%;
+    height: 140px;
+    background-color: #dddddd;
+}
+.eval_sample .sample_txt{
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+
+/**** Page Style - 평가만들기2단계 ****/
+.evaluationMagicianWrap fieldset{
+    float: left;
+    clear: both;
+    border: 0px solid #ffffff;
+    background-color: #fafbfc;
+    padding: 12px;
+    margin-left: 0px;
+}
+.evaluationMagicianWrap form{
+    float: left;
+    margin-right: 9px;
+}
+.evaluationMagicianWrap form input{
+    float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.evaluationMagicianWrap form textarea{
+    float: left;
+    clear: both;
+    width: calc(100% - 4px);
+    height: auto;
+    margin-top: 4px;
+    font-size: 14px;
+    resize: none;
+}
+.evaluationMagicianWrap form select{
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+.evaluationMagicianWrap{
+    width: 100%;
+    height: 100%;
+}
+.evaluation_magician_header{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.evaluation_magician_header input{
+    width: 100%;
+    padding: 5px 0 !important;
+    margin-bottom: 5px;
+}
+.evaluation_magician_header input:last-child{
+    margin-bottom: 0px;
+}
+.evaluation_magician_sheet{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.evaluation_magician_footer{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+}
+.evaluation_magician_footer .score_result_txt{
+    float: left;
+    line-height: 33px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #333333;
+}
+.evaluation_magician_footer .score_result{
+    float: left;
+    width: 134px;
+}
+.evaluation_magician_footer .score_result input{
+    text-indent: 0px;
+    text-align: center;
+}
+td #feedbackTalk1 {
+	background-color: #cccccc !important;
+	text-align: left !important;
+}
+td #feedbackTalk2 {
+	background-color: #ffffff !important;
+	text-align: left !important;
+	width: 500px !important;
+}
+td#feedbackTalk3 {
+	background-color: #cccccc !important;
+	text-align: right !important;
+}
+td #feedbackTalk4 {
+	background-color: #ffffff !important;
+	text-align: right !important;
+	width: 500px !important;
+}
+
+
+
+/*   추가 css   */
+.non_border_select{
+	border: none;
+    background-color: inherit;
+}
+/*    둥근 버튼       */
+.radius_button{
+	height: 30px;
+	line-height: 30px;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	border-radius: 25px;
+}
+
+
+
+
+
+/* 캠페인 생성 체크박스 이벤트 */
+.campagin_term_form{
+	margin-right: 2px;
+}
+.campSetting{
+	float:left;
+	width: 117px;
+	height: 26px;
+	line-height: 26px;
+	margin-left: 3.5px;
+	margin-right: 3.5px;
+	text-align: left;
+	font-size: 14px;
+	margin-top: 5px;
+}
+.campSetting .checks{
+	display: inline-block;
+}
+.checks {position: relative;}
+.checks input[type="checkbox"] {
+	 /* 실제 체크박스는 화면에서 숨김 */
+	 position: absolute;
+	 width: 1px;
+	 height: 1px;
+	 padding: 0;
+	 margin: -1px;
+	 overflow: hidden;
+	 clip:rect(0,0,0,0);
+	 border: 0
+}
+.checks input[type="checkbox"] + label {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+.checks input[type="checkbox"] + label:before {
+	/* 가짜 체크박스 */
+	content: ' ';
+	display: inline-block;
+	width: 14px;
+	/* 체크박스의 너비를 지정 */
+	height: 14px;
+	/* 체크박스의 높이를 지정 */
+	line-height: 14px;
+	/* 세로정렬을 위해 높이값과 일치 */
+	margin: -2px 8px 0 0;
+	text-align: center;
+	vertical-align: middle;
+	background: #fff;
+	border: 1px solid #cacece;
+	border-radius : 3px;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+}
+.checks input[type="checkbox"] + label:active:before, .checks input[type="checkbox"]:checked + label:active:before {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.checks input[type="checkbox"]:checked + label:before {
+	/* 체크박스를 체크했을때 */ content: '\2714';
+	/* 체크표시 유니코드 사용 */ color: #99a1a7;
+	text-shadow: 1px 1px #fff;
+	background: #e9ecee;
+	border-color: #adb8c0;
+	box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+.checks.etrans input[type="checkbox"] + label {
+  padding-left: 20px;
+  line-height: 16px;
+}
+.checks.etrans input[type="checkbox"] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  opacity: .6;
+  box-shadow: none;
+  border-color: #6cc0e5;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+.checks.etrans input[type="checkbox"]:checked + label:before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 12px;
+  top: -3px;
+  left: 8px;
+  border-radius: 0;
+  opacity:1;
+  background: transparent;
+  border-color:transparent #6cc0e5 #6cc0e5 transparent;
+  border-top-color:transparent;
+  border-left-color:transparent;
+  -ms-transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  transform:rotate(45deg);
+}
+.no-csstransforms .checks.etrans input[type="checkbox"]:checked + label:before {
+  content: "\2714";
+  top: 0;
+  left: 0;
+  width: 14px;
+  line-height: 14px;
+  color: #6cc0e5;
+  text-align: center;
+  border: 1px solid #6cc0e5;
+}

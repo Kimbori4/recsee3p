@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.furence.recsee.wooribank.script.repository.dao.ExcelUploadDao" >
+	
+	
+	<insert id="conflicProductList" parameterType="java.util.List">
+		<foreach collection="list" item="i">
+					INSERT INTO RS_PRODUCT_LIST(
+									RS_PRODUCT_TYPE,
+									RS_PRODUCT_CODE, 
+									RS_SYSDIS_TYPE, 
+									RS_PRODUCT_NAME, 
+									RS_USE_YN, 
+									RS_GROUP_YN, 
+									RS_UPDATE_TIME
+									)
+									VALUES 
+									(
+									'4',
+									#{i.rProductCode},
+									'BK2',
+									#{i.rProductName},
+									#{i.rUseYn},
+									'N',
+									NOW()
+									)
+				ON CONFLICT(RS_PRODUCT_TYPE, RS_PRODUCT_CODE, RS_SYSDIS_TYPE) 
+				DO UPDATE 
+				SET
+					RS_USE_YN = #{i.rUseYn}, 
+					RS_UPDATE_TIME = NOW(),
+					RS_PRODUCT_NAME = #{i.rProductName};
+		</foreach>
+	</insert>	
+	<insert id="insertScriptStep" parameterType="java.util.List">
+			insert into rs_script_step (
+										 rs_script_step_fk,
+										 rs_script_step_parent,
+										 rs_script_step_name,
+										 rs_script_step_order,
+										 rs_script_step_type,
+										 rs_use_yn
+									)values 
+		<foreach collection="list" item="i" separator=",">
+									(
+										(select rs_product_list_pk from rs_product_list where rs_product_code = #{i.rScriptStepType} and rs_product_type = '4' and rs_sysdis_type ='BK2'),
+										#{i.rScriptStepParent},
+										#{i.rScriptStepName},
+										#{i.rScriptStepOrder},
+										'N',
+										'Y'
+										)
+		</foreach>
+	</insert>
+	<insert id="insertScriptStepUnder" parameterType="java.util.List">
+			insert into rs_script_step (
+										 rs_script_step_fk,
+										 rs_script_step_parent,
+										 rs_script_step_name,
+										 rs_script_step_order,
+										 rs_script_step_type,
+										 rs_use_yn
+									)values 
+		<foreach collection="list" item="i" separator=",">
+									(
+										(select rs_product_list_pk from rs_product_list where rs_product_code = #{i.rScriptStepType} and rs_product_type = '4' and rs_sysdis_type ='BK2'),
+										(select rs_script_step_pk from rs_script_step 
+										 where rs_script_step_fk = (select rs_product_list_pk 
+										 							from rs_product_list 
+										 							where rs_product_code = #{i.rScriptStepType}
+										 							and rs_product_type = '4' 
+										 							and rs_sysdis_type ='BK2'
+																	)
+												and rs_script_step_order = #{i.rScriptStepParent}
+												and rs_script_step_parent = 0
+										),
+										#{i.rScriptStepName},
+										#{i.rScriptStepOrder},
+										'N',
+										'Y'
+										)
+		</foreach>
+	</insert>
+	
+	<insert id = "insertUpdateProductCharacterDetail" parameterType="HashMap">
+		<foreach collection="threeSheet" item="i" separator=";">
+			INSERT INTO rs_product_character_detail
+				(rs_product_code,
+				 rs_product_type,
+				 rs_product_name,
+				 rs_product_detail_text,
+				 rs_product_sub_code
+				 )
+			VALUES(
+				#{i.rsProductCode},
+				'4', 
+				#{i.rsProductName}, 
+				#{i.rsProductDetailText}, 
+				#{i.rsProductSubCode})
+			ON CONFLICT(rs_product_type,rs_product_code, rs_product_sub_code) 
+				DO UPDATE 
+				SET
+					rs_product_detail_text = #{i.rsProductDetailText}
+		</foreach>
+	</insert>
+	<insert id = "insertUpdateProductFundDetail" parameterType="HashMap">
+		<foreach collection="foursheet" item="i" separator=";">
+			INSERT 
+			INTO	rs_product_fund_detail	(
+							rs_product_code,
+							rs_product_fund_detail_name, 
+							rs_product_fund_detail_text,
+							rs_product_fund_b_code, 
+							rs_product_fund_detail_code
+							) VALUES(
+							#{i.rsProductCode}, 
+							#{i.rsProductFundDetailName}, 
+							#{i.rsProductFundDetailText}, 
+							#{i.rsProductFundBCode}, 
+							#{i.rsProductFundDetailCode}
+							)
+				ON CONFLICT(rs_product_code,rs_product_fund_b_code, rs_product_fund_detail_code) 
+				DO UPDATE 
+				SET
+					rs_product_fund_detail_name = #{i.rsProductFundDetailName} ,
+					rs_product_fund_detail_text = #{i.rsProductFundDetailText}
+		</foreach>
+	</insert>
+	<insert id = "upsertInsureList" parameterType="HashMap">
+		<foreach collection="insureList" item="i" separator=";">
+			INSERT 
+			INTO	rs_product_insurance_info(
+												rs_product_insurance_code, 
+												rs_product_insurance_name, 
+												rs_create_date, 
+												rs_update_date
+												)VALUES(
+												#{i.bCode}, 
+												#{i.bName}, 
+												NOW(), 
+												NULL)
+
+				ON CONFLICT(rs_product_insurance_code) 
+				DO UPDATE 
+				SET
+					rs_product_insurance_name = #{i.bName}
+		</foreach>
+	</insert>
+	
+	
+	
+	<insert id="insertScriptStepDetail" parameterType="com.furence.recsee.wooribank.facerecording.model.BkProductAndScriptStepDetail">
+	<foreach collection="detailList" item="i" separator=";">
+		insert into rs_script_step_detail (
+											rs_script_step_detail_type,
+											rs_script_step_detail_common_kind,
+											rs_script_step_fk,
+											rs_script_step_detail_if_case,
+											rs_script_step_detail_realtime_tts,
+											rs_script_step_detail_create_user,
+											rs_script_step_detail_update_date,
+											rs_script_step_detail_update_user,
+											rs_script_step_detail_confirm,
+											rs_script_step_detail_confirm_date,
+											rs_script_step_detail_confirm_user,
+											rs_script_step_detail_order,
+											rs_use_yn,
+											rs_script_step_detail_common_fk,
+											rs_script_step_detail_if_case_code,
+											rs_script_step_detail_if_case_detail_code,
+											rs_script_step_detail_case_attributes,
+											rs_script_step_detail_text
+										  ) values (
+										  	#{i.rScriptDetailType},
+										  	#{i.rScriptDetailComKind},
+										  	#{i.rScriptStepFk}::int,
+										    #{i.rScriptDetailIfCase},
+											'Y',
+											'admin',
+											now(),
+											'admin',
+											'Y',
+											now(),
+											'admin',
+											#{i.rScriptDetailConfirmOrder}::int,
+											'Y',
+											<choose>
+												<when test="i.rScriptDetailConfirmComFk == null">
+													null,
+												</when>
+												<otherwise>
+													#{i.rScriptDetailConfirmComFk}::int,
+												</otherwise>
+											</choose>	
+											#{i.rScriptDetailIfCaseCode},
+											#{i.rScriptDetailIfCaseDetailCode},
+											<choose>
+												<when test="i.rScriptStepDetailCaseAttributes == null">
+													null,
+												</when>
+												<otherwise>
+													#{i.rScriptStepDetailCaseAttributes}::jsonb,
+												</otherwise>
+											</choose>						  
+											#{i.rScriptDetailText}
+										  )
+	</foreach>
+	</insert>
+	
+	<select id="selectDetailFk" parameterType="HashMap" resultType="String">
+		WITH RECURSIVE script_tree as ( 
+										select rs_product_list_pk from rs_product_list where  rs_product_code = #{code} and rs_product_type = '4' and rs_sysdis_type = 'BK2' limit 1)
+		select	rs_script_step_pk::varchar
+		from	rs_script_step
+		where	
+				rs_script_step_fk = (select rs_product_list_pk from script_tree) and
+				<choose>
+					<when test="flag == null">
+						rs_script_step_parent = 0::int and
+						rs_script_step_order = #{order}::int
+					</when>
+					<otherwise>
+						rs_script_step_parent = (select rs_script_step_pk from rs_script_step rss where rss.rs_script_step_fk = (select rs_product_list_pk from script_tree) and rss.rs_script_step_parent = 0 and rs_script_step_order = #{Uorder}::int)
+						and rs_script_step_order = #{order}::int
+					</otherwise>
+				</choose>
+	</select>
+	
+		<select id="selectNonRefEltCheck" parameterType="String" resultType="String">
+		select  
+				case when rs_product_attributes is not null and rs_group_yn ='N' then 'Y'
+				else 'N'
+				end flag
+		from	rs_product_list rpl 
+		where	rpl.rs_product_list_pk =
+		(
+		select	rss.rs_script_step_fk
+		from	rs_script_step_detail_edit_list rssdel,
+				rs_script_step rss
+		where	rssdel.rs_script_step_pk::int = rss.rs_script_step_pk and
+				rssdel.rs_script_edit_id = #{tId}
+		limit 1
+		)
+	</select>
+	
+	<select id="stepCheck" parameterType = "com.furence.recsee.wooribank.facerecording.model.ProductListVo" resultType="int">
+		select	count(*)
+		from	rs_script_step
+		where	rs_script_step_fk = (select rs_product_list_pk from rs_product_list where rs_product_code = #{rProductCode} and rs_product_type ='4')
+	</select>
+	<update id="updateNonRefEltAttr"  parameterType="String">
+		update	rs_script_step_detail_edit_list
+		set		rs_product_attributes = '{"isDefault":true}'::jsonb
+		where   rs_script_edit_id = #{tId}
+	</update>	
+	<select id="checkNonRelEltStepDetail" parameterType = "com.furence.recsee.wooribank.facerecording.model.ProductListDto" resultType="int">
+		WITH RECURSIVE script_tree as ( select * from rs_script_step
+										where rs_script_step_fk = 
+										(select	rs_product_list_pk	
+										from	rs_product_list 
+										where 	rs_product_code = #{rProductCode} and rs_product_type = '1' and rs_sysdis_type = 'TOP' 
+										limit 1))
+		select	count(*)
+		from	rs_script_step_detail
+		where	rs_script_step_fk = (
+										select	rs_script_step_pk
+										from	script_tree tree
+										where	tree.rs_script_step_parent != 0	and
+												tree.rs_script_step_order = 4	and
+												tree.rs_script_step_name like '%기준평가가격%'
+									)
+			   and rs_use_yn = 'Y'
+	</select>
+</mapper>		

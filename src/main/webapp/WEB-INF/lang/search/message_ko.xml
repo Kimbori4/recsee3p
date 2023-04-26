@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>조회(search) 화면용 메세지 정의</comment>
+
+	<entry key="search.option.startDate">시작 날짜</entry>
+	<entry key="search.option.endDate">종료 날짜</entry>
+	<entry key="search.option.recStart">녹취 시작</entry>
+	<entry key="search.option.recEnd">녹취 종료</entry>
+	<entry key="search.option.callStart">통화 시작</entry>
+	<entry key="search.option.callEnd">통화 종료</entry>
+	<entry key="search.option.search">조회</entry>
+	<entry key="search.option.callType">콜타입</entry>
+	<entry key="search.option.callType2">콜타입2</entry>
+	<entry key="search.option.custNo">고객 번호</entry>
+	<entry key="search.option.custName">고객명</entry>
+	<entry key="search.option.agentId">사용자ID</entry>
+	<entry key="search.option.agentName">사용자명</entry>
+	<entry key="search.option.ext">내선번호</entry>
+	<entry key="search.option.que1">큐1</entry>
+	<entry key="search.option.que2">큐2</entry>
+	<entry key="search.option.agentClose">상담원 종료</entry>
+	<entry key="search.option.medium">중분류</entry>
+	<entry key="search.option.small">소분류</entry>
+	<entry key="search.option.natId">주민등록번호</entry>
+	<entry key="search.option.empId">사번</entry>
+	<entry key="search.option.screen">스크린</entry>
+	<entry key="search.option.trace">트레이스</entry>
+	<entry key="search.option.evaluation">평가</entry>
+	<entry key="search.option.startType">시작유형</entry>
+
+	<entry key="search.player.nowPlaying">현재 재생 중인 파일 : </entry>
+	<entry key="search.player.nowPlaying2">현재 재생 중인 파일</entry>
+	<entry key="search.player.noFiles">재생중인 파일이 없습니다.</entry>
+
+	<entry key="search.player.cust">고객</entry>
+	<entry key="search.player.user">상담사</entry>
+
+	<entry key="search.player.inputMsg">우수콜 제목을 25자 내외로 입력해 주세요.</entry>
+	<entry key="search.player.addBestcall">우수콜 추가</entry>
+	<entry key="search.player.addBestCallManage">우수콜 관리 추가</entry>
+	<entry key="search.player.specifyStart">재생 시점 부터 구간지정</entry>
+	<entry key="search.player.specifyFinish">재생 시점 부터 구간지정 종료</entry>
+	<entry key="search.player.defineSpecify">사용자 정의 구간지정</entry>
+	<entry key="search.player.mouseSpecify">마우스 구간지정</entry>
+	<entry key="search.player.delSection">구간 일괄 삭제</entry>
+	<entry key="search.player.uploadFile">파일 업로드</entry>
+	<entry key="search.player.playerTag">플레이어 태그</entry>
+	<entry key="search.player.repeat">반복</entry>
+	<entry key="search.player.cancelRepeat">반복해제</entry>
+	<entry key="search.player.down">다운</entry>
+	<entry key="search.player.mute">묵음</entry>
+	<entry key="search.player.cancelMute">묵음해제</entry>
+	<entry key="search.player.remove">제거</entry>
+	<entry key="search.player.cancelRemove">제거해제</entry>
+	<entry key="search.player.del">삭제</entry>
+	<entry key="search.player.fileDown">파일 다운로드</entry>
+	<entry key="search.player.PlayerDown">플레이어 다운로드</entry>
+
+	<entry key="search.player.alert.msg1">청취 가능 기간이 만료된 파일 입니다!</entry>
+	<entry key="search.player.alert.msg2">플레이어에서 재생이 불가능 한 파일 입니다.\\n플레이어에서 다운로드 한 파일 만 재생이 가능 합니다.</entry>
+	<entry key="search.player.alert.msg3">요청하신 녹취 파일을 찾을 수 없습니다.</entry>
+	<entry key="search.player.alert.msg4">더 이상 재생할 목록이 없습니다.</entry>
+	<entry key="search.player.alert.msg5">요청에 실패 하였습니다.</entry>
+	<entry key="search.player.alert.msg6">감청하실 대상의 청취 버튼을 클릭 해 주세요.</entry>
+	<entry key="search.player.alert.msg7">파일이 없습니다</entry>
+	<entry key="search.player.alert.msg8">현재 실시간 감청중인 대상이 없습니다.</entry>
+	<entry key="search.player.alert.msg9">플레이어 태그 저장이 완료 되었습니다.</entry>
+	<entry key="search.player.alert.msg10">플레이어 태그 삭제가 완료 되었습니다.</entry>
+	<entry key="search.player.alert.msg11">우수콜 제목을 입력해 주세요.</entry>
+	<entry key="search.player.alert.msg12">재생 중인 파일이 없습니다.</entry>
+	<entry key="search.player.alert.msg13">녹취 파일의 묵음/제거 할 부분을 표시해 주세요.</entry>
+	<entry key="search.player.alert.msg14">우수콜 등재에 성공하였습니다.</entry>
+	<entry key="search.player.alert.msg15">우수콜 등재에 실패하였습니다.</entry>
+	<entry key="search.player.alert.msg16">청취 가능 기간이 만료된 파일 입니다!</entry>
+	<entry key="search.player.alert.msg17">우수콜 추가를 하시겠습니까?</entry>
+	<entry key="search.player.alert.msg18">삭제 하시겠습니까?</entry>
+	<entry key="search.player.alert.msg19">재생중이던 파일 입니다.\\n 이어서 재생 하시겠습니까?</entry>
+	<entry key="search.player.alert.msg20">현재 파일에 저장된 플레이어 태그가 모두 삭제 됩니다.\\n정말 삭제 하시겠습니까?</entry>
+	
+
+
+
+
+
+
+	<entry key="views.search.tabs.a1">기본</entry>
+	<entry key="views.search.tabs.a2">확장</entry>
+	<entry key="views.search.tabs.a3">즐겨찾기</entry>
+
+	<entry key="views.search.combo.all">콜타입</entry>
+
+	<entry key="views.search.button.search">조회</entry>
+	<entry key="views.search.button.excelDownload">페이지 엑셀 다운로드</entry>
+	<entry key="views.search.button.multiListen">선택 청취</entry>
+	<entry key="views.search.button.multiDownload">선택 다운로드</entry>
+	<entry key="views.search.button.pathCheck">경로 확인</entry>
+	<entry key="views.search.button.pathChange">경로 변경</entry>
+	<entry key="views.search.grid.head.ROWNUMBER">번호</entry>
+	<entry key="views.search.grid.head.R_CHECK_BOX"></entry>
+	<entry key="views.search.grid.head.R_FAVORITES">즐겨찾기</entry>
+	<entry key="views.search.grid.head.R_REC_DATE">날짜</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME">시각</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME1">시각(부터)</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME2">시각(까지)</entry>
+	<entry key="views.search.grid.head.R_REC_TIME">시간</entry>
+	<entry key="views.search.grid.head.R_REC_TIME1">시간(부터)</entry>
+	<entry key="views.search.grid.head.R_REC_TIME2">시간(까지)</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT1">통화연결 녹취시간(부터)</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT2">통화연결 녹취시간(까지)</entry>
+	<entry key="views.search.grid.head.R_BG_CODE">대분류</entry>
+	<entry key="views.search.grid.head.R_MG_CODE">중분류</entry>
+	<entry key="views.search.grid.head.R_SG_CODE">소분류</entry>
+	<entry key="views.search.grid.head.R_USER_ID">조작자행번</entry>
+	<entry key="views.search.grid.head.R_CH_NUM">채널번호</entry>
+	<entry key="views.search.grid.head.R_USER_NAME">조작자명</entry>
+	<entry key="views.search.grid.head.R_CALL_ID1">녹취키</entry>
+	<entry key="views.search.grid.head.R_CALL_ID2">녹취 아이디2</entry>
+	<entry key="views.search.grid.head.R_CALL_ID3">콜아이디</entry>
+	<entry key="views.search.grid.head.R_EXT_NUM">내선번호</entry>
+	<entry key="views.search.grid.head.R_EXT_NUM_MOBILE">전화번호</entry>
+	<entry key="views.search.grid.head.R_CUST_NAME">고객명</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE1">고객번호</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE2">전환 번호</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE3">고객 전화번호</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND1">녹취키</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND2">추가 콜타입</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME">통화시작시간</entry>
+	<entry key="views.search.grid.head.R_CALL_ETIME">통화종료시간</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME">녹취시간</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME1">통화시간(부터)</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME2">통화시간(까지)</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT1">유효통화시간(부터)</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT2">유효통화시간(까지)</entry>
+	<entry key="views.search.grid.head.R_SELFDIS_YN">상담원 종료 유무</entry>
+	<entry key="views.search.grid.head.R_V_SYS_CODE">시스템코드</entry>
+	<entry key="views.search.grid.head.R_V_HDD_FLAG">HDD 인식기호</entry>
+	<entry key="views.search.grid.head.R_LISTEN_URL">녹취 파일 경로</entry>
+	<entry key="views.search.grid.head.R_V_FILENAME">녹취 파일명</entry>
+	<entry key="views.search.grid.head.R_S_SYS_CODE">스크린 시스템 코드</entry>
+	<entry key="views.search.grid.head.R_S_HDD_FLAG">스크린 HDD 인식기호</entry>
+	<entry key="views.search.grid.head.R_S_SCREEN_URL">스크린 파일 경로</entry>
+	<entry key="views.search.grid.head.R_S_FILENAME">스크린 파일명</entry>
+	<entry key="views.search.grid.head.R_S_UPLOAD_YN">스크린 업로드 유무</entry>
+	<entry key="views.search.grid.head.R_T_SYS_CODE">텍스트 녹취 시스템 코드</entry>
+	<entry key="views.search.grid.head.R_T_HDD_FLAG">텍스트 HDD 인식기호</entry>
+	<entry key="views.search.grid.head.R_TEXT_URL">텍스트 파일 경로</entry>
+	<entry key="views.search.grid.head.R_T_FILENAME">텍스트 파일명</entry>
+	<entry key="views.search.grid.head.R_PART_START">부분 녹취 시작 시간</entry>
+	<entry key="views.search.grid.head.R_PART_END">부분 녹취 종료 시간</entry>
+	<entry key="views.search.grid.head.R_MARKGIN1">표시1</entry>
+	<entry key="views.search.grid.head.R_MARKGIN2">표시2</entry>
+	<entry key="views.search.grid.head.R_MARKING3">표시3</entry>
+	<entry key="views.search.grid.head.R_MARKING4">표시4</entry>
+	<entry key="views.search.grid.head.R_REC_MEMO">녹취 메모</entry>
+	<entry key="views.search.grid.head.R_CUST_SOCIAL_NUM">주민등록번호</entry>
+	<entry key="views.search.grid.head.R_CONTRACK_NUM">계약 번호</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_CODE">상담코드</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_CONTENT">상담 내역</entry>
+	<entry key="views.search.grid.head.R_CUST_ADDRESS">고객주소</entry>
+	<entry key="views.search.grid.head.R_RECEIPT_NUM">영수증 번호</entry>
+	<entry key="views.search.grid.head.R_PLAYER_KIND">플레이어 종류</entry>
+	<entry key="views.search.grid.head.R_BUFFER1">지점코드</entry>
+	<entry key="views.search.grid.head.R_BUFFER2">지점명</entry>
+	<entry key="views.search.grid.head.R_BUFFER3">연관콜</entry>
+	<entry key="views.search.grid.head.R_BW_YN"><![CDATA[베스트&워스트 유무]]></entry>
+	<entry key="views.search.grid.head.R_BW_BG_CODE"><![CDATA[베스트&워스트 대분류 코드]]></entry>
+	<entry key="views.search.grid.head.R_BW_SG_CODE"><![CDATA[베스트&워스트 소분류 코드]]></entry>
+	<entry key="views.search.grid.head.R_SCREEN_DUAL_URL">스크린 듀얼 URL</entry>
+	<entry key="views.search.grid.head.R_CUST_ID">고객 ID</entry>
+	<entry key="views.search.grid.head.R_BUFFER4">상품유형</entry>
+	<entry key="views.search.grid.head.R_BUFFER5">권유자번호</entry>
+	<entry key="views.search.grid.head.R_BUFFER6">권유자명</entry>
+	<entry key="views.search.grid.head.R_BUFFER7">상품코드</entry>
+	<entry key="views.search.grid.head.R_BUFFER8">상품명</entry>
+	<entry key="views.search.grid.head.R_BUFFER9">예비9</entry>
+	<entry key="views.search.grid.head.R_BUFFER10">녹취상태</entry>
+	<entry key="views.search.grid.head.R_BUFFER11">고객번호</entry>
+	<entry key="views.search.grid.head.R_BUFFER12">SR번호</entry>
+	<entry key="views.search.grid.head.R_BUFFER13">주문번호</entry>
+	<entry key="views.search.grid.head.R_BUFFER14">녹취보관</entry>
+	<entry key="views.search.grid.head.R_BUFFER15">증권번호</entry>
+	<entry key="views.search.grid.head.R_BUFFER16">지점명</entry>
+	<entry key="views.search.grid.head.R_BUFFER17">상품위험등급</entry>
+	<entry key="views.search.grid.head.R_BUFFER18">고객성향등급</entry>
+	<entry key="views.search.grid.head.R_BUFFER19">상담유형(소)</entry>
+	<entry key="views.search.grid.head.R_BUFFER20">예비20</entry>
+	<entry key="views.search.grid.head.R_CNID">CNID</entry>
+	<entry key="views.search.grid.head.R_DEST_IP">목적지 IP</entry>
+	<entry key="views.search.grid.head.R_VDO_URL">VDO 링크</entry>
+	<entry key="views.search.grid.head.R_CUST_ID">고객 ID</entry>
+	<entry key="views.search.grid.head.R_REGI_DATE">등록일</entry>
+	<entry key="views.search.grid.head.R_MANAGER">관리자</entry>
+	<entry key="views.search.grid.head.R_SRTP">SRTP 유무</entry>
+	<entry key="views.search.grid.head.F_KEY">F 키</entry>
+	<entry key="views.search.grid.head.R_SSRC">SSRC</entry>
+	<entry key="views.search.grid.head.R_KEY">키</entry>
+	<entry key="views.search.grid.head.R_CO_NUM">CO 번호</entry>
+	<entry key="views.search.grid.head.R_DID_NUM">DID 번호</entry>
+	<entry key="views.search.grid.head.R_UEI_DATA">UEI</entry>
+	<entry key="views.search.grid.head.R_QUEUE_NO1">큐1</entry>
+	<entry key="views.search.grid.head.R_QUEUE_NO2">큐2</entry>
+	<entry key="views.search.grid.head.R_BG_NAME">대분류</entry>
+	<entry key="views.search.grid.head.R_MG_NAME">중분류</entry>
+	<entry key="views.search.grid.head.R_SG_NAME">소분류</entry>
+	<entry key="views.search.grid.head.EVALUATION">평가</entry>
+	<entry key="views.search.grid.head.SCREEN">스크린</entry>
+	<entry key="views.search.grid.head.R_REC_START_TYPE">녹취타입</entry>
+	<entry key="views.search.grid.head.TRACE">트레이스</entry>
+	<entry key="views.search.grid.head.R_REC_START_TYPE">시작유형</entry>
+	<entry key="views.search.grid.head.R_LIST_ADD">플레이 리스트 추가</entry>
+	<entry key="views.search.grid.head.R_MEMO_INFO">플레이어 태그</entry>
+	<entry key="views.search.grid.head.R_MEMO">메모</entry>
+	<entry key="views.search.grid.head.R_DIVISION">분배</entry>
+	<entry key="views.search.grid.head.R_REC_VISIBLE">삭제 파일</entry>
+	<entry key="views.search.grid.head.R_STT_PLAYER">콜 스크립트</entry>
+	<entry key="views.search.grid.head.R_TAG">태그</entry>
+	<entry key="views.search.grid.head.R_STOCK_NO">증권 번호</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_BGCODE">상담유형 대</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_MGCODE">상담유형 중</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_SGCODE">상담유형 소</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE1">그룹코드1</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE2">그룹코드2</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE3">그룹코드3</entry>
+	<entry key="views.search.grid.head.R_BANK_CODE">은행코드</entry>
+	<entry key="views.search.grid.head.R_BACCOUNT_NUM">계좌번호</entry>
+	<entry key="views.search.grid.head.R_DUAL_FLAG">센터간 데이터 매칭 flag</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND_AP">AP 연동 IN/OUT</entry>
+	<entry key="views.search.grid.head.R_CALL_KEY_AP">녹취아이디</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE_AP">AP 연동 CID</entry>
+	<entry key="views.search.grid.head.R_IVR_KEY">출금동의 IVR키</entry>
+	<entry key="views.search.grid.head.R_VSEND_FLAG">녹취파일 전송 flag</entry>
+	<entry key="views.search.grid.head.R_SSEND_FLAG">스크린파일 전송 flag</entry>
+	<entry key="views.search.grid.head.R_SEND_INFO_FLAG">데이터 전송 flag</entry>
+	<entry key="views.search.grid.head.R_REC_KEYWORD">키워드</entry>
+	<entry key="views.search.grid.head.R_REC_CATEGORY">카테고리</entry>
+	<entry key="views.search.grid.head.R_REC_TEXT">통화 내용</entry>
+	<entry key="views.search.grid.head.R_REC_SUMMARY">통화 내용 요약</entry>
+	<entry key="views.search.grid.head.R_LOG_LISTEN">청취 이력</entry>
+	<entry key="views.search.grid.head.listenDate">청취 날짜</entry>
+	<entry key="views.search.grid.head.listenTime">청취 시간</entry>
+	<entry key="views.search.grid.head.listenUserId">청취자 아이디</entry>
+	<entry key="views.search.grid.head.listenUserName">청취자 이름</entry>
+	<entry key="views.search.grid.head.R_STT_RESULT">STT 진행 상태</entry>
+
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT">통화 연결시간</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT">실 통화시간</entry>
+	
+   	<entry key="views.search.grid.head.R_PHONE_MAPPING">전화번호 맵핑</entry>
+	<entry key="views.search.grid.head.R_COMPANY_TELNO">자번호</entry>
+	<entry key="views.search.grid.head.R_COMPANY_TELNO_NICK">자번호닉네임</entry>
+	<entry key="views.search.grid.head.R_PRODUCT_TYPE">스크립트 구분</entry>
+	
+	<entry key="views.search.grid.head.EmploymentCategory">재직구분</entry>
+	<entry key="views.search.grid.head.Incumbent">재직자</entry>
+	<entry key="views.search.grid.head.Retiree">퇴사자</entry>
+	<entry key="views.search.grid.head.BatchUsageStatus">배치사용유무</entry>
+	
+	
+	<!-- <entry key="views.search.grid.head.mobileR_BUFFER1">종료 사유</entry> -->
+	<entry key="views.search.grid.head.mobileR_BUFFER1">통화 결과</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER2">시작 종류</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER3">업로드 유무</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER4">상품 유형</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER5">고객 분류</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER6">고객 아이디</entry>
+
+	<entry key="views.search.grid.user.title.operationInfo">사용자 정보</entry>
+	<entry key="views.search.grid.user.title.name">이름</entry>
+	<entry key="views.search.grid.user.title.id">아이디</entry>
+	<entry key="views.search.grid.user.title.ext">내선번호</entry>
+
+	<entry key="views.search.grid.call.title.callInfo">통화 정보</entry>
+	<entry key="views.search.grid.call.title.date">날짜</entry>
+	<entry key="views.search.grid.call.title.time">시간</entry>
+	<entry key="views.search.grid.call.title.callTime">통화시간</entry>
+	<entry key="views.search.grid.call.title.phoneNo">전화번호</entry>
+	<entry key="views.search.grid.call.title.callType">통화구분</entry>
+
+	<entry key="views.search.grid.log.title.callLog">통화 기록</entry>
+
+	<entry key="views.search.grid.alert.noInfo">관련 녹취 정보가 없습니다.</entry>
+	<entry key="views.search.grid.alert.noChecked">다운로드할 대상을 선택해주세요.</entry>
+	<entry key="views.search.grid.alert.moreReason">최소 5글자의 사유를 입력해 주세요.</entry>
+	<entry key="views.search.grid.alert.mobileNotUpload">선택하신 파일은 업로드 되지 않은 파일입니다.</entry>
+
+	<entry key="views.search.form.fieldset.fDate">녹취 일자</entry>
+	<entry key="views.search.form.fieldset.fTime">녹취 시간</entry>
+	<entry key="views.search.form.fieldset.fTtime">통화 시간</entry>
+	<entry key="views.search.form.fieldset.fRtime">녹취 시각</entry>
+	<entry key="views.search.form.fieldset.fCallKind">콜 타입</entry>
+	<entry key="views.search.form.fieldset.fCounselResultCode">상담 유형</entry>
+	<entry key="views.search.form.fieldset.fStatus">진행 상태</entry>
+	<entry key="views.search.form.fieldset.fUserInfo">조작자 정보</entry>
+	<entry key="views.search.form.fieldset.fCustInfo">고객 정보</entry>
+	<entry key="views.search.form.fieldset.fOrgCode">지점 정보</entry>
+	<entry key="views.search.form.fieldset.fRecInfo">녹취 정보</entry>
+	<entry key="views.search.form.fieldset.fEtc">기타</entry>
+	<entry key="views.search.form.fieldset.fTimeConnect">통화연결 녹취시간</entry>
+	<entry key="views.search.form.fieldset.fTtimeConnect">통화연결 통화시간</entry>
+	<entry key="views.search.form.fieldset.selectFileExcelDown">선택 파일 엑셀 다운로드</entry>
+	<entry key="views.search.form.fieldset.fileExcelDown">전체 파일 엑셀 다운로드</entry>
+	<entry key="views.search.form.fieldset.fix">고정</entry>
+	<entry key="views.search.form.fieldset.nonFix">고정 해제</entry>
+	<entry key="views.search.form.fieldset.trace">트레이스</entry>
+	<entry key="views.search.form.fieldset.memoList">메모리스트</entry>
+	<entry key="views.search.form.fieldset.listenList">청취이력</entry>
+	<entry key="views.search.form.fieldset.defaultPlayerChange">기본 플레이어 변경</entry>
+	<entry key="views.search.form.fieldset.STTPlayer">STT 플레이어</entry>
+	<entry key="views.search.form.fieldset.fText">통화 내용</entry>
+	<entry key="views.search.form.fieldset.transcriber">전사 정보</entry>
+	<entry key="views.search.form.fieldset.fSubNumberInfo">자번호 정보</entry>
+	<entry key="views.search.form.fieldset.product">상품 정보</entry>
+	
+	<entry key="admin.approve.label.addMyFolder">마이폴더 추가</entry>
+	<entry key="admin.upload.form.stauts">업로드 상태</entry>
+	<entry key="admin.approve.label.transcript">전사 리스트 추가</entry>
+	<entry key="admin.approve.label.addToMyfolder">선택파일 마이폴더 추가</entry>
+	<entry key="admin.approve.label.addToBestcall">선택녹취 우수콜 추가</entry>
+
+	<!-- 18-09-05 -pilip search kor lang add -->
+	<entry key="views.search.alert.msg1">녹취 일자를 다음 형식에 맞게 입력 해 주세요!\\n예)2018-01-01</entry>
+	<entry key="views.search.alert.msg2">화자분리 플레이어 상태에서는 파일리스트 추가가 불가능 합니다.</entry>
+	<entry key="views.search.alert.msg3">플레이리스트 편집모드에서는 파일리스트 추가가 불가능 합니다.</entry>
+	<entry key="views.search.alert.msg4">선택된 녹취 파일이 없습니다.</entry>
+	<entry key="views.search.alert.msg5">마이폴더에 추가된 폴더가 없습니다.</entry>
+	<entry key="views.search.alert.msg6">다운로드 신청 권한이 없습니다.</entry>
+	<entry key="views.search.alert.msg7">지점 승인 대기중 입니다.</entry>
+	<entry key="views.search.alert.msg8">지점 승인 거부된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg9">접수 대기중 입니다.</entry>
+	<entry key="views.search.alert.msg10">접수가 거부된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg11">승인 대기중 입니다.</entry>
+	<entry key="views.search.alert.msg12">승인이 거부된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg13">승인 후 허용일이 만료된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg14">지점 승인 대기중 입니다.</entry>
+	<entry key="views.search.alert.msg15">지점 승인 거부된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg16">접수 대기중 입니다.</entry>
+	<entry key="views.search.alert.msg17">접수가 거부된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg18">승인 대기중 입니다.</entry>
+	<entry key="views.search.alert.msg19">승인이 거부된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg20">승인 후 허용일이 만료된 요청 입니다.\\n재 요청 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg21">녹취 일자를 다음 형식에 맞게 입력 해 주세요!\\n예)2018-01-01</entry>
+	<entry key="views.search.alert.msg22">요청기간은 1일보다 길거나 같아야 합니다</entry>
+	<entry key="views.search.alert.msg23">요청이 정상적으로 처리 되었습니다.</entry>
+	<entry key="views.search.alert.msg24">요청기간은</entry>
+	<entry key="views.search.alert.msg25">일을 넘을 수 없습니다</entry>
+	<entry key="views.search.alert.msg26">요청에 실패 하였습니다.</entry>
+	<entry key="views.search.alert.msg27">메모 접근권한이 없습니다.</entry>
+	<entry key="views.search.alert.msg28">메모 작성</entry>
+	<entry key="views.search.alert.msg29">부분녹취는 듀얼 플레이어로 청취 하실 수 없습니다.</entry>
+	<entry key="views.search.alert.msg30">삭제된 녹취파일입니다.</entry>
+	<entry key="views.search.alert.msg31">선택된  파일이 없습니다.</entry>
+	<entry key="views.search.alert.msg32">컴퓨터에 음성파일을 재생 가능한 장치가 없습니다.\\n컴퓨터에 재생 가능한 장치를 먼저 연결 후 청취 시도를 해주세요.</entry>
+	<entry key="views.search.alert.msg33">마이폴더에 녹취파일을 추가하였습니다.</entry>
+	<entry key="views.search.alert.msg34">마이폴더에 녹취파일 추가를 실패 하였습니다.</entry>
+	<entry key="views.search.alert.msg35">이미 평가중인 평가지가 있습니다. 선택한 평가지를 새로 열겠습니까?</entry>
+	<entry key="views.search.alert.msg36">평가 할 캠페인이 존재하지 않습니다.</entry>
+	<entry key="views.search.alert.msg37">평가지 선택 후 평가를 진행해주세요.</entry>
+	<entry key="views.search.alert.msg38">선택 되지 않은 항목이 존재합니다.</entry>
+	<entry key="views.search.alert.msg39">평가 저장이 완료되었습니다.</entry>
+	<entry key="views.search.alert.msg40">이미 플레이 리스트에 추가된 녹취파일입니다.</entry>
+	<entry key="views.search.alert.msg41">다운로드 권한이 없습니다.</entry>
+	<entry key="views.search.alert.msg42">플레이어 태그 삭제가 완료 되었습니다.</entry>
+	<entry key="views.search.alert.msg43">청취 가능 기간이 만료된 파일 입니다!</entry>
+	<entry key="views.search.alert.msg44">플레이어에서 재생이 불가능 한 파일 입니다.\\n플레이어에서 다운로드 한 파일 만 재생이 가능 합니다.</entry>
+	<entry key="views.search.alert.msg45">mp3형식의 파일만 업로드가 가능 합니다!</entry>
+	<entry key="views.search.alert.msg46">이전 재생 위치부터 이어서 재생 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg47">요청하신 녹취 파일을 찾을 수 없습니다.</entry>
+	<entry key="views.search.alert.msg48">재생중이던 파일 입니다. 이어서 재생 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg49">더 이상 재생할 목록이 없습니다.</entry>
+	<entry key="views.search.alert.msg50">시:분:초 6자리를 입력 해 주세요!\\n예)00:00:15</entry>
+	<entry key="views.search.alert.msg51">감청하실 대상의 청취 버튼을 클릭 해 주세요.</entry>
+	<entry key="views.search.alert.msg52">파일이 없습니다.</entry>
+	<entry key="views.search.alert.msg53">현재 실시간 감청중인 대상이 없습니다.</entry>
+	<entry key="views.search.alert.msg54">플레이어 태그 저장이 완료 되었습니다.</entry>
+	<entry key="views.search.alert.msg55">현재 파일에 저장된 플레이어 태그가 모두 삭제 됩니다.\\n정말 삭제 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg56">플레이어 태그 삭제가 완료 되었습니다.</entry>
+	<entry key="views.search.alert.msg57">설정하실 구간의 시작 시간을 입력 해 주세요.</entry>
+	<entry key="views.search.alert.msg58">설정하실 구간의 종료 시간을 입력 해 주세요.</entry>
+	<entry key="views.search.alert.msg59">시작 시간과 종료 시간은 같을 수 없습니다.</entry>
+	<entry key="views.search.alert.msg60">시작시간은 종료시간보다 클 수 없습니다.</entry>
+	<entry key="views.search.alert.msg61">다음과 같이 시분 초를 입력 해 주세요!\\n예) 000530</entry>
+	<entry key="views.search.alert.msg62">음성파일을 선택해주세요.</entry>
+	<entry key="views.search.alert.msg63">신청하시겠습니까?</entry>
+	<entry key="views.search.alert.msg64">신청되었습니다.</entry>
+	<entry key="views.search.alert.msg65">이미 승인이 완료되었습니다.</entry>
+	<entry key="views.search.alert.msg66">승인을 기다리는 파일입니다.</entry>
+	<entry key="views.search.alert.msg67">작업을 실패하였습니다.</entry>
+	<entry key="views.search.alert.msg68">재생 중인 파일이 없습니다.</entry>
+	<entry key="views.search.alert.msg69">체크하신 리스트에 재생중인 리스트가 포함 되어있습니다.\\n재생을 중지하시고 삭제 하시겠습니까?</entry>
+	<entry key="views.search.alert.msg70">올바른 시간형식을 입력해 주세요.</entry>
+	<entry key="views.search.alert.msg71">종료시점이 시작시점과 같거나 이전입니다.</entry>
+
+	<!-- 18-09-07 -pilip search kor lang add -->
+	<entry key="views.search.alert.msg72">선택 파일 재생</entry>
+	<entry key="views.search.alert.msg73">제휴사</entry>
+	<entry key="views.search.alert.msg74">녹취종류</entry>
+	<entry key="views.search.alert.msg75">선택파일 다운로드</entry>
+	<entry key="views.search.alert.msg76">파일 다운로드</entry>
+	<entry key="views.search.alert.msg77">선택파일 리스트에 추가</entry>
+	<entry key="views.search.alert.msg78">권한이 없는 사용자의 요청입니다.\n엑셀 다운로드 권한이 있는 사용자로 다운로드 요청을 해 주세요!</entry>
+	
+	<entry key="views.search.alert.msg79">플레이어 변경</entry>
+	<entry key="views.search.alert.msg80">STT 분석이 진행중입니다.</entry>
+		
+	<entry key="views.search.alert.msg81">전체파일 삭제</entry>
+	<entry key="views.search.alert.msg82">전체 다운로드</entry>
+	<!--전체 삭제  -->
+	<entry key="views.search.alert.msg83">삭제할 대상이 없습니다.</entry>
+	<entry key="views.search.alert.msg84">현재 조회하신 조건의 모든 녹취파일을 삭제하시겠습니까?</entry>
+	<entry key="views.search.alert.msg85">현재 조회하신 조건의 모든 녹취이력 또한 삭제하시겠습니까?</entry>
+	<entry key="views.search.alert.msg86">녹취 삭제에 성공하였습니다.</entry>
+	<entry key="views.search.alert.msg87">녹취 삭제에 실패하였습니다.</entry>
+	<entry key="views.search.alert.msg88">삭제되지 않은 파일이 있습니다. 다시 확인해 주세요</entry>
+	
+	
+	<entry key="views.search.alert.msg89">같은 내용의 창이 있습니다. 그래도 띄우시겠습니까?</entry>
+	<entry key="views.search.alert.msg90">한개의 파일만 선택해 주세요.</entry>
+	
+	<entry key="views.search.alert.msg91">이미 전사중인 페이지가 있습니다. 선택한 녹취 파일의 전사페이지를 새로 열겠습니까?</entry>
+	<entry key="views.search.alert.msg92">파일삭제</entry>
+	<entry key="views.search.alert.msg93">선택파일 삭제</entry>
+	<entry key="views.search.alert.msg94">파일삭제 메뉴</entry>
+	<entry key="views.search.alert.msg95">삭제 유형</entry>
+	<entry key="views.search.alert.msg96">데이터 비활성</entry>
+	<entry key="views.search.alert.msg97">파일/데이터 삭제</entry>
+	<entry key="views.search.alert.msg98">삭제</entry>
+
+	<entry key="views.search.alert.msg99">현재 선택하신 녹취파일을 삭제하시겠습니까?</entry>
+	<entry key="views.search.alert.msg100">현재 선택하신 녹취이력 또한 삭제하시겠습니까?</entry>
+	<entry key="views.search.alert.msg101">비활성화할 대상이 없습니다.</entry>
+	<entry key="views.search.alert.msg102">현재 조회하신 조건의 모든 녹취이력을 비활성시키겠습니까?</entry>
+	<entry key="views.search.alert.msg103">현재 선택하신 녹취이력을 비활성시키겠습니까?</entry>
+	<entry key="views.search.alert.msg104">비활성에 성공하였습니다.</entry>
+	<entry key="views.search.alert.msg105">비활성에 실패하였습니다.</entry>
+	
+	<entry key="views.search.alert.msg106">CSV 불러오기</entry>
+	<entry key="views.search.alert.msg107">파일을 선택하세요.</entry>
+	<entry key="views.search.alert.msg108">파일찾기</entry>
+	<entry key="views.search.alert.msg109">양식받기</entry>
+	<entry key="views.search.alert.msg110">업로드</entry>
+	<entry key="views.search.alert.msg111">업로드 하는 파일은 csv 파일이 아닙니다.</entry>
+	<entry key="views.search.alert.msg112">데이터가 없습니다.</entry>
+	<entry key="views.search.alert.msg113">업로드 결과</entry>
+	<entry key="views.search.alert.msg114">조회</entry>
+	<entry key="views.search.alert.msg115">전체</entry>
+	<entry key="views.search.alert.msg116">유효</entry>
+	<entry key="views.search.alert.msg117">오류</entry>
+	
+	<entry key="views.search.alert.fileDivision">전사 리스트 추가</entry>
+
+    <entry key="views.search.alert.listenPeriod1">현재 날짜부터 </entry>
+    <entry key="views.search.alert.listenPeriod2">개월 이전 이력은 조회할 수 없습니다.</entry>
+	<entry key="views.search.alert.noDownTarget">다운로드할 대상이 없습니다.</entry>
+	<entry key="views.search.alert.failFullDown2">녹취 일괄 다운로드에 실패하였습니다.</entry>
+	<entry key="views.search.alert.hours">시간 </entry>
+	<entry key="views.search.alert.minutes">분 </entry>
+	<entry key="views.search.alert.second">초</entry>
+	<entry key="views.search.alert.comfrimFullDown">현재 조회하신 조건의 모든 녹취파일을 다운로드하시겠습니까?</entry>
+	<entry key="views.search.alert.caution2GB">***파일용량이 2GB이상일 경우 다운로드 할 수 없습니다***</entry>
+	<entry key="views.search.alert.selectCallTime">선택한 파일의 총 통화시간              : </entry>
+	<entry key="views.search.alert.downloadableCallTime">다운로드 가능한 총 통화시간(예상)    : 250시간</entry>
+	<entry key="views.search.alert.completedZip">압축파일 생성이 완료되었습니다.</entry>
+	<entry key="views.search.alert.zipOver2GB">압축파일 크기가 2GB를 초과하여 다운로드에 실패하였습니다.</entry>
+	<entry key="views.search.alert.successFileBefore">2GB이전까지 압축 성공한 파일 개수: </entry>
+	<entry key="views.search.alert.zipProgress">압축파일을 생성하는 중입니다.(진행률: </entry>	
+    	<entry key="views.search.alert.nameCheck">자 이상 입력해 주십시오.</entry>
+    
+	<entry key="views.search.alert.selectGrid">복사할 범위를 선택해 주세요.</entry>
+	
+	<entry key="views.search.alert.noSelectRec">선택된 녹취 파일이 없습니다.</entry>
+	<entry key="views.search.alert.directUpload">선택된 녹취 파일을 즉시 업로드 하시겠습니까?</entry>
+
+	<!-- 렉시 모바일 drop reason 언어팩 추가 -->
+	<entry key="views.search.grid.mobile.dropreason.busy">통화중</entry>
+	<entry key="views.search.grid.mobile.dropreason.noAnswer">부재중</entry>
+	<entry key="views.search.grid.mobile.dropreason.notFound">없는번호</entry>
+	<entry key="views.search.grid.mobile.dropreason.endCall">통화종료</entry>
+	<entry key="views.search.grid.mobile.dropreason.phone">본인종료</entry>
+	<entry key="views.search.grid.mobile.dropreason.custDrop">상대종료</entry>
+	
+	<entry key="views.search.grid.mobile.dropreason.success">연결성공</entry>
+	<entry key="views.search.grid.mobile.dropreason.fail">통화실패</entry>
+	
+	
+	<!-- 업로드 신청 관련 언어팩 추가(19.06.03) -->
+	<entry key="views.search.alert.indivUpload">선택파일 개별 업로드</entry>
+	<entry key="views.search.alert.someReqFail">일부 신청이 실패 하였습니다.</entry>
+	<entry key="views.search.alert.reqTrans">즉시 전송 신청을 하였습니다.</entry>
+	<entry key="views.search.alert.transReqFail">즉시 전송 신청에 실패 하였습니다.</entry>
+	
+	<!-- 녹취 파일 분배 및 전사여부 -->
+	<entry key="views.search.alert.already.division">선택한 파일 중 이미 분배된 녹취 파일이 있습니다.</entry>
+	<entry key="views.search.title.TP">전사 예정</entry>
+	<entry key="views.search.title.TF">전사 완료</entry>
+	<entry key="views.search.title.LI">학습 진행중</entry>
+	<entry key="views.search.title.LF">학습 완료</entry>
+	
+	<entry key="views.search.title.transcriber">전사자</entry>
+	<entry key="views.search.title.transcript">전사</entry>
+	<entry key="views.search.title.noSelect">선택 안함</entry>
+	
+	<entry key="views.search.alert.select.agent">녹취 파일을 할당할 사용자를 선택해주세요.</entry>
+	<entry key="views.search.alert.already.division">선택한 파일 중 이미 분배된 녹취 파일이 있습니다.</entry>
+	<entry key="views.search.alert.division.success">선택한 녹취파일이 상담사에게 정상적으로 할당되었습니다.</entry>
+	<entry key="views.search.alert.division.fail">선택한 녹취파일을 상담사에게 할당하는데 실패 했습니다.</entry>
+	
+	<entry key="views.search.column.title.volume">볼륨 조절</entry>
+	<entry key="views.search.column.value.volume">기본</entry>
+	<entry key="views.search.column.value.volumeTwo">2배</entry>
+	<entry key="views.search.column.value.volumeThree">3배</entry>
+	<entry key="views.search.volume.title.volumeSetting">볼륨 증폭 값 설정</entry>
+	<entry key="views.search.volume.btn.setup">설정</entry>
+	
+	
+	<!-- <entry key="views.transcript.alert.learning.success">학습 요청에 성공했습니다.</entry>
+	<entry key="views.transcript.alert.learning.fail">학습 요청에 실패했습니다.</entry>
+	<entry key="views.transcript.confirm.learning">선택한 파일들을 학습하시겠습니까?</entry>
+	<entry key="views.transcript.confirm.remove">선택한 파일들을 리스트에서 제거하시겠습니까? 전사된 파일의 경우 전사 내용이 삭제됩니다.</entry>
+	<entry key="views.transcript.alert.remove.success">파일이 성공적으로 제거되었습니다.</entry>
+	<entry key="views.transcript.alert.remove.fail">파일 제거에 실패했습니다.</entry>
+
+	<entry key="views.transcript.button.remove">분배 파일 제거</entry>
+	<entry key="views.transcript.button.learning">선택 파일 학습</entry>
+	<entry key="views.transcript.button.transcript.save">전사 저장</entry>
+	<entry key="views.transcript.button.transcript.modify">전사 수정</entry>
+	<entry key="views.transcript.button.transcript.del">전사 삭제</entry>
+	
+	<entry key="views.transcript.alert.noFile">파일이 없습니다.</entry>
+	<entry key="views.transcript.alert.noTranscript">전사 된 내용이 없습니다.</entry>
+	<entry key="views.transcript.alert.noTranscript.cust">전사 된 고객 대화 내용이 없습니다.</entry>
+	<entry key="views.transcript.alert.noTranscript.agent">전사 된 상담사 대화 내용이 없습니다.</entry>
+	
+	<entry key="views.transcript.alert.transcript.save.success">전사 내용이 저장되었습니다.</entry>
+	<entry key="views.transcript.alert.transcript.save.fail">전사 내용 저장에 실패했습니다.</entry>
+	
+	<entry key="views.transcript.alert.transcript.modify.success">전사 내용이 수정되었습니다.</entry>
+	<entry key="views.transcript.alert.transcript.modify.fail">전사 내용 수정에 실패했습니다.</entry>
+	
+	<entry key="views.transcript.alert.transcript.del.success">전사 내용이 삭제되었습니다.</entry>
+	<entry key="views.transcript.alert.transcript.del.fail">전사 내용 삭제에 실패했습니다.</entry>
+	
+	<entry key="views.transcript.confirm.transcript.save">현재 파일의 전사 내용을 저장하시겠습니까?</entry>
+	<entry key="views.transcript.confirm.transcript.modify">현재 파일의 전사 내용을 수정하시겠습니까?</entry>
+	<entry key="views.transcript.confirm.transcript.del">현재 파일의 전사 내용을 삭제하시겠습니까?</entry>
+	
+	<entry key="views.transcript.alert.noTranscriptFile">요청한 파일 중 전사되지 않은 파일이 존재합니다.</entry> -->
+	
+</properties>

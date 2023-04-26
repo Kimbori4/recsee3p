@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.OrganizationInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.OrganizationInfo">
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="R_BG_NAME" jdbcType="VARCHAR" property="rBgName" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="R_MG_NAME" jdbcType="VARCHAR" property="rMgName" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="R_SG_NAME" jdbcType="VARCHAR" property="rSgName" />
+		<result column="R_SYS" jdbcType="VARCHAR" property="rSys" />
+		<result column="R_ETC" jdbcType="VARCHAR" property="rEtc" />
+		<result column="USE_YN" jdbcType="VARCHAR" property="useYn" />
+	</resultMap>
+
+	<select id="selectOrganizationBgInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+		SELECT
+			R_BG_CODE,
+			R_BG_NAME,
+			R_BG_SYS R_SYS,
+			R_BG_ETC R_ETC,
+			USE_YN
+		FROM RS_BG_INFO
+		where
+			1=1
+			<if test="type == null">
+			and use_yn='Y'
+			</if>
+			<if test="rBgCode != null">
+			and R_BG_CODE = #{rBgCode}
+			</if>
+			<if test="notAdmin != null">
+			and R_BG_CODE != 'B001'
+			</if>
+			<choose>
+				<when test='aUser!= null and aUser!="" and aUser=="Y" and list !=null and list.size!=0'>
+					and R_BG_CODE not in
+								<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+									#{item}
+								</foreach>
+				</when>
+				<when test='aUser!= null and  aUser!="" and aUser=="N" and list !=null and list.size!=0'>
+					and R_BG_CODE in
+								<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+									#{item}
+								</foreach>
+				</when>
+			</choose>
+			<if test="notIvr != null">
+			and R_BG_CODE != 'BGIVR'
+			</if>
+			<choose>
+				<when test="(aUser== null or  aUser=='') and list !=null and list.size!=0">
+				and R_BG_CODE in
+					<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+						#{item}
+					</foreach>
+				</when>
+			</choose>
+			<if test="authyInfo != null">
+				AND(
+				<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.noneallowable != null">
+						1=2
+						</if>
+					</trim>
+				</foreach>
+				)
+			</if>
+		ORDER BY R_BG_NAME
+	</select>
+	
+	<select id="selectOrganizationCBgInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+		SELECT distinct 
+			C_BG_CODE AS R_BG_CODE,
+			C_BG_NAME AS R_BG_NAME
+	      FROM <!-- couple_code --> 
+				dblink('hostaddr=10.20.50.227 port=5432 user=postgres dbname=conple_20 password=1qaz@WSX','select bg.c_bg_code::character varying AS c_bg_code, bg.c_bg_name, mg.c_mg_code::character varying AS c_mg_code, mg.c_mg_name, sg.c_sg_code::character varying AS sg_code, sg.c_sg_name from 
+				      (
+				      select c_name as c_bg_code, c_ko_msg as c_bg_name, cc.c_code from cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code = ''counsTypeTwelv'' and cc.c_site_id = ''genius'' 
+				      ) bg
+				      right outer join 
+				      (
+				      select c_name as c_mg_code, c_ko_msg as c_mg_name, c_parent_code as c_bg_code from cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code in ( select c_name from cs_common_code where c_parent_code = ''counsTypeTwelv'' and c_site_id = ''genius'' ) and cc.c_site_id = ''genius''
+				      ) mg on bg.c_bg_code = mg.c_bg_code
+				      right outer join
+				      (
+				      select c_name as c_sg_code, c_ko_msg as c_sg_name, c_parent_code as c_mg_code from  cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code in ( select c_name from cs_common_code where c_parent_code in ( select c_name from cs_common_code where c_parent_code = ''counsTypeTwelv'' and c_site_id = ''genius'' ) ) and cc.c_site_id = ''genius''
+				      ) sg on mg.c_mg_code = sg.c_mg_code
+				      order by bg.c_bg_code, mg.c_mg_code, sg.c_sg_code;') AS COUPLE
+				(
+					c_bg_code character varying(100),
+					c_bg_name character varying(100),
+					c_mg_code character varying(100),
+					c_mg_name character varying(100),
+					c_sg_code character varying(100),
+					c_sg_name character varying(100)
+				)
+	     <where> 
+	     	<if test='type=="1"'>    	     
+	     		150 > substring(c_bg_code,length(c_bg_code)-2)::integer
+	     	</if>
+	     	<if test='type=="2"'>    	     
+	     		substring(c_bg_code,length(c_bg_code)-2)::integer >= 150
+	     	AND 200 > substring(c_bg_code,length(c_bg_code)-2)::integer
+	     	</if>
+	     	<if test='type=="3"'>    	     
+	     		substring(c_bg_code,length(c_bg_code)-2)::integer >= 200
+	     	AND 250 > substring(c_bg_code,length(c_bg_code)-2)::integer
+	     	</if>
+	     	<if test='type=="4"'>    	     
+	     		substring(c_bg_code,length(c_bg_code)-2)::integer >= 250
+	     	</if>
+	     	<if test='type==null'>
+	     		1 = 0
+	     	</if>
+	     </where>
+	     ORDER BY C_BG_CODE
+	</select>
+	
+	<select id="selectOrganizationCMgInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+		SELECT distinct 
+			C_MG_CODE AS R_MG_CODE,
+			C_MG_NAME AS R_MG_NAME
+	      FROM <!-- couple_code --> 
+	      dblink('hostaddr=10.20.50.227 port=5432 user=postgres dbname=conple_20 password=1qaz@WSX','select bg.c_bg_code::character varying AS c_bg_code, bg.c_bg_name, mg.c_mg_code::character varying AS c_mg_code, mg.c_mg_name, sg.c_sg_code::character varying AS sg_code, sg.c_sg_name from 
+				      (
+				      select c_name as c_bg_code, c_ko_msg as c_bg_name, cc.c_code from cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code = ''counsTypeTwelv'' and cc.c_site_id = ''genius'' 
+				      ) bg
+				      right outer join 
+				      (
+				      select c_name as c_mg_code, c_ko_msg as c_mg_name, c_parent_code as c_bg_code from cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code in ( select c_name from cs_common_code where c_parent_code = ''counsTypeTwelv'' and c_site_id = ''genius'' ) and cc.c_site_id = ''genius''
+				      ) mg on bg.c_bg_code = mg.c_bg_code
+				      right outer join
+				      (
+				      select c_name as c_sg_code, c_ko_msg as c_sg_name, c_parent_code as c_mg_code from  cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code in ( select c_name from cs_common_code where c_parent_code in ( select c_name from cs_common_code where c_parent_code = ''counsTypeTwelv'' and c_site_id = ''genius'' ) ) and cc.c_site_id = ''genius''
+				      ) sg on mg.c_mg_code = sg.c_mg_code
+				      order by bg.c_bg_code, mg.c_mg_code, sg.c_sg_code;') AS COUPLE
+				(
+					c_bg_code character varying(100),
+					c_bg_name character varying(100),
+					c_mg_code character varying(100),
+					c_mg_name character varying(100),
+					c_sg_code character varying(100),
+					c_sg_name character varying(100)
+				)
+	     <where> 
+	     	 C_BG_CODE = #{rBgCode}
+	     </where>
+	     ORDER BY C_MG_CODE
+	</select>
+	
+	<select id="selectOrganizationCSgInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+		SELECT distinct 
+			C_SG_CODE AS R_SG_CODE,
+			C_SG_NAME AS R_SG_NAME
+	      FROM <!-- couple_code --> 
+	      dblink('hostaddr=10.20.50.227 port=5432 user=postgres dbname=conple_20 password=1qaz@WSX','select bg.c_bg_code::character varying AS c_bg_code, bg.c_bg_name, mg.c_mg_code::character varying AS c_mg_code, mg.c_mg_name, sg.c_sg_code::character varying AS sg_code, sg.c_sg_name from 
+				      (
+				      select c_name as c_bg_code, c_ko_msg as c_bg_name, cc.c_code from cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code = ''counsTypeTwelv'' and cc.c_site_id = ''genius'' 
+				      ) bg
+				      right outer join 
+				      (
+				      select c_name as c_mg_code, c_ko_msg as c_mg_name, c_parent_code as c_bg_code from cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code in ( select c_name from cs_common_code where c_parent_code = ''counsTypeTwelv'' and c_site_id = ''genius'' ) and cc.c_site_id = ''genius''
+				      ) mg on bg.c_bg_code = mg.c_bg_code
+				      right outer join
+				      (
+				      select c_name as c_sg_code, c_ko_msg as c_sg_name, c_parent_code as c_mg_code from  cs_common_code cc 
+				      left outer join cs_language_pack lp on cc.c_name = lp.c_code 
+				      where c_parent_code in ( select c_name from cs_common_code where c_parent_code in ( select c_name from cs_common_code where c_parent_code = ''counsTypeTwelv'' and c_site_id = ''genius'' ) ) and cc.c_site_id = ''genius''
+				      ) sg on mg.c_mg_code = sg.c_mg_code
+				      order by bg.c_bg_code, mg.c_mg_code, sg.c_sg_code;') AS COUPLE
+				(
+					c_bg_code character varying(100),
+					c_bg_name character varying(100),
+					c_mg_code character varying(100),
+					c_mg_name character varying(100),
+					c_sg_code character varying(100),
+					c_sg_name character varying(100)
+				)
+	     <where> 
+	            C_BG_CODE = #{rBgCode}
+	     	AND C_MG_CODE = #{rMgCode}
+	     </where>
+	     ORDER BY C_SG_CODE
+	</select>
+
+	<select id="selectOrganizationMgInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+	SELECT
+		R_BG_CODE,
+		R_MG_CODE,
+		R_MG_NAME,
+		R_MG_SYS R_SYS,
+		R_MG_ETC R_ETC,
+		USE_YN
+	FROM RS_MG_INFO
+	<where>
+		1=1
+		<if test="type == null">
+			AND USE_YN='Y'
+		</if>
+		<if test="rBgCode != null">
+			AND R_BG_CODE = #{rBgCode}
+		</if>
+		<if test="rMgCode != null">
+			AND  R_MG_CODE = #{rMgCode}
+		</if>
+		<if test="notAdmin != null">
+			AND R_BG_CODE != 'B001'
+			AND R_MG_CODE != 'M001'
+		</if>
+		
+		<if test="authyInfo != null">
+			AND(
+			<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+				<trim suffixOverrides="AND">
+					<if test="item.bgcode != null">
+					R_BG_CODE = #{item.bgcode} AND
+					</if>
+					<if test="item.mgcode != null">
+					R_MG_CODE = #{item.mgcode} AND
+					</if>
+					<if test="item.noneallowable != null">
+					1=2
+					</if>
+				</trim>
+			</foreach>
+			)
+		</if>
+	</where>
+	ORDER BY R_MG_NAME
+	</select>
+
+	<select id="selectOrganizationSgInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+	SELECT
+		R_BG_CODE,
+		R_MG_CODE,
+		R_SG_CODE,
+		R_SG_NAME,
+		R_SG_SYS R_SYS,
+		R_SG_ETC R_ETC,
+		USE_YN
+	FROM RS_SG_INFO
+	<where>
+		1=1
+		<if test="rBgCode != null">
+		AND R_BG_CODE = #{rBgCode}
+		</if>
+		<if test="rMgCode != null">
+		AND R_MG_CODE = #{rMgCode}
+		</if>
+		<if test="rSgCode != null">
+		AND R_SG_CODE = #{rSgCode}
+		</if>
+		<if test="notAdmin != null">
+		AND R_BG_CODE != 'B001'
+		AND R_MG_CODE != 'M001'
+		AND R_SG_CODE != 'S001'
+		</if>
+		<if test="authyInfo != null">
+			AND(
+			<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+				<trim suffixOverrides="AND">
+					<if test="item.bgcode != null">
+					R_BG_CODE = #{item.bgcode} AND
+					</if>
+					<if test="item.mgcode != null">
+					R_MG_CODE = #{item.mgcode} AND
+					</if>
+					<if test="item.sgcode != null">
+					R_SG_CODE = #{item.sgcode} AND
+					</if>
+					<if test="item.noneallowable != null">
+					1=2
+					</if>
+				</trim>
+			</foreach>
+			)
+		</if>
+	</where>
+	ORDER BY R_SG_NAME
+	</select>
+
+	<select id="selectOrganizationLastInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultType="java.util.HashMap" databaseId="postgres">
+	SELECT R_${rTable}_CODE AS rCode, R_${rTable}_NAME AS rName FROM RS_${rTable}_INFO
+	WHERE R_${rTable}_CODE = (
+		SELECT MAX(R_${rTable}_CODE) FROM RS_${rTable}_INFO
+		WHERE SUBSTRING(R_${rTable}_CODE,1,1 ) = SUBSTRING(#{rTable}, 1, 1) AND LENGTH(R_${rTable}_CODE) = 4 AND SUBSTRING(R_${rTable}_CODE FROM  '...$') BETWEEN '001' AND '999'
+	)  
+	</select>
+	<select id="selectOrganizationLastInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultType="java.util.HashMap" databaseId="sqlserver">
+	SELECT R_${rTable}_CODE AS rcode, R_${rTable}_NAME AS rname FROM RS_${rTable}_INFO
+	WHERE R_${rTable}_CODE = (
+		SELECT MAX(R_${rTable}_CODE) FROM RS_${rTable}_INFO
+		WHERE SUBSTRING(R_${rTable}_CODE,1,1 ) = SUBSTRING(#{rTable}, 1, 1) AND LEN(R_${rTable}_CODE) = 4 AND SUBSTRING(R_BG_CODE,2,4) BETWEEN '001' AND '999'
+	)  
+	</select>
+	<select id="selectOrganizationLastInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultType="java.util.HashMap" databaseId="oracle">
+	SELECT R_${rTable}_CODE AS "rcode", R_${rTable}_NAME AS "rname" FROM RS_${rTable}_INFO
+	WHERE R_${rTable}_CODE = (
+		SELECT MAX(R_${rTable}_CODE) FROM RS_${rTable}_INFO
+		WHERE SUBSTR(R_${rTable}_CODE,1,1 ) = SUBSTR(#{rTable}, 1, 1) AND LENGTH(R_${rTable}_CODE) = 4 AND SUBSTR(R_BG_CODE,2,4) BETWEEN '001' AND '999'
+	)
+	</select>  
+
+	<insert id="insertOrganizationInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" useGeneratedKeys="true" keyProperty="selectValue" databaseId="postgres">
+		WITH B AS(
+			SELECT A.groupCode AS groupCode, B.sameNameCount AS sameCount FROM
+			(
+			SELECT SUBSTRING('${rTable}', 1, 1) || LPAD( CAST( CAST( COALESCE(MAX(SUBSTRING(R_${rTable}_CODE FROM  '...$')),'001') as INT ) + 1 as VARCHAR), 3, '0') AS groupCode FROM RS_${rTable}_INFO
+			WHERE SUBSTRING(R_${rTable}_CODE,1,1 ) = SUBSTRING('${rTable}', 1, 1) AND LENGTH(R_${rTable}_CODE) = 4 AND SUBSTRING(R_${rTable}_CODE FROM  '...$') BETWEEN '001' AND '999'
+			) A
+			CROSS JOIN
+			(
+			SELECT CASE WHEN COUNT(*) > 0 THEN CAST(COUNT(*)+1 AS CHAR) ELSE '' END AS sameNameCount FROM RS_${rTable}_INFO
+			WHERE R_${rTable}_NAME LIKE
+			<choose>
+				<when test="rBgName != null">'%' || #{rBgName} || '%'</when>  
+				<when test="rMgName != null">'%' || #{rMgName} || '%'</when>
+				<otherwise>'%' || #{rSgName} || '%'</otherwise>
+			</choose>
+			<if test="rBgCode != null">
+			AND R_BG_CODE = #{rBgCode}
+			</if>
+			<if test="rMgCode != null">
+			AND R_MG_CODE = #{rMgCode}
+			</if>
+			<if test="rSgCode != null">
+			AND R_SG_CODE = #{rSgCode}
+			</if>
+			) B 
+		)
+		
+		INSERT INTO RS_${rTable}_INFO (
+			<if test="rBgCode != null">R_BG_CODE,</if>
+			<if test="rTable == 'BG' and rBgCode == null">R_BG_CODE,</if>
+			<if test="rBgName != null">R_BG_NAME,</if>
+			<if test="rMgCode != null">R_MG_CODE,</if>
+			<if test="rTable == 'MG' and rMgCode == null">R_MG_CODE,</if>
+			<if test="rMgName != null">R_MG_NAME,</if>
+			<if test="rSgCode != null">R_SG_CODE,</if>
+			<if test="rTable == 'SG' and rSgCode == null">R_SG_CODE,</if>
+			<if test="rSgName != null">R_SG_NAME,</if>
+			<if test="rBgName != null or rMgName != null">USE_YN,</if>
+			R_${rTable}_SYS,
+			R_${rTable}_ETC			
+		) VALUES (
+			<choose>
+				<when test="rBgCode != null">#{rBgCode},</when>
+				<when test="rTable == 'BG' and rBgCode == null">(select groupcode FROM B),</when>
+			</choose>
+			<if test="rBgName != null">#{rBgName},</if>
+			<choose>
+				<when test="rMgCode != null">#{rMgCode},</when>
+				<when test="rTable == 'MG' and rMgCode == null">(select groupcode FROM B),</when>
+			</choose>
+			<if test="rMgName != null">#{rMgName},</if>
+			<choose>
+				<when test="rSgCode != null">#{rSgCode},</when>
+				<when test="rTable == 'SG' and rSgCode == null">(select groupcode FROM B),</when>
+			</choose>
+			<if test="rSgName != null">#{rSgName},</if>
+			<if test="rBgName != null or rMgName != null">'Y',</if>
+			'',
+			''			
+		)
+	</insert>
+	
+	<insert id="insertOrganizationInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" useGeneratedKeys="true" keyProperty="selectValue" databaseId="sqlserver">
+		<selectKey keyProperty="selectValue" resultType="java.util.HashMap" order="BEFORE">
+			SELECT A.groupCode AS groupCode, B.sameNameCount AS sameCount FROM
+			
+			(
+			
+			SELECT SUBSTRING(#{rTable}, 1, 1) + REPLICATE('0', 3- LEN(CAST(CAST(ISNULL(MAX(SUBSTRING(R_${rTable}_CODE ,2 ,4)),'0') as INT)+1 as VARCHAR))) + CAST(CAST(ISNULL(MAX(SUBSTRING(R_${rTable}_CODE,2,4)),'0') as INT)+1 as VARCHAR) as groupCode from RS_${rTable}_INFO
+			
+			WHERE SUBSTRING(R_${rTable}_CODE,1,1 ) = SUBSTRING(#{rTable}, 1, 1) 
+			) A
+
+			
+			CROSS JOIN
+			(
+			SELECT CASE WHEN COUNT(*) > 0 THEN CAST(COUNT(*)+1 AS CHAR) ELSE '' END AS sameNameCount FROM RS_${rTable}_INFO
+			WHERE R_${rTable}_NAME LIKE
+			<choose>
+				<when test="rBgName != null">#{rBgName} || '%'</when>
+				<when test="rMgName != null">#{rMgName} || '%'</when>
+				<otherwise>#{rSgName} || '%'</otherwise>
+			</choose>
+			<if test="rBgCode != null">
+			AND R_BG_CODE = #{rBgCode}
+			</if>
+			<if test="rMgCode != null">
+			AND R_MG_CODE = #{rMgCode}
+			</if>
+			<if test="rSgCode != null">
+			AND R_SG_CODE = #{rSgCode}
+			</if>
+			) B
+		</selectKey>
+		INSERT INTO RS_${rTable}_INFO (
+			<if test="rBgCode != null">R_BG_CODE,</if>
+			<if test="rTable == 'BG' and rBgCode == null">R_BG_CODE,</if>
+			<if test="rBgName != null">R_BG_NAME,</if>
+			<if test="rMgCode != null">R_MG_CODE,</if>
+			<if test="rTable == 'MG' and rMgCode == null">R_MG_CODE,</if>
+			<if test="rMgName != null">R_MG_NAME,</if>
+			<if test="rSgCode != null">R_SG_CODE,</if>
+			<if test="rTable == 'SG' and rSgCode == null">R_SG_CODE,</if>
+			<if test="rSgName != null">R_SG_NAME,</if>
+			<if test="rBgName != null or rMgName != null">USE_YN,</if>
+			R_${rTable}_SYS,
+			R_${rTable}_ETC			
+		) VALUES (
+			<if test="rBgCode != null">#{rBgCode},</if>
+			<if test="rTable == 'BG' and rBgCode == null">#{selectValue.groupCode},</if>
+			<if test="rBgName != null">#{rBgName}<if test="selectValue.samecount != null and selectValue.samecount != ''"> + ' (${selectValue.sameCount})'</if>,</if>
+			<if test="rMgCode != null">#{rMgCode},</if>
+			<if test="rTable == 'MG' and rMgCode == null">#{selectValue.groupCode},</if>
+			<if test="rMgName != null">#{rMgName}<if test="selectValue.samecount != null and selectValue.samecount != ''"> + ' (${selectValue.sameCount})'</if>,</if>
+			<if test="rSgCode != null">#{rSgCode},</if>
+			<if test="rTable == 'SG' and rSgCode == null">#{selectValue.groupCode},</if>
+			<if test="rSgName != null">#{rSgName}<if test="selectValue.samecount != null and selectValue.samecount != ''"> + ' (${selectValue.sameCount})'</if>,</if>
+			<if test="rBgName != null or rMgName != null">'Y',</if>
+			'',
+			''			
+		)
+	</insert>
+	<insert id="insertOrganizationInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" useGeneratedKeys="true" keyProperty="selectValue" databaseId="oracle">
+		<selectKey keyProperty="selectValue" resultType="java.util.HashMap" order="BEFORE">
+			SELECT A.groupCode AS "groupCode", B.sameNameCount AS "sameCount" FROM
+			(
+			SELECT SUBSTR(#{rTable}, 1, 1) || LPAD( CAST( CAST( COALESCE(MAX(SUBSTR(R_${rTable}_CODE ,2 ,4)),'001') as INT ) + 1 as VARCHAR2(255)), 3, '0') AS groupCode FROM RS_${rTable}_INFO
+			WHERE SUBSTR(R_${rTable}_CODE,1,1 ) = SUBSTR(#{rTable}, 1, 1) 
+			AND LENGTH(R_${rTable}_CODE) = 4 
+			AND SUBSTR(R_${rTable}_CODE ,2 ,4) 
+			BETWEEN '001' AND '999'
+			) A
+			CROSS JOIN
+			(
+			SELECT CASE WHEN COUNT(*) > 0 THEN CAST(COUNT(*)+1 AS CHAR) ELSE '' END AS sameNameCount FROM RS_${rTable}_INFO
+			WHERE R_${rTable}_NAME LIKE
+			<choose>
+				<when test="rBgName != null">'${rBgName}%'</when>
+				<when test="rMgName != null">'${rMgName}%'</when>
+				<otherwise>'${rSgName}%'</otherwise>
+			</choose>
+			<if test="rBgCode != null">
+			AND R_BG_CODE = #{rBgCode}
+			</if>
+			<if test="rMgCode != null">
+			AND R_MG_CODE = #{rMgCode}
+			</if>
+			<if test="rSgCode != null">
+			AND R_SG_CODE = #{rSgCode}
+			</if>
+			) B
+		</selectKey>
+		INSERT INTO RS_${rTable}_INFO (
+			<if test="rBgCode != null">R_BG_CODE,</if>
+			<if test="rTable == 'BG' and rBgCode == null">R_BG_CODE,</if>
+			<if test="rBgName != null">R_BG_NAME,</if>
+			<if test="rMgCode != null">R_MG_CODE,</if>
+			<if test="rTable == 'MG' and rMgCode == null">R_MG_CODE,</if>
+			<if test="rMgName != null">R_MG_NAME,</if>
+			<if test="rSgCode != null">R_SG_CODE,</if>
+			<if test="rTable == 'SG' and rSgCode == null">R_SG_CODE,</if>
+			<if test="rSgName != null">R_SG_NAME,</if>
+			<if test="rBgName != null or rMgName != null">USE_YN,</if>
+			R_${rTable}_SYS,
+			R_${rTable}_ETC			
+		) VALUES (
+			<if test="rBgCode != null">#{rBgCode},</if>
+			<if test="rTable == 'BG' and rBgCode == null">#{selectValue.groupCode},</if>
+			<if test="rBgName != null">#{rBgName}<if test="selectValue.samecount != null and selectValue.samecount != ''"> + ' (${selectValue.sameCount})'</if>,</if>
+			<if test="rMgCode != null">#{rMgCode},</if>
+			<if test="rTable == 'MG' and rMgCode == null">#{selectValue.groupCode},</if>
+			<if test="rMgName != null">#{rMgName}<if test="selectValue.samecount != null and selectValue.samecount != ''"> + ' (${selectValue.sameCount})'</if>,</if>
+			<if test="rSgCode != null">#{rSgCode},</if>
+			<if test="rTable == 'SG' and rSgCode == null">#{selectValue.groupCode},</if>
+			<if test="rSgName != null">#{rSgName}<if test="selectValue.samecount != null and selectValue.samecount != ''"> + ' (${selectValue.sameCount})'</if>,</if>
+			<if test="rBgName != null or rMgName != null">'Y',</if>
+			'-',
+			'-'			
+		)
+	</insert>
+
+	<update id="updateOrganizationInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo">
+	UPDATE RS_${rTable}_INFO
+	<set>
+		<if test="rBgCode != null">
+		R_BG_CODE = #{rBgCode},
+		</if>
+		<if test="rBgName != null">
+		R_BG_NAME = #{rBgName},
+		</if>
+		<if test="rMgCode != null">
+		R_MG_CODE = #{rMgCode},
+		</if>
+		<if test="rMgName != null">
+		R_MG_NAME = #{rMgName},
+		</if>
+		<if test="rSgCode != null">
+		R_SG_CODE = #{rSgCode},
+		</if>
+		<if test="rSgName != null">
+		R_SG_NAME = #{rSgName},
+		</if>
+		<if test="useYn != null">
+		USE_YN = #{useYn},
+		</if>
+	</set>
+	<where>
+		<trim suffixOverrides="AND">
+		<if test="rBgCode != null">
+		R_BG_CODE = #{rBgCode} AND
+		</if>
+		<if test="rMgCode != null">
+		R_MG_CODE = #{rMgCode} AND
+		</if>
+		<if test="rSgCode != null">
+		R_SG_CODE = #{rSgCode} AND
+		</if>
+		</trim>
+	</where>
+	</update>
+
+	<delete id="deleteOrganizationInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo">
+	DELETE FROM RS_${rTable}_INFO
+	<where>
+		<trim suffixOverrides="AND">
+		<if test="rBgCode != null">
+		R_BG_CODE = #{rBgCode} AND
+		</if>
+		<if test="rMgCode != null">
+		R_MG_CODE = #{rMgCode} AND
+		</if>
+		<if test="rSgCode != null">
+		R_SG_CODE = #{rSgCode} AND
+		</if>
+		</trim>
+	</where>
+	</delete>
+
+	<select id="sameNameOrganizationInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+<!-- 	SELECT R_${rTable}_CODE, R_${rTable}_NAME FROM RS_${rTable}_INFO
+	<where>
+		<trim suffixOverrides="AND">
+			<if test="rBgName != null">R_BG_NAME = #{rBgName} AND</if>
+			<if test="rMgName != null">R_MG_NAME = #{rMgName} AND</if>
+			<if test="rSgName != null">R_SG_NAME = #{rSgName} AND</if>
+		</trim>
+	</where>  -->
+	</select>
+
+	<update id="updateGroupCodeInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo">
+	UPDATE RS_RUSER_INFO
+	<set>
+		<trim suffixOverrides=",">
+			<if test="rBgCode != null">R_BG_CODE = #{rBgCode},</if>
+			<if test="rMgCode != null">R_MG_CODE = #{rMgCode},</if>
+			<if test="rSgCode != null">R_SG_CODE = #{rSgCode},</if>
+		</trim>
+	</set>
+	<where>
+		<trim suffixOverrides="AND">
+			<if test="oBgCode != null">R_BG_CODE = #{oBgCode} AND</if>
+			<if test="oMgCode != null">R_MG_CODE = #{oMgCode} AND</if>
+			<if test="oSgCode != null">R_SG_CODE = #{oSgCode} AND</if>
+		</trim>
+	</where>
+	</update>
+
+	<select id="selectOraganiztionAll" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+		SELECT R_BG_NAME,R_MG_NAME,R_SG_NAME,RS_SG_INFO.R_SG_CODE,RS_MG_INFO.R_MG_CODE,RS_BG_INFO.R_BG_CODE
+	 			FROM RS_BG_INFO
+	 			LEFT JOIN RS_MG_INFO
+	 			ON RS_BG_INFO.R_BG_CODE =RS_MG_INFO.R_BG_CODE
+	 			LEFT JOIN RS_SG_INFO
+	 			ON RS_MG_INFO.R_MG_CODE = RS_SG_INFO.R_MG_CODE
+	</select>
+
+	<update id="updateUseBg"  databaseId="postgres" parameterType="com.furence.recsee.common.model.OrganizationInfo">
+		<if test="type != null and type=='call'">
+		
+				UPDATE RS_MG_INFO SET USE_YN=#{state}
+				WHERE R_MG_CODE=#{rBgCode}			
+		</if>
+		<if test="type != null and type=='bg'">
+				UPDATE RS_BG_INFO SET USE_YN=#{state}
+				WHERE R_BG_CODE=#{rBgCode}	
+		</if>
+	</update>
+	<update id="updateUseBg"  databaseId="sqlserver" parameterType="com.furence.recsee.common.model.OrganizationInfo">
+		<if test="type != null and type=='call'">
+			UPDATE RS_MG_INFO
+	        SET USE_YN=#{state}
+	        OUTPUT
+	    	 	    CONVERT(VARCHAR(8), GETDATE(), 112)
+	    	 	, 	CONVERT(VARCHAR(8), GETDATE(), 114)
+  			 	,	'U'
+  			 	,	'rs_mg_info'
+  			 	,	UP.R_BG_CODE
+  			 	,	UP.R_MG_CODE
+  			 	,	UP.R_MG_NAME
+  			 	,	UP.R_MG_SYS
+  			 	,	UP.R_MG_ETC
+  			 	,	UP.USE_YN
+		    INTO RS_SYNC_DATA
+			  (
+  				R_SYNC_DATE
+  			  , R_SYNC_TIME
+  			  , R_SYNC_TYPE
+  			  , R_SYNC_TABLENAME
+  			  , R_SYNC_CULUMN1
+  			  , R_SYNC_CULUMN2
+  			  , R_SYNC_CULUMN3
+  			  , R_SYNC_CULUMN4
+  			  , R_SYNC_CULUMN5
+  			  , R_SYNC_CULUMN6
+  			)
+			WHERE R_MG_CODE=#{rBgCode}
+		</if>
+		<if test="type != null and type=='bg'">
+			UPDATE  RS_BG_INFO
+	      	SET USE_YN=#{state}
+				OUTPUT
+	          	CONVERT(VARCHAR(8), GETDATE(), 112)
+	        , 	CONVERT(VARCHAR(8), GETDATE(), 114)
+		 	,	'U'
+		 	,	'rs_bg_info'
+		 	,	UP.R_BG_CODE
+		 	,	UP.R_BG_NAME
+		 	,	UP.R_BG_SYS
+		 	,	UP.R_BG_ETC
+		 	,	UP.USE_YN
+	       INTO RS_SYNC_DATA
+				(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				)
+			WHERE R_BG_CODE=#{rBgCode}
+		</if>
+	</update>
+	<update id="updateUseBg"  databaseId="oracle" parameterType="com.furence.recsee.common.model.OrganizationInfo">
+		<if test="type != null and type=='call'">
+			<!-- DECLARE
+			  row_id ROWID;
+			BEGIN
+				UPDATE RS_MG_INFO SET USE_YN=#{state}
+				WHERE R_MG_CODE=#{rBgCode}
+				RETURNING ROWID INTO row_id;
+			
+				INSERT INTO RS_SYNC_DATA
+				(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				  , R_SYNC_CULUMN6
+				)
+				SELECT
+				 		TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+				 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+				 	,	'U'
+				 	,	'rs_mg_info'
+				 	,	MG.R_BG_CODE
+				 	,	MG.R_MG_CODE
+				 	,	MG.R_MG_NAME
+				 	,	MG.R_MG_SYS
+				 	,	MG.R_MG_ETC
+				 	,	MG.USE_YN
+				FROM DUAL, RS_MG_INFO MG
+	       		WHERE MG.ROWID = row_id;
+	
+			END; -->
+			UPDATE RS_MG_INFO SET USE_YN=#{state}
+				WHERE R_MG_CODE=#{rBgCode}
+		</if>
+		<if test="type != null and type=='bg'">
+			<!-- DECLARE
+			  row_id ROWID;
+			BEGIN
+				UPDATE RS_BG_INFO SET USE_YN=#{state}
+				WHERE R_BG_CODE=#{rBgCode}
+				RETURNING ROWID INTO row_id;
+			
+				INSERT INTO RS_SYNC_DATA
+				(
+					R_SYNC_DATE
+				  , R_SYNC_TIME
+				  , R_SYNC_TYPE
+				  , R_SYNC_TABLENAME
+				  , R_SYNC_CULUMN1
+				  , R_SYNC_CULUMN2
+				  , R_SYNC_CULUMN3
+				  , R_SYNC_CULUMN4
+				  , R_SYNC_CULUMN5
+				)
+				SELECT
+				 		TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+				 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+				 	,	'U'
+				 	,	'rs_bg_info'
+				 	,	BG.R_BG_CODE
+				 	,	BG.R_BG_NAME
+				 	,	BG.R_BG_SYS
+				 	,	BG.R_BG_ETC
+				 	,	BG.USE_YN
+				FROM DUAL, RS_BG_INFO BG
+	     		WHERE BG.ROWID = row_id;
+			END; -->
+			UPDATE RS_BG_INFO SET USE_YN=#{state}
+				WHERE R_BG_CODE=#{rBgCode}
+		</if>
+	</update>
+
+	<select id="selectCallCenterMgInfo" parameterType="com.furence.recsee.common.model.OrganizationInfo" resultMap="BaseResultMap">
+		SELECT R_MG_CODE, R_MG_NAME , USE_YN
+		FROM RS_MG_INFO
+		WHERE R_BG_CODE='0995500' AND R_MG_CODE !='E0995500'
+		ORDER BY R_MG_NAME
+	</select>
+</mapper>

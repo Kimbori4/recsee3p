@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>마이폴더(myfolder) 화면용 메세지 정의</comment>
+
+	<!-- 마이폴더 -->
+	<entry key="myfolder.alert.inputName">폴더명을 입력해주세요.</entry>
+	<entry key="myfolder.alert.completingAdd">폴더 추가가 완료 되었습니다.</entry>
+	<entry key="myfolder.alert.existSameFolder">동일한 폴더가 존재합니다.\\n다시 입력해주세요.</entry>
+	<entry key="myfolder.alert.selectFolder">폴더를 선택해주세요.</entry>
+	<entry key="myfolder.alert.editingFolder">폴더 수정이 완료 되었습니다.</entry>
+	<entry key="myfolder.alert.deletingFolder">정말로 삭제하시겠습니까?</entry>
+	<entry key="myfolder.alert.notExistFile">선택한 녹취 파일이 없습니다.</entry>
+	<entry key="myfolder.alert.alreadyRecorded">해당 폴더에 이미 녹취파일이 있습니다.</entry>
+	
+	<entry key="myfolder.button.editFolder">폴더 수정</entry>
+	<entry key="myfolder.button.deleteFolder">폴더 삭제</entry>
+	<entry key="myfolder.button.addFolder">폴더 추가</entry>
+	<entry key="myfolder.button.addFile">선택파일 리스트에 추가</entry>
+	<entry key="myfolder.button.moveFile">선택파일 이동</entry>
+	<entry key="myfolder.button.removeFile">선택파일 마이폴더에서 제거</entry>
+	
+
+</properties>

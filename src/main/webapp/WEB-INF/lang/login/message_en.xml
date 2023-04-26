@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>로그인 화면용 메세지 정의</comment>
+
+	<entry key="login.login.title.rememberMe">Remember me</entry>
+	<entry key="login.login.title.login">Login</entry>
+
+	<entry key="login.login.placeholder.code">CODE</entry>
+	<entry key="login.login.placeholder.id">Username</entry>
+	<entry key="login.login.placeholder.password">Password</entry>
+	<entry key="login.login.placeholder.extension">Ext.</entry>
+
+	<entry key="login.login.alert.not.input.code">Please input the system code</entry>
+	<entry key="login.login.alert.not.input.id">Please input Username</entry>
+	<entry key="login.login.alert.not.input.pw">Please input Password</entry>
+	<entry key="login.login.alert.not.input.ext">Please input the extention number</entry>
+	<entry key="login.login.alert.not.input.lang">Choose your language.</entry>
+
+	<entry key="login.login.alert.fail.login">Login failed.</entry>
+
+	<entry key="login.login.p.info.policy">Information Security Measures Guide</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">To protect user privacy</entry>
+	<entry key="login.login.p.info.policy">It is recommended to</entry>
+	<entry key="login.login.p.info.policy">change it regularly.</entry>
+	<entry key="login.login.p.info.policy">Do not use passwords that others can easily identify, such as IDs, social security numbers, birthdays, phone numbers, numbers associated with personal information, serial numbers, repeated characters, etc.</entry>
+	<entry key="login.login.p.info.policy">Change next</entry>
+
+	<entry key="login.login.alert.offUse">The ID was suspended because it was not used for 90 days. \\n Please contact your administrator.</entry>
+	<entry key="login.login.alert.alreadyLogin">This is already logged in to. \\n Please contact your administrator.</entry>
+	<entry key="login.login.alert.noLoginRight">You do not have the right a login. \\n Please contact your administrator.</entry>
+	
+	
+	<entry key="login.text.unregisteredId">Unregistered ID</entry>
+	<entry key="login.text.mismatchIp">IP Mismatch</entry>
+</properties>

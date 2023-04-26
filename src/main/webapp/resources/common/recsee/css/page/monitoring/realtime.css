@@ -1,0 +1,792 @@
+body, html{
+    background-color: #f1f1f1 !important;
+}
+
+/************
+
+Top Layer
+
+************/
+
+.now_system{
+    float: left;
+    padding: 5px 15px;
+    -webkit-padding-before: 5px;
+    -webkit-padding-after: 5px;
+    background-color: #333333;
+    border: 1px solid #333333;
+    color: #ffffff;
+    margin: 3.5px;
+}
+.now_system .now_system_tit{
+    color: #ffffff;
+}
+.now_system .now_system_info{
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ebb912;
+}
+
+
+
+/************
+
+Setting Layer
+
+************/
+
+.contents_display_sel{
+	margin-top: 20px;
+}
+.contents_display_sel .mode_list_active{
+    background-color: #ffdb8f !important;
+    border: 1px solid #ffdb8f;
+}
+.monitoring_option{
+	display: none;
+    position: fixed;
+    width: 200px;
+    height: auto;
+    right: 0px;
+    padding: 0 25px;
+    background-color: rgba(0,0,0,0.9);
+    color: #ffffff;
+    z-index: 999999;
+    padding-bottom: 5px;
+}
+.monitoring_option_header{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	background-color: #666666;
+	padding: 11px 0;
+	padding-right: 50px;
+	margin-left: -25px;
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+.monitoring_option_header p{
+	float: left;
+	text-indent: 10px;
+}
+.monitoring_option_header .ui_btn_white{
+	float: right;
+    margin-bottom: -5px;
+    margin-top: -4px;
+    margin-right: -40px;
+}
+.monitoring_option .contents_display_sel .ui_btn_white{
+    width: 100% !important;
+    float: left !important;
+    clear: both !important;
+    margin-bottom: 5px !important;
+    padding-left: 0px !important;
+}
+
+.listenAlwaysPannel{
+	display: none;
+    position: fixed;
+    width: 200px;
+    height: auto;
+    right: 0px;
+    padding: 0 25px;
+    background-color: rgba(0,0,0,0.9);
+    color: #ffffff;
+    z-index: 2000000;
+    padding-bottom: 5px;
+}
+
+.hardware_status_wrap:nth-child(2){
+	margin-top: 15px;
+}
+.setting_tit_wrap:first-of-type{
+	/* margin-top: 10px; */
+}
+.setting_tit_wrap{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	background-color: rgba(0,0,0,0.4);
+    padding: 0 20px;
+    margin-left: -20px;
+}
+.setting_dropdown_btn{
+    position: relative;
+    float: right;
+    width: 20px;
+    height: 20px;
+    padding-left: 2px;
+    background-color: transparent;
+    margin-top: 12px;
+    background-image: url(../../../images/project/main/icon/arrow_down_white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.setting_dropdown_cont{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+.setting_dropdown_cont .onoffswitch{
+	float: right;
+}
+.hardware_info{
+    float: left;
+    height: auto;
+}
+.hardware_info .hardware_info_tit{
+    float: left;
+    clear: both;
+    padding: 10px 10px 2px 0;
+    margin-bottom: 10px;
+}
+.display_option .display_option_tit{
+    float: left;
+    clear: both;
+    padding: 10px 10px 2px 0;
+    margin-bottom: 10px;
+}
+.display_option .onofftit{
+    float: left;
+    clear: both;
+    font-size: 13px;
+    color: #ffffff;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    background-image: url(../../../images/project/icon/label_icon/icon_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+.display_option .onoffswitch{
+    float: right;
+}
+.hardware_status_wrap{
+    float: left;
+    clear: both;
+}
+.hardware_status_wrap:first-of-type{
+	margin-top: 15px;
+}
+.hardware_status_wrap:first-child{
+	margin-top: 15px;
+}
+.hardware_status_tit{
+	float: left;
+    color: #ffffff;
+    padding-bottom: 5px;
+}
+.hardware_status_bar{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #666666;
+    margin-bottom: 10px;
+}
+.hardware_status_bar p{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    color: #ffffff;
+    z-index: 5;
+}
+.hardware_status_val{
+    width: 0%;
+    height: 100%;
+    background-color: #77b957;
+    transition: all ease 1s;
+}
+.hdd_name_info{
+	float: left;
+    font-size: 13px;
+    color: #ffffff;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+
+/************
+
+channel monitoring recording state view
+
+************/
+.card_record_press {
+	/* background-image:url(../../../images/project/main/obj_record_pressed.png); */
+	background-image:url(../../../images/project/main/vital_start.gif);
+	pointer-events:auto; 
+	cursor:pointer;
+}
+
+.card_record_calling	{
+	background-image:url(../../../images/project/main/obj_record_abled.png);
+	pointer-events:auto; 
+	cursor:pointer;
+}
+
+.card_record_acw	{
+	/* background-image:url(../../../images/project/main/obj_record_diabled.png); */
+	background-image:url(../../../images/project/main/vital_stop.gif);
+	pointer-events:none; 
+}
+
+.recodeButton{
+	margin: 0px;
+	padding: 0px;
+	width:	50px;
+	height: 34px;
+}
+
+
+/************
+
+checkbox-color for status
+
+************/
+
+/* login */
+.display_option .check_status_login .onoffswitch-inner:before {
+    background-color: #f5bb6f; color: #FFFFFF;
+}
+.display_option .check_status_login .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #f5bb6f !important; background: #f5bb6f !important;
+}
+.display_option .check_status_login .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #c1791c !important; border: 1px solid #c1791c !important; color: #ffffff;
+}
+/* logout */
+.display_option .check_status_logout .onoffswitch-inner:before {
+    background-color: #888888; color: #FFFFFF;
+}
+.display_option .check_status_logout .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #888888 !important; background: #888888 !important;
+}
+.display_option .check_status_logout .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #616161 !important; border: 1px solid #616161 !important; color: #ffffff;
+}
+/* ready */
+.display_option .check_status_ready .onoffswitch-inner:before {
+    background-color: #74b057; color: #FFFFFF;
+}
+.display_option .check_status_ready .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #74b057 !important; background: #74b057 !important;
+}
+.display_option .check_status_ready .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #3f7923 !important; border: 1px solid #3f7923 !important; color: #ffffff;
+}
+/* calling */
+.display_option .check_status_calling .onoffswitch-inner:before {
+    background-color: #e16d6d; color: #FFFFFF;
+}
+.display_option .check_status_calling .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #e16d6d !important; background: #e16d6d !important;
+}
+.display_option .check_status_calling .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #a73535 !important; border: 1px solid #a73535 !important; color: #ffffff;
+}
+/* acw */
+.display_option .check_status_aftercallwork .onoffswitch-inner:before {
+    background-color: #9283d6; color: #FFFFFF;
+}
+.display_option .check_status_aftercallwork .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #9283d6 !important; background: #9283d6 !important;
+}
+.display_option .check_status_aftercallwork .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #5f51a0 !important; border: 1px solid #5f51a0 !important; color: #ffffff;
+}
+
+/* away */
+.display_option .check_status_away .onoffswitch-inner:before {
+    background-color: #3da0e3; color: #FFFFFF;
+}
+.display_option .check_status_away .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #3da0e3 !important; background: #3da0e3 !important;
+}
+.display_option .check_status_away .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #006cb6 !important; border: 1px solid #006cb6 !important; color: #ffffff;
+}
+
+/************
+
+background-color for status
+
+************/
+
+/* click effect */
+.agent_status_active{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 87%;
+    padding: 0 1px;
+    background-color: rgba(255,255,0,0.4) !important;
+}
+/* calling */
+.agent_status_calling:hover{
+    box-shadow: 0px 0px 5px rgba(255,0,255,0.6) !important;
+    border-color: #dd5959 !important;
+    transition: all ease 0.1s;
+    cursor: pointer;
+}
+.agent_status_calling{
+    background-color: #e16d6d !important;
+    border-color: #e16d6d !important;
+    color: #e16d6d !important;
+}
+/* login */
+.agent_status_login{
+    background-color: #f5bb6f !important;
+    border-color: #f5bb6f !important;
+    color: #f5bb6f !important;
+}
+/* ready */
+.agent_status_ready{
+    background-color: #74b057 !important;
+    border-color: #74b057 !important;
+    color: #74b057 !important;
+}
+/* acw */
+.agent_status_aftercallwork{
+    background-color: #9283d6 !important;
+    border-color: #9283d6 !important;
+    color: #9283d6 !important;
+}
+/* logout */
+.agent_status_logout{
+    background-color: #bbbbbb !important;
+    border-color: #bbbbbb !important;
+    color: #bbbbbb !important;
+}
+/* ringing  */
+.agent_status_ringing{
+    background-color: #e16d9d !important;
+    border-color: #e16d9d !important;
+    color: #e16d9d !important;
+}
+/* away*/
+.agent_status_away{
+    background-color: #3da0e3 !important;
+    border-color: #3da0e3 !important;
+    color: #3da0e3 !important;
+}
+
+/* notready */
+.agent_status_notready{
+    background-color: #3da0e3 !important;
+    border-color: #bbbbbb !important;
+    color: #3da0e3 !important;
+}
+
+
+
+
+
+/************
+
+card view
+
+************/
+
+.monitoring_contents{
+    float: left;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+	/* padding-bottom: 260px; */
+}
+
+#gridMonitoringView .option_check{
+    z-index: 99999;
+}
+.status_card_wrap .option_check{
+    float: left;
+	margin-left: 44px;
+	margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.status_card_wrap .onoffswitch-switch{
+	background: #aaaaaa !important
+}
+.status_card_wrap .onoffswitch-inner:before{
+	background-color: transparent;
+}
+.status_card_wrap .onoffswitch-checkbox:checked + .onoffswitch-label{
+	background-color: #40a756 !important;
+}
+
+.status_card_wrap{
+    position: relative;
+    float: left;
+    width: 127px;
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+}
+.status_card_wrap:hover {
+    box-shadow: 1px 0px 5px rgba(0,0,255,0.6) !important;
+}
+.status_card{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: #dddddd;
+    border: 1px solid;
+    border-color: #bbbbbb;
+    color: #bbbbbb;
+    transition: all ease 0.4s;
+}
+.obj_agent{
+    width: 70px;
+    height: 60px;
+    float: left;
+    margin-left: 29px;
+    margin-top: 5px;
+    background-image: url(../../../images/project/main/obj_woman.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all ease 1s;
+}
+.status_txt{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: inherit;
+    border: 1px solid;
+    background-color: #ffffff;
+    border-color: inherit;
+}
+.card_info_wrap{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+.agent_info_wrap{
+    float: left;
+    clear: both;
+    width: 100%;
+    border-top: 1px solid;
+    border-color: inherit;
+    background-color: #ffffff;
+}
+.agent_info_wrap p{
+	width: 100%;
+	text-align: center;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #dddddd;
+}
+.agent_info_wrap div:first-child p{
+    border-top: 0px solid #dddddd;
+}
+
+
+.hideColumn {
+	display: none;
+}
+
+.agent_info_wrap .agent_info{
+    float: left;
+    clear: both;
+    width: 100%;
+    color: #333333;
+}
+.agent_info_wrap .agent_info .agnet_exnum{
+    float: left;
+}
+.agent_info_wrap .agent_info .anget_id{
+    float: left;
+}
+.agent_info_wrap .time_info{
+    float: left;
+    width: 100%;
+    color: inherit;
+}
+.agent_info_wrap .time_info .time_val{
+    float: left;
+	width: 100%;
+}
+.agent_info_wrap .callnum_info{
+    float: left;
+    width: 100%;
+    color: #333333;
+}
+.agent_info_wrap .callnum_info .agnet_exnum{
+    float: left;
+}
+
+
+
+/************
+
+grid view
+
+************/
+
+#contents_grid_wrap{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+}
+.grid_status_calling{
+    background-color: #e16d6d !important;
+    color: #ffffff !important;
+}
+.grid_status_calling:hover{
+    box-shadow: 0px 0px 5px rgba(255,0,255,0.6) !important;
+    transition: all ease 0.1s;
+    cursor: pointer;
+}
+
+.grid_status_login{
+    background-color: #f5bb6f !important;
+    color: #ffffff !important;
+}
+.grid_status_ready{
+    background-color: #74b057 !important;
+    color: #ffffff !important;
+}
+.grid_status_aftercallwork{
+    background-color: #9283d6 !important;
+    color: #ffffff !important;
+}
+.grid_status_logout{
+    background-color: #bbbbbb !important;
+    color: #ffffff !important;
+}
+
+.grid_status_ringing{
+    background-color: #e16d9d !important;
+    color: #ffffff !important;
+}
+
+.grid_status_notready{
+    background-color: #3da0e3 !important;
+    color: #ffffff !important;
+}
+
+
+/************
+
+audio 遺�遺�(湲곗〈)
+
+************/
+
+#listen_wrap{
+	position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 200px;
+    height: auto;
+    z-index: 9999;
+    padding: 10px;
+}
+#listen_wrap .realtime_player audio{
+	width: 200px;
+	height: 38px;
+    margin-top: 10px;
+}
+#listen_wrap label, #listen_wrap span{
+	color: #ffffff;
+}
+.realtime_player_tit{
+	font-size: 14px;
+	font-weight: 400;
+}
+.realtime_player_tit span{
+	font-size: 16px;
+	color: #ffffff;
+    margin-left: 5px;
+}
+
+.monitoring_continue{
+    position: fixed;
+    right: 25px;
+    bottom: 66px;
+    width: 200px;
+    height: 100px;
+    background: red;
+}
+
+.stay_check_wrap .custPhoneContinueChk {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 2px;
+    float: left;
+    clear: both;
+}
+
+.monitoring_check{
+	padding-bottom : 18px;
+}
+
+#custPhoneContinue{
+	font-weight : 600;
+}
+
+.monitoring_legend{
+	border-spacing : 7px;
+	display : block;
+	position:fixed;
+	z-index : 2147483647;
+	right : 15px;
+	bottom : 10px;
+	/* color : white; */
+	color : black;
+}
+
+/*
+*	범례 표시
+*/
+.legend_login_status{
+	 width : 50px;
+	 background-color: rgba(244, 185, 110, 1) !important;
+}
+
+.legend_logout_status{
+	 width : 50px;
+	 background-color: rgba(110, 110, 110, 1) !important;
+}
+
+.legend_ready_status{
+	 width : 50px;
+	 background-color: rgba(116, 174, 86, 1) !important;
+}
+
+.legend_calling_status{
+	 width : 50px;
+	 background-color: rgba(223, 108, 108, 1) !important;
+}
+
+.legend_ACW_status{
+	 width : 50px;
+	  background-color: rgba(145, 130, 212, 1) !important;
+}
+
+.legend_away_status{
+	 width : 50px;
+	 background-color: #3da0e3 !important;
+}
+
+.realtime_slash_status{
+	background-image : url(../../../images/project/main/slash.png);
+	background-position-y : 32px;
+}
+
+.realtime_notrtp_status{
+	background-image : url(../../../images/project/main/notrtp.png);
+}
+
+.realtime_straight_status{
+	background-image : url(../../../images/project/main/straight.png);
+	background-position-x : 20px;
+	background-position-y : 13px;
+	background-repeat : repeat-x;
+	background-size : 100px;
+	cursor : not-allowed !important;
+}
+
+.realtime_cancel_status{
+	cursor : not-allowed !important;
+}
+
+.realtime_cancel_status:after{
+	content : "녹취 불가";
+	color : orangered;
+}
+
+.realtime_use_false{
+	cursor : not-allowed !important;
+}
+
+.realtime_use_false:after{
+	/* content : "미사용"; */
+	color : orangered;
+}
+
+.office_slash_status{
+	background-image : url(../../../images/project/main/slash.png);
+	transform : rotate(-26deg);
+	background-position-y:20px;
+	cursor : not-allowed !important;
+}
+
+.rtp-not{
+	width : 35px;
+	height : 30px;
+	position : relative;
+	left : 6px;
+	top : 22px;
+}
+
+.realtime_no_listen{
+	cursor : not-allowed !important;
+}
+
+.realtime_progress{
+	background : url("../../../../../component/dhtmlxSuite/skins/web/imgs/dhxcarousel_web/dhxcarousel_cell_progress.gif");
+	background-repeat : no-repeat;
+	background-position-x:center;
+	background-position-y: 1%;
+}
+
+.not_found{
+	font-size : 20px;
+	text-align :center;
+	margin-top : 20px;
+}
+
+.codefilter_select{
+	width:120px;
+    float: left;
+    padding: 3px;
+    -webkit-padding-before: 6px;
+    -webkit-padding-after: 6px;
+    margin: 3.5px;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: -1px;
+    padding-right:20px;
+    overflow:hidden;
+}
+
+.listen-away{
+    position: fixed;
+    bottom: 0px;
+    display: table;
+    width: 100%;
+    height: 35px;
+    background: rgba(51, 51, 51, 0.85);
+}
+
+.listen-away marquee{
+	color: white;
+	vertical-align: middle;
+	display : table-cell;
+	font-size : 14px;
+}
+	
+

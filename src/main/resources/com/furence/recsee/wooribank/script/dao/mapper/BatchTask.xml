@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.furence.recsee.wooribank.script.batch.BatchTaskDao" >
+		
+	<!-- 일배치 스크립트 업데이트 프로시저 -->
+	<update id="executeScriptAppplyDialy">	
+		call sp_script_edit_apply_daily()		
+	</update>
+	
+	
+</mapper>		

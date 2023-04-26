@@ -1,0 +1,129 @@
+.ui_article {
+	text-align : center;
+}
+
+.one_box {
+	display: inline-block;
+    width: 48%;
+    border: 1px solid #ccc;
+    height: 380px;
+    margin-top: 0.8rem;
+    margin: 0.8rem;
+}
+
+.long_box {
+	display: inline-block;
+    width: 48%;
+    float:left;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    margin: 1rem;
+}
+
+.one_box .title, .long_box .title{
+	text-align: left;
+    display: block;
+    background: #60b3dc;
+    color: #fff;
+    padding: 0.6rem;
+    font-size: 19px;
+}
+
+.chart-wrap .ui_pannel_row{
+	margin-bottom : 120px;
+}
+
+.chart-wrap .box .best, .chart-wrap .box .worst {
+    width: 175px;
+    padding: 70px;
+    display: inline-block;
+    float: left;
+}
+
+.chart-wrap .box div img {
+	width : 100%;
+	height : 100%;
+}
+
+.best-rank, .worst-rank {
+	width: 580px;
+	text-align : left;
+   	display: inline-block;
+}
+
+.best-rank .inner_wrapper div, .worst-rank .inner_wrapper div{
+	display :inline-block;
+}
+
+.best-rank .inner_wrapper , .worst-rank .inner_wrapper{
+	width: 100%;
+    float: right;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.best-rank .inner_wrapper .rank-number, .worst-rank .inner_wrapper .rank-number {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background: #ccc;
+    padding: 5px;
+    margin: 10px;
+    color: #fff;
+    text-align: center;
+}
+
+.best-rank .inner_wrapper:first-child .rank-number:first-child{
+	background : #0f6ab2;
+}
+
+.best-rank .inner_wrapper:first-child .word{
+	color : #0f6ab2;
+	font-weight : bold;
+}
+
+.best-rank .inner_wrapper:first-child{
+	background : #e6f6fe;
+}
+
+.worst-rank .inner_wrapper:first-child .rank-number:first-child{
+	background : #e62c1e;
+}
+
+.worst-rank .inner_wrapper:first-child .word{
+	color : #e62c1e;
+	font-weight : bold;
+}
+
+.worst-rank .inner_wrapper:first-child{
+	background : #ffe8e3;
+}
+
+.best-rank .inner_wrapper .word, .worst-rank .inner_wrapper .word {
+	width : 5em;
+	margin-left: 70px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.best-rank .inner_wrapper .value, .worst-rank .inner_wrapper .value {
+	width : 6em;
+	margin-left: 70px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.best-rank .inner_wrapper .increase, .worst-rank .inner_wrapper .increase{
+	margin-left: 70px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.inner_wrapper .increase.up{
+	color : red;
+}
+
+.inner_wrapper .increase.down{
+	color : blue;
+}

@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.furence.recsee.uploadstatus.dao.UploadInfoDao">
+	<resultMap id="ResultMap" type="com.furence.recsee.uploadstatus.model.UploadInfo">
+		<result column="R_SREC_DATE" jdbcType="VARCHAR" property="srecDate" />
+		<result column="R_EREC_DATE" jdbcType="VARCHAR" property="erecDate" />
+		<result column="R_SREC_TIME" jdbcType="VARCHAR" property="srecTime" />
+		<result column="R_EREC_TIME" jdbcType="VARCHAR" property="erecTime" />
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="sysCode" />
+		<result column="R_BG_CODE" jdbcType="VARCHAR" property="bgCode" />
+		<result column="R_MG_CODE" jdbcType="VARCHAR" property="mgCode" />
+		<result column="R_SG_CODE" jdbcType="VARCHAR" property="sgCode" />
+		<result column="R_CALL_KEY_AP" jdbcType="VARCHAR" property="callKeyAp" />
+		<result column="R_WORK_TYPE" jdbcType="VARCHAR" property="workType" />
+		<result column="R_WORK_REASON" jdbcType="VARCHAR" property="workReason" />
+		<result column="R_REG_DATETIME" jdbcType="VARCHAR" property="regDatetime" />
+		<result column="R_RESV_DATETIME" jdbcType="VARCHAR" property="resvDatetime" />
+		<result column="R_PROC_DATETIME" jdbcType="VARCHAR" property="procDatetime" />
+		<result column="R_SREG_DATETIME" jdbcType="VARCHAR" property="sregDatetime" />
+		<result column="R_SRESV_DATETIME" jdbcType="VARCHAR" property="sresvDatetime" />
+		<result column="R_SPROC_DATETIME" jdbcType="VARCHAR" property="sprocDatetime" />
+		<result column="R_EREG_DATETIME" jdbcType="VARCHAR" property="eregDatetime" />
+		<result column="R_ERESV_DATETIME" jdbcType="VARCHAR" property="eresvDatetime" />
+		<result column="R_EPROC_DATETIME" jdbcType="VARCHAR" property="eprocDatetime" />
+		<result column="R_DESC" jdbcType="VARCHAR" property="desc" />
+		
+		<result column="R_TOTALUPLOAD" jdbcType="VARCHAR" property="totalUpload" />
+		<result column="R_RESULTS" jdbcType="VARCHAR" property="results" />
+		<result column="R_RESULTF" jdbcType="VARCHAR" property="resultf" />
+		<result column="R_RESULTR" jdbcType="VARCHAR" property="resultr" />
+		<result column="R_WORKTYPED" jdbcType="VARCHAR" property="workTyped" />
+		<result column="R_WORKTYPEB" jdbcType="VARCHAR" property="workTypeb" />
+		<result column="R_SELECTDATE" jdbcType="VARCHAR" property="selectDate" />
+		
+		<result column="R_CHARTLIMIT" jdbcType="VARCHAR" property="chartLimit" />
+		
+		
+		
+		<result column="R_REC_DATE" 		jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_TIME" 		jdbcType="VARCHAR" property="recTime" />
+		<result column="R_EXT_NUM" 			jdbcType="VARCHAR" property="extNum" />
+		<result column="R_CUST_PHONE1" 		jdbcType="VARCHAR" property="custPhone1" />
+		<result column="R_USER_ID" 			jdbcType="VARCHAR" property="userId" />
+		<result column="R_BUFFER11" 		jdbcType="VARCHAR" property="result" />
+		<result column="R_BUFFER12" 		jdbcType="VARCHAR" property="record" />
+		<result column="R_BUFFER13" 		jdbcType="VARCHAR" property="fTryDatetime" />
+		<result column="R_BUFFER14" 		jdbcType="VARCHAR" property="sTryDatetime" />
+		<result column="R_BUFFER15" 		jdbcType="VARCHAR" property="tTryDatetime" />
+	</resultMap>
+	
+	<sql id="uploadInfoWhere" databaseId="postgres">
+		<where>
+			R_MG_CODE = 'M003'
+			<if test="extNum != null">
+				AND R_EXT_NUM LIKE '%'||#{extNum}||'%'
+			</if>
+			<if test="custPhone1 != null">
+				AND ( '02' || R_CUST_PHONE1 LIKE '%'||#{custPhone1}||'%' OR R_CUST_PHONE1 LIKE '%'||#{custPhone1}||'%' )
+			</if>
+			<if test="workType!=null">
+				<choose>
+					<when test="workType eq 'B'.toString()">
+						AND (R_BUFFER11 != '11'
+						AND R_BUFFER11 != '16'
+						AND R_BUFFER11 != '17'
+						AND R_BUFFER11 != '18'
+						AND R_BUFFER11 != '19')
+					</when>
+					<when test="workType eq 'D'.toString()">
+						AND (R_BUFFER11 = '11'
+						OR R_BUFFER11 = '16'
+						OR R_BUFFER11 = '17'
+						OR R_BUFFER11 = '18'
+						OR R_BUFFER11 = '19')
+					</when>
+				</choose>
+			</if>
+			<if test="result!=null">
+				<choose>
+					<when test="result eq '1'.toString()">
+						AND (R_BUFFER11 = '1'
+						OR R_BUFFER11 = '11')
+					</when>
+					<when test="result eq '9'.toString()">
+						AND (R_BUFFER11 = '9'
+						OR R_BUFFER11 = '19')
+					</when>
+					<when test="result eq '8'.toString()">
+						AND (R_BUFFER11 = '8'
+						OR R_BUFFER11 = '18')
+					</when>
+					<when test="result eq '7'.toString()">
+						AND (R_BUFFER11 = '7'
+						OR R_BUFFER11 = '17')
+					</when>
+					<when test="result eq '6'.toString()">
+						AND (R_BUFFER11 = '6'
+						OR R_BUFFER11 = '16')
+					</when>
+					<when test="result eq '5'.toString()">
+						AND R_BUFFER11 = '5'
+					</when>
+					<when test="result eq '4'.toString()">
+						AND R_BUFFER11 = '4'
+					</when>
+					<when test="result eq '3'.toString()">
+						AND R_BUFFER11 = '3'
+					</when>
+					<when test="result eq '2'.toString()">
+						AND R_BUFFER11 = '2'
+					</when>
+					<when test="result eq '0'.toString()">
+						AND (R_BUFFER11 = ''
+						OR R_BUFFER11 IS NULL)
+					</when>
+				</choose>
+			</if>
+			<if test="srecDate!=null and erecDate!=null">
+				AND R_REC_DATE BETWEEN #{srecDate} AND #{erecDate}
+			</if>
+			<if test="srecTime!=null and erecTime!=null">
+				AND R_REC_TIME BETWEEN #{srecTime} AND #{erecTime}
+			</if>
+			<if test="authyInfo != null">
+				AND(
+				<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.mgcode != null">
+						R_MG_CODE = #{item.mgcode} AND
+						</if>
+						<if test="item.sgcode != null">
+						R_SG_CODE = #{item.sgcode} AND
+						</if>
+						<if test="item.user != null">
+						R_USER_ID = #{item.user} AND
+						</if>
+						<if test="item.noneallowable != null">
+						1=2
+						</if>
+					</trim>
+				</foreach>
+				)
+			</if>
+		</where>
+	</sql>
+	
+		<sql id="uploadInfoWhere" databaseId="sqlserver">
+		<where>
+			R_MG_CODE = 'M003'
+			<if test="extNum != null">
+				AND R_EXT_NUM LIKE '%' || #{extNum} || '%'
+			</if>
+			<if test="custPhone1 != null">
+				AND ( '02' + R_CUST_PHONE1 LIKE '%' || #{custPhone1} || '%' OR R_CUST_PHONE1 LIKE '%' || #{custPhone1} || '%' )
+			</if>
+			<if test="workType!=null">
+				<choose>
+					<when test="workType eq 'B'.toString()">
+						AND (R_BUFFER11 != '11'
+						AND R_BUFFER11 != '16'
+						AND R_BUFFER11 != '17'
+						AND R_BUFFER11 != '18'
+						AND R_BUFFER11 != '19')
+					</when>
+					<when test="workType eq 'D'.toString()">
+						AND (R_BUFFER11 = '11'
+						OR R_BUFFER11 = '16'
+						OR R_BUFFER11 = '17'
+						OR R_BUFFER11 = '18'
+						OR R_BUFFER11 = '19')
+					</when>
+				</choose>
+			</if>
+			<if test="result!=null">
+				<choose>
+					<when test="result eq '1'.toString()">
+						AND (R_BUFFER11 = '1'
+						OR R_BUFFER11 = '11')
+					</when>
+					<when test="result eq '9'.toString()">
+						AND (R_BUFFER11 = '9'
+						OR R_BUFFER11 = '19')
+					</when>
+					<when test="result eq '8'.toString()">
+						AND (R_BUFFER11 = '8'
+						OR R_BUFFER11 = '18')
+					</when>
+					<when test="result eq '7'.toString()">
+						AND (R_BUFFER11 = '7'
+						OR R_BUFFER11 = '17')
+					</when>
+					<when test="result eq '6'.toString()">
+						AND (R_BUFFER11 = '6'
+						OR R_BUFFER11 = '16')
+					</when>
+					<when test="result eq '5'.toString()">
+						AND R_BUFFER11 = '5'
+					</when>
+					<when test="result eq '4'.toString()">
+						AND R_BUFFER11 = '4'
+					</when>
+					<when test="result eq '3'.toString()">
+						AND R_BUFFER11 = '3'
+					</when>
+					<when test="result eq '2'.toString()">
+						AND R_BUFFER11 = '2'
+					</when>
+					<when test="result eq '0'.toString()">
+						AND (R_BUFFER11 = ''
+						OR R_BUFFER11 IS NULL)
+					</when>
+				</choose>
+			</if>
+			<if test="srecDate!=null and erecDate!=null">
+				AND R_REC_DATE BETWEEN #{srecDate} AND #{erecDate}
+			</if>
+			<if test="srecTime!=null and erecTime!=null">
+				AND R_REC_TIME BETWEEN #{srecTime} AND #{erecTime}
+			</if>
+			<if test="authyInfo != null">
+				AND(
+				<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.mgcode != null">
+						R_MG_CODE = #{item.mgcode} AND
+						</if>
+						<if test="item.sgcode != null">
+						R_SG_CODE = #{item.sgcode} AND
+						</if>
+						<if test="item.user != null">
+						R_USER_ID = #{item.user} AND
+						</if>
+						<if test="item.noneallowable != null">
+						1=2
+						</if>
+					</trim>
+				</foreach>
+				)
+			</if>
+		</where>
+	</sql>
+	
+	<sql id="uploadInfoWhere" databaseId="oracle">
+		<where>
+			R_MG_CODE = 'M003'
+			<if test="extNum != null">
+				AND R_EXT_NUM LIKE '%'||#{extNum}||'%'
+			</if>
+			<if test="custPhone1 != null">
+				AND ( '02' || R_CUST_PHONE1 LIKE '%'||#{custPhone1}||'%' OR R_CUST_PHONE1 LIKE '%'||#{custPhone1}||'%' )
+			</if>
+			<if test="workType!=null">
+				<choose>
+					<when test="workType eq 'B'.toString()">
+						AND (R_BUFFER11 != '11'
+						AND R_BUFFER11 != '16'
+						AND R_BUFFER11 != '17'
+						AND R_BUFFER11 != '18'
+						AND R_BUFFER11 != '19')
+					</when>
+					<when test="workType eq 'D'.toString()">
+						AND (R_BUFFER11 = '11'
+						OR R_BUFFER11 = '16'
+						OR R_BUFFER11 = '17'
+						OR R_BUFFER11 = '18'
+						OR R_BUFFER11 = '19')
+					</when>
+				</choose>
+			</if>
+			<if test="result!=null">
+				<choose>
+					<when test="result eq '1'.toString()">
+						AND (R_BUFFER11 = '1'
+						OR R_BUFFER11 = '11')
+					</when>
+					<when test="result eq '9'.toString()">
+						AND (R_BUFFER11 = '9'
+						OR R_BUFFER11 = '19')
+					</when>
+					<when test="result eq '8'.toString()">
+						AND (R_BUFFER11 = '8'
+						OR R_BUFFER11 = '18')
+					</when>
+					<when test="result eq '7'.toString()">
+						AND (R_BUFFER11 = '7'
+						OR R_BUFFER11 = '17')
+					</when>
+					<when test="result eq '6'.toString()">
+						AND (R_BUFFER11 = '6'
+						OR R_BUFFER11 = '16')
+					</when>
+					<when test="result eq '5'.toString()">
+						AND R_BUFFER11 = '5'
+					</when>
+					<when test="result eq '4'.toString()">
+						AND R_BUFFER11 = '4'
+					</when>
+					<when test="result eq '3'.toString()">
+						AND R_BUFFER11 = '3'
+					</when>
+					<when test="result eq '2'.toString()">
+						AND R_BUFFER11 = '2'
+					</when>
+					<when test="result eq '0'.toString()">
+						AND (R_BUFFER11 = ''
+						OR R_BUFFER11 IS NULL)
+					</when>
+				</choose>
+			</if>
+			<if test="srecDate!=null and erecDate!=null">
+				AND R_REC_DATE BETWEEN #{srecDate} AND #{erecDate}
+			</if>
+			<if test="srecTime!=null and erecTime!=null">
+				AND R_REC_TIME BETWEEN #{srecTime} AND #{erecTime}
+			</if>
+			<if test="authyInfo != null">
+				AND(
+				<foreach collection="authyInfo" item="item" separator=")OR(" open="(" close=")">
+					<trim suffixOverrides="AND">
+						<if test="item.bgcode != null">
+						R_BG_CODE = #{item.bgcode} AND
+						</if>
+						<if test="item.mgcode != null">
+						R_MG_CODE = #{item.mgcode} AND
+						</if>
+						<if test="item.sgcode != null">
+						R_SG_CODE = #{item.sgcode} AND
+						</if>
+						<if test="item.user != null">
+						R_USER_ID = #{item.user} AND
+						</if>
+						<if test="item.noneallowable != null">
+						1=2
+						</if>
+					</trim>
+				</foreach>
+				)
+			</if>
+		</where>
+	</sql>
+	
+	<select id="selectUploadInfo"  parameterType="com.furence.recsee.uploadstatus.model.UploadInfo" resultMap="ResultMap" databaseId="postgres">
+		SELECT
+			R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			<!-- R_CUST_PHONE1, -->
+			,(CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+				CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 9)
+					 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+					 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 7)
+				ELSE
+					SUBSTRING(R_CUST_PHONE1, 1, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+				END
+			ELSE
+				R_CUST_PHONE1
+			END) AS R_CUST_PHONE1			
+			,	R_USER_ID
+			,	R_BUFFER11
+			,	R_BUFFER12
+			,	R_BUFFER13
+			,	R_BUFFER14
+			,	R_BUFFER15
+		FROM 
+			RS_RECFILE
+		<include refid="uploadInfoWhere"></include>
+		
+		UNION
+		(SELECT
+			R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			<!-- R_CUST_PHONE1, -->
+			,(CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+				CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 9)
+					 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+					 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 7)
+				ELSE
+					SUBSTRING(R_CUST_PHONE1, 1, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+				END
+			ELSE
+				R_CUST_PHONE1
+			END) AS R_CUST_PHONE1		
+			,	R_USER_ID
+			,	R_BUFFER11
+			,	R_BUFFER12
+			,	R_BUFFER13
+			,	R_BUFFER14
+			,	R_BUFFER15
+		FROM 
+			RS_UPLOAD_INDIV
+		<include refid="uploadInfoWhere"></include>
+		)
+		ORDER BY R_REC_DATE DESC, R_REC_TIME DESC, R_BUFFER12 DESC
+			<choose>
+					<when test="count != null and posStart != null">
+						LIMIT #{count} OFFSET #{posStart}
+					</when>
+					<otherwise>
+						LIMIT 50 OFFSET 0
+					</otherwise>
+			</choose>
+	</select> 
+	
+	<select id="selectUploadInfo"  parameterType="com.furence.recsee.uploadstatus.model.UploadInfo" resultMap="ResultMap" databaseId="sqlserver">
+		SELECT
+			R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			<!-- R_CUST_PHONE1, -->
+			,(CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+				CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 9)
+					 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+					 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 7)
+				ELSE
+					SUBSTRING(R_CUST_PHONE1, 1, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+				END
+			ELSE
+				R_CUST_PHONE1
+			END) AS R_CUST_PHONE1		
+			,	R_USER_ID
+			,	R_BUFFER11
+			,	R_BUFFER12
+			,	R_BUFFER13
+			,	R_BUFFER14
+			,	R_BUFFER15
+		FROM 
+			RS_RECFILE
+		<include refid="uploadInfoWhere"></include>
+		
+		UNION
+		(SELECT
+			R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			<!-- R_CUST_PHONE1, -->
+			,(CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+				CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 9)
+					 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+					 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 7)
+				ELSE
+					SUBSTRING(R_CUST_PHONE1, 1, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+				END
+			ELSE
+				R_CUST_PHONE1
+			END) AS R_CUST_PHONE1		
+			,	R_USER_ID
+			,	R_BUFFER11
+			,	R_BUFFER12
+			,	R_BUFFER13
+			,	R_BUFFER14
+			,	R_BUFFER15
+		FROM 
+			RS_UPLOAD_INDIV
+		<include refid="uploadInfoWhere"></include>
+		)
+		ORDER BY R_REC_DATE DESC, R_REC_TIME DESC, R_BUFFER12 DESC
+			<choose>
+					<when test="count != null and posStart != null">
+						OFFSET #{posStart} ROWS FETCH NEXT #{count} ROWS ONLY
+					</when>
+					<otherwise>
+						OFFSET 0 ROWS FETCH NEXT 50 ROWS ONLY
+					</otherwise>
+			</choose>
+	</select> 
+	
+	
+	<select id="selectUploadInfo"  parameterType="com.furence.recsee.uploadstatus.model.UploadInfo" resultMap="ResultMap" databaseId="oracle">
+		SELECT *
+		FROM (
+		    SELECT PAGE.*, ROWNUM RNUM
+		    FROM (
+				SELECT
+					R_REC_DATE
+					,	R_REC_TIME
+					,	R_EXT_NUM
+					<!-- R_CUST_PHONE1, -->
+					,(CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+						<!-- CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 9)
+							 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+							 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 7) -->
+							 CASE WHEN INSTR(R_CUST_PHONE1, '9010') = 1  THEN SUBSTR(R_CUST_PHONE1, 2, 3)||'****'||SUBSTR(R_CUST_PHONE1, 9)
+							 WHEN INSTR(R_CUST_PHONE1, '902') = 1  THEN SUBSTR(R_CUST_PHONE1, 2, 2)||'****'||SUBSTR(R_CUST_PHONE1, 8)
+							 WHEN INSTR(R_CUST_PHONE1, '02') = 1  THEN SUBSTR(R_CUST_PHONE1, 1, 2)||'****'||SUBSTR(R_CUST_PHONE1, 7)
+						ELSE
+							SUBSTR(R_CUST_PHONE1, 1, 3)||'****'||SUBSTR(R_CUST_PHONE1, 8)
+						END
+					ELSE
+						R_CUST_PHONE1
+					END) AS R_CUST_PHONE1			
+					,	R_USER_ID
+					,	R_BUFFER11
+					,	R_BUFFER12
+					,	R_BUFFER13
+					,	R_BUFFER14
+					,	R_BUFFER15
+				FROM 
+					RS_RECFILE
+				<include refid="uploadInfoWhere"></include>
+				
+				UNION
+				(SELECT
+					R_REC_DATE
+					,	R_REC_TIME
+					,	R_EXT_NUM
+					<!-- R_CUST_PHONE1, -->
+					,(CASE WHEN CHAR_LENGTH(R_CUST_PHONE1) > 8 THEN
+						<!-- CASE WHEN POSITION('9010' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 3)||'****'||SUBSTRING(R_CUST_PHONE1, 9)
+							 WHEN POSITION('902' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 2, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 8)
+							 WHEN POSITION('02' IN R_CUST_PHONE1) = 1  THEN SUBSTRING(R_CUST_PHONE1, 1, 2)||'****'||SUBSTRING(R_CUST_PHONE1, 7) -->
+							 CASE WHEN INSTR(R_CUST_PHONE1, '9010') = 1  THEN SUBSTR(R_CUST_PHONE1, 2, 3)||'****'||SUBSTR(R_CUST_PHONE1, 9)
+							 WHEN INSTR(R_CUST_PHONE1, '902') = 1  THEN SUBSTR(R_CUST_PHONE1, 2, 2)||'****'||SUBSTR(R_CUST_PHONE1, 8)
+							 WHEN INSTR(R_CUST_PHONE1, '02') = 1  THEN SUBSTR(R_CUST_PHONE1, 1, 2)||'****'||SUBSTR(R_CUST_PHONE1, 7)
+						ELSE
+							SUBSTR(R_CUST_PHONE1, 1, 3)||'****'||SUBSTR(R_CUST_PHONE1, 8)
+						END
+					ELSE
+						R_CUST_PHONE1
+					END) AS R_CUST_PHONE1		
+					,	R_USER_ID
+					,	R_BUFFER11
+					,	R_BUFFER12
+					,	R_BUFFER13
+					,	R_BUFFER14
+					,	R_BUFFER15
+				FROM 
+					RS_UPLOAD_INDIV
+				<include refid="uploadInfoWhere"></include>
+				)
+				ORDER BY R_REC_DATE DESC, R_REC_TIME DESC, R_BUFFER12 DESC
+				<choose>
+						<when test="count != null and posStart != null">
+							<!-- LIMIT #{count} OFFSET #{posStart} -->
+							 ) PAGE
+						    WHERE ROWNUM <![CDATA[<=]]>TO_NUMBER(#{count}+#{posStart})
+						) PAGE
+						WHERE RNUM <![CDATA[>]]> #{posStart}
+						</when>
+						<otherwise>
+							<!-- LIMIT 50 OFFSET 0 -->
+							) PAGE
+						    WHERE ROWNUM <![CDATA[<=]]> 50
+						) PAGE
+						WHERE RNUM <![CDATA[>]]> 0
+						</otherwise>
+				</choose>
+	</select> 
+ 	
+ 	<select id="CountUploadSelect" parameterType="com.furence.recsee.uploadstatus.model.UploadInfo" resultType="Integer">
+		WITH RECLIST AS(
+			SELECT
+				COUNT(*) AS CO
+			FROM 
+			RS_RECFILE			
+			<include refid="uploadInfoWhere"></include>
+		),UPLOADLIST AS(
+			SELECT
+				COUNT(*) AS CO
+			FROM 
+				RS_UPLOAD_INDIV
+			<include refid="uploadInfoWhere"></include>
+			)	SELECT RECLIST.CO+UPLOADLIST.CO FROM RECLIST, UPLOADLIST
+	</select>
+ 	
+ 	<insert id="insertUpload" parameterType="com.furence.recsee.uploadstatus.model.UploadInfo" databaseId="postgres">
+ 		WITH UP AS
+ 			(
+ 			UPDATE RS_RECFILE
+ 			SET R_BUFFER11 = '8'
+ 			WHERE 
+ 				R_REC_DATE = REPLACE(#{recDate},'-','') AND 
+ 				R_REC_TIME = REPLACE(#{recTime},':','') AND 
+ 				R_EXT_NUM = #{extNum} AND
+ 				(R_BUFFER11 IS NULL OR 
+ 				R_BUFFER11 = '' OR 
+ 					(
+	 				R_BUFFER11 != '1' AND 
+	 				R_BUFFER11 != '11' AND 
+	 				R_BUFFER11 != '8'
+	 				)
+ 				) AND
+ 				R_USER_ID IS NOT NULL AND R_USER_ID != '' AND
+ 				R_USER_NAME IS NOT NULL AND R_USER_NAME != '' AND
+ 				R_CUST_PHONE1 IS NOT NULL AND R_CUST_PHONE1 != '' AND
+ 				R_CUST_NAME IS NOT NULL AND R_CUST_NAME != '' AND
+ 				R_CALL_ETIME IS NOT NULL AND R_CALL_ETIME != ''
+ 				
+ 			RETURNING *
+ 			)
+
+ 		INSERT INTO 
+ 			RS_UPLOAD_INDIV
+	 		(
+	 			R_REC_DATE 
+	 			,	R_REC_TIME
+	 			,	R_EXT_NUM
+	 			,	R_USER_ID
+	 			,	R_USER_NAME
+	 			,	R_CUST_PHONE1
+	 			,	R_CUST_NAME
+	 			,	R_CALL_ETIME
+	 			,	R_LISTEN_URL
+	 			,	R_BUFFER11
+	 			,	R_BUFFER12
+	 			,	R_BG_CODE
+	 			,	R_MG_CODE
+	 			,	R_SG_CODE
+	 		)
+	 		SELECT
+	 		
+	 			UP.R_REC_DATE
+	 			, UP.R_REC_TIME
+	 			, UP.R_EXT_NUM
+	 			, UP.R_USER_ID
+	 			, UP.R_USER_NAME
+	 			, UP.R_CUST_PHONE1
+	 			, UP.R_CUST_NAME
+	 			, UP.R_CALL_ETIME
+	 			, UP.R_LISTEN_URL
+	 			, '18'
+	 			,	(SELECT 
+		 				COUNT(*) AS COUNT
+		 			FROM RS_UPLOAD_INDIV
+		 			WHERE 
+		 				R_REC_DATE = REPLACE(#{recDate},'-','') AND 
+		 				R_REC_TIME = REPLACE(#{recTime},':','') AND 
+		 				R_EXT_NUM = #{extNum}
+ 					)
+	 			,	UP.R_BG_CODE
+	 			,	UP.R_MG_CODE
+	 			,	UP.R_SG_CODE
+	 			FROM UP
+ 	</insert>
+ 	
+ 	<insert id="insertUpload" parameterType="com.furence.recsee.uploadstatus.model.UploadInfo" databaseId="sqlserver">
+ 		UPDATE RS_RECFILE
+ 			SET R_BUFFER11 = '8'
+ 			OUTPUT
+ 			
+ 			
+	 		
+	 			INSERTED.R_REC_DATE
+	 			, INSERTED.R_REC_TIME
+	 			, INSERTED.R_EXT_NUM
+	 			, INSERTED.R_USER_ID
+	 			, INSERTED.R_USER_NAME
+	 			, INSERTED.R_CUST_PHONE1
+	 			, INSERTED.R_CUST_NAME
+	 			, INSERTED.R_CALL_ETIME
+	 			, INSERTED.R_LISTEN_URL
+	 			, '18'
+	 			<!-- output구문에서 서브쿼리 안써지는 문제 해결 필요 -->
+	 			,	(SELECT 
+		 				COUNT(*) AS COUNT
+		 			FROM RS_UPLOAD_INDIV
+		 			WHERE 
+		 				R_REC_DATE = REPLACE(#{recDate},'-','') AND 
+		 				R_REC_TIME = REPLACE(#{recTime},':','') AND 
+		 				R_EXT_NUM = #{extNum}
+ 					)
+	 			,	INSERTED.R_BG_CODE
+	 			,	INSERTED.R_MG_CODE
+	 			,	INSERTED.R_SG_CODE
+	 			
+	 	INTO 
+ 			RS_UPLOAD_INDIV
+	 		(
+	 			R_REC_DATE 
+	 			,	R_REC_TIME
+	 			,	R_EXT_NUM
+	 			,	R_USER_ID
+	 			,	R_USER_NAME
+	 			,	R_CUST_PHONE1
+	 			,	R_CUST_NAME
+	 			,	R_CALL_ETIME
+	 			,	R_LISTEN_URL
+	 			,	R_BUFFER11
+	 			,	R_BUFFER12
+	 			,	R_BG_CODE
+	 			,	R_MG_CODE
+	 			,	R_SG_CODE
+	 		)
+		WHERE 
+			R_REC_DATE = REPLACE(#{recDate},'-','') AND 
+			R_REC_TIME = REPLACE(#{recTime},':','') AND 
+			R_EXT_NUM = #{extNum} AND
+			(R_BUFFER11 IS NULL OR 
+				(
+				R_BUFFER11 != '1' AND 
+				R_BUFFER11 != '11' AND 
+				R_BUFFER11 != '8'
+				)
+			)
+	 		
+ 	</insert>
+ 	
+ 	<insert id="insertUpload" parameterType="com.furence.recsee.uploadstatus.model.UploadInfo" databaseId="oracle">
+ 		DECLARE
+		  row_id ROWID;
+		BEGIN
+ 			UPDATE RS_RECFILE
+ 			SET R_BUFFER11 = '8'
+ 			WHERE 
+ 				R_REC_DATE = REPLACE(#{recDate},'-','') AND 
+ 				R_REC_TIME = REPLACE(#{recTime},':','') AND 
+ 				R_EXT_NUM = #{extNum} AND
+ 				(R_BUFFER11 IS NULL OR 
+ 				R_BUFFER11 = '' OR 
+ 					(
+	 				R_BUFFER11 != '1' AND 
+	 				R_BUFFER11 != '11' AND 
+	 				R_BUFFER11 != '8'
+	 				)
+ 				) AND
+ 				R_USER_ID IS NOT NULL AND R_USER_ID != '' AND
+ 				R_USER_NAME IS NOT NULL AND R_USER_NAME != '' AND
+ 				R_CUST_PHONE1 IS NOT NULL AND R_CUST_PHONE1 != '' AND
+ 				R_CUST_NAME IS NOT NULL AND R_CUST_NAME != '' AND
+ 				R_CALL_ETIME IS NOT NULL AND R_CALL_ETIME != ''
+ 				
+ 			RETURNING ROWID INTO row_id;
+
+	 		INSERT INTO 
+	 			RS_UPLOAD_INDIV
+		 		(
+		 			R_REC_DATE 
+		 			,	R_REC_TIME
+		 			,	R_EXT_NUM
+		 			,	R_USER_ID
+		 			,	R_USER_NAME
+		 			,	R_CUST_PHONE1
+		 			,	R_CUST_NAME
+		 			,	R_CALL_ETIME
+		 			,	R_LISTEN_URL
+		 			,	R_BUFFER11
+		 			,	R_BUFFER12
+		 			,	R_BG_CODE
+		 			,	R_MG_CODE
+		 			,	R_SG_CODE
+		 		)
+		 		SELECT
+		 		
+		 			  REC.R_REC_DATE
+		 			, REC.R_REC_TIME
+		 			, REC.R_EXT_NUM
+		 			, REC.R_USER_ID
+		 			, REC.R_USER_NAME
+		 			, REC.R_CUST_PHONE1
+		 			, REC.R_CUST_NAME
+		 			, REC.R_CALL_ETIME
+		 			, REC.R_LISTEN_URL
+		 			, '18'
+		 			,	(SELECT 
+			 				COUNT(*) AS COUNT
+			 			FROM RS_UPLOAD_INDIV
+			 			WHERE 
+			 				R_REC_DATE = REPLACE(#{recDate},'-','') AND 
+			 				R_REC_TIME = REPLACE(#{recTime},':','') AND 
+			 				R_EXT_NUM = #{extNum}
+	 					)
+		 			,	REC.R_BG_CODE
+		 			,	REC.R_MG_CODE
+		 			,	REC.R_SG_CODE
+		 			FROM DUAL, RS_RECFILE REC
+		        	WHERE REC.ROWID = row_id;
+		
+			END;
+ 	</insert>
+</mapper>

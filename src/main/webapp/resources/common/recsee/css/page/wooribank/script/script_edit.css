@@ -1,0 +1,776 @@
+
+pre {
+	white-space: pre-wrap;
+}
+
+[id^="scriptDetailText"] {
+	font-size: 12px !important;
+}
+
+[id^="scriptDetailNewText"] {
+	font-size: 12px !important;
+}
+
+/* 전체 */
+.script_wrap{
+	height : 100%;
+}
+
+/* 전체 */
+.wrap {
+	width : 100%;
+	height : 100%;
+}
+
+/* 상품정보*/
+.product_info{
+	width : 100%
+}
+.real_product_info{
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+    min-height: 78px;
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    font-size : 14px;
+}
+/* 상품명 */
+#productName{
+    width: 30%;
+    min-width: 20%;
+	
+}
+
+/* 상품유형 */
+#productType{
+    width: 15%;
+    min-width: 10%;
+	
+}
+
+/* 그룹코드 */
+#productGroupCode{
+    width: 15%;
+    min-width: 10%;	
+
+}
+
+/* 상품코드 */
+#productCode{
+    width: 15%;
+    min-width: 10%;	
+
+}
+
+/* 위니업데이트 정보전체 */
+#productDataInfo{
+    width: 31%;
+    min-width: 10%;	
+
+}
+/* 위니업데이트 */
+#winiValue{
+	 width: 100%;
+	 color :  #e71515;
+ 	 font-size : 12.5px;
+	 line-height : 1.5;
+}
+
+/* 상품정보 각 한칸*/
+.productInfoVal{
+    display: flex;
+    flex-direction: column;
+    justify-content : space-evenly;
+    height : 100%;
+    min-height : 75px;
+	
+}
+
+/* 상품정보의 첫번째 칸*/
+.productInfoName{
+	height : 45%;
+	padding : 5px 5px 5px 5px;
+	font-weight : 600;
+}
+
+/* 상품정보의 두번째 칸*/
+.productInfoText{
+	height : 45%;
+	padding : 5px 5px 5px 15px;
+}
+
+/* scriptStep & detail 감싼 전체*/
+.scriptWrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height : calc(100% - 115px);
+/*     height : calc(100% - 101px); */
+}
+
+/*scriptStep*/
+/* script_step 영역*/
+.script_step_wrap{
+    width: 32%;
+    height : 99%;
+    box-sizing: border-box;
+    border-right: 1px solid #DEE1E7;
+    min-height: calc(100vh - 200px);
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+}
+
+
+
+
+/* script_step 전체*/
+.script_step_area{
+	width: 100%;
+	height : 95%;
+}
+
+/* script_step header*/
+.script_step_header{
+	display: flex;
+	height : 4%;
+	min-height : 3%;
+	border-bottom : 1px solid #dee1e7;
+	font-weight : bold;
+	font-size : 14px;
+    align-items: center;
+    justify-content : space-between;
+}
+
+.addScriptStepBtn{
+	font-size:12px ; 
+	width : 100px; 
+	height : 30px;
+	margin-left :10px; 
+	background-color :#111418; 
+	margin-bottom : 5px;
+}
+
+/* script_step contents*/
+.script_step_content{
+	height : 90%;
+}
+
+#scriptTreeGrid{
+	height : 98%;
+/* 	border-bottom : 2px solid #dee1e7  ; */
+/* 	width: 400px !important; */
+    height: 788px ;
+    background-color: white ;
+    border-collapse: collapse ;
+    position: relative ;
+    overflow: auto ;
+}
+
+#scriptTreeGrid {
+	height: 101%;
+/* 	border-bottom: 2px solid #dee1e7; */
+	overflow-x: hidden;
+}
+
+#scriptGrid {
+	width: 100% !important;
+}
+
+.objbox .row20px {
+	width :100% !important;
+}
+
+
+#scriptGrid.gridbox table.obj td{
+	border : 0px!important;
+}
+
+#scriptGrid.gridbox {
+	border : 0px !important;
+}
+
+
+#scriptGrid>.xhdr {
+	height: 0px !important;
+}
+
+#scriptTreeGrid ul {
+	width: 100% !important;
+	height: 100% !importants;
+}
+
+#scriptTreeGrid ul li {
+	width: 400px !important;
+	height: 40px !important;
+	font-size: 15px !important;
+	text-align: left !important;
+	color: #000000 !important;
+	border: 1px solid #efefef !important;
+	border-collapse: collapse !important;
+	padding: 20px 40px 0px !important;
+	vertical-align: middle !important;
+	cursor: pointer !important;
+}
+
+#scriptTreeGrid ul li:hover {
+	background-color: #deedff !important;
+}
+
+.genneralCheck common{
+	width : 140px  !important;
+	margin-left : 2px   !important;
+	
+}
+.treegrid_cell{
+    overflow: hidden !important;
+    white-space: normal !important;
+    line-height: 23px !important;
+    height: auto !important;
+	
+}
+
+/*scriptDetail*/
+
+/* script_detail 전체*/
+.script_detail_wrap{ 
+	width: 100%;
+	padding: 0px 10px 0px 10px;
+    height : 99%;
+
+}
+/* script_detail 전체*/
+.script_detail_area{
+	width: 100%;
+    height : 93%;
+}
+
+
+/* script_detail header*/
+.script_detail_header{
+    display: flex;
+    justify-content: flex-start;
+    height : 4%;
+    min-height : 2%;
+    align-items: center;
+  
+}
+
+/* script_step 제목구분*/
+.script_step_title{
+	width : 10%;
+	min-width : 5%;
+	font-size : 14px;
+	font-weight : bold;
+	line-height : 2em;
+	
+}
+
+/* script_step 제목text*/
+.script_step_title_text{
+	width : 90%;
+/* 	width : calc(100% - 70px); */
+	height : 20px;
+	border-radius : 4px;
+	
+}
+
+/* 저장버튼 */
+.add_Step_Btn{
+	font-size:14px ; 
+	width : 9%; 
+	height: 30px ; 
+	margin-left :10px; 
+	float : right;
+	background-color :#111418;
+	align-items : center;
+}
+
+
+
+/* script_detail_btn_line*/
+.script_detail_btn_Line{
+    width: 54%;
+    min-width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*엑셀*/
+#excel_download_btn{
+	background-color : #f9f9f9;
+	border : 1px solid #dbdbdb;
+	color : black;
+}
+
+/*pdf*/
+#pdf_download_btn{
+	background-color : #f9f9f9;
+	border : 1px solid #dbdbdb;
+	color : black;
+}
+
+/*복사하기*/
+#copy_script_btn{
+	background-color : #BABABA;
+	color : white;
+}
+
+/*스크립트수정*/
+#edit_script_btn{
+	background-color : #dad7d7;
+	color : black;
+}
+
+/*목록보기*/
+#back_script_btn{
+	background-color : #111418 ;
+	color : #fff ;
+}
+
+/* script_detail_btn 공통*/
+.script_detail_btn{
+	cursor : pointer;
+    height: 26px ;
+    width: auto ;
+    float: right;
+    padding: 0 5px 0 5px;
+    border-radius : 3px;
+    margin: 0px 0px 0px 5px;
+    display :flex;
+    border : 0;
+    align-items: center;
+}
+
+/* script_detailcontents*/
+.script_detail_content{
+    display: flex;
+    flex-direction: column;
+    height : 94%;
+}
+
+/* script_detailcontents  구분text,제목 버튼 라인 감싼 전체*/
+.script_detail_content_info{
+    display: flex;
+    justify-content: space-between;
+    height: 7%;
+    align-items: center;
+}
+
+/* script_detailcontents 구성 구분*/
+.script_detail_content_title{
+    width: 20%;
+    min-width: 15%;
+	font-size : 14px;
+	font-weight : bold;
+}
+
+
+
+/* script_detailcontents 추가버튼 라인*/
+.script_detail_content_btn_Line{
+    width: 75%;
+    display: flex;
+    justify-content: flex-end;
+	
+}
+/*공용문구*/
+#common_sentence_btn{
+	background-color: #083378 ;
+    color: #fff ;
+}
+
+/*TTS리딩*/
+#add_content_Btn{
+	background-color: #BABABA ;
+    color: #fff ;
+}
+
+/*직원직접리딩*/
+#add_adviser_Btn{
+    background: #e39696;
+    color: #fff;
+}
+
+/*고객답변*/
+#add_direction_Btn{
+	background-color: #e7b356 ;
+    color: #fff ;
+}
+
+/*적합성보고서*/
+#add_object_Btn{
+    background-color: #4f6cbf;
+    color: #fafbfd;
+}
+/* script_detailcontents 추가버튼 공통*/
+.detail_content_btn{
+    cursor: pointer;
+    height: 26px;
+    width: auto;
+    float: right;
+    padding: 0 10px 0 10px;
+    background-color: #BABABA;
+    border-radius: 3px;
+    margin: 0px 0px 0px 5px;
+    display : flex;
+	border : 0;
+	align-items: center;
+	border : 1px solid #dddddd;
+	font-weight : bold;
+}
+
+/* 공용문구 */
+.content_btn{
+    cursor: pointer;
+    height: 26px;
+    width: auto;
+    float: right;
+    padding: 0 10px 0 10px;
+    background-color: #BABABA;
+    border-radius: 3px;
+    margin: 0px 0px 0px 5px;
+    display : flex;
+	border : 0;
+	align-items: center;
+	border : 1px solid #dddddd;
+	font-weight : bold;
+}
+
+/* script_detailcontents 스크립트내역이 표출될 영역*/
+.script_detail_content_value{
+    height : 95%;
+    min-height : 85%;
+    background-color : #efefef;
+    padding : 10px;
+    overflow-y : auto;
+    overflow-x : hidden;
+    
+}
+.real_script_detail_content_value{
+    height : 100%;
+	
+}
+
+
+/* 스크립트  ELt 상품 조건 표출 될 bar*/
+.eltProductCondition{
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 100% !important;
+    line-height: 20px !important;
+    height: auto;
+    margin: 5px 0px 0px 0px;
+    display: inline-flex;
+}
+
+.eltProductValue{ 
+    border: 1px solid #dddddd;
+    border-radius: 5px !important;
+    line-height: 20px !important;
+    margin: 0px 0px 0px 0px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    padding: 0px 5px 0px 5px;		
+}
+
+.eltProductConditionName{
+    width: auto;
+    color : white;
+    font-weight : 100;
+    font-size : 11px;
+}
+
+
+.script{
+	padding: 5px;
+	border-radius: 5px;
+}
+#playZone{
+    margin-top: 5px ;
+    width: 100% ;
+    height : 5%;
+    min-height : 3%;
+    background-color: #f1f3f4 ;
+}
+
+#audioPlayer{
+    width: 100% ;
+    height: 100% ;
+}
+
+.BtnLine {
+	width: 100%;
+}
+
+.textArea {
+	background-color: white;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	width: 100%;
+	line-height: 20px;
+}
+/*  결재의뢰, 취소 버튼 라인*/
+#transactionButtons{
+    display: flex;
+    justify-content: flex-end;	
+    height : 5%;
+    align-items : center;
+}
+
+/*  결재의뢰, 취소 버튼 공통*/
+.edit_btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: auto;
+    padding: 0 10px 0 10px;
+    margin: 0 0 0 5px;
+    font-weight: bold;
+}
+
+#commitBtn{
+	background-color: #1760F0;
+    color: #fff;
+
+}
+
+#rollbackBtn{
+    background-color: #8A93A4;
+    color: #fff;
+
+}
+
+/*  결재 의뢰 후 날짜 적용하는 팝업창에 대한 알림*/
+
+#saveApplyDatePopup {
+    position: absolute;
+    height: auto;
+    padding-bottom: 5px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    z-index: 104;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, 'Noto Sans KR', Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#saveApplyDateHeader {
+	height: 35px;
+	background-color: #1760F0;
+	padding: 0 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px 5px 0 0;
+}
+
+#applyDateTitle {
+	color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#datePopupCloseBtn {
+    display: block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#saveApplyDateBody {
+	width: 300px;
+}
+
+#selectDateTable {
+	table-layout: fixed;
+	width: 100%;
+	padding: 20px 10px;
+}
+
+#selectDateTable th {
+	width: 100px;
+	text-align: center;
+	font-weight: 700;
+	vertical-align: middle;
+	font-size: 14px;
+	padding: 4px 0;
+}
+
+#selectDateTable td {
+	padding: 4px 0;
+}
+
+#applyDate {
+	width: 115px !important;
+}
+
+#dateButtons {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.date-btn-grey {
+    background-color: #8A93A4;
+}
+
+.date-btn-primary {
+	background-color: #1760F0;
+	margin-left: 30px;
+}
+
+[class^="date-btn-"] {
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	border: 0;
+	width: 63px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 13px;
+	color: #fff;
+}
+
+
+/* 상품목록 팝업창 */
+#groupListPopup {
+    position: absolute;
+    width: 600px;
+    padding-bottom: 5px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    z-index: 104;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, 'Noto Sans KR', Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#groupListCloseHeader {
+	display: flex;
+	justify-content: space-between;
+	height: 20px;
+}
+
+#groupListTitle {
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	padding: 5px 0 5px 10px;
+}
+
+#groupListPopupCloseBtn {
+    display: block;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin: 5px;
+    float: right;
+}
+
+#groupListContentWrap {
+    width: 588px; 
+    overflow: auto;
+    border: 1px solid #dddddd;
+    margin: 3px 3px 0 3px;
+    padding: 0px 2px 0px 2px;
+}
+
+.groupProductListLabel {
+/* 	display: inline-block; */
+	width: 20px;
+	height: 20px;
+}
+
+.flexList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1px 1px 1px 1px;
+    width: max-content;
+    font-weight: 600;
+}
+
+.flexListName{
+    border-bottom: 1px solid #efefef ;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    margin: 1px 7px 1px 7px;
+    width: 95%;
+}
+
+
+
+/*반응협 ==>screen width가 980px일때 */
+@media  (max-width:1085px) {  
+	
+	.wrap{
+		width : 1085px;		
+	}	
+	
+	.script_detail_btn_Line{
+		font-size : 12px;
+		padding : 0px; 
+	}
+	
+	.script_detail_btn{
+		font-size : 12px;
+		padding : 0px; 
+	}	
+	
+	.detail_content_btn{
+		font-size : 12px;
+		padding : 0px; 
+	}
+}
+
+/*반응협 ==>screen height가 780px일때 */
+@media  (max-height:780px){
+	.wrap{
+		height : 780px;
+	}	
+	.script_detail_btn_Line{
+		font-size : 12px;
+		padding : 0px; 
+	}
+	.script_detail_btn{
+		font-size : 12px;
+		padding : 0px; 
+	}	
+	.detail_content_btn{
+		font-size : 12px;
+		padding : 0px; 
+	}
+}
+
+
+/*반응협 ==>screen width가 980px일때 */
+@media  (max-width:1280px) {  
+	
+	#scriptGrid{
+		width : 100% !important;
+	}
+	
+	
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+	.productInfoVal{
+	    display: flex;
+	    flex-direction: column;
+	    justify-content : space-between;
+	    height : 100%;
+	    min-height : 75px;
+	}
+	
+	#productDataInfo{
+	 justify-content : flex-start;
+	}
+}

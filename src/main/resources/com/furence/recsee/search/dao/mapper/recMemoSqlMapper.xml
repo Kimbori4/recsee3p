@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.RecMemoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.RecMemo">
+
+		<result column="R_MEMO_IDX" 	jdbcType="VARCHAR" property="memoIdx" />
+		<result column="R_REC_DATE" 	jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_TIME" 	jdbcType="VARCHAR" property="recTime" />
+		<result column="R_EXT_NUM" 		jdbcType="VARCHAR" property="extNum" />
+		<result column="R_CUST_PHONE1" 	jdbcType="VARCHAR" property="custPhone1" />
+		<result column="R_USER_ID" 		jdbcType="VARCHAR" property="userId" />
+		<result column="R_LEFT_POS" 	jdbcType="VARCHAR" property="leftPos" />
+		<result column="R_WIDTH" 		jdbcType="VARCHAR" property="width" />
+		<result column="R_MEMO" 		jdbcType="VARCHAR" property="memo" />
+		<result column="R_START_TIME" 	jdbcType="VARCHAR" property="startTime" />
+		<result column="R_END_TIME" 	jdbcType="VARCHAR" property="endTime" />
+
+	</resultMap>
+
+	<!-- 메모만 독립적으로 셀렉트 할 경우가 생길까...?; -->
+	<select id="selectRecMemo" parameterType="com.furence.recsee.common.model.RecMemo" resultMap="BaseResultMap">
+		SELECT *
+		FROM
+		RS_REC_MEMO
+		<where>
+			R_REC_DATE = #{recDate}
+			<if test="startTime != null">
+				AND	R_REC_TIME = #{recTime}
+			</if>
+			<if test="extNum != null">
+				AND R_EXT_NUM = #{extNum}
+			</if>
+		</where>
+	</select>
+	
+	<select id='selectTagCheck'  parameterType="com.furence.recsee.main.model.SearchListInfo" resultType="Integer">
+		SELECT COUNT(*)
+		  FROM rs_rec_memo 
+		 <where>
+		 R_REC_DATE = #{recDate}
+		 AND R_REC_TIME = #{recTime} 
+		 AND r_user_id = #{userId} 
+		 AND ((r_start_time <![CDATA[ <= ]]> #{startTime} and r_end_time <![CDATA[ >= ]]> #{startTime}) 
+		  OR (r_start_time <![CDATA[ <= ]]> #{endTime} and r_end_time <![CDATA[ >= ]]> #{endTime})) 
+		 </where> 
+ 
+	</select>
+
+	<insert id="insertRecMemo" databaseId="postgres" parameterType="com.furence.recsee.common.model.RecMemo" keyProperty="memoIdx"  keyColumn="r_memo_idx">
+		<selectKey keyProperty="memoIdx" resultType="String" order="BEFORE">
+			SELECT CAST( nextval('rs_rec_memo_r_memo_idx_seq') as INTEGER) as memoIdx;
+		</selectKey>
+
+		INSERT INTO RS_REC_MEMO
+		(
+				R_MEMO_IDX
+			,	R_SERVER_IP
+			,	R_CONTEXT_PATH
+			,	R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_USER_ID
+			<!-- ,	R_V_FILE_NAME -->
+			,	R_START_TIME
+			,	R_END_TIME
+			,	R_MEMO
+			,	R_MEMO_TYPE
+		)
+		VALUES
+		(
+				#{memoIdx}::integer
+			,	#{serverIp}
+			,	#{contextPath}
+			,	#{recDate}
+			,	#{recTime}
+			,	#{extNum}
+			,	#{userId}
+			<!-- ,	#{vFileName} -->
+			,	COALESCE(#{startTime},'0')
+			,	COALESCE(#{endTime},'0')
+			,	COALESCE(#{memo},'')
+			,	COALESCE(#{memoType},'S')
+		)	
+	</insert>
+	<insert id="insertRecMemo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.RecMemo" keyProperty="memoIdx"  keyColumn="r_memo_idx">
+		<selectKey keyProperty="memoIdx" resultType="String" order="BEFORE">
+				select max(r_memo_idx)+1 as memoIdx from rs_rec_memo
+		</selectKey>
+		INSERT INTO RS_REC_MEMO
+		(
+
+				R_SERVER_IP
+			,	R_CONTEXT_PATH
+			,	R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_USER_ID
+			,	R_START_TIME
+			,	R_END_TIME
+			,	R_MEMO
+			,	R_MEMO_TYPE
+		)
+
+		output
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'C'
+		 	,	'rs_rec_memo'
+		 	,	convert(integer,inserted.r_memo_idx)
+			,	inserted.r_server_ip
+			,	inserted.r_context_Path
+			,	inserted.r_rec_date
+			,	inserted.r_rec_time
+			,	inserted.r_ext_num
+			,	inserted.r_user_id
+			,	COALESCE(inserted.r_start_time,'0')
+			,	COALESCE(inserted.r_end_time,'0')
+			,	SUBSTRING(COALESCE(inserted.r_memo,''),1,500)
+			,	COALESCE(inserted.r_memo_type,'S')
+
+
+			INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		  , R_SYNC_CULUMN11
+		)
+
+		VALUES
+		(
+
+				#{serverIp}
+			,	#{contextPath}
+			,	#{recDate}
+			,	#{recTime}
+			,	#{extNum}
+			,	#{userId}
+			<!-- ,	#{vFileName} -->
+			,	COALESCE(#{startTime},'0')
+			,	COALESCE(#{endTime},'0')
+			,	COALESCE(#{memo},'')
+			,	COALESCE(#{memoType},'S')
+		)
+
+
+
+	</insert>
+	<insert id="insertRecMemo" databaseId="oracle" parameterType="com.furence.recsee.common.model.RecMemo" keyProperty="memoIdx"  keyColumn="r_memo_idx">
+		<!-- <selectKey keyProperty="memoIdx" resultType="String" order="BEFORE">
+			 SELECT TO_NUMBER("ISEQ$$_74149".NEXTVAL) as memoIdx FROM DUAL
+		</selectKey> -->
+		INSERT ALL 
+		INTO RS_REC_MEMO
+		(
+				<!-- R_MEMO_IDX -->
+				R_SERVER_IP
+			,	R_CONTEXT_PATH
+			,	R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_USER_ID
+			<!-- ,	R_V_FILE_NAME -->
+			,	R_START_TIME
+			,	R_END_TIME
+			,	R_MEMO
+			,	R_MEMO_TYPE
+		)
+		VALUES
+		(
+				<!-- TO_NUMBER(#{memoIdx}) -->
+				#{serverIp,jdbcType=VARCHAR}
+			,	#{contextPath,jdbcType=VARCHAR}
+			,	#{recDate,jdbcType=VARCHAR}
+			,	#{recTime,jdbcType=VARCHAR}
+			,	#{extNum,jdbcType=VARCHAR}
+			,	#{userId,jdbcType=VARCHAR}
+			<!-- ,	#{vFileName} -->
+			,	COALESCE(#{startTime,jdbcType=VARCHAR},'0')
+			,	COALESCE(#{endTime,jdbcType=VARCHAR},'0')
+			,	COALESCE(#{memo,jdbcType=VARCHAR},'')
+			,	COALESCE(#{memoType,jdbcType=VARCHAR},'S')
+		)
+	
+		INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		 <!--  , R_SYNC_CULUMN11 -->
+		)
+		 VALUES
+		 (
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'C'
+		 	,	'rs_rec_memo'
+		 	<!-- ,	TO_NUMBER(#{memoIdx}) -->
+			,	#{serverIp,jdbcType=VARCHAR}
+			,	#{contextPath,jdbcType=VARCHAR}
+			,	#{recDate,jdbcType=VARCHAR}
+			,	#{recTime,jdbcType=VARCHAR}
+			,	#{extNum,jdbcType=VARCHAR}
+			,	#{userId,jdbcType=VARCHAR}
+			,	COALESCE(#{startTime,jdbcType=VARCHAR},'0')
+			,	COALESCE(#{endTime,jdbcType=VARCHAR},'0')
+			,	SUBSTR(COALESCE(#{memo,jdbcType=VARCHAR},''),1,500)
+			,	COALESCE(#{memoType,jdbcType=VARCHAR},'S')
+		 )
+		 SELECT * FROM DUAL
+	</insert>
+	
+	
+	<insert id="upsertRecMemo" databaseId="postgres" parameterType="com.furence.recsee.common.model.RecMemo" keyProperty="memoIdx"  keyColumn="r_memo_idx">
+		<selectKey keyProperty="memoIdx" resultType="String" order="BEFORE">
+			SELECT CAST( nextval('rs_rec_memo_r_memo_idx_seq') as INTEGER) as memoIdx;
+		</selectKey>
+			UPDATE RS_REC_MEMO
+			SET
+				R_MEMO = COALESCE(
+					(select r_memo from RS_REC_MEMO <where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+			</where>)||chr(10)||#{memo},'')
+			<where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+			</where>		
+	</insert>
+	<insert id="upsertRecMemo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.RecMemo" keyProperty="memoIdx"  keyColumn="r_memo_idx">
+
+		UPDATE RS_REC_MEMO
+			SET
+				R_MEMO = COALESCE(
+					(select r_memo from RS_REC_MEMO
+			<where>
+					R_REC_DATE =  #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+			</where>)+char(10)+#{memo},'')
+
+
+			output
+				#{serverIp}
+			,	#{contextPath}
+			,	#{recDate}
+			,	#{recTime}
+			,	#{extNum}
+			,	#{userId}
+			<!-- ,	#{vFileName} -->
+			,	COALESCE(#{startTime},'0')
+			,	COALESCE(#{endTime},'0')
+			,	COALESCE(#{memo},'')
+			,	COALESCE(#{memoType},'S')
+
+
+		<!-- 		WHERE NOT EXISTS(
+			SELECT 1 FROM UPSERT WHERE UPSERT.R_EXT_NUM = #{extNum} AND UPSERT.R_REC_DATE = #{recDate}
+		); -->
+
+			 INTO RS_REC_MEMO
+			(
+				R_SERVER_IP
+			,	R_CONTEXT_PATH
+			,	R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_USER_ID
+			,	R_START_TIME
+			,	R_END_TIME
+			,	R_MEMO
+			,	R_MEMO_TYPE
+			)
+
+			<where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+			</where>
+
+
+<!--
+
+		INSERT INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		  , R_SYNC_CULUMN11
+		)
+		 VALUES
+		 (
+		 	 	CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'C'
+		 	,	'rs_rec_memo'
+		 	,	#{memoIdx}::integer
+			,	#{serverIp}
+			,	#{contextPath}
+			,	#{recDate}
+			,	#{recTime}
+			,	#{extNum}
+			,	#{userId}
+			,	COALESCE(#{startTime},'0')
+			,	COALESCE(#{endTime},'0')
+			,	SUBSTR(COALESCE(#{memo},''),1,500)
+			,	COALESCE(#{memoType},'S')
+		 );
+		INSERT INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		  , R_SYNC_CULUMN11
+		)
+		 SELECT
+		 	 	CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_rec_memo'
+		 	,	UPSERT.R_MEMO_IDX
+			,	UPSERT.R_SERVER_IP
+			,	UPSERT.R_CONTEXT_PATH
+			,	UPSERT.R_REC_DATE
+			,	UPSERT.R_REC_TIME
+			,	UPSERT.R_EXT_NUM
+			,	UPSERT.R_USER_ID
+			,	UPSERT.R_START_TIME
+			,	UPSERT.R_END_TIME
+			,	SUBSTR(COALESCE(#{memo},''),1,500)
+			,	UPSERT.R_MEMO_TYPE
+		FROM UPSERT
+		WHERE NOT EXISTS(
+			SELECT 1 FROM UPSERT WHERE UPSERT.R_EXT_NUM = #{extNum} AND UPSERT.R_REC_DATE = #{recDate}
+		); -->
+	</insert>
+	<insert id="upsertRecMemo" databaseId="oracle" parameterType="com.furence.recsee.common.model.RecMemo" keyProperty="memoIdx"  keyColumn="r_memo_idx">
+		<!-- <selectKey keyProperty="memoIdx" resultType="String" order="BEFORE">
+			SELECT TO_NUMBER("ISEQ$$_74149".NEXTVAL) as memoIdx FROM DUAL
+		</selectKey> -->
+
+		DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_REC_MEMO
+			SET
+				R_MEMO = COALESCE(
+					(select r_memo from RS_REC_MEMO 
+				<where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+				</where>
+				)||chr(10)||#{memo},'')
+			<where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+		INSERT INTO RS_REC_MEMO
+		(
+				<!-- R_MEMO_IDX -->
+				R_MEMO_IDX
+			,	R_SERVER_IP
+			,	R_CONTEXT_PATH
+			,	R_REC_DATE
+			,	R_REC_TIME
+			,	R_EXT_NUM
+			,	R_USER_ID
+			<!-- ,	R_V_FILE_NAME -->
+			,	R_START_TIME
+			,	R_END_TIME
+			,	R_MEMO
+			,	R_MEMO_TYPE
+		)
+		SELECT
+				<!-- TO_NUMBER(#{memoIdx}) -->
+				R_MEMO_IDX.nextval
+			,	#{serverIp}
+			,	#{contextPath}
+			,	#{recDate}
+			,	#{recTime}
+			,	#{extNum}
+			,	#{userId}
+			<!-- ,	#{vFileName} -->
+			,	COALESCE(#{startTime},'0')
+			,	COALESCE(#{endTime},'0')
+			,	COALESCE(#{memo},'')
+			,	COALESCE(#{memoType},'S')
+		FROM DUAL
+		WHERE NOT EXISTS(
+			SELECT 1 FROM RS_REC_MEMO WHERE ROWID=row_id AND R_EXT_NUM = #{extNum} AND R_REC_DATE = #{recDate}
+		);
+		
+		INSERT INTO RS_SYNC_DATA
+		(
+			R_SYNC_IDX
+		  , R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		  <!-- , R_SYNC_CULUMN11 -->
+		)
+		 SELECT
+		 		R_SYNC_IDX.nextval
+		 	, 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'C'
+		 	,	'rs_rec_memo'
+		 	<!-- ,	TO_NUMBER(#{memoIdx}) -->
+			,	#{serverIp}
+			,	#{contextPath}
+			,	#{recDate}
+			,	#{recTime}
+			,	#{extNum}
+			,	#{userId}
+			,	COALESCE(#{startTime},'0')
+			,	COALESCE(#{endTime},'0')
+			,	SUBSTR(COALESCE(#{memo},''),1,500)
+			,	COALESCE(#{memoType},'S')
+			FROM DUAL, RS_REC_MEMO RM
+       		WHERE RM.ROWID = row_id
+       		;
+		 
+		 
+		INSERT INTO RS_SYNC_DATA
+		(
+			R_SYNC_IDX
+		  , R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		  , R_SYNC_CULUMN6
+		  , R_SYNC_CULUMN7
+		  , R_SYNC_CULUMN8
+		  , R_SYNC_CULUMN9
+		  , R_SYNC_CULUMN10
+		  , R_SYNC_CULUMN11
+		)
+		 SELECT
+				R_SYNC_IDX.nextval
+		    ,   TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'U'
+		 	,	'rs_rec_memo'
+		 	,	RM.R_MEMO_IDX
+			,	RM.R_SERVER_IP
+			,	RM.R_CONTEXT_PATH
+			,	RM.R_REC_DATE
+			,	RM.R_REC_TIME
+			,	RM.R_EXT_NUM
+			,	RM.R_USER_ID
+			,	RM.R_START_TIME
+			,	RM.R_END_TIME
+			,	SUBSTR(COALESCE(#{memo},''),1,500)
+			,	RM.R_MEMO_TYPE
+			FROM DUAL, RS_REC_MEMO RM
+       		WHERE RM.ROWID = row_id
+			AND NOT EXISTS(
+			SELECT 1 FROM RS_REC_MEMO WHERE ROWID=row_id AND R_EXT_NUM = #{extNum} AND R_REC_DATE = #{recDate}
+			);
+			
+		END;
+	</insert>
+	<update id="updateRecMemo" databaseId="postgres" parameterType="com.furence.recsee.common.model.RecMemo">
+				UPDATE RS_REC_MEMO
+			<choose>
+				<when test="type != null and type=='real'">
+					SET
+					R_MEMO = COALESCE(
+					(select r_memo from RS_REC_MEMO
+						<where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+						</where>)||chr(10)||#{memo},'')
+				</when>
+				<otherwise>
+					SET
+					R_MEMO = COALESCE(#{memo},'')
+				</otherwise>
+			</choose>
+
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX = #{memoIdx}::integer
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+					</when>
+					<otherwise>
+						<if test="type!='real'">
+							R_MEMO_IDX = #{memoIdx}::integer
+						</if>
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>		
+	</update>
+	<update id="updateRecMemo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.RecMemo">
+
+			UPDATE RS_REC_MEMO
+			<choose>
+				<when test="type != null and type=='real'">
+					SET
+					R_MEMO = COALESCE(
+					(select r_memo from RS_REC_MEMO
+						<where>
+						R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+						</where>)+char(10)+#{memo},'')
+				</when>
+				<otherwise>
+					SET
+					R_MEMO = COALESCE(#{memo},'')
+				</otherwise>
+			</choose>
+
+			output
+				CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'U'
+		 	,	'rs_rec_memo'
+		 	,	INSERTED.R_MEMO_IDX
+			,	INSERTED.R_SERVER_IP
+			,	INSERTED.R_CONTEXT_PATH
+			,	INSERTED.R_REC_DATE
+			,	INSERTED.R_REC_TIME
+			,	INSERTED.R_EXT_NUM
+			,	INSERTED.R_USER_ID
+			,	INSERTED.R_START_TIME
+			,	INSERTED.R_END_TIME
+			,	SUBSTRING(COALESCE(INSERTED.R_MEMO,''),1,500)
+			,	INSERTED.R_MEMO_TYPE
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			)
+
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX = convert(integer,#{memoIdx})
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+					</when>
+					<otherwise>
+						<if test="type!='real'">
+							R_MEMO_IDX = convert(integer,#{memoIdx})
+						</if>
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>
+	</update>
+	
+	<update id="updateRecMemo" databaseId="oracle" parameterType="com.furence.recsee.common.model.RecMemo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_REC_MEMO
+			<choose>
+				<when test="type != null and type=='real'">
+					SET
+					R_MEMO = COALESCE(
+					(select r_memo from RS_REC_MEMO
+						<where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+						</where>)||chr(10)||#{memo},'')
+				</when>
+				<otherwise>
+					SET
+					R_MEMO = COALESCE(#{memo},'')
+				</otherwise>
+			</choose>
+
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX = TO_NUMBER(#{memoIdx})
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+					</when>
+					<otherwise>
+						<if test="type!='real'">
+							R_MEMO_IDX = TO_NUMBER(#{memoIdx})
+						</if>
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			)
+			 SELECT
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'U'
+			 	,	'rs_rec_memo'
+			 	,	RM.R_MEMO_IDX
+				,	RM.R_SERVER_IP
+				,	RM.R_CONTEXT_PATH
+				,	RM.R_REC_DATE
+				,	RM.R_REC_TIME
+				,	RM.R_EXT_NUM
+				,	RM.R_USER_ID
+				,	RM.R_START_TIME
+				,	RM.R_END_TIME
+				,	SUBSTR(COALESCE(RM.R_MEMO,''),1,500)
+				,	RM.R_MEMO_TYPE
+			FROM DUAL, RS_REC_MEMO RM
+	      	WHERE RM.ROWID = row_id;
+      	
+      	END; -->
+      	UPDATE RS_REC_MEMO
+			<choose>
+				<when test="type != null and type=='real'">
+					SET
+					R_MEMO = COALESCE(
+					(select r_memo from RS_REC_MEMO
+						<where>
+					AND	R_REC_DATE = #{recDate}
+					AND	R_REC_TIME = #{recTime}
+					AND	R_EXT_NUM = #{extNum}
+					AND R_MEMO_TYPE = #{memoType}
+						</where>)||chr(10)||#{memo},'')
+				</when>
+				<otherwise>
+					SET
+					R_MEMO = COALESCE(#{memo},'')
+				</otherwise>
+			</choose>
+
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX = TO_NUMBER(#{memoIdx})
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+					</when>
+					<otherwise>
+						<if test="type!='real'">
+							R_MEMO_IDX = TO_NUMBER(#{memoIdx})
+						</if>
+						AND	R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>
+	</update>
+
+	<delete id="deleteRecMemo" databaseId="postgres" parameterType="com.furence.recsee.common.model.RecMemo">
+			DELETE FROM RS_REC_MEMO
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX = #{memoIdx}::integer
+						<if test = "memoType !=null">
+						AND R_MEMO_TYPE = #{memoType}
+						</if>
+						<if test = "recDate !=null">
+						AND R_REC_DATE = #{recDate}
+						</if>
+						<if test = "recTime !=null">
+						AND R_REC_TIME = #{recTime}
+						</if>
+						<if test = "extNum !=null">
+						AND R_EXT_NUM = #{extNum}
+						</if>
+						<if test = "userId !=null">
+						AND R_USER_ID = #{userId}
+						</if>
+					</when>
+					<otherwise>
+						R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_USER_ID = #{userId}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>
+	</delete>
+	<delete id="deleteRecMemo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.RecMemo">
+
+			DELETE FROM RS_REC_MEMO
+
+			output
+			CONVERT(varchar(8),GETDATE(),112)
+			,	(REPLACE(CONVERT(varchar(8),GETDATE(),114),':',''))
+		 	,	'D'
+		 	,	'rs_rec_memo'
+		 	,	DELETED.R_MEMO_IDX
+			,	DELETED.R_SERVER_IP
+			,	DELETED.R_CONTEXT_PATH
+			,	DELETED.R_REC_DATE
+			,	DELETED.R_REC_TIME
+			,	DELETED.R_EXT_NUM
+			,	DELETED.R_USER_ID
+			,	DELETED.R_START_TIME
+			,	DELETED.R_END_TIME
+			,	SUBSTRING(COALESCE(DELETED.R_MEMO,''),1,500)
+			,	DELETED.R_MEMO_TYPE
+
+			INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			)
+
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX =  CONVERT(INTEGER,#{memoIdx})
+						<if test = "memoType !=null">
+						AND R_MEMO_TYPE = #{memoType}
+						</if>
+						<if test = "recDate !=null">
+						AND R_REC_DATE = #{recDate}
+						</if>
+						<if test = "recTime !=null">
+						AND R_REC_TIME = #{recTime}
+						</if>
+						<if test = "extNum !=null">
+						AND R_EXT_NUM = #{extNum}
+						</if>
+						<if test = "userId !=null">
+						AND R_USER_ID = #{userId}
+						</if>
+					</when>
+					<otherwise>
+						R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_USER_ID = #{userId}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>
+	</delete>
+	
+	<delete id="deleteRecMemo" databaseId="oracle" parameterType="com.furence.recsee.common.model.RecMemo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			DELETE FROM RS_REC_MEMO
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX = TO_NUMBER(#{memoIdx})
+						<if test = "memoType !=null">
+						AND R_MEMO_TYPE = #{memoType}
+						</if>
+						<if test = "recDate !=null">
+						AND R_REC_DATE = #{recDate}
+						</if>
+						<if test = "recTime !=null">
+						AND R_REC_TIME = #{recTime}
+						</if>
+						<if test = "extNum !=null">
+						AND R_EXT_NUM = #{extNum}
+						</if>
+						<if test = "userId !=null">
+						AND R_USER_ID = #{userId}
+						</if>
+					</when>
+					<otherwise>
+						R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_USER_ID = #{userId}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>
+			RETURNING ROWID INTO row_id;
+		
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+			  , R_SYNC_CULUMN6
+			  , R_SYNC_CULUMN7
+			  , R_SYNC_CULUMN8
+			  , R_SYNC_CULUMN9
+			  , R_SYNC_CULUMN10
+			  , R_SYNC_CULUMN11
+			)
+			SELECT
+			 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+			 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+			 	,	'D'
+			 	,	'rs_rec_memo'
+			 	,	RM.R_MEMO_IDX
+				,	RM.R_SERVER_IP
+				,	RM.R_CONTEXT_PATH
+				,	RM.R_REC_DATE
+				,	RM.R_REC_TIME
+				,	RM.R_EXT_NUM
+				,	RM.R_USER_ID
+				,	RM.R_START_TIME
+				,	RM.R_END_TIME
+				,	SUBSTR(COALESCE(RM.R_MEMO,''),1,500)
+				,	RM.R_MEMO_TYPE
+			FROM DUAL, RS_REC_MEMO RM
+	       	WHERE RM.ROWID = row_id;
+       	
+       	END; -->
+       	DELETE FROM RS_REC_MEMO
+			<where>
+				<choose>
+					<when test="memoIdx != null">
+						R_MEMO_IDX = TO_NUMBER(#{memoIdx})
+						<if test = "memoType !=null">
+						AND R_MEMO_TYPE = #{memoType}
+						</if>
+						<if test = "recDate !=null">
+						AND R_REC_DATE = #{recDate}
+						</if>
+						<if test = "recTime !=null">
+						AND R_REC_TIME = #{recTime}
+						</if>
+						<if test = "extNum !=null">
+						AND R_EXT_NUM = #{extNum}
+						</if>
+						<if test = "userId !=null">
+						AND R_USER_ID = #{userId}
+						</if>
+					</when>
+					<otherwise>
+						R_REC_DATE = #{recDate}
+						AND	R_REC_TIME = #{recTime}
+						AND	R_EXT_NUM = #{extNum}
+						AND R_USER_ID = #{userId}
+						AND R_MEMO_TYPE = #{memoType}
+					</otherwise>
+				</choose>
+			</where>
+	</delete>
+</mapper>

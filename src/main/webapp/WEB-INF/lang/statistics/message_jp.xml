@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>統計画面用メッセージ定義</comment>
+
+	<entry key="statistics.title.allCount">全録音件数</entry>
+	<entry key="statistics.title.allHour">全録音時間</entry>
+	<entry key="statistics.title.outbound">発信件数</entry>
+	<entry key="statistics.title.inbound">受信件数</entry>
+		
+	<entry key="statistics.unit.time">時間</entry>
+		
+	<entry key="statistics.callStatistics.graph.axisTitle">日付別録取件数</entry>
+		
+		
+	<entry key="statistics.selectbox.bgFilter">大分類フィルター</entry>
+	<entry key="statistics.selectbox.mgFilter">中分類炉フィルタ</entry>
+	<entry key="statistics.selectbox.sgFilter">小分類炉フィルタ</entry>
+	<entry key="statistics.selectbox.peopleFilter">社員でフィルター</entry>
+	<entry key="statistics.selectbox.extFilter">内線番号でフィルター</entry>
+	<entry key="statistics.selectbox.channelFilter">チャンネル番号でフィルター</entry>
+		
+	<entry key="statistics.callStatistics.grid.title.date">日付</entry>
+	<entry key="statistics.callStatistics.grid.title.time">時間</entry>
+	<entry key="statistics.callStatistics.grid.title.group">グループ</entry>
+	<entry key="statistics.callStatistics.grid.title.calls">録音件数</entry>
+	<entry key="statistics.callStatistics.grid.title.talkTime">通話時間</entry>
+	<entry key="statistics.callStatistics.grid.title.inbound">受信件数</entry>
+	<entry key="statistics.callStatistics.grid.title.inboundTime">受信録音時間</entry>
+	<entry key="statistics.callStatistics.grid.title.outbound">発信件数</entry>
+	<entry key="statistics.callStatistics.grid.title.outboundTime">発信録音時間</entry>
+	<entry key="statistics.callStatistics.grid.title.transfer">好転換件数</entry>
+	<entry key="statistics.callStatistics.grid.title.transferTime">好転換録取時間</entry>
+	<entry key="statistics.callStatistics.grid.title.conference">会議通話件数</entry>
+	<entry key="statistics.callStatistics.grid.title.conferenceTime">会議の録音時間</entry>
+	<entry key="statistics.callStatistics.grid.title.internal">内線通話件数</entry>
+	<entry key="statistics.callStatistics.grid.title.internalTime">内線通話の録音時間</entry>
+	<entry key="statistics.callStatistics.grid.title.noRecodingCount">録音取消件数</entry>
+	<entry key="statistics.callStatistics.grid.title.realCalls">有効コール件数</entry>
+	<entry key="statistics.callStatistics.grid.title.realCallTime">有効コール時間</entry>
+	<entry key="statistics.callStatistics.grid.title.Total">合計</entry>
+	<entry key="statistics.callStatistics.grid.title.division">仕分け</entry>
+	<entry key="statistics.callStatistics.grid.title.connTry">つなぎ目</entry>
+	<entry key="statistics.callStatistics.grid.title.connSuccess">連結成功</entry>
+	<entry key="statistics.callStatistics.grid.title.connFail">連結放棄</entry>
+	<entry key="statistics.callStatistics.grid.title.connMiss">留守中</entry>
+	<entry key="statistics.callStatistics.grid.title.calling">通話中</entry>
+	<entry key="statistics.callStatistics.grid.title.bgName">大分類名</entry>
+	<entry key="statistics.callStatistics.grid.title.mgName">中分類名</entry>
+	<entry key="statistics.callStatistics.grid.title.sgName">小分類名</entry>
+	<entry key="statistics.callStatistics.grid.title.totalcalls">試み件数</entry>
+	<entry key="statistics.callStatistics.grid.title.realcalling">通貨件数</entry>
+	<entry key="statistics.callStatistics.grid.title.totalTimeCalls">総統化</entry>
+	<entry key="statistics.callStatistics.grid.title.avgTimeCalls">平均通貨</entry>
+	<entry key="statistics.callStatistics.grid.title.groupUsers">ユーザー数</entry>
+	<entry key="statistics.callStatistics.grid.title.id">アイディー</entry>
+	<entry key="statistics.callStatistics.grid.title.name">使用者</entry>
+	<entry key="statistics.callStatistics.grid.title.totalDial">総ダイヤル</entry>
+	<entry key="statistics.callStatistics.grid.title.no">順番</entry>
+	<entry key="statistics.callStatistics.grid.title.groupName">グループ名</entry>
+	<entry key="statistics.callStatistics.grid.title.nameAndId">氏名(ID)</entry>
+	<entry key="statistics.callStatistics.grid.title.freeBeforeCust">無料全会員</entry>
+	<entry key="statistics.callStatistics.grid.title.freeCust">無料会員</entry>
+	<entry key="statistics.callStatistics.grid.title.expirationCust">満了会員</entry>
+	<entry key="statistics.callStatistics.grid.title.RegularCust">正会員</entry>
+	<entry key="statistics.callStatistics.grid.title.CancelMember">休講会員</entry>
+	<entry key="statistics.callStatistics.grid.title.AdjournedMember">休会会員</entry>
+	<entry key="statistics.callStatistics.grid.title.AdjournedExpectedMember">休会予定</entry>
+	<entry key="statistics.callStatistics.grid.title.OtherMembers">その他の会員</entry>
+	<entry key="statistics.callStatistics.grid.title.totalCallsTime">通話時間</entry>
+	<entry key="statistics.callStatistics.grid.title.callingTime">通話時間</entry>
+	<entry key="statistics.callStatistics.grid.title.TryAndConn">(市道+接続)</entry>
+	<entry key="statistics.callStatistics.grid.title.sumConnAndsumTime">(連結合計 + 時間合算)</entry>
+	<entry key="statistics.callStatistics.grid.title.regularMemAndCancelMem">(正会員 → 休講会員)</entry>
+		
+		
+		
+	<entry key="statistics.dashboard.title.daily">日刊録取統計</entry>
+	<entry key="statistics.dashboard.title.week">週間録音統計</entry>
+	<entry key="statistics.dashboard.title.callPerFile">コール対録音ファイル統計</entry>
+	<entry key="statistics.dashboard.title.server">サーバー別通話時間</entry>
+		
+	<entry key="statistics.dashboard.title.axisInbound">着信</entry>
+	<entry key="statistics.dashboard.title.axisOutbound">発信</entry>
+	<entry key="statistics.dashboard.title.axisCall">コール件数</entry>
+	<entry key="statistics.dashboard.title.axisFile">録音ファイル数</entry>
+	<entry key="statistics.dashboard.title.axisTime">録取時間</entry>
+		
+	<entry key="statistics.userStatistics.graph.axisTitle">録音件数</entry>
+		
+	<entry key="statistics.userStatistics.grid.title.time">時間</entry>
+	<entry key="statistics.userStatistics.grid.title.userName">ユーザー名</entry>
+	<entry key="statistics.userStatistics.grid.title.userId">アイディー</entry>
+	<entry key="statistics.userStatistics.grid.title.extNo">内線番号</entry>
+	<entry key="statistics.userStatistics.grid.title.bgName">大分類</entry>
+	<entry key="statistics.userStatistics.grid.title.mgName">中分類</entry>
+	<entry key="statistics.userStatistics.grid.title.sgName">小分類</entry>
+	<entry key="statistics.userStatistics.grid.title.calls">録音件数</entry>
+	<entry key="statistics.userStatistics.grid.title.talkTime">通話時間</entry>
+	<entry key="statistics.userStatistics.grid.title.inbound">受信件数</entry>
+	<entry key="statistics.userStatistics.grid.title.inboundTime">受信録音時間</entry>
+	<entry key="statistics.userStatistics.grid.title.outbound">発信件数</entry>
+	<entry key="statistics.userStatistics.grid.title.outboundTime">発信録音時間</entry>
+	<entry key="statistics.userStatistics.grid.title.transfer">好転換件数</entry>
+	<entry key="statistics.userStatistics.grid.title.transferTime">好転換録取時間</entry>
+	<entry key="statistics.userStatistics.grid.title.conference">会議通話件数</entry>
+	<entry key="statistics.userStatistics.grid.title.conferenceTime">会議の録音時間</entry>
+	<entry key="statistics.userStatistics.grid.title.internal">内線通話件数</entry>
+	<entry key="statistics.userStatistics.grid.title.internalTime">内線通話の録音時間</entry>
+	<entry key="statistics.userStatistics.grid.title.noRecodingCount">録音取消件数</entry>
+	<entry key="statistics.userStatistics.grid.title.Total">合計</entry>
+	<entry key="statistics.userStatistics.grid.title.rBgCode">大分類</entry>
+	<entry key="statistics.userStatistics.grid.title.rMgCode">中分類</entry>
+	<entry key="statistics.userStatistics.grid.title.rSgCode">小分類</entry>
+	<entry key="statistics.userStatistics.grid.title.rRecDate">日付</entry>
+	<entry key="statistics.userStatistics.grid.title.rRecRtime">時</entry>
+	<entry key="statistics.userStatistics.grid.title.realCalls">有効発信コール件数</entry>
+	<entry key="statistics.userStatistics.grid.title.realCallTime">有効発信コール時間</entry>
+		
+	<entry key="statistics.userStatistics.excel.title.r_user_name">ユーザー名</entry>
+	<entry key="statistics.userStatistics.excel.title.r_bg_code">大分類</entry>
+	<entry key="statistics.userStatistics.excel.title.r_mg_code">中分類</entry>
+	<entry key="statistics.userStatistics.excel.title.r_sg_code">小分類</entry>
+	<entry key="statistics.userStatistics.excel.title.r_user_id">アイディー</entry>
+	<entry key="statistics.userStatistics.excel.title.r_ext_no">内線番号</entry>
+	<entry key="statistics.userStatistics.excel.title.total_calls">録音件数</entry>
+	<entry key="statistics.userStatistics.excel.title.total_time">通話時間</entry>
+	<entry key="statistics.userStatistics.excel.title.inbound_time">受信件数</entry>
+	<entry key="statistics.userStatistics.excel.title.inbound_calls">受信件数</entry>
+	<entry key="statistics.userStatistics.excel.title.outbound_calls">発信時間</entry>
+	<entry key="statistics.userStatistics.excel.title.outbound_time">発信時間</entry>
+	<entry key="statistics.userStatistics.excel.title.transfer_calls">好転換時間</entry>
+	<entry key="statistics.userStatistics.excel.title.transfer_time">好転換時間</entry>
+	<entry key="statistics.userStatistics.excel.title.conference_calls">会議通話件数</entry>
+	<entry key="statistics.userStatistics.excel.title.conference_time">会議通話時間</entry>
+	<entry key="statistics.userStatistics.excel.title.internal_calls">内線通話件数</entry>
+	<entry key="statistics.userStatistics.excel.title.internal_time">内線通話時間</entry>
+	<entry key="statistics.userStatistics.excel.title.real_calls">有効発信件数</entry>
+	<entry key="statistics.userStatistics.excel.title.real_time">有効発信時間</entry>
+	<entry key="statistics.userStatistics.excel.title.R_REC_RTIME">時間</entry>
+	<entry key="statistics.userStatistics.excel.title.totalCallbytime">合計</entry>
+	<entry key="statistics.userStatistics.excel.title.sec30">30秒未満</entry>
+	<entry key="statistics.userStatistics.excel.title.sec60">1分未満</entry>
+	<entry key="statistics.userStatistics.excel.title.sec120">2分未満</entry>
+	<entry key="statistics.userStatistics.excel.title.sec180">三分未満</entry>
+	<entry key="statistics.userStatistics.excel.title.sec240">四分未満</entry>
+	<entry key="statistics.userStatistics.excel.title.sec300">五分未満</entry>
+	<entry key="statistics.userStatistics.excel.title.sec420">七分未満</entry>
+	<entry key="statistics.userStatistics.excel.title.sec600">十分未満</entry>
+	<entry key="statistics.userStatistics.excel.title.moresec600">十分以上</entry>
+	<entry key="statistics.userStatistics.grid.title.groupStatistics">統計期間</entry>
+	<entry key="statistics.userStatistics.grid.title.byDate">日付別</entry>
+	<entry key="statistics.userStatistics.grid.title.byTime">時間別</entry>
+	<entry key="statistics.userStatistics.grid.title.byWeek">週別</entry>
+	<entry key="statistics.userStatistics.grid.title.byDayWeek">曜日別</entry>
+	<entry key="statistics.userStatistics.grid.title.byMonth">月別</entry>
+	<entry key="statistics.userStatistics.grid.title.byGroup">グループ別</entry>
+	<entry key="statistics.userStatistics.grid.title.byUser">ユーザー別</entry>
+	<entry key="statistics.userStatistics.grid.title.byDetail">通貨統計</entry>
+	<entry key="statistics.userStatistics.grid.title.statisticsType">統計タイプ</entry>
+	<entry key="statistics.userStatistics.grid.title.peopleStatistics">ユーザ別統計</entry>
+	<entry key="statistics.userStatistics.grid.title.mobileStatistics">モバイル統計</entry>
+
+
+	<!-- 18-09-05 -pilip statistics kor lang add -->
+	<entry key="statistics.js.alert.msg1">社員を選択してください。</entry>
+	<entry key="statistics.js.alert.msg2">鉄砲</entry>
+	<entry key="statistics.js.alert.msg3">名選択</entry>
+	<entry key="statistics.js.alert.msg4">対象グループを選択してください。</entry>
+	<entry key="statistics.js.alert.msg5">開始日と終了日を両方入力してください。</entry>
+	<entry key="statistics.js.alert.msg6">合計</entry>
+	<entry key="statistics.js.alert.msg7">録音件数</entry>
+	<entry key="statistics.js.alert.msg8">件</entry>
+	<entry key="statistics.js.alert.msg9">アウト</entry>
+	<entry key="statistics.js.alert.msg10">アウト時間</entry>
+	<entry key="statistics.js.alert.msg11">転換</entry>
+	<entry key="statistics.js.alert.msg12">転換時間</entry>
+	<entry key="statistics.js.alert.msg13">懐疑</entry>
+	<entry key="statistics.js.alert.msg14">会議時間</entry>
+	<entry key="statistics.js.alert.msg15">内線</entry>
+	<entry key="statistics.js.alert.msg16">内線時間</entry>
+	<entry key="statistics.js.alert.msg17">合計</entry>
+	<entry key="statistics.js.alert.msg18">タイム1</entry>
+	<entry key="statistics.js.alert.msg19">タイム二合</entry>
+	<entry key="statistics.js.alert.msg20">タイム三合</entry>
+	<entry key="statistics.js.alert.msg21">タイム4</entry>
+	<entry key="statistics.js.alert.msg22">タイム5</entry>
+	<entry key="statistics.js.alert.msg23">タイム6</entry>
+	<entry key="statistics.js.alert.msg24">タイム7</entry>
+	<entry key="statistics.js.alert.msg25">タイム8</entry>
+	<entry key="statistics.js.alert.msg26">タイム9</entry>
+	<entry key="statistics.js.alert.msg27">リアル</entry>
+	<entry key="statistics.js.alert.msg28">リアル時間</entry>
+	<entry key="statistics.js.alert.msg29">照会された結果がないため、エクセルダウンロードをすることができません。</entry>
+	<entry key="statistics.js.alert.msg30">30秒未満</entry>
+	<entry key="statistics.js.alert.msg31">1分未満</entry>
+	<entry key="statistics.js.alert.msg32">2分未満</entry>
+	<entry key="statistics.js.alert.msg33">三分未満</entry>
+	<entry key="statistics.js.alert.msg34">四分未満</entry>
+	<entry key="statistics.js.alert.msg35">五分未満</entry>
+	<entry key="statistics.js.alert.msg36">七分未満</entry>
+	<entry key="statistics.js.alert.msg37">十分未満</entry>
+	<entry key="statistics.js.alert.msg38">十分以上</entry>
+	<entry key="statistics.js.alert.msg39">通話時間</entry>
+	<entry key="statistics.js.alert.msg40">平均録音時間</entry>
+	<entry key="statistics.js.alert.msg41">分</entry>
+		
+	<entry key="statistics.title.callRate">コール·タイプ別比率</entry>
+	<entry key="statistics.title.callTrends">通話時間別コール推移</entry>
+	<entry key="statistics.title.selectEmployee">社員を選択してください。</entry>
+	<entry key="statistics.title.total">鉄砲</entry>
+	<entry key="statistics.title.selectPeople">名選択</entry>
+	<entry key="statistics.title.callTrends2">コール推移</entry>
+	<entry key="statistics.title.cases">件</entry>
+	<entry key="statistics.title.monthly">月間コール推移</entry>
+		
+		
+	<entry key="statistics.title.callTransfer">好転換</entry>
+	<entry key="statistics.title.extension">内線</entry>
+	<entry key="statistics.title.meeting">懐疑</entry>
+	<entry key="statistics.title.timeOfTheDay">時間帯別発着信別統計</entry>
+	<entry key="statistics.title.callCount">コール本数</entry>
+	<entry key="statistics.title.time">時間</entry>
+	<entry key="statistics.title.weekly">週間発着信統計</entry>
+	<entry key="statistics.title.date">日付</entry>
+	<entry key="statistics.title.hourOfTheDay">時間帯別統計</entry>
+
+</properties>

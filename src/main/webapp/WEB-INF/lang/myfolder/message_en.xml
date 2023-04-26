@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>마이폴더(myfolder) 화면용 메세지 정의</comment>
+
+	<!-- 마이폴더 -->
+	<entry key="myfolder.alert.inputName">Please enter a folder name.</entry>
+	<entry key="myfolder.alert.completingAdd">Folder addition is complete.</entry>
+	<entry key="myfolder.alert.existSameFolder">The same folder exists. Please re-enter.</entry>
+	<entry key="myfolder.alert.selectFolder">Please select a folder.</entry>
+	<entry key="myfolder.alert.editingFolder">Folder editing is complete.</entry>
+	<entry key="myfolder.alert.deletingFolder">Are you sure you want to delete it?</entry>
+	<entry key="myfolder.alert.notExistFile">The selected recording file does not exist.</entry>
+	<entry key="myfolder.alert.alreadyRecorded">There is already a recorded file in this folder.</entry>
+	
+	<entry key="myfolder.button.editFolder">Edit folder</entry>
+	<entry key="myfolder.button.deleteFolder">Delete Folder</entry>
+	<entry key="myfolder.button.addFolder">Add Folder</entry>
+	<entry key="myfolder.button.addFile">Add to selection file list</entry>
+	<entry key="myfolder.button.moveFile">Move selected files</entry>
+	<entry key="myfolder.button.removeFile">Remove selected files from My Folders</entry>
+	
+</properties>

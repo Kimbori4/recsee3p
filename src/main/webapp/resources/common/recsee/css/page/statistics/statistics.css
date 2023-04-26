@@ -1,0 +1,144 @@
+
+.recordInfoWrap{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	padding: 10px 0;
+	background-color: #444444;
+	color: #ffffff;
+}
+
+.report_txt_wrap{
+	display: table-cell;
+	padding-left:10px;
+}
+.recordInfo_tit, .recordInfo_txt{
+	display: table-cell;
+	vertical-align: text-bottom;
+	padding-right:10px;
+}
+.recordInfo_tit{
+	font-size: 20px;
+}
+.recordInfo_tit:first-of-type{
+	padding-left: 5px;
+}
+.recordInfo_txt{
+	font-size: 30px;
+	border-right: 1px solid #f1f1f1;
+}
+.chartWrap{
+	float: left;
+	clear: both;
+	width: calc(100% - 20px);
+	background-color: #f9f9f9;
+	padding: 20px 10px 10px;
+}
+#chart{
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.gridWrap{
+	border-top: 1px solid #dddddd !important;
+}
+.checkbox_wrap{
+    float: left;
+    margin-top: 9px;
+}
+.group_by_wrap{
+	float: left;
+	margin-right: 9px;
+	margin-left: 3px;
+}
+.day_time_by_wrap input, .group_by_wrap input{
+	margin-right: 3px;
+}
+.call_by_warp{
+	float:left;
+	margin-right: 6px;
+	margin-left: 3px;
+}
+.call_by_warp input{
+	margin-right: 3px;
+}
+#chartTitle{
+    text-align: center;
+    color: rgba(115, 159, 196, 1);
+    font-size: 25px;
+    font-family: Noto Sans;
+    font-weight: bold;
+}
+.dhxcombo_dhx_web{
+	height:26px !important ;
+	margin-top: 3px;
+	width: 140px !important ;
+}
+.dhxcombo_input{
+	width: 108px !important ;
+	 font-size: 14px !important;
+	 line-height:25px !important;
+	 font-family: Noto Sans, sans-serif !important;
+	 margin-left: 10px !important;
+	 margin-top: 3px !important;
+}
+.dhxcombo_select_img{
+	background-image: url("../../../images/project/main/icon/arrow.png") !important;
+}
+.dhxcombo_select_button{
+	background-color: transparent !important;
+	margin-top: 2px;
+}
+.ftr table{
+	/* background-color: rgba(240, 240, 240, 1) !important; */
+}
+.ftr tr td{
+	background-color: rgba(240, 240, 240, 1) !important;
+	text-align: center;
+	border-right: 1px solid white !important;
+	font-family: Noto Sans, sans-serif !important;
+	font-size: 13px !important;
+	font-style: normal !important;
+}
+
+#dash{
+	background-color: transparent !important;
+	border-bottom: none !important;
+	display:table-cell;
+	position: relative;
+	top:8px;
+	width:auto !important;
+	float: none;
+}
+
+#sysCode{
+	width: 75px !important;
+    padding-right: 20px;
+}
+
+#codeFilter,#mBgCode,#mMgCode,#mSgCode{
+	width:120px !important;
+	padding-right:20px;
+	overflow:hidden;
+}
+
+#sdate, #edate, .day_time_by, #sysCode, #codeFilter, #mBgCode, #mMgCode, #mSgCode {
+	letter-spacing: -1px;
+}
+.select2-selection__choice{
+	color:black !important;
+}
+.dhxcombolist_dhx_web{
+	width:140px !important;
+}
+.report_txt_wrap_left {
+	width:65%;
+	float:left;
+	padding-top:10px;
+}
+.report_txt_wrap_right {
+	width:35%;
+	float:left;
+}

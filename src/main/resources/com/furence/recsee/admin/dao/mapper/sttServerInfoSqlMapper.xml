@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.SttServerInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.SttServerInfo">
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="rSysCode" />
+		<result column="R_SYS_NAME" jdbcType="VARCHAR" property="rSysName" />
+		<result column="R_SYS_IP" jdbcType="VARCHAR" property="rSysIp" />
+	</resultMap>
+		
+	
+	<select id="selectSttServerInfo" parameterType="com.furence.recsee.admin.model.SttServerInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM STT_SERVER_INFO
+		<if test="rSysCode != null or rSysCode != null">
+		WHERE
+		</if>
+		<if test="rSysCode != null">
+		 R_SYS_CODE = #{rSysCode}
+		</if>
+		<if test="rSysCode != null and rSysIp != null">
+		AND
+		</if>
+		<if test="rSysIp != null">
+		 R_SYS_IP = #{rSysIp}
+		</if>
+		ORDER BY R_SYS_NAME
+	</select>
+
+	<insert id="insertSttServerInfo" parameterType="com.furence.recsee.admin.model.SttServerInfo">
+		INSERT INTO STT_SERVER_INFO (
+			  	R_SYS_CODE 
+			, 	R_SYS_NAME 
+			, 	R_SYS_IP
+		)
+		VALUES ( 
+			  	#{rSysCode} 
+			, 	#{rSysName} 
+			, 	#{rSysIp} 
+		)
+	</insert>
+
+	<update id="updateSttServerInfo" parameterType="com.furence.recsee.admin.model.SttServerInfo">
+		UPDATE STT_SERVER_INFO
+		<set>
+			<if test="rSysName != null"> 
+			R_SYS_NAME = #{rSysName,jdbcType=VARCHAR}, 
+			</if>
+			<if test="rSysIp != null"> 
+			R_SYS_IP = #{rSysIp,jdbcType=VARCHAR}, 
+			</if>
+		</set>
+		<where>
+		<if test="rSysCode != null"> 
+		R_SYS_CODE = #{rSysCode,jdbcType=VARCHAR} 
+		</if>
+		</where>
+	</update>
+	
+	<delete id="deleteSttServerInfo" parameterType="com.furence.recsee.admin.model.SttServerInfo">
+		DELETE FROM STT_SERVER_INFO
+		WHERE R_SYS_CODE = #{rSysCode,jdbcType=VARCHAR}
+	</delete>
+</mapper>
+
+
+

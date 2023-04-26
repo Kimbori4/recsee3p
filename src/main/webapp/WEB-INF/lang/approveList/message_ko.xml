@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>청취 및 다운로드 요청관리(approveList) 화면용 메세지 정의</comment>
+
+
+	<entry key="views.approveList.grid.number">번호</entry>
+	<entry key="views.approveList.grid.reqDate">요청 일자</entry>
+	<entry key="views.approveList.grid.reqTime">요청 시간</entry>
+	<entry key="views.approveList.grid.reqInfo">요청자 정보</entry>
+	<entry key="views.approveList.grid.reqId">요청자 아이디</entry>
+	<entry key="views.approveList.grid.reqName">요청자 이름</entry>
+	<entry key="views.approveList.grid.reqGroup">요청자 소속</entry>
+	<entry key="views.approveList.grid.reqType">요청 유형</entry>
+	<entry key="views.approveList.grid.reqReason">요청 사유</entry>
+	<entry key="views.approveList.grid.state">진행 상태</entry>
+	<entry key="views.approveList.grid.fileName">파일명</entry>
+	<entry key="views.approveList.grid.recDate">녹취 일자</entry>
+	<entry key="views.approveList.grid.recTime">녹취 시간</entry>
+	<entry key="views.approveList.grid.recExtNum">녹취 내선</entry>
+	<entry key="views.approveList.grid.recId">녹취자 아이디</entry>
+	<entry key="views.approveList.grid.recName">녹취자 이름</entry>
+	<entry key="views.approveList.grid.custName">녹취 고객명</entry>
+	<entry key="views.approveList.grid.custNum">녹취 고객 전화번호</entry>
+	<entry key="views.approveList.grid.stockNum">녹취 증권번호</entry>
+	<entry key="views.approveList.grid.callType">녹취 콜타입</entry>
+	<entry key="views.approveList.grid.firstApprovalDate">1차 승인 날짜</entry>
+	<entry key="views.approveList.grid.firstApprovalTime">1차 승인 시간</entry>
+	<entry key="views.approveList.grid.primaryApprover">1차 승인자 아이디</entry>
+	<entry key="views.approveList.grid.secondApprovalDate">2차 승인 날짜</entry>
+	<entry key="views.approveList.grid.secondApprovalTime">2차 승인 시간</entry>
+	<entry key="views.approveList.grid.secondApprover">2차 승인자 아이디</entry>
+	<entry key="views.approveList.grid.finalApprovalDate">최종 승인 날짜</entry>
+	<entry key="views.approveList.grid.finalApprovalTime">최종 승인 시간</entry>
+	<entry key="views.approveList.grid.finalApprover">최종 승인자 아이디</entry>
+	<entry key="views.approveList.grid.reqPeriod">요청 기간</entry>
+	<entry key="views.approveList.grid.fileColumnKey">파일명 형식</entry>
+
+	
+	<entry key="views.approveList.from.sDate">시작날짜</entry>	
+	<entry key="views.approveList.from.eDate">종료날짜</entry>	
+	<entry key="views.approveList.from.fTime">요청 시간(부터)</entry>	
+	<entry key="views.approveList.from.tTime">요청 시간(까지)</entry>	
+	<entry key="views.approveList.from.search">검색</entry>	
+	<entry key="views.approveList.from.approval">승인</entry>	
+	<entry key="views.approveList.from.return">반려</entry>	
+	
+	
+	<entry key="approveList.alert.msg01">요청 유형이 다운로드가 아닙니다.</entry>
+	<entry key="approveList.alert.msg02">승인되지 않은 요청입니다.</entry>
+	<entry key="approveList.alert.msg03">권한이 없습니다.</entry>
+	<entry key="approveList.alert.msg04">다운로드 기한이 종료되었습니다.</entry>
+	<entry key="approveList.alert.msg05">요청 유형이 청취가 아닙니다.</entry>
+	<entry key="approveList.alert.msg06">청취 기간이 종료되었습니다.</entry>
+	<entry key="approveList.alert.msg07">요청 일자를 다음 형식에 맞게 입력 해 주세요!\\n예)2018-01-01</entry>
+	<entry key="approveList.alert.msg08">이미 처리 완료된 건 입니다.</entry>
+	<entry key="approveList.alert.msg09">선택하신 항목은 1차 승인 대기중인 항목 입니다.\\n1차 승인 권한이 없는 사용자는 현재 요청을 반영 할 수 없습니다.</entry>
+	<entry key="approveList.alert.msg10">선택하신 항목은 2차 승인 대기중인 항목 입니다.\\n2차 승인 권한이 없는 사용자는 현재 요청을 반영 할 수 없습니다.</entry>
+	<entry key="approveList.alert.msg11">선택하신 항목은 최종 승인 대기중인 항목 입니다.\\n최종 승인 권한이 없는 사용자는 현재 요청을 반영 할 수 없습니다.</entry>
+	<entry key="approveList.alert.msg12">정상적으로 처리 되었습니다.</entry>
+	<entry key="approveList.alert.msg13">요청에 실패하였습니다.</entry>
+	
+
+</properties>

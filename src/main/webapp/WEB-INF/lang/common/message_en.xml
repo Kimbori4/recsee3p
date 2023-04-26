@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>공통(common) 화면용 메세지 정의</comment>
+
+	<entry key="header.label.hello">Hello</entry>
+	<entry key="header.title.settings">Settings</entry>
+	<entry key="header.title.modifyUser">Modify User</entry>
+	<entry key="header.title.logout">Log Out</entry>
+	<entry key="header.menu.label.searchNListen"><![CDATA[Search & Listen]]></entry>
+	<entry key="header.menu.label.searchNListenCallType">Call Type Listening Management</entry>	
+	<entry key="header.menu.label.searchNDate">Recording Lookup Period Management</entry>
+	<entry key="header.menu.label.playerSetting">Player Settings</entry>
+	<entry key="header.menu.label.playerUnderMenu">Player Bottom Menu</entry>
+	<entry key="header.menu.label.playersectionMenu">Player Section Menu</entry>	
+	<entry key="header.menu.label.downloadApproveInit">Download Request Permissions</entry>
+	<entry key="header.menu.label.searchNListenMemo">Memo</entry>
+	<entry key="header.menu.label.reportNDashboard"><![CDATA[Report & Dashboard]]></entry>
+	<entry key="header.menu.label.dashboard">Dashboard</entry>
+	<entry key="header.menu.label.callAll">Call All</entry>
+	<entry key="header.menu.label.callUser">Call User</entry>
+	<entry key="header.menu.label.callMobile">Call Mobile</entry>
+	<entry key="header.menu.label.callDayTimeUser">User dashboard</entry>
+	<entry key="header.menu.label.monitoring">Monitoring</entry>
+	<entry key="header.menu.label.realtimeMonitoring">Card view monitoring</entry>
+	<entry key="header.menu.label.realtimeMonitoringGrid">Grid View monitoring</entry>
+	<entry key="header.menu.label.realtimeMonitoringOffice">office view monitoring</entry>
+	<entry key="header.menu.label.systemMonitoring">System monitoring</entry>
+	<entry key="header.menu.label.serverMonitoring">Server monitoring</entry>
+	<entry key="header.menu.label.systemRealtimeMonitoring">System monitoring</entry>
+	<entry key="header.menu.label.BluePrintMonitoring">Blueprint monitoring</entry>
+	<entry key="header.menu.label.myFolderMenu">Myfolder</entry>
+	<entry key="header.menu.label.uploadStatus">Upload Status</entry>
+	<entry key="header.menu.label.individualUploadstatus">Individual Upload status</entry>
+	<entry key="header.menu.label.uploadStatusSearch">Upload status by group</entry>
+	<entry key="header.menu.label.BestCall">Best Call</entry>
+	<entry key="header.menu.label.BestCallManage">Best Call Manage</entry>
+	<entry key="header.menu.label.BestCallShare">Best Call Share</entry>
+	<entry key="header.menu.label.approveList">Manage Listen and Download Requests</entry>
+	<entry key="header.menu.label.evaluation">Evaluation management</entry>
+	<entry key="header.menu.label.evaluationList">Evaluation search</entry>
+	<entry key="header.menu.label.itemManage">Evaluation category manage</entry>
+	<entry key="header.menu.label.sheetManage">Sheet manage</entry>
+	<entry key="header.menu.label.campaignManage">Campaign Management</entry>
+	<entry key="header.menu.label.administer">Manage</entry>
+	<entry key="header.menu.label.evaluationStatistics">Evaluation statistics</entry>
+	<entry key="header.menu.label.evaluating">evaluation</entry>
+	<entry key="header.menu.label.transcript">Transcript Management</entry>
+	<entry key="header.menu.label.learningTranscript">Learning Transcript</entry>
+	<entry key="header.menu.label.sttModel">STT Model Management</entry>
+	<entry key="header.menu.label.sttEnginState">STT Model Information</entry>
+	<entry key="header.menu.label.sttResultManage">STT Management</entry>
+	<entry key="header.menu.label.faceRecording">Face Recording</entry>
+	<entry key="header.menu.label.recording">Recording</entry>
+	<entry key="header.menu.label.audioCalibration">Audio Calibration</entry>
+	
+	
+	<entry key="header.popup.modifyUser.label.manageUserInfo">Manage User Information</entry>
+	<entry key="header.popup.modifyUser.label.id">ID</entry>
+	<entry key="header.popup.modifyUser.label.userName">User name</entry>
+	<entry key="header.popup.modifyUser.label.userEmp">User ID</entry>
+	<entry key="header.popup.modifyUser.label.userId">ID</entry>
+	<entry key="header.popup.modifyUser.label.password">Password</entry>
+	<entry key="header.popup.modifyUser.label.passwordCheck">Password Check</entry>
+	<entry key="header.popup.modifyUser.label.ext">Extension number</entry>
+	<entry key="header.popup.modifyUser.label.phoneNo">Phone No.</entry>
+	<entry key="header.popup.modifyUser.label.sex">Sex</entry>
+	<entry key="header.popup.modifyUser.option.male">Male</entry>
+	<entry key="header.popup.modifyUser.option.female">Female</entry>
+	<entry key="header.popup.modifyUser.label.userLevel">User Level</entry>
+	<entry key="header.popup.modifyUser.label.level1">Level1</entry>
+	<entry key="header.popup.modifyUser.label.level2">Level2</entry>
+	<entry key="header.popup.modifyUser.label.level3">Level3</entry>
+	<entry key="header.popup.modifyUser.label.empNo">Emp No.</entry>
+	<entry key="header.popup.modifyUser.label.email">E-Mail</entry>
+	<entry key="header.popup.modifyUser.label.ctiId">CTI ID</entry>
+	<entry key="header.popup.modifyUser.button.modify">Modify</entry>
+	<entry key="header.popup.evaluation.label.evaluation">Evaluation</entry>
+	<entry key="header.popup.evaluation.option.selectCampaign">Select Campaign</entry>
+	<entry key="header.popup.evaluation.option.selectSheet">Select Sheet</entry>
+	<entry key="header.popup.evaluation.input.notification">Notification</entry>
+	<entry key="header.popup.evaluation.input.objection">Objection</entry>
+	<entry key="header.popup.evaluation.input.revaluation">Revaluation</entry>
+	<entry key="header.popup.evaluation.input.scoringSystem">Scoring system</entry>
+	<entry key="header.popup.evaluation.label.evaluatorComment">Evaluator Comment</entry>
+	<entry key="header.popup.evaluation.label.evaluatorComment2">Secondary Evaluator Comment</entry>
+	<entry key="header.popup.evaluation.label.appraiseeComment">Appraisee Comment</entry>
+	<entry key="header.popup.evaluation.button.moveCampaign">Move Campaign</entry>
+	<entry key="header.popup.evaluation.label.sheetScore">Sheet Score</entry>
+	<entry key="header.popup.evaluation.label.totalScore">Total Score</entry>
+	<entry key="header.popup.evaluation.button.interimStorage">Interim storage</entry>
+	<entry key="header.popup.evaluation.button.done">Done</entry>
+	<entry key="header.popup.evaluation.alert.noData">noData</entry>
+	<entry key="header.popup.evaluation.alert.notAllSelected">notAllSelected</entry>
+	<entry key="header.popup.evaluation.alert.updateEvaluationComplete">updateEvaluationComplete</entry>
+	<entry key="header.popup.evaluation.alert.updateEvaluationFailed">updateEvaluationFailed</entry>
+	<entry key="header.popup.modifyUser.label.userInfo">User info</entry>
+	<entry key="header.popup.modifyUser.label.custInfo">Customer Info</entry>
+
+	<entry key="tab.alert.exceeds">The number of tabs can not exceed 10. Please close the tab you are using.</entry>
+
+	<entry key="recsee.title.version">Version</entry>
+	<entry key="recsee.version">v3.0</entry>
+
+	<entry key="message.title.alert">alert</entry>
+	<entry key="message.title.notifications">alarm</entry>
+	<entry key="message.btn.ok">Confirm</entry>
+	<entry key="message.btn.cancel">Cancel</entry>
+	<entry key="message.btn.add">Add</entry>
+	<entry key="message.btn.modify">Modify</entry>
+	<entry key="message.btn.del">Delete</entry>
+	<entry key="message.btn.apply">Apply</entry>
+	<entry key="message.btn.clear">Clear</entry>
+	<entry key="message.btn.csv">Search CSV</entry>	
+	<entry key="message.btn.excelDownload">Excel download</entry>
+	<entry key="message.btn.testMailSend">Send test mail</entry>
+	<entry key="message.btn.save">Save</entry>
+	<entry key="message.btn.restart">Restart</entry>
+	<entry key="message.btn.upload">Upload</entry>
+	<entry key="message.btn.selectionType">Selection Type</entry>
+	<entry key="message.btn.inputType">Input Type</entry>
+	<entry key="message.btn.checkType">Check Type</entry>
+	<entry key="message.btn.answerType">Answer Type</entry>
+	<entry key="message.btn.memo">Memo Add</entry>
+
+	<entry key="ws.message.not_support">Your browser does not support web socket.</entry>
+	<entry key="ws.message.exception">An error occurred while processing the web socket.</entry>
+	<entry key="ws.message.no_message">No request message.</entry>
+	<entry key="ws.message.send_exception">Error forwarding request message.</entry>
+	<entry key="ws.message.connect_fail"><![CDATA[The server is not responding.<br>Please check and try again.]]></entry>
+	<entry key="ws.message.save_fail"><![CDATA[Failed to save modified settings..]]></entry>
+	<entry key="ws.message.regException">Exception</entry>
+	<entry key="ws.message.isNaN">Please enter only numbers.</entry>
+	<entry key="ws.message.isCharacter">Special characters are not allowed.</entry>
+	<entry key="ws.message.isEng">Please enter only alphabetic characters.</entry>
+	<entry key="ws.message.isIDCheck"><![CDATA[Please enter your ID in alphanumeric.<br>Begin with an alphabetic character.]]></entry>
+	<entry key="ws.message.inputLength">Input length</entry>
+
+	<entry key="call.type.ALL">All</entry>
+	<entry key="call.type.I">Inbound</entry>
+	<entry key="call.type.O">Outbound</entry>
+	<entry key="call.type.T">Transfer Call</entry>
+	<entry key="call.type.TR">Receive conversions</entry>
+	<entry key="call.type.TS">Transmission Transmission</entry>
+	<entry key="call.type.C">Conference</entry>
+	<entry key="call.type.Z">Internal</entry>
+	<entry key="call.type.R">IVR</entry>
+	<entry key="call.type.RNA">Discuss</entry>
+	<entry key="call.type.T2">Extension transmission</entry>
+	<entry key="call.type.C2">Meeting room</entry>
+	<entry key="call.type.Z2">Extension</entry>
+	<entry key="call.type.S">Consult call</entry>
+	<entry key="call.type.X">Face To Face Recording</entry>
+	<entry key="call.buffer13.S">Field dispatch</entry>
+	<entry key="call.buffer13.E">Emergency dispatch</entry>
+	<entry key="call.buffer13.A">Accident reception</entry>
+
+	<entry key="call.buffer14.1">Continuous service</entry>
+	<entry key="call.buffer14.2">newcomer</entry>
+
+	<entry key="use.yes">Yes</entry>
+	<entry key="use.no">No</entry>
+
+	<entry key="call.rec.type.acr">Full recording</entry>
+	<entry key="call.rec.type.odr">Select recording</entry>
+	<entry key="call.rec.type.tacr">Partial recording</entry>
+	<entry key="call.rec.type.tcr">All</entry>
+
+	<entry key="call.rec.startType.A">Full recording</entry>
+	<entry key="call.rec.startType.S">Select recording</entry>
+	<entry key="call.rec.startType.P">Partial recording</entry>
+	<entry key="call.rec.startType.T">All Recording</entry>
+	<entry key="call.rec.startType.R">Recovered Recording</entry>
+
+	<entry key="call.type.startType.A">Full recording</entry>
+	<entry key="call.type.startType.S">Select recording</entry>
+	<entry key="call.type.startType.P">Partial recording</entry>
+	<entry key="call.type.startType.T">All Recording</entry>
+	<entry key="call.type.startType.R">Recovered Recording</entry>
+	<entry key="call.type.OUT">OUT</entry>
+	<entry key="call.type.IN">IN</entry>
+	
+
+	<entry key="access.grade.A">All</entry>
+	<entry key="access.grade.B">Large category</entry>
+	<entry key="access.grade.M">Middle category</entry>
+	<entry key="access.grade.S">Small category</entry>
+	<entry key="access.grade.U">Myself</entry>
+	<entry key="access.grade.add">Add Allowable</entry>
+
+	<entry key="line.20">====================</entry>
+	<entry key="line.10">==========</entry>
+
+	<entry key="message.download.nofile">No files found.</entry>
+	<entry key="message.download.logout">Your login session has expired.</entry>
+	<entry key="message.alert.noData">No data.</entry>
+
+	<entry key="message.combo.select">Select</entry>
+
+	<entry key="message.combo.default">Default</entry>
+
+	<entry key="common.sperater.1">/</entry>
+
+	<entry key="message.title.status">Status</entry>
+
+	<entry key="combo.ALL">All</entry>
+
+	<entry key="contextMenu.allChecked"><![CDATA[All Checked]]></entry>
+	<entry key="contextMenu.allUnChecked"><![CDATA[All unChecked]]></entry>
+
+	<entry key="combo.filePattern.a">CID</entry>
+	<entry key="combo.filePattern.b">Call type</entry>
+	<entry key="combo.filePattern.c">user ID</entry>
+
+
+	<entry key="common.date.start">Start date</entry>
+	<entry key="common.date.end">End date</entry>
+	<entry key="common.label.start">Start</entry>
+	<entry key="common.label.end">End</entry>
+	<entry key="common.label.move">Move</entry>
+	<entry key="common.label.selectFolder">Select Folder</entry>
+	<entry key="common.label.selectMoveFile">Move Selected File</entry>
+	<entry key="common.label.folderName">Folder name</entry>
+	<entry key="common.label.editFolder">Modify Folder</entry>
+	<entry key="common.label.addFolder">Add Folder</entry>
+	<entry key="common.label.manageSearchList">Manage Search List</entry>
+	<entry key="common.label.download">Download</entry>
+	<entry key="common.label.fileName">File name</entry>
+	<entry key="common.label.encYn">Encryption status</entry>
+	<entry key="common.label.format">File Format</entry>
+	<entry key="common.label.reason">Download Reason</entry>
+	<entry key="common.label.sir"></entry>
+	<entry key="common.label.Noclassification">No classification</entry>
+
+	<entry key="common.excel.download">Download Excel</entry>
+	<entry key="views.player.html.text1">No files are playing.</entry>
+	<entry key="views.player.html.text2">Play File : </entry>
+	<entry key="views.player.html.text3">Move</entry>
+	<entry key="views.player.html.text4">Date</entry>
+	<entry key="views.player.html.text5">Time</entry>
+	<entry key="views.player.html.text6">Agent</entry>
+	<entry key="views.player.html.text7">Cust</entry>
+	<entry key="views.player.html.text8">Ext.</entry>
+	<entry key="views.player.html.text9">Player Tags</entry>
+	<entry key="views.player.html.text10">Tag Contents</entry>
+	<entry key="views.player.html.text11">Save</entry>
+	<entry key="views.player.html.text12">Set Sect</entry>
+	<entry key="views.player.html.text13">Start Time</entry>
+	<entry key="views.player.html.text14">End Time</entry>
+	<entry key="views.player.html.text15">Create</entry>
+	<entry key="views.player.html.text16">Listen Info - </entry>
+	<entry key="views.player.html.text17">Repeat</entry>
+	<entry key="views.player.html.text18">Repeat off</entry>
+	<entry key="views.player.html.text19">Down</entry>
+	<entry key="views.player.html.text20">Mute</entry>
+	<entry key="views.player.html.text21">Mute Off</entry>
+	<entry key="views.player.html.text22">Remove</entry>
+	<entry key="views.player.html.text23">Remove Off</entry>
+	<entry key="views.player.html.text24">Delete</entry>
+	<entry key="views.player.html.text25">Are you sure you want to delete?</entry>
+	<entry key="views.player.html.text26">CustName</entry>
+	<entry key="views.player.html.text27">Call start time</entry>
+	<entry key="views.player.html.text28">Shared title</entry>
+	<entry key="views.player.html.text29">Please check the items you want to delete first.</entry>
+	<entry key="views.player.html.text30">Tag Information</entry>
+	
+	<entry key="common.label.playerDownload">Player Download</entry>
+	<entry key="common.label.playerPeriod">Expiration Period(Day)</entry>
+	<entry key="common.label.playerPassword">Player Password</entry>
+	<entry key="common.label.playerRePassword">Confirm Password</entry>
+	
+	<entry key="views.player.html.text31">Please enter a player expiration period!</entry>
+	<entry key="views.player.html.text32">Player expiration period is at least 1 day.</entry>
+	<entry key="views.player.html.text33">Player expires for up to 30 days.</entry>
+	<entry key="views.player.html.text34">Please enter player password!</entry>
+	<entry key="views.player.html.text35">Please check your player password!</entry>
+	<entry key="views.player.html.text36">Do you want to download the player?</entry>
+	
+	<entry key="views.player.html.text37">Are you sure you want to insert?</entry>
+	<entry key="views.player.html.text38">Are you sure you want to update?</entry>
+	
+	<entry key="common.alert.loginAgain">Your session has expired and you are taken to the login page. \\n Please login again and use it.</entry>
+	<entry key="common.alert.PartialRec">Partial recording can not be heard on the dual player.</entry>
+	<entry key="common.alert.noDevice">There is no device on your computer that can play voice files. \\n Connect a playable device to your computer first and try listening.</entry>
+	
+	<entry key="common.alert.savedMemo">Save memo is complete.</entry>
+	<entry key="common.alert.deletedMemo">Delete memo is complete.</entry>
+	<entry key="common.alert.savedPlayerTag">Player tag save is complete.</entry>
+	<entry key="common.alert.failUpdateTag">Tag information failed to update normally. \\n If you try again, the tag information will be updated normally.</entry>
+	<entry key="common.alert.inputTime">Please enter the second of the hour as follows!</entry>
+	<entry key="common.alert.ex">ex</entry>
+	<entry key="common.alert.chkDrawing">Please check the drawing first.</entry>
+	<entry key="common.alert.searchWord">Please enter a word to search for.</entry>
+	
+	<entry key="common.alert.noPlayerTags">There are no player tags to delete.</entry>
+	
+	
+		
+	<entry key="common.alert.noUserID">User ID information is missing. \\n Please use the right path! \\n Click OK to go to the login page.</entry>
+	<entry key="common.alert.extension.succeeded">Password change cycle extension succeeded.Press \\n OK to go to the login page. \\n, sign in!</entry>
+	<entry key="common.alert.extend.Failed">Failed to extend password change cycle.</entry>
+	<entry key="common.alert.current.password">Please enter your current password!</entry>
+	<entry key="common.alert.newPassword">Please enter a new password!</entry>
+	<entry key="common.alert.notMatch.password">New password and password confirmation do not match!</entry>
+	<entry key="common.alert.change.succeeded">Password change succeeded. \\n Click OK to go to the login page. \\n Please sign in with the changed password!</entry>
+	<entry key="common.alert.wrong.password">Current password does not match. \\n Please re-enter!</entry>
+	<entry key="common.alert.passwords.inThePast">You have exceeded the number of allowed reuse of passwords in the past. \\n Please enter a different password.</entry>
+	<entry key="common.alert.previous.password">You cannot use a password that was previously used. \\n Please enter a different password.</entry>
+	<entry key="common.alert.change.failed">Password change failed.</entry>
+	
+	<entry key="common.alert.modification.completed">Information modification has been completed.</entry>
+	<entry key="common.alert.noEvaluation">No evaluation distribution campaigns have been received.</entry>
+	<entry key="common.alert.enter.validDateFormat">Please enter a valid date format.</entry>
+	
+		
+	<entry key="common.alert.disconnected.ID">Existing disconnected sessions have been disabled due to ID redundant</entry>
+	<entry key="common.alert.disconnected.IP">Existing sessions disconnected due to IP redundant connection.</entry>
+	<entry key="common.alert.Unauthorized.IP">Unauthorized IP. Please contact the administrator.</entry>
+	<entry key="common.alert.notMatchPasswords">Passwords do not match.</entry>
+	<entry key="common.alert.expired.password">Your password has expired and you need to change it. \\n Click OK to go to the Change Password page.</entry>
+	<entry key="common.alert.required.changePwd">Password change is required. \\n Click OK to go to the Change Password page.</entry>
+	<entry key="common.alert.locked.account">Your account is locked due to a long period of disconnected or continuous login failure. \\n Please contact your administrator to modify your password and try to log in again.</entry>
+	<entry key="common.alert.noPages.accessible">No pages are accessible. Please check your authority.</entry>
+	<entry key="common.alert.failedLogin.ID">Login failed due to ID redundant connection.</entry>
+	<entry key="common.alert.failedLogin.IP">Login failed due to IP redundant connection.</entry>
+	<entry key="common.alert.expired.session">Your session has expired. Please sign in again.</entry>
+	
+	<entry key="common.alert.notListening">Not listening</entry>
+	<entry key="common.alert.saveDrawing">Do you want to save the drawing?</entry>
+	<entry key="common.alert.changePwdNext">Do you want to change your password next time?</entry>
+	<entry key="common.alert.deleteMemo.file">Any notes currently stored in the file will be deleted. Are you sure you want to delete it?</entry>
+	
+	<entry key="log.ChannelInfo.ChannelInfo">Channel Information</entry>
+	
+	<entry key="log.ChannelInfo.chNum">channel Number</entry>
+	<entry key="log.ChannelInfo.oldSysCode">old System Code</entry>
+	<entry key="log.ChannelInfo.sysCode">system Code</entry>
+	<entry key="log.ChannelInfo.extNum">extension Number</entry>
+	<entry key="log.ChannelInfo.extIp">ip</entry>
+	<entry key="log.ChannelInfo.recYn">whether to use Record</entry>
+	<entry key="log.ChannelInfo.extKind">record kind</entry>
+	<entry key="log.ChannelInfo.recType">record Type</entry>
+	<entry key="log.ChannelInfo.screenYn">whether to use Screen</entry>
+	<entry key="log.DBManage.DBManage">DB Manage</entry>
+	<entry key="log.DBManage.dbName">db Name</entry>
+	<entry key="log.DBManage.dbServer">db Server</entry>
+	<entry key="log.DBManage.url">url</entry>
+	<entry key="log.DBManage.id">id</entry>
+	<entry key="log.DBManage.pw">pw</entry>
+	<entry key="log.DBManage.timeout">timeout</entry>
+	<entry key="log.ExecuteManage.ExecuteManage">Schedule Manage</entry>
+	<entry key="log.ExecuteManage.executeName">schedule Name</entry>
+	<entry key="log.ExecuteManage.jobName">job name</entry>
+	<entry key="log.ExecuteManage.rSchedulerSelect">schedule</entry>
+	<entry key="log.ExecuteManage.rSchedulerWeek">week</entry>
+	<entry key="log.ExecuteManage.rSchedulerDay">date</entry>
+	<entry key="log.ExecuteManage.rSchedulerHour">hour</entry>
+	<entry key="log.ExecuteManage.rExecuteFlag">flag</entry>
+	<entry key="log.ExecuteManage.rExecuteDate">excution Date</entry>
+	<entry key="log.ExecuteManage.rExecuteTime">excution Time</entry>
+	<entry key="log.ExecuteManage.rCompleteDate">complete Date</entry>
+	<entry key="log.ExecuteManage.rCompleteTime">complete Time</entry>
+	<entry key="log.ExecuteManage.rErrorMessage">error Message</entry>
+	<entry key="log.JobManage.JobManage">Job Manage</entry>
+	<entry key="log.JobManage.jobName">job name</entry>
+	<entry key="log.JobManage.dbName">db Name</entry>
+	<entry key="log.JobManage.sqlName">sql Name</entry>
+	<entry key="log.RUserInfo.RUserInfo">User Information</entry>
+	<entry key="log.RUserInfo.logContents">log Contents</entry>
+	<entry key="log.RUserInfo.userId">id</entry>
+	<entry key="log.RUserInfo.userName">name</entry>
+	<entry key="log.RUserInfo.bgCode">bg Code</entry>
+	<entry key="log.RUserInfo.mgCode">mg Code</entry>
+	<entry key="log.RUserInfo.sgCode">sg Code</entry>
+	<entry key="log.RUserInfo.bgName">bg Name</entry>
+	<entry key="log.RUserInfo.mgName">mg Name</entry>
+	<entry key="log.RUserInfo.sgName">sg Name</entry>
+	<entry key="log.RUserInfo.userPhone">phone Number</entry>
+	<entry key="log.RUserInfo.userLevel">user Level</entry>
+	<entry key="log.RUserInfo.extNo">extension Number</entry>
+	<entry key="log.RUserInfo.userEmail">user Email</entry>
+	<entry key="log.RUserInfo.userSex">user Sex</entry>
+	<entry key="log.SQLManage.SQLManage">SQL Manage</entry>
+	<entry key="log.SQLManage.sqlName">sql Name</entry>
+	<entry key="log.SQLManage.sql">sql</entry>
+	<entry key="log.UserDBInterface.UserDBInterface">UserDB Interface</entry>
+	<entry key="log.UserDBInterface.seq">seq</entry>
+	<entry key="log.UserDBInterface.rDbIp">ip</entry>
+	<entry key="log.UserDBInterface.rDbUser">user</entry>
+	<entry key="log.UserDBInterface.rDbPwd">pw</entry>
+	<entry key="log.UserDBInterface.rDbPort">port</entry>
+	<entry key="log.UserDBInterface.rDbName">db Name</entry>
+	<entry key="log.UserDBInterface.rTeamCode">team Code</entry>
+	<entry key="log.UserDBInterface.rTeamName">team Name</entry>
+	<entry key="log.UserDBInterface.rHh">hour</entry>
+	<entry key="log.UserDBInterface.rFlag">flag</entry>
+	<entry key="log.UserDBInterface.rDate">date</entry>
+	<entry key="log.UserDBInterface.rCompleteDate">Completed Date</entry>
+	<entry key="log.UserDBInterface.rCompleteTime">Completed Time</entry>
+	<entry key="log.BestCallInfo.BestCallInfo">Best Call Information</entry>
+	<entry key="log.BestCallInfo.rShareDate">registration Date</entry>
+	<entry key="log.BestCallInfo.rShareTime">registration Time</entry>
+	<entry key="log.BestCallInfo.rUserId">user ID</entry>
+	<entry key="log.BestCallInfo.rShareTitle">title</entry>
+	<entry key="log.BestCallInfo.rSharePath">file Name</entry>
+	<entry key="log.BestCallInfo.rShareDueDate">due Date</entry>
+	<entry key="log.BestCallInfo.rShareTarget">sharing Region</entry>
+	<entry key="log.CustConfigInfo.CustConfigInfo">Customer configuration Information</entry>
+	<entry key="log.CustConfigInfo.rCustCode">customer Code</entry>
+	<entry key="log.CustConfigInfo.rConfigKey">configuration Key</entry>
+	<entry key="log.CustConfigInfo.rConfigValue">configuration Value</entry>
+	<entry key="log.CustConfigInfo.desc">configuration Description</entry>
+	<entry key="log.EtcConfigInfo.EtcConfigInfo">Etc configuration Information</entry>
+	<entry key="log.EtcConfigInfo.groupKey">group Key</entry>
+	<entry key="log.EtcConfigInfo.mGroupKey">group Key(modification)</entry>
+	<entry key="log.EtcConfigInfo.configKey">configuration Key</entry>
+	<entry key="log.EtcConfigInfo.mConfigKey">configuration Key(modification)</entry>
+	<entry key="log.EtcConfigInfo.configValue">configuration Value</entry>
+	<entry key="log.Log.Log">Log Informaton</entry>
+	<entry key="log.Log.rLogDate">date</entry>
+	<entry key="log.Log.rLogTime">time</entry>
+	<entry key="log.Log.rLogCode">log Code</entry>
+	<entry key="log.Log.rLogName">log Name</entry>
+	<entry key="log.Log.rLogContents">log Contents</entry>
+	<entry key="log.Log.rLogDetailCode">log Detail Code</entry>
+	<entry key="log.Log.rLogLevel">log Level</entry>
+	<entry key="log.Log.rLogIp">log IP</entry>
+	<entry key="log.Log.rLogServerIp">server IP</entry>
+	<entry key="log.Log.rLogUserId">user ID</entry>
+	<entry key="log.Log.rLogEtc">etc</entry>
+	<entry key="log.Log.sDate">log Date[start]</entry>
+	<entry key="log.Log.eDate">log Date[end]</entry>
+	<entry key="log.Log.sTime">log Time[start]</entry>
+	<entry key="log.Log.eTime">log Time[end]</entry>
+	<entry key="log.LoginVO.LoginVO">Login Information</entry>
+	<entry key="log.LoginVO.failReason">contents</entry>
+	<entry key="log.LoginVO.userId">id</entry>
+	<entry key="log.LoginVO.clientIp">ip</entry>
+	<entry key="log.LoginVO.userLevel">access Level Code</entry>
+	<entry key="log.LoginVO.pwEditDate">password Modification Date</entry>
+	<entry key="log.LoginVO.tryCount">login Failure Count</entry>
+	<entry key="log.LoginVO.lastLoginDate">last Login Date</entry>
+	<entry key="log.LoginVO.lockYn">whether to Lock</entry>
+	<entry key="log.LoginVO.userLevelName">access Level Name</entry>
+	<entry key="log.MAccessLevelInfo.MAccessLevelInfo">Access Level Details</entry>
+	<entry key="log.MAccessLevelInfo.levelCode">access Level Code</entry>
+	<entry key="log.MAccessLevelInfo.levelName">access Level Name</entry>
+	<entry key="log.MMenuAccessInfo.MMenuAccessInfo">Menu Access Details</entry>
+	<entry key="log.MMenuAccessInfo.programCode">program Code</entry>
+	<entry key="log.MMenuAccessInfo.levelCode">access Level Code</entry>
+	<entry key="log.MMenuAccessInfo.accessLevel">allowable Range</entry>
+	<entry key="log.MMenuAccessInfo.readYn">whether to Read</entry>
+	<entry key="log.MMenuAccessInfo.modiYn">whether to Modify</entry>
+	<entry key="log.MMenuAccessInfo.delYn">whether to Delete</entry>
+	<entry key="log.MMenuAccessInfo.listenYn">whether to Listen to</entry>
+	<entry key="log.MMenuAccessInfo.downloadYn">whether to Download</entry>
+	<entry key="log.MMenuAccessInfo.excelYn">whether to use Excel</entry>
+	<entry key="log.MMenuAccessInfo.maskingYn">whether to Mask</entry>
+	<entry key="log.MMenuAccessInfo.prereciptYn">whether to Approve from branch</entry>
+	<entry key="log.MMenuAccessInfo.reciptYn">whether to Receive</entry>
+	<entry key="log.MMenuAccessInfo.approveYn">whether to Approve from call center</entry>
+	<entry key="log.MMenuAccessInfo.encYn">whether to Encrypt</entry>
+	<entry key="log.MMenuAccessInfo.downloadApprove">download Approval</entry>
+	<entry key="log.MMenuAccessInfo.feedbackModifyYn">whether to Modify Feedback</entry>
+	<entry key="log.MMenuAccessInfo.programTop">program Top</entry>
+	<entry key="log.MMenuAccessInfo.programPath">program Path</entry>
+	<entry key="log.MMenuAccessInfo.displayLevel">display Level</entry>
+	<entry key="log.MMenuAccessInfo.topPriority">top Priority</entry>
+	<entry key="log.PhoneMappingInfo.PhoneMappingInfo">Phone Mapping Information</entry>
+	<entry key="log.PhoneMappingInfo.custPhone">phone Number</entry>
+	<entry key="log.PhoneMappingInfo.custNickName">nick Name</entry>
+	<entry key="log.PhoneMappingInfo.useNickName">whether to use Nick Name</entry>
+	<entry key="log.PhoneMappingInfo.custPhoneKey">phone Number Key</entry>
+	<entry key="log.PhoneMappingInfo.procType">process Type</entry>
+	<entry key="log.PhoneMappingInfo.procPosition">process Position</entry>
+	<entry key="log.SubNumberInfo.SubNumberInfo">SubNumber Information</entry>
+	<entry key="log.SubNumberInfo.telNo">phone Number</entry>
+	<entry key="log.SubNumberInfo.nickName">nick Name</entry>
+	<entry key="log.SubNumberInfo.use">whether to use</entry>
+	<entry key="log.SubNumberInfo.idx">index</entry>
+	<entry key="log.SystemInfo.SystemInfo">Server Information</entry>
+	<entry key="log.SystemInfo.sysId">server ID</entry>
+	<entry key="log.SystemInfo.sysName">server Name</entry>
+	<entry key="log.SystemInfo.sysIp">server IP</entry>
+	<entry key="log.SystemInfo.pbxId">pbx ID</entry>
+	<entry key="log.SystemInfo.storagePath">storage Path</entry>
+	<entry key="log.PublicIpInfo.PublicIpInfo">Public IP Information</entry>
+	<entry key="log.PublicIpInfo.rPublicIp">IP</entry>
+	<entry key="log.PublicIpInfo.rPublicIpOld">Original IP</entry>
+	
+	<entry key="log.etc.lockID">locked ID</entry>
+	<entry key="log.etc.noEqualPw">Password mismatch</entry>
+	<entry key="log.etc.rePw">Reset Password</entry>
+	<entry key="log.etc.noMatchIP">IP mismatch</entry>
+	<entry key="log.etc.expiredPw">Password expired</entry>
+	<entry key="log.etc.nullID">Unregistered ID</entry>
+	<entry key="log.etc.logout">Sign out</entry>
+	<entry key="log.etc.pushBackChange">Delaying Password Change</entry>
+	<entry key="log.etc.pushBackChangeFail">Delaying Password Change Failed</entry>
+	<entry key="log.etc.cntOverPw">Password usage exceeded</entry>
+	<entry key="log.etc.noPrePw">Unable to use old password</entry>
+	<entry key="log.etc.pwChange">Change Password</entry>
+	<entry key="log.etc.pwChangeFail">Change Password Failed</entry>
+	<entry key="log.etc.loginDup">duplicate login</entry>
+	<entry key="log.etc.day90">Not used for 90 days</entry>
+	<entry key="log.etc.loginFail">Login Failed</entry>
+	<entry key="log.etc.loginSuccess">Login Successful</entry>
+	<entry key="log.etc.dupID">ID Duplicate Login</entry>
+	<entry key="log.etc.dupIP">IP Duplicate Login</entry>
+	<entry key="log.etc.noAuthy">Not authorized</entry>
+	<entry key="log.etc.IPDup">IP duplication</entry>
+	<entry key="log.etc.IDDup">ID duplication</entry>
+	<entry key="log.etc.regSuccess">User Registration Successful</entry>
+	<entry key="log.etc.regFail">User registration failed</entry>
+	<entry key="log.etc.userModi">Modify user information</entry>
+	<entry key="log.etc.userModiFail">Failed to modify user information</entry>
+	<entry key="log.etc.mobileLicenseExceed">Mobile License Exceeded</entry>
+	<entry key="log.etc.man">Man</entry>
+	<entry key="log.etc.woman">Woman</entry>
+	<entry key="log.etc.unlockUser">Unlock User</entry>
+	<entry key="log.etc.detail">Details</entry>
+	<entry key="log.etc.dupAuthy">Duplicate Privilege Name</entry>
+	
+	<entry key="log.SttServerInfo.SttServerInfo">STT Server Information</entry>
+	<entry key="log.SttServerInfo.sysCode">server Code</entry>
+	<entry key="log.SttServerInfo.sysName">server Name</entry>
+	<entry key="log.SttServerInfo.sysIp">server IP</entry>
+	
+</properties>

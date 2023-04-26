@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.SubNumberInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.SubNumberInfo">
+		<result column="R_TELNO" jdbcType="VARCHAR" property="telNo" />
+		<result column="R_NICKNAME" jdbcType="VARCHAR" property="nickName" />
+		<result column="R_USE" jdbcType="VARCHAR" property="use" />
+		<result column="R_IDX" jdbcType="VARCHAR" property="idx" />
+	</resultMap>
+	
+	<resultMap id="LogResultMap" type="com.furence.recsee.common.model.LogoVO">
+		<result column="R_LOGO_TYPE" jdbcType="VARCHAR" property="logoType" />
+		<result column="R_LOGO_CHANGE_USE" jdbcType="VARCHAR" property="logoChangeUse" />
+		<result column="R_LOGO_PATH" jdbcType="VARCHAR" property="logoPath" />
+	</resultMap>
+	
+	<resultMap id="PacketResultMap" type="com.furence.recsee.common.model.PacketVO">
+		<result column="R_CUST_CODE" jdbcType="VARCHAR" property="custCode" />
+		<result column="R_PHONE_SETTING" jdbcType="VARCHAR" property="phoneSetting" />
+		<result column="R_MSG" jdbcType="VARCHAR" property="msg" />
+		<result column="R_RETURN_URL" jdbcType="VARCHAR" property="returnUrl" />		
+		
+		<result column="R_NORTP_DATE" jdbcType="VARCHAR" property="nortpDate" />
+		<result column="R_NORTP_TIME" jdbcType="VARCHAR" property="nortpTime" />
+		<result column="R_NORTP_EXT" jdbcType="VARCHAR" property="nortpExt" />
+		<result column="R_SEND_RESULT" jdbcType="VARCHAR" property="sendResult" />
+		
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="sysCode" />
+		<result column="R_SYS_NAME" jdbcType="VARCHAR" property="sysName" />
+		<result column="R_CUST_PHONE" jdbcType="VARCHAR" property="custPhone" />
+		<result column="R_CALL_ID" jdbcType="VARCHAR" property="callId" />
+	</resultMap>
+	
+	<sql id="packetWhere">
+		<where>
+			<trim suffixOverrides="AND">
+				<if test="nortpDate != null">
+				R_NORTP_DATE = #{nortpDate} AND
+				</if>
+				<if test="nortpTime != null">
+				R_NORTP_TIME = #{nortpTime} AND
+				</if>
+				<if test="sDate != null and eDate != null">
+				R_NORTP_DATE BETWEEN #{sDate} AND #{eDate} AND
+				</if>
+				<if test="sTime != null and eTime != null">
+				R_NORTP_TIME BETWEEN #{sTime} AND #{eTime} AND
+				</if>
+				<if test="nortpExt != null">
+				R_NORTP_EXT  LIKE '%' || #{nortpExt} || '%' AND
+				</if>
+				<if test="sysCode != null">
+				R_SYS_CODE = #{sysCode} AND
+				</if>
+				<if test="custPhone != null">
+				R_CUST_PHONE LIKE '%' || #{custPhone} || '%' AND
+				</if>
+				<if test="custCode != null">
+				R_CUST_CODE = #{custCode} AND
+				</if>
+				<if test="callId != null">
+				R_CALL_ID LIKE '%' || #{callId} || '%' AND
+				</if>
+				
+			</trim>
+		</where>
+	</sql>
+		
+	<select id="selectSubNumberInfo" parameterType="com.furence.recsee.common.model.SubNumberInfo" resultMap="BaseResultMap">
+		SELECT *
+		  FROM RS_COMPANY_TELNO
+		 WHERE R_USE = 'Y'
+		 ORDER BY R_TELNO
+	</select>
+	
+	<insert id="insertSubNumberInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.SubNumberInfo">
+		INSERT INTO RS_COMPANY_TELNO (R_TELNO, R_NICKNAME, R_USE)
+		VALUES(#{telNo}, #{nickName}, #{use})
+	</insert>
+
+	<update id="updateSubNumberInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.SubNumberInfo">
+		UPDATE RS_COMPANY_TELNO SET R_TELNO = #{telNo}, R_NICKNAME = #{nickName}, R_USE = #{use} where R_IDX = #{idx}::INTEGER
+	</update>
+	
+	<insert id="insertSubNumberInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.SubNumberInfo">
+		INSERT INTO RS_COMPANY_TELNO (R_TELNO, R_NICKNAME, R_USE, R_IDX)
+		VALUES(#{telNo}, #{nickName}, #{use}, NULL)
+	</insert>
+
+	<update id="updateSubNumberInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.SubNumberInfo">
+		UPDATE RS_COMPANY_TELNO SET R_TELNO = #{telNo}, R_NICKNAME = #{nickName}, R_USE = #{use} where R_IDX = #{idx}
+	</update>
+	
+	<insert id="insertSubNumberInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.SubNumberInfo">
+		INSERT INTO RS_COMPANY_TELNO (R_TELNO, R_NICKNAME, R_USE, R_IDX)
+		VALUES(#{telNo}, #{nickName}, #{use}, NULL)
+	</insert>
+
+	<update id="updateSubNumberInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.SubNumberInfo">
+		UPDATE RS_COMPANY_TELNO SET R_TELNO = #{telNo}, R_NICKNAME = #{nickName}, R_USE = #{use} where R_IDX = #{idx}
+	</update>
+
+	<delete id="deleteSubNumberInfo" parameterType="com.furence.recsee.common.model.SubNumberInfo">
+		DELETE FROM RS_COMPANY_TELNO
+		WHERE R_IDX = #{idx}::INTEGER
+	</delete>
+	
+	
+	<select id="selectLogoInfo" parameterType="com.furence.recsee.common.model.LogoVO" resultMap="LogResultMap">
+		SELECT R_LOGO_TYPE
+			 , R_LOGO_CHANGE_USE
+			 , R_LOGO_PATH
+		FROM RS_CUSTOMIZING_LOGO
+		<if test="logoType != null">
+			WHERE R_LOGO_TYPE = #{logoType}
+		</if>
+	</select>
+	
+	<update id="updateLogoInfo" parameterType="com.furence.recsee.common.model.LogoVO">
+		UPDATE RS_CUSTOMIZING_LOGO 
+		   SET R_LOGO_CHANGE_USE = #{logoChangeUse}
+		     , R_LOGO_PATH = #{logoPath}
+		     , R_LOGO_SIZE = #{logoSize}
+		 WHERE R_LOGO_TYPE = #{logoType}
+	</update>
+	<select id="selectPacketSettingInfo" parameterType="com.furence.recsee.common.model.PacketVO" resultMap="PacketResultMap">
+		SELECT r_cust_code
+			 , r_phone_setting
+			 , r_msg
+			 , r_return_url
+		FROM rs_nopacketconnection_setting
+		<if test="custCode != null">
+			WHERE r_cust_code = #{custCode}
+		</if>
+	</select>
+	
+	<insert id="insertPacketSettingInfo" parameterType="com.furence.recsee.common.model.PacketVO">
+		INSERT INTO rs_nopacketconnection_setting (r_cust_code, r_phone_setting, r_msg, r_return_url)
+		VALUES(#{custCode}, #{phoneSetting}, #{msg}, #{returnUrl})
+	</insert>
+	
+	<update id="updatePacketSettingInfo" parameterType="com.furence.recsee.common.model.PacketVO">
+		UPDATE rs_nopacketconnection_setting
+		   SET r_phone_setting = #{phoneSetting}
+		     , r_msg = #{msg}
+		     , r_return_url = #{returnUrl}
+		 WHERE r_cust_code = #{custCode}
+	</update>
+	
+	<delete id="deletePacketSettingInfo" parameterType="com.furence.recsee.common.model.PacketVO">
+		DELETE FROM rs_nopacketconnection_setting
+		 WHERE r_cust_code = #{custCode}
+	</delete>
+	
+	<select id="selectPacketLogInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.PacketVO" resultMap="PacketResultMap">
+		SELECT r_nortp_date
+			 , r_nortp_time
+			 , r_nortp_ext
+			 , r_sys_code
+			 , (select r_sys_name from rs_sys_info where rs_nopacketconnection_log.r_sys_code = rs_sys_info.r_sys_id) as r_sys_name
+			 , r_cust_phone
+			 , r_cust_code
+			 , r_return_url
+			 , r_send_result
+			 , r_call_id
+		FROM rs_nopacketconnection_log
+
+		<include refid="packetWhere"></include>
+		
+		ORDER BY R_NORTP_DATE DESC, R_NORTP_TIME DESC
+		
+		<if test="topCount != null">
+		LIMIT #{topCount}
+		</if>
+		<if test="limitUse eq 'Y'.toString()">
+			<choose>
+				<when test="count != null and posStart != null">
+				LIMIT #{count} OFFSET #{posStart}
+				</when>
+				<otherwise>
+				LIMIT 30 OFFSET 0
+				</otherwise>
+			</choose>
+		</if>
+	</select>
+	
+	
+	<select id="selectPacketLogInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.PacketVO" resultMap="PacketResultMap">
+		SELECT r_nortp_date
+			 , r_nortp_time
+			 , r_nortp_ext
+			 , r_cust_code
+			 , r_return_url
+			 , r_send_result
+			 , r_call_id
+		FROM rs_nopacketconnection_log
+
+		<include refid="packetWhere"></include>
+		
+		ORDER BY R_NORTP_DATE DESC, R_NORTP_TIME DESC
+		
+		<if test="limitUse eq 'Y'.toString()">
+			<choose>
+				<when test="count != null and posStart != null">
+				OFFSET #{posStart} ROWS FETCH NEXT #{count} ROWS ONLY
+				</when>
+				<otherwise>
+				OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY
+				</otherwise>
+			</choose>
+		</if>
+	</select>
+	
+	<select id="selectTotalPacketLog" parameterType="com.furence.recsee.common.model.PacketVO"  resultType="Integer">
+		SELECT COUNT(*)
+		FROM   rs_nopacketconnection_log
+		
+		<include refid="packetWhere"></include>
+	</select>
+	
+	<delete id="deletePacketLogInfo" parameterType="com.furence.recsee.common.model.PacketVO">
+		DELETE FROM rs_nopacketconnection_log 
+		WHERE (r_nortp_date, r_call_id) IN
+		(
+			SELECT * FROM (
+				SELECT r_rec_date, r_call_id1
+				FROM rs_recfile AS recfile
+					,rs_nopacketconnection_log AS packet
+				WHERE recfile.r_rec_date = packet.r_nortp_date
+				AND recfile.r_call_id1 = packet.r_call_id
+			) AS result
+		)
+	</delete>
+	
+</mapper>
+
+
+

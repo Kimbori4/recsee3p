@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>통계 화면용 메세지 정의</comment>
+
+	<entry key="statistics.title.allCount">전체 녹취 건수</entry>
+	<entry key="statistics.title.allHour">전체 녹취 시간</entry>
+	<entry key="statistics.title.outbound">발신 건 수</entry>
+	<entry key="statistics.title.inbound">수신 건 수</entry>
+
+	<entry key="statistics.unit.time">시간</entry>
+
+	<entry key="statistics.callStatistics.graph.axisTitle">일자별 녹취 건수</entry>
+
+
+	<entry key="statistics.selectbox.bgFilter">대분류로 필터</entry>
+	<entry key="statistics.selectbox.mgFilter">중분류로 필터</entry>
+	<entry key="statistics.selectbox.sgFilter">소분류로 필터</entry>
+	<entry key="statistics.selectbox.peopleFilter">사원으로 필터</entry>
+	<entry key="statistics.selectbox.extFilter">내선번호로 필터</entry>
+	<entry key="statistics.selectbox.channelFilter">채널번호로 필터</entry>
+
+	<entry key="statistics.callStatistics.grid.title.date">날짜</entry>
+	<entry key="statistics.callStatistics.grid.title.time">시간</entry>
+	<entry key="statistics.callStatistics.grid.title.group">그룹</entry>
+	<entry key="statistics.callStatistics.grid.title.calls">녹취 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.talkTime">녹취 시간</entry>
+	<entry key="statistics.callStatistics.grid.title.inbound">수신 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.inboundTime">수신 녹취 시간</entry>
+	<entry key="statistics.callStatistics.grid.title.outbound">발신 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.outboundTime">발신 녹취 시간</entry>
+	<entry key="statistics.callStatistics.grid.title.transfer">호전환 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.transferTime">호전환 녹취 시간</entry>
+	<entry key="statistics.callStatistics.grid.title.conference">회의통화 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.conferenceTime">회의통화 녹취 시간</entry>
+	<entry key="statistics.callStatistics.grid.title.internal">내선 통화 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.internalTime">내선 통화 녹취 시간</entry>
+	<entry key="statistics.callStatistics.grid.title.noRecodingCount">녹취 취소 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.realCalls">유효 콜 건수</entry>
+	<entry key="statistics.callStatistics.grid.title.realCallTime">유효 콜 시간</entry>
+	<entry key="statistics.callStatistics.grid.title.Total">합계</entry>
+	<entry key="statistics.callStatistics.grid.title.division">구분</entry>
+	<entry key="statistics.callStatistics.grid.title.connTry">연결시도</entry>
+	<entry key="statistics.callStatistics.grid.title.connSuccess">연결성공</entry>
+	<entry key="statistics.callStatistics.grid.title.connFail">연결포기</entry>
+	<entry key="statistics.callStatistics.grid.title.connMiss">부재중</entry>
+	<entry key="statistics.callStatistics.grid.title.calling">통화중</entry>
+	<entry key="statistics.callStatistics.grid.title.bgName">대분류명</entry>
+	<entry key="statistics.callStatistics.grid.title.mgName">중분류명</entry>
+	<entry key="statistics.callStatistics.grid.title.sgName">소분류명</entry>
+	<entry key="statistics.callStatistics.grid.title.totalcalls">시도건수</entry>
+	<entry key="statistics.callStatistics.grid.title.realcalling">통화건수</entry>
+	<entry key="statistics.callStatistics.grid.title.totalTimeCalls">총통화</entry>
+	<entry key="statistics.callStatistics.grid.title.outboundAvgTimeCalls">발신 평균통화</entry>
+	<entry key="statistics.callStatistics.grid.title.inboundAvgTimeCalls">수신 평균통화</entry>
+	<entry key="statistics.callStatistics.grid.title.avgTimeCalls">평균통화</entry>
+	<entry key="statistics.callStatistics.grid.title.groupUsers">사용자수</entry>
+	<entry key="statistics.callStatistics.grid.title.id">아이디</entry>
+	<entry key="statistics.callStatistics.grid.title.name">사용자</entry>
+	<entry key="statistics.callStatistics.grid.title.totalDial">총다이얼</entry>
+	<entry key="statistics.callStatistics.grid.title.no">순번</entry>
+	<entry key="statistics.callStatistics.grid.title.groupName">그룹명</entry>
+	<entry key="statistics.callStatistics.grid.title.nameAndId">성명(아이디)</entry>
+	<entry key="statistics.callStatistics.grid.title.freeBeforeCust">무료전회원</entry>
+	<entry key="statistics.callStatistics.grid.title.freeCust">무료회원</entry>
+	<entry key="statistics.callStatistics.grid.title.expirationCust">만료회원</entry>
+	<entry key="statistics.callStatistics.grid.title.RegularCust">정회원</entry>
+	<entry key="statistics.callStatistics.grid.title.CancelMember">휴강회원</entry>
+	<entry key="statistics.callStatistics.grid.title.AdjournedMember">휴회회원</entry>
+	<entry key="statistics.callStatistics.grid.title.AdjournedExpectedMember">휴회예정</entry>
+	<entry key="statistics.callStatistics.grid.title.OtherMembers">기타회원</entry>
+	<entry key="statistics.callStatistics.grid.title.outboundTotalCallsTime">발신 총통화시간</entry>
+	<entry key="statistics.callStatistics.grid.title.inboundTotalCallsTime">수신 총통화시간</entry>
+	<entry key="statistics.callStatistics.grid.title.totalCallsTime">총통화시간</entry>
+	<entry key="statistics.callStatistics.grid.title.callingTime">통화시간</entry>
+	<entry key="statistics.callStatistics.grid.title.TryAndConn">(시도 | 연결)</entry>
+	<entry key="statistics.callStatistics.grid.title.sumConnAndsumTime">(연결합계 | 시간합산)</entry>
+	<entry key="statistics.callStatistics.grid.title.regularMemAndCancelMem">(정회원 | 휴강회원)</entry>
+	
+
+
+	<entry key="statistics.dashboard.title.daily">일간 녹취 통계</entry>
+	<entry key="statistics.dashboard.title.week">주간 녹취 통계</entry>
+	<entry key="statistics.dashboard.title.callPerFile">콜 대 녹취 파일 통계</entry>
+	<entry key="statistics.dashboard.title.server">서버별 통화 시간</entry>
+
+	<entry key="statistics.dashboard.title.axisInbound">수신</entry>
+	<entry key="statistics.dashboard.title.axisOutbound">발신</entry>
+	<entry key="statistics.dashboard.title.axisCall">콜 건수</entry>
+	<entry key="statistics.dashboard.title.axisFile">녹취 파일 수</entry>
+	<entry key="statistics.dashboard.title.axisTime">녹취 시간(시간)</entry>
+
+	<entry key="statistics.userStatistics.graph.axisTitle">녹취 건수</entry>
+
+	<entry key="statistics.userStatistics.grid.title.time">시간</entry>
+	<entry key="statistics.userStatistics.grid.title.userName">사용자명</entry>
+	<entry key="statistics.userStatistics.grid.title.userId">아이디</entry>
+	<entry key="statistics.userStatistics.grid.title.extNo">내선번호</entry>
+	<entry key="statistics.userStatistics.grid.title.bgName">대분류</entry>
+	<entry key="statistics.userStatistics.grid.title.mgName">중분류</entry>
+	<entry key="statistics.userStatistics.grid.title.sgName">소분류</entry>
+	<entry key="statistics.userStatistics.grid.title.calls">녹취 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.talkTime">녹취 시간</entry>
+	<entry key="statistics.userStatistics.grid.title.inbound">수신 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.inboundTime">수신 녹취 시간</entry>
+	<entry key="statistics.userStatistics.grid.title.outbound">발신 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.outboundTime">발신 녹취 시간</entry>
+	<entry key="statistics.userStatistics.grid.title.transfer">호전환 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.transferTime">호전환 녹취 시간</entry>
+	<entry key="statistics.userStatistics.grid.title.conference">회의통화 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.conferenceTime">회의통화 녹취 시간</entry>
+	<entry key="statistics.userStatistics.grid.title.internal">내선 통화 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.internalTime">내선 통화 녹취 시간</entry>
+	<entry key="statistics.userStatistics.grid.title.noRecodingCount">녹취 취소 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.Total">합계</entry>
+	<entry key="statistics.userStatistics.grid.title.rBgCode">대분류</entry>
+	<entry key="statistics.userStatistics.grid.title.rMgCode">중분류</entry>
+	<entry key="statistics.userStatistics.grid.title.rSgCode">소분류</entry>
+	<entry key="statistics.userStatistics.grid.title.rRecDate">날짜</entry>
+	<entry key="statistics.userStatistics.grid.title.rRecRtime">시각</entry>
+	<entry key="statistics.userStatistics.grid.title.realCalls">유효 발신 콜 건수</entry>
+	<entry key="statistics.userStatistics.grid.title.realCallTime">유효 발신 콜 시간</entry>
+
+	<entry key="statistics.userStatistics.excel.title.r_user_name">사용자명</entry>
+	<entry key="statistics.userStatistics.excel.title.r_bg_code">대분류</entry>
+	<entry key="statistics.userStatistics.excel.title.r_mg_code">중분류</entry>
+	<entry key="statistics.userStatistics.excel.title.r_sg_code">소분류</entry>
+	<entry key="statistics.userStatistics.excel.title.r_user_id">아이디</entry>
+	<entry key="statistics.userStatistics.excel.title.r_ext_no">내선번호</entry>
+	<entry key="statistics.userStatistics.excel.title.total_calls">녹취 건수</entry>
+	<entry key="statistics.userStatistics.excel.title.total_time">녹취 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.inbound_time">수신 건수</entry>
+	<entry key="statistics.userStatistics.excel.title.inbound_calls">수신 건수</entry>
+	<entry key="statistics.userStatistics.excel.title.outbound_calls">발신 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.outbound_time">발신 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.transfer_calls">호전환 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.transfer_time">호전환 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.conference_calls">회의통화 건수</entry>
+	<entry key="statistics.userStatistics.excel.title.conference_time">회의통화 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.internal_calls">내선통화 건수</entry>
+	<entry key="statistics.userStatistics.excel.title.internal_time">내선통화 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.real_calls">유효발신 건수</entry>
+	<entry key="statistics.userStatistics.excel.title.real_time">유효발신 시간</entry>
+	<entry key="statistics.userStatistics.excel.title.R_REC_RTIME">시간</entry>
+	<entry key="statistics.userStatistics.excel.title.R_REC_DATE">날짜</entry>
+	<entry key="statistics.userStatistics.excel.title.dayOfWeek">요일</entry>
+	<entry key="statistics.userStatistics.excel.title.totalCallbytime">합계</entry>
+	<entry key="statistics.userStatistics.excel.title.sec30">30초 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.sec60">1분 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.sec120">2분 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.sec180">3분 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.sec240">4분 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.sec300">5분 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.sec420">7분 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.sec600">10분 미만</entry>
+	<entry key="statistics.userStatistics.excel.title.moresec600">10분 이상</entry>
+	<entry key="statistics.userStatistics.grid.title.groupStatistics">그룹 별 통계</entry>
+	<entry key="statistics.userStatistics.grid.title.byDate">날짜 별</entry>
+	<entry key="statistics.userStatistics.grid.title.byTime">시간 별</entry>
+	<entry key="statistics.userStatistics.grid.title.byWeek">주 별</entry>
+	<entry key="statistics.userStatistics.grid.title.byDayWeek">요일 별</entry>
+	<entry key="statistics.userStatistics.grid.title.byMonth">월 별</entry>
+	<entry key="statistics.userStatistics.grid.title.byGroup">그룹 별</entry>
+	<entry key="statistics.userStatistics.grid.title.byUser">사용자 별</entry>
+	<entry key="statistics.userStatistics.grid.title.byDetail">통화통계</entry><!--상세통계  -->
+	<entry key="statistics.userStatistics.grid.title.statisticsType">통계 유형</entry>
+	<entry key="statistics.userStatistics.grid.title.peopleStatistics">사용자 별 통계</entry>
+	<entry key="statistics.userStatistics.grid.title.mobileStatistics">모바일 통계</entry>
+
+	<!-- 18-09-05 -pilip statistics kor lang add -->
+	<entry key="statistics.js.alert.msg1">사원을 선택하세요</entry>
+	<entry key="statistics.js.alert.msg2">총</entry>
+	<entry key="statistics.js.alert.msg3">명 선택</entry>
+	<entry key="statistics.js.alert.msg4">대상 그룹을 선택 해 주세요</entry>
+	<entry key="statistics.js.alert.msg5">시작날짜와 종료날짜를 모두 입력해 주세요</entry>
+	<entry key="statistics.js.alert.msg6">전체 합계</entry>
+	<entry key="statistics.js.alert.msg7">녹취 건 수</entry>
+	<entry key="statistics.js.alert.msg8">건</entry>
+	<entry key="statistics.js.alert.msg9">아웃</entry>
+	<entry key="statistics.js.alert.msg10">아웃시간</entry>
+	<entry key="statistics.js.alert.msg11">전환</entry>
+	<entry key="statistics.js.alert.msg12">전환시간</entry>
+	<entry key="statistics.js.alert.msg13">회의</entry>
+	<entry key="statistics.js.alert.msg14">회의시간</entry>
+	<entry key="statistics.js.alert.msg15">내선</entry>
+	<entry key="statistics.js.alert.msg16">내선시간</entry>
+	<entry key="statistics.js.alert.msg17">합계</entry>
+	<entry key="statistics.js.alert.msg18">타임1</entry>
+	<entry key="statistics.js.alert.msg19">타임2합</entry>
+	<entry key="statistics.js.alert.msg20">타임3합</entry>
+	<entry key="statistics.js.alert.msg21">타임4</entry>
+	<entry key="statistics.js.alert.msg22">타임5</entry>
+	<entry key="statistics.js.alert.msg23">타임6</entry>
+	<entry key="statistics.js.alert.msg24">타임7</entry>
+	<entry key="statistics.js.alert.msg25">타임8</entry>
+	<entry key="statistics.js.alert.msg26">타임9</entry>
+	<entry key="statistics.js.alert.msg27">리얼</entry>
+	<entry key="statistics.js.alert.msg28">리얼시간</entry>
+	<entry key="statistics.js.alert.msg29">조회된 결과가 없어 엑셀다운로드를 할 수 없습니다.</entry>
+	<entry key="statistics.js.alert.msg30">30초 미만</entry>
+	<entry key="statistics.js.alert.msg31">1분 미만</entry>
+	<entry key="statistics.js.alert.msg32">2분 미만</entry>
+	<entry key="statistics.js.alert.msg33">3분 미만</entry>
+	<entry key="statistics.js.alert.msg34">4분 미만</entry>
+	<entry key="statistics.js.alert.msg35">5분 미만</entry>
+	<entry key="statistics.js.alert.msg36">7분 미만</entry>
+	<entry key="statistics.js.alert.msg37">10분 미만</entry>
+	<entry key="statistics.js.alert.msg38">10분 이상</entry>
+	<entry key="statistics.js.alert.msg39">녹취시간</entry>
+	<entry key="statistics.js.alert.msg40">평균 녹취시간</entry>
+	<entry key="statistics.js.alert.msg41">분</entry>
+	
+	<entry key="statistics.title.callRate">콜 타입별 비율</entry>
+	<entry key="statistics.title.callTrends">통화 시간별 콜 추이</entry>
+	<entry key="statistics.title.selectEmployee">사원을 선택하세요</entry>
+	<entry key="statistics.title.total">총</entry>
+	<entry key="statistics.title.selectPeople">명 선택</entry>
+	<entry key="statistics.title.callTrends2">콜 추이</entry>
+	<entry key="statistics.title.cases">건</entry>
+	<entry key="statistics.title.monthly">월간 콜 추이</entry>
+	
+	
+	<entry key="statistics.title.callTransfer">호전환</entry>
+	<entry key="statistics.title.extension">내선</entry>
+	<entry key="statistics.title.meeting">회의</entry>
+	<entry key="statistics.title.timeOfTheDay">금일 시간에 따른 녹취 타입별 통계</entry>
+	<entry key="statistics.title.callCount">콜 개수</entry>
+	<entry key="statistics.title.time">시간</entry>
+	<entry key="statistics.title.weekly">주간 녹취 타입별 통계</entry>
+	<entry key="statistics.title.date">날짜</entry>
+	<entry key="statistics.title.hourOfTheDay">금일 시간별 녹취 통계</entry>	
+	
+	
+	<entry key="statistics.title.dayOfWeek.1">월요일</entry>	
+	<entry key="statistics.title.dayOfWeek.2">화요일</entry>	
+	<entry key="statistics.title.dayOfWeek.3">수요일</entry>	
+	<entry key="statistics.title.dayOfWeek.4">목요일</entry>	
+	<entry key="statistics.title.dayOfWeek.5">금요일</entry>	
+	<entry key="statistics.title.dayOfWeek.6">토요일</entry>	
+	<entry key="statistics.title.dayOfWeek.7">일요일</entry>	
+</properties>

@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>照会(search)画面用メッセージの定義</comment>
+
+	<entry key="search.option.startDate">開始日</entry>
+	<entry key="search.option.endDate">終了の日付</entry>
+	<entry key="search.option.recStart">録音開始</entry>
+	<entry key="search.option.recEnd">録音終了</entry>
+	<entry key="search.option.callStart">通話開始</entry>
+	<entry key="search.option.callEnd">通話終了</entry>
+	<entry key="search.option.search">照会</entry>
+	<entry key="search.option.callType">コールタイプ</entry>
+	<entry key="search.option.callType2">コールタイプ2</entry>
+	<entry key="search.option.custNo">顧客番号</entry>
+	<entry key="search.option.custName">相手先名</entry>
+	<entry key="search.option.agentId">ユーザーID</entry>
+	<entry key="search.option.agentName">ユーザー名</entry>
+	<entry key="search.option.ext">内線番号</entry>
+	<entry key="search.option.que1">キュー1</entry>
+	<entry key="search.option.que2">キュー2</entry>
+	<entry key="search.option.agentClose">カウンセラー終了</entry>
+	<entry key="search.option.medium">中分類</entry>
+	<entry key="search.option.small">小分類</entry>
+	<entry key="search.option.natId">住民登録番号</entry>
+	<entry key="search.option.empId">ID</entry>
+	<entry key="search.option.screen">スクリーン</entry>
+	<entry key="search.option.trace">トレース</entry>
+	<entry key="search.option.evaluation">評価</entry>
+	<entry key="search.option.startType">試作タイプ</entry>
+		
+	<entry key="search.player.nowPlaying">現在再生中のファイル:</entry>
+	<entry key="search.player.nowPlaying2">現在再生中のファイル</entry>
+	<entry key="search.player.noFiles">再生中のファイルがありません。</entry>
+		
+	<entry key="search.player.cust">顧客</entry>
+	<entry key="search.player.user">カウンセラー</entry>
+		
+	<entry key="search.player.inputMsg">優秀コールのタイトルを25文字前後で入力してください。</entry>
+	<entry key="search.player.addBestcall">ウシュコール追加</entry>
+	<entry key="search.player.addBestCallManage">優秀コール管理追加</entry>
+	<entry key="search.player.specifyStart">再生時点から区間指定</entry>
+	<entry key="search.player.specifyFinish">再生時点から区間指定終了</entry>
+	<entry key="search.player.defineSpecify">ユーザー定義区間指定</entry>
+	<entry key="search.player.mouseSpecify">マウス区間指定</entry>
+	<entry key="search.player.delSection">区間一括削除</entry>
+	<entry key="search.player.uploadFile">ファイルアップロード</entry>
+	<entry key="search.player.playerTag">メモ</entry>
+	<entry key="search.player.repeat">反復</entry>
+	<entry key="search.player.cancelRepeat">リピート解除</entry>
+	<entry key="search.player.down">ダウン</entry>
+	<entry key="search.player.mute">黙音</entry>
+	<entry key="search.player.cancelMute">黙音解除</entry>
+	<entry key="search.player.remove">除去</entry>
+	<entry key="search.player.cancelRemove">除去解除</entry>
+	<entry key="search.player.del">削除</entry>
+	<entry key="search.player.fileDown">ファイル·ダウンロード</entry>
+	<entry key="search.player.PlayerDown">プレイヤー·ダウンロード</entry>
+		
+	<entry key="search.player.alert.msg1">聴取可能期間が満了したファイルです!</entry>
+	<entry key="search.player.alert.msg2">プレイヤーからの再生が不可能なファイルです。\\nプレーヤーでダウンロードしたファイルのみ再生が可能です。</entry>
+	<entry key="search.player.alert.msg3">要請した録音ファイルが見つかりません。</entry>
+	<entry key="search.player.alert.msg4">これ以上再生するリストがありません。</entry>
+	<entry key="search.player.alert.msg5">要請に失敗しました。</entry>
+	<entry key="search.player.alert.msg6">傍受対象の聞き取りボタンをクリックしてください。</entry>
+	<entry key="search.player.alert.msg7">ファイルがありません。</entry>
+	<entry key="search.player.alert.msg8">現在リアルタイム傍受中の対象がありません。</entry>
+	<entry key="search.player.alert.msg9">プレイヤータグの保存が完了しました。</entry>
+	<entry key="search.player.alert.msg10">プレイヤータグの削除が完了しました。</entry>
+	<entry key="search.player.alert.msg11">優秀コールタイトルを入力してください。</entry>
+	<entry key="search.player.alert.msg12">再生中のファイルがありません。</entry>
+	<entry key="search.player.alert.msg13">録音ファイルの宿泊/除去する部分を表示してください。</entry>
+	<entry key="search.player.alert.msg14">ウスコール登録に成功しました。</entry>
+	<entry key="search.player.alert.msg15">ウスコールの登録に失敗しました。</entry>
+	<entry key="search.player.alert.msg16">聴取可能期間が満了したファイルです!</entry>
+	<entry key="search.player.alert.msg17">優秀コールを追加しますか?</entry>
+	<entry key="search.player.alert.msg18">削除しますか?</entry>
+	<entry key="search.player.alert.msg19">再生中だったファイルです。\\n続けて再生しますか?</entry>
+	<entry key="search.player.alert.msg20">現在ファイルに保存されたプレイヤータグがすべて削除されます。\\n本当に削除しますか?</entry>
+		
+		
+		
+		
+		
+		
+		
+	<entry key="views.search.tabs.a1">基本</entry>
+	<entry key="views.search.tabs.a2">拡張</entry>
+	<entry key="views.search.tabs.a3">お気に入り</entry>
+		
+	<entry key="views.search.combo.all">コールタイプ</entry>
+		
+	<entry key="views.search.button.search">検 索</entry>
+	<entry key="views.search.button.excelDownload">ページエクセルダウンロード</entry>
+	<entry key="views.search.button.multiListen">選択聴取</entry>
+	<entry key="views.search.button.multiDownload">選択ダウンロード</entry>
+	<entry key="views.search.grid.head.ROWNUMBER">番号</entry>
+	<entry key="views.search.grid.head.R_CHECK_BOX"></entry>
+	<entry key="views.search.grid.head.R_FAVORITES">お気に入り</entry>
+	<entry key="views.search.grid.head.R_REC_DATE">日付</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME">時</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME1">時刻</entry>
+	<entry key="views.search.grid.head.R_REC_RTIME2">時刻(まで)</entry>
+	<entry key="views.search.grid.head.R_REC_TIME">時間</entry>
+	<entry key="views.search.grid.head.R_REC_TIME1">from</entry>
+	<entry key="views.search.grid.head.R_REC_TIME2">to</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT1">通話接続の録音時間( から)</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT2">通話接続の録音時間( まで)</entry>
+	<entry key="views.search.grid.head.R_BG_CODE">大分類</entry>
+	<entry key="views.search.grid.head.R_MG_CODE">中分類</entry>
+	<entry key="views.search.grid.head.R_SG_CODE">小分類</entry>
+	<entry key="views.search.grid.head.R_USER_ID">カウンセラーID</entry>
+	<entry key="views.search.grid.head.R_CH_NUM">チャンネル番号</entry>
+	<entry key="views.search.grid.head.R_USER_NAME">登録者</entry>
+	<entry key="views.search.grid.head.R_CALL_ID1">コールID</entry>
+	<entry key="views.search.grid.head.R_CALL_ID2">コールID</entry>
+	<entry key="views.search.grid.head.R_CALL_ID3">コールID</entry>
+	<entry key="views.search.grid.head.R_EXT_NUM">内線番号</entry>
+	<entry key="views.search.grid.head.R_EXT_NUM_MOBILE">電話番号</entry>
+	<entry key="views.search.grid.head.R_CUST_NAME">相手先名</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE1">相手先番号</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE2">切り替え番号</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE3">相手先番号</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND1">コールタイプ</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND2">追加コールタイプ</entry>
+	<entry key="views.search.grid.head.R_CALL_STIME">通話開始時間</entry>
+	<entry key="views.search.grid.head.R_CALL_ETIME">通話終了時間</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME">通話時間</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME1">from</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME2">to</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT1">有効通話時間(から)</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT2">有効通話時間(まで)</entry>
+	<entry key="views.search.grid.head.R_SELFDIS_YN">相談員終了の有無</entry>
+	<entry key="views.search.grid.head.R_V_SYS_CODE">システムコード</entry>
+	<entry key="views.search.grid.head.R_V_HDD_FLAG">HDD認識記号</entry>
+	<entry key="views.search.grid.head.R_LISTEN_URL">録音ファイル経路</entry>
+	<entry key="views.search.grid.head.R_V_FILENAME">録音ファイル名</entry>
+	<entry key="views.search.grid.head.R_S_SYS_CODE">スクリーン·システム·コード</entry>
+	<entry key="views.search.grid.head.R_S_HDD_FLAG">スクリーンHDD認識記号</entry>
+	<entry key="views.search.grid.head.R_S_SCREEN_URL">スクリーンファイル経路</entry>
+	<entry key="views.search.grid.head.R_S_FILENAME">スクリーンファイル名</entry>
+	<entry key="views.search.grid.head.R_S_UPLOAD_YN">スクリーンアップロード有無</entry>
+	<entry key="views.search.grid.head.R_T_SYS_CODE">テキスト録取システムコード</entry>
+	<entry key="views.search.grid.head.R_T_HDD_FLAG">テキストHDD認識記号</entry>
+	<entry key="views.search.grid.head.R_TEXT_URL">テキストファイルパス</entry>
+	<entry key="views.search.grid.head.R_T_FILENAME">テキストファイル名</entry>
+	<entry key="views.search.grid.head.R_PART_START">部分録音開始時間</entry>
+	<entry key="views.search.grid.head.R_PART_END">部分録音終了時間</entry>
+	<entry key="views.search.grid.head.R_MARKGIN1">表示1</entry>
+	<entry key="views.search.grid.head.R_MARKGIN2">表示2</entry>
+	<entry key="views.search.grid.head.R_MARKING3">表示3</entry>
+	<entry key="views.search.grid.head.R_MARKING4">表示4</entry>
+	<entry key="views.search.grid.head.R_REC_MEMO">詳細表示</entry>
+	<entry key="views.search.grid.head.R_CUST_SOCIAL_NUM">住民登録番号</entry>
+	<entry key="views.search.grid.head.R_CONTRACK_NUM">契約番号</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_CODE">カウンセリングコード</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_CONTENT">相談の内訳</entry>
+	<entry key="views.search.grid.head.R_CUST_ADDRESS">顧客住所</entry>
+	<entry key="views.search.grid.head.R_RECEIPT_NUM">レシート番号</entry>
+	<entry key="views.search.grid.head.R_PLAYER_KIND">プレイヤーの種類</entry>
+	<entry key="views.search.grid.head.R_BUFFER1">ホールド件数</entry>
+	<entry key="views.search.grid.head.R_BUFFER2">ホールドタイム</entry>
+	<entry key="views.search.grid.head.R_BUFFER3">予備3</entry>
+	<entry key="views.search.grid.head.R_BW_YN"><![CDATA[ベスト&ワースト有無]]></entry>
+	<entry key="views.search.grid.head.R_BW_BG_CODE"><![CDATA[ベスト&ワースト大分類コード]]></entry>
+	<entry key="views.search.grid.head.R_BW_SG_CODE"><![CDATA[ベスト&ワースト小分類コード]]></entry>
+	<entry key="views.search.grid.head.R_SCREEN_DUAL_URL">スクリーンデュアルURL</entry>
+	<entry key="views.search.grid.head.R_CUST_ID">顧客ID</entry>
+	<entry key="views.search.grid.head.R_BUFFER4">予備四</entry>
+	<entry key="views.search.grid.head.R_BUFFER5">予備5</entry>
+	<entry key="views.search.grid.head.R_BUFFER6">顧客ID</entry>
+	<entry key="views.search.grid.head.R_BUFFER7">予備7</entry>
+	<entry key="views.search.grid.head.R_BUFFER8">予備の8</entry>
+	<entry key="views.search.grid.head.R_BUFFER9">予備の9</entry>
+	<entry key="views.search.grid.head.R_BUFFER10">VOC区分</entry>
+	<entry key="views.search.grid.head.R_BUFFER11">相談タイプ(大)</entry>
+	<entry key="views.search.grid.head.R_BUFFER12">相談タイプ(中)</entry>
+	<entry key="views.search.grid.head.R_BUFFER13">相談タイプ(小)</entry>
+	<entry key="views.search.grid.head.R_BUFFER14">勤続可否</entry>
+	<entry key="views.search.grid.head.R_BUFFER15">サービス区分</entry>
+	<entry key="views.search.grid.head.R_BUFFER16">受付区分</entry>
+	<entry key="views.search.grid.head.R_BUFFER17">相談タイプ(大)</entry>
+	<entry key="views.search.grid.head.R_BUFFER18">相談タイプ(中)</entry>
+	<entry key="views.search.grid.head.R_BUFFER19">相談タイプ(小)</entry>
+	<entry key="views.search.grid.head.R_BUFFER20">予備20</entry>
+	<entry key="views.search.grid.head.R_CNID">CNID</entry>
+	<entry key="views.search.grid.head.R_DEST_IP">目的地IP</entry>
+	<entry key="views.search.grid.head.R_VDO_URL">VDOリンク</entry>
+	<entry key="views.search.grid.head.R_CUST_ID">顧客ID</entry>
+	<entry key="views.search.grid.head.R_REGI_DATE">登録日</entry>
+	<entry key="views.search.grid.head.R_MANAGER">管理者</entry>
+	<entry key="views.search.grid.head.R_SRTP">SRTPの有無</entry>
+	<entry key="views.search.grid.head.F_KEY">Fキー</entry>
+	<entry key="views.search.grid.head.R_SSRC">SSRC</entry>
+	<entry key="views.search.grid.head.R_KEY">身長</entry>
+	<entry key="views.search.grid.head.R_CO_NUM">CO番号</entry>
+	<entry key="views.search.grid.head.R_DID_NUM">DID番号</entry>
+	<entry key="views.search.grid.head.R_UEI_DATA">UEI</entry>
+	<entry key="views.search.grid.head.R_QUEUE_NO1">キュー1</entry>
+	<entry key="views.search.grid.head.R_QUEUE_NO2">キュー2</entry>
+	<entry key="views.search.grid.head.R_BG_NAME">大分類</entry>
+	<entry key="views.search.grid.head.R_MG_NAME">中分類</entry>
+	<entry key="views.search.grid.head.R_SG_NAME">小分類</entry>
+	<entry key="views.search.grid.head.EVALUATION">評価</entry>
+	<entry key="views.search.grid.head.SCREEN">スクリーン</entry>
+	<entry key="views.search.grid.head.R_REC_START_TYPE">録取タイプ</entry>
+	<entry key="views.search.grid.head.TRACE">トレース</entry>
+	<entry key="views.search.grid.head.R_REC_START_TYPE">試作タイプ</entry>
+	<entry key="views.search.grid.head.R_LIST_ADD">プレイリスト追加</entry>
+	<entry key="views.search.grid.head.R_MEMO_INFO">メモ</entry>
+	<entry key="views.search.grid.head.R_MEMO">メモ</entry>
+	<entry key="views.search.grid.head.R_DIVISION">分配</entry>
+	<entry key="views.search.grid.head.R_REC_VISIBLE">削除ファイル</entry>
+	<entry key="views.search.grid.head.R_STT_PLAYER">コール·スクリプト</entry>
+	<entry key="views.search.grid.head.R_TAG">タグ</entry>
+	<entry key="views.search.grid.head.R_STOCK_NO">証券番号</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_BGCODE">カウンセリングタイプ隊</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_MGCODE">相談タイプのうち</entry>
+	<entry key="views.search.grid.head.R_COUNSEL_RESULT_SGCODE">カウンセリングタイプ要素</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE1">グループコード1</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE2">グループコード2</entry>
+	<entry key="views.search.grid.head.R_GROUP_CODE3">グループコード3</entry>
+	<entry key="views.search.grid.head.R_BANK_CODE">銀行コード</entry>
+	<entry key="views.search.grid.head.R_BACCOUNT_NUM">口座番号</entry>
+	<entry key="views.search.grid.head.R_DUAL_FLAG">センター間データマッチング</entry>
+	<entry key="views.search.grid.head.R_CALL_KIND_AP">AP連動 IN/OUT</entry>
+	<entry key="views.search.grid.head.R_CALL_KEY_AP">AP連動録取キー</entry>
+	<entry key="views.search.grid.head.R_CUST_PHONE_AP">AP連動CID</entry>
+	<entry key="views.search.grid.head.R_IVR_KEY">出金棟のIVRキー</entry>
+	<entry key="views.search.grid.head.R_VSEND_FLAG">録音ファイル転送フラッグ</entry>
+	<entry key="views.search.grid.head.R_SSEND_FLAG">スクリーンファイル転送フラッグ</entry>
+	<entry key="views.search.grid.head.R_SEND_INFO_FLAG">データ転送フラッグ</entry>
+	<entry key="views.search.grid.head.R_REC_KEYWORD">キーワード</entry>
+	<entry key="views.search.grid.head.R_REC_CATEGORY">カテゴリ</entry>
+	<entry key="views.search.grid.head.R_REC_TEXT">通話内容</entry>
+	<entry key="views.search.grid.head.R_REC_SUMMARY">通話内容の要約</entry>
+	<entry key="views.search.grid.head.R_LOG_LISTEN">聴取履歴</entry>
+	<entry key="views.search.grid.head.listenDate">聴取日</entry>
+	<entry key="views.search.grid.head.listenTime">聴取時間</entry>
+	<entry key="views.search.grid.head.listenUserId">リスナーID</entry>
+	<entry key="views.search.grid.head.listenUserName">リスナー名</entry>
+		
+	<entry key="views.search.grid.head.R_CALL_STIME_CONNECT">録音時間帯</entry>
+	<entry key="views.search.grid.head.R_CALL_TTIME_CONNECT">実通話時間</entry>
+		
+	<entry key="views.search.grid.head.R_PHONE_MAPPING">電話番号マッピング</entry>
+	<entry key="views.search.grid.head.R_COMPANY_TELNO">電話番号</entry>
+	<entry key="views.search.grid.head.R_COMPANY_TELNO_NICK">部署名</entry>
+
+	<!-- <entry key="views.search.grid.head.mobileR_BUFFER1">종료 사유</entry> -->
+	<entry key="views.search.grid.head.mobileR_BUFFER1">通話結果</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER2">試作種</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER3">アップロードの有無</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER4">カスタマーコード</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER5">顧客分類</entry>
+	<entry key="views.search.grid.head.mobileR_BUFFER6">顧客ID</entry>
+		
+	<entry key="views.search.grid.user.title.operationInfo">ユーザー情報</entry>
+	<entry key="views.search.grid.user.title.name">名前</entry>
+	<entry key="views.search.grid.user.title.id">アイディー</entry>
+	<entry key="views.search.grid.user.title.ext">内線番号</entry>
+		
+	<entry key="views.search.grid.call.title.callInfo">通話情報</entry>
+	<entry key="views.search.grid.call.title.date">日付</entry>
+	<entry key="views.search.grid.call.title.time">時間</entry>
+	<entry key="views.search.grid.call.title.callTime">通話時間</entry>
+	<entry key="views.search.grid.call.title.phoneNo">電話番号</entry>
+	<entry key="views.search.grid.call.title.callType">通話区分</entry>
+		
+	<entry key="views.search.grid.log.title.callLog">通話記録</entry>
+		
+	<entry key="views.search.grid.alert.noInfo">関連録音情報がありません。</entry>
+	<entry key="views.search.grid.alert.noChecked">ダウンロードする対象を選択してください。</entry>
+	<entry key="views.search.grid.alert.moreReason">最小5文字の事由を入力してください。</entry>
+	<entry key="views.search.grid.alert.mobileNotUpload">選択したファイルは、アップロードされていないファイルです。</entry>
+		
+	<entry key="views.search.form.fieldset.fDate">録音日</entry>
+	<entry key="views.search.form.fieldset.fTime">録音時間帯</entry>
+	<entry key="views.search.form.fieldset.fTtime">通話時間</entry>
+	<entry key="views.search.form.fieldset.fRtime">時間</entry>
+	<entry key="views.search.form.fieldset.fCallKind">コール·タイプ</entry>
+	<entry key="views.search.form.fieldset.fCounselResultCode">商談の類型</entry>
+	<entry key="views.search.form.fieldset.fStatus">進行状態</entry>
+	<entry key="views.search.form.fieldset.fUserInfo">ユーザー情報</entry>
+	<entry key="views.search.form.fieldset.fCustInfo">顧客情報</entry>
+	<entry key="views.search.form.fieldset.fOrgCode">組織情報</entry>
+	<entry key="views.search.form.fieldset.fEtc">その他</entry>
+	<entry key="views.search.form.fieldset.fTimeConnect">通話接続時間</entry>
+	<entry key="views.search.form.fieldset.fTtimeConnect">通話時間</entry>
+	<entry key="views.search.form.fieldset.selectFileExcelDown">選択ファイルエクセルダウンロード</entry>
+	<entry key="views.search.form.fieldset.fileExcelDown">全ファイルエクセルダウンロード</entry>
+	<entry key="views.search.form.fieldset.fix">固定</entry>
+	<entry key="views.search.form.fieldset.nonFix">固定解除</entry>
+	<entry key="views.search.form.fieldset.trace">トレース</entry>
+	<entry key="views.search.form.fieldset.memoList">メモリスト</entry>
+	<entry key="views.search.form.fieldset.listenList">聴取歴</entry>
+	<entry key="views.search.form.fieldset.defaultPlayerChange">基本プレーヤー変更</entry>
+	<entry key="views.search.form.fieldset.STTPlayer">STTプレーヤー</entry>
+	<entry key="views.search.form.fieldset.fText">通話内容</entry>
+	<entry key="views.search.form.fieldset.transcriber">全社情報</entry>
+	<entry key="views.search.form.fieldset.fSubNumberInfo">字番号情報</entry>
+	<entry key="admin.approve.label.addMyFolder">マイフォルダー追加</entry>
+	<entry key="admin.upload.form.stauts">アップロード状態</entry>
+	<entry key="admin.approve.label.transcript">前史</entry>
+	<entry key="admin.approve.label.addToMyfolder">選択ファイルマイフォルダの追加</entry>
+	<entry key="admin.approve.label.addToBestcall">選択録音優秀コール追加</entry>
+
+	<!-- 18-09-05 -pilip search kor lang add -->
+	<entry key="views.search.alert.msg1">録音日付を次の形式に合わせて入力してください!\\n例)2018-01-01</entry>
+	<entry key="views.search.alert.msg2">話者分離プレイヤー状態ではファイルリストを追加できません。</entry>
+	<entry key="views.search.alert.msg3">プレイリストの編集モードでは、ファイルリストの追加はできません。</entry>
+	<entry key="views.search.alert.msg4">選択された録音ファイルが存在しません。</entry>
+	<entry key="views.search.alert.msg5">マイフォルダに追加されたフォルダがありません。</entry>
+	<entry key="views.search.alert.msg6">ダウンロード申請権限がありません。</entry>
+	<entry key="views.search.alert.msg7">支店承認待機中です。</entry>
+	<entry key="views.search.alert.msg8">支店承認拒否された要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg9">受付待機中です。</entry>
+	<entry key="views.search.alert.msg10">受付を拒否された要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg11">承認は待機中です。</entry>
+	<entry key="views.search.alert.msg12">承認が拒否された要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg13">承認後、許可日が満了した要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg14">支店承認待機中です。</entry>
+	<entry key="views.search.alert.msg15">支店承認拒否された要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg16">受付待機中です。</entry>
+	<entry key="views.search.alert.msg17">受付を拒否された要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg18">承認は待機中です。</entry>
+	<entry key="views.search.alert.msg19">承認が拒否された要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg20">承認後、許可日が満了した要請です。\\n再要請しますか?</entry>
+	<entry key="views.search.alert.msg21">録音日付を次の形式に合わせて入力してください!\\n例)2018-01-01</entry>
+	<entry key="views.search.alert.msg22">要請期間は1日よりも長く、または同じである必要があります。</entry>
+	<entry key="views.search.alert.msg23">要請が正常に処理されました。</entry>
+	<entry key="views.search.alert.msg24">要請期間は</entry>
+	<entry key="views.search.alert.msg25">仕事を超えることはできません。</entry>
+	<entry key="views.search.alert.msg26">要請に失敗しました。</entry>
+	<entry key="views.search.alert.msg27">メモへのアクセス権限がありません。</entry>
+	<entry key="views.search.alert.msg28">メモ作成</entry>
+	<entry key="views.search.alert.msg29">※部分録音はデュアルプレイヤーで聴取できません。</entry>
+	<entry key="views.search.alert.msg30">削除された録音ファイルです。</entry>
+	<entry key="views.search.alert.msg31">選択されたファイルが存在しません。</entry>
+	<entry key="views.search.alert.msg32">コンピューターに音声ファイルを再生可能な装置がありません。\\nコンピュータに再生可能なデバイスに接続してから、聞き取りを試みて下さい。</entry>
+	<entry key="views.search.alert.msg33">マイフォルダに録音ファイルを追加しました。</entry>
+	<entry key="views.search.alert.msg34">マイフォルダに録音ファイルを追加することに失敗しました。</entry>
+	<entry key="views.search.alert.msg35">既に評価中の評価誌があります。 選択した評価紙を新しく開きますか?</entry>
+	<entry key="views.search.alert.msg36">評価するキャンペーンが存在しません。</entry>
+	<entry key="views.search.alert.msg37">評価紙を選択してから評価を行ってください。</entry>
+	<entry key="views.search.alert.msg38">選択されていない項目が存在します。</entry>
+	<entry key="views.search.alert.msg39">評価保存が完了しました。</entry>
+	<entry key="views.search.alert.msg40">既にプレイリストに追加された録音ファイルです。</entry>
+	<entry key="views.search.alert.msg41">ダウンロード権限がありません。</entry>
+	<entry key="views.search.alert.msg42">プレイヤータグの削除が完了しました。</entry>
+	<entry key="views.search.alert.msg43">聴取可能期間が満了したファイルです!</entry>
+	<entry key="views.search.alert.msg44">プレイヤーからの再生が不可能なファイルです。\\nプレーヤーでダウンロードしたファイルのみ再生が可能です。</entry>
+	<entry key="views.search.alert.msg45">MP3形式のファイルのみアップロードできます!</entry>
+	<entry key="views.search.alert.msg46">以前の再生位置から続けて再生しますか?</entry>
+	<entry key="views.search.alert.msg47">要請した録音ファイルが見つかりません。</entry>
+	<entry key="views.search.alert.msg48">再生中だったファイルです。 続けて再生しますか?</entry>
+	<entry key="views.search.alert.msg49">これ以上再生するリストがありません。</entry>
+	<entry key="views.search.alert.msg50">時:分:秒6桁を入力してください!\\n例)00:00:15</entry>
+	<entry key="views.search.alert.msg51">傍受対象の聞き取りボタンをクリックしてください。</entry>
+	<entry key="views.search.alert.msg52">ファイルがありません。</entry>
+	<entry key="views.search.alert.msg53">現在リアルタイム傍受中の対象がありません。</entry>
+	<entry key="views.search.alert.msg54">プレイヤータグの保存が完了しました。</entry>
+	<entry key="views.search.alert.msg55">現在ファイルに保存されたプレイヤータグがすべて削除されます。\\n本当に削除しますか?</entry>
+	<entry key="views.search.alert.msg56">プレイヤータグの削除が完了しました。</entry>
+	<entry key="views.search.alert.msg57">設定する区間の開始時間を入力してください。</entry>
+	<entry key="views.search.alert.msg58">設定する区間の終了時間を入力してください。</entry>
+	<entry key="views.search.alert.msg59">開始時間と終了時間は同じではありません。</entry>
+	<entry key="views.search.alert.msg60">開始時間は終了時間より長くできません。</entry>
+	<entry key="views.search.alert.msg61">次のように時分秒を入力してください!\\n例)000530</entry>
+	<entry key="views.search.alert.msg62">音声ファイルを選択してください。</entry>
+	<entry key="views.search.alert.msg63">申し込みたいですか?</entry>
+	<entry key="views.search.alert.msg64">申請されました。</entry>
+	<entry key="views.search.alert.msg65">すでに承認が完了しました。</entry>
+	<entry key="views.search.alert.msg66">承認を待っているファイルです。</entry>
+	<entry key="views.search.alert.msg67">作業を失敗しました。</entry>
+	<entry key="views.search.alert.msg68">再生中のファイルがありません。</entry>
+	<entry key="views.search.alert.msg69">チェックしたリストに再生中のリストが含まれています。\\n再生を中止して削除しますか?</entry>
+	<entry key="views.search.alert.msg70">正しい時間形式を入力してください。</entry>
+	<entry key="views.search.alert.msg71">終了時点が開始時点と同じか以前です。</entry>
+
+
+	<!-- 18-09-07 -pilip search kor lang add -->
+	<entry key="views.search.alert.msg72">選択ファイル再生</entry>
+	<entry key="views.search.alert.msg73">提携会社</entry>
+	<entry key="views.search.alert.msg74">録取種類</entry>
+	<entry key="views.search.alert.msg75">選択ファイルダウンロード</entry>
+	<entry key="views.search.alert.msg76">ファイル·ダウンロード</entry>
+	<entry key="views.search.alert.msg77">選択ファイルリストに追加</entry>
+	<entry key="views.search.alert.msg78">権限のないユーザーのリクエストです。\\nエクセルダウンロード権限のあるユーザーにダウンロード申請をしてください!</entry>
+		
+	<entry key="views.search.alert.msg79">プレイヤー変更</entry>
+	<entry key="views.search.alert.msg80">STT分析が進行中です。</entry>
+		
+	<entry key="views.search.alert.msg81">全体ファイル削除</entry>
+	<entry key="views.search.alert.msg82">全ダウンロード</entry>
+
+	<!--전체 삭제  -->
+	<entry key="views.search.alert.msg83">削除する対象がありません。</entry>
+	<entry key="views.search.alert.msg84">現在照会した条件のすべての録音ファイルを削除しますか。</entry>
+	<entry key="views.search.alert.msg85">現在照会した条件のすべての録音履歴も削除しますか?</entry>
+	<entry key="views.search.alert.msg86">録音削除に成功しました。</entry>
+	<entry key="views.search.alert.msg87">録音削除に失敗しました。</entry>
+	<entry key="views.search.alert.msg88">削除されていないファイルがあります。 もう一度確認をお願いします。</entry>
+		
+		
+	<entry key="views.search.alert.msg89">同じ内容のウィンドウがあります。 それでも浮かべますか?</entry>
+	<entry key="views.search.alert.msg90">一つのファイルだけを選択してください。</entry>
+		
+	<entry key="views.search.alert.msg91">既にコピー中のページがあります。選択した録音ファイルの新しい文字起こしページを開きますか？</entry>
+	<entry key="views.search.alert.msg92">ファイル削除</entry>
+	<entry key="views.search.alert.msg93">選択ファイルの削除</entry>
+	<entry key="views.search.alert.msg94">ファイル削除メニュー</entry>
+	<entry key="views.search.alert.msg95">削除タイプ</entry>
+	<entry key="views.search.alert.msg96">データ無効化</entry>
+	<entry key="views.search.alert.msg97">ファイル/データ削除</entry>
+	<entry key="views.search.alert.msg98">削除</entry>
+	
+	<entry key="views.search.alert.msg99">現在の選択の録音ファイルを削除しますか?</entry>
+	<entry key="views.search.alert.msg100">現在の選択の録音履歴も削除しますか?</entry>
+	<entry key="views.search.alert.msg101">無効にする対象がありません。</entry>
+	<entry key="views.search.alert.msg102">現在照会した条件のすべての録音履歴を無効にしますか?</entry>
+	<entry key="views.search.alert.msg103">現在の選択の録音履歴を無効にしますか?</entry>
+	<entry key="views.search.alert.msg104">録音無効にに成功しました。</entry>
+	<entry key="views.search.alert.msg105">録音無効にに失敗しました。</entry>
+	
+	<entry key="views.search.alert.msg106">CSV 呼び出し</entry>
+	<entry key="views.search.alert.msg107">ファイルを選択してください。</entry>
+	<entry key="views.search.alert.msg108">ファイル探し</entry>
+	<entry key="views.search.alert.msg109">ダウンロードフォーム</entry>
+	<entry key="views.search.alert.msg110">アップロードする</entry>
+	<entry key="views.search.alert.msg111">csv形式のファイルをアップロードしてください。</entry>
+	<entry key="views.search.alert.msg112">データはありません。</entry>
+	<entry key="views.search.alert.msg113">アップロード結果</entry>
+	<entry key="views.search.alert.msg114">検索</entry>
+	<entry key="views.search.alert.msg115">すべて</entry>
+	<entry key="views.search.alert.msg116">有効</entry>
+	<entry key="views.search.alert.msg117">エラー</entry>
+	<entry key="views.search.alert.fileDivision">転写リスト追加</entry>
+		
+	<entry key="views.search.alert.listenPeriod1">目下の日から</entry>
+	<entry key="views.search.alert.listenPeriod2">ヶ月以前の履歴は検索できません。</entry>
+	<entry key="views.search.alert.noDownTarget">ダウンロードする対象がありません。</entry>
+	<entry key="views.search.alert.failFullDown2">録取一括ダウンロードに失敗しました。</entry>
+	<entry key="views.search.alert.hours">時間</entry>
+	<entry key="views.search.alert.minutes">分</entry>
+	<entry key="views.search.alert.second">秒</entry>
+	<entry key="views.search.alert.comfrimFullDown">現在照会した条件のすべての録音ファイルをダウンロードしますか?</entry>
+	<entry key="views.search.alert.caution2GB">ファイル容量が2GB以上の場合、ダウンロードできません。***</entry>
+	<entry key="views.search.alert.selectCallTime">選択したファイルの総通話時間:</entry>
+	<entry key="views.search.alert.downloadableCallTime">ダウンロード可能な通話時間(予想):250時間</entry>
+	<entry key="views.search.alert.completedZip">圧縮ファイルの作成が完了しました。</entry>
+	<entry key="views.search.alert.zipOver2GB">圧縮ファイルの大きさが2GBを超過し、ダウンロードに失敗しました。</entry>
+	<entry key="views.search.alert.successFileBefore">2GB以前まで圧縮成功したファイル数:</entry>
+	<entry key="views.search.alert.zipProgress">圧縮ファイルを作成中です。(進行率:</entry>
+	<entry key="views.search.alert.nameCheck">1つ以上入力してください。</entry>
+		
+	<entry key="views.search.alert.selectGrid">コピーする範囲を選択してください。</entry>
+		
+	<entry key="views.search.alert.noSelectRec">選択された録音ファイルが存在しません。</entry>
+	<entry key="views.search.alert.directUpload">選択された録音ファイルを直ちにアップロードしますか?</entry>
+
+	<!-- 렉시 모바일 drop reason 언어팩 추가 -->
+	<entry key="views.search.grid.mobile.dropreason.busy">通話中</entry>
+	<entry key="views.search.grid.mobile.dropreason.noAnswer">留守中</entry>
+	<entry key="views.search.grid.mobile.dropreason.notFound">無番号</entry>
+	<entry key="views.search.grid.mobile.dropreason.endCall">通話終了</entry>
+	<entry key="views.search.grid.mobile.dropreason.phone">本人終了</entry>
+	<entry key="views.search.grid.mobile.dropreason.custDrop">相手終了</entry>
+		
+	<entry key="views.search.grid.mobile.dropreason.success">連結成功</entry>
+	<entry key="views.search.grid.mobile.dropreason.fail">通貨失敗</entry>
+
+	
+	
+	<!-- 업로드 신청 관련 언어팩 추가(19.06.03) -->
+	<entry key="views.search.alert.indivUpload">選択ファイルの個別アップロード</entry>
+	<entry key="views.search.alert.someReqFail">一部の申請に失敗しました。</entry>
+	<entry key="views.search.alert.reqTrans">直ちに転送申請をしました。</entry>
+	<entry key="views.search.alert.transReqFail">即時転送申請に失敗しました。</entry>
+
+	
+	<!-- 녹취 파일 분배 및 전사여부 -->
+	<entry key="views.search.alert.already.division">選択したファイルの中にすでに分配された録音ファイルがあります。</entry>
+	<entry key="views.search.title.TP">転写予定</entry>
+	<entry key="views.search.title.TF">全社完了</entry>
+	<entry key="views.search.title.LI">学習進行中</entry>
+	<entry key="views.search.title.LF">学習完了</entry>
+		
+	<entry key="views.search.title.transcriber">戦死者</entry>
+	<entry key="views.search.title.transcript">前史</entry>
+	<entry key="views.search.title.noSelect">不選択</entry>
+		
+	<entry key="views.search.alert.select.agent">録音ファイルを割り当てるユーザーを選択してください。</entry>
+	<entry key="views.search.alert.division.success">選択した録音ファイルがカウンセラーに正常に割り当てられました。</entry>
+	<entry key="views.search.alert.division.fail">分配リストに選択した録音ファイルの追加に失敗しました。</entry>
+	
+	<entry key="views.search.button.pathCheck">Path Check</entry>
+	<entry key="views.search.button.pathChange">Path Change</entry>
+	
+	<!-- 
+	<entry key="views.transcript.alert.learning.success">学習要請に成功しました。</entry>
+	<entry key="views.transcript.alert.learning.fail">学習の要請に失敗しました。</entry>
+	<entry key="views.transcript.confirm.learning">選択したファイルを学習しますか?</entry>
+	<entry key="views.transcript.confirm.remove">選択したファイルをリストから削除しますか? 転写されたファイルの場合、転写内容が削除されます。</entry>
+	<entry key="views.transcript.alert.remove.success">ファイルが成功的に削除されました。</entry>
+	<entry key="views.transcript.alert.remove.fail">ファイル削除に失敗しました。</entry>
+		
+	<entry key="views.transcript.button.remove">分配ファイル削除</entry>
+	<entry key="views.transcript.button.learning">選択ファイル学習</entry>
+	<entry key="views.transcript.button.transcript.save">転写貯蔵</entry>
+	<entry key="views.transcript.button.transcript.modify">転写受精</entry>
+	<entry key="views.transcript.button.transcript.del">転写削除</entry>
+		
+	<entry key="views.transcript.alert.noFile">ファイルがありません。</entry>
+	<entry key="views.transcript.alert.noTranscript">転写された内容がありません。</entry>
+	<entry key="views.transcript.alert.noTranscript.cust">全社された顧客の会話内容がありません。</entry>
+	<entry key="views.transcript.alert.noTranscript.agent">転写したカウンセラーの会話内容がありません。</entry>
+		
+	<entry key="views.transcript.alert.transcript.save.success">転写内容が保存されました。</entry>
+	<entry key="views.transcript.alert.transcript.save.fail">全社内容の保存に失敗しました。</entry>
+		
+	<entry key="views.transcript.alert.transcript.modify.success">転写内容が修正されました。</entry>
+	<entry key="views.transcript.alert.transcript.modify.fail">全社内容の修正に失敗しました。</entry>
+		
+	<entry key="views.transcript.alert.transcript.del.success">転写内容が削除されました。</entry>
+	<entry key="views.transcript.alert.transcript.del.fail">全社内容の削除に失敗しました。</entry>
+		
+	<entry key="views.transcript.confirm.transcript.save">現在のファイルの転写内容を保存しますか?</entry>
+	<entry key="views.transcript.confirm.transcript.modify">現在のファイルの転写内容を修正しますか?</entry>
+	<entry key="views.transcript.confirm.transcript.del">現在のファイルの転写内容を削除しますか?</entry>
+		
+	<entry key="views.transcript.alert.noTranscriptFile">要請したファイルの中に、転写されていないファイルが存在します。</entry>
+
+	-->
+	
+</properties>

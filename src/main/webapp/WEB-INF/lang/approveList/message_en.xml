@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>청취 및 다운로드 요청관리(approveList) 화면용 메세지 정의</comment>
+
+
+	
+	<entry key="views.approveList.grid.number">Number</entry>
+	<entry key="views.approveList.grid.reqDate">Request Date</entry>
+	<entry key="views.approveList.grid.reqTime">Request Time</entry>
+	<entry key="views.approveList.grid.reqInfo">Requestor Information</entry>
+	<entry key="views.approveList.grid.reqId">Requestor ID</entry>
+	<entry key="views.approveList.grid.reqName">Requestor Name</entry>
+	<entry key="views.approveList.grid.reqGroup">Requestor Group</entry>
+	<entry key="views.approveList.grid.reqType">Request Type</entry>
+	<entry key="views.approveList.grid.reqReason">Request Reason</entry>
+	<entry key="views.approveList.grid.state">Progress State</entry>
+	<entry key="views.approveList.grid.fileName">File Name</entry>
+	<entry key="views.approveList.grid.recDate">Recording Date</entry>
+	<entry key="views.approveList.grid.recTime">Recording Time</entry>
+	<entry key="views.approveList.grid.recExtNum">Recording Extension Number</entry>
+	<entry key="views.approveList.grid.recId">Recording ID</entry>
+	<entry key="views.approveList.grid.recName">Recording Name</entry>
+	<entry key="views.approveList.grid.custName">Customer Name</entry>
+	<entry key="views.approveList.grid.custNum">Customer PhoneNumber</entry>
+	<entry key="views.approveList.grid.stockNum">Stock Number</entry>
+	<entry key="views.approveList.grid.callType">call Type</entry>
+	<entry key="views.approveList.grid.firstApprovalDate">1st approval date</entry>
+	<entry key="views.approveList.grid.firstApprovalTime">1st approval time</entry>
+	<entry key="views.approveList.grid.primaryApprover">Primary approver ID</entry>
+	<entry key="views.approveList.grid.secondApprovalDate">Second Approval date</entry>
+	<entry key="views.approveList.grid.secondApprovalTime">Second Approval time</entry>
+	<entry key="views.approveList.grid.secondApprover">Secondary Approver ID</entry>
+	<entry key="views.approveList.grid.finalApprovalDate">Final Approval date</entry>
+	<entry key="views.approveList.grid.finalApprovalTime">Final Approval Time</entry>
+	<entry key="views.approveList.grid.finalApprover">Final Approver ID</entry>
+	<entry key="views.approveList.grid.reqPeriod">Request period</entry>
+	<entry key="views.approveList.grid.fileColumnKey">File Name Format</entry>
+
+	
+	<entry key="views.approveList.from.sDate">Start Date</entry>	
+	<entry key="views.approveList.from.eDate">End date</entry>	
+	<entry key="views.approveList.from.fTime">Request time(from)</entry>	
+	<entry key="views.approveList.from.tTime">Request time(to)</entry>	
+	<entry key="views.approveList.from.search">Search</entry>	
+	<entry key="views.approveList.from.approval">approval</entry>	
+	<entry key="views.approveList.from.return">return</entry>	
+	
+	
+	<entry key="approveList.alert.msg01">Request type is not a download.</entry>
+	<entry key="approveList.alert.msg02">Unauthorized request.</entry>
+	<entry key="approveList.alert.msg03">You do not have permission.</entry>
+	<entry key="approveList.alert.msg04">The download period has expired.</entry>
+	<entry key="approveList.alert.msg05">The request type is not Listen.</entry>
+	<entry key="approveList.alert.msg06">The listening period has ended.</entry>
+	<entry key="approveList.alert.msg07">Please enter the request date according to the following format! \\n ex)2018-01-01</entry>
+	<entry key="approveList.alert.msg08">This is already done.</entry>
+	<entry key="approveList.alert.msg09">The item you selected is the item that is waiting for the primary approval. \\n Users without primary approval authority can not reflect the current request.</entry>
+	<entry key="approveList.alert.msg10">The item you selected is the item that is waiting for the secondary approval. \\n Users without secondary approval authority can not reflect the current request.</entry>
+	<entry key="approveList.alert.msg11">The item you selected is the item that is waiting for the finally approval. \\n Users without finally approval authority can not reflect the current request.</entry>
+	<entry key="approveList.alert.msg12">Successfully processed.</entry>
+	<entry key="approveList.alert.msg13">The request failed..</entry>
+	
+</properties>

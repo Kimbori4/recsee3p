@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="../component/jquery/jquery-2.1.3.min.js"></script>
+<script>
+	
+	//서버 연동 실패
+	function onFail(request, status, error){
+		console.log("code:"+request.status);
+		console.log("message"+request.responseText);
+		console.log("error:"+error);
+		alert("에러코드 9999: 알 수 없는 에러가 발생하였습니다. 관리자에게 문의하세요.");
+	}
+	
+	var baseUrl = '/recsee3p/wooribank/script/api';
+	
+	//공통 스크립트 추가
+	function addCommon() {
+		
+		var url = baseUrl +'/common';
+		var reqData = {
+			rsScriptCommonType: 'T',
+			rsScriptCommonName: '펀드 공통문구',
+			rsScriptCommonDesc: '과세에 대한 설명(C-P클래스)',
+			rsScriptCommonText: '소득세법 시행령 제40조의2에 따른 연금저축계좌를 통해 본 투자신탁에 가입한 가입자의 경우 투자신탁의 수익증권을 환매하는 시점에 별도의 과세를 하지 않으며, 연금저축계좌에서 자금 인출시 연금소득 연금수령시, 기타소득 또는 퇴직소득 연금외수령시에 대해 과세하며, 자세한 사항은 투자설명서 및 연금저축계좌 설정 약관을 참고하시기 바랍니다.',
+			rsScriptCommonRealtimeTTS: 'N', 
+			rsScriptCommonEditUser:'rogan',
+			rsScriptCommonApplyDate:'2021-12-24'
+		};
+		
+		$.ajax({
+			type: 'POST',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	//공통 스크립트 update
+	function updateCommon() {
+		
+		var url = baseUrl +'/common/52';
+		var reqData = {
+			rsScriptCommonType: 'T',
+			rsScriptCommonName: '펀드 공통문구',
+			rsScriptCommonDesc: '과세에 대한 설명(C-P클래스)',
+			rsScriptCommonText: '소득세법 시행령 제40조의2에 따른 연금저축계좌를 통해 본 투자신탁에 가입한 가입자의 경우 투자신탁의 수익증권을 환매하는 시점에 별도의 과세를 하지 않으며, 연금저축계좌에서 자금 인출시 연금소득 연금수령시, 기타소득 또는 퇴직소득 연금외수령시에 대해 과세하며, 자세한 사항은 투자설명서 및 연금저축계좌 설정 약관을 참고하시기 바랍니다.',
+			rsScriptCommonRealtimeTTS: 'N', 
+			rsScriptCommonEditUser:'rogan',
+			rsScriptCommonApplyDate:'2021-12-24'
+		};
+		
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	//공통 스크립트 delete
+	function deleteCommon() {
+		
+		var url = baseUrl +'/common/52';
+		$.ajax({
+			type: 'DELETE',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify({}),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	//공통 스크립트 결재처리
+	function approveCommon() {
+		
+		var url = baseUrl +'/common/52';
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify({}),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	
+	//스크립트 스텝 추가
+	function addStep() {
+		
+		var url = baseUrl +'/v2/step';
+		var reqData = {
+			transactionId: transactionId,
+			rsScriptStepFk: '11',
+			rsScriptStepParent: '0',
+			rsScriptStepType: '000001',
+			rsScriptStepName: 'test' 
+		};
+		
+		$.ajax({
+			type: 'POST',
+			url: url,
+			contentType: 'application/json',
+			data: JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+		
+	}
+	
+	//스크립트 스텝 update
+	function updateStep() {
+		
+		var url = baseUrl +'/step/11';
+		
+		var reqData = {
+				transactionId: '123456',
+				rsScriptStepName: 'test' 
+			};
+		
+		
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	//스크립트 스텝 delete
+	function deleteStep() {
+		
+		var url = baseUrl +'/step/11';
+		var reqData = {
+				transactionId: '123456'
+			};
+		
+		$.ajax({
+			type: 'DELETE',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+
+	
+	//스크립트 디테일 추가
+	function addDetail() {
+		
+		var url = baseUrl +'/step/11/detail';
+		var reqData = {
+			transactionId: '123456',
+			rsScriptDetailType: 'T',
+			rsScriptDetailComKind: 'Y',
+			rsScriptStepFk: '000001',
+			rsScriptDetailText: 'test',
+			rsScriptDetailIfCase: 'Y',
+			rsScriptDetailIfCaseCode: '01',
+			rsScriptDetailIfCaseDetail: '11',
+			rsScriptDetailIfCaseDetailCode: '0101',
+			rsScriptDetailRealtimeTTS: 'Y',
+			rsScriptDetailComFk: '991' 
+		};
+		
+		$.ajax({
+			type: 'POST',
+			url: url,
+			contentType: 'application/json',
+			data: JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+		
+	}
+	
+	//스크립트 디테일 update
+	function updateDetail() {
+		
+		var url = baseUrl +'/step/11/detail/12';
+		
+		var reqData = {
+				transactionId: '123456',
+				rsScriptDetailText: 'test',
+				rsScriptDetailIfCase: 'Y',
+				rsScriptDetailIfCaseCode: '01',
+				rsScriptDetailIfCaseDetail: '11',
+				rsScriptDetailIfCaseDetailCode: '0101',
+				rsScriptDetailRealtimeTTS: 'Y' 
+			};
+		
+		
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	//스크립트 디테일 delete
+	function deleteDetail() {
+		
+		var url = baseUrl +'/step/11/detail/12';
+		var reqData = {
+				transactionId: '123456'
+			};
+		
+		$.ajax({
+			type: 'DELETE',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	var lastTransactionId = '';
+	
+	//스크립트 수정 트랜잭션 시작
+	function beginTran() {
+		
+		var url = baseUrl +'/edit/11/begin';
+		
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			success: function(data){
+				transactionId = data.resData.transactionId;
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	//스크립트 수정 트랜잭션 완료
+	function endTran() {
+		
+		var url = baseUrl +'/edit/11/end';
+		
+		var reqData = {
+				transactionId: lastTransactionId,
+				endType: 'rollback'
+			};
+		
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	function testCall(){
+		var url = '/recsee3p/api/test';
+		
+		var reqData = {
+				orderBy: 'abcd',
+				direction: 'decsc',
+				rowNumber: 1 ,
+				depth: 0
+			};
+		
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	function copy(){
+		var url = baseUrl + '/edit/copy/564';
+		
+		var reqData = {
+				targetList: [45773,45774]
+			};
+		
+		$.ajax({
+			type: 'PUT',
+			url: url,
+			contentType: 'application/json',
+			data : JSON.stringify(reqData),
+			success: function(data){
+				console.log(data)
+			}, error: function(request, status, error){
+				onFail(request, status, error);
+			}
+		});	
+	}
+	
+	$(document).ready(function(){
+		
+		$("#t1").change(function(){
+			var str = $(this).val();
+			console.log("str=>"+str);
+			
+			var expression = /\S/g;
+			
+			console.log($(this).val());
+		});
+			
+		
+	});
+	
+</script>
+
+</head>
+<body>
+	<div>
+		Input: <input type="text" id="t1" />
+	</div>
+	<ul>
+		<li>
+			TEST
+		</li>
+		<li>
+			<input type="button" value="추가" onClick='testCall()'/>
+		</li>
+		<li>
+			<input type="button" value="복사" onClick='copy()'/>
+		</li>
+	</ul>
+	<ul>
+		<li>
+			공통 스크립트
+		</li>
+		<li>
+			<input type="button" value="추가" onClick='addCommon()'/>
+		</li>
+		<li>
+			<input type="button" value="수정" onClick='updateCommon()'/>
+		</li>
+		<li>
+			<input type="button" value="삭제" onClick='deleteCommon()'/>
+		</li>
+	</ul>
+	<br/>
+	<ul>
+		<li>
+			스크립트 스텝
+		</li>
+		<li>
+			<input type="button" value="추가" onClick='addStep()'/>
+		</li>
+		<li>
+			<input type="button" value="수정" onClick='updateStep()'/>
+		</li>
+		<li>
+			<input type="button" value="삭제" onClick='deleteStep()'/>
+		</li>
+	</ul>
+	<ul>
+		<li>
+			스크립트 디테일
+		</li>
+		<li>
+			<input type="button" value="추가" onClick='addDetail()'/>
+		</li>
+		<li>
+			<input type="button" value="수정" onClick='updateDetail()'/>
+		</li>
+		<li>
+			<input type="button" value="삭제" onClick='deleteDetail()'/>
+		</li>
+	</ul>
+	<ul>
+		<li>
+			트랜잭션
+		</li>
+		<li>
+			<input type="button" value="시작" onClick='beginTran()'/>
+		</li>
+		<li>
+			<input type="button" value="완료" onClick='endTran()'/>
+		</li>		
+	</ul>
+</body>
+</html>

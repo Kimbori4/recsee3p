@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.PublicIpInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.PublicIpInfo">
+		<result column="R_PUBLIC_IP" jdbcType="VARCHAR" property="rPublicIp" />
+	</resultMap>
+
+	<select id="selectPublicIpInfo" parameterType="com.furence.recsee.admin.model.PublicIpInfo" resultMap="BaseResultMap">
+		SELECT * FROM RS_PUBLIC_IP ORDER BY R_PUBLIC_IP
+	</select>
+	
+	<select id="selectOnePublicIpInfo" parameterType="com.furence.recsee.admin.model.PublicIpInfo" resultMap="BaseResultMap">
+		SELECT * FROM RS_PUBLIC_IP WHERE R_PUBLIC_IP=#{rPublicIp}
+	</select>
+	
+	<insert id="insertPublicIpInfo" parameterType="com.furence.recsee.admin.model.PublicIpInfo">
+			INSERT INTO RS_PUBLIC_IP (
+				R_PUBLIC_IP
+			) VALUES (
+				#{rPublicIp}
+			)
+	</insert>
+	
+	<update id="updatePublicIpInfo"  parameterType="com.furence.recsee.admin.model.PublicIpInfo">
+		UPDATE RS_PUBLIC_IP SET
+			R_PUBLIC_IP=#{rPublicIp}
+		WHERE
+			R_PUBLIC_IP=#{rPublicIpOld}
+	</update>
+	
+	<delete id="deletePublicIpInfo" parameterType="com.furence.recsee.admin.model.PublicIpInfo">
+		DELETE FROM RS_PUBLIC_IP WHERE R_PUBLIC_IP=#{rPublicIp}
+	</delete>
+	
+</mapper>

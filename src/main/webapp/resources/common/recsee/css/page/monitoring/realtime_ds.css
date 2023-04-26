@@ -1,0 +1,421 @@
+body, html{
+    background-color: #f1f1f1 !important;
+}
+.ui_pannel_row{
+    border-bottom: 1px solid #bbb;
+    box-shadow: none;
+}
+
+/**** Top ****/
+.now_system{
+    float: left;
+    padding: 7px 10px;
+    -webkit-padding-before: 6px;
+    -webkit-padding-after: 6px;
+    background-color: rgba(0,0,0,0.6);
+    color: #ffffff;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.now_system .now_system_tit{
+    font-size: 13px;
+}
+.now_system .now_system_info{
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ebb912;
+}
+/**** Left ****/
+.monitoring_option{
+    float: left;
+    position: relative;
+    width: 200px;
+    height: auto;
+    padding: 0 10px;
+    background-color: #f1f1f1;
+}
+.hardware_info{
+    float: left;
+    height: auto;
+}
+.hardware_info .hardware_info_tit{
+    float: left;
+    clear: both;
+    font-weight: bold;
+    padding: 10px 10px 2px 0;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+}
+.display_option .display_option_tit{
+    float: left;
+    clear: both;
+    font-weight: bold;
+    padding: 10px 10px 2px 0;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+}
+.display_option .onofftit{
+    float: left;
+    clear: both;
+    font-size: 13px;
+    font-weight: bold;
+    color: #666;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    background-image: url(../../../images/project/icon/label_icon/icon_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+.display_option .onoffswitch{
+    float: right;
+}
+.hardware_status_wrap{
+    float: left;
+    clear: both;
+}
+.hardware_status_tit{
+	float: left;
+    font-weight: bold;
+    color: #555555;
+    padding-bottom: 5px;
+}
+.hardware_status_bar{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #666666;
+    border: 1px solid #333333;
+    margin-bottom: 10px;
+}
+.hardware_status_bar p{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    color: #ffffff;
+    z-index: 5;
+}
+.hardware_status_val{
+    width: 0%;
+    height: 100%;
+    background-color: #a1d08b !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#a1d08b', EndColorStr='#367617') !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#a1d08b', endColorstr='#367617')" !important;
+    background: -ms-linear-gradient(#a1d08b, #367617) !important;
+    background: -moz-linear-gradient(center top, #a1d08b, #367617) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#a1d08b), to(#367617)) !important;
+    background: -o-linear-gradient(top, #a1d08b, #367617) !important;
+    transition: all ease 1s;
+}
+.hdd_name_info{
+	float: left;
+    font-size: 13px;
+    color: #999999;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+
+/**** contents ****/
+.monitoring_contents{
+    float: left;
+    width: calc(100% - 240px);
+    padding-left: 20px;
+    background-color: #f1f1f1;
+}
+.status_card_wrap{
+    position: relative;
+    float: left;
+    width: 127px;
+    height: auto;
+    margin: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+.status_card_wrap:hover{
+    box-shadow: 1px 0px 10px rgba(0,0,255,0.6) !important;
+}
+.agent_status_active{
+	position: absolute;
+    width: 100%;
+    height: 99%;
+    background-color: rgba(255,255,0,0.4) !important;
+}
+.status_card{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: #bbbbbb;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#bbbbbb');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#bbbbbb')";
+    background: -ms-linear-gradient(#ffffff, #cccccc);
+    background: -moz-linear-gradient(center top, #ffffff, #bbbbbb);
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#bbbbbb));
+    background: -o-linear-gradient(top, #ffffff, #bbbbbb);
+    border: 1px solid;
+    border-color: #bbbbbb !important;;
+    color: #bbbbbb;
+    transition: all ease 0.4s;
+}
+.obj_agent{
+    width: 70px;
+    height: 90px;
+    float: left;
+    margin-left: 29px;
+    margin-top: 5px;
+    background-image: url(../../../images/project/main/obj_woman.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all ease 1s;
+}
+.status_txt{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+    margin-left: 12px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: inherit;
+    font-weight: bold;
+    border: 2px solid;
+    background-color: #ffffff;
+    border-color: inherit;
+    border-radius: 5px;
+}
+.card_info_wrap{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    background-color: #f1f1f1;
+}
+.time_info{
+    float: left;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    border-top: 1px solid #bbbbbb;
+    color: inherit;
+}
+.time_info .time_val{
+	width: 100%;
+	text-align: center;
+}
+.callnum_info{
+    float: left;
+    clear: both;
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px 0;
+    color: #333333;
+    border-top: 1px solid #bbbbbb;
+}
+.agent_info_wrap{
+    float: left;
+    clear: both;
+    width: 100%;
+    border-top: 1px solid #bbbbbb;
+}
+.agent_info{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: #333333;
+    border-top: 1px solid #bbbbbb;
+}
+.agent_info p{
+	width: 100%;
+	text-align: center;
+	margin-left: 0px !important;
+}
+.agent_info:first-child{
+    border-top: 0px solid #bbbbbb;
+}
+.agent_info .anget_id{
+    float: left;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.agent_info .agnet_exnum{
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* .btn_realtime{
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.3);
+    background-image: url(../../../images/project/icon/btn_icon/icon_btn_historySearch_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all ease 0.4s;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.btn_realtime:hover{
+    background-color: rgba(0,0,255,0.6);
+} */
+
+#listen_wrap{
+	position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 200px;
+    height: auto;
+    z-index: 9999;
+    padding: 10px;
+}
+#listen_wrap .realtime_player audio{
+	width: 200px;
+	height: 38px;
+    margin-top: 10px;
+}
+#listen_wrap label, #listen_wrap span{
+	color: #ffffff;
+}
+.realtime_player_tit{
+	font-size: 14px;
+	font-weight: 400;
+}
+.realtime_player_tit span{
+	font-size: 16px;
+	color: #ffffff;
+    margin-left: 5px;
+}
+
+/**** background-color for status ****/
+/* calling */
+.agent_status_calling{
+    background-color: #e16d6d !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#e16d6d') !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e16d6d')" !important;
+    background: -ms-linear-gradient(#ffffff, #e16d6d) !important;
+    background: -moz-linear-gradient(center top, #ffffff, #e16d6d) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e16d6d)) !important;
+    background: -o-linear-gradient(top, #ffffff, #e16d6d) !important;
+    border-color: #e16d6d !important;
+    color: #e16d6d !important;
+    transition: all ease 0.4s;
+}
+/* login */
+.agent_status_login{
+    background-color: #f5bb6f !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#f5bb6f') !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5bb6f')" !important;
+    background: -ms-linear-gradient(#ffffff, #f5bb6f) !important;
+    background: -moz-linear-gradient(center top, #ffffff, #f5bb6f) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f5bb6f)) !important;
+    background: -o-linear-gradient(top, #ffffff, #f5bb6f) !important;
+    border-color: #f5bb6f !important;
+    color: #f5bb6f !important;
+    transition: all ease 0.4s;
+}
+/* ready */
+.agent_status_ready{
+    background-color: #74b057 !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#74b057') !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#74b057')" !important;
+    background: -ms-linear-gradient(#ffffff, #74b057) !important;
+    background: -moz-linear-gradient(center top, #ffffff, #74b057) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#74b057)) !important;
+    background: -o-linear-gradient(top, #ffffff, #74b057) !important;
+    border-color: #74b057 !important;
+    color: #74b057 !important;
+    transition: all ease 0.4s;
+}
+/* acw */
+.agent_status_acw{
+    background-color: #9283d6 !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#9283d6') !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#9283d6')" !important;
+    background: -ms-linear-gradient(#ffffff, #9283d6) !important;
+    background: -moz-linear-gradient(center top, #ffffff, #9283d6) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#9283d6)) !important;
+    background: -o-linear-gradient(top, #ffffff, #9283d6) !important;
+    border-color: #9283d6 !important;
+    color: #9283d6 !important;
+    transition: all ease 0.4s;
+}
+/* logout */
+.agent_status_logout{
+    background-color: #6f6f6f !important;
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#6f6f6f') !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#6f6f6f')" !important;
+    background: -ms-linear-gradient(#ffffff, #6f6f6f) !important;
+    background: -moz-linear-gradient(center top, #ffffff, #6f6f6f) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#6f6f6f)) !important;
+    background: -o-linear-gradient(top, #ffffff, #6f6f6f) !important;
+    border-color: #6f6f6f !important;
+    color: #6f6f6f !important;
+    transition: all ease 0.4s
+}
+
+/**** checkbox-color for status ****/
+/* login */
+.display_option .check_status_login .onoffswitch-inner:before {
+    background-color: #f5bb6f; color: #FFFFFF;
+}
+.display_option .check_status_login .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #f5bb6f !important; background: #f5bb6f !important;
+}
+.display_option .check_status_login .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #c1791c !important; border: 1px solid #c1791c !important; color: #ffffff;
+}
+/* logout */
+.display_option .check_status_logout .onoffswitch-inner:before {
+    background-color: #6f6f6f; color: #FFFFFF;
+}
+.display_option .check_status_logout .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #6f6f6f !important; background: #6f6f6f !important;
+}
+.display_option .check_status_logout .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #434343 !important; border: 1px solid #434343 !important; color: #ffffff;
+}
+/* ready */
+.display_option .check_status_ready .onoffswitch-inner:before {
+    background-color: #74b057; color: #FFFFFF;
+}
+.display_option .check_status_ready .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #74b057 !important; background: #74b057 !important;
+}
+.display_option .check_status_ready .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #3f7923 !important; border: 1px solid #3f7923 !important; color: #ffffff;
+}
+/* calling */
+.display_option .check_status_calling .onoffswitch-inner:before {
+    background-color: #e16d6d; color: #FFFFFF;
+}
+.display_option .check_status_calling .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #e16d6d !important; background: #e16d6d !important;
+}
+.display_option .check_status_calling .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #a73535 !important; border: 1px solid #a73535 !important; color: #ffffff;
+}
+/* acw */
+.display_option .check_status_acw .onoffswitch-inner:before {
+    background-color: #9283d6; color: #FFFFFF;
+}
+.display_option .check_status_acw .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #9283d6 !important; background: #9283d6 !important;
+}
+.display_option .check_status_acw .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #5f51a0 !important; border: 1px solid #5f51a0 !important; color: #ffffff;
+}

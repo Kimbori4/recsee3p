@@ -1,0 +1,50 @@
+.spinnerWrap {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    padding-bottom: 20px;
+}
+.spinnerWrap .eb-spinner {
+    position: absolute;
+    left: 45px;
+    top: 5px;
+    border-radius: 50%;
+    animation: spinner 1s infinite linear;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+}
+.spinner-1 {
+    background: #7AACFE;
+}
+.spinner-2 {
+    background: #7AACFE;
+    animation-delay: 0.5s !important;
+}
+.spinner-3 {
+    background: #E1ECFF;
+    animation-delay: 1s !important;
+}
+@keyframes spinner {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.spinnerWrap .info-t {
+    margin-top: 50px;
+    font-size: 11px;
+    color: #8A93A4;
+}

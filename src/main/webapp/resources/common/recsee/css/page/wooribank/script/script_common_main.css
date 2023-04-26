@@ -1,0 +1,140 @@
+/* 그리드 헤더 */
+
+#applyDate {
+	width: 115px !important;
+}
+
+div.gridbox_dhx_web.gridbox table.hdr td {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+    background-color: #ffffff !important;
+    border-width: 0 0px 0 0 !important;
+    border-top: 1px solid #dbdbdb !important;
+    border-right-color: #dbdbdb !important;
+    padding: 7px 0 8px 0 !important;
+    background-color: #ffffff !important;
+    color: #000 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    position: relative !important;
+    font-size: 12px !important;
+    font-weight: 700;
+}
+
+/* 그리드 바디 */
+.searchCommonScript div {
+	font-size: 12px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica
+        Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji !important;
+}
+
+#realtimeRadioSpan {
+	margin-right: 162px;
+}
+
+[class^="common-main-btn-"] {
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	border: 0;
+	width: 63px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-left: 4px;
+	font-size: 13px;
+}
+
+#commonMainButtonRight {
+	float: right;
+	margin-right: 44px;
+}
+
+#commonMainButtonLeft {
+	float: left;
+	margin-left: 102px;
+}
+
+.common-main-btn-grey {
+    background-color: #8A93A4;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.common-main-btn-primary {
+	background-color: #2d9752;
+/* 	background-color: #1760F0; */
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#common_textarea {
+	vertical-align: top;
+}
+
+#common_text {
+	border-radius: 4px;
+	font-size: 12px !important;
+	font-family: monospace !important;
+	border : 1px solid #dddddd ;
+}
+
+label {
+	font-size: 12px !important;
+	font-family: monospace !important;
+}
+
+.common_main_input {
+	width: 26%;
+	background-color: #fff;
+	border: 1px solid #CED3D9;
+	border-radius: 4px;
+	height: 26px;
+	box-sizing: border-box;
+	padding: 0 4px;
+	color: #111418;
+	font-size: 12px !important;
+	font-family: monospace !important;
+}
+
+#commonScriptDetailText{
+	height : -webkit-fill-available;
+    min-height: 20px !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+	padding : 5px;
+}
+
+/* 검색 관련 */
+#searchCommon::placeholder {
+	color: #ffffff !important;
+}
+
+#searchBox {
+	position: relative;
+}
+
+
+#keywordRemoveImg {
+	width: 30px;
+	height: 15px;
+	background-image: url('../../../../images/project/icon/wooribank/icon_btn_exit_white.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 10px;
+	position: absolute;
+	right: 15px;
+	bottom: 5px;
+	cursor: pointer;
+}
+pre{
+	white-space: pre-wrap !important;
+}
+
+

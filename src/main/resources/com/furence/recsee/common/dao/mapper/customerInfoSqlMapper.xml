@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.furence.recsee.common.dao.CustomerInfoDao">
+
+	<resultMap id="CodeInfoMap" type="com.furence.recsee.common.model.CodeInfoVO">
+		<result column="r_bg_code" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="r_bg_name" jdbcType="VARCHAR" property="rBgName" />
+		<result column="r_bg_sys" jdbcType="VARCHAR" property="rBgSys" />
+		<result column="r_bg_etc" jdbcType="VARCHAR" property="rBgEtc" />
+
+		<result column="r_mg_code" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="r_mg_name" jdbcType="VARCHAR" property="rMgName" />
+		<result column="r_mg_sys" jdbcType="VARCHAR" property="rMgSys" />
+		<result column="r_mg_etc" jdbcType="VARCHAR" property="rMgEtc" />
+
+		<result column="r_sg_code" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="r_sg_name" jdbcType="VARCHAR" property="rSgName" />
+		<result column="r_sg_sys" jdbcType="VARCHAR" property="rSgSys" />
+		<result column="r_sg_etc" jdbcType="VARCHAR" property="rSgEtc" />
+	</resultMap>
+
+
+	<resultMap id="CustomerInfoMap" type="com.furence.recsee.common.model.CustomerInfoVO">
+		<result column="r_user_id" jdbcType="VARCHAR" property="rUserId" />
+		<result column="r_user_name" jdbcType="VARCHAR" property="rUserName" />
+		<result column="r_bg_code" jdbcType="VARCHAR" property="rBgCode" />
+		<result column="r_mg_code" jdbcType="VARCHAR" property="rMgCode" />
+		<result column="r_sg_code" jdbcType="VARCHAR" property="rSgCode" />
+		<result column="r_ext_no" jdbcType="VARCHAR" property="rExtNo" />
+		<result column="r_regi_date" jdbcType="VARCHAR" property="rRegDate" />
+		<result column="R_BG_NAME" jdbcType="VARCHAR" property="rBgName" />
+		<result column="R_MG_NAME" jdbcType="VARCHAR" property="rMgName" />
+		<result column="R_SG_NAME" jdbcType="VARCHAR" property="rSgName" />
+		<result column="R_USER_LEVEL" jdbcType="VARCHAR" property="rUserLevel" />
+	</resultMap>
+	
+	<resultMap id="MeritzUserMap" type="com.furence.recsee.common.model.MeritUser">
+		<result column="org1_nm" jdbcType="VARCHAR" property="org1_nm" />
+		<result column="org2_nm" jdbcType="VARCHAR" property="org2_nm" />
+		<result column="org3_nm" jdbcType="VARCHAR" property="org3_nm" />
+		<result column="org1_cd" jdbcType="VARCHAR" property="org1_cd" />
+		<result column="org2_cd" jdbcType="VARCHAR" property="org2_cd" />
+		<result column="org3_cd" jdbcType="VARCHAR" property="org3_cd" />
+		<result column="emp_no" jdbcType="VARCHAR" property="emp_no" />
+		<result column="user_nm" jdbcType="VARCHAR" property="user_nm" />
+	</resultMap>
+
+<select id="selectsCustomerList" parameterType="string" resultMap="CustomerInfoMap">
+<!--
+	SELECT
+   			B.R_BG_CODE,
+   			B.R_BG_NAME,
+   			C.R_MG_CODE,
+			C.R_MG_NAME,
+			D.R_SG_CODE,
+			D.R_SG_NAME,
+      	 	A.R_USER_NAME,
+			A.R_EXT_NO,
+			A.R_USER_ID
+
+  	FROM 	RS_RUSER_INFO A
+
+LEFT JOIN	RS_BG_INFO B
+	   ON	A.R_BG_CODE = B.R_BG_CODE
+
+LEFT JOIN	RS_MG_INFO C
+       ON 	A.R_MG_CODE = C.R_MG_CODE
+	  AND	B.R_BG_CODE = C.R_BG_CODE
+LEFT JOIN	RS_SG_INFO D
+	   ON	A.R_SG_CODE	= D.R_SG_CODE
+	  AND	B.R_BG_CODE	= D.R_BG_CODE
+	  AND   C.R_MG_CODE = D.R_MG_CODE
+ -->
+
+
+<!-- 	SELECT
+   			A.R_BG_CODE,
+   			B.R_BG_NAME,
+   			C.R_MG_CODE,
+			C.R_MG_NAME,
+			D.R_SG_CODE,
+			D.R_SG_NAME,
+      	 	A.R_USER_NAME,
+			A.R_EXT_NO,
+			A.R_USER_ID
+
+  	FROM 	RS_RUSER_INFO A
+
+LEFT JOIN	RS_BG_INFO B
+	   ON	A.R_BG_CODE = B.R_BG_CODE
+
+LEFT JOIN	RS_MG_INFO C
+       ON 	A.R_MG_CODE = C.R_MG_CODE
+	  AND	B.R_BG_CODE = C.R_BG_CODE
+LEFT JOIN	RS_SG_INFO D
+	   ON	A.R_SG_CODE	= D.R_SG_CODE
+	  AND	B.R_BG_CODE	= D.R_BG_CODE
+	  AND   C.R_MG_CODE = D.R_MG_CODE
+
+ -->
+
+
+ SELECT
+   			R_BG_CODE,
+   			R_MG_CODE,
+			R_SG_CODE,
+      	 	R_USER_NAME,
+			R_EXT_NO,
+			R_USER_ID,
+			R_USER_LEVEL
+
+  	FROM 	RS_RUSER_INFO A
+
+</select>
+
+<!--
+ <insert id="insertCustomer" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+
+	INSERT INTO RS_RUSER_INFO
+			(
+				R_USER_ID,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_USER_NAME,
+				R_EXT_NO
+			)
+	VALUES
+			(
+				#{rUserId},
+				'AAA',
+				#{rMgCode},
+			    #{rSgCode},
+			    #{rUserName},
+			    #{rExtNo}
+		    )
+
+</insert>
+
+<update id="updeteCustomer" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+
+	UPDATE	RS_RUSER_INFO
+
+	   SET	R_BG_CODE				=	'AAA'
+	   ,	R_MG_CODE				=	#{rMgCode}
+	   ,	R_SG_CODE				=   #{rSgCode}
+	   ,	R_EXT_NO				=	#{rExtNo}
+
+	<where>
+			R_USER_ID				=	#{rUserId}
+	</where>
+</update>
+
+
+<delete id="deleteCustomer" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+	DELETE FROM RS_RUSER_INFO
+	WHERE R_USER_ID = #{rUserId}
+</delete>
+
+ -->
+
+<!-- 현재 PG에 저장되있는 BG 코드 읽어옴 -->
+<select id="selectsBgCodeList" parameterType="com.furence.recsee.common.model.CustomerInfoVO" resultMap="CodeInfoMap">
+
+   	SELECT  R_BG_CODE,                                  	<!--대분류 -->
+    	    R_BG_NAME                                       <!--대분류명  -->
+
+  	FROM 	RS_BG_INFO
+
+
+</select>
+
+<select id="selectsMgCodeList" parameterType="com.furence.recsee.common.model.CustomerInfoVO" resultMap="CodeInfoMap">
+
+   	SELECT
+   	DISTINCT
+   			R_BG_CODE,                                  	<!--대분류 -->
+    	    R_MG_CODE,
+    	    R_MG_NAME
+
+  	FROM 	RS_MG_INFO
+
+</select>
+
+
+
+<select id="selectsSgCodeList" parameterType="com.furence.recsee.common.model.CustomerInfoVO" resultMap="CodeInfoMap">
+
+   	SELECT
+   	DISTINCT
+   			R_BG_CODE,
+   			R_MG_CODE,
+   			R_SG_CODE,                                  	<!--대분류 -->
+    	    R_SG_NAME                                      <!--대분류명  -->
+
+  	FROM 	RS_SG_INFO
+</select>
+
+<select id="checkMgCode" parameterType="com.furence.recsee.common.model.CodeInfoVO" resultType="Integer">
+
+   	SELECT
+   		COUNT(*)
+    	    R_MG_CODE
+
+  	FROM 	RS_MG_INFO
+  	WHERE   R_MG_CODE = #{rMgCode}
+
+</select>
+
+<select id="checkSgCode" parameterType="com.furence.recsee.common.model.CodeInfoVO" resultType="Integer">
+
+ 	SELECT
+   		COUNT(*)
+    	    R_SG_CODE
+
+  	FROM 	RS_SG_INFO
+  	WHERE   R_MG_CODE = #{rMgCode}
+  	  AND	R_sG_CODE = #{rSgCode}
+</select>
+
+<select id="checkCustomerInfo" parameterType="com.furence.recsee.common.model.CustomerInfoVO" resultType="Integer">
+
+ 	SELECT
+   		COUNT(*)
+    	    R_USER_ID
+
+  	FROM 	RS_RUSER_INFO
+  	WHERE   R_USER_ID = #{rUserId}
+
+</select>
+
+
+<delete id="deleteMgCode" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+	DELETE FROM RS_MG_INFO
+	WHERE R_MG_CODE = #{rMgCode}
+	AND R_BG_CODE = '1000'
+</delete>
+
+<delete id="deleteSgCode" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+	DELETE FROM RS_SG_INFO
+	WHERE R_BG_CODE = '1000'
+		AND R_MG_CODE = #{rMgCode}
+	  AND R_SG_CODE = #{rSgCode}
+</delete>
+
+<delete id="deleteCustomerInfo" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+	DELETE FROM RS_RUSER_INFO
+	WHERE R_USER_ID = #{rUserId}
+	  AND ( R_USER_LEVEL != 'E1001' AND R_USER_LEVEL != 'E1006' )
+	  AND R_BG_CODE =  '1000'
+	  <!-- 주택공사 : U센터 인원을 제외한 인원만 관리 (U센터 인원은 인사DB에 없어서 직접 관리해야 함) -->
+
+</delete>
+
+
+<update id="updateMgCode" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+
+	UPDATE	RS_MG_INFO
+	   SET	R_MG_NAME				=	#{rMgName}
+	   ,	R_BG_CODE				=	'1000'
+	   ,	R_MG_SYS				=   #{rMgName}
+	   ,	R_MG_ETC				=	#{rMgName}
+	<where>
+			R_MG_CODE				=	#{rMgCode}
+	</where>
+</update>
+
+
+
+<update id="updateSgCode" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+
+	UPDATE	RS_SG_INFO
+	   SET	R_SG_NAME				=	#{rSgName}
+	   ,	R_BG_CODE				=	'1000'
+	   ,	R_MG_CODE				=	#{rMgCode}
+	   ,	R_SG_SYS				=	#{rSgName}
+	   ,	R_SG_ETC				=	#{rSgName}
+	<where>
+			R_SG_CODE				=	#{rSgCode}
+	</where>
+</update>
+
+<update id="updateCustomerInfo" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+
+	UPDATE	RS_RUSER_INFO
+	   SET
+	   		R_USER_NAME				=	#{rUserName}
+	   <!-- ,	R_EXT_NO				=	#{rExtNo} -->
+	   ,	R_BG_CODE				=	'1000'
+	   ,	R_MG_CODE				=	#{rMgCode}
+	   ,	R_SG_CODE				=	#{rSgCode}
+	   <!-- , 	r_regi_date				=	#{rRegDate} -->
+
+	   <!-- ,	R_USER_LEVEL			=	#{rUserLevel} -->
+	   <!-- ,	R_PASSWORD				=	CASE WHEN LENGTH(RTRIM(LTRIM(R_PASSWORD))) > 0
+	   									THEN CASE WHEN R_PASSWORD = #{rPassword} THEN R_PASSWORD ELSE #{rPassword} END
+	   									ELSE #{rPassword} END -->
+	   <!-- 현재 비밀번호 있는 사람 일 경우 그대로
+	   	         비밀번호가 없는경우 사번으로 업데이트 #{rUserId}
+	   	         카이로의 경우 내선번호 관리 안하므로 ,	R_EXT_NO				=	#{rExtNo} 제외
+
+	   	         패스워드 / 내선번호 업데이트 X처리 @kyle 11번가 요청
+	    -->
+	<where>
+			R_USER_ID				=	#{rUserId}
+	</where>
+</update>
+
+ <insert id="insertMgInfo" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+
+	INSERT INTO RS_MG_INFO
+			(
+				R_MG_CODE,
+				R_BG_CODE,
+				R_MG_NAME,
+				R_MG_SYS,
+				R_MG_ETC
+			)
+	VALUES
+			(
+				#{rMgCode},
+				'1000',
+				#{rMgName},
+			    #{rMgName} ,
+			    #{rMgName}
+		    )
+
+</insert>
+
+ <insert id="insertSgInfo" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+
+	INSERT INTO RS_SG_INFO
+			(
+				R_SG_CODE,
+				R_MG_CODE,
+				R_BG_CODE,
+				R_SG_NAME,
+				R_SG_SYS,
+				R_SG_ETC
+			)
+	VALUES
+			(
+				#{rSgCode},
+				#{rMgCode},
+				'1000',
+				#{rSgName},
+			    #{rSgName},
+			    #{rSgName}
+		    )
+
+</insert>
+
+
+ <insert id="insertCustomerInfo" parameterType="com.furence.recsee.common.model.CustomerInfoVO">
+
+	INSERT INTO RS_RUSER_INFO
+			(
+				R_USER_ID,
+				R_PASSWORD,
+				R_USER_NAME,
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_EXT_NO,
+				<if test="rRegDate != null || rRegDate!=''">
+				R_REGI_DATE,
+				</if>
+				R_USER_LEVEL
+			)
+	VALUES
+			(
+				#{rUserId},
+				#{rPassword},
+				#{rUserName},
+				'1000',
+				#{rMgCode},
+			    #{rSgCode},
+			    #{rExtNo},
+			    <if test="rRegDate != null || rRegDate!=''">
+			   #{rRegDate},
+			   </if>
+			    #{rUserLevel}
+		    )
+
+</insert>
+
+	<insert id="upsertMgInfo" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+		WITH UPSERT AS (
+			UPDATE RS_MG_INFO
+				SET
+					R_BG_CODE=#{rBgCode},
+					R_MG_CODE=#{rMgCode},
+					R_MG_NAME=#{rMgName},
+					R_MG_SYS='',
+					R_MG_ETC=''
+				WHERE
+					R_BG_CODE=#{rBgCode}
+				AND
+					R_MG_CODE=#{rMgCode}
+				RETURNING*	
+		)
+		INSERT INTO RS_MG_INFO
+			(
+				R_BG_CODE,
+				R_MG_CODE,
+				R_MG_NAME,
+				R_MG_SYS,
+				R_MG_ETC
+			)
+		SELECT
+			#{rBgCode},
+			#{rMgCode},
+			#{rMgName},
+			'',
+			''
+		WHERE NOT EXISTS(
+			SELECT
+				R_BG_CODE,
+				R_MG_CODE,
+				R_MG_NAME,
+				R_MG_SYS,
+				R_MG_ETC
+			FROM
+				UPSERT
+		)
+	</insert>
+	
+	<delete id="deleteMgInfo" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+		DELETE FROM
+			RS_MG_INFO
+		WHERE
+			R_BG_CODE=#{rBgCode}
+		AND
+			R_MG_CODE=#{rMgCode}
+	</delete>
+	
+	<insert id="upsertSgInfo" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+		WITH UPSERT AS (
+			UPDATE RS_SG_INFO
+				SET
+					R_BG_CODE=#{rBgCode},
+					R_MG_CODE=#{rMgCode},
+					R_SG_CODE=#{rSgCode},
+					R_SG_NAME=#{rSgName},
+					R_SG_SYS='',
+					R_SG_ETC=''
+				WHERE
+					R_BG_CODE=#{rBgCode}
+				AND
+					R_MG_CODE=#{rMgCode}
+				AND
+					R_SG_CODE=#{rSgCode}
+				RETURNING*	
+		)
+		INSERT INTO RS_SG_INFO
+			(
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_SG_NAME,
+				R_SG_SYS,
+				R_SG_ETC
+			)
+		SELECT
+			#{rBgCode},
+			#{rMgCode},
+			#{rSgCode},
+			#{rSgName},
+			'',
+			''
+		WHERE NOT EXISTS(
+			SELECT
+				R_BG_CODE,
+				R_MG_CODE,
+				R_SG_CODE,
+				R_SG_NAME,
+				R_SG_SYS,
+				R_SG_ETC
+			FROM
+				UPSERT
+		)
+	</insert>
+	
+	<delete id="deleteSgInfo" parameterType="com.furence.recsee.common.model.CodeInfoVO">
+		DELETE FROM
+			RS_SG_INFO
+		WHERE
+			R_BG_CODE=#{rBgCode}
+		AND
+			R_MG_CODE=#{rMgCode}
+		AND
+			R_SG_CODE=#{rSgCode}
+	</delete>
+	
+	<select id="meritzUserMapping" parameterType="com.furence.recsee.common.model.MeritUser"  resultMap="MeritzUserMap">
+		EXEC ps_USER_LIST #{use_yn},'','',''
+	</select>
+	
+	<insert id="meritzUserInsert" parameterType="com.furence.recsee.common.model.MeritUser">
+		INSERT INTO meriz_user_list(
+			org1_nm,
+			org2_nm,
+			org3_nm,
+			org1_cd,
+			org2_cd,
+			org3_cd,
+			emp_no,
+			user_nm,
+			work_yn
+		)
+		VALUES
+		(
+			#{org1_nm},
+			#{org2_nm},
+			#{org3_nm},
+			#{org1_cd},
+			#{org2_cd},
+			#{org3_cd},
+			#{emp_no},
+			#{user_nm},
+			#{work_yn}
+		)		
+	</insert>
+	
+	<delete id="meritzUserDelete" parameterType="com.furence.recsee.common.model.MeritUser">
+		DELETE FROM meriz_user_list	
+	</delete>
+
+	<select id="meritzRUserInsert" resultType="Integer">
+		SELECT meriz_user_list()
+	</select>
+
+</mapper>

@@ -1,0 +1,1028 @@
+@charset "UTF-8";
+
+/*  전체    */
+
+html,body{
+	margin : 0;
+	padding : 0;
+	height : 100%;
+	font-family: OneShinhan;
+	min-width : 1270px;
+}
+
+.all_chk_btn_false{
+	width : 17px;
+	height : 20px;
+	background-repeat : no-repeat;
+	background-image : url(../../../images/project/dhxgrid_web/item_chk0.gif);
+}
+
+.all_chk_btn_true{
+	width : 17px;
+	height : 20px;
+	background-repeat : no-repeat;
+	background-image : url(../../../images/project/dhxgrid_web/item_chk1.gif);
+}
+
+.ui_pannel_row{
+	padding : 0 !important;
+}
+
+.float_right {
+	float : right !important;
+}
+
+.blueprint_btn{
+	cursor : pointer;
+}
+
+.blueprint_btn_search{
+	float : none !important;
+}
+
+#blueprintSelect{
+	width: 220px;
+	float: left;
+	margin-top:4px;
+	height : 27px;
+	margin-left : 10px;
+	margin-right : 10px;
+}
+
+.save_btn{
+	cursor : pointer;
+	position : absolute;
+	width : 23px; 
+	height : 23px;
+	background : url(../../../images/project/blue_print/save.svg);
+	background-repeat:no-repeat;
+	left : 15px;
+   	top: -25px;
+}
+
+/*   header  */
+.monitoring_header_wrap {
+	height : 40px;
+}
+
+/*  Menu */
+
+.main_form{
+	float : left;
+	margin-left : 206px;
+}
+
+.main_form input{
+	height : 16px;
+	width : 150px;
+}
+
+#userSelectPopup,#userShareSelectPopup{
+	height : 535px;
+	width : 855px;
+}
+
+#realTimeUserDetail{
+	width : 325px;
+}
+
+.tree_view_wrap {
+    float: left !important;
+    position: absolute;
+    display: inline-block;
+    left: 0px;
+    margin-top: 35px;
+}
+
+#treeViewShareAgent{
+	width:204px;
+	height : 452px;
+}
+
+.tree_view_share_wrap{
+    float: left !important;
+    position: absolute;
+    display: inline-block;
+    left: 0px;
+    margin-top: 85px;
+    overflow : auto;
+    margin-top:40px;
+    margin-left : 5px;
+}
+
+#userManageGrid , #userShareManageGrid {
+    width: 620px;
+    height: 420px;
+    margin-left: 205px;
+}
+
+.search_fieldset {
+    display: block;
+    float: left;
+    border: 1px solid #2d71c4 !important;
+    position: relative;
+    margin: 2px;
+    padding-left: 100px !important;
+    transition: transform 1s;
+}
+
+.search_fieldset legend {
+    font-size: 12px;
+    position: absolute;
+    padding-top: 10px;
+    text-align: center;
+    width: 100px;
+    margin-left: -100px;
+    color: #3da0e3;
+}
+
+fieldset {
+    border: 0px !important;
+    padding: 0px !important;
+}
+
+.ui_main_btn_flat {
+    height: 30px;
+    margin-top: 2px !important;
+}
+
+
+#treeViewAgent {
+    width: 200px;
+    height: 400px;
+}
+
+.browser_btn {
+    float: right !important;
+}
+
+
+
+.menu_item{
+    position: absolute;
+    right: -63px;
+    top:0px;
+    font-size: 10px;
+    border-top: 1px solid #666;
+    border-right: 1px solid #666;
+    border-left: 1px solid #666;
+    width: auto;
+    color: #fff;
+    font-style : normal;
+    display : none;
+}
+
+.menu_item li{
+    padding: 4px;
+    background: #777;
+    border-bottom: 1px solid #666;
+    cursor : pointer;
+}
+
+.menu_item li:hover{
+	background : #333 !important;
+}
+
+.total_monitoring_browser{
+	position : absolute;
+	margin:0 auto;
+	display : inline;
+	text-align : center;
+	top : 3px;
+	font-size : 13px;
+}
+
+.total_monitoring_browser p{
+	display : inline-block;
+	margin-left : 8px;
+}
+
+.total_monitoring_browser input{
+	display : inline-block;
+	width: 40px;
+	height : 17px;
+}
+
+
+/*  모니터링 세팅 메뉴 */
+.monitoring_setting{
+	width : 350px;
+	height : 100%;
+	float : left;
+	margin-left : -350px;
+	display : inline-block;
+	transition : all 0.4s;
+}
+
+.monitoring_left{
+	margin-left : 350px !important;
+}
+
+.ext_info{
+	position : relative;
+	float : right;
+	width : 13px;
+	height : 13px;
+	cursor : pointer;
+	margin-right : 3px;
+	text-align : center;
+	color : #fff;
+	border : 1px solid #333;
+	border-radius : 22px;
+	background : #333; 
+	top:-38px;
+	left : 2px;
+	margin-right : 3px;
+	font-size : 11px;
+	font-weight : bold;
+}
+
+.setting_menu_on{
+	position : absolute;
+	left : 5px;
+	top: 5px;
+	width : 25px;
+	height : 25px;
+	z-index : 20;
+	cursor : pointer;
+	background-image : url(../../../images/project/blue_print/bars.svg);
+}
+
+.left_icon_menu{
+	background-image : url(../../../images/project/blue_print/times.svg);
+}
+
+.monitoring_interior{
+	width : 100%;
+	height : 135px;
+	background : #fff;
+}
+
+.monitoring_interior span {
+	font-size : 19px;
+	padding-top : 10px;
+	padding-left : 13px;
+	display : inline-block;
+	color : #888;
+	width : 93%;
+}
+
+#closeSettingMenu{
+	width : 17px;
+	height : 25px;
+	float : right;
+	cursor : pointer;
+	background-image : url(../../../images/project/blue_print/arrow.svg);
+   	background-repeat: no-repeat;
+}
+
+.monitoring_interior ul{
+	margin : 3px;
+	margin-top : 20px;
+	padding : 0;
+	width : 100%;
+}
+
+.monitoring_interior ul li{
+	display : inline-block;
+	width : 23.5%;
+	height : 78px;
+	cursor : pointer;
+}
+
+.monitoring_interior ul li i{
+	width : 50px;
+	height : 50px;
+	display : block;
+	margin : 0 auto;
+}
+
+.monitoring_interior .active{
+	border-bottom : 3px solid #086ebc;
+}
+
+.monitoring_interior .active_text{
+	color : #086ebc !important;
+}
+
+.monitoring_interior .item_text{
+	text-align : center;
+	font-size : 13px; 
+	color : #888;
+	padding-top : 4px;
+}
+
+.item_set{
+	background-image : url(../../../images/project/blue_print/menu-set.svg);
+}
+
+.item_set.active_item{
+	background-image : url(../../../images/project/blue_print/menu-set-active.svg) !important;
+}
+
+.item_desk{
+	background-image : url(../../../images/project/blue_print/menu-desk.svg);
+}
+
+.item_desk.active_item{
+	background-image : url(../../../images/project/blue_print/menu-desk-active.svg) !important;
+}
+
+.item_chair{
+	background-image : url(../../../images/project/blue_print/menu-chair.svg);
+	background-repeat : no-repeat;
+}
+
+.item_chair.active_item{
+	background-image : url(../../../images/project/blue_print/menu-chair-active.svg) !important;
+}
+
+.item_etc{
+	background-image : url(../../../images/project/blue_print/menu-etc.svg);
+	background-repeat : no-repeat;
+}
+
+.item_etc.active_item{
+	background-image : url(../../../images/project/blue_print/menu-etc-active.svg) !important;
+}
+
+.monitoring_interior_item{
+	width : 100%;
+	height : calc(100% - 135px);
+	background : rgba(182, 229, 247, 1);
+	/* overflow-y : auto; */
+}
+
+.monitoring_select_item{
+	margin-left : 1px;
+}
+
+.monitoring_select_item li{
+	width: 114px;
+	height : 100px;
+	border : 1px solid #fff;
+	float :left;
+	display : inline-block;
+}
+
+/* 모니터링 화면 */
+
+.monitoring_wrap{
+	width : 100%;
+	height : calc(100% - 123px);
+	background-color : rgba(230, 216, 188, 1);
+	float : left;
+	display : inline-block;
+	transition : all 0.4s;
+}
+
+.monitoring_zoom_wrap{
+	width : 87px;
+	position : absolute;
+	bottom:20px;
+	right : 30px;
+	font-size : 11px;
+	height : 20px;
+}
+
+.monitoring_zoom_wrap div{
+	display : inline-block;
+	float : left;
+}
+
+.monitoring_zoom_wrap .zoom_plus{
+	width : 20px;
+	height : 20px;
+	background-image : url(../../../images/project/blue_print/plus.svg);
+	background-repeat : no-repeat;
+	background-size : 15px;
+	background-color : rgba(214, 214, 214, 1);
+	background-position-x : 3px;
+	background-position-y : 3px; 
+	cursor : pointer;
+}
+
+.monitoring_zoom_wrap .zoom_size_view{
+	background : #fff;
+	height : 20px;
+	text-align: center;
+	width: 45px;
+	line-height : 18px;
+}
+
+.monitoring_zoom_wrap .zoom_minus{
+	width : 20px;
+	height : 20px;
+	background-image : url(../../../images/project/blue_print/minus.svg);
+	background-repeat : no-repeat;
+	background-size : 15px;
+	background-color : rgba(214, 214, 214, 1);
+	background-position-x : 3px;
+	background-position-y : 3px; 
+	cursor : pointer;
+}
+
+/* 모니터링 아이템*/
+.monitoring_item{
+	cursor : pointer;
+}
+
+.interior_item{
+	width : 75px;
+	height : 75px;
+	display : block;
+	margin : 0 auto;
+	margin-top:3px;
+}
+
+.item{
+	width : 75px;
+	height : 75px;
+	display : block;
+	margin : 0 auto;
+	margin-top:3px;
+}
+
+
+.itemx{
+	width : 75px;
+	height : 75px;
+	display : block;
+	margin : 0 auto;
+	margin-top:3px;
+}
+
+.item_text{
+	text-align : center;
+	font-size : 12px; 
+	color : #444;
+}
+/* SET */
+.item-set-1{
+	background-image : url(../../../images/project/blue_print/set/set1.svg);
+	background-repeat : no-repeat;
+}
+
+.item-set-2{
+	background-image : url(../../../images/project/blue_print/set/set2.svg);
+	background-repeat : no-repeat;
+}
+
+.item-set-3{
+	background-image : url(../../../images/project/blue_print/set/set3.svg);
+	background-repeat : no-repeat;
+}
+
+
+.item-set-4{
+	background-image : url(../../../images/project/blue_print/set/set4.svg);
+	background-repeat : no-repeat;
+}
+
+.item-set-5{
+	background-image : url(../../../images/project/blue_print/set/set5.svg);
+	background-repeat : no-repeat;
+}
+
+
+/* DESK */
+.item-eclipse-table{
+	background-image : url(../../../images/project/blue_print/desk/eclipse-table.svg);
+	background-repeat : no-repeat;
+}
+
+.item-exlipse-office-table{
+	background-image : url(../../../images/project/blue_print/desk/exlipse-office-table.svg);
+	background-repeat: no-repeat;
+	background-position-x : 9px;
+	background-position-y : 9px;
+	background-size: 53px;
+}
+
+.item-long-desk{
+	background-image : url(../../../images/project/blue_print/desk/long-desk.svg);
+	background-repeat : no-repeat;
+}
+
+.item-meeting-table{
+	background-image : url(../../../images/project/blue_print/desk/meeting-table.svg);
+	background-repeat : no-repeat;
+}
+
+.item-meeting-table-2{
+	background-image : url(../../../images/project/blue_print/desk/meeting-table-2.svg);
+	background-repeat : no-repeat;
+}
+
+.item-office-table-l{
+	background-image : url(../../../images/project/blue_print/desk/office-table-l.svg);
+	background-repeat : no-repeat;
+}
+
+.item-office-table-r{
+	background-image : url(../../../images/project/blue_print/desk/office-table-r.svg);
+	background-repeat : no-repeat;
+}
+
+.item-table{
+	background-image : url(../../../images/project/blue_print/desk/table.svg);
+	background-repeat : no-repeat;
+}
+
+/* CHAIR */
+.item-boss-chair{
+	background-image : url(../../../images/project/blue_print/chair/boss-chair.svg);
+	background-repeat: no-repeat;
+	background-position-x : 22px;
+	background-position-y : 22px;
+	background-size: 30px;
+	background-repeat : no-repeat;
+}
+
+.item-dining-chair{
+	background-image : url(../../../images/project/blue_print/chair/dining-chair.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-meeting-chair{
+	background-image : url(../../../images/project/blue_print/chair/meeting-chair.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-office-chair{
+	background-image : url(../../../images/project/blue_print/chair/office-chair.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+	background-repeat : no-repeat;
+}
+
+.item-sofar{
+	background-image : url(../../../images/project/blue_print/chair/sofar.svg);
+	background-size : 27px;
+	background-repeat : no-repeat;
+	background-position-x : 22px;
+	background-position-y : 9px;
+	background-repeat : no-repeat;
+}
+
+.item-sofar-2{
+	background-image : url(../../../images/project/blue_print/chair/sofar2.svg);
+	background-repeat : no-repeat;
+}
+/* etc */
+.item-box{
+	background-image : url(../../../images/project/blue_print/etc/box.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-door-l{
+	background-image : url(../../../images/project/blue_print/etc/door-l.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-door-r{
+	background-image : url(../../../images/project/blue_print/etc/door-r.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-locker{
+	background-image : url(../../../images/project/blue_print/etc/locker.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-monitor{
+	background-image : url(../../../images/project/blue_print/etc/monitor.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-phone{
+	background-image : url(../../../images/project/blue_print/etc/phone.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-phone-aftercallwork{
+	background-image : url(../../../images/project/blue_print/etc/phone-acw.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-phone-notready{
+	background-image : url(../../../images/project/blue_print/etc/phone-away.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-phone-ringing{
+	background-image : url(../../../images/project/blue_print/etc/phone-calling.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-phone-calling{
+	background-image : url(../../../images/project/blue_print/etc/phone-calling.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-phone-login{
+	background-image : url(../../../images/project/blue_print/etc/phone-login.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-phone-logout{
+	background-image : url(../../../images/project/blue_print/etc/phone-logout.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-phone-ready{
+	background-image : url(../../../images/project/blue_print/etc/phone-ready.svg);
+	background-repeat: no-repeat;
+	background-position-x : 30px;
+	background-position-y : 30px;
+	background-size: 15px;
+}
+
+.item-printer{
+	background-image : url(../../../images/project/blue_print/etc/printer.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-tv{
+	background-image : url(../../../images/project/blue_print/etc/tv.svg);
+   	background-position-x: 34px;
+	background-repeat : no-repeat;
+}
+
+.item-water{
+	background-image : url(../../../images/project/blue_print/etc/water.svg);
+	background-repeat: no-repeat;
+	background-position-x : 25px;
+	background-position-y : 25px;
+	background-size: 25px;
+}
+
+.item-wall{
+	width : 75px;
+	height : 4px;
+	border : 1px solid #000;
+	margin-top : 30px;
+	margin-bottom : 35px;
+	background : #fff;
+	position: absolute;
+}
+
+.item-wall-ver{
+	width : 4px;
+	height :57px;
+	border : 1px solid #000;
+	margin : 0 auto;
+	margin-top: 12px;
+	margin-bottom:5px;
+	background : #fff;
+	margin-left: 31px;
+	position: absolute;
+}
+
+.monitoring_items:hover{
+	cursor : pointer;
+	background-color : rgba(255, 248, 51, 0.3);
+}
+
+/** listen Always**/
+.listenAlwaysPannel {
+    display: none;
+    position: fixed;
+    width: 200px;
+    height: auto;
+    right: 0px;
+    padding: 0 25px;
+    background-color: white;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    z-index: 2000000;
+    padding-bottom: 5px;
+    border: solid 6px #273a58;
+}
+
+.monitoring_option_header p {
+    float: left;
+    text-indent: 10px;
+    color: white;
+}
+
+.monitoring_option_header .ui_btn_white {
+    float: right;
+    margin-bottom: -5px;
+    margin-top: -4px;
+    margin-right: -40px;
+}
+
+
+.monitoring_option_header{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	background-color: #273a58;
+	padding: 11px 0;
+	padding-right: 50px;
+	margin-left: -25px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.setting_dropdown_cont{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+.setting_dropdown_cont .onoffswitch{
+	float: right;
+}
+
+#custPhoneContinue {
+    font-weight: normal;
+    width: 200px;
+}
+
+.display_option .onofftit {
+    float: left;
+    clear: both;
+    font-size: 13px;
+    color: black;
+    font-weight: bold;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    background-image: url(../../../images/project/icon/label_icon/icon_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+
+.monitoring_check{
+	padding-bottom : 18px;
+}
+
+.setting_dropdown_cont .onoffswitch {
+    float: right;
+}
+
+#btnListenAlwayExit{
+	position : absolute;
+	right : 0px;
+}
+
+.listen-away{
+    position: fixed;
+    bottom: 0px;
+    display: table;
+    width: 100%;
+    height: 35px;
+    background: rgba(51, 51, 51, 0.85);
+}
+
+.listen-away p{
+	color: white;
+	vertical-align: middle;
+	display : table-cell;
+	font-size : 14px;
+	text-align : center;
+}
+
+/*********************************************************************************************************************************************/
+#blueprintWrap{
+	width : 100%;
+	height : calc(100% - 45px);
+	position : relative;
+	transition : all 0.4s;
+	right : 0;
+	top:35px;
+}
+
+.dragstart_wall{
+	z-index : 100 !important;
+	background : rgba(0,0,0,0.3);
+	border-left : 3px dashed #fff !important;
+	border-right : 2px dashed #fff !important;
+}
+
+.resize_left{
+	width : 2px;
+	height : 4px;
+	cursor : e-resize;
+	background : black;
+}
+
+.resize_right {
+	width : 2px;
+	height : 4px;
+	cursor : e-resize;
+	position :absolute;
+	background : black;
+	top:0px;
+	right : 0px;
+}
+
+.item_setting{
+	width:15px;
+	height : 15px;
+	background-image : url(../../../images/project/blue_print/cog.svg) !important;
+	background-repeat : no-repeat !important;
+	background-size : 15px !important;
+	right : -2px;
+	top : -1px;
+	position : absolute;
+	cursor : pointer !important;
+	display : none;
+}
+
+.item_rotate{
+	width:15px;
+	height:15px;
+	right : -4px;
+	bottom : 0px;
+	position : absolute;
+	background-image : url(../../../images/project/blue_print/redo-alt.svg) !important;
+	background-repeat : no-repeat !important;
+	background-size : 15px !important;
+	transform : rotate(180deg);
+	cursor: pointer;
+	display : none;
+}
+
+
+/* resize  custom */
+/* .ui-resizable-e {
+	cursor : e-resize !important;	
+	width: 3px !important;
+	right : 0px !important;
+	height : 6px !important;
+	background : #444 !important;
+}
+
+.ui-resizable-s{
+	cursor : default !important;
+}  */
+
+.cursor-pointer{
+	cursor : pointer !important;
+}
+
+.cursor-pointer:hover{
+	background : none !important;
+}
+
+.clone_move{
+	cursor : move;
+}
+.ui-icon-gripsmall-diagonal-se{
+	bottom : -5px;
+	right : -4px;
+	position : absolute;	
+}
+
+/* Player */
+#bottomFixedPlayer{
+    width: 440px !important;
+	height: auto;
+	position: fixed;
+	top: calc(100% - 190px);
+	left: 8px;
+    z-index: 99999;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.4);
+    border: 1px solid rgba(0,0,0,0.4);
+}
+#bottomFixedPlayer .rplayer{
+    min-width: 466px !important;
+}
+
+
+/* 말풍선  */
+.arrow_box {
+	position : relative;
+	background : #999;
+	border : 2px solid #eee;
+	font-size : 11px;
+	padding-left : 6px;
+	padding-top: 2px;
+	padding-bottom:2px;
+	color : #fff;
+	left : -13px;
+	top : -102px;
+	border-radius : 4px;
+}
+
+.arrow_box:hover{
+ 	z-index:200;
+}
+
+.arrow_box span{
+	display : block;
+}
+
+.arrow_box:after, .arrow_box:before{
+	top : 100%;
+	left : 50%;
+	border : solid transparent;
+	content : " ";
+	height : 0;
+	width  : 0;
+	position : absolute;
+	pointer-events : none;
+} 
+
+.arrow_box:after {
+	border-color : rgba(87 ,189 , 255 ,0);
+	border-top-color : #999;
+	border-width : 7px;
+	margin-left : 6px;
+}
+
+.arrow_box:before {
+	border-color : rgba(194 , 225 , 245 , 0);
+	border-top-color : #eee;
+	border-width : 10px;
+	margin-left : 3px;
+}
+
+/* status color */
+.user_status_aftercallwork{
+	color : #3f7923;
+	font-weight : bold;
+}
+
+.user_status_notready{
+	color : rgba(235, 102, 0, 1);
+	font-weight : bold;
+}
+
+.user_status_ringing{
+	color : #006cb6;
+	font-weight : bold;
+}
+
+.user_status_calling{
+	color : #006cb6;
+	font-weight : bold;
+}
+
+.user_status_login{
+	color : #9283d6;
+	font-weight : bold;
+}
+
+.user_status_logout{
+	color : #888888;
+	font-weight : bold;
+}
+
+.user_status_ready{
+	color : #e16d6d;
+	font-weight : bold;
+}

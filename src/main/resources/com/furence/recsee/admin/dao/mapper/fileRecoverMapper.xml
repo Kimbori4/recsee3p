@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.FileRecoverDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.admin.model.FileRecoverInfo">
+		<result column="R_REC_DATE" jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_TIME" jdbcType="VARCHAR" property="recTime" />
+		<result column="R_SYS_CODE" jdbcType="VARCHAR" property="sysCode" />
+		<result column="R_SYS_NAME" jdbcType="VARCHAR" property="sysName" />
+		<result column="R_EXT_NUM" jdbcType="VARCHAR" property="extNum" />
+		<result column="R_EXT_IP" jdbcType="VARCHAR" property="extIp" />
+		<result column="R_CALL_ID" jdbcType="VARCHAR" property="callId" />
+		<result column="R_CALL_TTIME" jdbcType="VARCHAR" property="callTtime" />
+		<result column="R_CUST_PHONE" jdbcType="VARCHAR" property="custPhone" />
+		<result column="R_CALL_KIND" jdbcType="VARCHAR" property="callKind" />
+		<result column="R_FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+		<result column="R_FILE_STATE" jdbcType="VARCHAR" property="fileState" />
+		<result column="R_RECOVER_YN" jdbcType="VARCHAR" property="recoverYn" />
+		<result column="R_RECOVER_SERVER_IP" jdbcType="VARCHAR" property="recoverServerIp" />
+		<result column="R_RECFILE_EXISTS" jdbcType="VARCHAR" property="recfileExists" />
+		<result column="R_REC_STARTTIME" jdbcType="VARCHAR" property="recTime" />
+		<result column="R_NORTP_YN" jdbcType="VARCHAR" property="nortp" />
+	</resultMap>
+
+	<select id="selectFileRecoverInfo" parameterType="com.furence.recsee.admin.model.FileRecoverInfo" resultMap="BaseResultMap">
+		SELECT 
+			CASE WHEN R_CALL_TTIME is null or R_CALL_TTIME = '' THEN '0'
+			ELSE
+				CASE WHEN CAST(R_CALL_TTIME AS INT)/3600 &gt; 0		
+					THEN '0'||CAST(R_CALL_TTIME AS INT)/3600||':'||
+						CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)/60 &lt; 1		
+						THEN
+							'0'||CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+						ELSE
+							CASE WHEN 
+								(CAST(R_CALL_TTIME AS INT)%3600)/60 &lt; 10 THEN '0'||CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+							ELSE
+								CASE WHEN (CAST(R_CALL_TTIME AS INT)%3600)%60 &lt; 10 THEN (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':0' || (CAST(R_CALL_TTIME AS INT)%3600)%60 ELSE (CAST(R_CALL_TTIME AS INT)%3600)/60 || ':' || (CAST(R_CALL_TTIME AS INT)%3600)%60 END
+							END
+						END
+					ELSE
+						'00:'||
+						CASE WHEN CAST(R_CALL_TTIME AS INT)/60 &lt; 1		
+						THEN
+							'0'||CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+						ELSE
+							CASE WHEN 
+								CAST(R_CALL_TTIME AS INT)/60 &lt; 10 THEN '0'||CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+							ELSE
+								CASE WHEN CAST(R_CALL_TTIME AS INT)%60 &lt; 10 THEN CAST(R_CALL_TTIME AS INT)/60 || ':0' || CAST(R_CALL_TTIME AS INT)%60 ELSE CAST(R_CALL_TTIME AS INT)/60 || ':' || CAST(R_CALL_TTIME AS INT)%60 END
+							END
+						END		
+					END
+				END AS R_CALL_TTIME <!-- 초를 분초로 변환 -->
+			, (SELECT r_sys_name FROM rs_sys_info WHERE r_sys_id = R_SYS_CODE) as R_SYS_NAME
+			<if test="custPhoneIsEncrypt == &quot;Y&quot;">
+				,CASE WHEN length(r_cust_phone) in (32,64) THEN convert_from(decrypt(decode(r_cust_phone, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE r_cust_phone 
+			     END AS R_CUST_PHONE
+			</if>
+			<if test="custPhoneIsEncrypt != &quot;Y&quot;">
+				,R_CUST_PHONE
+			</if>
+			, *
+		FROM	RS_FILE_RECOVER
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="recDate != null">
+					AND R_REC_DATE=#{recDate}
+				</if>
+				<if test="recTime != null">
+					AND R_REC_TIME=#{recTime}
+				</if>
+				<if test="sDate != null and eDate != null">
+					<!-- AND R_REC_DATE BETWEEN #{sDate} AND #{eDate} -->
+					<choose>
+						<when test="sTime != null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) BETWEEN #{sTime}::integer AND #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_TIME) between (#{sDate},#{sTime}) and (#{eDate},#{eTime}) 
+						</when>
+						<when test="sTime != null and eTime eq null">
+						<!-- AND CAST(R_REC_TIME AS INT) &gt;= #{sTime}::integer -->
+						AND (R_REC_DATE, R_REC_TIME) between (#{sDate},#{sTime}) and (#{eDate},'235959') 
+						</when>
+						<when test="sTime eq null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) &lt;= #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_TIME) between (#{sDate},'000000') and (#{eDate},#{eTime}) 
+						</when>
+					</choose>
+				</if>
+				<choose>
+					<when test="sTtime != null and eTtime != null">
+					AND CAST(R_CALL_TTIME AS INT) BETWEEN #{sTtime}::integer AND #{eTtime}::integer
+					</when>
+					<when test="sTtime != null and eTtime eq null">
+					AND CAST(R_CALL_TTIME AS INT) &gt;= #{sTtime}::integer
+					</when>
+					<when test="sTtime eq null and eTtime != null">
+					AND CAST(R_CALL_TTIME AS INT) &lt;= #{eTtime}::integer
+					</when>
+				</choose>
+				<if test="sysCode != null">
+					AND R_SYS_CODE=#{sysCode}
+				</if>
+				<if test="extNum != null">
+					AND R_EXT_NUM LIKE '%' || #{extNum} || '%'
+				</if>
+				<if test="extIp != null">
+					AND R_EXT_IP LIKE '%' || #{extIp} || '%'
+				</if>
+				<if test="callId != null">
+					AND R_CALL_ID LIKE '%' || #{callId} || '%'
+				</if>
+				<if test="callTtime != null">
+					AND R_CALL_TTIME=#{callTtime}
+				</if>
+				
+				<if test="custPhone != null">
+					<if test="custPhoneIsEncrypt == &quot;Y&quot;">
+					AND CASE WHEN LENGTH(R_CUST_PHONE) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_PHONE END  LIKE '%' || #{custPhone} || '%'
+					</if>
+					<if test="custPhoneIsEncrypt != &quot;Y&quot;">
+					AND R_CUST_PHONE LIKE '%' || #{custPhone} || '%'
+					</if>
+				</if>
+			
+				<if test="callKind != null">
+					AND R_CALL_KIND=#{callKind}
+				</if>
+				<if test="fileName != null">
+					AND R_FILE_NAME LIKE '%' || #{fileName} || '%'
+				</if>
+				<if test="fileState != null">
+					AND R_FILE_STATE=#{fileState}
+				</if>
+				<if test="recoverYn != null">
+					AND R_RECOVER_YN=#{recoverYn}
+				</if>
+				<if test="recfileExists != null">
+					AND R_RECFILE_EXISTS=#{recfileExists}
+				</if>
+				
+				<if test="allRecover != null">
+					AND R_FILE_STATE NOT IN ('MS', 'AS')
+				</if>
+			</trim>
+		</where>
+		ORDER BY R_REC_DATE desc, R_REC_TIME desc
+	</select>
+	
+	<select id="selectFileRecoverInfoTotal" parameterType="com.furence.recsee.admin.model.FileRecoverInfo" resultType="Integer">
+		SELECT 	COUNT(*) 
+		FROM	RS_FILE_RECOVER
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="recDate != null">
+					AND R_REC_DATE=#{recDate}
+				</if>
+				<if test="recTime != null">
+					AND R_REC_TIME=#{recTime}
+				</if>
+				<if test="sDate != null and eDate != null">
+					<!-- AND R_REC_DATE BETWEEN #{sDate} AND #{eDate} -->
+					<choose>
+						<when test="sTime != null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) BETWEEN #{sTime}::integer AND #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_TIME) between (#{sDate},#{sTime}) and (#{eDate},#{eTime}) 
+						</when>
+						<when test="sTime != null and eTime eq null">
+						<!-- AND CAST(R_REC_TIME AS INT) &gt;= #{sTime}::integer -->
+						AND (R_REC_DATE, R_REC_TIME) between (#{sDate},#{sTime}) and (#{eDate},'235959') 
+						</when>
+						<when test="sTime eq null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) &lt;= #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_TIME) between (#{sDate},'000000') and (#{eDate},#{eTime}) 
+						</when>
+					</choose>
+				</if>
+				<choose>
+					<when test="sTtime != null and eTtime != null">
+					AND CAST(R_CALL_TTIME AS INT) BETWEEN #{sTtime}::integer AND #{eTtime}::integer
+					</when>
+					<when test="sTtime != null and eTtime eq null">
+					AND CAST(R_CALL_TTIME AS INT) &gt;= #{sTtime}::integer
+					</when>
+					<when test="sTtime eq null and eTtime != null">
+					AND CAST(R_CALL_TTIME AS INT) &lt;= #{eTtime}::integer
+					</when>
+				</choose>
+				<if test="sysCode != null">
+					AND R_SYS_CODE=#{sysCode}
+				</if>
+				<if test="extNum != null">
+					AND R_EXT_NUM LIKE '%' || #{extNum} || '%'
+				</if>
+				<if test="extIp != null">
+					AND R_EXT_IP LIKE '%' || #{extIp} || '%'
+				</if>
+				<if test="callId != null">
+					AND R_CALL_ID LIKE '%' || #{callId} || '%'
+				</if>
+				<if test="callTtime != null">
+					AND R_CALL_TTIME=#{callTtime}
+				</if>
+				<if test="custPhone != null">
+					AND R_CUST_PHONE LIKE '%' || #{custPhone} || '%'
+				</if>
+				<if test="callKind != null">
+					AND R_CALL_KIND=#{callKind}
+				</if>
+				<if test="fileName != null">
+					AND R_FILE_NAME LIKE '%' || #{fileName} || '%'
+				</if>
+				<if test="fileState != null">
+					AND R_FILE_STATE=#{fileState}
+				</if>
+				<if test="recoverYn != null">
+					AND R_RECOVER_YN=#{recoverYn}
+				</if>
+				<if test="recfileExists != null">
+					AND R_RECFILE_EXISTS=#{recfileExists}
+				</if>
+				<if test="allRecover != null">
+					AND R_FILE_STATE NOT IN ('MS', 'AS')
+				</if>
+			</trim>
+		</where>
+	</select>
+	
+	<insert id="insertFileRecoverInfo" parameterType="com.furence.recsee.admin.model.FileRecoverInfo">
+			INSERT INTO RS_FILE_RECOVER (
+				R_REC_DATE,
+				R_REC_TIME,
+				R_SYS_CODE,
+				R_EXT_NUM,
+				R_EXT_IP,
+				R_CALL_ID,
+				R_CALL_TTIME,
+				R_CUST_PHONE,
+				R_CALL_KIND,
+				R_FILE_NAME,
+				R_FILE_STATE,
+				R_RECOVER_YN
+			) VALUES (
+				#{recDate},
+				#{recTime},
+				#{sysCode},
+				#{extNum},
+				#{extIp},
+				#{callId},
+				#{callTtime},
+				#{custPhone},
+				#{callKind},
+				#{fileName},
+				'N',
+				'N'
+			)
+	</insert>
+	
+	<update id="updateFileRecoverInfo" parameterType="com.furence.recsee.admin.model.FileRecoverInfo">
+		UPDATE RS_FILE_RECOVER 
+		<set>
+			<trim suffixOverrides=",">
+				<if test="sysCode != null">
+					R_SYS_CODE=#{sysCode},
+				</if>
+				<if test="extNum != null">
+					R_EXT_NUM=#{extNum},
+				</if>
+				<if test="extIp != null">
+					R_EXT_IP=#{extIp},
+				</if>
+				<if test="callId != null">
+					R_CALL_ID=#{callId},
+				</if>
+				<if test="callTtime != null">
+					R_CALL_TTIME=#{callTtime},
+				</if>
+				<if test="custPhone1IsEncrypt == &quot;Y&quot;">
+					<if test="custPhone != null">
+						R_CUST_PHONE=(case when #{custPhone} is not null and #{custPhone} != '' and length(#{custPhone}) NOT IN (32,64) then encode(encrypt(#{custPhone}::bytea, 'ecnerufencryptyek11st604#!@enohp'::bytea, 'aes'::text), 'hex') else #{custPhone} end),
+					</if>
+				</if>
+				<if test="custPhone1IsEncrypt != &quot;Y&quot;">
+					<if test="custPhone != null">
+						R_CUST_PHONE=#{custPhone},
+					</if>
+				</if>
+<!-- 				<if test="custPhone != null"> -->
+<!-- 					R_CUST_PHONE=#{custPhone}, -->
+<!-- 				</if> -->
+				<if test="callKind != null">
+					R_CALL_KIND=#{callKind},
+				</if>
+				<if test="fileState != null">
+					R_FILE_STATE=#{fileState},
+				</if>
+			</trim>
+		</set>
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="recDate != null">
+					R_REC_DATE=#{recDate} 
+				</if>
+				<if test="recTime != null">
+					AND R_REC_TIME=#{recTime} 
+				</if>
+				<if test="fileName != null">
+					AND R_FILE_NAME=#{fileName}
+				</if>
+			</trim>
+		</where>
+	</update>
+	
+	<delete id="deleteFileRecoverInfo" parameterType="com.furence.recsee.admin.model.FileRecoverInfo">
+		DELETE FROM RS_FILE_RECOVER 
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="recDate != null">
+					R_REC_DATE=#{recDate} 
+				</if>
+				<if test="recTime != null">
+					AND R_REC_TIME=#{recTime} 
+				</if>
+				<if test="fileName != null">
+					AND R_FILE_NAME=#{fileName}
+				</if>
+			</trim>
+		</where>
+	</delete>
+	
+	<!-- genesys list 가져오기 -->
+	<select id="selectGenesysInfo" parameterType="com.furence.recsee.admin.model.FileRecoverInfo" resultMap="BaseResultMap">
+		SELECT
+			(SELECT R_EXT_IP FROM RS_CH_INFO WHERE RS_CH_INFO.R_EXT_NUM = RS_GENESYS_INFO.R_EXT_NUM AND RS_CH_INFO.R_SYS_CODE = RS_GENESYS_INFO.R_SYS_CODE) AS R_EXT_IP
+			,case when ((R_REC_STARTTIME::time - R_REC_ENDTIME::time) *-1) >= '000000'::time then ((R_REC_STARTTIME::time - R_REC_ENDTIME::time) *-1)
+ else ((R_REC_STARTTIME::time - '240000'::time) *-1)+(('000000'::time - R_REC_ENDTIME::time) *-1) end AS R_CALL_TTIME <!-- 초를 분초로 변환 -->
+			<if test="custPhoneIsEncrypt == &quot;Y&quot;">
+				,CASE WHEN length(r_cust_phone) in (32,64) THEN convert_from(decrypt(decode(r_cust_phone, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8')
+			     ELSE r_cust_phone 
+			     END AS R_CUST_PHONE
+			</if>
+			<if test="custPhoneIsEncrypt != &quot;Y&quot;">
+				,R_CUST_PHONE
+			</if>
+			,(CASE WHEN rs_genesys_info.r_call_id is not null and 0 &lt; (select count(*) from rs_nopacketconnection_log where r_nortp_date = r_rec_date and rs_nopacketconnection_log.r_call_id = rs_genesys_info.r_call_id) THEN 'Y' 
+			ELSE 'N' 
+			END)::character varying AS R_NORTP_YN
+			, *
+		FROM RS_GENESYS_INFO
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="recDate != null">
+					AND R_REC_DATE=#{recDate}
+				</if>
+				<if test="recTime != null">
+					AND R_REC_STARTTIME=#{recTime}
+				</if>
+				<if test="sDate != null and eDate != null">
+					<!-- AND R_REC_DATE BETWEEN #{sDate} AND #{eDate} -->
+					<choose>
+						<when test="sTime != null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) BETWEEN #{sTime}::integer AND #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_STARTTIME) between (#{sDate},#{sTime}) and (#{eDate},#{eTime}) 
+						</when>
+						<when test="sTime != null and eTime eq null">
+						<!-- AND CAST(R_REC_TIME AS INT) &gt;= #{sTime}::integer -->
+						AND (R_REC_DATE, R_REC_STARTTIME) between (#{sDate},#{sTime}) and (#{eDate},'235959') 
+						</when>
+						<when test="sTime eq null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) &lt;= #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_STARTTIME) between (#{sDate},'000000') and (#{eDate},#{eTime}) 
+						</when>
+					</choose>
+				</if>
+				<choose>
+					<when test="sTtime != null and eTtime != null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time) BETWEEN TO_CHAR('#{sTtime} second'::interval, 'HH24:MI:SS')::time AND TO_CHAR('#{eTtime} second'::interval, 'HH24:MI:SS')::time
+					</when>
+					<when test="sTtime != null and eTtime eq null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time) &gt;= TO_CHAR('#{sTtime} second'::interval, 'HH24:MI:SS')::time
+					</when>
+					<when test="sTtime eq null and eTtime != null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time) &lt;= TO_CHAR('#{eTtime} second'::interval, 'HH24:MI:SS')::time
+					</when>
+				</choose>
+				<if test="sysCode != null">
+					AND R_SYS_CODE=#{sysCode}
+				</if>
+				<if test="extNum != null">
+					AND R_EXT_NUM LIKE '%' || #{extNum} || '%'
+				</if>
+				<if test="extIp != null">
+					AND (SELECT RS_CH_INFO.R_EXT_NUM FROM RS_CH_INFO WHERE R_EXT_IP = #{extIp}) = RS_GENESYS_INFO.R_EXT_NUM
+				</if>
+				<if test="callId != null">
+					AND R_CALL_ID LIKE '%' || #{callId} || '%'
+				</if>
+				<if test="callTtime != null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time)=#{callTtime}
+				</if>
+				<if test="custPhone != null">
+					<if test="custPhoneIsEncrypt == &quot;Y&quot;">
+					AND CASE WHEN LENGTH(R_CUST_PHONE) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_PHONE END  LIKE '%' || #{custPhone} || '%'
+					</if>
+					<if test="custPhoneIsEncrypt != &quot;Y&quot;">
+					AND R_CUST_PHONE LIKE '%' || #{custPhone} || '%'
+					</if>
+				</if>
+				<if test="callKind != null">
+					AND R_CALL_KIND=#{callKind}
+				</if>
+				<if test="fileState != null">
+					AND R_FILE_STATE=#{fileState}
+				</if>
+				<if test="recfileExists != null">
+					AND R_RECFILE_EXISTS=#{recfileExists}
+				</if>
+				<if test="allRecover != null">
+					AND R_FILE_STATE NOT IN ('MS', 'AS')
+				</if>
+				AND R_CALL_KIND != 'S'
+			</trim>
+		</where>
+		ORDER BY R_REC_DATE desc, R_REC_STARTTIME desc
+	</select>
+	
+	<select id="selectGenesysInfoTotal" parameterType="com.furence.recsee.admin.model.FileRecoverInfo" resultType="Integer">
+		SELECT 	COUNT(*) 
+		FROM RS_GENESYS_INFO
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="recDate != null">
+					AND R_REC_DATE=#{recDate}
+				</if>
+				<if test="recTime != null">
+					AND R_REC_STARTTIME=#{recTime}
+				</if>
+				<if test="sDate != null and eDate != null">
+					<!-- AND R_REC_DATE BETWEEN #{sDate} AND #{eDate} -->
+					<choose>
+						<when test="sTime != null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) BETWEEN #{sTime}::integer AND #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_STARTTIME) between (#{sDate},#{sTime}) and (#{eDate},#{eTime}) 
+						</when>
+						<when test="sTime != null and eTime eq null">
+						<!-- AND CAST(R_REC_TIME AS INT) &gt;= #{sTime}::integer -->
+						AND (R_REC_DATE, R_REC_STARTTIME) between (#{sDate},#{sTime}) and (#{eDate},'235959') 
+						</when>
+						<when test="sTime eq null and eTime != null">
+						<!-- AND CAST(R_REC_TIME AS INT) &lt;= #{eTime}::integer -->
+						AND (R_REC_DATE, R_REC_STARTTIME) between (#{sDate},'000000') and (#{eDate},#{eTime}) 
+						</when>
+					</choose>
+				</if>
+				<choose>
+					<when test="sTtime != null and eTtime != null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time) BETWEEN TO_CHAR('#{sTtime} second'::interval, 'HH24:MI:SS')::time AND TO_CHAR('#{eTtime} second'::interval, 'HH24:MI:SS')::time
+					</when>
+					<when test="sTtime != null and eTtime eq null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time) &gt;= TO_CHAR('#{sTtime} second'::interval, 'HH24:MI:SS')::time
+					</when>
+					<when test="sTtime eq null and eTtime != null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time) &lt;= TO_CHAR('#{eTtime} second'::interval, 'HH24:MI:SS')::time
+					</when>
+				</choose>
+				<if test="sysCode != null">
+					AND R_SYS_CODE=#{sysCode}
+				</if>
+				<if test="extNum != null">
+					AND R_EXT_NUM LIKE '%' || #{extNum} || '%'
+				</if>
+				<if test="extIp != null">
+					AND (SELECT RS_CH_INFO.R_EXT_NUM FROM RS_CH_INFO WHERE R_EXT_IP = #{extIp}) = RS_GENESYS_INFO.R_EXT_NUM
+				</if>
+				<if test="callId != null">
+					AND R_CALL_ID LIKE '%' || #{callId} || '%'
+				</if>
+				<if test="callTtime != null">
+					AND (R_REC_ENDTIME::time - R_REC_STARTTIME::time)=#{callTtime}
+				</if>
+				
+				<if test="custPhone != null">
+					<if test="custPhoneIsEncrypt == &quot;Y&quot;">
+					AND CASE WHEN LENGTH(R_CUST_PHONE) IN (32,64) THEN convert_from(decrypt(decode(R_CUST_PHONE, 'hex'), 'ecnerufencryptyek11st604#!@enohp', 'aes'),'utf8') ELSE R_CUST_PHONE END  LIKE '%' || #{custPhone} || '%'
+					</if>
+					<if test="custPhoneIsEncrypt != &quot;Y&quot;">
+					AND R_CUST_PHONE LIKE '%' || #{custPhone} || '%'
+					</if>
+				</if>
+				<if test="callKind != null">
+					AND R_CALL_KIND=#{callKind}
+				</if>
+				<if test="fileState != null">
+					AND R_FILE_STATE=#{fileState}
+				</if>
+				<if test="recfileExists != null">
+					AND R_RECFILE_EXISTS=#{recfileExists}
+				</if>
+				<if test="allRecover != null">
+					AND R_FILE_STATE NOT IN ('MS', 'AS')
+				</if>
+				AND R_CALL_KIND != 'S'
+			</trim>
+		</where>
+	</select>
+	
+	<update id="updateGenesysInfo" parameterType="com.furence.recsee.admin.model.FileRecoverInfo">
+		UPDATE RS_GENESYS_INFO 
+		<set>
+			<trim suffixOverrides=",">
+				<if test="custPhone1IsEncrypt == &quot;Y&quot;">
+					<if test="custPhone != null">
+						R_CUST_PHONE=(case when #{custPhone} is not null and #{custPhone} != '' and length(#{custPhone}) NOT IN (32,64) then encode(encrypt(#{custPhone}::bytea, 'ecnerufencryptyek11st604#!@enohp'::bytea, 'aes'::text), 'hex') else #{custPhone} end),
+					</if>
+				</if>
+				<if test="custPhone1IsEncrypt != &quot;Y&quot;">
+					<if test="custPhone != null">
+						R_CUST_PHONE=#{custPhone},
+					</if>
+				</if>
+				<if test="fileState != null">
+					R_FILE_STATE=#{fileState},
+				</if>
+			</trim>
+		</set>
+		<where>
+			<trim prefixOverrides="AND">
+				<if test="recDate != null">
+					R_REC_DATE=#{recDate} 
+				</if>
+				<if test="recTime != null">
+					AND R_REC_STARTTIME=#{recTime} 
+				</if>
+				<if test="extNum != null">
+					AND R_EXT_NUM=#{extNum}
+				</if>
+				<if test="callId != null">
+					AND R_CALL_ID=#{callId}
+				</if>
+			</trim>
+		</where>
+	</update>
+</mapper>

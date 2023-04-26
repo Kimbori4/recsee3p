@@ -1,0 +1,73 @@
+<DBMAP>
+ 	<Config>
+	 	<INILog4j path="" isIniLog4j="N"/>	 	
+	 	<Logging logPath="D:\\SDK\\logs" isLogging="N" option="file" alertLogPath="D:\\SDK\\logs"/>
+	 	<Proven mode="N"/>
+	 	<!-- type's value is NONE or NET -->
+		<Socket type="NONE" propertyPath="D:/INISafeNet/INISAFENet_Server.properties"/>
+	 	<!-- type's value is C or JAVA , accessType's value is SDK or AGENT-->
+		<Crypto type="JAVA" accessType="SDK" fixedUTF8="N" chkEncKeyDate="N" chkDecKeyDate="N"/>
+
+		<!-- Policy Key / Y:XOR, N:Enc, P:Plain -->
+		<KeyXor mode="Y"/>
+
+		<!-- FileLog Write : Y/N  splitDate>> Y(default): YYYYMMDD,HHMMSS  N: YYYYMMDD HHMMSS -->
+		<FileLog splitDate="N" countLog="N" mode="N" normalLog="N"/>
+
+		<!-- KeyChange : Y/N, view Key Seq : Y/N -->
+		<KeyChange mode="N" viewSeq="Y"/>
+
+		<!-- Config Info Print on Screen : Y/N, Received Policy Print on Screen : Y/N -->
+		<ViewConfig mode="N" viewPolicy="N"/>
+
+		<!-- Stream Enc/Dec Buffer size -->
+		<StreamBuffer size="4096"/>
+
+		<!-- Capacity of log-memory-buffer, Waiting time of memory-buffer(minutes) -->
+		<LogBuffer size="10000" time="100"/>
+
+		<!-- No Authority Decryption Message-->
+		<DecMessage value="You have no authority for decryption !"/>
+
+		<!-- Auto Check for Agent Policy Change: Y/N, period (min) -->
+		<AutoPolicyCheck use="N" period="10"/>
+
+		<!-- Add Value for Duplication Enc Check: Y(default)/N, Enc File Name (just use Mig. for Kernel) : Y/N(default), Dec Dir. Structure : Y/N,
+			 Enc of Dec File Name : Y(default)/N, Reuse Dec File : Y(default)/N, Multi User Log : Y(Using log4j2)/N(default), OS Account Check : Y/N(default) -->
+		<FileEncryption autoDupCheck="Y" encNameEnc="N" decDirStructure="Y" decNameHash="N" reuseDecFile="Y" multiUserLog="N" osAccountCheck="N"/>
+
+		<!-- Auto Remove Decryption File -->
+		<AutoRemDecFile use="N" period="60" decryptedPath="D:\\SDK\\DEC_Dir"/>
+		
+		<!-- TTA DateFormat -->
+		<DateFormat dateFormat="yyyy-MM-dd HH:mm" />
+
+		<!-- Integrity Check : value = I, B, C, PAC -->
+		<checkType value="PAC" binDirPath="D:\SDK\lib" conDirPath="D:\SDK\resource" period="60"/>
+
+		<!-- IBK Auto Part Encryption -->
+		<autoPartEnc use="N" encOver="9" decOver="28"/>
+	</Config>
+
+	<!-- Safedb_log.properties  default package=Safedb.com.initech.safedb    Normal tag(<Normal......./>) depend on package level -->
+	<SafedbLogProp>
+		<Package default="Normal" sdk="Normal" sdk.connect="Normal" sdk.crypto="Normal" sdk.exception="Normal" sdk.manager="Normal" sdk.util="Normal" sdk.vo="Normal"/>
+		<Normal level="Normal" path="D:/SDK/logs" error.stack="N" log.use="N" system.out="N"/>
+	</SafedbLogProp>
+	
+	<Agent id="1">
+	 	<Info ip="127.0.0.1" port="9201" timeOut="30000" />
+	 	<AccessControl macAddress="11:11:11:11:11:10" />
+	</Agent>
+
+	<Agent id="2">
+	 	<Info ip="127.0.0.1" port="9202" timeOut="30000" />
+	 	<AccessControl macAddress="11:11:11:11:11:10" />
+	</Agent>
+	 
+	<SafeDBUser id="shlsafe" SDKName="javaSDK">
+		<AUTH password="hsT1d16Fpf/Kx9HlxBIh+0jUCZyC2dWq2X0taNQNMvI=" amhoType="H"/>
+		<DB ip="127.0.0.1" port="1521" sid="dbmkmd"/>
+	</SafeDBUser>
+
+</DBMAP>

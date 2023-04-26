@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.wooribank.script.repository.dao.ScriptEditApproveDao" >
+	
+	<resultMap id="mergedApproveMap" type="com.furence.recsee.wooribank.script.param.response.MergedApprove">
+		<result column="rownum" 						jdbcType="INTEGER"			property="rowNumber" />
+		<result column="rs_script_edit_id" 				jdbcType="INTEGER"			property="trasactionId" />
+		<result column="rs_script_product_pk"			jdbcType="INTEGER"			property="productPk" />
+		<result column="rs_script_common_yn" 			jdbcType="VARCHAR"			property="commonYN" 
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.YesNoTypeHandler"/>	
+		<result column="rs_script_common_name"			jdbcType="VARCHAR"			property="scriptCommonName" />	
+		<result column="rs_script_desc" 				jdbcType="VARCHAR"			property="scriptDesc" />
+		<result column="rs_script_type" 				jdbcType="VARCHAR"			property="scriptType" />
+		<result column="rs_script_type_name" 			jdbcType="VARCHAR"			property="scriptTypeName" />
+		<result column="rs_approvement_regist_date" 	jdbcType="TIMESTAMP"		property="registDate" />		
+		<result column="rs_script_edit_user" 			jdbcType="VARCHAR"			property="editUser" />
+		<result column="rs_script_apply_type" 			jdbcType="VARCHAR"			property="applyType" />
+		<result column="rs_script_apply_name" 			jdbcType="VARCHAR"			property="applyName" />
+		<result column="rs_script_apply_date" 			jdbcType="TIMESTAMP"		property="applyDate" />
+		<result column="rs_approvement_date" 			jdbcType="TIMESTAMP"		property="approveDate" />			
+		<result column="rs_approvement_user" 			jdbcType="VARCHAR"			property="approveUser" />
+		<result column="rs_approvement_status" 			jdbcType="VARCHAR"			property="approveStatus" 
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.ApproveStautsTypeHandler"/>
+		<result column="isLast" 						jdbcType="VARCHAR"			property="lastYN"
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.YesNoTypeHandler" />	
+	</resultMap>
+
+	
+	<resultMap id="scriptApproveMap" type="com.furence.recsee.wooribank.script.repository.entity.ScriptApprove">
+	
+		<result column="rs_script_edit_seq" 			jdbcType="INTEGER"		property="seq" />
+		<result column="rs_script_edit_id" 				jdbcType="VARCHAR"		property="scriptEditId" />		
+		<result column="rs_script_product_pk" 			jdbcType="VARCHAR"		property="productPk" />
+		<result column="rs_script_current_version" 		jdbcType="INTEGER"		property="scriptVersion" />
+		<result column="rs_script_edit_user" 			jdbcType="VARCHAR"		property="editUser" />
+		<result column="rs_script_edit_completed" 		jdbcType="VARCHAR"		property="completedYN" 
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.YesNoTypeHandler"/>		
+		<result column="rs_script_edit_start_date" 		jdbcType="VARCHAR"		property="editStartDate" />
+		<result column="rs_script_edit_end_date" 		jdbcType="VARCHAR"		property="editEndDate" />
+		<result column="rs_script_apply_type" 			jdbcType="VARCHAR"		property="applyType" />	
+		<result column="rs_script_apply_date" 			jdbcType="VARCHAR"		property="applyDate" />			
+		<result column="rs_script_apply_yn" 			jdbcType="VARCHAR"		property="applyYN" 
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.YesNoTypeHandler"/>	
+		<result column="rs_approvement_status" 			jdbcType="VARCHAR"		property="approveStatus" 
+				typeHandler="com.furence.recsee.wooribank.script.repository.handler.ApproveStautsTypeHandler"/>	
+		<result column="rs_approvement_regist_date" 	jdbcType="VARCHAR"		property="registDate" />	
+		<result column="rs_approvement_date" 			jdbcType="VARCHAR"		property="approveDate" />			
+		<result column="rs_approvement_user" 			jdbcType="VARCHAR"		property="approveUser" />
+		
+	</resultMap>
+	
+	<resultMap id="commonInfoMap" type="com.furence.recsee.wooribank.script.param.response.ScriptCommonInfo">
+		<result column="rs_script_common_pk" 			jdbcType="VARCHAR"			property="commonPk" />
+		<result column="rs_script_common_edit_type" 	jdbcType="VARCHAR"			property="editType" />
+		<result column="rs_script_common_type" 			jdbcType="VARCHAR"			property="commonType" />
+		<result column="rs_script_common_type_name" 	jdbcType="VARCHAR"			property="commonTypeName" />
+		<result column="rs_script_common_name" 			jdbcType="VARCHAR"			property="commonName" />
+		<result column="rs_script_common_desc" 			jdbcType="VARCHAR"			property="commonDesc" />		
+		<result column="rs_script_common_text" 			jdbcType="VARCHAR"			property="commonText" />
+		<result column="rs_script_common_realtime_tts" 	jdbcType="VARCHAR"			property="commonRealtimeTts" />		
+	</resultMap>
+	
+	<resultMap id="productListMap" type="com.furence.recsee.wooribank.script.repository.entity.Product">
+		<result column="rs_product_list_pk" 				jdbcType="VARCHAR"		property="productPk" />
+		<result column="rs_product_type" 					jdbcType="VARCHAR"		property="typeCode" />
+		<result column="rs_product_type_name"				jdbcType="VARCHAR"		property="typeName" />
+		<result column="rs_product_code" 					jdbcType="VARCHAR"		property="productCode" />
+		<result column="rs_product_name" 					jdbcType="VARCHAR"		property="productName" />
+		<result column="rs_use_yn" 							jdbcType="VARCHAR"		property="useYn" />
+		<result column="rs_group_code" 						jdbcType="VARCHAR"		property="groupCode" />		
+		<result column="rs_group_yn" 						jdbcType="VARCHAR"		property="groupYn" />
+		<result column="rs_script_step_fk" 					jdbcType="VARCHAR"		property="scriptStepFk" />		
+	</resultMap>
+	
+	<parameterMap id="paramScriptApply" type="HashMap">		
+		<parameter property="scriptEditId" 				mode="IN" 			jdbcType="VARCHAR" 		javaType="String"/>
+		<parameter property="scriptCommonEditId" 		mode="IN" 			jdbcType="INTEGER" 		javaType="Integer"/>
+		<parameter property="applyDate" 				mode="IN" 			jdbcType="TIMESTAMP" 	javaType="java.sql.Date"/>
+		<parameter property="approveStatus" 			mode="IN" 			jdbcType="VARCHAR" 		javaType="String"/>
+		<parameter property="approveUser" 				mode="IN" 			jdbcType="VARCHAR" 		javaType="String"/>
+		<parameter property="code" 						mode="INOUT" 		jdbcType="INTEGER" 		javaType="Integer"/>
+		<parameter property="message"	 				mode="INOUT" 		jdbcType="VARCHAR" 		javaType="String"/>
+	</parameterMap>
+	
+	
+	<!-- 상신 목록 조회 -->
+	<select id="selectApproveList" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptApproveParam$Search"
+			resultMap="mergedApproveMap">
+		
+		select	row_number()over(order by rs_approvement_regist_date ) as rownum , 
+				*
+		from
+				(
+					<if test= ' scriptType == "A" or scriptType == "P" '>
+					select 	a.rs_script_edit_id,
+							a.rs_script_product_pk as rs_script_product_pk,
+							'N' as rs_script_common_yn,
+							NULL as rs_script_common_name,
+							b.rs_product_name as rs_script_desc,
+							NULL as rs_script_type,
+							NULL as rs_script_type_name,
+							a.rs_approvement_regist_date,
+							a.rs_script_edit_user,
+							a.rs_script_apply_type,
+							c.r_code_name as rs_script_apply_name,
+							a.rs_script_apply_date,
+							a.rs_approvement_status,
+							a.rs_approvement_date,
+							a.rs_approvement_user,
+							case when a.rs_script_current_version = d.rs_script_version then 'Y' else 'N' end isLast
+					from 	rs_script_edit_info a
+							join rs_product_list b on a.rs_script_product_pk = b.rs_product_list_pk		
+							left outer join rs_common_code c on a.rs_script_apply_type = c.r_code_value
+							left outer join rs_product_script_info d on a.rs_script_product_pk = d.rs_product_list_pk
+					where 	a.rs_approvement_status is not null 						
+						<if test= ' productPart != null and !productPart.equals("")'>
+							and rs_script_edit_user_level = #{productPart}
+						</if>
+						<!-- 결재상태 조건 -->
+						<if test = ' approveStatusCode !=null'>
+							and a.rs_approvement_status = #{approveStatusCode}
+						</if>
+						<!-- 날짜 검색 조건 추가 -->
+						<!-- startData 와 endDate 는 yyyy-MM-dd 형식 -->
+						<choose>
+							<when test = 'approverYN.equals("Y")'>
+							<if test = 'startDate != null and !startDate.equals("")'>
+								and a.rs_approvement_regist_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+							</if>
+							<if test = 'endDate != null and !endDate.equals("")'>
+								and a.rs_approvement_regist_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+							</if>
+							</when>
+							<otherwise>
+							<if test = 'startDate != null and !startDate.equals("")'>
+								and a.rs_approvement_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+							</if>
+							<if test = 'endDate != null and !endDate.equals("")'>
+								and a.rs_approvement_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+							</if>
+							</otherwise>
+						</choose>
+						<!-- 상품명,그룹코드,상품코드 검색 -->
+						<if test= ' keyword != null and !keyword.equals("")'>
+							and (replace(b.rs_product_name, ' ', '') like replace(concat('%',#{keyword},'%'), ' ', '')
+								 or b.rs_product_code like concat('%',#{keyword},'%') 
+								 or b.rs_group_code like concat('%',#{keyword},'%') )
+						</if>
+						
+					</if>
+					<if test= ' scriptType == "A" '>
+					union all
+					</if>
+					<if test= ' scriptType == "A" or scriptType == "C" '>
+					select 	rs_script_common_edit_id as rs_script_edit_id,
+							rs_script_common_pk as rs_product_list_pk,
+							'Y' as rs_script_common_yn,
+							rs_script_common_name as rs_script_common_name,
+							rs_script_common_desc as rs_script_desc,
+							rs_script_common_type as rs_script_type,
+							b.r_code_name as rs_script_type_name,
+							rs_approvement_regist_date,
+							rs_script_common_edit_user as rs_script_edit_user,
+							rs_script_common_apply_type as rs_script_apply_type,
+							rs_script_common_apply_name as rs_script_common_apply_name,
+							rs_script_common_apply_date as rs_script_apply_date,
+							rs_approvement_status,
+							rs_approvement_date,
+							rs_approvement_user,
+							'N' as isLast
+					from
+							(
+								select 	a.rs_script_common_edit_id::varchar ,
+										coalesce(a.rs_script_common_pk,b.rs_script_common_pk) as rs_script_common_pk,
+										coalesce(a.rs_script_common_name,b.rs_script_common_name) as rs_script_common_name,									
+										coalesce(a.rs_script_common_desc,b.rs_script_common_desc) as rs_script_common_desc,
+										coalesce(a.rs_script_common_type,b.rs_script_common_type) as rs_script_common_type,
+										a.rs_approvement_regist_date,
+										a.rs_script_common_edit_user,
+										a.rs_script_common_apply_type,
+										c.r_code_name as rs_script_common_apply_name,
+										a.rs_script_common_apply_date,
+										a.rs_approvement_status,
+										a.rs_approvement_date,
+										a.rs_approvement_user
+								from 	rs_script_common_edit_info a 
+										left outer join rs_script_common b on a.rs_script_common_pk = b.rs_script_common_pk
+										left outer join	rs_common_code c on a.rs_script_common_apply_type = c.r_code_value   
+								where 	a.rs_approvement_status is not null 
+									<if test= ' productPart != null and !productPart.equals("")'>
+										and rs_script_common_edit_user_level = #{productPart}
+									</if>
+									<!-- 결재상태 조건 -->
+									<if test = ' approveStatusCode !=null'>
+										and a.rs_approvement_status = #{approveStatusCode}
+									</if>
+									<!-- 날짜 검색 조건 추가 -->
+									<!-- startData 와 endDate 는 yyyy-MM-dd 형식 -->
+									<choose>
+										<when test = 'approverYN.equals("Y")'>
+										<if test = 'startDate != null and !startDate.equals("")'>
+											and a.rs_approvement_regist_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+										</if>
+										<if test = 'endDate != null and !endDate.equals("")'>
+											and a.rs_approvement_regist_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+										</if>
+										</when>
+										<otherwise>
+										<if test = 'startDate != null and !startDate.equals("")'>
+											and a.rs_approvement_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+										</if>
+										<if test = 'endDate != null and !endDate.equals("")'>
+											and a.rs_approvement_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+										</if>
+										</otherwise>
+									</choose>
+									<!-- 상품명,그룹코드,상품코드 검색 -->
+									<if test= ' keyword != null and !keyword.equals("")'>
+										and (replace(b.rs_script_common_name, ' ', '') like replace(concat('%',#{keyword},'%'), ' ', '') 
+											 or replace(b.rs_script_common_desc, ' ', '') like replace(concat('%',#{keyword},'%'), ' ', '') 
+											 or replace(b.rs_script_common_text, ' ', '') like replace(concat('%',#{keyword},'%'), ' ', '') )
+									</if>
+									
+								order by rs_approvement_regist_date desc
+							)a 
+							left outer join rs_common_code b on a.rs_script_common_type = b.r_code_value 
+					where	b.r_parent_code = 'SSDT' 
+						
+					</if>	
+							
+				)a	
+			order by rs_approvement_regist_date desc 		
+			limit	#{limit} 
+			offset	#{offset}
+			
+	</select>
+	
+	<!-- 스크립트 수정 결재요청건 전체 카운트 -->
+	<select id="selectApproveListCount" 
+			parameterType="com.furence.recsee.wooribank.script.param.request.ScriptApproveParam$Search" 
+			resultType="Integer">
+		
+		select	sum(cnt) as cnt
+		from	(
+					<if test= ' scriptType == "A" or scriptType == "P" '>
+					select 	count(*) as cnt
+					from 	rs_script_edit_info a 
+							join rs_product_list b on a.rs_script_product_pk = b.rs_product_list_pk 
+					where 	a.rs_approvement_status is not null 
+						<if test= ' productPart != null and !productPart.equals("")'>
+							and rs_script_edit_user_level = #{productPart}
+						</if>
+						<!-- 결재상태 조건 -->
+						<if test = ' approveStatusCode !=null'>
+							and a.rs_approvement_status = #{approveStatusCode}
+						</if>
+						<!-- 날짜 검색 조건 추가 -->
+						<!-- startData 와 endDate 는 yyyy-MM-dd 형식 -->
+						<choose>
+							<when test = 'approverYN.equals("Y")'>
+							<if test = 'startDate != null and !startDate.equals("")'>
+								and a.rs_approvement_regist_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+							</if>
+							<if test = 'endDate != null and !endDate.equals("")'>
+								and a.rs_approvement_regist_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+							</if>
+							</when>
+							<otherwise>
+							<if test = 'startDate != null and !startDate.equals("")'>
+								and a.rs_approvement_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+							</if>
+							<if test = 'endDate != null and !endDate.equals("")'>
+								and a.rs_approvement_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+							</if>
+							</otherwise>
+						</choose>
+						<!-- 상품명,그룹코드,상품코드 검색 -->
+						<if test= ' keyword != null and !keyword.equals("")'>
+							and (b.rs_product_name like concat('%',#{keyword},'%') 
+								 or b.rs_product_code like concat('%',#{keyword},'%') 
+								 or b.rs_group_code like concat('%',#{keyword},'%') )
+						</if>
+					</if>
+					<if test= ' scriptType == "A"'>
+					union all
+					</if>
+					<if test= ' scriptType == "A" or scriptType == "C" '>
+					select 	count(*) as cnt
+					from
+							(
+								select 	a.rs_script_common_edit_id::varchar as rs_script_common_edit_id,
+										coalesce(a.rs_script_common_pk,b.rs_script_common_pk) as rs_script_common_pk,									
+										coalesce(a.rs_script_common_desc,b.rs_script_common_desc) as rs_script_common_desc,
+										coalesce(a.rs_script_common_type,b.rs_script_common_type) as rs_script_common_type,
+										a.rs_approvement_regist_date,
+										a.rs_script_common_edit_user,
+										a.rs_script_common_apply_date
+								from 	rs_script_common_edit_info a 
+										left outer join 
+										rs_script_common b on a.rs_script_common_pk = b.rs_script_common_pk  
+								where 	a.rs_approvement_status is not null 
+									<if test= ' productPart != null and !productPart.equals("")'>
+										and rs_script_common_edit_user_level = #{productPart}
+									</if>
+									<!-- 결재상태 조건 -->
+									<if test = ' approveStatusCode !=null'>
+										and a.rs_approvement_status = #{approveStatusCode}
+									</if>
+									<!-- 날짜 검색 조건 추가 -->
+									<!-- startData 와 endDate 는 yyyy-MM-dd 형식 -->
+									<choose>
+										<when test = 'approverYN.equals("Y")'>
+										<if test = 'startDate != null and !startDate.equals("")'>
+											and a.rs_approvement_regist_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+										</if>
+										<if test = 'endDate != null and !endDate.equals("")'>
+											and a.rs_approvement_regist_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+										</if>
+										</when>
+										<otherwise>
+										<if test = 'startDate != null and !startDate.equals("")'>
+											and a.rs_approvement_date  <![CDATA[>=]]> to_timestamp(concat(#{startDate},' ', '00:00:00'),'yyyy-MM-dd HH24:mi:ss')   
+										</if>
+										<if test = 'endDate != null and !endDate.equals("")'>
+											and a.rs_approvement_date <![CDATA[<=]]> to_timestamp(concat(#{endDate},' ', '23:59:59'),'yyyy-MM-dd HH24:mi:ss')  
+										</if>
+										</otherwise>
+									</choose>
+									<!-- 상품명,그룹코드,상품코드 검색 -->
+									<if test= ' keyword != null and !keyword.equals("")'>
+										and (b.rs_script_common_name like concat('%',#{keyword},'%') 
+											 or b.rs_script_common_desc like concat('%',#{keyword},'%') 
+											 or b.rs_script_common_text like concat('%',#{keyword},'%') )
+									</if>
+								order by rs_approvement_regist_date desc
+							)a 
+							left outer join rs_common_code b on a.rs_script_common_type = b.r_code_value 
+					where	b.r_parent_code = 'SSDT' 
+					</if>
+				) a	
+		
+	</select>
+	
+	<!-- 스크립트 편집데이터 1건 에 해당하는 정보 가져오기 -->
+	<select id="selectScriptApproveList" 
+			parameterType="java.util.List"
+			resultMap="scriptApproveMap">
+		select 	*
+		from	rs_script_edit_info
+		where	rs_script_edit_id in 
+			<foreach collection="list" item="editId" separator="," open="(" close=")">
+				#{editId}
+			</foreach>	
+	</select>
+	
+	<!-- 상품 스크립트의 수정내용 적용전 데이터 조회 -->
+	<select id="selectProductScriptInfoBeforeApply" 
+			parameterType="String"
+			resultType="String">		
+		select 	scriptInfo::varchar 
+		from 	fn_select_script_edit_info_before_apply(#{scriptEditId})
+	</select>
+	
+	<!-- 상품 스크립트의 수정내용 적용 후 데이터 조회 -->
+	<select id="selectProductScriptInfoAfterApply" 
+			parameterType="String"
+			resultType="String">
+			
+		select 	scriptInfo::varchar  
+		from 	fn_select_script_edit_info_after_apply(#{scriptEditId})
+				
+	</select>
+	
+	<!-- 공용 스크립트 수정전 데이터 데이터 조회  -->
+	<select id="selectCommonScriptInfoBeforeApply" 
+			parameterType="Integer"
+			resultMap="commonInfoMap">
+			
+		select 	rs_script_common_pk,
+				rs_script_common_edit_type,
+				rs_script_common_type,
+				rs_script_common_type_name,
+				rs_script_common_name,
+				rs_script_common_desc,
+				rs_script_common_text,
+				rs_script_common_realtime_tts
+		from	fn_select_script_common_info_by_approval_status(#{scriptEditId}::varchar)
+		
+	</select>
+	
+	<!-- 공용 스크립트 수정후 데이터 조회  -->
+	<select id="selectCommonScriptInfoAfterApply" 
+			parameterType="Integer"
+			resultMap="commonInfoMap" >
+	
+		select 	
+			rs_script_common_pk,
+			rs_script_common_edit_type,
+			rs_script_common_type,
+			(	select 
+					r_code_name 
+				from 
+					rs_common_code 
+				where 
+					r_parent_code = 'SSDT' 
+					and r_code_value = a.rs_script_common_type
+			) as rs_script_common_type_name,
+			rs_script_common_name,
+			rs_script_common_desc,
+			rs_script_common_text,
+			rs_script_common_realtime_tts
+		from 	
+			rs_script_common_edit_info a
+		where 	
+			rs_script_common_edit_id=#{scriptEditId}::integer
+				
+	</select>
+	
+	
+	<!-- 결재/반려 -->
+	<update id="updateApproveStatusForProduct" 
+			statementType="CALLABLE"
+			parameterType="HashMap">
+		
+		 { call sp_script_edit_approve_complete( 
+		 		#{scriptEditId, mode=IN, jdbcType=VARCHAR},
+		 		#{approveUser, mode=IN, jdbcType=VARCHAR},
+				#{approveStatus, mode=IN, jdbcType=VARCHAR},
+		 		to_date(#{applyDate}, 'yyyy-mm-dd'),
+		 		#{applyType, mode=IN, jdbcType=VARCHAR},
+		 		#{code, mode=INOUT, jdbcType=INTEGER},
+				#{message, mode=INOUT, jdbcType=VARCHAR}) }
+	</update>
+	
+	
+	<!-- 결재/반려 -->
+	<update id="updateApproveStatusForCommon" 
+			statementType="CALLABLE"
+			parameterType="HashMap">
+		 { call sp_script_common_edit_approve_complete( 
+		 		#{scriptCommonEditId, mode=IN, jdbcType=INTEGER},
+		 		#{approveUser, mode=IN, jdbcType=VARCHAR},
+				#{approveStatus, mode=IN, jdbcType=VARCHAR},
+				to_date(#{applyDate}, 'yyyy-mm-dd'),
+				#{applyType, mode=IN, jdbcType=VARCHAR},
+				#{code, mode=INOUT, jdbcType=INTEGER},
+				#{message, mode=INOUT, jdbcType=VARCHAR}) }
+	</update>
+	
+	<!-- 공통스크립트 추가/수정/삭제건  즉시 반영 -->
+	<update id="updateScriptCommonApplyImmediately" 
+			statementType="CALLABLE"
+			parameterType="HashMap">
+		
+		{ call public.sp_script_common_edit_apply ( 
+				#{scriptCommonEditId, mode=IN, jdbcType=INTEGER},
+				#{code, mode=INOUT, jdbcType=INTEGER},
+				#{message, mode=INOUT, jdbcType=VARCHAR}) }
+		
+	</update>
+	
+	<!-- 스크립트 추가/수정/삭제건  즉시 반영 -->
+	<update id="updateScriptApplyImmediately" 
+			statementType="CALLABLE"
+			parameterType="HashMap">
+		
+		{ call public.sp_script_edit_apply (
+				#{scriptEditId, mode=IN, jdbcType=VARCHAR},
+				#{code, mode=INOUT, jdbcType=INTEGER},
+				#{message, mode=INOUT, jdbcType=VARCHAR}) }
+		
+	</update>	
+	
+	<!-- 스크립트 상품별 스냅샷 기록 -->
+	<insert id="insertProductScriptSnapshot" 
+			statementType="CALLABLE"
+			parameterType="HashMap" >
+		
+		{ call public.sp_create_product_script_snapshot_json ( 
+				#{scriptEditId, mode=IN, jdbcType=VARCHAR},
+				#{code, mode=INOUT, jdbcType=INTEGER},
+				#{message, mode=INOUT, jdbcType=VARCHAR}) }
+		
+	</insert>
+	
+	<!-- 스냅샷 대상 상품pk 리스트 가져오기 -->
+	<select id="selectProductListForSnapshot" 
+			parameterType="String"
+			resultMap="productListMap">
+			
+		select 	rs_product_list_pk, 
+				rs_product_type,
+				rs_product_code,
+				rs_product_name, 
+				rs_use_yn, 
+				rs_group_yn, 
+				rs_group_code, 
+				rs_script_step_fk 
+		from 	vw_product_list 
+		where 	rs_script_step_fk = (
+					select 	rs_script_product_pk
+					from	rs_script_edit_info
+					where	rs_script_edit_id = #{scriptEditId}	
+				) 
+				and rs_group_yn ='Y'
+				and rs_use_yn = 'Y'
+				and rs_product_list_pk != rs_script_step_fk
+	
+	</select>
+		
+		
+	<!-- 스크립트 상품별 스냅샷 기록 -->
+	<insert id="insertProductScriptSnapshot2" 
+			statementType="CALLABLE"
+			parameterType="HashMap" >
+		
+		{ call public.sp_insert_product_script_snapshot_json ( 
+				#{productPk, mode=IN, jdbcType=INTEGER},
+				#{scriptEditId, mode=IN, jdbcType=INTEGER},
+				#{code, mode=INOUT, jdbcType=INTEGER},
+				#{message, mode=INOUT, jdbcType=VARCHAR}) }
+		
+	</insert>
+	
+	
+	<!-- 당일 적용 예약건 조회-->
+	<select id="selectReservedApproveList" 
+			parameterType="String"
+			resultMap="scriptApproveMap">
+			
+		select 	rs_script_edit_id, 
+				rs_script_product_pk,
+				rs_script_current_version
+		from 	rs_script_edit_info 
+		where 	rs_script_edit_completed = 'Y'
+				and rs_approvement_status= 'APRV04' 
+				and rs_script_apply_type = 'APTP03'
+				and rs_script_apply_date = #{reservedDate}
+				and rs_script_apply_yn='N'
+	</select>
+	<select id="selectNonRefEltCheck" parameterType="String">
+		select  
+				case when rs_product_attributes is not null and rs_group_yn ='N' then 'Y'
+				else 'N'
+				end flag
+		from	rs_product_list rpl 
+		where	rpl.rs_product_list_pk =
+		(
+		select	rss.rs_script_step_fk
+		from	rs_script_step_detail_edit_list rssdel,
+				rs_script_step rss
+		where	rssdel.rs_script_step_pk::int = rss.rs_script_step_pk and
+				rssdel.rs_script_edit_id = #{tId}
+		limit 1
+		)
+	</select>
+	<update id="updateNonRefEltAttr"  parameterType="String">
+		update	rs_script_step_detail_edit_list
+		set		rs_product_attributes = '{"isDefault":true}'::jsonb
+		where   rs_script_edit_id = #{tId}
+	</update>	
+		
+</mapper>

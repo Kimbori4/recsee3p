@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>ログイン画面用メッセージ定義</comment>
+
+	<entry key="login.login.title.rememberMe">IDを保存</entry>
+	<entry key="login.login.title.login">ログイン</entry>
+		
+	<entry key="login.login.placeholder.code">コード</entry>
+	<entry key="login.login.placeholder.id">ID</entry>
+	<entry key="login.login.placeholder.password">pass</entry>
+	<entry key="login.login.placeholder.extension">内線番号</entry>
+		
+	<entry key="login.login.alert.not.input.code">システムコードを入力してください。</entry>
+	<entry key="login.login.alert.not.input.id">IDを入力してください。</entry>
+	<entry key="login.login.alert.not.input.pw">パスワードを入力してください。</entry>
+	<entry key="login.login.alert.not.input.ext">内線番号を入力してください。</entry>
+	<entry key="login.login.alert.not.input.lang">言語を選択してください。</entry>
+		
+	<entry key="login.login.alert.fail.login">ログインに失敗しました。</entry>
+		
+	<entry key="login.login.p.info.policy">会員情報セキュリティ措置のご案内</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">ユーザーの個人情報保護のため</entry>
+	<entry key="login.login.p.info.policy">周期的に変更して使用</entry>
+	<entry key="login.login.p.info.policy">したほうがいいです。</entry>
+	<entry key="login.login.p.info.policy">IDと住民登録番号、誕生日、電話番号など個人情報に関連する数字、連続した数字、反復された文字など、他者が簡単に把握できるパスワードは、個人情報流出の危険が高いので、使用はご遠慮ください。</entry>
+	<entry key="login.login.p.info.policy">次へ変更する</entry>
+		
+		
+	<entry key="login.login.alert.offUse">該当IDは90日間使用しなかったため、使用が停止されました。\\n管理者にお問い合わせください。</entry>
+	<entry key="login.login.alert.alreadyLogin">そのIDはすでにログインされています。\\n管理者にお問い合わせください。</entry>
+	<entry key="login.login.alert.noLoginRight">ログイン権限がありません。 \\n管理者にお問い合わせください。</entry>
+		
+	<entry key="login.text.unregisteredId">未登録ID</entry>
+	<entry key="login.text.mismatchIp">IP不一致</entry>
+
+</properties>

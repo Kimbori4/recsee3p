@@ -1,0 +1,55 @@
+/* layer popup */
+#categoryPopup{
+    width: 600px;
+	margin-top: -293px ;
+    margin-left: -312px ;
+    left: 827px ;
+    top: 516.5px ;
+    box-shadow: rgba(0, 0, 0, 0.4) -7px 0px 12px 0px;
+}
+
+#keywordPopup{
+	width : 400px;
+} 
+
+#categorySettingGrid , #keywordSettingGrid, #categoryKeywordListGrid {
+	height : 400px;
+}
+
+#categoryInput{
+	width : 250px;
+}
+
+#keywordInput {
+	width : 150px;
+} 
+
+#CategoryInsertPopup {
+	width : 410px;
+}
+
+#categoryListPopup {
+	width : 400px;
+	margin-top: -293px !important;
+    margin-left: -212px;
+    left: 811px;
+    top: 292.5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 8px 2px 13px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+	min-width : auto !important;
+	height : 27px !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+	display : inline-table !important;
+}
+
+.select2-container .select2-selection--multiple {
+	margin : 0px !important;
+}
+
+.dhx_combo_edit {
+	height : 28px !important;
+}

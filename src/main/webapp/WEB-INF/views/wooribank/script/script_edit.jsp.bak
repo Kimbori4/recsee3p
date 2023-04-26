@@ -1,0 +1,182 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.List"%>
+<%@ page import="com.furence.recsee.common.model.MMenuAccessInfo"%>
+<%@ page import="com.furence.recsee.common.model.EtcConfigInfo"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<!DOCTYPE html>
+	<head>
+		<title>스크립트 수정</title>
+		<%@ include file="/WEB-INF/views/common/include/commonVar.jsp"%>
+		<script type="text/javascript">
+		var detailCase = JSON.parse('${codeMap.SCRT}');
+		var recValue = JSON.parse('${codeMap.SSDT}');
+		var excelYn = "${nowAccessInfo.getExcelYn()}";
+		var writeYn = "${nowAccessInfo.getWriteYn()}";
+		var modiYn 	= "${nowAccessInfo.getModiYn()}";
+		var delYn 	= "${nowAccessInfo.getDelYn()}";
+		//[공용문구] 
+		var writeCommonText;
+		//TTS 리딩
+		var recValue;
+		//스트립트 유형 
+		var DetailCase;
+		
+		
+			var listenIp = "${listenIp}";
+			var scriptId = "";
+			//프로그레스 처리
+			$(function() {
+				var PopupCheck = <%=request.getAttribute("PopupCheck")%>;
+				
+				if (PopupCheck == true) {
+					$(".main_lnb").hide();
+					$(".main_header").hide();
+				}
+		
+				$(window).resize( function() {
+					// 현재 document 높이
+					var documentHeight = $(window).height();
+		
+					// 페이징이 있음 페이징 만큼 뺴주깅
+					var pagingHeight = ($(".dhx_toolbar_dhx_web").length == 0 ? 0
+							: $(".dhx_toolbar_dhx_web").height());
+					var gridResultHeight = (documentHeight - pagingHeight);
+		
+		 		 	$(".main_contents").css({"height": + (gridResultHeight - 92)+ "px"}) 
+				}).resize();
+		
+			});
+		// 수정 페이지 팝업시 전달받은 값을 전역변수로 추가
+		var editProductPk = '${productPk}';
+		var editTransactionId = '${transactionId}';
+		var editProductListPk = '${productListPk}';
+		</script>
+		<%-- css page --%>
+		<link rel="stylesheet" type="text/css" href="${recseeResourcePath}/css/page/wooribank/script/script_main.css" />
+		
+		<link rel="stylesheet" media="screen and (min-width: 1800px)" type="text/css" href="${recseeResourcePath}/css/page/wooribank/script/script_common_big.css" />
+		<link rel="stylesheet" media="screen and (min-width: 1281px) and (max-width: 1799px)" type="text/css" href="${recseeResourcePath}/css/page/wooribank/script/script_common_mid.css" />
+		<link rel="stylesheet" media="screen and (max-width: 1280px)" type="text/css" href="${recseeResourcePath}/css/page/wooribank/script/script_common_mini.css" />
+		
+		<link rel="stylesheet" media="screen and (min-width: 1800px)" type="text/css" href="${recseeResourcePath}/css/page/wooribank/script/script_edit_big.css" />
+		<link rel="stylesheet" media="screen and (min-width: 1281px) and (max-width: 1799px)" type="text/css" href="${recseeResourcePath}/css/page/wooribank/script/script_edit_mid.css" />
+		<link rel="stylesheet" media="screen and (max-width: 1280px)" type="text/css" href="${recseeResourcePath}/css/page/wooribank/script/script_edit_mini.css" />
+		
+		<link rel="stylesheet" type="text/css" href="${compoResourcePath}/dhtmlxSuite/codebase/dhtmlx.css"/>
+		<link rel="stylesheet" type="text/css" href="${compoResourcePath}/dhtmlxSuite/skins/terrace/dhtmlx.css"/>
+		<link rel="stylesheet" type="text/css" src="${compoResourcePath}/jquery/jquery-ui/jquery-ui.css"></script>
+		<%-- js page --%>
+		
+		<%-- compo --%>
+		<script type="text/javascript" src="${compoResourcePath}/streaming/js/jquery-sortable.js"></script>
+		<script type="text/javascript" src="${compoResourcePath}/dhtmlxSuite/codebase/dhtmlx.js"></script>
+		
+		<%-- recsee --%>
+		<script type="text/javascript" src="${recseeResourcePath}/js/page/wooribank/script/script_var.js"></script>
+		<script type="text/javascript" src="${recseeResourcePath}/js/page/wooribank/script/script_api.js"></script>
+		<script type="text/javascript" src="${recseeResourcePath}/js/page/wooribank/script/script_edit.js"></script>
+		<script type="text/javascript" src="${recseeResourcePath}/js/page/wooribank/script/script_common_popup.js"></script>
+
+	</head>
+	<body onpagehide="makePopupVarNull()">
+			<!-- 상단 상품정보 -->
+			<div class="script_search_result" >
+					<div class="script_search_Code" >
+						<div class="line1">
+							<div id="product_name_title">ㆍ 상품명</div>
+							<div id="product_name_value" ></div>				
+						</div>
+						<div  class="line2">
+							<div id="product_type_title">ㆍ 상품유형</div>
+							<div id="product_type_value" ></div>
+						</div>
+						<div class="line3">
+							<div id="repre_product_code"  >ㆍ 대표펀드코드</div>
+							<div id="repre_product_code_value" class="repre_product_code_value" ></div>	
+						</div>
+						<div class="line4">
+							<div id="product_code_title">ㆍ 상품코드</div>
+							<div id="product_code_value" class="product_code_value" ></div>		
+						</div>
+					</div>
+			</div>				
+				
+			<!--죄측 스크립트 목록  -->
+			<div id="left_box" class="left_box" >
+				<div class="title">
+					<div style="height: 25px; font-weight: bold; margin: 6px 5px 0px 6px; font-size:14px;">스크립트목록
+					<button id="add_scriptStep_btn" class="addScriptStepBtn" style="font-size:14px !important; width : 100px; height: 23px !important; margin-left :10px; float : right;background-color :#111418; line-height:23px !important;">스크립트 추가</button>
+					</div>
+				</div>
+				<div id="scriptTreeGrid" class="float_left">
+					<!--▼ 상품 선택에 따른 트리구조로 상품 보여주기▼  -->
+					<div class="script_tree"  id="script_name_list">
+						<div id="scriptGrid" style="color:#efefef ">
+							등록된 스크립트가 없습니다.
+						</div>
+					</div>
+					<input type="hidden" id="scriptCode" />
+				</div>
+			</div>
+	
+			<!-- 중간 라인 -->
+			<div class="LRLine"></div>
+	
+			<!--우측 스크립트 수정 -->
+			<div id="first_right_box" class="first_right_box" >
+				<div id="script_info_box2" class="script_menu_class float_left">
+					<div id="first_right_box_title" class="first_right_box_title">
+						<div style=" height: 25px; font-weight: bold; margin: 6px -4px 0px -2px; font-size:14px !important;">스크립트 수정 </div>
+					</div>
+					<div class="script_edit">
+						<div class="script_edit_line1">
+							<div id="productInfo" style ="display:none" stepPk="" stepFk="" productCode="" productPk=""></div>
+							<div id="script_edit_title2" class="script_edit_title2"> 
+								<div id="scriptFormTitle" class="script_form_title">제목</div>
+								<input id="script_edit_title_area" class="scriptEditTitleArea" type="text" placeholder="제목을 입력하세요">
+								<button id="addStepBtn" style="font-size:14px !important; width : 50px; height: 23px !important; margin-left :10px; float : right;background-color :#111418;">저장</button>
+							</div>
+						</div>
+						<div class="script_edit_line2">
+							<div id="script_edit_content_btn" class="script_edit_content_btn " >
+								<div id="scriptFormName" class="script_form_name">스크립트 구성</div>
+								<div id = "scriptContentBtnWrap" class="script_content_btn_wrap" style="float:right" >
+									<input type="button" id="add_object_Btn" class="detail_content_btn " style="background-color: white; cursor: pointer" value="적합성보고서" addType="R"> 
+									<input type="button" id="add_direction_Btn" class="detail_content_btn " style="background-color: white; cursor: pointer" value="상담 가이드" addType="G">
+									<input type="button" id="add_adviser_Btn" class="detail_content_btn " style="background-color: white; cursor: pointer" value="직원 리딩 " addType="S">
+									<input type="button" id="add_content_Btn" class="detail_content_btn " style="background-color: white; cursor: pointer" value="TTS 리딩" addType="T"> 
+									<input type="button" id="common_sentence_btn" class="content_btn " style="background-color: white; cursor: pointer" value="공용 문구 ">								
+								</div>
+							</div>
+							
+							<div id="script_edit_content2" class="script_edit_content2" >
+								<div id="script_edit_content3" class="script_edit_content3">
+<!-- 									<div id="noneScript" class="noneScript"> -->
+<!-- 									등록된 스크립트가 없습니다. -->
+<!-- 									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right_bottom2" id="right_bottom2">
+					<!--수정/삭제 버튼-->
+					<div class="right_bottom_btn2">
+						<input type="hidden" id="scriptCode">
+					</div>					
+				</div>
+			</div>
+			<div id="transactionButtons">
+				<button id="commitBtn" class="common-btn-primary">저장</button>
+				<button id="rollbackBtn" class="common-btn-grey">취소</button>
+			</div>
+			
+			<div id="commonBox"></div>
+			
+			<div id="dateBox"></div>
+			
+	</body>
+</html>

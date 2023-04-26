@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.dao.DBInfoDao">
+	<resultMap id="DBResultMap" type="com.furence.recsee.admin.model.DBInfo">
+		<result column="DB_NAME" jdbcType="VARCHAR" property="dbName" />
+		<result column="DB_DRIVER" jdbcType="VARCHAR" property="dbDriver" />
+		<result column="DB_URL" jdbcType="VARCHAR" property="dbUrl" />
+		<result column="DB_USER" jdbcType="VARCHAR" property="dbUser" />
+		<result column="DB_PASSWORD" jdbcType="VARCHAR" property="dbPassword" />
+	</resultMap>
+
+	<select id="selectDBInfo" parameterType="com.furence.recsee.admin.model.DBInfo" resultMap="DBResultMap">
+		SELECT * FROM DB_INFO
+	</select>
+	
+	<select id="selectOneDBInfo" parameterType="com.furence.recsee.admin.model.DBInfo" resultMap="DBResultMap">
+		SELECT * FROM DB_INFO WHERE DB_NAME = #{dbName}
+	</select>
+	
+	<insert id="insertDBInfo" parameterType="com.furence.recsee.admin.model.DBInfo">
+			INSERT INTO DB_INFO (
+				DB_NAME,
+				DB_DRIVER,
+				DB_URL,
+				DB_USER,
+				DB_PASSWORD
+			) VALUES (
+				#{dbName},
+				#{dbDriver},
+				#{dbUrl},
+				#{dbUser},
+				#{dbPassword}
+			)
+	</insert>
+	
+	<update id="updateDBInfo" parameterType="com.furence.recsee.admin.model.DBInfo">
+		UPDATE DB_INFO SET
+			DB_DRIVER=#{dbDriver},
+			DB_URL=#{dbUrl},
+			DB_USER=#{dbUser},
+			DB_PASSWORD=#{dbPassword}
+		WHERE
+			DB_NAME=#{dbName}
+	</update>
+	
+	<delete id="deleteDBInfo" parameterType="com.furence.recsee.admin.model.DBInfo">
+		DELETE FROM DB_INFO WHERE DB_NAME=#{dbName}
+	</delete>
+	
+</mapper>

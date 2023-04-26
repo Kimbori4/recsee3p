@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.common.dao.MAccessLevelInfoDao">
+	<resultMap id="BaseResultMap" type="com.furence.recsee.common.model.MAccessLevelInfo">
+		<result column="R_LEVEL_CODE" jdbcType="VARCHAR" property="levelCode" />
+		<result column="R_LEVEL_NAME" jdbcType="VARCHAR" property="levelName" />
+		<result column="R_LEVEL_NOTE" jdbcType="VARCHAR" property="levelNote" />
+		<result column="R_LOCK_COUNT" jdbcType="INTEGER" property="lockCount" />
+		<result column="R_ACCOUNT_DATE" jdbcType="INTEGER" property="accountDate" />
+		<result column="R_ACCOUNT_DATE" jdbcType="INTEGER" property="accountDate" />
+	</resultMap>
+
+	<resultMap id="BaseResultMap2" type="com.furence.recsee.common.model.MAccessLevelInfo">
+		<result column="R_LEVEL_NAME" jdbcType="VARCHAR" property="levelName" />
+		<result column="MAX_LEVEL_CODE" jdbcType="VARCHAR" property="maxLevelCode" />
+		<result column="DUP_CHECK" jdbcType="INTEGER" property="dupCheck" />
+		<result column="ALLOWABLE_COUNT" jdbcType="INTEGER" property="allowableCount" />
+	</resultMap>
+
+	<select id="selectAccessLevelInfo"  databaseId="postgres" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_ACCESS_LEVEL
+		<where>
+			<if test="levelCode != null">
+			R_LEVEL_CODE = #{levelCode}
+			</if>
+		</where>
+	</select>
+
+	<select id="selectAccessLevelInfo"  databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_ACCESS_LEVEL
+		<where>
+			<if test="levelCode != null">
+			R_LEVEL_CODE = #{levelCode}
+			</if>
+		</where>
+	</select>
+	<select id="selectAccessLevelInfo"  databaseId="oracle" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap">
+		SELECT *
+		FROM RS_ACCESS_LEVEL
+		<where>
+			<if test="levelCode != null">
+			R_LEVEL_CODE = #{levelCode}
+			</if>
+		</where>
+	</select>
+
+	<select id="checkAccessLevelInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap2">
+		SELECT
+		MAX(R_LEVEL_CODE) AS MAX_LEVEL_CODE,
+		SUM( CASE WHEN R_LEVEL_NAME = #{levelName} THEN 1 ELSE 0 END ) AS DUP_CHECK
+		FROM RS_ACCESS_LEVEL
+	</select>
+
+	<select id="checkAccessLevelInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap2">
+		SELECT
+		MAX(R_LEVEL_CODE) AS MAX_LEVEL_CODE,
+		SUM( CASE WHEN R_LEVEL_NAME = #{levelName} THEN 1 ELSE 0 END ) AS DUP_CHECK
+		FROM RS_ACCESS_LEVEL
+	</select>
+	
+	<select id="checkAccessLevelInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap2">
+		SELECT
+		MAX(R_LEVEL_CODE) AS MAX_LEVEL_CODE,
+		SUM( CASE WHEN R_LEVEL_NAME = #{levelName} THEN 1 ELSE 0 END ) AS DUP_CHECK
+		FROM RS_ACCESS_LEVEL
+	</select>
+	
+	<insert id="insertAccessLevelInfo" databaseId="postgres" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+		
+			INSERT INTO RS_ACCESS_LEVEL (
+				R_LEVEL_CODE, R_LEVEL_NAME, R_LEVEL_NOTE, R_LOCK_COUNT, R_ACCOUNT_DATE
+			) VALUES (
+				#{levelCode}, #{levelName}, #{levelNote}, #{lockCount}, #{accountDate}
+			)		
+	</insert>
+
+	<insert id="insertAccessLevelInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+		INSERT INTO RS_ACCESS_LEVEL (
+				R_LEVEL_CODE
+			, 	R_LEVEL_NAME
+			, 	R_LEVEL_NOTE
+			, 	R_LOCK_COUNT
+			, 	R_ACCOUNT_DATE
+		)
+		OUTPUT
+	 	    CONVERT(VARCHAR(8), GETDATE(), 112)
+	 	  , CONVERT(VARCHAR(8), GETDATE(), 114)
+	 	  , 'C'
+	 	  , 'rs_access_level'
+		  , INSERTED.R_LEVEL_CODE
+		  , INSERTED.R_LEVEL_NAME
+		  , INSERTED.R_LEVEL_NOTE
+		  , INSERTED.R_LOCK_COUNT
+		  , INSERTED.R_ACCOUNT_DATE
+		  
+		INTO RS_SYNC_DATA (
+		   	R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+		)
+		VALUES (
+				#{levelCode}
+			, 	#{levelName}
+			, 	#{levelNote}
+			, 	#{lockCount}
+			, 	#{accountDate}
+		)
+	</insert>
+	<insert id="insertAccessLevelInfo" databaseId="oracle" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			INSERT INTO RS_ACCESS_LEVEL (
+				R_LEVEL_CODE, R_LEVEL_NAME, R_LEVEL_NOTE, R_LOCK_COUNT, R_ACCOUNT_DATE
+			) VALUES (
+				#{levelCode}, #{levelName}, #{levelNote}, #{lockCount}, #{accountDate}
+			)
+			RETURNING ROWID INTO row_id;
+		
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+		  	)
+	
+	 		 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'C'
+		 	,	'rs_access_level'
+		 	,	AL.R_LEVEL_CODE
+			,	AL.R_LEVEL_NAME
+			,	AL.R_LEVEL_NOTE
+			,	AL.R_LOCK_COUNT
+			,	AL.R_ACCOUNT_DATE
+	
+			FROM DUAL, RS_ACCESS_LEVEL AL
+	        WHERE AL.ROWID = row_id;
+        
+        END; -->
+        INSERT INTO RS_ACCESS_LEVEL (
+				R_LEVEL_CODE, R_LEVEL_NAME, R_LEVEL_NOTE, R_LOCK_COUNT, R_ACCOUNT_DATE
+			) VALUES (
+				#{levelCode}, #{levelName}, #{levelNote}, #{lockCount}, #{accountDate}
+			)
+	</insert>
+
+	<update id="updateAccessLevelInfo"  databaseId="postgres" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+		UPDATE RS_ACCESS_LEVEL
+			<set>
+				<if test="levelName != null">
+				R_LEVEL_NAME = #{levelName},
+				</if>
+				<if test="levelNote != null">
+				R_LEVEL_NOTE = #{levelNote},
+				</if>
+				<if test="lockCount != null">
+				R_LOCK_COUNT = #{lockCount},
+				</if>
+				<if test="accountDate != null">
+				R_ACCOUNT_DATE = #{accountDate}
+				</if>
+			</set>
+			<where>
+				R_LEVEL_CODE = #{levelCode}
+			</where>		
+	</update>
+	<update id="updateAccessLevelInfo" databaseId="sqlserver" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+
+			UPDATE RS_ACCESS_LEVEL
+			<set>
+				<if test="levelName != null">
+				R_LEVEL_NAME = #{levelName},
+				</if>
+				<if test="levelNote != null">
+				R_LEVEL_NOTE = #{levelNote},
+				</if>
+				<if test="lockCount != null">
+				R_LOCK_COUNT = #{lockCount},
+				</if>
+				<if test="accountDate != null">
+				R_ACCOUNT_DATE = #{accountDate}
+				</if>
+			</set>
+			OUTPUT
+			CONVERT(VARCHAR(8), GETDATE(), 112)
+	 	 , CONVERT(VARCHAR(8), GETDATE(), 114)
+	 	,	'U'
+	 	,	'rs_access_level'
+	 	,	INSERTED.R_LEVEL_CODE
+		,	INSERTED.R_LEVEL_NAME
+		,	INSERTED.R_LEVEL_NOTE
+		,	INSERTED.R_LOCK_COUNT
+		,	INSERTED.R_ACCOUNT_DATE
+
+		 INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+	  	)
+
+			<where>
+				R_LEVEL_CODE = #{levelCode}
+			</where>
+
+	</update>
+	
+	<update id="updateAccessLevelInfo"  databaseId="oracle" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			UPDATE RS_ACCESS_LEVEL
+			<set>
+				<if test="levelName != null">
+				R_LEVEL_NAME = #{levelName},
+				</if>
+				<if test="levelNote != null">
+				R_LEVEL_NOTE = #{levelNote},
+				</if>
+				<if test="lockCount != null">
+				R_LOCK_COUNT = #{lockCount},
+				</if>
+				<if test="accountDate != null">
+				R_ACCOUNT_DATE = #{accountDate}
+				</if>
+			</set>
+			<where>
+				R_LEVEL_CODE = #{levelCode}
+			</where>
+			RETURNING ROWID INTO row_id;
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+		  	)
+	
+	 		 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'U'
+		 	,	'rs_access_level'
+		 	,	AL.R_LEVEL_CODE
+			,	AL.R_LEVEL_NAME
+			,	AL.R_LEVEL_NOTE
+			,	AL.R_LOCK_COUNT
+			,	AL.R_ACCOUNT_DATE
+
+			FROM DUAL, RS_ACCESS_LEVEL AL
+	        WHERE AL.ROWID = row_id;
+        
+        END; -->
+        UPDATE RS_ACCESS_LEVEL
+			<set>
+				<if test="levelName != null">
+				R_LEVEL_NAME = #{levelName},
+				</if>
+				<if test="levelNote != null">
+				R_LEVEL_NOTE = #{levelNote},
+				</if>
+				<if test="lockCount != null">
+				R_LOCK_COUNT = #{lockCount},
+				</if>
+				<if test="accountDate != null">
+				R_ACCOUNT_DATE = #{accountDate}
+				</if>
+			</set>
+			<where>
+				R_LEVEL_CODE = #{levelCode}
+			</where>
+	</update>
+
+	<delete id="deleteAccessLevelInfo" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" databaseId="postgres">
+				DELETE FROM RS_ACCESS_LEVEL
+			<where>
+			R_LEVEL_CODE = #{levelCode}
+			</where>
+	
+	</delete>
+
+	<delete id="deleteAccessLevelInfo" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" databaseId="sqlserver">
+
+			DELETE FROM RS_ACCESS_LEVEL
+			output
+			 CONVERT(VARCHAR(8), GETDATE(), 112)
+	 	 , CONVERT(VARCHAR(8), GETDATE(), 114)
+	 	,	'D'
+	 	,	'rs_access_level'
+	 	,	DELETED.R_LEVEL_CODE
+		,	DELETED.R_LEVEL_NAME
+		,	DELETED.R_LEVEL_NOTE
+		,	DELETED.R_LOCK_COUNT
+		,	DELETED.R_ACCOUNT_DATE
+		INTO RS_SYNC_DATA
+		(
+			R_SYNC_DATE
+		  , R_SYNC_TIME
+		  , R_SYNC_TYPE
+		  , R_SYNC_TABLENAME
+		  , R_SYNC_CULUMN1
+		  , R_SYNC_CULUMN2
+		  , R_SYNC_CULUMN3
+		  , R_SYNC_CULUMN4
+		  , R_SYNC_CULUMN5
+	  	)
+			<where>
+			R_LEVEL_CODE = #{levelCode}
+			</where>
+	</delete>
+	
+	<delete id="deleteAccessLevelInfo" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" databaseId="oracle">
+		<!-- DECLARE
+		  row_id ROWID;
+		BEGIN
+			DELETE FROM RS_ACCESS_LEVEL
+			<where>
+			R_LEVEL_CODE = #{levelCode}
+			</where>
+			RETURNING ROWID INTO row_id;
+
+			INSERT INTO RS_SYNC_DATA
+			(
+				R_SYNC_DATE
+			  , R_SYNC_TIME
+			  , R_SYNC_TYPE
+			  , R_SYNC_TABLENAME
+			  , R_SYNC_CULUMN1
+			  , R_SYNC_CULUMN2
+			  , R_SYNC_CULUMN3
+			  , R_SYNC_CULUMN4
+			  , R_SYNC_CULUMN5
+		  	)
+	
+	 		 SELECT
+		 	 	TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDD')
+		 	,	TO_CHAR(CURRENT_TIMESTAMP, 'HH24MISS')
+		 	,	'D'
+		 	,	'rs_access_level'
+		 	,	AL.R_LEVEL_CODE
+			,	AL.R_LEVEL_NAME
+			,	AL.R_LEVEL_NOTE
+			,	AL.R_LOCK_COUNT
+			,	AL.R_ACCOUNT_DATE
+	
+			FROM DUAL, RS_ACCESS_LEVEL AL
+      		WHERE AL.ROWID = row_id;
+
+		END; -->
+		DELETE FROM RS_ACCESS_LEVEL
+			<where>
+			R_LEVEL_CODE = #{levelCode}
+			</where>
+	</delete>
+	
+	
+	
+	<select id="checkAllowableInfo" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap2">
+		SELECT
+		COUNT(R_ALLOWABLE_CODE) AS ALLOWABLE_COUNT,
+		MAX(R_ALLOWABLE_CODE) AS MAX_LEVEL_CODE,
+		SUM( CASE WHEN R_ALLOWABLE_NAME = #{levelName} THEN 1 ELSE 0 END ) AS DUP_CHECK
+		FROM RS_ALLOWABLE_RANGE
+	</select>
+	
+	<select id="selectAllowableInfo" parameterType="com.furence.recsee.common.model.MAccessLevelInfo" resultMap="BaseResultMap">
+		SELECT 
+			R_ALLOWABLE_CODE AS R_LEVEL_CODE,
+			R_ALLOWABLE_NAME AS R_LEVEL_NAME
+		FROM RS_ALLOWABLE_RANGE
+		<where>
+			<if test="levelCode != null">
+			R_LEVEL_CODE = #{levelCode}
+			</if>
+		</where>
+	</select>
+	
+	<insert id="insertAllowableInfo" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+		
+			INSERT INTO RS_ALLOWABLE_RANGE (
+				R_ALLOWABLE_CODE, R_ALLOWABLE_NAME
+			) VALUES (
+				#{levelCode}, #{levelName}
+			)
+	</insert>
+	
+	<update id="updateAllowableInfo"  parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+			UPDATE RS_ALLOWABLE_RANGE
+			<set>
+				<if test="levelName != null">
+				R_ALLOWABLE_NAME = #{levelName},
+				</if>
+			</set>
+			<where>
+				R_ALLOWABLE_CODE = #{levelCode}
+			</where>
+	</update>
+	<delete id="deleteAllowableInfo" parameterType="com.furence.recsee.common.model.MAccessLevelInfo">
+		
+			DELETE FROM RS_ALLOWABLE_RANGE
+			<where>
+			R_ALLOWABLE_CODE = #{levelCode}
+			</where>
+	</delete>
+	
+</mapper>

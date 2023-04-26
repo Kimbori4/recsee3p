@@ -1,0 +1,398 @@
+@charset "UTF-8";
+
+#scriptCopyPopup{
+    position: absolute;
+    height: auto;
+    padding-bottom: 5px;
+    background-color: #ffffff;
+    top: 47%;
+    left: 50%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    z-index: 104;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, 'Noto Sans KR', Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    border-radius: 5px;
+}
+
+#scriptCopyHeader{
+	height: 35px;
+	background-color: #1760F0;
+	padding: 0 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px 5px 0 0;
+}
+
+#scriptCopyTit{
+	color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#scriptCopySearchBtn{
+	margin-left : 10px !important;
+    width: 63px !important;
+    height: 40px !important;
+    background: #111418 !important;
+    color: #fff !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    float: none !important;
+	
+}
+
+#scriptCopyBtn{
+	margin : 10px 30px 10px 10px !important;
+	background-color: #1760F0 !important;
+	color : #fff !important;
+	display : inline-flex !important;
+	align-items : center !important;
+	justify-content : center !important;
+	font-weight : weight !important ;
+	width :60px !important;
+	height :  26px !important;
+}
+
+#scriptCopyCloseTopBtn{
+	display: block;
+	width: 16px;
+	height: 16px;
+	cursor : pointer;
+}
+
+#scriptCopyBody{
+	padding: 5px 5px 5px 5px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#commonGridPlusSearch{
+	float: left;
+}
+
+#scriptCopyField{
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+#scriptCopyScriptType{
+	width : 150px !important;
+	
+}
+
+#scriptCopySearchBy{	
+	width : 150px !important;
+	height : 40px !important;
+}
+
+#scriptCopySearchText{
+	width : 1430px !important;
+	height : 30px !important;
+}
+
+
+#commonSearchTTS, #commonSearchBy{
+	padding-right: 20px;
+	box-sizing: border-box;
+	outline: none;
+	text-overflow: ellipsis;
+	border: 1px solid #CED3D9;
+	border-radius: 4px;
+	height: 26px;
+	padding: 0 4px;
+	color: #111418;
+	width: 100px;
+	margin-left: 0;
+	flex: 0 0 auto;
+}
+
+#commonSearchText{
+	width: 260px;
+}
+
+#searchCommonBtn {
+	background: #111418;
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	border: 0;
+	width: 55px;
+	border-radius: 4px;
+	cursor: pointer;
+	height: 26px;
+}
+
+#scriptCommonGrid table.hdr td{
+	border: none;
+	height: 18px;
+	padding: 5px;
+}
+
+#scriptCommonGrid .xhdr{
+	border: none !important;
+	border-top: 1px solid #DEE1E7 !important;
+	border-bottom: 1px solid #DEE1E7 !important;
+}
+
+#scriptCommonGrid {
+	border: none;
+}
+
+#scriptCommonGrid .hdrcell .commonTitleLeft{
+	text-align:left;
+	padding:5px;
+	font-size:12px;
+	font-weight:700;
+	color:#000;
+}
+
+#scriptCommonGrid .hdrcell .commonTitleCenter{
+	text-align:center;
+	font-size:12px;
+	font-weight:700;
+	color:#000;
+}
+
+.searchCommonScript div{
+	color: #8A93A4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap !important;
+}
+
+div.gridbox_dhx_web.gridbox table.obj tr td{
+	border-right:none;
+	border-bottom:none;
+} 
+
+#commonFooter {
+	padding: 0;
+	font-stretch: ultra-expanded;
+	height: 30px;
+}
+
+#commonButtons {
+	padding: 0 16px;
+}
+
+.common-btn-grey {
+    background-color: #8A93A4;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.common-btn-primary {
+	background-color: #1760F0;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[class^="common-btn-"] {
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	border: 0;
+	width: 63px;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-left: 4px;
+	font-size: 13px;
+}
+
+#common_updateDate {
+	border: none;
+	font-size: 10pt !important;
+	color: #000 !important;
+}
+
+#commonButtonLeft {
+	float: left;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+#commonButtonRight {
+	float: right;
+	padding: 16px 64px;
+}
+
+#commonScriptDetail {
+	height: 440px;
+	display: inline-block;
+}
+
+.commonInfoTable {
+	table-layout: fixed;
+	width: 100%;
+	padding: 0 30px;
+}
+
+.commonInfoTable th {
+	width: 90px;
+	text-align: left;
+	font-weight: 700;
+	vertical-align: middle;
+	font-size: 12px;
+	padding: 4px 0;
+}
+
+.commonInfoTable td {
+	padding: 4px 0;
+}
+
+.common_input, .common_select{
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #CED3D9;
+	border-radius: 4px;
+	height: 26px;
+	box-sizing: border-box;
+	padding: 0 4px;
+	color: #111418;
+}
+
+#common_text {
+	resize: none;
+	width: 100%;
+	padding: 4px;
+}
+
+#common_text_title {
+	vertical-align: top !important;
+	padding-top: 10px !important;
+}
+
+div {
+	margin: 0
+}
+
+#commonDatePopupCloseBtn {
+    display: block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+
+/*********** 하위메뉴 *****************/
+#commonPaging {
+	border-bottom: 1px solid #3da0e3 !important;
+}
+
+/*********** 달력 *****************/
+#saveApplyDatePopup {
+    position: absolute;
+    height: auto;
+    padding-bottom: 5px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    z-index: 104;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, 'Noto Sans KR', Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#saveApplyDateHeader {
+	height: 35px;
+	background-color: #1760F0;
+	padding: 0 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px 5px 0 0;
+}
+
+#applyDateTitle {
+	color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#datePopupCloseBtn {
+    display: block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#saveApplyDateBody {
+	width: 300px;
+}
+
+#selectDateTable {
+	table-layout: fixed;
+	width: 100%;
+	padding: 20px 10px;
+}
+
+#selectDateTable th {
+	width: 100px;
+	text-align: center;
+	font-weight: 700;
+	vertical-align: middle;
+	font-size: 14px;
+	padding: 4px 0;
+}
+
+#selectDateTable td {
+	padding: 4px 0;
+}
+
+#applyDate {
+	width: 115px !important;
+}
+
+#dateButtons {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.date-btn-grey {
+    background-color: #8A93A4;
+}
+
+.date-btn-primary {
+	background-color: #1760F0;
+	margin-left: 30px;
+}
+
+[class^="date-btn-"] {
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	border: 0;
+	width: 63px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 13px;
+	color: #fff;
+}
+
+/* 검색관련 */
+#searchBox_popup {
+	position: relative;
+}
+
+#keywordRemoveImg_popup {
+	width: 30px;
+	height: 15px;
+	background-image: url('../../../../images/project/icon/wooribank/icon_btn_exit_gray.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 12px;
+	position: absolute;
+	right: 0px;
+	bottom: 12px;
+	cursor: pointer;
+}

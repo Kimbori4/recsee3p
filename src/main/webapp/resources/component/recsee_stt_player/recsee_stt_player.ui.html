@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RecSeePlayer UI</title>
+</head>
+<body>
+  <div id="recsee_player_object">
+    <div class="rplayer">
+      <!-- Header -->
+      <div class="player_header theme_default_main">
+      	<div class="header_main_logo">
+      	</div>
+      	<div class="header_float_right">
+      		<div class="best_call_wrap display_none">
+      			<input class="theme_default_color1" type="text" name="bestCallName" id="bestCallName" value="" placeholder="우수콜 제목을 입력하세요."/>
+      			<button class="best_call_submit_btn theme_default_color1">우수콜 추가</button>
+      		</div>
+      	</div>
+      </div>
+      <!-- Body -->
+      <div class="play_base_wrap theme_default_sub">
+      	  <!-- Player Btn  -->
+      	  <div class="play_btn_group">
+      	  	<div id="playerFix" class="player_fix btn theme_default_color1"></div>
+      	  	<div id="procTime" class="player_proc_time theme_default_color2 theme_default_text">00:00:00</div>
+      	  	<div id="Start" class="player_playing btn theme_default_color1"></div>
+      	  	<div id="stepBackward" class="player_step_backward btn theme_default_color1"></div>
+      	  	<div id="backward" class="player_backward btn theme_default_color1"></div>
+      	  	<div id="forward" class="player_forward btn theme_default_color1"></div>
+      	  	<div id="stepForward" class="player_step_forward btn theme_default_color1"></div>
+      	  	<div id="reload" class="player_reload btn theme_default_color1"></div>
+      	  	<div class="volume_icon"></div>
+      	  	<!-- 플레이어 전체 사운드 조절 -->
+      	  	<div class="sound_bar_wrap">
+      	  		<div id="playSoundBar" class="player_all_sound">
+      	  			<div class="progress"></div>
+      	  		</div>
+      	  	</div>
+      	  	
+      	  </div>
+      	  <!-- LEFT BAR  -->
+      	  <div class="play_left_group">
+      	  	<div id="playerUpSize" class="player_up_size btn theme_default_color1"></div>
+   	  		<div class="size_bar_wrap">
+   	  		<!-- 플레이어 확대 /축소  -->
+      	  		<div id="playerSizeBar" class="player_size_bar">
+      	  			<div class="progress"></div>
+      	  		</div>
+      	  	</div>
+      	  	<div id="playerDownSize" class="player_down_size btn theme_default_color1"></div>
+      	  </div>
+	      <div class="play_control_wrap theme_default_main">
+	      	<div class="player_header_content theme_default_color2">
+	      		<!-- 고객 -->
+	      		<span class="rx_audio_sound">
+	      			<div class="volume_icon"></div>
+      				<div class="rx_audio_sound_wrap">
+  						<div id="rxPlaySoundBar" class="player_rx_sound">
+  							<div class="progress"></div>
+  						</div>
+  						<p class="rx_text">고객</p>
+      				</div>
+	      		</span>
+	      		<!-- 상담사 -->
+  				<span class="tx_audio_sound">
+	      			<div class="volume_icon"></div>
+      				<div class="tx_audio_sound_wrap">
+  						<div id="txPlaySoundBar" class="player_tx_sound">
+  							<div class="progress"></div>
+  						</div>
+  						<p class="tx_text">상담사</p>
+      				</div>
+	      		</span>
+	      	</div>
+	        <!-- rx_wrap -->
+	        <div class="rx_wrap wave_wrap">
+	          <div class="rxWaveObj">
+	          </div>
+	        </div>
+	        <!-- tx wrap -->
+	        <div class="tx_wrap wave_wrap">
+	          <div class="txWaveObj">
+	          </div>
+	        </div>
+	        <div class="stt_playing_wrap">
+	        	<div class="stt_side_view theme_default_color1"></div>
+	        	<div class="stt_rx_view"></div>
+	        	<div class="stt_center_view theme_default_color1"></div>
+	        	<div class="stt_tx_view"></div>
+	        	<div class="stt_right_view theme_default_color1">
+	        		<div class="stt_play_map">
+	        			<div style="height:100%;position:absolute;">
+	        				<img id="rxMiniMap" style="height:100%;"  src=""  />
+	        				<div id="rxMiniMapInner" style="height:100%;position:absolute;transform:scaleX(-1);margin-left:4px;">
+	        				</div>
+	        			</div>
+	        			<div style="height:100%;float:right;">
+	        				<img id="txMiniMap" style="height:100%;"  src=""  />
+	        				<div id="txMiniMapInner" style="height:100%;position:absolute;transform:scaleX(-1);margin-left:4px;">
+	        				</div>
+	        			</div>
+	        			<div class="stt_play_current_wrap" id="currentWrap">
+	        				<div class="current_box"></div>
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+	      </div>
+	      <!-- Player 전체 텍스트 구간  -->
+      	  <div class="play_wrap_all_text theme_default_scroll theme_default_main">
+	      </div>
+	  </div>
+	  <!-- 오른 쪽 Wrap  -->
+      <div class="play_search_wrap theme_default_sub">
+	  <!-- 검색 란 -->
+      	<div	class="play_play_search_wrap theme_default_main">
+      		<div class="header theme_default_color2"><p class="menu_bar"></p>검색</div>
+      		<div class="header_search_bar">
+      			<input class="theme_default_color1" type="text" name="searchText" id="searchText" value="" />
+      			<div class="search_up_btn">
+					<p></p>					      				
+      			</div>
+     			<div class="search_down_btn">
+     				<p></p>
+     			</div>
+     			<div id="searchBtn">
+     			</div>
+      		</div>
+      		<div class="body theme_default_scroll">
+      		</div>
+      	</div>
+      	<!-- 플레이어 태그 정보  -->
+      	<div class="play_play_tag_wrap theme_default_main">
+      		<div class="header theme_default_color2"><p class="menu_bar"></p>태그 정보</div>
+      		<div class="player_tag_infomation theme_default_scroll">
+      		</div>
+      	</div>
+      	<!-- 현재 녹취 파일 정보  -->
+      	<div class="player_play_infomation theme_default_scroll theme_default_main">
+      		<div class="header theme_default_color2"><p class="menu_bar"></p>현재 재생 중인 파일</div>
+      		<div class="contents">
+      			<span>녹취일자</span><font id="infoRecDate"></font>
+      		</div>
+      		<div class="contents">
+      			<span>녹취시간</span><font id="infoRecTime"></font>
+      		</div>
+      		<div class="contents">
+      			<span>상담사 명</span><font id="infoUserName"></font>
+      		</div>
+  			<div class="contents">
+      			<span>내선 번호</span><font id="infoExt"></font>
+      		</div>
+ 			<div class="contents">
+      			<span>고객 번호</span><font id="infoCustPhone"></font>
+      		</div>
+      	</div>
+      </div>
+      <div>
+      
+      </div>
+      <!-- Audio Object -->
+      <!-- RX Player -->
+      <div class="player_audio audio_rx">
+        <audio style="display:none;" controls>
+          <source type="audio/mp3">
+        </audio>
+      </div>
+      <!-- TX Player  -->
+      <div class="player_audio audio_tx">
+        <audio style="display:none;" controls>
+          <source type="audio/mp3">
+        </audio>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

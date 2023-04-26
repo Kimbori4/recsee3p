@@ -1,0 +1,1146 @@
+/* Digital Font Include */
+@font-face {
+	font-family: 'DSDIGI';
+	src: url('../../../fonts/DSDIGI/DSDIGI.eot');
+	src: local('DSDIGI'), url('../../../fonts/DSDIGI/DSDIGI.woff') format('woff'), url('../../../fonts/DSDIGI/DSDIGI.ttf') format('truetype');
+}
+.fontsforweb_fontid_1091 {
+	font-family: 'DSDIGI' !important;
+}
+
+#trafficChart{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: 150px;
+}
+#trafficChart2{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: 150px;
+}
+
+/*
+�� �������� �κ� z-index�� ����
+���� : ����͸��� ���밪 �������� �׸��� ������ ���Ƽ� ��ġ ������.
+ */
+.headerWrap{
+	z-index: 100000005;
+	transition: all ease 0.9s;
+}
+.popup_obj{
+	z-index: 100000006 !important;
+}
+/* ��� ��� â */
+.sys_alert{
+    position: fixed;
+    width: 790px;
+    left: 54%;
+    bottom: 25px;
+    margin-left: -540px;
+    padding: 10px;
+    background-color: #111111;
+    box-shadow: 0 0 1px rgba(63, 191, 255, 0.8);
+    z-index: 15000;
+    transition: all ease 0.9s;
+}
+.sys_alert marquee{
+    color: #ff0000;
+}
+.sys_siren{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: -10px;
+    left: -60px;
+    z-index: 15000;
+}
+.sys_siren img{
+    width: 60px;
+}
+
+
+/* for MS�迭 ������ */
+@keyframes blink {
+ 0% {background-color: rgba(0,0,0,0.7);}
+ 50% {background-color:rgb(208, 0, 0);}
+}
+/* for Chrome, Safari */
+@-webkit-keyframes blink {
+ 0% {background-color: rgba(0,0,0,0.7);}
+ 50% {background-color: rgb(208, 0, 0);}
+}
+/* blink CSS ������ ���� ���� �ִϸ��̼��� ������ �־�� �����Ѵ�. */
+/* �ǹ� ������Ʈ Ÿ��Ʋ ��� �߻��� ��Ÿ�� ���� */
+.blinkcss {
+ animation: blink 1s step-end infinite;
+ -webkit-animation: blink 1s step-end infinite;
+ transition: all ease 0.4s;
+}
+
+body, html{
+	width: 100%;
+	height: 100%;
+	background-color: #061116;
+	background-image: url(../../../images/project/map-view/squre_bg_pattern.png);
+}
+
+/* Default */
+.sys_monitroing_wrap{
+	overflow:hidden
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+/* ��� ����ũ */
+.sys_monitroing_mask{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #061116;
+	background-image: url(../../../images/project/map-view/squre_bg_pattern.png);
+	z-index: 999;
+}
+/* ���̵���� ����ũ */
+.sys_monitoring_border_place{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+    width: 100%;
+	height: 100%;
+	z-index: 99999;
+}
+/* �¿� ���̵� ���� */
+.sys_monitoring_left_border{
+	position: absolute;
+	width: 1px;
+	height: 100%;
+	border-right: 3px solid #169ac6;
+	left: 0;
+	transition: all ease 0.9s;
+	opacity: 0;
+}
+/* ���� ���̵� ���� */
+.sys_monitoring_top_border{
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	border-bottom: 3px solid #169ac6;
+	left: 0;
+	transition: all ease 0.9s;
+	opacity: 0;
+}
+.sys_monitroing_bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	min-height: 1000px;
+	background-color: #061116;
+	background-image: url(../../../images/project/map-view/squre_bg_pattern.png);
+}
+.zoomcontents{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: auto;
+	transition: all ease 0.9s;
+	z-index: 1000;
+	top: 0px;
+	left: 0px;
+}
+.sys_monitroing_main{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: auto;
+	transition: all ease 0.9s;
+}
+.map_obj_wrap{
+	position: relative;
+	width:100%;
+   /*  width: calc(100% - 290px); */
+    min-width: 1100px;
+	height: 100%;
+	margin-top: 45px;
+}
+
+/********
+UI CSS
+********/
+/* �ǹ� ������Ʈ �⺻ ���� */
+.ui_map_obj_building{
+	position: absolute;
+	width: 150px;
+	height: 50px;
+	background-color:black;
+	/* background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain; */
+	transition: background ease 0.9s;
+	cursor: pointer;
+}
+.iconWrap{
+    width: 100%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* �ǹ� ������Ʈ �ϴ� Ÿ��Ʋ �κ� */
+.ui_map_obj_building .ui_map_obj_tit{
+    position: absolute;
+    width: 93.3%;
+    height: auto;
+    bottom: 0px;
+    font-size: 13px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.7);
+    padding: 5px;
+    transition: all ease 0.9s;
+    word-break: keep-all;
+    left: 0px;
+
+}
+
+/* Map - Kor Object */
+/* Map - Korea */
+.ui_map_pos{
+	position: relative;
+	width: 1263px;
+	height: 900px;
+	margin: 0 auto;
+	transition: all ease 0.9s;
+	/* background-image: url(../../../images/project/map-view/ui_map_korea.png); */
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.ui_map_kor{
+    position: absolute;
+    /* left: 50%;
+    top: 0px;
+    margin-left: -500px;
+    margin-top: -850px; */
+    width: 100%;
+    height: 1000px;
+    /* background-image: url(../../../images/project/map-view/map3.png); */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+}
+/* Map - Seoul */
+.ui_map_kor_seoul{
+	background-image: url(../../../images/project/map-view/kor_seoul.png);
+}
+/* Building - Default Object */
+.ui_map_obj_building_default {
+    background-image: url(../../../images/project/map-view/ui_building_default.png);
+    background-size: 75px;
+    background-position-x: 118%;
+    background-position-y: 27%;
+}
+
+/* Building - twintower Object */
+.ui_map_obj_building_bank{
+	background-image: url(../../../images/project/map-view/ui_building_twintower.png);
+}
+.ui_map_obj_building_bank:hover{
+	background-image: url(../../../images/project/map-view/ui_building_twintower_over.png) !important;
+}
+.ui_map_obj_building_bank_alert{
+	background-image: url(../../../images/project/map-view/ui_building_twintower_alert.png) !important;
+}
+
+
+
+.ui_overline{
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-image: url(../../../images/project/map-view/ui_overline_left_top.png);
+    background-size: contain;
+    z-index: 6666;
+}
+
+/********
+Time info Layer
+********/
+.sys_monitroing_timecall{
+    position: absolute;
+    width: 264px;
+    height: auto;
+    top: 10px;
+    right: 300px;
+    z-index: 1005;
+    background-color: rgba(62, 87, 117, 0.5);
+    box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+    transition: all ease 0.9s;
+    z-index: 99999;
+}
+.call_time_info{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	padding: 12px 0;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.call_time_info:last-of-type{
+	border-bottom: 0px;
+}
+.call_time_tit p{
+	float: left;
+	font-size: 18px;
+	text-align: left;
+	color: #ffffff;
+	/* font-family: 'DSDIGI'; */
+	padding-left: 20px;
+}
+.call_time_val p{
+	float: right;
+	font-size: 18px;
+	text-align: left;
+	color: #ffffff;
+	/* font-family: 'DSDIGI'; */
+	padding-right: 20px;
+}
+
+/********
+Right System info Layer
+********/
+.sys_monitroing_right{
+    position: absolute;
+    width: 280px;
+    height: auto;
+    top: 107px; /*������ */
+    right: 10px;
+    z-index: 1005;
+    background-color: rgba(62, 87, 117, 0.5);
+    box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+    transition: all ease 0.9s;
+}
+/* Article */
+.sys_monitroing_atc{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	padding: 10px 0;
+}
+/* Article - Header */
+.sys_monitroing_atc .sys_monitroing_atc_header{
+	float: left;
+	clear: both;
+	width: calc(100% - 20px);
+	height: auto;
+	padding: 0 10px;
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+/* Article - Title */
+.sys_monitroing_atc .sys_monitroing_atc_header .sys_monitroing_atc_tit{
+    font-family: 'DSDIGI';
+    float: left;
+    clear: both;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background-color: #333333;
+    background-image: url(../../../images/project/main/pattern/btn_pattern.png);
+    background-size: 110% 25px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    border-bottom: 2px solid #ffffff !important;
+    box-shadow: 0 0 1px rgba(63, 191, 255, 0.8);
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+.popup_sysinfo_wrap .sys_monitroing_atc_header{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	padding: 0 5px;
+	color: #ffffff;
+	margin-bottom: 10px;
+}
+/* Article - Title */
+.popup_sysinfo_wrap .sys_monitroing_atc_header .sys_monitroing_atc_tit{
+    font-family: 'DSDIGI';
+    float: left;
+    clear: both;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(45,113,196);
+    background-image: url(../../../images/project/main/pattern/btn_pattern.png);
+    background-size: 110% 25px;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    border-bottom: 2px solid #ffffff !important;
+    box-shadow: 0 0 1px rgba(63, 191, 255, 0.8);
+    color: #ffffff;
+    padding: 10px 0;
+}
+/* Article - Body */
+.sys_monitroing_atc .sys_monitroing_atc_body{
+	float: left;
+    clear: both;
+	width: calc(100% - 20px);
+    height: auto;
+    padding: 0 10px;
+}
+
+/* System Info */
+.sys_connection_info{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+.sys_connection_info:last-child{
+	margin-bottom: 30px;
+}
+/* �ý��� ������Ʈ �⺻ ��Ÿ�� */
+.sys_server_img{
+    position: relative;
+    float: left;
+    width: 120px;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+}
+/* �ý��� ������Ʈ Ÿ��Ʋ */
+.sys_server_tit{
+	position: absolute;
+	bottom: -12px;
+	width: 120px;
+	font-size: 15px;
+	text-align: center;
+	color: #ffffff;
+	/* font-family: 'DSDIGI'; */
+}
+.sys_pbx_tit{
+	position: absolute;
+	bottom: 0px;
+	width: 120px;
+	font-size: 15px;
+	text-align: center;
+	color: #ffffff;
+	/* font-family: 'DSDIGI'; */
+}
+.sys_channel_tit{
+	position: absolute;
+	bottom: 0px;
+	width: 120px;
+	font-size: 15px;
+	text-align: center;
+	color: #ffffff;
+	/* font-family: 'DSDIGI'; */
+}
+/* System Obj - Server */
+.icon_sys_server{
+	background-image: url(../../../images/project/map-view/icon_sys_server.png);
+}
+/* System Obj - PBX */
+.icon_sys_pbx{
+	background-image: url(../../../images/project/map-view/icon_sys_pbx.png);
+}
+/* System Obj - Channel */
+.icon_sys_channel{
+	background-image: url(../../../images/project/map-view/icon_sys_pbx.png);
+}
+.sys_server_val{
+	float: right;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 85px;
+	color: #ffffff;
+	font-size: 30px;
+	text-shadow: 0 0 15px rgba(255, 254, 221, 0.99);
+}
+.sys_server_val p{
+	font-family: 'DSDIGI';
+}
+.sys_server_val_small{
+	font-family: 'DSDIGI';
+	font-size: 24px;
+}
+
+.call_info_wrap{
+	float: left;
+	clear: both;
+	width: 100%;
+}
+.call_info p{
+	float: left;
+    clear: both;
+    width: 100%;
+    color: #ffffff;
+    font-size: 15px;
+    text-shadow: 0 0 15px rgba(255, 254, 221, 0.99);
+    line-height: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 0px 0;
+}
+.call_info p:last-child{
+	border-bottom: 0px;
+}
+.call_info p span{
+	margin-right: 10px;
+    padding: 7px 0;
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    background-size: 35px;
+    padding-left: 39px !important;
+}
+.call_info_val{
+	float: right;
+	font-family: 'DSDIGI';
+	font-size: 30px;
+    line-height: 40px;
+}
+.ui_icon_login{
+	background-image: url(../../../images/project/map-view/icon_login.png);
+}
+.ui_icon_ready{
+	background-image: url(../../../images/project/map-view/database-postgres.png);
+}
+.ui_icon_yesterdaycall{
+	background-image: url(../../../images/project/map-view/icon_yester_call.png);
+}
+.ui_icon_document{
+	background-image: url(../../../images/project/map-view/icon_document.png);
+}
+.ui_icon_logout{
+	background-image: url(../../../images/project/map-view/icon_logout.png);
+}
+.ui_icon_acw{
+	background-image: url(../../../images/project/map-view/icon_acw.png);
+}
+.ui_icon_notready{
+	background-image: url(../../../images/project/map-view/icon_notready.png);
+}
+.ui_icon_nowcall{
+	background-image: url(../../../images/project/map-view/db4.png);
+}
+.ui_icon_recfile{
+	background-image: url(../../../images/project/map-view/icon_recfile.png);
+}
+
+/* Dev Chart CSS */
+/* �ý��� ����� ��Ʈ */
+#sysAvCount{
+    width: 100%;
+    height: 240px;
+    color: #ffffff;
+}
+#sysAvCount *{
+	margin: 0 auto;
+}
+#sysContCount{
+    width: 100%;
+    height: 240px;
+    color: #ffffff;
+}
+#sysContCount *{
+	margin: 0 auto;
+}
+
+/* ���� ��Ʈ�ѹ� */
+.zoom_controll_bar{
+	position: absolute;
+	display:none;
+	/* top: 88px; ������ */
+	left: 0px;
+	width: 60px;
+	height: 100%;
+	background-color: #111111;
+	box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+	z-index: 2147483646;
+	transition: all ease 0.9s;
+}
+.zoom_controll_bar button{
+	border: 0px;
+	background-color: transparent;
+    cursor: pointer;
+}
+.zoom_controll_bar .zoom_btn_style{
+    float: left;
+    clear: both;
+    width: 100%;
+    height: 60px;
+    line-height: 90px;
+    border-bottom: 1px solid #222222;
+    color: #ffffff;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center 15px;
+    font-size: 13px;
+}
+.ui_remote_btn_prev, .ui_remote_btn_next, .ui_remote_btn_stop{
+	display: none;
+	transition: all ease 0.9s;
+}
+.zoom_controll_bar .zoom_btn_style:hover{
+	background-color: #2d71c4;
+}
+.ui_remote_btn_extend{
+	background-image: url(../../../images/project/map-view/remote-btn-img/btn_extend.png);
+}
+.ui_remote_btn_start{
+	background-image: url(../../../images/project/map-view/remote-btn-img/btn_start.png);
+}
+.ui_remote_btn_stop{
+	background-image: url(../../../images/project/map-view/remote-btn-img/btn_stop.png);
+}
+.ui_remote_btn_next{
+	background-image: url(../../../images/project/map-view/remote-btn-img/btn_next.png);
+}
+.ui_remote_btn_prev{
+	background-image: url(../../../images/project/map-view/remote-btn-img/btn_prev.png);
+}
+.ui_remote_btn_pause{
+	background-image: url(../../../images/project/map-view/remote-btn-img/btn_pause.png);
+}
+.ui_remote_btn_rotation{
+	background-image: url(../../../images/project/map-view/remote-btn-img/btn_rotation.png);
+}
+.ui_remote_btn_conf {
+	background-image: url(../../../images/project/map-view/move.png);
+	background-size: 17px;
+}
+
+.detail_info_wrap{
+    display: none;
+    position: absolute;
+    float: left;
+    left: 75px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    z-index: 15001;
+    background-color: rgba(0,0,0,0.85);
+    padding: 20px;
+    transition: all ease 0.9s;
+}
+
+.popup_detailinfo_wrap{
+	display: block;
+	float: left;
+    width: 280px;
+    height: auto;
+    background-color: rgba(62, 87, 117, 0.4);
+    box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+    transition: all ease 0.9s;
+}
+
+/* �ý��� ���� �˾� ��Ÿ�� */
+.popup_sysinfo_wrap{
+	float: left;
+    width: auto;
+    height: auto;
+    margin-left: 20px;
+}
+.popup_sysinfo{
+	float: left;
+	clear: both;
+	width: 240px;;
+    height: 237px;;
+    background: rgba(62, 87, 117, 0.4); /* Old browsers */
+	/* background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%); FF3.6-15
+	background: -webkit-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); Chrome10-25,Safari5.1-6
+	background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#000000 51%,#111111 60%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
+	 */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+    box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+    padding: 10px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+.popup_sysinfo .popup_sysinfo_header{
+    float: left;
+    width: 200px;
+}
+.popup_sysinfo .popup_sysinfo_header .sysinfo_img{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.popup_sysinfo .popup_sysinfo_header .sysinfo_txt{
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    color: #ffffff;
+    clear: both;
+    text-align: center;
+}
+/* �ϵ���� ���� */
+.hardware_info{
+    float: left;
+    height: auto;
+    width: 150px;
+}
+.hardware_info .hardware_info_tit{
+    float: left;
+    clear: both;
+    padding: 10px 10px 2px 0;
+    margin-bottom: 10px;
+}
+.display_option .display_option_tit{
+    float: left;
+    clear: both;
+    padding: 10px 10px 2px 0;
+    margin-bottom: 10px;
+}
+.hardware_indicator .hardware_info_tit{
+    float: left;
+    clear: both;
+    padding: 10px 10px 2px 0;
+    margin-bottom: 10px;
+}
+.hardware_status_wrap{
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.hardware_status_tit{
+	/* font-family: 'DSDIGI'; */
+	float: left;
+    color: #ffffff;
+    padding-bottom: 5px;
+}
+.hardware_status_bar{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    background-color: #555555;
+    margin-bottom: 10px;
+    border: 1px solid #bbbbbb;
+}
+.hardware_status_bar p{
+	font-family: 'DSDIGI';
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    color: #ffffff;
+    z-index: 5;
+}
+.hardware_status_val{
+    width: 0%;
+    height: 100%;
+    background-color: #1b9d57;
+    transition: all ease 1s;
+}
+.hdd_name_info{
+	float: left;
+    font-size: 13px;
+    color: #ffffff;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+#set_interval_popup{
+	width:300px;
+	display: none;
+	background-color: rgba(62, 87, 117, 0.7);
+	top:60%;
+	left:20%;
+}
+#set_interval{
+	margin-top: 8px;	
+	width: 175px;
+}
+#set_target_name_popup{
+	width:383px;
+	display: none;
+	background-color: rgba(62, 87, 117, 0.7);
+}
+#set_target_name{
+	margin-top:16px;
+}
+#set_target_name_btn, #cancel_target_name_btn,#set_interval_btn,#cancel_interval_btn{
+	color: rgba(255,255,255,1);
+	background-color: transparent;
+	padding: 4px;
+	margin-left: 3px;
+}
+.new_target{
+	display: none;
+}
+.move_target{
+	position:absolute;
+	top:-1px;
+	left:119px;
+    z-index: 1005;
+    width: 30px;
+    height: 26px;
+    background-color: rgba(62, 87, 117, 0.5);
+    box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+}
+.delete_target_btn, .save_target_setting_btn, .cancel_target_setting_btn, .move_target_btn{
+	font-weight:bolder;
+	border:1px solid white;
+	text-align:center;
+	padding:2px;
+	font-size:15px;
+	background-color: rgba(62, 87, 117, 0.5);
+    box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+    color:white;
+    margin: 2px;
+    
+}
+.move_target{
+	background-image: url(../../../images/project/map-view/move.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.contents_display_sel{
+	margin-top: 20px;
+}
+.contents_display_sel .mode_list_active{
+    background-color: #ffdb8f !important;
+    border: 1px solid #ffdb8f;
+}
+.monitoring_option{
+	display: none;
+    position: absolute;
+    width: 200px;
+    height: auto;
+    right: 0px;
+    padding: 0 25px;
+    background-color: rgba(0,0,0,0.9);
+    color: #ffffff;
+    z-index: 999999;
+    padding-bottom: 5px;
+}
+.monitoring_option_header{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	background-color: #666666;
+	padding: 11px 0;
+	padding-right: 50px;
+	margin-left: -25px;
+	margin-bottom: 20px;
+	font-size: 18px;
+}
+.monitoring_option_header p{
+	float: left;
+	text-indent: 10px;
+}
+.monitoring_option_header .ui_btn_white{
+	float: right;
+    margin-bottom: -5px;
+    margin-top: -4px;
+    margin-right: -40px;
+}
+.monitoring_option .contents_display_sel .ui_btn_white{
+    width: 100% !important;
+    float: left !important;
+    clear: both !important;
+    margin-bottom: 5px !important;
+    padding-left: 0px !important;
+}
+.setting_tit_wrap:first-of-type{
+	margin-top: 10px;
+}
+.setting_tit_wrap{
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	background-color: rgba(0,0,0,0.4);
+    padding: 0 20px;
+    margin-left: -20px;
+}
+.setting_dropdown_btn{
+    position: relative;
+    float: right;
+    width: 20px;
+    height: 20px;
+    padding-left: 2px;
+    background-color: transparent;
+    margin-top: 12px;
+    background-image: url(../../../images/project/main/icon/arrow_down_white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.setting_dropdown_cont{
+	display: none;
+	float: left;
+	clear: both;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+.setting_dropdown_cont .onoffswitch{
+	float: right;
+}
+.display_option .onofftit{
+    float: left;
+    clear: both;
+    font-size: 13px;
+    color: #ffffff;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    background-image: url(../../../images/project/icon/label_icon/icon_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+.hardware_indicator .onofftit{
+    float: left;
+    clear: both;
+    font-size: 13px;
+    color: #ffffff;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    background-image: url(../../../images/project/icon/label_icon/icon_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+.hardware_indicator{
+    float: left;
+    height: auto;
+    width: 100%;
+}
+}
+
+.hardware_indicator .onofftit{
+	float: left;
+    clear: both;
+    font-size: 13px;
+    color: #ffffff;
+    padding-top: 3px;
+    margin-bottom: 15px;
+    background-image: url(../../../images/project/icon/label_icon/icon_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+.display_option .onoffswitch{
+    float: right;
+}
+
+/************
+
+checkbox-color for status
+
+************/
+
+/* login */
+.display_option .check_status_login .onoffswitch-inner:before {
+    background-color: #f5bb6f; color: #FFFFFF;
+}
+.display_option .check_status_login .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #f5bb6f !important; background: #f5bb6f !important;
+}
+.display_option .check_status_login .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #c1791c !important; border: 1px solid #c1791c !important; color: #ffffff;
+}
+/* logout */
+.display_option .check_status_logout .onoffswitch-inner:before {
+    background-color: #888888; color: #FFFFFF;
+}
+.display_option .check_status_logout .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #888888 !important; background: #888888 !important;
+}
+.display_option .check_status_logout .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #616161 !important; border: 1px solid #616161 !important; color: #ffffff;
+}
+/* ready */
+.display_option .check_status_ready .onoffswitch-inner:before {
+    background-color: #74b057; color: #FFFFFF;
+}
+.display_option .check_status_ready .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #74b057 !important; background: #74b057 !important;
+}
+.display_option .check_status_ready .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #3f7923 !important; border: 1px solid #3f7923 !important; color: #ffffff;
+}
+/* calling */
+.display_option .check_status_calling .onoffswitch-inner:before {
+    background-color: #e16d6d; color: #FFFFFF;
+}
+.display_option .check_status_calling .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #e16d6d !important; background: #e16d6d !important;
+}
+.display_option .check_status_calling .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #a73535 !important; border: 1px solid #a73535 !important; color: #ffffff;
+}
+/* acw */
+.display_option .check_status_acw .onoffswitch-inner:before {
+    background-color: #9283d6; color: #FFFFFF;
+}
+.display_option .check_status_acw .onoffswitch-checkbox:checked + .onoffswitch-label {
+    border: 1px solid #9283d6 !important; background: #9283d6 !important;
+}
+.display_option .check_status_acw .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    background: #5f51a0 !important; border: 1px solid #5f51a0 !important; color: #ffffff;
+}
+/************
+
+background-color for status
+
+************/
+
+/* click effect */
+.agent_status_active{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 0 1px;
+    background-color: rgba(255,255,0,0.4) !important;
+}
+/* calling */
+.agent_status_calling:hover{
+    box-shadow: 0px 0px 5px rgba(255,0,255,0.6) !important;
+    border-color: #dd5959 !important;
+    transition: all ease 0.1s;
+    cursor: pointer;
+}
+.agent_status_calling{
+    background-color: #e16d6d !important;
+    border-color: #e16d6d !important;
+    color: #e16d6d !important;
+}
+/* login */
+.agent_status_login{
+    background-color: #f5bb6f !important;
+    border-color: #f5bb6f !important;
+    color: #f5bb6f !important;
+}
+/* ready */
+.agent_status_ready{
+    background-color: #74b057 !important;
+    border-color: #74b057 !important;
+    color: #74b057 !important;
+}
+/* acw */
+.agent_status_acw{
+    background-color: #9283d6 !important;
+    border-color: #9283d6 !important;
+    color: #9283d6 !important;
+}
+
+/* logout */
+.agent_status_logout{
+    background-color: #bbbbbb !important;
+    border-color: #bbbbbb !important;
+    color: #bbbbbb !important;
+}
+#target_order, #target_order tr, #target_order td{
+	border: 1px solid white;
+	border-collapse: collapse;
+}
+#target_order{
+	margin: auto;
+}
+#set_target_popup{
+	display:none;
+	width:440px;
+	top:50%;
+	left:20%;
+	background-color: rgba(62, 87, 117, 0.7);
+}
+.select_icon{
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.setting_target_btn{
+	float:right;
+	margin-top: 10px;
+}
+#target_order{
+	width: 100%;
+	text-align: center;
+}
+.select_icon{
+	width: 100%;
+	margin-top: 5px;
+}
+.icon_selecter{
+	font-size:10px;
+	width: 100%;
+	height: 20px;
+}
+#target_order thead tr{
+	font-weight: bold;
+	height: 40px;
+}
+.target_name_input{
+    background-color: transparent;
+    color: white;
+    box-shadow: 0px 0px 5px rgba(63,191,255,0.8);
+}
+.icon_wrap{
+	float:left;
+	margin-right: 10px;
+	width: 60px;
+}
+.input_wrap{
+	float:left;
+}
+
+#icon_selecter_popup{
+	height: 29px;
+	font-size: 14px;
+	margin-left: 2px;
+	margin-top: -2px;
+}
+
+#cpuGrap, #memoryGrap, #hddGrap{
+	width: 100%;
+	margin-left: 25px;
+}
+.conWrap{
+	z-index:2147483647;
+	box-shadow:none;
+	background-color: transparent;
+	display:block;
+}
+.conWrap:hover #remoCon{
+	display: block;
+	transition:all ease 0.9s;
+}
+#remoCon{
+	position: absolute;
+	display:none;
+	/* top: 88px; ������ */
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #111111;
+	box-shadow: 0 0 5px rgba(63, 191, 255, 0.8);
+	z-index: 2147483646;
+	transition: all ease 0.9s;
+}

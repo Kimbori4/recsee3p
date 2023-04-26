@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크립트 관리</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <!-- GNB -->
+    <section class="GNB">
+        <div class="inner">
+            <div class="logo">
+                <a href="#" alt="logo">logo</a>
+            </div>
+
+            <ul class="menu">
+                <li>
+                    <a href="#">녹취관리</a>
+                </li>
+                <li class="ac">
+                    <a href="#">스크립트 관리</a>
+                </li>
+            </ul>
+
+            <div class="etc">
+                <p class="name">
+                    관리자
+                    <span>ADMIN</span>
+                    님
+                </p>
+                <a href="#" class="setting">
+                    setting
+                </a>
+                <a href="#" class="logout">
+                    logout
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTER -->
+    <section class="filter">
+        <div class="inner">
+            <div class="filter-item">
+                <label>스크립트 검색</label>
+                <div class="filter-form">
+                    <select name="" id="">
+                        <option value="전체">전체</option>
+                        <option value="op1">op1</option>
+                        <option value="op2">op2</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="전체">전체</option>
+                        <option value="op1">op1</option>
+                        <option value="op2">op2</option>
+                    </select>
+                    <div class="item-search">
+                        <input class="item-search" type="text" placeholder="상품을 검색하세요">
+                        <button class="btn-black">검색</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENTS -->
+    <section class="contents">
+        <div class="inner">
+            <div class="grid-btnWrap clear-fix">
+                <div class="float-left">
+                    <button class="btn-primary btn-type2">신규 등록</button>
+                    <button class="btn-grey btn-type2">그룹 관리</button>
+                </div>
+                <div class="float-right">
+                    <button class="btn-black btn-type2">시스템 반영</button>
+                </div>
+            </div>
+
+            <div class="girdWrap">
+                <table class="grid">
+                    <colgroup>
+                        <col width="35px">
+                        <col width="40px">
+                        <col width="170px">
+                        <col width="*">
+                        <col width="120px">
+                        <col width="*">
+                        <col width="*">
+                        <col width="*">
+                        <col width="*">
+                        <col width="*">
+                        <col width="*">
+                        <col width="*">
+                        <col width="*">
+                        <col width="*">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" onclick="toggle(this)">
+                            </th>
+                            <th>번호</th>
+                            <th>상품명</th>
+                            <th>상품유형</th>
+                            <th>상품코드</th>
+                            <th>그룹유무</th>
+                            <th>TTS적용일</th>
+                            <th>예약적용일</th>
+                            <th>확인유무</th>
+                            <th>최종수정일</th>
+                            <th>최종수정자</th>
+                            <th>확인자</th>
+                            <th>변경이력보기</th>
+                            <th>그룹보기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="checkbox">
+                            </td>
+                            <td>1</td>
+                            <td style="text-align: left;">
+                                <a href="#">방카_변액보험_투자성향분석</a>
+                            </td>
+                            <td>2</td>
+                            <td>1814991620081</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <span class="true">Y</span>
+                                <span class="false"></span>
+                            </td>
+                            <td>2021.12.31</td>
+                            <td>admin</td>
+                            <td>admin</td>
+                            <td>-</td>
+                            <td><button class="btn-line">그룹설정</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="checkbox">
+                            </td>
+                            <td>2</td>
+                            <td style="text-align: left;">
+                                <a href="#">방카_변액보험_투자성향분석</a>
+                            </td>
+                            <td>2</td>
+                            <td>1814991620081</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>
+                                <span class="true"></span>
+                                <span class="false">N</span>
+                            </td>
+                            <td>2021.12.31</td>
+                            <td>admin</td>
+                            <td>admin</td>
+                            <td><button class="btn-line">변경이력</button></td>
+                            <td><button class="btn-line">그룹설정</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <script language="JavaScript">
+                    // 체크박스 전체선택
+                    function toggle(source) {
+                        checkboxes = document.getElementsByName('checkbox');
+                        for(var i=0, n=checkboxes.length;i<n;i++) {
+                            checkboxes[i].checked = source.checked;
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal ac">
+        <!-- modal에 ac 클래스 생성시 활성화됩니다. ac클래스 제거시 비활성화 됩니다. -->
+        <div class="modal-pop modal-newReg" style="width: 376px;">
+            <div class="modal-header">
+                <span class="tit">신규등록</span>
+                <a href="#" class="modal-close"></a>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <span>상품명</span>
+                            </th>
+                            <td>
+                                <input type="text" placeholder="상품명">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span>유형</span>
+                            </th>
+                            <td>
+                                <select name="" id="">
+                                    <option value="신탁">신탁</option>
+                                    <option value="신탁">op1</option>
+                                    <option value="신탁">op2</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <span>상품코드</span>
+                            </th>
+                            <td>
+                                <input type="text" placeholder="상품코드">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-wrap flex-r">
+                    <button class="btn-grey">닫기</button>
+                    <button class="btn-primary">추가</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

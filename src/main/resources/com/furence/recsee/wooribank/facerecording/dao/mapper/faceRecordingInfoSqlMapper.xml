@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.furence.recsee.wooribank.facerecording.dao.FaceRecordingDao">
+	<resultMap id="FaceRecordingMap" type="com.furence.recsee.wooribank.facerecording.model.FaceRecordingInfo">
+		<result column="R_FACE_REC_DATE" 		jdbcType="VARCHAR" property="faceRecDate" />
+		<result column="R_FACE_REC_TIME" 		jdbcType="VARCHAR" property="faceRecTime" />
+		<result column="R_FACE_REC_KEY" 		jdbcType="VARCHAR" property="faceRecKey" />
+		<result column="R_FACE_REC_FILE_NAME" 		jdbcType="VARCHAR" property="faceRecFileName" />
+		<result column="R_FACE_REC_FILE_PATH" 		jdbcType="VARCHAR" property="faceRecFilePath" />
+		
+		<result column="R_FACE_REC_TTIME" 		jdbcType="VARCHAR" property="faceRecTtime" />
+		<result column="R_USER_ID" 		jdbcType="VARCHAR" property="userId" />
+		<result column="R_USER_NAME" 		jdbcType="VARCHAR" property="userName" />
+		<result column="R_CUST_ID" 		jdbcType="VARCHAR" property="custId" />
+		<result column="R_CUST_NAME" 		jdbcType="VARCHAR" property="custName" />
+		<result column="R_CUST_PHONE" 		jdbcType="VARCHAR" property="custPhone" />
+		<result column="R_PRODUCT_CODE" 		jdbcType="VARCHAR" property="productCode" />
+	</resultMap>
+	<resultMap id="BkDetail" type="com.furence.recsee.wooribank.facerecording.model.ProductFundDetailInfo">
+		<result column="rs_product_code" 		jdbcType="VARCHAR" property="rProductCode" />
+		<result column="rs_product_fund_b_code" 		jdbcType="VARCHAR" property="rProductFundBCode" />
+		<result column="rs_product_fund_detail_code" 		jdbcType="VARCHAR" property="rProductFundDetailCode" />
+		<result column="rs_product_fund_detail_name" 		jdbcType="VARCHAR" property="rProductFundDetailName" />
+		<result column="rs_product_fund_detail_text" 		jdbcType="VARCHAR" property="rProductFundDetailText" />
+		<result column="rs_product_insurance_code" 		jdbcType="VARCHAR" property="rProductInsuranceCode" />
+		<result column="rs_product_insurance_name" 		jdbcType="VARCHAR" property="rProductInsuranceName" />
+	</resultMap>
+	
+	
+	<resultMap id="ProductMap" type="com.furence.recsee.wooribank.facerecording.model.FaceRecProductInfo">
+		<result column="R_PRODUCT_CODE" 		jdbcType="VARCHAR" property="productCode" />
+		<result column="R_PRODUCT_NAME" 		jdbcType="VARCHAR" property="productName" />
+		<result column="R_PRODUCT_TYPE" 		jdbcType="VARCHAR" property="productType" />
+		<result column="R_PRODUCT_UPDATE_USER" 		jdbcType="VARCHAR" property="productUpdateUser" />
+	</resultMap>
+	
+	<resultMap id="ScriptMap" type="com.furence.recsee.wooribank.facerecording.model.FaceRecScriptInfo">
+		<result column="R_PRODUCT_CODE" 		jdbcType="VARCHAR" property="productCode" />
+		<result column="R_SCRIPT_CODE" 		jdbcType="VARCHAR" property="scriptCode" />
+		<result column="R_SCRIPT_NAME" 		jdbcType="VARCHAR" property="scriptName" />
+		<result column="R_PRODUCT_TYPE" 		jdbcType="VARCHAR" property="productType" />
+		<result column="R_SCRIPT_TYPE" 		jdbcType="VARCHAR" property="scriptType" />
+		<result column="R_SCRIPT_ORDER" 		jdbcType="VARCHAR" property="scriptOrder" />
+		<result column="R_SCRIPT_UPDATE_USER" 		jdbcType="VARCHAR" property="scriptUpdateUser" />
+		<result column="R_SCRIPT" 		jdbcType="VARCHAR" property="script" />
+		<result column="R_SCRIPT_FILE_PATH" 		jdbcType="VARCHAR" property="scriptFilePath" />
+		<result column="R_AUDIO_FILE_PATH" 		jdbcType="VARCHAR" property="audioFilePath" />
+		<result column="R_SCRIPT_DESC" 		jdbcType="VARCHAR" property="scriptDesc" />
+	</resultMap>
+	
+	<resultMap id="faceRecodingMap" type="com.furence.recsee.wooribank.facerecording.model.FaceRecordingInfo">
+		<result column="r_rec_rtime" 		jdbcType="VARCHAR" property="rRecDate" />
+		<result column="r_rec_rtime" 		jdbcType="VARCHAR" property="rRecRtime" />
+		<result column="r_rec_time" 		jdbcType="VARCHAR" property="rRecTime" />
+		<result column="r_br_cd" 		jdbcType="VARCHAR" property="rBrCd" />
+		<result column="r_br_nm" 		jdbcType="VARCHAR" property="rBrNm" />
+		<result column="r_cust_id" 		jdbcType="VARCHAR" property="rCustId" />
+		<result column="r_cust_nm" 		jdbcType="VARCHAR" property="rCustNm" />
+		<result column="r_agnpe_nm" 		jdbcType="VARCHAR" property="rAgnpeNm" />
+		<result column="r_biz_dis" 		jdbcType="VARCHAR" property="rBizDis" />
+		<result column="r_opr_no" 		jdbcType="VARCHAR" property="rOprNo" />
+		<result column="r_opr_nm" 		jdbcType="VARCHAR" property="rOprNm" />
+		<result column="r_advpe_no" 		jdbcType="VARCHAR" property="rAdvpeNo" />
+		<result column="r_advpe_nm" 		jdbcType="VARCHAR" property="rAdvpeNm" />
+		<result column="r_prd_cd" 		jdbcType="VARCHAR" property="rPrdCd" />
+		<result column="r_prd_nm" 		jdbcType="VARCHAR" property="rPrdNm" />
+		<result column="r_v_filename" 		jdbcType="VARCHAR" property="rVFilename" />
+		<result column="r_call_key_ap" 		jdbcType="VARCHAR" property="rCallKeyAp" />
+		<result column="r_vsend_file_flag" 		jdbcType="VARCHAR" property="rVsendFileFlag" />
+		<result column="r_v_rec_ip" 		jdbcType="VARCHAR" property="rVRecIp" />
+		<result column="r_v_rec_fullpath" 		jdbcType="VARCHAR" property="rVRecFullpath" />
+		<result column="r_v_read_ip" 		jdbcType="VARCHAR" property="rVReadIp" />
+		<result column="r_v_read_fullpath" 		jdbcType="VARCHAR" property="rVReadFullpath" />
+		<result column="r_call_stime" 		jdbcType="VARCHAR" property="rCallStime" />
+		<result column="r_call_etime" 		jdbcType="VARCHAR" property="rCallEtime" />
+		<result column="r_call_ttime" 		jdbcType="VARCHAR" property="rCallTtime" />
+		<result column="r_re_recyn" 		jdbcType="VARCHAR" property="rReRecyn" />
+		<result column="r_part_recyn" 		jdbcType="VARCHAR" property="rPartRecyn" />
+		<result column="r_erroryn" 		jdbcType="VARCHAR" property="rErroryn" />
+		<result column="r_rec_key" 		jdbcType="VARCHAR" property="rRecKey" />
+		<result column="r_cust_info1" 		jdbcType="VARCHAR" property="rCustInfo1" />
+		<result column="r_cust_info2" 		jdbcType="VARCHAR" property="rCustInfo2" />
+		<result column="r_cust_info3" 		jdbcType="VARCHAR" property="rCustInfo3" />
+		<result column="r_cust_info4" 		jdbcType="VARCHAR" property="rCustInfo4" />
+		<result column="r_cust_info5" 		jdbcType="VARCHAR" property="rCustInfo5" />
+	</resultMap>	
+		
+	<resultMap id="ProductList" type="com.furence.recsee.wooribank.facerecording.model.ProductListVo">
+		<result column="rs_product_list_pk" 		jdbcType="VARCHAR" property="rProductListPk" />
+		<result column="rs_product_type" 			jdbcType="VARCHAR" property="rProductType" />
+		<result column="rs_product_code" 			jdbcType="VARCHAR" property="rProductCode" />
+		<result column="rs_product_name" 			jdbcType="VARCHAR" property="rProductName" />
+		<result column="rs_use_yn" 					jdbcType="VARCHAR" property="rUseYn" />
+		<result column="rs_group_code" 					jdbcType="VARCHAR" property="rProductGroupCode" />		
+		<result column="rs_group_yn" 					jdbcType="VARCHAR" property="rProductGroupYn" />	
+		<result column="rs_product_attributes" 					jdbcType="VARCHAR" property="rProductAttributes" />	
+		<result column="rs_sysdis_type" 					jdbcType="VARCHAR" property="rSysType" />	
+		<result column="rs_group_pk" 					jdbcType="VARCHAR" property="rGroupPk" />	
+	</resultMap>
+		
+	<!-- //rs_script_step  -->
+	<resultMap id="ScriptDetail" type="com.furence.recsee.wooribank.facerecording.model.ScriptRegistrationInfo">
+		<result column="rs_script_step_detail_pk" 				jdbcType="INTEGER" property="rScriptDetailPk" />
+		<result column="rs_script_step_detail_type" 			jdbcType="VARCHAR" property="rScriptDetailType" />
+		<result column="rs_script_step_detail_common_kind" 		jdbcType="VARCHAR" property="rScriptDetailComKind" />
+		<result column="rs_script_step_detail_text" 			jdbcType="VARCHAR" property="rScriptDetailText" />
+		<result column="rs_script_step_detail_if_case" 			jdbcType="VARCHAR" property="rScriptDetailIfCase" />
+		<result column="rs_script_step_detail_if_case_detail" 	jdbcType="VARCHAR" property="rScriptDetailIfCaseDetail" />	
+		<result column="rs_script_step_detail_realtime_tts" 	jdbcType="VARCHAR" property="rScriptDetailRealtimeTTS" />	
+		<result column="rs_script_step_detail_create_date" 		jdbcType="VARCHAR" property="rScriptDetailCreateDate" />	
+		<result column="rs_script_step_detail_update_date" 		jdbcType="VARCHAR" property="rScriptDetailUdateDate" />	
+		<result column="rs_script_step_detail_update_user" 		jdbcType="VARCHAR" property="rScriptDetailUpdateUser" />	
+		<result column="rs_script_step_detail_confirm" 			jdbcType="VARCHAR" property="rScriptDetailConfirm" />	
+		<result column="rs_script_step_detail_confirm_date" 	jdbcType="VARCHAR" property="rScriptDetailConfirmDate" />	
+		<result column="rs_script_step_detail_reserv_date" 		jdbcType="VARCHAR" property="rScriptDetailReservDate" />	
+		<result column="rs_script_step_detail_create_user" 		jdbcType="VARCHAR" property="rScriptDetailCreateUser" />	
+		<result column="rs_script_step_detail_confirm_user" 	jdbcType="VARCHAR" property="rScriptDetailConfirmUser" />	
+		<result column="rs_script_step_detail_order" 			jdbcType="VARCHAR" property="rScriptDetailConfirmOrder" />	
+		<result column="rs_script_step_detail_common_fk" 		jdbcType="VARCHAR" property="rScriptDetailConfirmComFk" />	
+		<result column="rs_use_yn" 								jdbcType="VARCHAR" property="rUseYn" />	
+		<result column="rs_script_step_pk" 						jdbcType="VARCHAR" property="rScriptStepPk" />
+		<result column="rs_script_step_fk" 						jdbcType="INTEGER" property="rScriptStepFk" />
+		<result column="rs_script_tts_file_name" 				jdbcType="VARCHAR" property="rScriptTTSFileName" />
+		<result column="rs_script_tts_file_path" 				jdbcType="VARCHAR" property="rScriptTTSFilePath" />
+		<result column="rs_script_step_name" 					jdbcType="VARCHAR" property="rScriptStepName" />
+		<result column="rs_script_step_parent" 					jdbcType="VARCHAR" property="rScriptStepParent" />
+		<result column="rs_script_step_parent" 					jdbcType="VARCHAR" property="rScriptStepParent" />
+		<result column="rs_script_step_type" 					jdbcType="VARCHAR" property="rScriptStepType" />
+		<result column="rs_script_step_order" 					jdbcType="VARCHAR" property="rScriptStepOrder" />
+		<result column="rs_script_file_path" 					jdbcType="VARCHAR" property="rScriptFilePath" />
+		<result column="rs_script_tts_server_ip" 				jdbcType="VARCHAR" property="rScriptTtsServerIp" />
+		<result column="rs_script_common_confirm" 				jdbcType="VARCHAR" property="rScriptCommonConfirm" />	
+		<result column="rs_script_call_key" 					jdbcType="VARCHAR" property="rScriptCallKey" />
+		<result column="rs_script_common_realtime_tts" 			jdbcType="VARCHAR" property="rsScriptCommonRealTimeTts" />
+		<result column="rs_product_attributes_ext" 		jdbcType="VARCHAR" property="rProductAttributesExt" />	
+		<result column="rs_script_step_detail_elt_case"			jdbcType="INTEGER" property="rScriptDetailEltCase" />	
+		<result column="rs_script_step_detail_case_attributes"			jdbcType="VARCHAR" property="rScriptStepDetailCaseAttributes" />
+		<result column="rs_script_rec_state" 					jdbcType="VARCHAR" property="rScriptRecState" />
+		<result column="rs_script_step_call_key" 				jdbcType="VARCHAR" property="rSccriptStepCallKey" />
+	</resultMap>
+	<resultMap id="ScriptDetailVo" type="com.furence.recsee.wooribank.facerecording.model.ScriptStepDetailVo">
+		<result column="rs_script_step_detail_pk" 				jdbcType="INTEGER" property="rScriptDetailPk" />
+		<result column="rs_script_step_detail_type" 			jdbcType="VARCHAR" property="rScriptDetailType" />
+		<result column="rs_script_step_fk" 						jdbcType="INTEGER" property="rScriptStepFk" />
+		<result column="rs_script_step_detail_common_kind" 		jdbcType="VARCHAR" property="rScriptDetailComKind" />
+		<result column="rs_script_step_detail_text" 			jdbcType="VARCHAR" property="rScriptDetailText" />
+		<result column="rs_script_step_detail_if_case" 			jdbcType="VARCHAR" property="rScriptDetailIfCase" />
+		<result column="rs_script_step_detail_if_case_detail" 	jdbcType="VARCHAR" property="rScriptDetailIfCaseDetail" />	
+		<result column="rs_script_step_detail_realtime_tts" 	jdbcType="VARCHAR" property="rScriptDetailRealtimeTTS" />	
+		<result column="rs_script_step_detail_create_date" 		jdbcType="VARCHAR" property="rScriptDetailCreateDate" />	
+		<result column="rs_script_step_detail_update_date" 		jdbcType="VARCHAR" property="rScriptDetailUdateDate" />	
+		<result column="rs_script_step_detail_update_user" 		jdbcType="VARCHAR" property="rScriptDetailUpdateUser" />	
+		<result column="rs_script_step_detail_confirm" 			jdbcType="VARCHAR" property="rScriptDetailConfirm" />	
+		<result column="rs_script_step_detail_confirm_date" 	jdbcType="VARCHAR" property="rScriptDetailConfirmDate" />	
+		<result column="rs_script_step_detail_reserv_date" 		jdbcType="VARCHAR" property="rScriptDetailReservDate" />	
+		<result column="rs_script_step_detail_create_user" 		jdbcType="VARCHAR" property="rScriptDetailCreateUser" />	
+		<result column="rs_script_step_detail_confirm_user" 	jdbcType="VARCHAR" property="rScriptDetailConfirmUser" />	
+		<result column="rs_script_step_detail_order" 			jdbcType="VARCHAR" property="rScriptDetailConfirmOrder" />	
+		<result column="rs_script_step_detail_common_fk" 		jdbcType="VARCHAR" property="rScriptDetailConfirmComFk" />	
+		<result column="rs_product_attributes" 		jdbcType="VARCHAR" property="rProductAttributes" />	
+		<result column="rs_product_attributes_ext" 		jdbcType="VARCHAR" property="rProductAttributesExt" />	
+		<result column="rs_use_yn" 								jdbcType="VARCHAR" property="rUseYn" />	
+		<result column="rs_script_step_detail_elt_case"			jdbcType="INTEGER" property="rScriptDetailEltCase" />	
+		<result column="rs_script_step_detail_case_attributes"			jdbcType="VARCHAR" property="rScriptStepDetailCaseAttributes" />	
+	</resultMap>
+		
+	<!-- tree//rs_script_step_detail  -->
+	<resultMap id="ScriptTreeMap" type="com.furence.recsee.wooribank.facerecording.model.ScriptRegistrationInfo">
+		<result column="rs_script_step_fk" 			jdbcType="VARCHAR" property="rsScriptStepFk" />
+		<result column="t_depth" 					jdbcType="VARCHAR" property="tDepth" />
+		<result column="t_key" 						jdbcType="VARCHAR" property="tKey" />
+		<result column="t_name" 					jdbcType="VARCHAR" property="tName" />
+		<result column="t_order" 					jdbcType="VARCHAR" property="tOrder" />
+		<result column="rs_script_rec_state" 		jdbcType="VARCHAR" property="rScriptRecState" />
+		<result column="rs_script_ta_state" 		jdbcType="VARCHAR" property="rScriptTaState" />
+		<result column="t_parent" 					jdbcType="VARCHAR" property="tParent" />
+		<result column="rs_script_step_call_key" 	jdbcType="VARCHAR" property="rSccriptStepCallKey" />
+		<result column="more_product_type" 	jdbcType="INTEGER" property="moreProductType" />
+		<result column="ta_state" 	jdbcType="VARCHAR" property="rScriptTaState" />
+		<result column="productListPk" 	jdbcType="INTEGER" property="rProductListPk" />
+		<result column="rs_ta_reason" 	jdbcType="INTEGER" property="taReason" />
+	</resultMap>
+	
+	<resultMap id="ProductValue" type="com.furence.recsee.scriptRegistration.model.scriptProductValueInfo">
+		<result column="rs_product_value_pk" 					jdbcType="INTEGER" property="rsProductValuePk" />
+		<result column="rs_product_type" 						jdbcType="INTEGER" property="rsProductType" />
+		<result column="rs_product_code" 						jdbcType="VARCHAR" property="rsProductCode" />
+		<result column="rs_product_value_name" 					jdbcType="VARCHAR" property="rsProductValueName" />
+		<result column="rs_product_value_code" 					jdbcType="VARCHAR" property="rsProductValueCode" />
+		<result column="rs_product_value_val" 					jdbcType="VARCHAR" property="rsProductValueVal" />
+		<result column="rs_product_value_realtime_tts" 			jdbcType="VARCHAR" property="rsProductValueRealtimeTTS" />	
+	</resultMap>
+	<resultMap id="scriptStepDto" type="com.furence.recsee.wooribank.facerecording.model.ScriptStepDto">
+		<result column="depth" 					jdbcType="INTEGER" property="depth" />
+		<result column="t_key" 						jdbcType="INTEGER" property="tKey" />
+		<result column="rs_product_list_pk" 						jdbcType="INTEGER" property="rProductListPk" />
+		<result column="rs_product_code" 					jdbcType="VARCHAR" property="rProductCode" />
+		<result column="rs_product_name" 					jdbcType="VARCHAR" property="rProductName" />
+		<result column="t_order" 					jdbcType="VARCHAR" property="tOrder" />
+		<result column="callKey" 			jdbcType="VARCHAR" property="callKey" />	
+		<result column="rs_script_step_parent" 			jdbcType="VARCHAR" property="rScriptStepParent" />	
+		<result column="rs_script_step_name" 			jdbcType="VARCHAR" property="rScriptStepName" />	
+	</resultMap>
+	<resultMap id="scriptStep" type="com.furence.recsee.wooribank.facerecording.model.ScriptStepVo">
+		<result column="rs_script_step_pk" 					jdbcType="INTEGER" property="rScriptStepPk" />
+		<result column="rs_script_step_fk" 						jdbcType="INTEGER" property="rScriptStepFk" />
+		<result column="rs_script_step_parent" 			jdbcType="INTEGER" property="rScriptStepParent" />	
+		<result column="rs_script_step_name" 			jdbcType="VARCHAR" property="rScriptStepName" />	
+		<result column="rs_script_step_order" 					jdbcType="INTEGER" property="rScriptStepOrder" />
+		<result column="rs_script_step_type" 			jdbcType="VARCHAR" property="rScriptStepType" />	
+		<result column="rs_use_yn" 			jdbcType="VARCHAR" property="rUseYn" />	
+	</resultMap>
+	<resultMap id="productOfferScriptDetail" type="com.furence.recsee.wooribank.facerecording.model.ProductCharacterDetailVo">
+		<result column="rs_product_code" 					jdbcType="VARCHAR" property="rProductCode" />
+		<result column="rs_product_type" 						jdbcType="VARCHAR" property="rProductType" />
+		<result column="rs_product_name" 						jdbcType="VARCHAR" property="rProductName" />
+		<result column="rs_product_detail_text" 					jdbcType="VARCHAR" property="rProductDetailText" />
+		<result column="rs_product_sub_code" 					jdbcType="VARCHAR" property="rProductSubCode" />
+		<result column="rs_product_insurance_code" 		jdbcType="VARCHAR" property="rProductInsuranceCode" />
+		<result column="rs_product_insurance_name" 		jdbcType="VARCHAR" property="rProductInsuranceName" />
+	</resultMap>
+	<resultMap id="recHistoryParam" type="com.furence.recsee.wooribank.facerecording.model.RecParamHistoryVo">
+		<result column="r_rec_key" 					jdbcType="VARCHAR" property="rRecKey" />
+		<result column="r_rec_date" 						jdbcType="VARCHAR" property="rRecDate" />
+		<result column="r_rec_time" 						jdbcType="VARCHAR" property="rRecTime" />
+		<result column="r_rec_param" 					jdbcType="VARCHAR" property="rRecParam" />
+		<result column="r_rec_retry_json" 					jdbcType="VARCHAR" property="rRecRetryJson" />
+	</resultMap>
+	<resultMap id="RetryRecReason" type="com.furence.recsee.wooribank.facerecording.model.RectryReasonVo">
+		<result column="rs_retry_history_pk" 					jdbcType="VARCHAR" property="rPk" />
+		<result column="r_date" 						jdbcType="VARCHAR" property="rDate" />
+		<result column="r_time" 						jdbcType="VARCHAR" property="rTime" />
+		<result column="r_user_id" 					jdbcType="VARCHAR" property="rUserId" />
+		<result column="r_call_key_ap" 					jdbcType="VARCHAR" property="rCallKeyAp" />
+		<result column="r_retry_reason" 					jdbcType="VARCHAR" property="rRetryReason" />
+		<result column="r_retry_reason_detail" 					jdbcType="VARCHAR" property="rRetryReasonDetail" />
+	</resultMap>
+			
+	<select id="selectFaceRecordingInfo" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecordingInfo" resultMap="FaceRecordingMap">
+		SELECT * 
+		  FROM rs_face_rec_info
+		  <where>
+			<trim suffixOverrides="AND">
+				<choose>
+					<when test="sDate != null and eDate !=null">
+						AND R_FACE_REC_DATE BETWEEN #{sDate} AND #{eDate}
+					</when>
+					<when test="sDate != null and eDate eq null">
+						AND R_FACE_REC_DATE &gt;= #{sDate}
+					</when>
+					<when test="sDate eq null and eDate != null">
+						AND R_FACE_REC_DATE &lt;= #{eDate}
+					</when>
+				</choose>
+				<choose>
+					<when test="sTime != null and eTime != null">
+					AND R_FACE_REC_TIME BETWEEN #{sTime} AND #{eTime}
+					</when>
+					<when test="sTime != null and eTime eq null">
+					AND R_FACE_REC_TIME &gt;= #{sTime}
+					</when>
+					<when test="sTime eq null and eTime != null">
+					AND R_FACE_REC_TIME &lt;= #{eTime}
+					</when>
+				</choose>
+				<if test = "faceRecFileName != null and faceRecFileName != ''">			
+					AND R_FACE_REC_FILE_NAME LIKE '%'||#{faceRecFileName}||'%'
+				</if>
+			</trim>
+		</where>
+		ORDER BY R_FACE_REC_DATE desc,R_FACE_REC_TIME desc
+	</select>
+	
+	<select id="selectFaceRecProductList" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecProductInfo" resultMap="ProductMap">
+		SELECT * 
+		  FROM rs_face_rec_product
+	</select>
+	
+	<select id="selectFaceRecScriptList" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecScriptInfo" resultMap="ScriptMap">
+		SELECT * 
+		  FROM rs_face_rec_script
+		<where>
+			<trim suffixOverrides="AND">
+				<if test = "searchData != null and searchData != ''">			
+					R_SCRIPT_NAME LIKE '%'||#{searchData}||'%'
+					OR R_SCRIPT LIKE '%'||#{searchData}||'%'
+				</if>
+				<if test = "scriptCode != null and scriptCode != ''">			
+					AND R_SCRIPT_CODE IN (#{scriptCode})
+				</if>
+				AND R_PRODUCT_TYPE = (SELECT r_product_type FROM rs_face_rec_product WHERE r_product_code = #{productCode})
+			</trim>
+		</where>
+		ORDER BY R_SCRIPT_NAME
+	</select>
+	
+	<insert id="insertFaceRecScriptInfo" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecScriptInfo">
+		INSERT INTO rs_face_rec_script (
+			<trim suffixOverrides=",">
+				r_script_code,
+				<if test = "scriptName != null and scriptName != ''"> 
+				r_script_name, 
+				</if>
+				<if test = "productCode != null and productCode != ''">
+				r_product_type, 
+				</if>
+				<if test = "scriptType != null and scriptType != ''">
+				r_script_type, 
+				</if>
+				<if test = "scriptOrder != null and scriptOrder != ''">
+				r_script_order, 
+				</if>
+				<if test = "scriptUpdateUser != null and scriptUpdateUser != ''">
+				r_script_update_user, 
+				</if>
+				<if test = "script != null and script != ''">
+				r_script, 
+				</if>
+				<if test = "scriptFilePath != null and scriptFilePath != ''">
+				r_script_file_path, 
+				</if>
+				<if test = "scriptDesc != null and scriptDesc != ''">
+				r_script_desc 
+				</if>
+			</trim>
+		)
+		VALUES (
+			<trim suffixOverrides=",">
+				#{scriptCode},
+				<if test = "scriptName != null and scriptName != ''">
+				#{scriptName},
+				</if>
+				<if test = "productCode != null and productCode != ''">
+				(SELECT r_product_type FROM rs_face_rec_product WHERE r_product_code = #{productCode}),
+				</if>
+				<if test = "scriptType != null and scriptType != ''">
+				#{scriptType},
+				</if>
+				<if test = "scriptOrder != null and scriptOrder != ''">
+				#{scriptOrder},
+				</if>
+				<if test = "scriptUpdateUser != null and scriptUpdateUser != ''">
+				#{scriptUpdateUser},
+				</if>
+				<if test = "script != null and script != ''">
+				#{script},
+				</if>
+				<if test = "scriptFilePath != null and scriptFilePath != ''">
+				#{scriptFilePath},
+				</if>
+				<if test = "scriptDesc != null and scriptDesc != ''">
+				#{scriptDesc}
+				</if>
+			</trim>
+		)
+	</insert>
+	
+	<update id="updateFaceRecScriptInfo" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecScriptInfo">
+		UPDATE rs_face_rec_script 
+		<set>
+			<trim suffixOverrides=",">
+				<if test = "scriptName != null and scriptName != ''"> 
+					r_script_name = #{scriptName}, 
+				</if>
+				<if test = "scriptType != null and scriptType != ''">
+					r_script_type = #{scriptType},
+				</if>
+				<if test = "scriptUpdateUser != null and scriptUpdateUser != ''">
+					r_script_update_user = #{scriptUpdateUser},
+				</if>
+				<if test = "script != null and script != ''">
+					r_script = #{script},
+				</if>
+				<if test = "scriptFilePath != null and scriptFilePath != ''">
+					r_script_file_path = #{scriptFilePath},
+				</if>
+				r_audio_file_path = #{audioFilePath},
+			</trim>
+		</set>
+		<where>
+			<if test = "scriptCode != null and scriptCode != ''">
+				r_script_code = #{scriptCode}
+			</if>
+		</where>
+	</update>
+	
+	<insert id="insertFaceRecInfo" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecordingInfo">
+		INSERT INTO rs_face_rec_info (
+			<trim suffixOverrides=",">
+				r_face_rec_key,
+				R_FACE_REC_FILE_NAME, 
+				<if test = "faceRecTtime != null and faceRecTtime != ''">
+				R_FACE_REC_TTIME, 
+				</if>
+				<if test = "userId != null and userId != ''">
+				R_USER_ID, 
+				</if>
+				<if test = "userName != null and userName != ''">
+				R_USER_NAME, 
+				</if>
+				<if test = "custId != null and custId != ''">
+				R_CUST_ID, 
+				</if>
+				<if test = "custName != null and custName != ''">
+				R_CUST_NAME, 
+				</if>
+				<if test = "custPhone != null and custPhone != ''">
+				R_CUST_PHONE,
+				</if>
+				<if test = "productCode != null and productCode != ''">
+				R_PRODUCT_CODE,
+				</if>
+				r_face_rec_file_path,
+			</trim>
+		)
+		VALUES (
+			<trim suffixOverrides=",">
+				#{faceRecKey},
+				(SELECT r_v_filename FROM rs_recfile ORDER BY r_rec_date desc, r_rec_time desc limit 1), 
+				<if test = "faceRecTtime != null and faceRecTtime != ''">
+				#{faceRecTtime},
+				</if>
+				<if test = "userId != null and userId != ''">
+				#{userId},
+				</if>
+				<if test = "userName != null and userName != ''">
+				#{userName},
+				</if>
+				<if test = "custId != null and custId != ''">
+				#{custId},
+				</if>
+				<if test = "custName != null and custName != ''">
+				#{custName},
+				</if>
+				<if test = "custPhone != null and custPhone != ''">
+				#{custPhone},
+				</if>
+				<if test = "productCode != null and productCode != ''">
+				#{productCode},
+				</if>
+				(SELECT r_v_rec_fullpath FROM rs_recfile ORDER BY r_rec_date desc, r_rec_time desc limit 1),
+			</trim>
+		)
+	</insert>
+	
+	
+	<insert id="insertFaceRecProductInfo" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecProductInfo">
+		INSERT INTO rs_face_rec_product (
+			<trim suffixOverrides=",">
+				r_product_code,
+				<if test = "productName != null and productName != ''"> 
+				r_product_name, 
+				</if>
+				<if test = "productType != null and productType != ''">
+				r_product_type, 
+				</if>
+				<if test = "productUpdateUser != null and productUpdateUser != ''">
+				r_product_update_user, 
+				</if>
+			</trim>
+		)
+		VALUES (
+			<trim suffixOverrides=",">
+				#{productCode},
+				<if test = "productName != null and productName != ''"> 
+				#{productName},
+				</if>
+				<if test = "productType != null and productType != ''">
+				#{productType},
+				</if>
+				<if test = "productUpdateUser != null and productUpdateUser != ''">
+				#{productUpdateUser},
+				</if>
+			</trim>
+		)
+	</insert>
+	
+	
+	<select id = "selectRsRecFileRecCallKey" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecordingInfo" resultMap="faceRecodingMap">
+		SELECT r_v_filename, r_call_key_ap FROM 
+		RS_RECFILE 
+		WHERE trim(r_call_key_ap) = trim(#{rRecKey})
+	</select>
+	
+	<!-- rs_retry_rec_history 기록 -->
+	<insert id="insertRetryRecReason" parameterType="com.furence.recsee.main.model.RetryRecInfo" databaseId="postgres">
+		INSERT INTO rs_retry_rec_history(
+		<trim suffixOverrides=",">
+			r_date,
+			r_time,
+			<if test="userId != null">r_user_id,</if>
+			<if test="callKeyAp != null">r_call_key_ap,</if>
+			<if test="retryReason != null">r_retry_reason,</if>
+			<if test="retryReasonDetail != null">r_retry_reason_detail,</if>
+		</trim>
+		)VALUES (
+		<trim suffixOverrides=",">
+			to_char(now(),'yyyymmdd'), 
+			to_char(now(), 'HH24MISS'),
+			<if test="userId != null">#{userId},</if>
+			<if test="callKeyAp != null">#{callKeyAp},</if> 
+			<if test="retryReason != null">#{retryReason},</if>
+			<if test="retryReasonDetail != null">#{retryReasonDetail},</if>
+		</trim> 
+		);
+	</insert>
+	
+	<!-- rs_retry_rec_history 기록 -->
+	<insert id="insertAllRetryRecReason" parameterType="com.furence.recsee.wooribank.facerecording.model.RequestRetryRecReason" databaseId="postgres">
+		<foreach index="index" item="item" collection="scriptCallKeyArr"
+		separator=";">
+		INSERT INTO rs_retry_rec_history(
+		<trim suffixOverrides=",">
+			r_date,
+			r_time,
+			<if test="userId != null">r_user_id,</if>
+			<if test="callKeyAp != null">r_call_key_ap,</if>
+			<if test="retryReason != null">r_retry_reason,</if>
+			<if test="retryReasonDetail != null">r_retry_reason_detail,</if>
+		</trim>
+		)VALUES(
+			<trim suffixOverrides=",">
+				to_char(now(),'yyyymmdd'), 
+				to_char(now(), 'HH24MISS'),
+				<if test="userId != null">#{userId},</if>
+				<if test="callKeyAp != null">#{item},</if> 
+				<if test="retryReason != null">#{retryReason},</if>
+				<if test="retryReasonDetail != null">#{retryReasonDetail},</if>
+			</trim>
+			) 
+		</foreach> 
+	</insert>
+	
+	<insert id="insertRecParam" parameterType="java.util.HashMap"  >
+        INSERT INTO public.rs_rec_param_history
+        (
+            r_rec_key,
+            r_rec_date,
+            r_rec_time,
+            r_rec_param
+        )
+        VALUES (
+        	#{callKey},
+        	to_char(now(),'YYYYMMDD'), 
+        	to_char(now(),'HH24MISS'), #{params}) on conflict(r_rec_key) DO NOTHING;
+	</insert>
+	
+	<select id="selectProductListFromGroupCode" resultMap="ProductList" parameterType="com.furence.recsee.scriptRegistration.model.ScriptHistoryCreateParam">
+		select	*
+		from	rs_product_list
+		where 
+				1 = 1
+				<if test="rProductType != null">
+				and rs_product_type = #{rProductType}
+				</if>
+				<if test="rProductCode != null">
+				and rs_product_code = #{rProductCode}
+				</if>
+				and rs_use_yn = 'Y'
+	</select>
+	
+	<select id="selectProductList" parameterType="com.furence.recsee.wooribank.facerecording.model.ProductListSearchVo" resultMap="ProductList">
+		SELECT	*,
+				case when rpl.rs_group_yn ='Y' and rpl.rs_group_code is not null then rpl.rs_product_list_pk
+				 	 when rpl.rs_group_yn ='N' then 0
+				end rs_group_pk
+		FROM	rs_product_list rpl
+		WHERE 	1=1
+		<if test="rSearchWord != null and rSearchWord != ''">
+<!-- 			<if test = "rSearchType == '1'"> -->
+			<if test = 'rSearchType.equals("1")'>
+				AND (UPPER(rs_product_code) LIKE '%'||UPPER(#{rSearchWord})||'%' or UPPER(rs_product_name) LIKE '%'||UPPER(#{rSearchWord})||'%') 
+			</if>
+<!-- 			<if test = "rSearchType == '2'"> -->
+			<if test = 'rSearchType.equals("2")'>
+				AND UPPER(rs_product_name) LIKE '%'||UPPER(#{rSearchWord})||'%'
+			</if>
+<!-- 			<if test = "rSearchType == '3'"> -->
+			<if test = 'rSearchType.equals("03")'>
+				AND UPPER(rs_product_code) in (select unnest( string_to_array(UPPER(#{rSearchWord}),'|') ))
+			</if>
+			<if test = 'rSearchType.equals("3")'>
+				AND UPPER(rs_product_code) LIKE '%'||UPPER(#{rSearchWord})||'%'
+			</if>
+		</if>
+		<if test="rProductType != null">
+				AND  rs_product_type = #{rProductType}	
+		</if>
+		<if test="rProductListPk != null">
+				AND rs_product_list_pk = #{rProductListPk}::integer
+		</if>	
+		<if test = 'rSearchType != "03"'>
+				AND rs_group_code IS NOT  NULL
+				AND rs_group_yn ='Y'
+		</if>
+		<if test="sysType != null">
+				AND rs_sysdis_type = #{sysType}
+		</if>
+		<if test="trFlag">
+				AND	rs_use_yn ='Y'
+		</if>
+		<if test="orderBy == null or direction == null">
+		ORDER BY rs_product_list_pk desc
+		</if>
+		<if test="orderBy != null and direction != null">
+		ORDER BY #{orderBy} #{direction}
+		</if>
+	</select>	
+	
+	<select id="selectProductListGroup" resultType="Integer" parameterType="com.furence.recsee.wooribank.facerecording.model.ProductListVo" >
+		select	rs_product_list_pk
+		from 	rs_product_list
+		where 	rs_product_code = (
+					select
+					case
+					when	rs_group_yn = 'Y' and rs_group_code is not null
+					then	rs_group_code
+					when	rs_group_yn = 'N' and rs_group_code is null
+					then	rs_product_code
+					end
+					from	rs_product_list
+					where	1 = 1 and
+							rs_use_yn = 'Y'
+				<choose>
+					<when test="rProductListPk != 0">
+							and rs_product_list_pk = #{rProductListPk}::integer 
+					</when>
+					<otherwise>
+							and rs_product_list_pk = NULL 
+					</otherwise>
+				</choose>
+							and rs_use_yn = 'Y'
+				)
+				and rs_use_yn ='Y'
+	<if test="rProductType != null">
+			and rs_product_type = #{rProductType}
+	</if>				
+	</select>
+	<select id="selectProductListGroupTrCase" resultType="Integer" parameterType="com.furence.recsee.wooribank.facerecording.model.ProductListVo" >
+		select	rs_product_list_pk
+		from 	rs_product_list
+		where 	rs_product_code = (
+					select
+					case
+					when	rs_group_yn = 'Y' and rs_group_code is not null
+					then	rs_group_code
+					when	rs_group_yn = 'N' and rs_group_code is null
+					then	rs_product_code
+					end
+					from	rs_product_list
+					where	1 = 1 
+				<choose>
+					<when test="rProductListPk != 0">
+							and rs_product_list_pk = #{rProductListPk}::integer 
+					</when>
+					<otherwise>
+							and rs_product_list_pk = NULL 
+					</otherwise>
+				</choose>
+				)
+	<if test="rProductType != null">
+			and rs_product_type = #{rProductType}
+	</if>				
+	</select>
+	
+	<select id= "selectCountScriptHistroy" parameterType="String" resultType="Integer">
+		SELECT	COUNT(*) 
+		FROM 	RS_SCRIPT_STEP_HISTORY
+		WHERE 	RS_SCRIPT_CALL_KEY = #{callKey}
+	</select>
+	
+	<select id="selectProductValue2" resultMap="ProductValue" parameterType="com.furence.recsee.wooribank.facerecording.model.ProductListSearchVo">
+		select	* 
+		from 	rs_product_value 
+		where	rs_product_code = #{rSearchWord} and
+				rs_product_type = #{rProductType} and
+				rs_sysdis_type =#{sysType}
+		union 
+			select	* 
+			from 	rs_product_value 
+			where 	rs_product_type = #{rProductType}
+			and rs_product_code like '%COMM%'
+		order by rs_product_value_pk asc;
+	</select>
+	<select id="checkCpClassFromProductCode" parameterType="com.furence.recsee.scriptRegistration.model.ScriptRegistrationInfo" resultType="int">
+		select	count(*)
+		from	rs_product_class_info			  
+		where	rs_product_code =  #{rSearchWord}
+				and rs_product_type=#{rProductType}
+	</select>
+	<insert id="insertScriptStepHistory" parameterType="com.furence.recsee.wooribank.facerecording.model.ProductListDto">
+		INSERT INTO	public.rs_script_step_history(
+					rs_script_step_pk, 
+					rs_script_step_fk,
+					rs_script_call_key, 
+					rs_script_step_parent, 
+					rs_script_step_name, 
+					rs_script_step_order, 
+					rs_script_step_type, rs_use_yn
+					)	
+		SELECT	rs_script_step_pk, 
+				rs_script_step_fk, 
+				#{callKey}, 
+				rs_script_step_parent, 
+				rs_script_step_name,
+				rs_script_step_order, 
+				rs_script_step_type,
+				<choose>
+					<when test="isKorean">
+						case when rs_script_step_parent !=0 and rs_script_step_order = 3 then 'N'
+							 else 'Y'
+					    end as rs_use_yn
+					</when>
+					<otherwise>
+						rs_use_yn  
+					</otherwise>
+				</choose> 
+		FROM	RS_SCRIPT_STEP
+		WHERE	RS_SCRIPT_STEP_FK = #{rProductGroupPk}::integer
+				AND RS_USE_YN = 'Y'
+	</insert>
+	
+	<select id="selectScriptDetailToHistory2" parameterType="com.furence.recsee.wooribank.facerecording.model.ProductListDto" resultMap="ScriptDetailVo" >
+		select	detail.rs_script_step_detail_pk,
+		 		case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_type 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )
+			 	else detail.rs_script_step_detail_type
+			 	end  as rs_script_step_detail_type, 
+				detail.rs_script_step_detail_common_kind,
+				detail.rs_script_step_fk, 
+				case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_text 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )		
+		 		else detail.rs_script_step_detail_text
+		 		end as rs_script_step_detail_text ,
+				detail.rs_script_step_detail_if_case, 
+				detail.rs_script_step_detail_if_case_detail, 
+				case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_realtime_tts 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )		
+				else detail.rs_script_step_detail_realtime_tts
+				end as rs_script_step_detail_realtime_tts ,
+				detail.rs_script_step_detail_create_date,
+				detail.rs_script_step_detail_create_user, 
+				detail.rs_script_step_detail_update_date,
+				detail.rs_script_step_detail_update_user, 
+				detail.rs_script_step_detail_confirm,
+				detail.rs_script_step_detail_confirm_date, 
+				detail.rs_script_step_detail_confirm_user,
+				detail.rs_script_step_detail_reserv_date, 
+				detail.rs_script_step_detail_order,
+		<choose>
+			<when test="rElfFlag">
+				case
+					when detail.rs_script_step_detail_elt_case = #{rEltCase}::char then 'Y'
+					when detail.rs_script_step_detail_elt_case is null then detail.rs_use_yn
+					when detail.rs_script_step_detail_elt_case::int > 6 then detail.rs_use_yn
+				else 'N'
+				end rs_use_yn,
+			</when>
+			<otherwise>
+				detail.rs_use_yn,
+			</otherwise>
+		</choose>
+				detail.rs_script_step_detail_common_fk,
+				#{callKey} as rs_script_call_key,
+				detail.rs_script_step_detail_elt_case ,
+				detail.rs_product_attributes , 
+				detail.rs_product_attributes_ext,
+				detail.rs_script_step_detail_case_attributes
+		from	rs_script_step_detail detail,
+			 	rs_script_step step,
+				rs_product_list prod
+		where	detail.rs_script_step_fk = step.rs_script_step_pk
+				and step.rs_script_step_fk = prod.rs_product_list_pk 
+				and step.rs_use_yn = detail.rs_use_yn
+				and prod.rs_product_list_pk =  #{rProductGroupPk}::INTEGER
+				and prod.rs_product_type = #{rProductType}
+				and ( 
+	 					(detail.rs_script_step_detail_if_case='N' or detail.rs_script_step_detail_if_case is null )
+ 					<if test="rScriptDetailList.size > 0">
+	 					or
+	 					(
+	 						detail.rs_script_step_detail_if_case='Y'
+	 						and 
+	 						detail.rs_script_step_detail_if_case_detail_code in (
+	 							select 	r_code_value 
+	 							from 	rs_common_code 
+	 							where 	r_parent_code like 'SCRT%' 
+	 									and r_code_name in
+	 									<foreach index="index" item="item" collection="rScriptDetailList" 
+				 								open="(" separator="," close=")">
+				 							#{item}
+				 						</foreach>
+	 						)
+	 						
+	 						
+	 					)
+ 					</if> 
+ 					<if test="cpClassFlag == 1">
+						or
+						(
+							detail.rs_script_step_detail_if_case='Y'
+							and detail.rs_script_step_detail_if_case_detail = #{rProductCode}
+		 				)
+ 					</if>
+ 					<if test="cpClassFlag == 0">
+						or
+						(
+							detail.rs_script_step_detail_if_case='Y'
+							and detail.rs_script_step_detail_if_case_detail = #{rProductCode}
+		 				)
+ 					</if>
+ 					<if test="rProductBojungCode != null">
+						or
+						(
+							detail.rs_script_step_detail_if_case='Y'
+							and detail.rs_script_step_detail_if_case_detail = #{rProductBojungCode}
+		 				)
+ 					</if>
+ 					
+ 				)
+				<if test="rScriptStepDetailCaseAttributes != null">
+				and   (
+						 (detail.rs_script_step_detail_case_attributes is  null) or
+						 (detail.rs_script_step_detail_case_attributes <![CDATA[<@]]> (#{rScriptStepDetailCaseAttributes}::jsonb || '{"isTextRed": true , "isFundDetail": true , "isFundRate":true}'::jsonb) ) or
+						 (detail.rs_script_step_detail_case_attributes::varchar like '%question%' )
+					  )
+				</if>
+ 				
+ 				and step.rs_use_yn ='Y'
+		order by
+				detail.rs_script_step_fk asc , detail.rs_script_step_detail_order asc;
+	</select>
+	
+	<select id="selectScriptDetailToHistory" parameterType="com.furence.recsee.scriptRegistration.model.ScriptRegistrationInfo" resultMap="ScriptDetail" >
+		select rs_script_step_detail_pk, rs_script_step_detail_type, 
+		rs_script_step_detail_common_kind,
+		 rs_script_step_fk, 
+		
+		case when rs_script_step_detail_common_kind='Y' then (select rs_script_common_text from rs_script_common where rs_script_common_pk =
+		 rs_script_step_detail_common_fk)		
+		 else rs_script_step_detail_text
+		 end as rs_script_step_detail_text ,
+		rs_script_step_detail_if_case, 
+		rs_script_step_detail_if_case_detail, 
+		
+		case when rs_script_step_detail_common_kind='Y' then (select rs_script_common_realtime_tts from rs_script_common where rs_script_common_pk =
+		 rs_script_step_detail_common_fk)		
+		 else rs_script_step_detail_realtime_tts
+		 end as rs_script_step_detail_realtime_tts ,
+		 
+		rs_script_step_detail_create_date, rs_script_step_detail_create_user, 
+		rs_script_step_detail_update_date, rs_script_step_detail_update_user, 
+		rs_script_step_detail_confirm, rs_script_step_detail_confirm_date, 
+		rs_script_step_detail_confirm_user, rs_script_step_detail_reserv_date, 
+		rs_script_step_detail_order, rs_use_yn, rs_script_step_detail_common_fk,
+		#{rScriptCallKey} as rs_script_call_key
+		from rs_script_step_detail
+		WHERE 
+		rs_script_step_detail_pk in												
+		(
+			select de.rs_script_step_detail_pk from rs_script_step_detail as de
+		LEFT join rs_script_step as step
+		on step.rs_script_step_pk = de.rs_script_step_fk
+		where step.rs_script_step_fk = #{rScriptStepFk} and step.rs_use_yn ='Y' and ((de.rs_script_step_detail_if_case='N') or (de.rs_script_step_detail_if_case is null)) 
+		or
+		rs_script_step_detail_pk in 
+		(select rs_script_step_detail_pk from rs_script_step_detail as de
+		LEFT join rs_script_step as step
+		on step.rs_script_step_pk = de.rs_script_step_fk
+		where step.rs_script_step_fk = #{rScriptStepFk} and step.rs_use_yn ='Y'
+		and de.rs_script_step_detail_if_case='Y'
+		
+		<choose>
+			<when test='cpClaseeYn != null'>
+					and de.rs_script_step_detail_if_case_detail = (select rs_product_code from rs_product_list where rs_product_list_pk = #{rProductListPk})
+			</when>
+			<otherwise>
+				<if test='rScriptDetailIfCase.equals("N")'>
+					and de.rs_script_step_detail_if_case_detail='법인'
+				</if>
+				<if test='rScriptDetailIfCase.equals("Y")'>
+					and de.rs_script_step_detail_if_case_detail='개인'
+				</if>
+				<if test='rProductGroupYn != null'>
+					or de.rs_script_step_detail_if_case_detail = (select rs_product_code from rs_product_list where rs_product_list_pk = #{rProductListPk})
+				</if>
+			</otherwise>		
+		</choose> 
+		<if test="cude != null">
+		union
+			select rs_script_step_detail_pk from rs_script_step_detail as de
+				LEFT join rs_script_step as step
+			 	on step.rs_script_step_pk = de.rs_script_step_fk		
+			 	where step.rs_script_step_fk = #{rScriptStepFk} and step.rs_use_yn ='Y'
+			 	and de.rs_script_step_detail_if_case='Y'
+			<if test='cude.equals("KRW")'>
+			 	and de.rs_script_step_detail_if_case_detail='KRW'		
+			</if>
+			<if test='cude.equals("USD")'>
+			 	and de.rs_script_step_detail_if_case_detail='USD'		
+			</if>
+		</if>
+		<if test="ad047 != null">
+		union
+			select rs_script_step_detail_pk from rs_script_step_detail as de
+				LEFT join rs_script_step as step
+			 	on step.rs_script_step_pk = de.rs_script_step_fk		
+			 	where step.rs_script_step_fk = #{rScriptStepFk} and step.rs_use_yn ='Y'
+			 	and de.rs_script_step_detail_if_case='Y'
+			<if test='ad047.equals("1")'>
+			 	and de.rs_script_step_detail_if_case_detail='초과'		
+			</if>
+			<if test='ad047.equals("0")'>
+			 	and de.rs_script_step_detail_if_case_detail='이내'	
+			</if>
+		</if>
+		)
+		)
+	</select>
+	
+	<insert id="insertScriptTTSHistory2" parameterType="com.furence.recsee.scriptRegistration.model.ScriptHistoryCreateParam">			
+		insert into public.rs_script_tts_history(
+				rs_script_tts_pk, 
+				rs_script_common_type, 
+				rs_script_step_detail_fk, 
+				rs_script_call_key, 
+				rs_script_tts_server_ip, 
+				rs_script_file_path, 
+				rs_script_tts_order, 
+				rs_script_tts_update_date, 
+				rs_use_yn
+		)
+		select	tts.rs_script_tts_pk, 
+				tts.rs_script_common_type, 
+				tts.rs_script_step_detail_fk, 
+				#{rScriptCallKey},
+				tts.rs_script_tts_server_ip, 
+		  		tts.rs_script_file_path,
+				tts.rs_script_tts_order, 
+				tts.rs_script_tts_update_date, 
+				tts.rs_use_yn
+		from 	rs_script_tts tts ,				
+				rs_script_step_detail step_detail,
+				rs_script_step step,
+				rs_product_list prod
+		where	tts.rs_script_step_detail_fk = step_detail.rs_script_step_detail_pk
+				and step_detail.rs_script_step_fk = step.rs_script_step_pk
+				and step.rs_script_step_fk = prod.rs_product_list_pk
+				and prod.rs_product_list_pk = #{rScriptStepFk}::INTEGER
+				and ( 
+	 					(step_detail.rs_script_step_detail_if_case='N' or step_detail.rs_script_step_detail_if_case is null ) 
+	 					or
+	 					(
+	 						step_detail.rs_script_step_detail_if_case='Y' and
+							step_detail.rs_script_step_detail_if_case_detail_code in (
+	 							select 	r_code_value 
+	 							from 	rs_common_code 
+	 							where 	r_parent_code like 'SCRT%' 
+	 									and r_code_name in
+	 									<foreach index="index" item="item" collection="rScriptDetailList" 
+				 								open="(" separator="," close=")">
+				 							#{item}
+				 						</foreach>
+	 						)
+	 					)
+					<if test="cpClassFlag == 1">
+						or
+						(
+							step_detail.rs_script_step_detail_if_case='Y'
+							and step_detail.rs_product_class = 'PRCL02'
+		 				)
+					</if>
+					<if test="cpClassFlag == 0">
+						or
+						(
+							step_detail.rs_script_step_detail_if_case='Y'
+							and step_detail.rs_script_step_detail_if_case_detail = #{rProductCode}
+		 				)
+ 					</if>
+	 				)
+				and	step.rs_use_yn='Y'
+	</insert>
+	
+	<insert id="insertScriptTTSHistory" parameterType="com.furence.recsee.scriptRegistration.model.ScriptRegistrationInfo">
+				
+		INSERT INTO	public.rs_script_tts_history(
+		rs_script_tts_pk, rs_script_common_type, 
+		rs_script_step_detail_fk, rs_script_call_key, 
+		rs_script_tts_server_ip, rs_script_file_path, 
+		rs_script_tts_order, rs_script_tts_update_date, rs_use_yn
+		 )
+		
+		select 
+		rs_script_tts_pk, rs_script_common_type, 
+		rs_script_step_detail_fk, #{rScriptCallKey},
+		rs_script_tts_server_ip, 
+  		rs_script_file_path,
+		rs_script_tts_order, rs_script_tts_update_date, rs_use_yn
+		from rs_script_tts 
+		where rs_script_step_detail_fk 
+		in(
+		 ( select rs_script_step_detail_pk from rs_script_step_detail WHERE ((rs_script_step_detail_if_case='N') or (rs_script_step_detail_if_case is null)) and
+		rs_script_step_fk 
+		in ( select rs_script_step_pk from rs_script_step where rs_script_step_fk = #{rScriptStepFk} and 
+		rs_script_step.rs_use_yn='Y')
+		 )
+		 union
+		 (select rs_script_step_detail_pk from rs_script_step_detail WHERE rs_script_step_detail_if_case='Y' 
+		<if test='rScriptDetailIfCase.equals("N")'>
+		 	and rs_script_step_detail_if_case_detail='법인'
+		 </if>
+		 <if test='rScriptDetailIfCase.equals("Y")'>
+		 	and rs_script_step_detail_if_case_detail='개인'
+		 </if>
+		 and rs_script_step_fk 
+		 in ( select rs_script_step_pk from rs_script_step where rs_script_step_fk = #{rScriptStepFk} and rs_script_step.rs_use_yn='Y')
+		 <if test='rProductGroupYn != null'>
+			or rs_script_step_detail_if_case_detail = (select rs_product_code from rs_product_list where rs_product_list_pk = #{rProductListPk})
+		 </if>
+		 )
+		 <if test="cude != null">
+		 union
+	 		 (select rs_script_step_detail_pk from rs_script_step_detail WHERE rs_script_step_detail_if_case='Y' 
+			<if test='cude.equals("KRW")'>
+			 	and rs_script_step_detail_if_case_detail='KRW'		
+			</if>
+			<if test='cude.equals("USD")'>
+			 	and rs_script_step_detail_if_case_detail='USD'		
+			</if>
+			 and rs_script_step_fk 
+			 in ( select rs_script_step_pk from rs_script_step where rs_script_step_fk = #{rScriptStepFk} and rs_script_step.rs_use_yn='Y')
+			 )
+		 </if>
+		 <if test="ad047 != null">
+		 union
+	 		 (select rs_script_step_detail_pk from rs_script_step_detail WHERE rs_script_step_detail_if_case='Y' 
+				<if test='ad047.equals("1")'>
+				 	and rs_script_step_detail_if_case_detail='초과'		
+				</if>
+				<if test='ad047.equals("0")'>
+				 	and rs_script_step_detail_if_case_detail='이내'	
+				</if>
+				 and rs_script_step_fk 
+				 in ( select rs_script_step_pk from rs_script_step where rs_script_step_fk = #{rScriptStepFk} and rs_script_step.rs_use_yn='Y')
+				 )
+		 </if>
+		)
+	</insert>
+	
+	<select id="selectProductListPkfromProductCode" resultMap="ProductList" parameterType="com.furence.recsee.wooribank.facerecording.model.ScriptRegistrationInfo">
+		select	* 
+		from	rs_product_list 
+		where	rs_product_code in (
+									select	case	when rs_group_yn = 'Y' and rs_group_code is not null
+											then	rs_group_code
+											when	rs_group_yn = 'N' 
+													and rs_group_code is null
+											then rs_product_code
+											end as pk
+									from	rs_product_list 
+									where 	rs_product_code = #{rProductCode} and
+											rs_product_type = #{rProductType} and
+											rs_use_yn ='Y'
+											
+								   )
+		   		and rs_use_yn ='Y'
+		   		and rs_product_type = #{rProductType}
+		   		<if test="rSysDisType != null">
+		   		and rs_sysdis_type = #{rSysDisType}
+		   		</if>
+
+	</select>
+	<select id="selectProductListPkfromProductCode2" resultMap="ProductList" parameterType="com.furence.recsee.scriptRegistration.model.ScriptRegistrationInfo">
+	                   select	rpl.*
+		from	rs_product_list rpl 
+		left
+		join	rs_script_step rss 
+		on		rss.rs_script_step_fk = case when rpl.rs_group_yn ='Y' and rpl.rs_group_code is not null
+		  								 then (select	rs_product_list_pk 
+		  								 	   from		rs_product_list rpl2 
+		  								 	   where	rpl2.rs_product_code = rpl.rs_group_code and
+		  								 	   			rpl.rs_product_type=rpl2.rs_product_type)
+		  								 when rpl.rs_group_yn ='N'
+		  								 then (select	rs_product_list_pk 
+		  								 	   from		rs_product_list rpl2 
+		  								 	   where	rpl2.rs_product_code = rpl.rs_product_code and
+		  								 	   			rpl.rs_product_type=rpl2.rs_product_type)
+		  								 end
+	where	rpl.rs_product_code in (select	unnest( string_to_array(#{rProductCode},'|') )) and
+			rpl.rs_product_type = #{rProductType} and
+			rss.rs_script_step_pk = #{rScriptStepFk};
+	</select>
+	
+	<select id ="scriptDetailHistoryList" parameterType="com.furence.recsee.scriptRegistration.model.ScriptRegistrationInfo" resultMap="ScriptDetail">
+		SELECT	
+			<if test="!rectryFlag">
+				b.RS_SCRIPT_FILE_PATH,
+				b.RS_SCRIPT_TTS_SERVER_IP,
+			</if>
+				rs_script_step_detail_pk, 
+				rs_script_step_detail_type,
+				rs_script_step_detail_common_kind,
+				rs_script_step_detail_common_fk,
+				rs_script_tts_file_name, 
+				rs_script_tts_file_path,
+				rs_script_step_detail_history.rs_script_step_detail_text,
+				rs_script_step_detail_history.rs_script_step_detail_if_case,
+		 		rs_script_step_detail_history.rs_script_step_detail_if_case_detail,
+		 		rs_script_step_detail_history.rs_product_attributes_ext,
+		 		rs_script_step_detail_history.rs_script_step_detail_elt_case,
+		 		rs_script_step_detail_history.rs_script_step_detail_case_attributes,
+		 		<choose>
+		 			<when test="rectryFlag">
+		 				'Y' as rs_script_step_detail_realtime_tts
+		 			</when>
+		 			<otherwise>
+				 		rs_script_step_detail_history.rs_script_step_detail_realtime_tts
+		 			</otherwise>
+		 		</choose>
+		FROM	rs_script_step_detail_history 
+	<if test="!rectryFlag">
+		LEFT JOIN 
+				(
+					select	tts.rs_script_step_detail_fk,
+							tts.RS_SCRIPT_TTS_SERVER_IP,ARRAY_TO_STRING(ARRAY_AGG(RS_SCRIPT_FILE_PATH order by rs_script_tts_order),',')::TEXT AS RS_SCRIPT_FILE_PATH ,
+							tts.rs_use_yn 
+					from 	rs_script_tts tts,
+							rs_script_step_detail de,
+							rs_script_step step
+					where	tts.rs_script_step_detail_fk = de.rs_script_step_detail_pk and
+							de.rs_script_step_fk = step.rs_script_step_pk and
+							step.rs_script_step_pk =#{rScriptStepFk}::integer
+					GROUP BY 
+							tts.rs_script_step_detail_fk,tts.RS_SCRIPT_TTS_SERVER_IP, tts.rs_use_yn
+				) B
+		ON 		rs_script_step_detail_history.rs_script_step_detail_pk = B.rs_script_step_detail_fk
+				AND rs_script_step_detail_history.rs_use_yn= B.rs_use_yn
+	</if>
+		WHERE	rs_script_step_fk = #{rScriptStepFk}::integer
+				AND rs_script_step_detail_history.rs_use_yn='Y'
+				AND rs_script_call_key = #{rScriptCallKey}
+		ORDER BY	rs_script_step_detail_order
+	</select>
+	
+	<update id="updateScriptStepHistory" parameterType="com.furence.recsee.scriptRegistration.model.ScriptRegistrationInfo">
+		update rs_script_step_history
+		<choose>
+			<!-- 스크립트 콜키를 받았으면 해당 그룹키의 녹취키 초기화 -->
+			<when test = 'clearRecYn != null and clearRecYn == "Y"'>
+				set rs_script_ta_state = 'F' , rs_script_rec_state = 'N', rs_script_step_call_key = ''
+				where rs_script_call_key = #{rScriptCallKey}
+			</when>
+			<!-- 스크립트 콜키를 아니면 녹취키 별 처리-->
+			<when test = "clearRecYn == null">
+				set
+				<choose>
+					<when test = "rScriptCallKey != null and rScriptRecState != null">
+						rs_script_rec_state = #{rScriptRecState}, rs_script_step_call_key = #{rSccriptStepCallKey}
+					</when>
+					<when test = "rScriptCallKey != null and rScriptRecState != null">
+						rs_script_rec_state = #{rScriptRecState}, rs_script_step_call_key = #{rSccriptStepCallKey}
+					</when>
+					<when test = "rScriptCallKey == null and rScriptRecState != null">
+						rs_script_rec_state = #{rScriptRecState}
+					</when>
+					<when test = "rScriptCallKey != null and rScriptRecState == null">
+						rs_script_step_call_key = #{rSccriptStepCallKey}
+					</when> 
+				</choose>
+				where rs_script_step_pk = #{rScriptStepPk}::integer and rs_script_call_key = #{rScriptCallKey}
+			</when>
+		</choose>
+	</update>
+	
+	<select id="selectScriptStepHistoryTree" parameterType="com.furence.recsee.scriptRegistration.model.ScriptRegistrationInfo" resultMap="ScriptTreeMap">
+		WITH RECURSIVE script_tree as (
+        select    1 as t_depth, 
+                                rs_script_step_pk as t_key,
+                                rs_script_step_name as t_name, 
+                                case when length(rs_script_step_order::text)=1 then '0'||rs_script_step_order::text else 
+								rs_script_step_order::text end as t_order,
+                                rs_script_rec_state,
+							    rs_script_ta_state,
+							    rs_script_step_call_key,
+							    rs_ta_reason
+           from rs_script_step_history 
+           where	1=1
+                     and rs_use_yn='Y'
+                     and rs_script_step_parent = 0
+                     and rs_script_call_key =  #{rScriptCallKey}
+           union all
+           select a.t_depth+1,  b.rs_script_step_pk, b.rs_script_step_name, 
+           a.t_order||','||b.rs_script_step_order::text,
+           b.rs_script_rec_state,
+		   b.rs_script_ta_state,
+		   b.rs_script_step_call_key,
+		   b.rs_ta_reason 
+           from script_tree a, rs_script_step_history b
+           where a.t_key =b.rs_script_step_parent
+                     and rs_use_yn='Y'
+                     and b.rs_script_call_key =  #{rScriptCallKey}
+			)
+
+			select	*,
+					(select count(*) from rs_script_step rss where rss.rs_script_step_pk = tree.t_key) as more_product_type,
+							
+			case when (select count(*) from rs_script_step rss where rss.rs_script_step_pk = tree.t_key) = 0 
+					then 0
+				 when (select count(*) from rs_script_step rss where rss.rs_script_step_pk = tree.t_key) > 0 
+		 			then (
+		 					select	vpl.rs_script_step_fk
+		 					from	vw_product_list vpl 
+		 					where	vpl.rs_product_list_pk = (
+		 														select	rs_script_step_fk 
+		 														from 	rs_script_step_history rssh 
+		 														where 	rssh.rs_script_step_pk = tree.t_key 
+		 																and rssh.rs_script_call_key= #{rScriptCallKey}
+															 )
+						 )
+			end productListPk,
+			rs_ta_reason
+			from script_tree as tree
+
+			order by t_order	
+	</select>
+	<insert id="insertScriptDetailHistory" parameterType="com.furence.recsee.wooribank.facerecording.model.ScriptStepDetailVo">
+		INSERT INTO	public.rs_script_step_detail_history
+				(
+					rs_script_step_detail_pk, 
+					rs_script_step_detail_type, 
+					rs_script_step_detail_common_kind, 
+					rs_script_step_fk, 
+					rs_script_step_detail_text, 
+					rs_script_step_detail_if_case, 
+					rs_script_step_detail_if_case_detail, 
+					rs_script_step_detail_realtime_tts, 
+					rs_script_step_detail_create_date, 
+					rs_script_step_detail_create_user, 
+					rs_script_step_detail_update_date,
+					rs_script_step_detail_update_user, 
+					rs_script_step_detail_confirm, 
+					rs_script_step_detail_confirm_date, 
+					rs_script_step_detail_confirm_user,
+					rs_script_step_detail_reserv_date, 
+					rs_script_step_detail_order, 
+					rs_use_yn, 
+					rs_script_step_detail_common_fk,
+					rs_script_call_key,
+					rs_product_attributes,
+					rs_product_attributes_ext,
+					rs_script_step_detail_elt_case,
+					rs_script_step_detail_case_attributes
+				)
+
+		values
+				(
+					 #{rScriptDetailPk},
+					 #{rScriptDetailType},
+					 #{rScriptDetailComKind},
+					 #{rScriptStepFk}::INTEGER,
+					 #{rScriptDetailText},
+					 #{rScriptDetailIfCase},
+					 #{rScriptDetailIfCaseDetail},
+					 #{rScriptDetailRealtimeTTS},
+					 #{rScriptDetailCreateDate}::TIMESTAMP,
+					 #{rScriptDetailCreateUser},
+					 #{rScriptDetailUdateDate}::TIMESTAMP,
+					 #{rScriptDetailUpdateUser},
+					 #{rScriptDetailConfirm},
+					 #{rScriptDetailConfirmDate}::TIMESTAMP,
+					 #{rScriptDetailConfirmUser},
+					 #{rScriptDetailReservDate}::TIMESTAMP,
+					 #{rScriptDetailConfirmOrder}::INTEGER,
+					 #{rUseYn},
+					 #{rScriptDetailConfirmComFk}::INTEGER,
+					 #{rScriptCallKey},
+					 #{rProductAttributes}::jsonb,
+					 #{rProductAttributesExt}::jsonb,
+					 #{rScriptDetailEltCase},
+					 #{rScriptStepDetailCaseAttributes}::jsonb
+				)
+	</insert>
+	
+	<select id="selectBkDetailScript" parameterType="com.furence.recsee.wooribank.facerecording.model.BkScriptParamVo" resultMap="BkDetail">
+			select 	* 
+			from	rs_product_fund_detail fd,
+					rs_product_insurance_info ini
+			where 			fd.rs_product_fund_b_code = ini.rs_product_insurance_code 
+					and		fd.rs_product_fund_b_code = #{afcoCdNo}
+					and 	fd.rs_product_code = #{prdCdNo} 
+					and 	fd.rs_product_fund_detail_code in ( select	unnest( string_to_array(#{fndCdList},'|') ) )
+	</select>
+	
+	<select id="selectMoreProductStep" parameterType="com.furence.recsee.wooribank.facerecording.model.FaceRecMoreProductCodeDto" resultMap="scriptStepDto">
+		with recursive tree as (
+						select 
+							1 as depth,
+							(t.rs_script_step_order)::text  as t_order,
+							t.rs_product_list_pk ,
+							t.rs_product_name,
+							t.rs_product_code ,
+							t.rs_script_step_pk as t_key,
+							t.rs_Script_step_name,
+							t.rs_Script_step_parent,
+							#{callKey} as callKey
+						 from 	
+						 		(	select 
+										b.rs_product_list_pk ,
+										b.rs_product_name,
+										b.rs_product_code ,
+										c.rs_script_step_pk,			
+										c.rs_script_step_parent,
+										c.rs_script_step_order,
+										c.rs_script_step_name,
+										d.rs_script_step_Detail_pk,
+										d.rs_script_step_detail_type::varchar,
+										d.rs_script_step_detail_common_kind::varchar,
+										case when d.rs_script_step_detail_common_kind = 'Y' then e.rs_script_common_text else d.rs_script_step_detail_text end ,
+										d.rs_script_step_detail_order
+									from 	
+										(select unnest(string_to_array(#{prdCd},'|')) as rs_product_code) a
+										join vw_product_list b on a.rs_product_code = b.rs_product_code 
+										join rs_script_Step c on b.rs_script_step_fk = c.rs_script_step_fk
+										left outer join rs_script_step_detail d on c.rs_script_step_pk = d.rs_script_step_fk
+										left outer join rs_script_common e on d.rs_script_step_detail_common_fk = e.rs_script_common_pk
+										) t
+						 where rs_Script_step_parent = 0
+						union
+						select 
+							b.depth+1 ,
+							concat(b.t_order,',',(a.rs_script_step_order)::text)::text,
+							a.rs_product_list_pk ,
+							a.rs_product_name,
+							a.rs_product_code ,
+							a.rs_script_step_pk,
+							a.rs_Script_step_name,
+							a.rs_Script_step_parent,
+							#{callKey}  as callKey
+						 from 	
+							 (	select 
+										b.rs_product_list_pk ,
+										b.rs_product_name,
+										b.rs_product_code ,
+										c.rs_script_step_pk,			
+										c.rs_script_step_parent,
+										c.rs_script_step_order,
+										c.rs_script_step_name,
+										d.rs_script_step_Detail_pk,
+										d.rs_script_step_detail_type::varchar,
+										d.rs_script_step_detail_common_kind::varchar,
+										case when d.rs_script_step_detail_common_kind = 'Y' then e.rs_script_common_text else d.rs_script_step_detail_text end ,
+										d.rs_script_step_detail_order
+									from
+										(select unnest(string_to_array(#{prdCd},'|')) as rs_product_code) a
+										join vw_product_list b on a.rs_product_code = b.rs_product_code 
+										join rs_script_Step c on b.rs_script_step_fk = c.rs_script_step_fk
+										left outer join rs_script_step_detail d on c.rs_script_step_pk = d.rs_script_step_fk
+										left outer join rs_script_common e on d.rs_script_step_detail_common_fk = e.rs_script_common_pk
+										) a,
+							 tree b
+						 where
+							a.rs_product_list_pk = b.rs_product_list_pk and 
+							a.rs_script_step_parent   = b.t_key  
+					)
+					select * from
+					tree
+					order by rs_product_list_pk ,
+					rs_product_name,
+					rs_product_code ,
+					t_order ,	
+					t_key ,
+					rs_Script_step_name
+	
+	</select>
+	<insert id="insertMordeProductStep" parameterType="java.util.List">
+	
+		<foreach collection="list" item="item" close=";" separator=";">
+		INSERT INTO	rs_script_step_history
+			(
+				rs_script_step_pk,
+				rs_script_step_fk,
+				rs_script_call_key,
+				rs_script_step_parent,
+				rs_script_step_name,
+				rs_script_step_order,
+				rs_script_step_type,
+				rs_use_yn
+			)
+		values
+			(
+				<choose>
+					<when test="item.tKey == 1 ">
+						(select (999999+max(rs_script_step_pk)+1) from rs_script_step_history),
+					</when>
+					<otherwise>
+						#{item.tKey},
+					</otherwise>
+				</choose>
+				#{item.rProductListPk},
+				#{item.callKey},
+				<choose>
+					<when test="item.tKey == 1 and item.rScriptStepParent == 1">
+						0,
+					</when>
+					<when test = "item.rScriptStepParent == 1">
+						(select max(rs_script_step_pk) from rs_script_step_history),
+					</when>
+					<otherwise>
+						#{item.rScriptStepParent},
+					</otherwise>
+				</choose>
+				#{item.rScriptStepName},
+				case
+				when array_length(string_to_array(#{item.tOrder},','),1) > 1
+				then split_part(#{item.tOrder},',',2) :: int
+				else #{item.tOrder} :: int
+				end,
+				'T',
+				'Y'
+			)
+		</foreach>
+	</insert>
+	<select id="selectBkProductValueList" parameterType="HashMap" resultMap= "ProductValue">
+		select	*
+		from	rs_product_value
+		where	rs_product_type = #{BIZ_DIS} and
+				rs_product_code like '%COMM%'
+	</select>
+	<select id="selectScriptStepHistoryWhereRedTextStep" parameterType="String" resultMap = "scriptStep">
+				select	*
+		from	rs_script_step_history rssh 
+		where	rssh.rs_script_call_key =#{callKey} and
+		(
+			replace(rssh.rs_script_step_name,' ','') like '%수수료%' or
+			replace(rssh.rs_script_step_name,' ','') like '%보수%'	or
+			replace(rssh.rs_script_step_name,' ','') like '%환매%'
+			
+			)
+		and rs_script_step_order = 1
+		order by rssh.rs_script_step_order asc
+		limit 1
+	</select>
+	
+	<select id="selectOfferDetailScript" parameterType="HashMap" resultMap= "productOfferScriptDetail">
+		select	*
+		from	rs_product_character_detail de,
+				rs_product_insurance_info ini
+		where   de.rs_product_sub_code = ini.rs_product_insurance_code and	
+				rs_product_type = #{type}::varchar and
+				rs_product_code in 
+						<foreach index="index" item="item" collection="codeList" 
+							open="(" separator="," close=")">
+								#{item}
+						</foreach>
+				and rs_product_sub_code in
+						<foreach index="index" item="item" collection="subCodeList" 
+							open="(" separator="," close=")">
+								#{item}
+						</foreach>
+	</select>
+	<delete id="deleteScriptStepHistoryFromCallKey" parameterType="String">
+		delete
+		from	rs_script_step_history
+		where	rs_script_call_key = #{callKey}
+	</delete>
+	
+		<select id="selectEltScriptDetailToHistory" parameterType="com.furence.recsee.wooribank.facerecording.model.ProductListDto" resultMap="ScriptDetailVo" >
+			select	detail.rs_script_step_detail_pk,
+		 		case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_type 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )
+			 	else detail.rs_script_step_detail_type
+			 	end  as rs_script_step_detail_type, 
+				detail.rs_script_step_detail_common_kind,
+				detail.rs_script_step_fk, 
+				case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_text 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )		
+		 		else detail.rs_script_step_detail_text
+		 		end as rs_script_step_detail_text ,
+				detail.rs_script_step_detail_if_case, 
+				detail.rs_script_step_detail_if_case_detail, 
+				case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_realtime_tts 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )		
+				else detail.rs_script_step_detail_realtime_tts
+				end as rs_script_step_detail_realtime_tts ,
+				detail.rs_script_step_detail_create_date,
+				detail.rs_script_step_detail_create_user, 
+				detail.rs_script_step_detail_update_date,
+				detail.rs_script_step_detail_update_user, 
+				detail.rs_script_step_detail_confirm,
+				detail.rs_script_step_detail_confirm_date, 
+				detail.rs_script_step_detail_confirm_user,
+				detail.rs_script_step_detail_reserv_date, 
+				detail.rs_script_step_detail_order,
+				detail.rs_use_yn,
+				detail.rs_script_step_detail_common_fk,
+				#{callKey} as rs_script_call_key ,
+				detail.rs_script_step_detail_elt_case ,
+				detail.rs_product_attributes , 
+				detail.rs_product_attributes_ext,
+				detail.rs_script_step_detail_case_attributes
+		from	rs_script_step_detail detail,
+			 	rs_script_step step,
+				rs_product_list prod
+		where	detail.rs_script_step_fk = step.rs_script_step_pk
+				and step.rs_script_step_fk = prod.rs_product_list_pk 
+				and prod.rs_product_list_pk =  #{rProductGroupPk}::INTEGER
+				and prod.rs_product_type = #{rProductType}
+				and detail.rs_product_attributes  <![CDATA[<@]]> #{rProductAttributes}::jsonb
+				and detail.rs_product_attributes_ext is null
+ 				and step.rs_use_yn ='Y'
+		union
+				select	detail.rs_script_step_detail_pk,
+		 		case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_type 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )
+			 	else detail.rs_script_step_detail_type
+			 	end  as rs_script_step_detail_type, 
+				detail.rs_script_step_detail_common_kind,
+				detail.rs_script_step_fk, 
+				case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_text 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )		
+		 		else detail.rs_script_step_detail_text
+		 		end as rs_script_step_detail_text ,
+				detail.rs_script_step_detail_if_case, 
+				detail.rs_script_step_detail_if_case_detail, 
+				case when detail.rs_script_step_detail_common_kind='Y' 
+				then (
+						select rs_script_common_realtime_tts 
+						from rs_script_common 
+						where rs_script_common_pk = detail.rs_script_step_detail_common_fk
+					 )		
+				else detail.rs_script_step_detail_realtime_tts
+				end as rs_script_step_detail_realtime_tts ,
+				detail.rs_script_step_detail_create_date,
+				detail.rs_script_step_detail_create_user, 
+				detail.rs_script_step_detail_update_date,
+				detail.rs_script_step_detail_update_user, 
+				detail.rs_script_step_detail_confirm,
+				detail.rs_script_step_detail_confirm_date, 
+				detail.rs_script_step_detail_confirm_user,
+				detail.rs_script_step_detail_reserv_date, 
+				detail.rs_script_step_detail_order,
+				detail.rs_use_yn,
+				detail.rs_script_step_detail_common_fk,
+				#{callKey} as rs_script_call_key , 
+				detail.rs_script_step_detail_elt_case ,
+				detail.rs_product_attributes , 
+				detail.rs_product_attributes_ext,
+				detail.rs_script_step_detail_case_attributes
+				from	rs_script_step_detail detail,
+			 			rs_script_step step,
+						rs_product_list prod
+				where	detail.rs_script_step_fk = step.rs_script_step_pk
+						and step.rs_script_step_fk = prod.rs_product_list_pk 
+						and prod.rs_product_list_pk =  #{rProductGroupPk}::INTEGER
+						and prod.rs_product_type = #{rProductType}
+						and detail.rs_product_attributes  <![CDATA[<@]]> '{"isRealtime":true , "isDefault":true ,
+						<choose>
+							<when test="rSysdisType == 'TISA'">
+								"isIsa":true
+							</when>
+							<otherwise>
+								"isIsa":false
+							</otherwise>
+						</choose>
+						}'::jsonb
+						and rs_product_attributes_ext <![CDATA[<@]]> #{rProductAttributesExt}::jsonb
+ 						and step.rs_use_yn ='Y'
+		order by
+				rs_script_step_fk asc , rs_script_step_detail_order asc;
+		</select>
+		
+		<select id="selectScriptStepElt" parameterType= "com.furence.recsee.wooribank.facerecording.model.ProductListDto" resultMap="scriptStep">
+			select	rss.rs_script_step_pk, 
+					rss.rs_script_step_fk,
+					rss.rs_script_step_parent, 
+					rss.rs_script_step_name, 
+					rss.rs_script_step_order, 
+					rss.rs_script_step_type,
+					rss.rs_use_yn
+			from	rs_script_step	rss
+			WHERE	rss.rs_script_step_fk = #{rProductGroupPk}::integer
+					and rs_use_yn = 'Y'
+		</select>	
+		
+		<insert id="insertScriptStepHistoryElt" parameterType ="com.furence.recsee.wooribank.facerecording.model.ScriptStepListAndCallKey">
+			 insert into rs_script_step_history (
+					rs_script_step_pk,
+					rs_script_step_fk,
+					rs_script_call_key,
+					rs_script_step_parent,
+					rs_script_step_name,
+					rs_script_step_order,
+					rs_script_step_type,
+					rs_use_yn
+			) values 
+			<foreach collection="stepList" item="rss" separator=",">
+					(
+					#{rss.rScriptStepPk},
+					#{rss.rScriptStepFk},
+					#{callKey},
+					#{rss.rScriptStepParent},
+					#{rss.rScriptStepName},
+					#{rss.rScriptStepOrder},
+					#{rss.rScriptStepType},
+					#{rss.rUseYn}
+					)				
+			</foreach>
+		</insert>
+		<update id="updateRecParamHistoryAllRecData" parameterType="HashMap">
+			update	rs_rec_param_history
+			set		r_rec_retry_json = #{jsonData}::jsonb
+			where	r_rec_key = #{callKey}
+		</update>
+		<select id="grepRecParamHistory" parameterType="HashMap" resultMap="recHistoryParam">
+			select	*
+			from	rs_rec_param_history
+			where	r_rec_key = #{callKey}
+		</select>
+		<select id="selectSavedRetryReson" parameterType="com.furence.recsee.wooribank.facerecording.model.RequestRetryRecReason" resultMap="RetryRecReason">
+			select	*
+			from	rs_retry_rec_history
+			where	1 = 1 and
+					r_call_key_ap in 
+							<foreach index="index" item="item" collection="scriptCallKeyArr" open="(" separator="," close=")">
+								#{item}
+							</foreach>
+		</select>
+		<update id="clearRectryReasonToRecParamHistory" parameterType="String">
+			update	rs_rec_param_history
+			set		r_rec_retry_json = null
+			where	r_rec_key = #{callKey}
+		</update>
+		<select id="selectParamHistoryFromCallKey" resultMap="recHistoryParam" parameterType="String">
+			select	*
+			from	rs_rec_param_history
+			where	r_rec_key = #{callKey}
+		</select>
+		<select id="selectScriptStepMoreProductPk" parameterType="java.util.List" resultType="int">
+			select	rs_script_step_pk  
+			from	rs_script_step rss 
+			where 	exists (
+							select	1 
+							from	rs_script_step_history rssh 
+							where	rssh.rs_script_step_pk  = rss.rs_script_step_pk and
+									rssh.rs_script_step_pk in (
+									<foreach index="index" item="item" collection="list" separator=",">
+										#{item}::int
+									</foreach>
+									)
+							)
+		</select>
+		
+		<update id="clearStepRec" parameterType="String">
+			update	rs_script_step_history
+			set		rs_script_ta_state = 'F'
+			where	rs_script_call_key = #{callKey}
+		</update>
+		
+		<select id="getDeptData" parameterType="String" resultType="com.furence.recsee.wooribank.facerecording.model.RuserCode">
+				select
+						rri.r_user_id as rUserId ,
+						rri.r_bg_code as rBgCode ,
+						rri.r_mg_code as rMgCode ,
+						rri.r_sg_code as rSgCode ,
+						coalesce ((select rbi2.r_bg_name from rs_bg_info rbi2 where rbi2.r_bg_code = rri.r_bg_code limit 1),'') as rBgName ,
+						coalesce ((select rmi2.r_mg_name from rs_mg_info rmi2 where rmi2.r_bg_code  = rri.r_bg_code and rmi2.r_mg_code = rri.r_mg_code limit 1),'') as rMgName ,
+						coalesce ((select rsi2.r_sg_name from rs_sg_info rsi2 where rsi2.r_bg_code = rri.r_bg_code and rsi2.r_mg_code = rri.r_mg_code and rsi2.r_sg_code = rri.r_sg_code limit 1),'') as rSgName
+				from
+						rs_ruser_info rri
+				where
+						rri.r_user_id = #{oprNo}
+		</select>
+		<update id="updateStepSizeZeroUseYn" parameterType = "String">
+update rs_script_step_history 
+			set rs_use_yn  = 'N'
+			where	(rs_script_step_pk,rs_script_call_key )in (
+										(select	
+												case when (select count(*) from rs_script_step where rs_script_step_pk = rssh.rs_script_step_parent ) > 0 then rssh.rs_script_step_pk 
+													 when (select count(*) from rs_script_step where rs_script_step_pk = rssh.rs_script_step_parent ) = 0 then 0
+												end,
+												rssh.rs_script_call_key
+										from	rs_script_step_history rssh 
+										where	rssh.rs_script_step_pk in (select	
+																				case when (select count(*) from rs_script_step_detail_history where rs_script_step_fk = rs_script_step_pk and rs_script_call_key = #{callKey}) > 0  then 0 
+																					 when (select count(*) from rs_script_step_detail_history where rs_script_step_fk = rs_script_step_pk and rs_script_call_key = #{callKey}) = 0   then rs_script_step_pk
+										   										end
+																		  from	rs_script_step_history rssh 
+																		  where rssh.rs_script_call_key  = #{callKey} and 
+																		  		rs_script_step_parent != '0')
+										and rssh.rs_script_call_key  = #{callKey})
+										)
+		</update>
+</mapper>

@@ -1,0 +1,160 @@
+*{margin: 0px; padding: 0px;}
+body, html{
+    background-color: #f1f1f1;
+    width: auto;
+    height: auto;
+}
+.pwPolicyWrap{
+    position: relative;
+    width: 1000px;
+    height: 100%;
+    background-color: #ffffff;
+    color: #333333;
+    margin: 0 auto;
+}
+.pw_policy_tit{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 0;
+}
+.pw_policy_tit .site_logo{
+    float: left;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    margin-right: 10px;
+    background-image: url(../../images/project/pwchange/recsee_bi_blue.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.pw_policy_tit p{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    color: #444444;
+}
+.pw_policy_txt{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+    height: auto;
+}
+.pw_policy_txt p{
+    float: left;
+    clear: both;
+    font-size: 14px;
+    height: auto;
+    line-height: 26px;
+    padding: 20px 0;
+}
+.pw_policy_change{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 960px;
+    background-color: #ffffff;
+    border: 2px solid #dddddd;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+.pw_policy_change .pw_policy_form{
+    position: relative;
+    float: left;
+    clear: both;
+    width: 100%;
+    font-size: 14px;
+    padding: 20px 0;
+    border-bottom: 1px solid #dddddd;
+}
+.pw_policy_change .pw_policy_form form{
+    border: 0px;
+    float: left;
+    clear: both;
+}
+.pw_policy_change .pw_policy_form label{
+    float: left;
+    clear: both;
+    width: 150px;
+    margin: 5px 0;
+    padding: 5px 0;
+    padding-left: 10px;
+    background-image: url(../../images/project/pwchange/ui_label_dot.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.pw_policy_change .pw_policy_form input{
+    float: left;
+    width: 250px;
+    margin: 5px 0;
+    padding: 5px;
+    border: 1px solid #bbbbbb;
+}
+.pw_policy_change .pw_policy_form p{
+    float: left;
+    clear: both;
+    font-size: 12px;
+    color: #555555;
+    margin-left: 160px;
+    padding-left: 15px;
+    background-image: url(../../images/project/pwchange/ui_label_check_gray.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.pw_policy_change .pw_policy_info{
+    position: relative;
+    float: left;
+    clear: both;
+    font-size: 12px;
+    margin-top: 20px;
+}
+.pw_policy_change .pw_policy_info p{
+    padding: 8px 0;
+    padding-left: 20px;
+    background-image: url(../../images/project/pwchange/ui_label_check_gray.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.pw_policy_button{
+    float: left;
+    clear: both;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+.pw_policy_button button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid;
+    transition: all ease 0.4s;
+    cursor: pointer;
+}
+.pw_policy_button button.button_pw_change{
+    background-color: #60b3dc;
+    border-color: #60b3dc;
+    color: #ffffff;
+    padding-left: 30px;
+    background-image: url(../../images/project/pwchange/btn_icon_check_white.png);
+    background-repeat: no-repeat;
+    background-position: 5px center;
+}
+.pw_policy_button button.button_pw_change:hover{
+    background-color: #2b94c8;
+}
+.pw_policy_button button.button_next{
+    background-color: #f1f1f1;
+    border-color: #dddddd
+}
+.pw_policy_button button.button_next:hover{
+    background-color: #e1e1e1;
+}
+.ui_txt_emphasis{
+    color: #2b94c8 !important;
+}

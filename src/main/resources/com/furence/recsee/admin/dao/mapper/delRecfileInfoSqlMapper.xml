@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "org.mybatis/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furence.recsee.admin.service.DelRecfileInfoService">
+
+	<resultMap id="DelRefileInfoResultMap" type="com.furence.recsee.admin.model.DelRecfileInfo">
+	    <result column="R_DEL_SCHEDULE_NAME" 			jdbcType="VARCHAR" property="r_del_schedule_name" />
+	    <result column="R_BG_NAME" 			jdbcType="VARCHAR" property="r_bg_name" />
+	    <result column="R_MG_NAME" 			jdbcType="VARCHAR" property="r_mg_name" />
+	    <result column="R_SG_NAME" 			jdbcType="VARCHAR" property="r_sg_name" />
+	    <result column="R_BG_CODE" 			jdbcType="VARCHAR" property="r_bg_code" />
+	    <result column="R_MG_CODE" 			jdbcType="VARCHAR" property="r_mg_code" />
+	    <result column="R_SG_CODE" 			jdbcType="VARCHAR" property="r_sg_code" />
+	    <result column="R_DEL_TYPE" 		jdbcType="VARCHAR" property="r_del_type" />
+	    <result column="R_DEL_FILE_TYPE" 	jdbcType="VARCHAR" property="r_del_file_type" />
+	    <result column="R_LOG_TYPE" 		jdbcType="VARCHAR" property="r_log_type" />
+	    <result column="R_DEL_FILE_PATH_TYPE" 	jdbcType="VARCHAR" property="r_del_file_path_type" />
+	    <result column="R_DEL_YEAR" 		jdbcType="VARCHAR" property="r_del_year" />
+	    <result column="R_DEL_MONTH" 		jdbcType="VARCHAR" property="r_del_month" />
+	    <result column="R_DEL_DAY" 		jdbcType="VARCHAR" property="r_del_day" />
+	    <result column="R_INSERT_DT" 		jdbcType="VARCHAR" property="r_insert_dt" />
+	    <result column="R_UPDATE_DT" 		jdbcType="VARCHAR" property="r_update_dt" />
+	    <result column="R_SEQ" 				jdbcType="VARCHAR" property="r_seq" />
+	    <result column="R_V_REC_IP" 		jdbcType="VARCHAR" property="r_v_rec_ip" />
+	    <result column="R_V_READ_IP" 		jdbcType="VARCHAR" property="r_v_read_ip" />
+	    <result column="R_START_TIME" 		jdbcType="VARCHAR" property="r_start_time" />
+	    <result column="R_RUN_TIME" 		jdbcType="VARCHAR" property="r_run_time" />
+	    <result column="R_END_TIME" 		jdbcType="VARCHAR" property="r_end_time" />
+	    <result column="R_BACK_STATE" 		jdbcType="VARCHAR" property="r_back_state" />
+	    <result column="R_DECODE_TYPE" 		jdbcType="VARCHAR" property="r_decode_type" />
+	    <result column="R_URL_UPDATE_TYPE"	jdbcType="VARCHAR" property="r_url_update_type" />
+	    <result column="R_OVERWRITE_TYPE"	jdbcType="VARCHAR" property="r_overwrite_type" />
+	    <result column="R_CONFORMITY_TYPE"	jdbcType="VARCHAR" property="r_conformity_type" />
+	    <result column="R_DUAL_BACKUP_TYPE"	jdbcType="VARCHAR" property="r_dual_backup_type" />
+	    <result column="R_DEL_PATH"	jdbcType="VARCHAR" property="r_del_path" />
+	    <result column="R_SCHEDULER_SELECT"	jdbcType="VARCHAR" property="r_scheduler_select" />
+	    <result column="R_SCHEDULER_WEEK"	jdbcType="VARCHAR" property="r_scheduler_week" />
+	    <result column="R_SCHEDULER_DAY"	jdbcType="VARCHAR" property="r_scheduler_day" />
+	    <result column="R_SCHEDULER_HOUR"	jdbcType="VARCHAR" property="r_scheduler_hour" />
+	    <result column="R_SCHEDULER_MIN"	jdbcType="VARCHAR" property="r_scheduler_min" />
+	    <result column="R_DEL_SEARCH_TYPE"	jdbcType="VARCHAR" property="r_del_search_type" />
+	    <result column="R_STORAGE_SEND_CHK_YN"	jdbcType="VARCHAR" property="r_storage_send_chk_yn" />
+	</resultMap>
+	
+	<resultMap id="BaseResultMap" type="com.furence.recsee.main.model.SearchListInfo">
+		<result column="R_REC_DATE" 		jdbcType="VARCHAR" property="recDate" />
+		<result column="R_REC_RTIME" 		jdbcType="VARCHAR" property="recRtime" />
+		<result column="R_REC_TIME" 		jdbcType="VARCHAR" property="recTime" />
+		<result column="R_BG_CODE" 			jdbcType="VARCHAR" property="bgCode" />
+		<result column="R_MG_CODE" 			jdbcType="VARCHAR" property="mgCode" />
+		<result column="R_SG_CODE" 			jdbcType="VARCHAR" property="sgCode" />
+		<result column="R_USER_ID" 			jdbcType="VARCHAR" property="userId" />
+		<result column="R_CH_NUM" 			jdbcType="VARCHAR" property="chNum" />
+		<result column="R_USER_NAME" 		jdbcType="VARCHAR" property="userName" />
+		<result column="R_CALL_ID1" 		jdbcType="VARCHAR" property="callId1" />
+		<result column="R_CALL_ID2" 		jdbcType="VARCHAR" property="callId2" />
+		<result column="R_CALL_ID3" 		jdbcType="VARCHAR" property="callId3" />
+		<result column="R_EXT_NUM" 			jdbcType="VARCHAR" property="extNum" />
+		<result column="R_CUST_NAME" 		jdbcType="VARCHAR" property="custName" />
+		<result column="R_CUST_PHONE1" 		jdbcType="VARCHAR" property="custPhone1" />
+		<result column="R_CUST_PHONE2" 		jdbcType="VARCHAR" property="custPhone2" />
+		<result column="R_CUST_PHONE3"		jdbcType="VARCHAR" property="custPhone3" />
+		<result column="R_CALL_KIND1" 		jdbcType="VARCHAR" property="callKind1" />
+		<result column="R_CALL_KIND2" 		jdbcType="VARCHAR" property="callKind2" />
+		<result column="R_CALL_STIME" 		jdbcType="VARCHAR" property="callStime" />
+		<result column="R_CALL_ETIME" 		jdbcType="VARCHAR" property="callEtime" />
+		<result column="R_CALL_TTIME" 		jdbcType="VARCHAR" property="callTtime" />
+		<result column="R_SELFDIS_YN" 		jdbcType="VARCHAR" property="selfDisYn" />
+		<result column="R_V_SYS_CODE" 		jdbcType="VARCHAR" property="vSysCode" />
+		<result column="R_V_HDD_FLAG" 		jdbcType="VARCHAR" property="vHddFlag" />
+		<result column="R_LISTEN_URL" 		jdbcType="VARCHAR" property="listenUrl" />
+		<result column="R_V_FILENAME" 		jdbcType="VARCHAR" property="vFileName" />
+		<result column="R_S_SYS_CODE" 		jdbcType="VARCHAR" property="sSysCode" />
+		<result column="R_S_HDD_FLAG" 		jdbcType="VARCHAR" property="sHddFlag" />
+		<result column="R_SCREEN_URL" 		jdbcType="VARCHAR" property="screenUrl" />
+		<result column="R_REC_VISIBLE" 		jdbcType="VARCHAR" property="recVisible" />
+		<result column="R_S_FILENAME" 		jdbcType="VARCHAR" property="sFileName" />
+		<result column="R_S_UPLOAD_YN" 		jdbcType="VARCHAR" property="sUploadYn" />
+		<result column="R_T_SYS_CODE" 		jdbcType="VARCHAR" property="tSysCode" />
+		<result column="R_REC_MEMO" 		jdbcType="VARCHAR" property="recMemo" />
+		<result column="R_T_HDD_FLAG" 		jdbcType="VARCHAR" property="tHddFlag" />
+		<result column="R_EVAL_YN" 			jdbcType="VARCHAR" property="evalYn" />
+		<result column="R_TEXT_URL" 		jdbcType="VARCHAR" property="textUrl" />
+		<result column="R_LISTEN_YN" 		jdbcType="VARCHAR" property="listenYn" />
+		<result column="R_T_FILENAME" 		jdbcType="VARCHAR" property="tFileName" />
+		<result column="R_T_UPLOAD_YN" 		jdbcType="VARCHAR" property="tUploadYn" />
+		<result column="R_PART_START" 		jdbcType="VARCHAR" property="partStart" />
+		<result column="R_PART_END" 		jdbcType="VARCHAR" property="partEnd" />
+		<result column="R_MARKING1" 		jdbcType="VARCHAR" property="marking1" />
+		<result column="R_MARKING2" 		jdbcType="VARCHAR" property="marking2" />
+		<result column="R_MARKING3" 		jdbcType="VARCHAR" property="marking3" />
+		<result column="R_MARKING4" 		jdbcType="VARCHAR" property="marking4" />
+		<result column="R_CUST_SOCIAL_NUM" 	jdbcType="VARCHAR" property="custSocialNum" />
+		<result column="R_CONTRACT_NUM" 	jdbcType="VARCHAR" property="contractNum" />
+		<result column="R_COUNSEL_CODE" 	jdbcType="VARCHAR" property="counselCode" />
+		<result column="R_COUNSEL_CONTENT"  jdbcType="VARCHAR" property="counselContent" />
+		<result column="R_CUST_ADDRESS" 	jdbcType="VARCHAR" property="custAddress" />
+		<result column="R_PLAYER_KIND" 		jdbcType="VARCHAR" property="playerKind" />
+		<result column="R_T_CONTENTS" 		jdbcType="VARCHAR" property="tContents" />
+		<result column="R_RECEIPT_NUM" 		jdbcType="VARCHAR" property="receiptNum" />
+		<result column="R_BUFFER1" 			jdbcType="VARCHAR" property="buffer1" />
+		<result column="R_BUFFER2" 			jdbcType="VARCHAR" property="buffer2" />
+		<result column="R_BUFFER3" 			jdbcType="VARCHAR" property="buffer3" />
+		<result column="R_BW_YN" 			jdbcType="VARCHAR" property="bwYn" />
+		<result column="R_BW_BG_CODE" 		jdbcType="VARCHAR" property="bwBgCode" />
+		<result column="R_BW_SG_CODE" 		jdbcType="VARCHAR" property="bwSgCode" />
+		<result column="R_SCREEN_DUAL_URL" 	jdbcType="VARCHAR" property="screenDaulUrl" />
+		<result column="R_BUFFER4" 			jdbcType="VARCHAR" property="buffer4" />
+		<result column="R_BUFFER5" 			jdbcType="VARCHAR" property="buffer5" />
+		<result column="R_BUFFER6" 			jdbcType="VARCHAR" property="buffer6" />
+		<result column="R_BUFFER7" 			jdbcType="VARCHAR" property="buffer7" />
+		<result column="R_BUFFER8" 			jdbcType="VARCHAR" property="buffer8" />
+		<result column="R_BUFFER9" 			jdbcType="VARCHAR" property="buffer9" />
+		<result column="R_BUFFER10" 		jdbcType="VARCHAR" property="buffer10" />
+		<result column="R_BUFFER11" 		jdbcType="VARCHAR" property="buffer11" />
+		<result column="R_BUFFER12" 		jdbcType="VARCHAR" property="buffer12" />
+		<result column="R_BUFFER13" 		jdbcType="VARCHAR" property="buffer13" />
+		<result column="R_BUFFER14" 		jdbcType="VARCHAR" property="buffer14" />
+		<result column="R_BUFFER15" 		jdbcType="VARCHAR" property="buffer15" />
+		<result column="R_BUFFER16" 		jdbcType="VARCHAR" property="buffer16" />
+		<result column="R_BUFFER17" 		jdbcType="VARCHAR" property="buffer17" />
+		<result column="R_BUFFER18" 		jdbcType="VARCHAR" property="buffer18" />
+		<result column="R_BUFFER19" 		jdbcType="VARCHAR" property="buffer19" />
+		<result column="R_BUFFER20" 		jdbcType="VARCHAR" property="buffer20" />
+		<result column="R_CNID" 			jdbcType="VARCHAR" property="cnId" />
+		<result column="R_DEST_IP" 			jdbcType="VARCHAR" property="destIp" />
+		<result column="R_VDO_URL" 			jdbcType="VARCHAR" property="vdoUrl" />
+		<result column="R_CUST_ID" 			jdbcType="VARCHAR" property="custId" />
+		<result column="R_REGI_DATE" 		jdbcType="VARCHAR" property="regiDate" />
+		<result column="R_MANAGER" 			jdbcType="VARCHAR" property="manager" />
+		<result column="R_SRTP" 			jdbcType="VARCHAR" property="sRtp" />
+		<result column="F_KEY" 				jdbcType="VARCHAR" property="fKey" />
+		<result column="R_SSRC" 			jdbcType="VARCHAR" property="sSrc" />
+		<result column="R_KEY" 				jdbcType="VARCHAR" property="rKey" />
+		<result column="R_CO_NUM" 			jdbcType="VARCHAR" property="coNum" />
+		<result column="R_DID_NUM" 			jdbcType="VARCHAR" property="didNum" />
+		<result column="R_UEI_DATA" 		jdbcType="VARCHAR" property="ueiData" />
+		<result column="R_QUEUE_NO1" 		jdbcType="VARCHAR" property="queueNo1" />
+		<result column="R_QUEUE_NO2" 		jdbcType="VARCHAR" property="queueNo2" />
+		<result column="R_REC_START_TYPE" 	jdbcType="VARCHAR" property="recStartType" />
+		<result column="R_MEMO_INFO" 		jdbcType="VARCHAR" property="memoInfo" />
+		<result column="R_TAG" 				jdbcType="VARCHAR" property="tag" />
+		<result column="R_STOCK_NO" 		jdbcType="VARCHAR" property="stockNo" />
+		<result column="R_COUNSEL_RESULT_BGCODE" 	jdbcType="VARCHAR" property="counselResultBgcode" />
+		<result column="R_COUNSEL_RESULT_MGCODE" 	jdbcType="VARCHAR" property="counselResultMgcode" />
+		<result column="R_COUNSEL_RESULT_SGCODE" 	jdbcType="VARCHAR" property="counselResultSgcode" />
+		<result column="TOTAL_COUNT" 		jdbcType="VARCHAR" property="totalCount" />
+
+		<result column="R_VSEND_FILE_FLAG" 	jdbcType="VARCHAR" property="vsendFileFlag" />
+		<result column="R_SSEND_FILE_FLAG" 	jdbcType="VARCHAR" property="ssendFileFlag" />
+		<result column="R_V_REC_IP" 		jdbcType="VARCHAR" property="vRecIp" />
+		<result column="R_V_REC_FULLPATH" 	jdbcType="VARCHAR" property="vRecFullpath" />
+		<result column="R_V_READ_IP" 		jdbcType="VARCHAR" property="vReadIp" />
+		<result column="R_V_READ_FULLPATH" 	jdbcType="VARCHAR" property="vReadFullpath" />
+		<result column="R_S_REC_IP" 		jdbcType="VARCHAR" property="sRecIp" />
+		<result column="R_S_REC_FULLPATH" 	jdbcType="VARCHAR" property="sRecFullpath" />
+		<result column="R_S_READ_IP" 		jdbcType="VARCHAR" property="sReadIp" />
+		<result column="R_S_READ_FULLPATH" 	jdbcType="VARCHAR" property="sReadFullpath" />
+
+		<result column="R_CALL_KEY_AP" 	jdbcType="VARCHAR" property="callKeyAp" />
+		<result column="ROW_NUMBER" 	jdbcType="VARCHAR" property="rownumber" />
+
+		<result column="r_call_stime_connect" 	jdbcType="VARCHAR" property="callStimeConnect" />
+		<result column="r_call_ttime_connect" 	jdbcType="VARCHAR" property="callTtimeConnect" />
+
+		<result column="R_IVR_CHK" 	jdbcType="VARCHAR" property="ivrChk" />
+		<result column="R_AFFILICATE_NAME" jdbcType="VARCHAR" property="affilicateName" />
+		
+		<result column="stt" jdbcType="VARCHAR" property="sttPlayer" />
+		
+		<result column="R_KEYWORD_NAME" jdbcType="VARCHAR" property="keywordName" />
+		<result column="R_KEYWORD_CODE" jdbcType="VARCHAR" property="keywordCode" />
+		<result column="R_REC_SUMMARY" jdbcType="VARCHAR" property="recSummary" />
+		
+		<result column="R_LOG_LISTEN" jdbcType="VARCHAR" property="logListen" />
+		<result column="R_LISTEN_DATE" jdbcType="VARCHAR" property="listenDate" />
+		<result column="R_LISTEN_TIME" jdbcType="VARCHAR" property="listenTime" />
+		<result column="R_CUST_PHONE_AP" jdbcType="VARCHAR" property="rCustPhoneAp" />
+
+		<result column="R_TRANSCRIPT_STATUS" jdbcType="VARCHAR" property="rTranscriptStatus" />
+			
+		<result column="R_COMPANY_TELNO" jdbcType="VARCHAR" property="companyTelno" />
+		<result column="R_COMPANY_TELNO_NICK" jdbcType="VARCHAR" property="companyTelnoNick" />
+	</resultMap>
+
+	<!-- Menu -->
+   <!--  <select id="selectAllowableRangeInfo" parameterType="com.furence.recsee.admin.model.AllowableRangeInfo" resultMap="BaseResultMap">
+    	WITH B AS(SELECT R_BG_CODE, R_BG_NAME FROM RS_BG_INFO)
+					, M AS (SELECT R_MG_CODE, R_MG_NAME FROM RS_MG_INFO)
+					, S AS (SELECT R_SG_CODE, R_SG_NAME FROM RS_SG_INFO)
+		SELECT
+			A.*
+			,B.R_BG_NAME
+			, M.R_MG_NAME
+			, S.R_SG_NAME
+		FROM
+			(SELECT 
+				*
+			FROM RS_ALLOWABLE_RANGE_LIST
+			<where>
+				 R_ALLOWABLE_CODE = #{rAllowableCode}
+			</where>
+			) A
+		LEFT OUTER JOIN B ON A.R_BG_CODE=B.R_BG_CODE
+		LEFT OUTER JOIN M ON A.R_MG_CODE=M.R_MG_CODE
+		LEFT OUTER JOIN S ON A.R_SG_CODE=S.R_SG_CODE
+		ORDER BY A.R_BG_CODE, A.R_MG_CODE, A.R_SG_CODE
+    </select>
+    
+    <delete id="deleteAllowableRangeInfo" parameterType="com.furence.recsee.admin.model.AllowableRangeInfo">
+		
+		DELETE FROM RS_ALLOWABLE_RANGE_LIST
+		<where>
+			<trim suffixOverrides="AND">
+				R_ALLOWABLE_CODE = #{rAllowableCode}
+				<choose>
+					<when test="rBgCode == null and rMgCode == null and rSgCode == null">
+					</when>
+					<when test="rBgCode != null">
+						 AND R_BG_CODE = #{rBgCode} AND R_MG_CODE IS NULL AND R_SG_CODE IS NULL
+					</when>
+					<when test="rMgCode != null">
+						 AND R_MG_CODE = #{rMgCode} AND R_SG_CODE IS NULL
+					</when>
+					<when test="rSgCode != null">
+						 AND R_SG_CODE = #{rSgCode}
+					</when>
+				</choose>
+			</trim>
+		</where>
+	</delete>
+ -->
+ 
+    <insert id="insertDelRecfileInfo" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		INSERT INTO RS_DEL_RECFILE(
+			<trim suffixOverrides=",">
+				<if test="r_del_schedule_name   != null">R_DEL_SCHEDULE_NAME,</if>
+				<if test="r_bg_code   != null">R_BG_CODE,</if>
+				<if test="r_mg_code   != null">R_MG_CODE,</if>
+				<if test="r_sg_code   != null">R_SG_CODE,</if>
+				<if test="r_del_type  != null">R_DEL_TYPE,</if>
+				<if test="r_del_file_type  != null">R_DEL_FILE_TYPE,</if>
+				<if test="r_log_type  != null">R_LOG_TYPE,</if>
+				<if test="r_storage_send_chk_yn  != null">R_STORAGE_SEND_CHK_YN,</if>
+				<if test="r_del_file_path_type  != null">R_DEL_FILE_PATH_TYPE,</if>
+				<if test="r_del_year  != null">R_DEL_YEAR,</if>
+				<if test="r_del_month != null">R_DEL_MONTH,</if>
+				<if test="r_del_day != null">R_DEL_DAY,</if>
+				<if test="r_del_year_offset  != null">R_DEL_YEAR_OFFSET,</if>
+				<if test="r_del_month_offset != null">R_DEL_MONTH_OFFSET,</if>
+				<if test="r_del_day_offset != null">R_DEL_DAY_OFFSET,</if>
+				<if test="r_del_select != null">R_DEL_SELECT,</if>
+				<if test="r_del_path != null">R_DEL_PATH,</if>
+				<if test="r_scheduler_select  != null">R_SCHEDULER_SELECT,</if>
+				<if test="r_scheduler_week  != null">R_SCHEDULER_WEEK,</if>
+				<if test="r_scheduler_day  != null">R_SCHEDULER_DAY,</if>
+				<if test="r_scheduler_hour != null">R_SCHEDULER_HOUR,</if>
+				<if test="r_scheduler_min != null">R_SCHEDULER_MIN,</if>
+				<if test="r_del_search_type != null">R_DEL_SEARCH_TYPE,</if>
+				R_INSERT_DT
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+				<if test="r_del_schedule_name   != null">#{r_del_schedule_name},</if>
+				<if test="r_bg_code   != null">#{r_bg_code},</if>
+				<if test="r_mg_code   != null">#{r_mg_code},</if>
+				<if test="r_sg_code   != null">#{r_sg_code},</if>
+				<if test="r_del_type  != null">#{r_del_type},</if>
+				<if test="r_del_file_type  != null">#{r_del_file_type},</if>
+				<if test="r_log_type  != null">#{r_log_type},</if>
+				<if test="r_storage_send_chk_yn  != null">#{r_storage_send_chk_yn},</if>
+				<if test="r_del_file_path_type  != null">#{r_del_file_path_type},</if>
+				<if test="r_del_year  != null">#{r_del_year},</if>
+				<if test="r_del_month != null">#{r_del_month},</if>
+				<if test="r_del_day != null">#{r_del_day},</if>
+				<if test="r_del_year_offset  != null">#{r_del_year_offset},</if>
+				<if test="r_del_month_offset != null">#{r_del_month_offset},</if>
+				<if test="r_del_day_offset != null">#{r_del_day_offset},</if>
+				<if test="r_del_select != null">#{r_del_select},</if>
+				<if test="r_del_path != null">#{r_del_path},</if>
+				<if test="r_scheduler_select  != null">#{r_scheduler_select},</if>
+				<if test="r_scheduler_week  != null">#{r_scheduler_week},</if>
+				<if test="r_scheduler_day  != null">#{r_scheduler_day},</if>
+				<if test="r_scheduler_hour  != null">#{r_scheduler_hour},</if>
+				<if test="r_scheduler_min  != null">#{r_scheduler_min},</if>
+				<if test="r_del_search_type  != null">#{r_del_search_type},</if>
+				TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDDHH24MISS')
+			</trim>
+		)
+	</insert>
+	
+	<insert id="insertDelRecfileInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		INSERT INTO RS_DEL_RECFILE(
+			<trim suffixOverrides=",">
+				<if test="r_bg_code   != null">R_BG_CODE,</if>
+				<if test="r_mg_code   != null">R_MG_CODE,</if>
+				<if test="r_sg_code   != null">R_SG_CODE,</if>
+				<if test="r_del_type  != null">R_DEL_TYPE,</if>
+				<if test="r_del_file_type  != null">R_DEL_FILE_TYPE,</if>
+				<if test="r_log_type  != null">R_LOG_TYPE,</if>
+				<if test="r_del_file_path_type  != null">R_DEL_FILE_PATH_TYPE,</if>
+				<if test="r_del_year  != null">R_DEL_YEAR,</if>
+				<if test="r_del_month != null">R_DEL_MONTH,</if>
+				R_INSERT_DT
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+				<if test="r_bg_code   != null">#{r_bg_code},</if>
+				<if test="r_mg_code   != null">#{r_mg_code},</if>
+				<if test="r_sg_code   != null">#{r_sg_code},</if>
+				<if test="r_del_type  != null">#{r_del_type},</if>
+				<if test="r_del_file_type  != null">#{r_del_file_type},</if>
+				<if test="r_log_type  != null">#{r_log_type},</if>
+				<if test="r_del_file_path_type  != null">#{r_del_file_path_type},</if>
+				<if test="r_del_year  != null">#{r_del_year},</if>
+				<if test="r_del_month != null">#{r_del_month},</if>
+				Convert(varchar(10),Getdate(),112) + Replace(Convert(varchar(8),Getdate(),108),':','')
+			</trim>
+		)
+	</insert>
+	
+	
+	<update id="updateDelRecfileInfo" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		UPDATE RS_DEL_RECFILE
+		<set>
+			<if test="r_del_schedule_name != null">
+				R_DEL_SCHEDULE_NAME = #{r_del_schedule_name},
+			</if>
+			<if test="r_del_type != null">
+				R_DEL_TYPE = #{r_del_type},
+			</if>
+			<if test="r_del_file_type != null">
+				R_DEL_FILE_TYPE = #{r_del_file_type},
+			</if>
+			<if test="r_log_type != null">
+				R_LOG_TYPE = #{r_log_type},
+			</if>
+			<if test="r_storage_send_chk_yn != null">
+				R_STORAGE_SEND_CHK_YN = #{r_storage_send_chk_yn},
+			</if>
+			<if test="r_del_file_path_type != null">
+				R_DEL_FILE_PATH_TYPE = #{r_del_file_path_type},
+			</if>
+			<if test="r_scheduler_select != null">
+				R_SCHEDULER_SELECT = #{r_scheduler_select},
+			</if>
+			<if test="r_scheduler_week != null">
+				R_SCHEDULER_WEEK = #{r_scheduler_week},
+			</if>
+			<if test="r_scheduler_day != null">
+				R_SCHEDULER_DAY = #{r_scheduler_day},
+			</if>
+			<if test="r_scheduler_hour != null">
+				R_SCHEDULER_HOUR = #{r_scheduler_hour},
+			</if>
+			<if test="r_scheduler_min != null">
+				R_SCHEDULER_MIN = #{r_scheduler_min},
+			</if>
+			<if test="r_del_year != null">
+				R_DEL_YEAR = #{r_del_year},
+			</if>
+			<if test="r_del_month != null">
+				R_DEL_MONTH = #{r_del_month},
+			</if>
+			<if test="r_del_day != null">
+				R_DEL_DAY = #{r_del_day},
+			</if>
+			<if test="r_del_year_offset != null">
+				R_DEL_YEAR_OFFSET = #{r_del_year_offset},
+			</if>
+			<if test="r_del_month_offset != null">
+				R_DEL_MONTH_OFFSET = #{r_del_month_offset},
+			</if>
+			<if test="r_del_day_offset != null">
+				R_DEL_DAY_OFFSET = #{r_del_day_offset},
+			</if>
+			<if test="r_del_search_type != null">
+				R_DEL_SEARCH_TYPE = #{r_del_search_type},
+			</if>
+			<if test="r_del_path != null">
+				R_DEL_PATH = #{r_del_path},
+			</if>
+			R_UPDATE_DT = TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDDHH24MISS')
+		</set>
+		<where>
+			<if test = "r_seq != null">
+			R_SEQ = #{r_seq}
+			</if>
+		</where>
+	</update>
+	
+	<update id="updateDelRecfileInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		UPDATE RS_DEL_RECFILE
+		<set>
+			<if test="r_del_type != null">
+				R_DEL_TYPE = #{r_del_type},
+			</if>
+			<if test="r_del_file_type != null">
+				R_DEL_FILE_TYPE = #{r_del_file_type},
+			</if>
+			<if test="r_log_type != null">
+				R_LOG_TYPE = #{r_log_type},
+			</if>
+			<if test="r_del_file_path_type != null">
+				R_DEL_FILE_PATH_TYPE = #{r_del_file_path_type},
+			</if>
+			<if test="r_del_year != null">
+				R_DEL_YEAR = #{r_del_year},
+			</if>
+			<if test="r_del_month != null">
+				R_DEL_MONTH = #{r_del_month},
+			</if>
+			R_UPDATE_DT = Convert(varchar(10),Getdate(),112) + Replace(Convert(varchar(8),Getdate(),108),':','')
+		</set>
+		<where>
+			<if test = "r_seq != null">
+			R_SEQ = #{r_seq}
+			</if>
+		</where>
+	</update>
+	
+	<select id="selectDelRecfileInfo" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultMap="DelRefileInfoResultMap">
+		SELECT B.R_BG_NAME, C.R_MG_NAME, D.R_SG_NAME, A.* 
+			FROM RS_DEL_RECFILE A 
+			LEFT JOIN RS_BG_INFO B
+				ON A.R_BG_CODE = B.R_BG_CODE
+			LEFT JOIN RS_MG_INFO C
+				ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+			LEFT JOIN RS_SG_INFO D
+				ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+			<where>
+				<trim suffixOverrides="AND">
+					<if test = "r_bg_code != null">
+						A.R_BG_CODE = #{r_bg_code} AND
+					</if>
+					<if test = "r_mg_code != null">
+						A.R_MG_CODE = #{r_mg_code} AND
+					</if>
+					<if test = "r_sg_code != null">
+						A.R_SG_CODE = #{r_sg_code} AND
+					</if>
+					<if test = "r_del_file_type != null">
+						A.R_DEL_FILE_TYPE = #{r_del_file_type} AND
+					</if>
+					<if test = "r_del_path != null">
+						A.R_DEL_PATH = #{r_del_path} AND
+					</if>
+					<if test = "r_del_file_path_type != null">
+						A.R_DEL_FILE_PATH_TYPE = #{r_del_file_path_type} AND
+					</if>
+				</trim>
+			</where>
+			ORDER BY r_seq
+	</select>
+	
+	<delete id="deleteDelRecfileInfo" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		DELETE
+		FROM RS_DEL_RECFILE
+		WHERE R_SEQ = #{r_seq};
+	</delete>
+	
+	 <insert id="insertBackRecfileInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		INSERT INTO RS_BACK_RECFILE(
+			<trim suffixOverrides=",">
+				<if test="r_bg_code   != null">R_BG_CODE,</if>
+				<if test="r_mg_code   != null">R_MG_CODE,</if>
+				<if test="r_sg_code   != null">R_SG_CODE,</if>
+				<if test="r_back_type != null">R_BACK_TYPE,</if>
+				<if test="r_log_type  != null">R_LOG_TYPE,</if>
+				<if test="r_scheduler_select  != null">R_SCHEDULER_SELECT,</if>
+				<if test="r_scheduler_week  != null">R_SCHEDULER_WEEK,</if>
+				<if test="r_scheduler_day  != null">R_SCHEDULER_DAY,</if>
+				<if test="r_scheduler_hour  != null">R_SCHEDULER_HOUR,</if>
+				<if test="r_back_select  != null">R_BACK_SELECT,</if>
+				<if test="r_back_date  != null">R_BACK_DATE,</if>
+				<if test="r_back_path != null">R_BACK_PATH,</if>
+				R_BACK_STATE,
+				<if test="r_decode_type != null">R_DECODE_TYPE,</if>
+				<if test="r_url_update_type != null">R_URL_UPDATE_TYPE,</if>
+				<if test="r_overwrite_type != null">R_OVERWRITE_TYPE,</if>
+				<if test="r_conformity_type != null">R_CONFORMITY_TYPE,</if>
+				<if test="r_dual_backup_type != null">R_DUAL_BACKUP_TYPE,</if>
+				R_INSERT_DT
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+				<if test="r_bg_code   != null">#{r_bg_code},</if>
+				<if test="r_mg_code   != null">#{r_mg_code},</if>
+				<if test="r_sg_code   != null">#{r_sg_code},</if>
+				<if test="r_back_type  != null">#{r_back_type},</if>
+				<if test="r_log_type  != null">#{r_log_type},</if>
+				<if test="r_scheduler_select  != null">#{r_scheduler_select},</if>
+				<if test="r_scheduler_week  != null">#{r_scheduler_week},</if>
+				<if test="r_scheduler_day  != null">#{r_scheduler_day},</if>
+				<if test="r_scheduler_hour  != null">#{r_scheduler_hour},</if>
+				<if test="r_back_select  != null">#{r_back_select},</if>
+				<if test="r_back_date  != null">#{r_back_date},</if>
+				<if test="r_back_path != null">#{r_back_path},</if>
+				'BackUp Wait',
+				<if test="r_decode_type != null">#{r_decode_type},</if>
+				<if test="r_url_update_type != null">#{r_url_update_type},</if>
+				<if test="r_overwrite_type != null">#{r_overwrite_type},</if>
+				<if test="r_conformity_type != null">#{r_conformity_type},</if>
+				<if test="r_dual_backup_type != null">#{r_dual_backup_type},</if>
+				TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDDHH24MISS')
+			</trim>
+		)
+	</insert>
+	
+	<insert id="insertBackRecfileInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		INSERT INTO RS_BACK_RECFILE(
+			<trim suffixOverrides=",">
+				<if test="r_bg_code   != null">R_BG_CODE,</if>
+				<if test="r_mg_code   != null">R_MG_CODE,</if>
+				<if test="r_sg_code   != null">R_SG_CODE,</if>
+				<if test="r_back_type != null">R_BACK_TYPE,</if>
+				<if test="r_log_type  != null">R_LOG_TYPE,</if>
+				<if test="r_scheduler_select  != null">R_SCHEDULER_SELECT,</if>
+				<if test="r_scheduler_week  != null">R_SCHEDULER_WEEK,</if>
+				<if test="r_scheduler_day  != null">R_SCHEDULER_DAY,</if>
+				<if test="r_scheduler_hour  != null">R_SCHEDULER_HOUR,</if>
+				<if test="r_back_select  != null">R_BACK_SELECT,</if>
+				<if test="r_back_date  != null">R_BACK_DATE,</if>
+				<if test="r_back_path != null">R_BACK_PATH,</if>
+				R_BACK_STATE,
+				<if test="r_decode_type != null">R_DECODE_TYPE,</if>
+				<if test="r_url_update_type != null">R_URL_UPDATE_TYPE,</if>
+				<if test="r_overwrite_type != null">R_OVERWRITE_TYPE,</if>
+				<if test="r_conformity_type != null">R_CONFORMITY_TYPE,</if>
+				<if test="r_dual_backup_type != null">R_DUAL_BACKUP_TYPE,</if>
+				R_INSERT_DT
+			</trim>
+		) VALUES (
+			<trim suffixOverrides=",">
+				<if test="r_bg_code   != null">#{r_bg_code},</if>
+				<if test="r_mg_code   != null">#{r_mg_code},</if>
+				<if test="r_sg_code   != null">#{r_sg_code},</if>
+				<if test="r_back_type  != null">#{r_back_type},</if>
+				<if test="r_log_type  != null">#{r_log_type},</if>
+				<if test="r_scheduler_select  != null">#{r_scheduler_select},</if>
+				<if test="r_scheduler_week  != null">#{r_scheduler_week},</if>
+				<if test="r_scheduler_day  != null">#{r_scheduler_day},</if>
+				<if test="r_scheduler_hour  != null">#{r_scheduler_hour},</if>
+				<if test="r_back_select  != null">#{r_back_select},</if>
+				<if test="r_back_date  != null">#{r_back_date},</if>
+				<if test="r_back_path != null">#{r_back_path},</if>
+				'BackUp Wait',
+				<if test="r_decode_type != null">#{r_decode_type},</if>
+				<if test="r_url_update_type != null">#{r_url_update_type},</if>
+				<if test="r_overwrite_type != null">#{r_overwrite_type},</if>
+				<if test="r_conformity_type != null">#{r_conformity_type},</if>
+				<if test="r_dual_backup_type != null">#{r_dual_backup_type},</if>
+				Convert(varchar(10),Getdate(),112) + Replace(Convert(varchar(8),Getdate(),108),':','')
+			</trim>
+		)
+	</insert>
+	
+	<update id="updateBackRecfileInfo" databaseId="postgres" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		UPDATE RS_BACK_RECFILE
+		<set>
+			<if test="r_back_type != null">
+				R_BACK_TYPE = #{r_back_type},
+			</if>
+			<if test="r_log_type != null">
+				R_LOG_TYPE = #{r_log_type},
+			</if>
+			<if test="r_scheduler_select != null">
+				R_SCHEDULER_SELECT = #{r_scheduler_select},
+			</if>
+			<if test="r_scheduler_week != null">
+				R_SCHEDULER_WEEK = #{r_scheduler_week},
+			</if>
+			<if test="r_scheduler_day != null">
+				R_SCHEDULER_DAY = #{r_scheduler_day},
+			</if>
+			<if test="r_scheduler_hour != null">
+				R_SCHEDULER_HOUR = #{r_scheduler_hour},
+			</if>
+			<if test="r_back_select != null">
+				R_BACK_SELECT =	#{r_back_select},
+			</if>
+			<if test="r_back_date != null">
+				R_BACK_DATE	 =	#{r_back_date},
+			</if>
+			<if test="r_back_path != null">
+				R_BACK_PATH = #{r_back_path},
+			</if>
+			<if test="r_start_time != null">
+				R_START_TIME = #{r_start_time},
+			</if>
+			<if test="r_run_time != null">
+				R_RUN_TIME = #{r_run_time},
+			</if>
+			<if test="r_end_time != null">
+				R_END_TIME = #{r_end_time},
+			</if>
+			<if test="r_back_state != null">
+				R_BACK_STATE = #{r_back_state},
+			</if>
+			<if test="r_decode_type != null">
+				R_DECODE_TYPE = #{r_decode_type},
+			</if>
+			<if test="r_url_update_type != null">
+				R_URL_UPDATE_TYPE = #{r_url_update_type},
+			</if>
+			<if test="r_overwrite_type != null">
+				R_OVERWRITE_TYPE = #{r_overwrite_type},
+			</if>
+			<if test="r_conformity_type != null">
+				R_CONFORMITY_TYPE = #{r_conformity_type},
+			</if>
+			<if test="r_dual_backup_type != null">
+				R_DUAL_BACKUP_TYPE = #{r_dual_backup_type},
+			</if>
+			R_UPDATE_DT = TO_CHAR(CURRENT_TIMESTAMP, 'YYYYMMDDHH24MISS')
+		</set>
+		<where>
+			<if test = "r_seq != null">
+			R_SEQ = #{r_seq}
+			</if>
+		</where>
+	</update>
+	
+	<update id="updateBackRecfileInfo" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		UPDATE RS_BACK_RECFILE
+		<set>
+			<if test="r_back_type != null">
+				R_BACK_TYPE = #{r_back_type},
+			</if>
+			<if test="r_log_type != null">
+				R_LOG_TYPE = #{r_log_type},
+			</if>
+			<if test="r_scheduler_select != null">
+				R_SCHEDULER_SELECT = #{r_scheduler_select},
+			</if>
+			<if test="r_scheduler_week != null">
+				R_SCHEDULER_WEEK = #{r_scheduler_week},
+			</if>
+			<if test="r_scheduler_day != null">
+				R_SCHEDULER_DAY = #{r_scheduler_day},
+			</if>
+			<if test="r_scheduler_hour != null">
+				R_SCHEDULER_HOUR = #{r_scheduler_hour},
+			</if>
+			<if test="r_back_select != null">
+				R_BACK_SELECT =	#{r_back_select},
+			</if>
+			<if test="r_back_date != null">
+				R_BACK_DATE	 =	#{r_back_date},
+			</if>
+			<if test="r_back_path != null">
+				R_BACK_PATH = #{r_back_path},
+			</if>
+			<if test="r_start_time != null">
+				R_START_TIME = #{r_start_time},
+			</if>
+			<if test="r_run_time != null">
+				R_RUN_TIME = #{r_run_time},
+			</if>
+			<if test="r_end_time != null">
+				R_END_TIME = #{r_end_time},
+			</if>
+			<if test="r_back_state != null">
+				R_BACK_STATE = #{r_back_state},
+			</if>
+			
+			<if test="r_decode_type != null">
+				R_DECODE_TYPE = #{r_decode_type},
+			</if>
+			<if test="r_url_update_type != null">
+				R_URL_UPDATE_TYPE = #{r_url_update_type},
+			</if>
+			<if test="r_overwrite_type != null">
+				R_OVERWRITE_TYPE = #{r_overwrite_type},
+			</if>
+			<if test="r_conformity_type != null">
+				R_CONFORMITY_TYPE = #{r_conformity_type},
+			</if>
+			<if test="r_dual_backup_type != null">
+				R_DUAL_BACKUP_TYPE = #{r_dual_backup_type},
+			</if>
+			R_UPDATE_DT = Convert(varchar(10),Getdate(),112) + Replace(Convert(varchar(8),Getdate(),108),':','')
+		</set>
+		<where>
+			<if test = "r_seq != null">
+			R_SEQ = #{r_seq}
+			</if>
+		</where>
+	</update>
+	
+	<select id="selectBackRecfileInfo" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultMap="DelRefileInfoResultMap">
+		SELECT B.R_BG_NAME, C.R_MG_NAME, D.R_SG_NAME, A.* 
+			FROM RS_BACK_RECFILE A 
+			LEFT JOIN RS_BG_INFO B
+				ON A.R_BG_CODE = B.R_BG_CODE
+			LEFT JOIN RS_MG_INFO C
+				ON A.R_BG_CODE = C.R_BG_CODE AND A.R_MG_CODE = C.R_MG_CODE
+			LEFT JOIN RS_SG_INFO D
+				ON A.R_BG_CODE = D.R_BG_CODE AND A.R_MG_CODE = D.R_MG_CODE AND A.R_SG_CODE = D.R_SG_CODE
+	</select>
+	
+	<select id="selectNowBackRecfileInfo" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultMap="DelRefileInfoResultMap">
+		SELECT *
+		  FROM RS_BACK_RECFILE
+		 <where>
+			<if test = "r_seq != null">
+			R_SEQ = #{r_seq}
+			</if>
+		</where>		  
+	</select>
+	
+	<select id="selectNowBackRecfilePathCheck" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultMap="DelRefileInfoResultMap">
+		SELECT R_V_REC_IP, R_V_READ_IP 
+		  FROM RS_RECFILE
+		 <where>
+		 	1=1
+			<if test ="r_bg_code != null and r_bg_code != ''">
+			AND R_BG_CODE = #{r_bg_code}
+			</if>
+			<if test ="r_mg_code != null and r_mg_code != ''">
+			AND R_MG_CODE = #{r_mg_code}
+			</if>
+			<if test ="r_sg_code != null and r_sg_code != ''">
+			AND R_SG_CODE = #{r_sg_code}
+			</if>
+		</where>	
+		LIMIT 1	  
+	</select>
+	
+	<!-- <select id="selectBackRecfileIp" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultMap="DelRefileInfoResultMap">
+		SELECT B.R_BG_NAME, C.R_MG_NAME, D.R_SG_NAME, A.* 
+			FROM RS_BACK_RECFILE A 
+			LEFT JOIN RS_BG_INFO B
+				ON A.R_BG_CODE = B.R_BG_CODE
+			LEFT JOIN RS_MG_INFO C
+				ON A.R_MG_CODE = C.R_MG_CODE
+			LEFT JOIN RS_SG_INFO D
+				ON A.R_SG_CODE = D.R_SG_CODE
+	</select> -->
+	
+	<delete id="deleteBackRecfileInfo" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		DELETE
+		FROM RS_BACK_RECFILE
+		WHERE R_SEQ = #{r_seq};
+	</delete>
+	
+	<select id="FileSizeRecfileFileBackup" databaseId="postgres" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultType="Integer">
+		select sum(r_recfile_size::int)/(1024 * 1024 * 1024)
+		  from rs_recfile 
+		  <where>
+		  	r_rec_visible != 'D'
+		  	<if test = "r_sdate_backup != null and r_edate_backup != null">
+		  	AND	r_rec_date between #{r_sdate_backup} and #{r_edate_backup}
+		  	</if>
+		  	<if test = "r_sdate_backup == null and r_edate_backup == null">
+		   	AND	r_rec_date between #{backTime} and to_char(NOW() - '1 day'::interval,'YYYYMMDD')
+		    AND r_rec_time between '000000' and '235959'		 
+		    </if>
+		 	<if test ="r_bg_code != null and r_bg_code != ''">
+			AND R_BG_CODE = #{r_bg_code}
+			</if>
+			<if test ="r_mg_code != null and r_mg_code != ''">
+			AND R_MG_CODE = #{r_mg_code}
+			</if>
+			<if test ="r_sg_code != null and r_sg_code != ''">
+			AND R_SG_CODE = #{r_sg_code}
+			</if>	 
+			<if test ='r_dual_backup_type != null and r_dual_backup_type == "N"'>
+			AND R_V_SYS_CODE like 'A%'
+			</if>	 
+		</where>
+	</select>
+	
+	<select id="FileSizeRecfileFileBackup" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultType="Integer">
+		select sum(r_recfile_size::int)/(1024 * 1024 * 1024)
+		  from rs_recfile 
+		  <where>
+		  	r_rec_visible != 'D'
+		  	<if test = "r_sdate_backup != null and r_edate_backup != null">
+		  	AND	r_rec_date between #{r_sdate_backup} and #{r_edate_backup}
+		  	</if>
+		  	<if test = "r_sdate_backup == null and r_edate_backup == null">
+		   	AND	r_rec_date between #{backTime} and CONVERT(CHAR(8), DATEADD(dd,-1,GETDATE()),112)
+		    AND r_rec_time between '000000' and '235959'		 
+		    </if>
+		 	<if test ="r_bg_code != null and r_bg_code != ''">
+			AND R_BG_CODE = #{r_bg_code}
+			</if>
+			<if test ="r_mg_code != null and r_mg_code != ''">
+			AND R_MG_CODE = #{r_mg_code}
+			</if>
+			<if test ="r_sg_code != null and r_sg_code != ''">
+			AND R_SG_CODE = #{r_sg_code}
+			</if>	 
+			<if test ='r_dual_backup_type != null and r_dual_backup_type == "N"'>
+			AND R_V_SYS_CODE like 'A%'
+			</if>	 
+		</where>
+	</select>
+	
+	<select id="countRecfileFileBackup" databaseId="postgres" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultType="Integer">
+		select count(*) 
+		  from rs_recfile 
+		  <where>
+		    r_rec_visible != 'D'
+		  	<if test = "r_sdate_backup != null and r_edate_backup != null">
+		  	AND	r_rec_date between #{r_sdate_backup} and #{r_edate_backup}
+		  	</if>
+		  	<if test = "r_sdate_backup == null and r_edate_backup == null">
+		   	AND	r_rec_date between #{backTime} and to_char(NOW() - '1 day'::interval,'YYYYMMDD')
+		    AND r_rec_time between '000000' and '235959'		 
+		    </if>
+		 	<if test ="r_bg_code != null and r_bg_code != ''">
+			AND R_BG_CODE = #{r_bg_code}
+			</if>
+			<if test ="r_mg_code != null and r_mg_code != ''">
+			AND R_MG_CODE = #{r_mg_code}
+			</if>
+			<if test ="r_sg_code != null and r_sg_code != ''">
+			AND R_SG_CODE = #{r_sg_code}
+			</if>	 
+			<if test ='r_dual_backup_type != null and r_dual_backup_type == "N"'>
+			AND R_V_SYS_CODE like 'A%'
+			</if>	 
+		</where>
+	</select>
+	
+	<select id="countRecfileFileBackup" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultType="Integer">
+		select count(*) 
+		  from rs_recfile 
+		  <where>
+		    r_rec_visible != 'D'
+		  	<if test = "r_sdate_backup != null and r_edate_backup != null">
+		  	AND	r_rec_date between #{r_sdate_backup} and #{r_edate_backup}
+		  	</if>
+		  	<if test = "r_sdate_backup == null and r_edate_backup == null">
+		   	AND	r_rec_date between #{backTime} and CONVERT(CHAR(8), DATEADD(dd,-1,GETDATE()),112)
+		    AND r_rec_time between '000000' and '235959'		 
+		    </if>
+		 	<if test ="r_bg_code != null and r_bg_code != ''">
+			AND R_BG_CODE = #{r_bg_code}
+			</if>
+			<if test ="r_mg_code != null and r_mg_code != ''">
+			AND R_MG_CODE = #{r_mg_code}
+			</if>
+			<if test ="r_sg_code != null and r_sg_code != ''">
+			AND R_SG_CODE = #{r_sg_code}
+			</if>	 
+			<if test ='r_dual_backup_type != null and r_dual_backup_type == "N"'>
+			AND R_V_SYS_CODE like 'A%'
+			</if>	 
+		</where>
+	</select>
+	
+	<select id="selectRecfileFileBackup" databaseId="postgres" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultMap="BaseResultMap">
+		  select r_rec_date
+		  	   , r_rec_rtime
+		  	   , r_rec_time
+		  	   , r_cust_name
+		  	   , r_cust_phone1
+		  	   , r_ext_num
+		  	   , r_v_sys_code
+		  	   , r_rec_start_type
+		  	   , r_v_filename 
+		  	   , r_listen_url
+		  	   , r_v_rec_ip
+		  	   , r_v_rec_fullpath
+		  	   , r_v_read_ip
+		  	   , r_v_read_fullpath
+		  	   , r_call_key_ap 
+		   from rs_recfile 
+		  <where>
+		 	r_rec_visible != 'D'
+		  	<if test = "r_sdate_backup != null and r_edate_backup != null">
+		  	ANd r_rec_date between #{r_sdate_backup} and #{r_edate_backup}
+		  	</if>
+		  	<if test = "r_sdate_backup == null and r_edate_backup == null">
+		   	AND	r_rec_date between #{backTime} and to_char(NOW() - '1 day'::interval,'YYYYMMDD')
+		    AND r_rec_time between '000000' and '235959'		 
+		    </if>
+		 	 <if test ="r_bg_code != null and r_bg_code != ''">
+			AND  R_BG_CODE = #{r_bg_code}
+			</if>
+			<if test ="r_mg_code != null and r_mg_code != ''">
+			AND  R_MG_CODE = #{r_mg_code}
+			</if>
+			<if test ="r_sg_code != null and r_sg_code != ''">
+			AND  R_SG_CODE = #{r_sg_code}
+			</if> 		 
+			<if test ='r_dual_backup_type != null and r_dual_backup_type == "N"'>
+			AND R_V_SYS_CODE like 'A%'
+			</if>	  
+		   </where>
+		  LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	<select id="selectRecfileFileBackup" databaseId="sqlserver" parameterType="com.furence.recsee.admin.model.DelRecfileInfo" resultMap="BaseResultMap">
+		  select r_rec_date
+		  	   , r_rec_rtime
+		  	   , r_rec_time
+		  	   , r_cust_name
+		  	   , r_cust_phone1
+		  	   , r_ext_num
+		  	   , r_v_sys_code
+		  	   , r_rec_start_type
+		  	   , r_v_filename 
+		  	   , r_listen_url
+		  	   , r_v_rec_ip
+		  	   , r_v_rec_fullpath
+		  	   , r_v_read_ip
+		  	   , r_v_read_fullpath
+		  	   , r_call_key_ap 
+		   from rs_recfile 
+		  <where>
+		 	r_rec_visible != 'D'
+		  	<if test = "r_sdate_backup != null and r_edate_backup != null">
+		  	ANd r_rec_date between #{r_sdate_backup} and #{r_edate_backup}
+		  	</if>
+		  	<if test = "r_sdate_backup == null and r_edate_backup == null">
+		   	AND	r_rec_date between #{backTime} and CONVERT(CHAR(8), DATEADD(dd,-1,GETDATE()),112)
+		    AND r_rec_time between '000000' and '235959'		 
+		    </if>
+		 	 <if test ="r_bg_code != null and r_bg_code != ''">
+			AND  R_BG_CODE = #{r_bg_code}
+			</if>
+			<if test ="r_mg_code != null and r_mg_code != ''">
+			AND  R_MG_CODE = #{r_mg_code}
+			</if>
+			<if test ="r_sg_code != null and r_sg_code != ''">
+			AND  R_SG_CODE = #{r_sg_code}
+			</if> 		  
+			<if test ='r_dual_backup_type != null and r_dual_backup_type == "N"'>
+			AND R_V_SYS_CODE like 'A%'
+			</if>	 
+		   </where>
+		  LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	<update id="updateRsRecfileBackCheck" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		
+		update rs_recfile
+		<set>
+			r_manager = #{queueNo2}
+		</set>
+		<where>
+			1 = 1
+			<if test = "recDate != null">
+			AND r_rec_date = #{recDate}
+			</if>
+			<if test = "recRtime != null">
+			AND r_rec_rtime = #{recRtime}
+			</if>
+			<if test = "recTime != null">
+			AND r_rec_time = #{recTime}
+			</if>
+			<if test = "extNum != null">
+			AND r_ext_num = #{extNum}
+			</if>
+			<if test = "vSysCode != null">
+			AND r_v_sys_code = #{vSysCode}
+			</if>
+			<if test = "recStartType != null">
+			AND r_rec_start_type = #{recStartType}
+			</if>
+		</where>
+	</update>
+	
+	<update id="updateRsRecfileListenUrlUpdate" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		
+		update rs_recfile
+		<set>
+			<if test="listenUrl != null">
+				r_listen_url = #{listenUrl},
+			</if>
+			<if test="vReadIp != null">
+				r_v_read_ip = #{vReadIp},
+			</if>
+			<if test="vReadFullpath != null">
+				r_v_read_fullpath = #{vReadFullpath},
+			</if>			
+			<if test="vsendFileFlag != null">
+				r_vsend_file_flag = #{vsendFileFlag},
+			</if>
+			r_bank_code = r_bank_code
+		</set>
+		<where>
+			1 = 1
+			<if test = "recDate != null">
+			AND r_rec_date = #{recDate}
+			</if>
+			<if test = "recRtime != null">
+			AND r_rec_rtime = #{recRtime}
+			</if>
+			<if test = "recTime != null">
+			AND r_rec_time = #{recTime}
+			</if>
+			<if test = "extNum != null">
+			AND r_ext_num = #{extNum}
+			</if>
+			<if test = "vSysCode != null">
+			AND r_v_sys_code = #{vSysCode}
+			</if>
+			<if test = "recStartType != null">
+			AND r_rec_start_type = #{recStartType}
+			</if>
+		</where>
+	</update>
+	
+	<update id="updateRsRecfileMove" parameterType="com.furence.recsee.main.model.SearchListInfo">
+		update rs_recfile
+		<set>
+			r_rec_visible = 'D'
+		</set>
+		<where>
+			1 = 1
+			<if test = "recDate != null">
+			AND r_rec_date = #{recDate}
+			</if>
+			<if test = "recRtime != null">
+			AND r_rec_rtime = #{recRtime}
+			</if>
+			<if test = "recTime != null">
+			AND r_rec_time = #{recTime}
+			</if>
+			<if test = "extNum != null">
+			AND r_ext_num = #{extNum}
+			</if>
+			<if test = "vSysCode != null">
+			AND r_v_sys_code = #{vSysCode}
+			</if>
+			<if test = "recStartType != null">
+			AND r_rec_start_type = #{recStartType}
+			</if>
+		</where>
+	</update>
+	
+	<update id="updatecRsBackFileFlag" parameterType="com.furence.recsee.admin.model.DelRecfileInfo">
+		update rs_back_recfile
+		<set>
+			r_start_check = #{r_start_check}
+		</set>
+		<where>
+			<if test= "r_seq != null">
+				r_seq = #{r_seq}
+			</if>			
+		</where>
+	</update>
+</mapper>

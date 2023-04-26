@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>관리 화면용 메세지 정의</comment>
+
+	<!-- 관리 - 좌측 메뉴 -->
+	<entry key="management.left_menu.setting">系统设置</entry>
+	<entry key="management.left_menu.setting.system">系统管理</entry>
+	<entry key="management.left_menu.setting.channel">通道管理</entry>
+	<entry key="management.left_menu.setting.backup">备份管理</entry>
+	<entry key="management.left_menu.setting.call_report_customize">报表用户定义</entry>
+	<entry key="management.left_menu.setting.search_customize">搜索用户定义</entry>
+	<entry key="management.left_menu.user">用户管理</entry>
+	<entry key="management.left_menu.system">系统管理</entry>
+
+	<!-- 관리 - 시스템 설정 - 검색 사용자 정의 -->
+	<entry key="management.search_customize.search_item">搜索项目</entry>
+	<entry key="management.search_customize.search_list">搜索目录</entry>
+	<entry key="management.search_customize.base_item">基本项目</entry>
+	<entry key="management.search_customize.user_item">用户项目</entry>
+	<entry key="management.search_customize.btn.apply">调用</entry>
+
+	<!-- 관리 - 시스템 설정 - 백업 관리 -->
+	<entry key="management.backup.title">备份管理</entry>
+	<entry key="management.backup.date">开始日期</entry>
+	<entry key="management.backup.storage">容量设置</entry>
+	<entry key="management.backup.btn.ok">调用</entry>
+	<entry key="management.backup.btn.cancel">取消</entry>
+
+	<!-- 관리 - 시스템 설정 - 채널 관리 -->
+	<entry key="management.channel.tab.channel">通道</entry>
+	<entry key="management.channel.tab.generation">通道自动生成</entry>
+
+	<entry key="management.channel.title.channel_generation">通道自动生成</entry>
+	<entry key="management.channel.title.no">通道号码</entry>
+	<entry key="management.channel.title.system">系统</entry>
+	<entry key="management.channel.title.extnum">内线</entry>
+	<entry key="management.channel.title.ip">IP</entry>
+	<entry key="management.channel.title.user">用户</entry>
+	<entry key="management.channel.title.recording_use">录取使用</entry>
+	<entry key="management.channel.title.recording_type">录取种类</entry>
+	<entry key="management.channel.title.recording_kind">录取类型</entry>
+
+	<entry key="management.channel.title.excel_upload">Excel上载</entry>
+	<entry key="management.channel.title.excel_file">Excel文件</entry>
+	<entry key="management.channel.title.channel_delete">通道删除</entry>
+	<entry key="management.channel.title.channel_delete_help">刪除註冊的所有通道</entry>
+
+	<entry key="management.channel.title.channel_add">通道添加</entry>
+
+	<entry key="management.channel.btn.generation">生成</entry>
+	<entry key="management.channel.btn.upload">上载</entry>
+
+	<entry key="management.channel.alert.sChNum.empty">请输入自动生成时使用的开始通道号码</entry>
+	<entry key="management.channel.alert.eChNum.empty">请输入自动生成时使用的结束通道号码</entry>
+	<entry key="management.channel.alert.sExtNum.empty">请输入自动生成时使用的内线号码</entry>
+
+	<entry key="management.channel.alert.sChNum.zero">开始通道号码要输入大于1</entry>
+	<entry key="management.channel.alert.eChNum.zero">结束通道号码要输入大于1</entry>
+	<entry key="management.channel.alert.sExtNum.length_three">开始内线号码要输入3位以上数字</entry>
+	<entry key="management.channel.alert.eChNum.small"><![CDATA[结束通道号码小于开始通道号码<br>请重新输入]]></entry>
+
+	<entry key="management.channel.alert.chNum.empty">请输入通道号码</entry>
+	<entry key="management.channel.alert.chNum.zero">通道号码要输入大于1</entry>
+	<entry key="management.channel.alert.extNum.empty">请输入内线号码</entry>
+	<entry key="management.channel.alert.extNum.length_three">请输入</entry>
+	<entry key="management.channel.alert.extNum.duplicate">该延伸部分具有相同的信道。</entry>
+
+	<entry key="management.channel.alert.chIp.empty">请输入自动生成时使用的IP</entry>
+	<entry key="management.channel.alert.chIp.rule_violation"><![CDATA[不符合IP规则<br>请重新输入]]></entry>
+	<entry key="management.channel.alert.chIp2.empty">请输入ＩＰ</entry>
+	<entry key="management.channel.alert.chIp.duplicate">IP通道是相同的。</entry>
+
+	<entry key="management.channel.message.generation.success"><![CDATA[通道已生成]]></entry>
+	<entry key="management.channel.message.generation.fail"><![CDATA[通道生成中发生错我]]></entry>
+
+	<entry key="management.channel.message.add.success"><![CDATA[通道已追加]]></entry>
+	<entry key="management.channel.message.add.fail"><![CDATA[追加通道中发生错误]]></entry>
+
+	<entry key="management.channel.message.modify.success"><![CDATA[通道讯息已变更]]></entry>
+	<entry key="management.channel.message.modify.fail"><![CDATA[修改通道讯息中发生错误]]></entry>
+
+	<entry key="management.channel.message.delete.success"><![CDATA[通道已删除]]></entry>
+	<entry key="management.channel.message.delete.fail"><![CDATA[删除通道中发生错误]]></entry>
+	<entry key="management.channel.message.delete.confirm"><![CDATA[我们将删除疏通渠道呢？]]></entry>
+	<entry key="management.channel.message.delete.nochecked"><![CDATA[請選擇頻道。]]></entry>
+	<entry key="management.channel.message.apply.confirm"><![CDATA[要應用的頻道信息的記錄引擎嗎？]]></entry>
+	<entry key="management.channel.message.apply.success"><![CDATA[信道信息已經被應用。]]></entry>
+	<entry key="management.channel.message.apply.fail"><![CDATA[有在操作通道，但不適用。]]></entry>
+
+	<!-- 관리 - 시스템 설정 - 시스템 설정 -->
+	<entry key="management.system.tab.system">设置</entry>
+
+	<entry key="management.system.title.system_generation">系统生成</entry>
+	<entry key="management.system.title.sysId">系统ID</entry>
+	<entry key="management.system.title.sysName">系统名称</entry>
+	<entry key="management.system.title.sysIp">系统IP</entry>
+	<entry key="management.system.title.pbxId">PBX ID</entry>
+	<entry key="management.system.title.storagePath">存储位置</entry>
+
+	<entry key="management.system.title.system_delete">删除系统</entry>
+
+	<entry key="management.system.title.system_add">其他系统</entry>
+
+	<entry key="management.system.btn.generation">辈</entry>
+
+	<entry key="management.system.alert.sysId.empty">请输入系统ID</entry>
+	<entry key="management.system.alert.sysId.zero">系统ID，输入至少4个字符</entry>
+	<entry key="management.system.alert.sysName.empty">请输入系统的名称</entry>
+	<entry key="management.system.alert.sysName.zero">该系统名称请输入一个或多个字符</entry>
+	<entry key="management.system.alert.sysIp.empty">请输入系统IP</entry>
+	<entry key="management.system.alert.sysIp.zero">系统IP，并输入多个字符</entry>
+
+	<entry key="management.system.alert.sysIp.rule_violation"><![CDATA[IP规则被违反。<BR>请再试一次]]></entry>
+	<entry key="management.system.alert.sysId.same">已注册的系统ID。</entry>
+	<entry key="management.system.alert.sysName.same">该系统名称已被注册。</entry>
+	<entry key="management.system.alert.sysIp.same">该系统已被注册的IP。</entry>
+
+	<entry key="management.system.message.add.success"><![CDATA[该系统已被添加]]></entry>
+	<entry key="management.system.message.add.fail"><![CDATA[同時增加了系統發生錯誤。]]></entry>
+
+	<entry key="management.system.message.modify.success"><![CDATA[系统信息已被修改。]]></entry>
+	<entry key="management.system.message.modify.fail"><![CDATA[同时修改系统信息时出错。]]></entry>
+
+	<entry key="management.system.message.delete.success"><![CDATA[它消除了系统]]></entry>
+	<entry key="management.system.message.delete.fail"><![CDATA[在删除发生系统错误。]]></entry>
+	<entry key="management.system.message.delete.confirm"><![CDATA[你确定要删除的信息系统？]]></entry>
+	<entry key="management.system.message.usingSystem"><![CDATA[该系统是不可用的。]]></entry>
+	<entry key="management.system.message.delete.nochecked"><![CDATA[請選擇系統信息。]]></entry>
+
+	<!-- 관리 - 사용자 관리 - 사용자 관리 -->
+	<entry key="management.user.title">用户</entry>
+	<entry key="management.user.title.user_add">用户登入</entry>
+	<entry key="management.user.title.name">用户名</entry>
+	<entry key="management.user.title.userId">账号</entry>
+	<entry key="management.user.title.password">密码</entry>
+	<entry key="management.user.title.passwordChk">密码再确认</entry>
+	<entry key="management.user.title.extNum">内线</entry>
+	<entry key="management.user.title.authy">权限等级</entry>
+	<entry key="management.user.title.empId">工号</entry>
+	<entry key="management.user.title.email">邮件</entry>
+	<entry key="management.user.title.ctiId">CTI ID</entry>
+	<entry key="management.user.title.bgClass">类别</entry>
+	<entry key="management.user.title.mgClass">师</entry>
+	<entry key="management.user.title.sgClass">部分</entry>
+	<entry key="management.user.title.multiPart">多部分</entry>
+
+	<entry key="management.user.alert.userName.empty">请输入用户名</entry>
+	<entry key="management.user.alert.userId.empty">请输入用户ＩＤ</entry>
+	<entry key="management.user.alert.password.empty">请输入密码</entry>
+	<entry key="management.user.alert.passwordChk.empty">请重新确认密码</entry>
+	<entry key="management.user.alert.password.noSame"><![CDATA[密码不正确.<br>请重新输入]]></entry>
+	<entry key="management.user.alert.extNum.empty">请输入分机号码。</entry>
+	<entry key="management.user.alert.extNum.duplicate">用戶有相同的分機號碼。</entry>
+	<entry key="management.user.alert.authy.empty">请选择权限等级</entry>
+	<entry key="management.user.alert.email.validation">发送本规则不适合。</entry>
+	<entry key="management.user.alert.empId.validation">員工數量是不正確的輸入範圍。</entry>
+	<entry key="management.user.alert.empId.duplicate">員工號是相同的用戶。</entry>
+	<entry key="management.user.alert.ctiId.validation">的CTI ID不正確輸入範圍。</entry>
+	<entry key="management.user.alert.ctiId.duplicate">“CTI ID”是同一用戶。</entry>
+
+	<entry key="management.user.message.add.success">用户已登入了</entry>
+	<entry key="management.user.message.add.fail">用户登入中发生错误</entry>
+	<entry key="management.user.message.modify.success">用户讯息已变更了</entry>
+	<entry key="management.user.message.modify.fail">修改用户咨询中发生错误</entry>
+	<entry key="management.user.message.delete.success">用户已删除了</entry>
+	<entry key="management.user.message.delete.fail">删除用户中发生错误</entry>
+	<entry key="management.user.message.delete.confirm">你确定要删除所选用户？</entry>
+	<entry key="management.user.message.delete.nochecked">選擇一個用戶。</entry>
+	<entry key="management.user.message.apply.confirm"><![CDATA[你想申请记录在发动机中的用户信息？]]></entry>
+	<entry key="management.user.message.apply.success"><![CDATA[用户信息已被应用。]]></entry>
+	<entry key="management.user.message.apply.fail"><![CDATA[它并不适用。]]></entry>
+	<entry key="management.user.message.multiPart.success"><![CDATA[已应用其他组信息。]]></entry>
+	<entry key="management.user.message.multiPart.fail"><![CDATA[未应用其他组信息。]]></entry>
+	<entry key="management.user.message.admin.multiPartNotSetting"><![CDATA[站点管理员不需要设置其他组。]]></entry>
+
+	<!-- 관리 - 권한 관리 -->
+	<entry key="management.access.title">权限管理</entry>
+	<entry key="management.access.title.groupName">集团名称</entry>
+	<entry key="management.access.title.menuName">称号</entry>
+	<entry key="management.access.title.use">运用</entry>
+	<entry key="management.access.title.range">公差</entry>
+	<entry key="management.access.title.access">权限</entry>
+	<entry key="management.access.title.read">阅读</entry>
+	<entry key="management.access.title.write">写作</entry>
+	<entry key="management.access.title.delete">删除</entry>
+	<entry key="management.access.title.listen">听力</entry>
+	<entry key="management.access.title.download">下载</entry>
+	<entry key="management.access.title.excel">Excel</entry>
+
+	<entry key="management.access.form.authyTitle">授权人</entry>
+
+	<entry key="management.access.message.delete.admin">管理员权限无法删除。</entry>
+	<entry key="management.access.message.delete.confirm">你确定要删除选定的特权？</entry>
+	<entry key="management.access.message.delete.success">这种权力已被删除。</entry>
+	<entry key="management.access.message.delete.fail">在删除权限时发生错误。</entry>
+	<entry key="management.access.message.clear">权限管理画面被初始化。</entry>
+	<entry key="management.access.message.modify.error">发生错误时，权利状态发生变化。</entry>
+	<entry key="management.access.message.modify.success">该机构已经改变。</entry>
+	<entry key="management.access.message.modify.fail">更改权限时发生错误。</entry>
+	<entry key="management.access.message.insert.name.empty">请输入您的权限名称。</entry>
+	<entry key="management.access.message.insert.error">同时添加的权限时发生错误。</entry>
+	<entry key="management.access.message.insert.success">该机构补充道。</entry>
+
+	<entry key="management.searchCustomize.form.item.levelCombo">等級</entry>
+	<entry key="management.searchCustomize.form.item.fieldset.title">搜索项目</entry>
+	<entry key="management.searchCustomize.form.list.fieldset.title">搜索列表</entry>
+
+	<entry key="management.searchCustomize.item.grid.title.name">产品名称搜索</entry>
+	<entry key="management.searchCustomize.item.grid.title.var">其他变量</entry>
+	<entry key="management.searchCustomize.list.grid.title.name">人民搜索列表</entry>
+	<entry key="management.searchCustomize.list.grid.title.var">变量搜索列表</entry>
+	<entry key="management.searchCustomize.copy.grid.title.name">可複制清單</entry>
+	<entry key="management.searchCustomize.copy.grid.title.var">可複制的列表變量</entry>
+
+	<entry key="management.searchCustomize.rCheckBox">复选框</entry>
+	<entry key="management.searchCustomize.rRecDate">日期</entry>
+	<entry key="management.searchCustomize.rRecTime">时间</entry>
+	<entry key="management.searchCustomize.rRecRtime">时间</entry>
+	<entry key="management.searchCustomize.rBgCode">大分类</entry>
+	<entry key="management.searchCustomize.rMgCode">中分类</entry>
+	<entry key="management.searchCustomize.rSgCode">小分类</entry>
+	<entry key="management.searchCustomize.rUserId">用户ID</entry>
+	<entry key="management.searchCustomize.rChNum">通道号码</entry>
+	<entry key="management.searchCustomize.rUserName">用户名</entry>
+	<entry key="management.searchCustomize.rCallId1">Call ID</entry>
+	<entry key="management.searchCustomize.rCallId2">Call ID</entry>
+	<entry key="management.searchCustomize.rCallId3">Call ID</entry>
+	<entry key="management.searchCustomize.rExtNum">内线号码</entry>
+	<entry key="management.searchCustomize.rCustName">客户名称</entry>
+	<entry key="management.searchCustomize.rCustPhone1">顾客电话号码</entry>
+	<entry key="management.searchCustomize.rCustPhone2">顾客电话号码</entry>
+	<entry key="management.searchCustomize.rCustPhone3">顾客电话号码</entry>
+	<entry key="management.searchCustomize.rCallKind1">呼叫类型</entry>
+	<entry key="management.searchCustomize.rCallKind2">呼叫类型</entry>
+	<entry key="management.searchCustomize.rCallStime">通话开始时间</entry>
+	<entry key="management.searchCustomize.rCallEtime">通话结束时间</entry>
+	<entry key="management.searchCustomize.rCallTtime">通话时间(第二)</entry>
+	<entry key="management.searchCustomize.rSelfdisYn">客户端关闭存在</entry>	
+	<entry key="management.searchCustomize.rVSysCode">系统代码</entry>
+	<entry key="management.searchCustomize.rListenUrl">录音档路径</entry>
+	<entry key="management.searchCustomize.rRecMemo">录音便条</entry>
+	<entry key="management.searchCustomize.rEvalYn">评估是否</entry>
+	<entry key="management.searchCustomize.rCustSocialNum">身份证号码</entry>
+	<entry key="management.searchCustomize.rCnid">CNID</entry>
+	<entry key="management.searchCustomize.rDestIp">目的地IP</entry>
+	<entry key="management.searchCustomize.rBuffer1">Buffer1</entry>
+	<entry key="management.searchCustomize.rBuffer2">Buffer2</entry>
+	<entry key="management.searchCustomize.rBuffer3">Buffer3</entry>
+	<entry key="management.searchCustomize.rBuffer4">Buffer4</entry>
+	<entry key="management.searchCustomize.rBuffer5">Buffer5</entry>
+	<entry key="management.searchCustomize.rBuffer6">Buffer6</entry>
+	<entry key="management.searchCustomize.rBuffer7">Buffer7</entry>
+	<entry key="management.searchCustomize.rBuffer8">Buffer8</entry>
+	<entry key="management.searchCustomize.rBuffer9">Buffer9</entry>
+	<entry key="management.searchCustomize.rBuffer10">Buffer10</entry>
+	<entry key="management.searchCustomize.rBuffer11">Buffer11</entry>
+	<entry key="management.searchCustomize.rBuffer12">Buffer12</entry>
+	<entry key="management.searchCustomize.rBuffer13">Buffer13</entry>
+	<entry key="management.searchCustomize.rBuffer14">Buffer14</entry>
+	<entry key="management.searchCustomize.rBuffer15">Buffer15</entry>
+	<entry key="management.searchCustomize.rBuffer16">Buffer16</entry>
+	<entry key="management.searchCustomize.rBuffer17">Buffer17</entry>
+	<entry key="management.searchCustomize.rBuffer18">Buffer18</entry>
+	<entry key="management.searchCustomize.rBuffer19">Buffer19</entry>
+	<entry key="management.searchCustomize.rBuffer20">Buffer20</entry>
+	<entry key="management.searchCustomize.rVdoUrl">Vdo</entry>
+	<entry key="management.searchCustomize.rCustId">顧客 ID</entry>
+	<entry key="management.searchCustomize.rRegiDate">登記日</entry>
+	<entry key="management.searchCustomize.rManager">管理員</entry>
+	<entry key="management.searchCustomize.rSRtp">SRTP</entry>
+	<entry key="management.searchCustomize.fKey">F Key</entry>
+	<entry key="management.searchCustomize.rSSrc">SSRC</entry>
+	<entry key="management.searchCustomize.rKey">Key</entry>
+	<entry key="management.searchCustomize.rCoNum">CO 數</entry>
+	<entry key="management.searchCustomize.rDidNum">DID 數</entry>
+	<entry key="management.searchCustomize.rUeiData">UEI</entry>
+	<entry key="management.searchCustomize.rQueueNo1">Queue1</entry>
+	<entry key="management.searchCustomize.rQueueNo2">Queue2</entry>
+	<entry key="management.searchCustomize.rBgName">大分类</entry>
+	<entry key="management.searchCustomize.rMgName">中分类</entry>
+	<entry key="management.searchCustomize.rSgName">小分类</entry>
+	<entry key="management.searchCustomize.evaluation">评估</entry>
+	<entry key="management.searchCustomize.screen">屏幕</entry>
+	<entry key="management.searchCustomize.trace">Trace</entry>
+	<entry key="management.searchCustomize.rRecStartType">Start type</entry>
+
+	<entry key="management.searchCustomize.alert.sameColumn">重复列。</entry>
+	<entry key="management.searchCustomize.alert.itemTypeEmpty">没有被施加的数据。</entry>
+	<entry key="management.searchCustomize.alert.empty">没有被施加的数据。</entry>
+	<entry key="management.searchCustomize.alert.success">它已被应用。</entry>
+	<entry key="management.searchCustomize.alert.error">同时应用时发生错误。</entry>
+
+	<entry key="management.screenUserListFieldSet.form.item.screenUserFieldset.title">屏幕用户列表</entry>
+	<entry key="management.screenUserListFieldSet.form.item.UserFieldset.title">用户列表</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserUseCount">屏幕用户数</entry>
+	<entry key="management.screenUserListFieldSet.form.item.screenUserLicensesCount">许可证</entry>
+	<entry key="management.screenUser.alert.message.noExtention">没有目标分机号码。</entry>
+	<entry key="management.screenUser.alert.message.empty">没有被施加的数据。</entry>
+	<entry key="management.screenUser.alert.message.success">它已被应用。</entry>
+	<entry key="management.screenUser.alert.message.error">同时应用时发生错误。</entry>
+	<entry key="management.screenUser.alert.message.overLicense">这是一个授权的过剩。</entry>
+
+	<!-- 그룹 -->
+	<entry key="management.group.title.group">集團管理</entry>
+	<entry key="management.group.form.title.groupName">組名稱</entry>
+	<entry key="management.group.form.title.excelUpload">Excel中上傳</entry>
+	<entry key="management.group.contextMenu.title.subClass">下 分類</entry>
+	<entry key="management.group.newGroup.title">新的分類</entry>
+	<entry key="management.group.alert.message.success">它已被应用。</entry>
+	<entry key="management.group.alert.message.error">同时应用时发生错误。</entry>
+	<entry key="management.group.message.delete.confirm">你确定要删除该组？</entry>
+	<entry key="management.group.alert.message.overLevel">您不能添加一个组到小类及以上。</entry>
+	<entry key="management.group.alert.message.checkExtension">您只能上传一个Excel文件。(延期 : xls, xlsx)</entry>
+	<entry key="management.group.alert.message.excelProcSuccess">Excel文件的组信息得到了应用。</entry>
+	<entry key="management.group.alert.message.excelProcFail">而在应用Excel文件的组信息时发生错误。</entry>
+
+	<!-- 큐 -->
+	<entry key="management.queue.title.queue">Queue 管理</entry>
+	<entry key="management.queue.form.title.queueAdd">Queue 添加</entry>
+	<entry key="management.queue.form.title.queueNum">Queue 数</entry>
+	<entry key="management.queue.form.title.queueName">Queue 名</entry>
+	<entry key="management.queue.form.title.excelUpload">Excel中上傳</entry>
+
+	<entry key="management.queue.alert.rQueueNum.empty">请输入队列号。</entry>
+	<entry key="management.queue.alert.rQueueNum.zero">请输入大于1的队列号。</entry>
+	<entry key="management.queue.alert.rQueueName.empty">请输入队列名称。</entry>
+	<entry key="management.queue.alert.rQuqueNum.duplication">重复的队列编号。</entry>
+	
+	<entry key="management.queue.alert.message.success">它已被应用。</entry>
+	<entry key="management.queue.alert.message.error">同时应用时发生错误。</entry>
+	<entry key="management.queue.message.delete.confirm">您确定要删除队列吗？</entry>
+	<entry key="management.queue.alert.message.nochecked"><![CDATA[请选择一个队列。]]></entry>
+	<entry key="management.queue.alert.message.checkExtension">只能上传Excel文件。(延期 : xls, xlsx)</entry>
+	<entry key="management.queue.alert.message.excelProcSuccess">已应用Excel文件的队列信息。</entry>
+	<entry key="management.queue.alert.message.excelProcFail">在Excel文件中应用队列信息时出错。</entry>
+
+	<!-- 관리 - 시스템 설정 - pbx 연동 정보 -->
+	<entry key="management.pbx.tab.pbx">시스템</entry>
+
+	<entry key="management.pbx.title.pbxId">교환기 ID</entry>
+	<entry key="management.pbx.title.pbxName">교환기명</entry>
+	<entry key="management.pbx.title.pbxIp">교환기 IP</entry>
+	<entry key="management.pbx.title.pbxLicense">라이선스</entry>
+	<entry key="management.pbx.title.pbxSipId">SIP ID</entry>
+	<entry key="management.pbx.title.pbxSipPassword">SIP 비밀번호</entry>
+
+	<entry key="management.pbx.title.pbx_delete">교환기 삭제</entry>
+
+	<entry key="management.pbx.title.pbx_add">교환기 추가</entry>
+
+	<entry key="management.pbx.btn.generation">생성</entry>
+
+	<entry key="management.pbx.alert.pbxId.empty">교환기 ID를 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxId.zero">교환기 ID는 4자 이상을 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxName.empty">교환기명을 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxName.zero">교환기명은 1자 이상을 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxIp.empty">교환기 IP를 입력해주십시요.</entry>
+	<entry key="management.pbx.alert.pbxIp.zero">교환기 IP는  1자 이상을 입력해주십시요.</entry>
+
+	<entry key="management.pbx.alert.pbxIp.rule_violation"><![CDATA[IP 규칙 위반입니다.<br>다시 입력해주십시요.]]></entry>
+	<entry key="management.pbx.alert.pbxId.same">이미 등록된 교환기 ID입니다.</entry>
+	<entry key="management.pbx.alert.pbxName.same">이미 등록된 교환기명입니다.</entry>
+	<entry key="management.pbx.alert.pbxIp.same">이미 등록된 교환기IP입니다.</entry>
+	<entry key="management.pbx.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+
+	<entry key="management.pbx.message.add.success"><![CDATA[교환기이  추가되었습니다.]]></entry>
+	<entry key="management.pbx.message.add.fail"><![CDATA[교환기 추가 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.pbx.message.modify.success"><![CDATA[교환기 정보가 수정되었습니다.]]></entry>
+	<entry key="management.pbx.message.modify.fail"><![CDATA[교환기 정보 수정 중 오류가 발생하였습니다.]]></entry>
+
+	<entry key="management.pbx.message.delete.success"><![CDATA[교환기을 삭제하였습니다.]]></entry>
+	<entry key="management.pbx.message.delete.fail"><![CDATA[교환기 삭제 중 오류가 발생하였습니다.]]></entry>
+	<entry key="management.pbx.message.delete.confirm"><![CDATA[교환기 정보를 삭제하시겠습니까?]]></entry>
+	<entry key="management.pbx.message.delete.nochecked"><![CDATA[교환기 정보를 선택해주세요.]]></entry>
+	
+	<!-- 관리 - 시스템 관리 - log 관리 -->
+	<entry key="management.log.tab.log">로그</entry>
+
+	<entry key="management.log.title.logDate">날짜</entry>
+	<entry key="management.log.title.logTime">시간</entry>
+	<entry key="management.log.title.logIp">로그 IP</entry>
+	<entry key="management.log.title.logServerIp">서버 IP</entry>
+	<entry key="management.log.title.logUserId">사용자 ID</entry>
+	<entry key="management.log.title.logExt">내선번호</entry>
+	<entry key="management.log.title.logContents">로그 내용</entry>
+	<entry key="management.log.title.logEtc">기타</entry>
+
+	<entry key="management.log.btn.logSearch">로그 검색</entry>
+	<entry key="management.log.btn.logDelete">로그 삭제</entry>
+	<entry key="management.log.btn.logExcel">엑셀다운로드</entry>
+
+	<entry key="management.log.alert.message.error">적용 중 오류가 발생하였습니다.</entry>
+
+	<entry key="management.log.message.search.noData"><![CDATA[검색된 로그 정보가 없습니다.]]></entry>
+	<entry key="management.log.message.delete.success"><![CDATA[로그을 삭제하였습니다.]]></entry>
+	<entry key="management.log.message.delete.fail"><![CDATA[로그 삭제 중 오류가 발생하였습니다.]]></entry>
+	<entry key="management.log.message.delete.confirm"><![CDATA[로그 정보를 삭제하시겠습니까?]]></entry>
+</properties>

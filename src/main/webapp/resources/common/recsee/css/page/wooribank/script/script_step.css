@@ -1,0 +1,469 @@
+pre {
+	white-space: pre-wrap;
+}
+
+
+/* 전체 */
+.script_wrap {
+	height: 100%;
+}
+
+/* 전체 */
+.wrap {
+	width: 100%;
+	height: 100%;
+}
+
+/* 상품정보*/
+.product_info {
+	width: 100%
+}
+
+.real_product_info {
+	width : 100%;
+	background-color: #f5f5f5;
+	padding: 5px 10px;
+	min-height: 78px;
+	display: flex;
+	box-sizing: border-box;
+	margin-bottom: 16px;
+	font-size: 14px;
+}
+/* 상품명 */
+#productName {
+	width: 30%;
+	min-width: 20%;
+}
+
+/* 상품유형 */
+#productType {
+	width: 15%;
+	min-width: 10%;
+}
+
+/* 그룹코드 */
+#productGroupCode {
+	width: 15%;
+	min-width: 10%;
+}
+
+/* 상품코드 */
+#productCode {
+	width: 15%;
+	min-width: 10%;
+}
+
+/* 위니업데이트 정보전체 */
+#productDataInfo {
+	width: 30%;
+	min-width: 10%;
+}
+/* 위니업데이트 */
+#winiValue {
+	width: 100%;
+	color: #e71515;
+	font-size : 12.5px;
+	line-height : 1.5;
+}
+
+/* 상품정보 각 한칸*/
+.productInfoVal {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+	min-height: 75px;
+}
+
+/* 상품정보의 첫번째 칸*/
+.productInfoName {
+	height: 45%;
+	padding: 5px 5px 5px 5px;
+	font-weight: 600;
+}
+
+/* 상품정보의 두번째 칸*/
+.productInfoText {
+	height: 45%;
+	padding: 5px 5px 5px 15px;
+}
+
+/* scriptStep & detail 감싼 전체*/
+.scriptWrap {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: calc(100% - 120px);
+/* 	height: calc(100% - 101px); */
+}
+
+/*scriptStep*/
+/* script_step 영역*/
+.script_step_wrap {
+	width: 22%;
+	/*     width: 33.3%; */
+	height: 99%;
+	box-sizing: border-box;
+	border-right: 1px solid #DEE1E7;
+	min-height: calc(100vh - 200px);
+	display: inline-block;
+	padding: 0px 10px 0px 10px;
+}
+
+/* script_step 전체*/
+.script_step_area {
+	width: 100%;
+	height: 95%;
+}
+
+/* script_step header*/
+.script_step_header {
+	display: flex;
+	height: 4%;
+	min-height: 3%;
+	border-bottom: 1px solid #dee1e7;
+	font-weight: bold;
+	font-size: 14px;
+	align-items: center;
+}
+
+/* script_step contents*/
+.script_step_content {
+	height: 90%;
+}
+
+.treegrid_cell{
+    overflow: hidden !important;
+    white-space: normal !important;
+    line-height: 23px !important;
+    height: auto !important;
+	
+}
+
+#scriptTreeGrid {
+	height: 90.8%;
+/* 	border-bottom: 2px solid #dee1e7; */
+	overflow-x: hidden;
+}
+
+#scriptGrid {
+	width: 100% !important;
+	height : 100% !important;
+}
+
+/*scriptDetail*/
+
+/* script_detail 전체*/
+.script_detail_wrap {
+	width: 75%;
+	padding: 0px 10px 0px 10px;
+	/* 	width: 100%; */
+	/* 	padding: 0px 10px 0px 10px; */
+	height: 99%;
+}
+/* script_detail 전체*/
+.script_detail_area {
+	width: 100%;
+	height: 93%;
+}
+
+/* script_detail header*/
+.script_detail_header {
+	display: flex;
+	justify-content: space-between;
+	height: 4%;
+	min-height: 2%;
+	align-items: center;
+}
+
+/* script_step 제목구분*/
+.script_step_title {
+	width: 10%;
+	min-width: 5%;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 2em;
+}
+
+/* script_step 제목text*/
+.script_step_title_text {
+	width: 50%;
+}
+
+/* script_detail_btn_line*/
+.script_detail_btn_Line {
+	width: 60%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*엑셀*/
+#excel_download_btn {
+	background-color: #f9f9f9;
+	border: 1px solid #dbdbdb;
+	color: black;
+}
+
+/*pdf*/
+#pdf_download_btn {
+	background-color: #f9f9f9;
+	border: 1px solid #dbdbdb;
+	color: black;
+}
+
+/*복사하기*/
+#copy_script_btn {
+	background-color: #BABABA;
+	color: white;
+}
+
+/*스크립트수정*/
+#edit_script_btn {
+	background-color: #dad7d7;
+	color: black;
+}
+
+/*목록보기*/
+#back_script_btn {
+	background-color: #111418;
+	color: #fff;
+}
+
+/* script_detail_btn 공통*/
+.script_detail_btn {
+	cursor: pointer;
+	height: 26px;
+	width: auto;
+	float: right;
+	padding: 0 5px 0 5px;
+	border-radius: 3px;
+	margin: 0px 0px 0px 10px;
+	display: flex;
+	border: 0;
+	align-items: center;
+}
+
+/* script_detailcontents*/
+.script_detail_content {
+	display: flex;
+	flex-direction: column;
+	height: 89.5%;
+}
+
+/* script_detailcontents  구분text,제목 버튼 라인 감싼 전체*/
+.script_detail_content_info {
+	display: flex;
+	justify-content: space-between;
+	height: 5%;
+	min-height: 3%;
+	align-items: center;
+}
+
+/* script_detailcontents 구성 구분*/
+.script_detail_content_title {
+	width: 20%;
+	min-width: 15%;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* script_detailcontents 추가버튼 라인*/
+.script_detail_content_btn_Line {
+	width: 75%;
+	display: flex;
+	justify-content: flex-end;
+}
+/*공용문구*/
+#common_sentence_btn {
+	background-color: #083378;
+	color: #fff;
+}
+
+/*TTS리딩*/
+#add_content_Btn {
+	background-color: #BABABA;
+	color: #fff;
+}
+
+/*직원직접리딩*/
+#add_adviser_Btn {
+	background: #23CEC6;
+	color: #fff;
+}
+
+/*고객답변*/
+#add_direction_Btn {
+	background-color: #7AACFE;
+	color: #fff;
+}
+
+/*적합성보고서*/
+#add_object_Btn {
+	background-color: #c0e2f7;
+	color: #1470f5;
+}
+/* script_detailcontents 추가버튼 공통*/
+.detail_content_btn {
+	cursor: pointer;
+	height: 26px;
+	width: auto;
+	float: right;
+	padding: 0 10px 0 10px;
+	background-color: #BABABA;
+	border-radius: 3px;
+	margin: 0px 0px 0px 5px;
+	display: flex;
+	border: 0;
+	align-items: center;
+	border: 1px solid #dddddd
+}
+
+/* script_detailcontents 스크립트내역이 표출될 영역*/
+.script_detail_content_value {
+	height: 95%;
+	min-height: 85%;
+	background-color: #efefef;
+	padding: 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.real_script_detail_content_value {
+	height: 100%;
+}
+
+/* 스크립트  ELt 상품 조건 표출 될 bar*/
+.eltProductCondition{
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 826px !important;
+    line-height: 20px !important;
+    height: auto;
+    margin: 5px 0px 0px 0px;
+    display: inline-flex;
+}
+
+.eltProductValue{ 
+    border: 1px solid #dddddd;
+    border-radius: 5px !important;
+    line-height: 20px !important;
+    margin: 0px 0px 0px 0px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    padding: 0px 5px 0px 5px;		
+}
+
+.eltProductConditionName{
+    width: auto;
+    color : white;
+    font-weight : 100;
+    font-size : 11px;
+}
+
+
+.script {
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#playZone {
+	margin-top: 5px;
+	width: 100%;
+	height: 5%;
+	min-height: 3%;
+	background-color: #f1f3f4;
+}
+
+#audioPlayer {
+	width: 100%;
+	height: 100%;
+}
+
+.BtnLine {
+	width: 101%;
+}
+
+#script_textAtrea {
+	background-color: white;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	width: 100%;
+	line-height: 20px;
+}
+
+
+/*반응협 ==>screen width가 980px일때 */
+@media ( max-width :1085px) {
+	.wrap {
+		width: 1085px;
+/* 		position : absolute; */
+	}
+	.script_detail_btn_Line {
+		font-size: 12px;
+	}
+	.script_detail_btn {
+		font-size: 12px;
+		padding: 0px;
+	}
+	.detail_content_btn {
+		font-size: 12px;
+		padding: 0px;
+	}
+	.objbox .row20px {
+	width :100% !important;
+}
+	
+}
+
+/*반응협 ==>screen height가 780px일때 */
+@media ( max-height :780px) {
+	.wrap {
+		height: 780px;
+/* 		position : absolute; */
+	}
+	.script_detail_btn_Line {
+		font-size: 12px;
+		padding: 0px;
+	}
+	.script_detail_btn {
+		font-size: 12px;
+		padding: 0px;
+	}
+	.detail_content_btn {
+		font-size: 12px;
+		padding: 0px;
+	}
+	.objbox .row20px {
+		width :100% !important;
+	}
+	
+}
+
+
+/*반응협 ==>screen width가 980px일때 */
+@media  (max-width:1280px) {  
+	
+	#scriptGrid{
+		width : 100% !important;
+		height : 100% !important;
+	}
+	.script_step_wrap{
+		width : 27%;
+	}
+
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+	.productInfoVal{
+	    display: flex;
+	    flex-direction: column;
+	    justify-content :space-around !important;
+	    height : 100%;
+	    min-height : 75px;
+	}
+	
+	#productDataInfo{
+	 justify-content : flex-start;
+	}
